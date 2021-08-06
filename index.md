@@ -13,7 +13,7 @@ videoId: "robomimic_video.mp4"
 # Video Overview
 
 <figure class="figure"><div class="figure__main">
-<video autoplay loop muted playsinline controls class="postimagefourfifth">
+<video autoplay loop muted playsinline controls class="postimagefullwidth">
   <source src="{{ site.baseurl }}/assets/robomimic_video.mp4" type="video/mp4">
 </video>
 </div></figure>
