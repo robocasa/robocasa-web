@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Using Demonstration Datasets &mdash; robomimic 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using the Model Zoo" href="model_zoo.html" />
+    <link rel="prev" title="Working with robomimic Modules" href="examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> robomimic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Working with robomimic Modules</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using Demonstration Datasets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dataset-structure">Dataset Structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#filter-keys-and-train-valid-splits">Filter Keys and Train-Valid Splits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#storing-image-observations">Storing image observations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#storing-actions">Storing actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#view-dataset-structure-and-videos">View Dataset Structure and Videos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#robosuite-hdf5-datasets">Robosuite HDF5 Datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#converting-robosuite-hdf5-datasets">Converting robosuite hdf5 datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structure-of-raw-collected-demonstrations">Structure of raw collected demonstrations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extracting-observations-from-mujoco-states">Extracting Observations from MuJoCo states</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#d4rl-datasets">D4RL Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#roboturk-pilot-datasets">RoboTurk Pilot Datasets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Reproducing Study Results</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/utils.html">Utils</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/robomimic.html">robomimic package</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/contributing.html">Contributing Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/acknowledgments.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/references.html">Projects using robomimic</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robomimic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Using Demonstration Datasets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/introduction/datasets.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="using-demonstration-datasets">
+<h1>Using Demonstration Datasets<a class="headerlink" href="#using-demonstration-datasets" title="Permalink to this headline">¶</a></h1>
+<p>This section contains information on the hdf5 dataset structure used by <strong>robomimic</strong>, and additional dataset types that we offer conversion scripts for.</p>
+<div class="section" id="dataset-structure">
+<h2>Dataset Structure<a class="headerlink" href="#dataset-structure" title="Permalink to this headline">¶</a></h2>
+<p>The repository expects hdf5 datasets with a certain structure. The structure is shown below.</p>
+<p>data (group)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">total</span></code> (attribute) - number of state-action samples in the dataset</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">env_args</span></code> (attribute) - a json string that contains metadata on the environment and relevant arguments used for collecting data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mask</span></code> (group) - this group will exist in hdf5 datasets that contain filter keys</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;filter_key_1&gt;</span></code> (dataset) - the first filter key. Note that the name of this dataset and length will vary. As an example, this could be the “valid” filter key, and contain the list [“demo_0”, “demo_19”, “demo_35”], corresponding to 3 validation trajectories.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demo_0</span></code> (group) - group for the first trajectory (every trajectory has a group)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_samples</span></code> (attribute) - the number of state-action samples in this trajectory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model_file</span></code> (attribute) - the xml string corresponding to the MJCF MuJoCo model. Only present for robosuite datasets.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">states</span></code> (dataset) - flattened raw MuJoCo states, ordered by time. Shape (N, D) where N is the length of the trajectory, and D is the dimension of the state vector. Should be empty or have dummy values for non-robosuite datasets.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">actions</span></code> (dataset) - environment actions, ordered by time. Shape (N, A) where N is the length of the trajectory, and A is the action space dimension</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rewards</span></code> (dataset) - environment rewards, ordered by time. Shape (N,) where N is the length of the trajectory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dones</span></code> (dataset) - done signal, equal to 1 if playing the corresponding action in the state should terminate the episode. Shape (N,) where N is the length of the trajectory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">obs</span></code> (group) - group for the observation modalities. Each modality is stored as a dataset.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modality_1&gt;</span></code> (dataset) - the first observation modality. Note that the name of this dataset and shape will vary. As an example, the name could be “agentview_image”, and the shape could be (N, 84, 84, 3).</p>
+<p>…</p>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">next_obs</span></code> (group) - group for the next observations.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modality_1&gt;</span></code> (dataset) - the first observation modality.</p>
+<p>…</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demo_1</span></code> (group) - group for the second trajectory</p>
+<p>…</p>
+</li>
+</ul>
+<div class="section" id="filter-keys-and-train-valid-splits">
+<h3>Filter Keys and Train-Valid Splits<a class="headerlink" href="#filter-keys-and-train-valid-splits" title="Permalink to this headline">¶</a></h3>
+<p>Each filter key is a dataset in the “mask” group of the dataset hdf5, which contains a list of the demo group keys - these correspond to subsets of trajectories in the dataset. Filter keys make it easy to train on a subset of the data present in an hdf5. A common use is to split a dataset into training and validation datasets using the <code class="docutils literal notranslate"><span class="pre">split_train_val.py</span></code> script.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python split_train_val.py --dataset /path/to/dataset.hdf5 --ratio <span class="m">0</span>.1
+</pre></div>
+</div>
+<p>The example above creates a <code class="docutils literal notranslate"><span class="pre">train</span></code> filter key and a <code class="docutils literal notranslate"><span class="pre">valid</span></code> filter key under <code class="docutils literal notranslate"><span class="pre">mask/train</span></code> and <code class="docutils literal notranslate"><span class="pre">mask/valid</span></code>, where the former contains a list of demo groups corresponding to a 90% subset of the dataset trajectories, and the latter contains a list of demo groups correspond to a 10% subset of the dataset trajectories. These filter keys are used by the data loader during training if <code class="docutils literal notranslate"><span class="pre">config.experiment.validate</span></code> is set to True in the training config.</p>
+<p>Many of the released datasets contain other filter keys besides the train-val splits. Some contain <code class="docutils literal notranslate"><span class="pre">20_percent</span></code> and <code class="docutils literal notranslate"><span class="pre">50_percent</span></code> filter keys corresponding to data subsets, and the Multi-Human datasets contain filter keys that correspond to each operator’s data (e.g. <code class="docutils literal notranslate"><span class="pre">better_operator_1</span></code>, <code class="docutils literal notranslate"><span class="pre">better_operator_2</span></code>), and ones that correspond to different combinations of operator data (e.g. <code class="docutils literal notranslate"><span class="pre">better</span></code>, <code class="docutils literal notranslate"><span class="pre">worse_better</span></code>).</p>
+<p>Using these filter keys during training is simple. For example, to use the <code class="docutils literal notranslate"><span class="pre">20_percent</span></code> subset during training, you can simply set <code class="docutils literal notranslate"><span class="pre">config.train.hdf5_filter_key</span> <span class="pre">=</span> <span class="pre">&quot;20_percent&quot;</span></code> in the training config. If using validation, then the <code class="docutils literal notranslate"><span class="pre">20_percent_train</span></code> and <code class="docutils literal notranslate"><span class="pre">20_percent_valid</span></code> filter keys will also be used – these were generated using the <code class="docutils literal notranslate"><span class="pre">split_train_val.py</span></code> script by passing <code class="docutils literal notranslate"><span class="pre">--filter_key</span> <span class="pre">20_percent</span></code>.</p>
+<p>For robosuite datasets, if attempting to create your own train-val splits, we recommend running the <code class="docutils literal notranslate"><span class="pre">split_train_val.py</span></code> script on the <code class="docutils literal notranslate"><span class="pre">demo.hdf5</span></code> file before extracting observations, since filter keys are copied from the source hdf5 during observation extraction (see more details below on robosuite hdf5s). This will ensure that all postprocessed hdf5s generated from the <code class="docutils literal notranslate"><span class="pre">demo.hdf5</span></code> inherits the same filter keys.</p>
+</div>
+<div class="section" id="storing-image-observations">
+<h3>Storing image observations<a class="headerlink" href="#storing-image-observations" title="Permalink to this headline">¶</a></h3>
+<p>The repository expects image observations stored in the hdf5 to be of type <code class="docutils literal notranslate"><span class="pre">np.uint8</span></code> and be stored in channel-last <code class="docutils literal notranslate"><span class="pre">(H,</span> <span class="pre">W,</span> <span class="pre">C)</span></code> format. This is for two reasons - (1) this is a common format that many <code class="docutils literal notranslate"><span class="pre">gym</span></code> environments and all <code class="docutils literal notranslate"><span class="pre">robosuite</span></code> environments return image observations in, and (2) using <code class="docutils literal notranslate"><span class="pre">np.uint8</span></code> saves space in dataset storage, as opposed to using floats. Note that the robosuite observation extraction script (<code class="docutils literal notranslate"><span class="pre">dataset_states_to_obs.py</span></code>) already stores images in the correct format.</p>
+</div>
+<div class="section" id="storing-actions">
+<h3>Storing actions<a class="headerlink" href="#storing-actions" title="Permalink to this headline">¶</a></h3>
+<p>The repository <strong>expects all actions to be normalized</strong> between -1 and 1 (this makes for easier policy learning and allows the use of <code class="docutils literal notranslate"><span class="pre">tanh</span></code> layers). The <code class="docutils literal notranslate"><span class="pre">get_dataset_info.py</span></code> script can be used to sanity check the actions in a dataset, as it will throw an <code class="docutils literal notranslate"><span class="pre">Exception</span></code> if there is a violation.</p>
+</div>
+<div class="section" id="view-dataset-structure-and-videos">
+<h3>View Dataset Structure and Videos<a class="headerlink" href="#view-dataset-structure-and-videos" title="Permalink to this headline">¶</a></h3>
+<p><strong>Note:</strong> The examples in this section use the small hdf5 dataset packaged with the repository in <code class="docutils literal notranslate"><span class="pre">tests/assets/test.hdf5</span></code>, but you can run these examples with any dataset hdf5.</p>
+<p><strong>Warning:</strong> If you are using the default dataset, please make sure that robosuite is on the <code class="docutils literal notranslate"><span class="pre">offline_study</span></code> branch of robosuite – this is necessary for the playback scripts to function properly.</p>
+<p>The repository offers a simple utility script (<code class="docutils literal notranslate"><span class="pre">get_dataset_info.py</span></code>) to view the hdf5 dataset structure and some statistics of hdf5 datasets. The script will print out some statistics about the trajectories, the filter keys present in the dataset, the environment metadata in the dataset, and the dataset structure for the first demonstration. Pass the <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> argument to print the list of demonstration keys under each filter key, and the dataset structure for all demonstrations.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python get_dataset_info.py --dataset ../../tests/assets/test.hdf5
+</pre></div>
+</div>
+<p>The repository also offers a utility script (<code class="docutils literal notranslate"><span class="pre">playback_dataset.py</span></code>) that allows you to easily view dataset trajectories, and verify that the recorded dataset actions are reasonable. The example below loads the saved MuJoCo simulator states one by one in a simulation environment, and renders frames from some simulation cameras to generate a video, for the first 5 trajectories. This is an easy way to view trajectories from the dataset. After this script runs, you can view the video at <code class="docutils literal notranslate"><span class="pre">/tmp/playback_dataset.mp4</span></code>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --render_image_names agentview robot0_eye_in_hand --video_path /tmp/playback_dataset.mp4 --n <span class="m">5</span>
+</pre></div>
+</div>
+<p>An alternative way to view the demonstrations is to directly visualize the image observations in the dataset. This is especially useful for real robot datasets, where there is no simulator to use for rendering.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --use-obs --render_image_names agentview_image --video_path /tmp/obs_trajectory.mp4
+</pre></div>
+</div>
+<p>It’s also easy to use the script to verify that the dataset actions are reasonable, by playing the actions back one by one in the environment.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --use-actions --render_image_names agentview --video_path /tmp/playback_dataset_with_actions.mp4
+</pre></div>
+</div>
+<p>Finally, the script can be used to visualize the initial states in the demonstration data.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --first --render_image_names agentview --video_path /tmp/dataset_task_inits.mp4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="robosuite-hdf5-datasets">
+<h2>Robosuite HDF5 Datasets<a class="headerlink" href="#robosuite-hdf5-datasets" title="Permalink to this headline">¶</a></h2>
+<p>The repository is fully compatible with datasets collected using <a class="reference external" href="https://robosuite.ai/">robosuite</a>. See <a class="reference external" href="https://robosuite.ai/docs/algorithms/demonstrations.html">this link</a> for more information on collecting your own human demonstrations using robosuite.</p>
+<div class="section" id="converting-robosuite-hdf5-datasets">
+<h3>Converting robosuite hdf5 datasets<a class="headerlink" href="#converting-robosuite-hdf5-datasets" title="Permalink to this headline">¶</a></h3>
+<p>The raw <code class="docutils literal notranslate"><span class="pre">demo.hdf5</span></code> file generated by the <code class="docutils literal notranslate"><span class="pre">collect_human_demonstrations.py</span></code> robosuite script can easily be modified in-place to be compatible with this repository, by using the following conversion script in the scripts folder.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python conversion/convert_robosuite.py --dataset /path/to/demo.hdf5
+</pre></div>
+</div>
+<p>Afterwards, observations should be extracted from the <code class="docutils literal notranslate"><span class="pre">demo.hdf5</span></code> dataset (see below).</p>
+</div>
+<div class="section" id="structure-of-raw-collected-demonstrations">
+<h3>Structure of raw collected demonstrations<a class="headerlink" href="#structure-of-raw-collected-demonstrations" title="Permalink to this headline">¶</a></h3>
+<p>The structure of these converted raw <code class="docutils literal notranslate"><span class="pre">demo.hdf5</span></code> files is very similar to the normal hdf5 dataset structure, and is compatible with scripts such as <code class="docutils literal notranslate"><span class="pre">get_dataset_info.py</span></code> and <code class="docutils literal notranslate"><span class="pre">playback_dataset.py</span></code>, but it is missing observations (such as proprioception, object poses, and images),, rewards, and dones, which are necessary for training policies. Keeping these raw <code class="docutils literal notranslate"><span class="pre">demo.hdf5</span></code> datasets around is a good idea – it <strong>allows flexibility in extracting different kinds of observations and rewards</strong> (see below section on extracting observations). The structure of these raw datasets is shown below.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code> (group)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">total</span></code> (attribute) - number of state-action samples in the dataset</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">env_args</span></code> (attribute) - a json string that contains metadata on the environment and relevant arguments used for collecting data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demo_0</span></code> (group) - group for the first demonstration (every demonstration has a group)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num_samples</span></code> (attribute) - the number of state-action samples in this trajectory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model_file</span></code> (attribute) - the xml string corresponding to the MJCF MuJoCo model</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">states</span></code> (dataset) - flattened raw MuJoCo states, ordered by time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">actions</span></code> (dataset) - environment actions, ordered by time</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demo_1</span></code> (group) - group for the second demonstration</p>
+<p>…</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="extracting-observations-from-mujoco-states">
+<h3>Extracting Observations from MuJoCo states<a class="headerlink" href="#extracting-observations-from-mujoco-states" title="Permalink to this headline">¶</a></h3>
+<p>As mentioned above, the <code class="docutils literal notranslate"><span class="pre">demo.hdf5</span></code> file produced by robosuite only contains low-level mujoco states - it does not contain observations (such as proprioception, object poses, and images), rewards, or dones - all of which may be needed for learning. In this section, we show how to postprocess these hdf5 files to produce ones compatible with the training pipeline. We provide two examples below - one of which produces an hdf5 with a low-dim observation space, and one which produces an hdf5 with an image observation space. These commands are similar to the ones we used to produce <code class="docutils literal notranslate"><span class="pre">low_dim.hdf5</span></code> and <code class="docutils literal notranslate"><span class="pre">image.hdf5</span></code> files in our released datasets.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python dataset_states_to_obs.py --dataset /path/to/demo.hdf5 --output_name low_dim.hdf5 --done_mode <span class="m">2</span>
+$ python dataset_states_to_obs.py --dataset /path/to/demo.hdf5 --output_name image.hdf5 --done_mode <span class="m">2</span> --camera_names agentview robot0_eye_in_hand --camera_height <span class="m">84</span> --camera_width <span class="m">84</span>
+</pre></div>
+</div>
+<p>Note that we released the <code class="docutils literal notranslate"><span class="pre">demo.hdf5</span></code> files for our collected demonstration data as well - this makes it easy to extract observations directly from these files instead of using the pre-defined observation spaces provided in the <code class="docutils literal notranslate"><span class="pre">low_dim.hdf5</span></code> and <code class="docutils literal notranslate"><span class="pre">image.hdf5</span></code> dataset files. For example, our image observation spaces consisted of the <code class="docutils literal notranslate"><span class="pre">agentview</span></code> and <code class="docutils literal notranslate"><span class="pre">robot0_eye_in_hand</span></code> cameras, with 84x84 images, but if you’d also like the option to train on the <code class="docutils literal notranslate"><span class="pre">birdview</span></code> camera images, and you’d like to increase image resolution to 120x120, you can do that easily using the script.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python dataset_states_to_obs.py --dataset /path/to/demo.hdf5 --output_name custom_image.hdf5 --done_mode <span class="m">2</span> --camera_names agentview robot0_eye_in_hand birdview --camera_height <span class="m">120</span> --camera_width <span class="m">120</span>
+</pre></div>
+</div>
+<p>The script can also be used to change the rewards and dones in the dataset. We used sparse rewards and dones on task success and at the end of each trajectory (this corresponds to done mode 2 in the script). However, the script can be used to write dense rewards, or change the done annotation to be 1 only at the end of each trajectory (this corresponds to done mode 1 in the script).</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python dataset_states_to_obs.py --dataset /path/to/demo.hdf5 --output_name image_dense.hdf5 --done_mode <span class="m">2</span> --dense --camera_names agentview robot0_eye_in_hand --camera_height <span class="m">84</span> --camera_width <span class="m">84</span>
+$ python dataset_states_to_obs.py --dataset /path/to/demo.hdf5 --output_name image_done_1.hdf5 --done_mode <span class="m">1</span> --camera_names agentview robot0_eye_in_hand --camera_height <span class="m">84</span> --camera_width <span class="m">84</span>
+</pre></div>
+</div>
+<p>For more details on how the released <code class="docutils literal notranslate"><span class="pre">demo.hdf5</span></code> dataset files were used to generate the <code class="docutils literal notranslate"><span class="pre">low_dim.hdf5</span></code> and <code class="docutils literal notranslate"><span class="pre">image.hdf5</span></code> files, please see the <code class="docutils literal notranslate"><span class="pre">extract_obs_from_raw_datasets.sh</span></code> script, which contains the commands that were used for our released datasets.</p>
+</div>
+</div>
+<div class="section" id="d4rl-datasets">
+<h2>D4RL Datasets<a class="headerlink" href="#d4rl-datasets" title="Permalink to this headline">¶</a></h2>
+<p>This repository is fully compatible with most <a class="reference external" href="https://github.com/rail-berkeley/d4rl">D4RL</a> datasets. See <a class="reference external" href="./results.html#d4rl">this link</a> for a guide on downloading D4RL datasets and running D4RL experiments.</p>
+</div>
+<div class="section" id="roboturk-pilot-datasets">
+<h2>RoboTurk Pilot Datasets<a class="headerlink" href="#roboturk-pilot-datasets" title="Permalink to this headline">¶</a></h2>
+<p>The first <a class="reference external" href="https://arxiv.org/abs/1811.02790">RoboTurk paper</a> released <a class="reference external" href="https://roboturk.stanford.edu/dataset_sim.html">large-scale pilot datasets</a> collected with robosuite <code class="docutils literal notranslate"><span class="pre">v0.3</span></code>. These datasets consist of over 1000 task demonstrations each on several Sawyer <code class="docutils literal notranslate"><span class="pre">PickPlace</span></code> and <code class="docutils literal notranslate"><span class="pre">NutAssembly</span></code> task variants, collected by several human operators. This repository is fully compatible with these datasets.</p>
+<p><img alt="roboturk_pilot" src="../images/roboturk_pilot.png" /></p>
+<p>To get started, first download the dataset <a class="reference external" href="http://cvgl.stanford.edu/projects/roboturk/RoboTurkPilot.zip">here</a> (~9 GB download), and unzip the file, resulting in a <code class="docutils literal notranslate"><span class="pre">RoboTurkPilot</span></code> folder. This folder has subdirectories corresponding to each task, each with a raw hdf5 file. You can convert the demonstrations using a command like the one below.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert the Can demonstrations, and also create a &quot;fastest_225&quot; filter_key (prior work such as IRIS has trained on this subset)</span>
+$ python conversion/convert_roboturk_pilot.py --folder /path/to/RoboTurkPilot/bins-Can --n <span class="m">225</span>
+</pre></div>
+</div>
+<p>Next, make sure that you’re on the <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/tree/roboturk_v1">roboturk_v1</a> branch of robosuite, which is a modified version of v0.3. <strong>You should always be on the roboturk_v1 branch when using these datasets.</strong> Finally, follow the instructions in the above “Extracting Observations from MuJoCo states” section to extract observations from the raw converted <code class="docutils literal notranslate"><span class="pre">demo.hdf5</span></code> file, in order to produce an hdf5 ready for training.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="model_zoo.html" class="btn btn-neutral float-right" title="Using the Model Zoo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="examples.html" class="btn btn-neutral float-left" title="Working with robomimic Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

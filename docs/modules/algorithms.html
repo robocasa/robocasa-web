@@ -1,0 +1,883 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Algorithms &mdash; robomimic 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Models" href="models.html" />
+    <link rel="prev" title="SequenceDataset" href="dataset.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> robomimic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/quickstart.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/advanced.html">Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/examples.html">Working with robomimic Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/datasets.html">Using Demonstration Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/results.html">Reproducing Study Results</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#initialization">Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#important-class-methods">Important Class Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#train-loop">Train Loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-time">Test Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#implemented-algorithms">Implemented Algorithms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bc">BC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bc-rnn">BC-RNN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hbc">HBC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iris">IRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bcq">BCQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cql">CQL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#td3-bc">TD3-BC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#building-your-own-algorithm">Building your own Algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configs.html">Configs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utils</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/robomimic.html">robomimic package</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/contributing.html">Contributing Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/acknowledgments.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/references.html">Projects using robomimic</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robomimic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Algorithms</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/modules/algorithms.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="algorithms">
+<h1>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">Algo</span></code> class is an abstraction used to make creating and training networks easy.</p>
+<div class="section" id="initialization">
+<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h2>
+<p>The standard entry point for creating <code class="docutils literal notranslate"><span class="pre">Algo</span></code> class instances is the <code class="docutils literal notranslate"><span class="pre">algo_factory</span></code> function in <code class="docutils literal notranslate"><span class="pre">algo/algo.py</span></code>. This uses a mapping from an algo name (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;bc&quot;</span></code>) to a special <code class="docutils literal notranslate"><span class="pre">algo_config_to_class</span></code> function, that is responsible for reading an <code class="docutils literal notranslate"><span class="pre">algo_config</span></code> (<code class="docutils literal notranslate"><span class="pre">config.algo</span></code> section of the config) and returning the appropriate algo class name to instantiate, along with any additional keyword arguments needed. This is necessary because algorithms can actually have multiple subclasses with different functionality - for example, BC has the <code class="docutils literal notranslate"><span class="pre">BC_GMM</span></code> class for training GMM policies, and the <code class="docutils literal notranslate"><span class="pre">BC_RNN</span></code> class for training RNN policies.</p>
+<p>Therefore, every algorithm file (for example <code class="docutils literal notranslate"><span class="pre">algo/bc.py</span></code>) implements an <code class="docutils literal notranslate"><span class="pre">algo_config_to_class</span></code> function. The function should have the <code class="docutils literal notranslate"><span class="pre">register_algo_factory_func</span></code> decorator with the algo name (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;bc&quot;</span></code>) - this registers the function into the registry used by <code class="docutils literal notranslate"><span class="pre">algo_factory</span></code>. The algo name should match the <code class="docutils literal notranslate"><span class="pre">ALGO_NAME</span></code> property in the corresponding config class for the algorithm (for BC, this is in the <code class="docutils literal notranslate"><span class="pre">BCConfig</span></code> class in <code class="docutils literal notranslate"><span class="pre">configs/bc_config.py</span></code>). The implementation from <code class="docutils literal notranslate"><span class="pre">algo/bc.py</span></code> is reproduced below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@register_algo_factory_func</span><span class="p">(</span><span class="s2">&quot;bc&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">algo_config_to_class</span><span class="p">(</span><span class="n">algo_config</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Maps algo config to the BC algo class to instantiate, along with additional algo kwargs.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        algo_config (Config instance): algo config</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        algo_class: subclass of Algo</span>
+<span class="sd">        algo_kwargs (dict): dictionary of additional kwargs to pass to algorithm</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># note: we need the check below because some configs import BCConfig and exclude</span>
+    <span class="c1"># some of these options</span>
+    <span class="n">gaussian_enabled</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;gaussian&quot;</span> <span class="ow">in</span> <span class="n">algo_config</span> <span class="ow">and</span> <span class="n">algo_config</span><span class="o">.</span><span class="n">gaussian</span><span class="o">.</span><span class="n">enabled</span><span class="p">)</span>
+    <span class="n">gmm_enabled</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;gmm&quot;</span> <span class="ow">in</span> <span class="n">algo_config</span> <span class="ow">and</span> <span class="n">algo_config</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">enabled</span><span class="p">)</span>
+    <span class="n">vae_enabled</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;vae&quot;</span> <span class="ow">in</span> <span class="n">algo_config</span> <span class="ow">and</span> <span class="n">algo_config</span><span class="o">.</span><span class="n">vae</span><span class="o">.</span><span class="n">enabled</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">algo_config</span><span class="o">.</span><span class="n">rnn</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">gmm_enabled</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">BC_RNN_GMM</span><span class="p">,</span> <span class="p">{}</span>
+        <span class="k">return</span> <span class="n">BC_RNN</span><span class="p">,</span> <span class="p">{}</span>
+    <span class="k">assert</span> <span class="nb">sum</span><span class="p">([</span><span class="n">gaussian_enabled</span><span class="p">,</span> <span class="n">gmm_enabled</span><span class="p">,</span> <span class="n">vae_enabled</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">gaussian_enabled</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">BC_Gaussian</span><span class="p">,</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">gmm_enabled</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">BC_GMM</span><span class="p">,</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">vae_enabled</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">BC_VAE</span><span class="p">,</span> <span class="p">{}</span>
+    <span class="k">return</span> <span class="n">BC</span><span class="p">,</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="important-class-methods">
+<h2>Important Class Methods<a class="headerlink" href="#important-class-methods" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we outline important class methods that each <code class="docutils literal notranslate"><span class="pre">Algo</span></code> subclass needs to implement or override, categorizing them by whether they are usually called during initialization, at train time, or test time.</p>
+<ul class="simple">
+<li><p><strong>Initialization</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">_create_networks(self)</span></code></p>
+<ul>
+<li><p>Called on class initialization - should construct networks and place them into the <code class="docutils literal notranslate"><span class="pre">self.nets</span></code> ModuleDict</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Train</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">process_batch_for_training(self,</span> <span class="pre">batch)</span></code></p>
+<ul>
+<li><p>Takes a batch sampled from the data loader, and filters out the relevant portions needed for the algorithm. It should also send the batch to the correct device (cpu or gpu).</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">train_on_batch(self,</span> <span class="pre">batch,</span> <span class="pre">epoch,</span> <span class="pre">validate=False)</span></code></p>
+<ul>
+<li><p>Takes a processed batch, and trains all networks on the batch of data, taking the epoch number and whether this is a training or validation batch into account. This is where the main logic for training happens (e.g. forward and backward passes for networks). Should return a dictionary of important training statistics (e.g. loss on the batch, gradient norms, etc.)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log_info(self,</span> <span class="pre">info)</span></code></p>
+<ul>
+<li><p>Takes the output of <code class="docutils literal notranslate"><span class="pre">train_on_batch</span></code> and returns a new processed dictionary for tensorboard logging.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_train(self)</span></code></p>
+<ul>
+<li><p>Prepares network modules for training. By default, just calls <code class="docutils literal notranslate"><span class="pre">self.nets.train()</span></code>, but certain algorithms may always want a subset of the networks in evaluation mode (such as target networks for BCQ). In this case they should override this method.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">on_epoch_end(self,</span> <span class="pre">epoch)</span></code></p>
+<ul>
+<li><p>Called at the end of each training epoch. Usually consists of stepping learning rate schedulers (if they are being used).</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">serialize(self)</span></code></p>
+<ul>
+<li><p>Returns the state dictionary that contains the current model parameters. This is used to produce agent checkpoints. By default, returns <code class="docutils literal notranslate"><span class="pre">self.nets.state_dict()</span></code> - usually only needs to be overriden by hierarchical algorithms like HBC and IRIS to collect state dictionaries from sub-algorithms.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Test</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_eval(self)</span></code></p>
+<ul>
+<li><p>Prepares network modules for evaluation. By default, just calls <code class="docutils literal notranslate"><span class="pre">self.nets.eval()</span></code>, but certain hierarchical algorithms like HBC and IRIS override this to call <code class="docutils literal notranslate"><span class="pre">set_eval</span></code> on their sub-algorithms.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">deserialize(self,</span> <span class="pre">model_dict)</span></code></p>
+<ul>
+<li><p>Inverse operation of <code class="docutils literal notranslate"><span class="pre">serialize</span></code> - load model weights. Used at test-time to restore model weights.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_action(self,</span> <span class="pre">obs_dict,</span> <span class="pre">goal_dict=None)</span></code></p>
+<ul>
+<li><p>The primary method that is called at test-time to return one or more actions, given observations.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reset(self)</span></code></p>
+<ul>
+<li><p>Called at the beginning of each rollout episode to clear internal agent state before starting a rollout. As an example, <code class="docutils literal notranslate"><span class="pre">BC_RNN</span></code> resets the step counter and hidden state.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="train-loop">
+<h2>Train Loop<a class="headerlink" href="#train-loop" title="Permalink to this headline">¶</a></h2>
+<p>We reproduce the stripped down version of the train loop from <code class="docutils literal notranslate"><span class="pre">examples/simple_train_loop.py</span></code> to show how methods of <code class="docutils literal notranslate"><span class="pre">Algo</span></code> instances are used during training.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @model should be instance of Algo class to use for training</span>
+<span class="c1"># @data_loader should be instance of torch.utils.data.DataLoader for sampling batches</span>
+
+<span class="c1"># train for 50 epochs and 100 gradient steps per epoch</span>
+<span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">gradient_steps_per_epoch</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># ensure model is in train mode</span>
+<span class="n">model</span><span class="o">.</span><span class="n">set_train</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_epochs</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span> <span class="c1"># epoch numbers start at 1</span>
+    <span class="c1"># iterator for data_loader - it yields batches</span>
+    <span class="n">data_loader_iter</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">data_loader</span><span class="p">)</span>
+
+    <span class="c1"># record losses</span>
+    <span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">gradient_steps_per_epoch</span><span class="p">):</span>
+
+        <span class="c1"># load next batch from data loader</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">batch</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">data_loader_iter</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+            <span class="c1"># data loader ran out of batches - reset and yield first batch</span>
+            <span class="n">data_loader_iter</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">data_loader</span><span class="p">)</span>
+            <span class="n">batch</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">data_loader_iter</span><span class="p">)</span>
+
+        <span class="c1"># process batch for training</span>
+        <span class="n">input_batch</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">process_batch_for_training</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+
+        <span class="c1"># forward and backward pass</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">train_on_batch</span><span class="p">(</span><span class="n">batch</span><span class="o">=</span><span class="n">input_batch</span><span class="p">,</span> <span class="n">epoch</span><span class="o">=</span><span class="n">epoch</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># record loss</span>
+        <span class="n">step_log</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+        <span class="n">losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">step_log</span><span class="p">[</span><span class="s2">&quot;Loss&quot;</span><span class="p">])</span>
+
+    <span class="c1"># save model</span>
+    <span class="n">model_params</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">serialize</span><span class="p">()</span>
+    <span class="n">model_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">serialize</span><span class="p">())</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model_dict</span><span class="p">,</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">ckpt</span><span class="o">.</span><span class="n">pth</span><span class="p">)</span>
+        
+    <span class="c1"># do anything model needs to after finishing epoch</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">on_epoch_end</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-time">
+<h2>Test Time<a class="headerlink" href="#test-time" title="Permalink to this headline">¶</a></h2>
+<p>We reproduce some logic from the <code class="docutils literal notranslate"><span class="pre">policy_from_checkpoint</span></code> function defined in <code class="docutils literal notranslate"><span class="pre">utils/file_utils.py</span></code> to show how <code class="docutils literal notranslate"><span class="pre">Algo</span></code> methods are used to load a model.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># load checkpoint</span>
+<span class="n">ckpt_dict</span> <span class="o">=</span> <span class="n">maybe_dict_from_checkpoint</span><span class="p">(</span><span class="n">ckpt_path</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">ckpt</span><span class="o">.</span><span class="n">pth</span><span class="p">)</span>
+<span class="n">algo_name</span> <span class="o">=</span> <span class="n">ckpt_dict</span><span class="p">[</span><span class="s2">&quot;algo_name&quot;</span><span class="p">]</span>
+<span class="n">config</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">config_from_checkpoint</span><span class="p">(</span><span class="n">algo_name</span><span class="o">=</span><span class="n">algo_name</span><span class="p">,</span> <span class="n">ckpt_dict</span><span class="o">=</span><span class="n">ckpt_dict</span><span class="p">)</span>
+
+<span class="c1"># create Algo instance</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">algo_factory</span><span class="p">(</span>
+    <span class="n">algo_name</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">,</span>
+    <span class="n">modality_shapes</span><span class="o">=</span><span class="n">ckpt_dict</span><span class="p">[</span><span class="s2">&quot;shape_metadata&quot;</span><span class="p">][</span><span class="s2">&quot;all_shapes&quot;</span><span class="p">],</span>
+    <span class="n">ac_dim</span><span class="o">=</span><span class="n">ckpt_dict</span><span class="p">[</span><span class="s2">&quot;shape_metadata&quot;</span><span class="p">][</span><span class="s2">&quot;ac_dim&quot;</span><span class="p">],</span>
+    <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># load weights</span>
+<span class="n">model</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">ckpt_dict</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">set_eval</span><span class="p">()</span>
+
+<span class="c1"># rollout wrapper around model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">RolloutPolicy</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We also reproduce a rollout loop to show how the <code class="docutils literal notranslate"><span class="pre">RolloutPolicy</span></code> wrapper (see <code class="docutils literal notranslate"><span class="pre">algo/algo.py</span></code>) is used to easily deploy trained models in the environment.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @policy should be instance of RolloutPolicy</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">RolloutPolicy</span><span class="p">)</span>
+
+<span class="c1"># episode reset (calls @set_eval and @reset)</span>
+<span class="n">policy</span><span class="o">.</span><span class="n">start_episode</span><span class="p">()</span>
+<span class="n">obs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+<span class="n">horizon</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">total_return</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">step_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">horizon</span><span class="p">):</span>
+    <span class="c1"># get action from policy (calls @get_action)</span>
+    <span class="n">act</span> <span class="o">=</span> <span class="n">policy</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
+    <span class="c1"># play action</span>
+    <span class="n">next_obs</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">done</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">act</span><span class="p">)</span>
+    <span class="n">total_return</span> <span class="o">+=</span> <span class="n">r</span>
+    <span class="n">success</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">is_success</span><span class="p">()[</span><span class="s2">&quot;task&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">done</span> <span class="ow">or</span> <span class="n">success</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="implemented-algorithms">
+<h2>Implemented Algorithms<a class="headerlink" href="#implemented-algorithms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bc">
+<h3>BC<a class="headerlink" href="#bc" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Vanilla Behavioral Cloning (see <a class="reference external" href="https://papers.nips.cc/paper/1988/file/812b4ba287f5ee0bc9d43bbf5bbe87fb-Paper.pdf">this paper</a>), consisting of simple supervised regression from observations to actions. Implemented in the <code class="docutils literal notranslate"><span class="pre">BC</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/bc.py</span></code>, along with some variants such as <code class="docutils literal notranslate"><span class="pre">BC_GMM</span></code> (stochastic GMM policy) and <code class="docutils literal notranslate"><span class="pre">BC_VAE</span></code> (stochastic VAE policy)</p></li>
+</ul>
+</div>
+<div class="section" id="bc-rnn">
+<h3>BC-RNN<a class="headerlink" href="#bc-rnn" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Behavioral Cloning with an RNN network. Implemented in the <code class="docutils literal notranslate"><span class="pre">BC_RNN</span></code> and <code class="docutils literal notranslate"><span class="pre">BC_RNN_GMM</span></code> (recurrent GMM policy) classes in <code class="docutils literal notranslate"><span class="pre">algo/bc.py</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="hbc">
+<h3>HBC<a class="headerlink" href="#hbc" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Hierarchical Behavioral Cloning - the implementation is largely based off of <a class="reference external" href="https://arxiv.org/abs/2003.06085">this paper</a>. Implemented in the <code class="docutils literal notranslate"><span class="pre">HBC</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/hbc.py</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="iris">
+<h3>IRIS<a class="headerlink" href="#iris" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A recent batch offline RL algorithm from <a class="reference external" href="https://arxiv.org/abs/1911.05321">this paper</a>. Implemented in the <code class="docutils literal notranslate"><span class="pre">IRIS</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/iris.py</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="bcq">
+<h3>BCQ<a class="headerlink" href="#bcq" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A recent batch offline RL algorithm from <a class="reference external" href="https://arxiv.org/abs/1812.02900">this paper</a>. Implemented in the <code class="docutils literal notranslate"><span class="pre">BCQ</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/bcq.py</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="cql">
+<h3>CQL<a class="headerlink" href="#cql" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A recent batch offline RL algorithm from <a class="reference external" href="https://arxiv.org/abs/2006.04779">this paper</a>. Implemented in the <code class="docutils literal notranslate"><span class="pre">CQL</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/cql.py</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="td3-bc">
+<h3>TD3-BC<a class="headerlink" href="#td3-bc" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A recent algorithm from <a class="reference external" href="https://arxiv.org/abs/2106.06860">this paper</a>. We implemented it as an example (see section below on building your own algorithm). Implemented in the <code class="docutils literal notranslate"><span class="pre">TD3_BC</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/td3_bc.py</span></code>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="building-your-own-algorithm">
+<h2>Building your own Algorithm<a class="headerlink" href="#building-your-own-algorithm" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we walk through an example of implementing a custom algorithm, to show how easy it is to extend the functionality in the repository. We choose to implement the recently proposed <a class="reference external" href="https://arxiv.org/abs/2106.06860">TD3-BC</a> algorithm.</p>
+<p>This requires implementing two new files - <code class="docutils literal notranslate"><span class="pre">algo/td3_bc.py</span></code> (which contains the <code class="docutils literal notranslate"><span class="pre">Algo</span></code> subclass implementation) and <code class="docutils literal notranslate"><span class="pre">config/td3_bc_config.py</span></code> (which contains the <code class="docutils literal notranslate"><span class="pre">Config</span></code> subclass implementation). We also make sure to add the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">robomimic.algo.td3_bc</span> <span class="pre">import</span> <span class="pre">TD3_BC</span></code> to <code class="docutils literal notranslate"><span class="pre">algo/__init__.py</span></code> and <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">robomimicL.config.td3_bc_config</span> <span class="pre">import</span> <span class="pre">TD3_BCConfig</span></code> to <code class="docutils literal notranslate"><span class="pre">config/__init__.py</span></code> to <code class="docutils literal notranslate"><span class="pre">config/__init__.py</span></code> to make sure the <code class="docutils literal notranslate"><span class="pre">Algo</span></code> and <code class="docutils literal notranslate"><span class="pre">Config</span></code> subclasses can be found.</p>
+<p>We first describe the config implementation - we implement a <code class="docutils literal notranslate"><span class="pre">TD3_BCConfig</span></code> config class that subclasses from <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code>. Importantly, we set the class variable <code class="docutils literal notranslate"><span class="pre">ALGO_NAME</span> <span class="pre">=</span> <span class="pre">&quot;td3_bc&quot;</span></code> to register this config under that algo name. We implement the <code class="docutils literal notranslate"><span class="pre">algo_config</span></code> function to populate <code class="docutils literal notranslate"><span class="pre">config.algo</span></code> with the keys needed for the algorithm - it is extremely similar to the <code class="docutils literal notranslate"><span class="pre">BCQConfig</span></code> implementation. Portions of the code are reproduced below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TD3_BCConfig</span><span class="p">(</span><span class="n">BaseConfig</span><span class="p">):</span>
+    <span class="n">ALGO_NAME</span> <span class="o">=</span> <span class="s2">&quot;td3_bc&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">algo_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># optimization parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">learning_rate</span><span class="o">.</span><span class="n">initial</span> <span class="o">=</span> <span class="mf">3e-4</span>      <span class="c1"># critic learning rate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">learning_rate</span><span class="o">.</span><span class="n">decay_factor</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># factor to decay LR by (if epoch schedule non-empty)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">learning_rate</span><span class="o">.</span><span class="n">epoch_schedule</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># epochs where LR decay occurs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">regularization</span><span class="o">.</span><span class="n">L2</span> <span class="o">=</span> <span class="mf">0.00</span>          <span class="c1"># L2 regularization strength</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">start_epoch</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>                  <span class="c1"># number of epochs before starting critic training (-1 means start right away)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">end_epoch</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>                    <span class="c1"># number of epochs before ending critic training (-1 means start right away)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">learning_rate</span><span class="o">.</span><span class="n">initial</span> <span class="o">=</span> <span class="mf">3e-4</span>       <span class="c1"># actor learning rate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">learning_rate</span><span class="o">.</span><span class="n">decay_factor</span> <span class="o">=</span> <span class="mf">0.1</span>   <span class="c1"># factor to decay LR by (if epoch schedule non-empty)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">learning_rate</span><span class="o">.</span><span class="n">epoch_schedule</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># epochs where LR decay occurs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">regularization</span><span class="o">.</span><span class="n">L2</span> <span class="o">=</span> <span class="mf">0.00</span>           <span class="c1"># L2 regularization strength</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">start_epoch</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>                   <span class="c1"># number of epochs before starting actor training (-1 means start right away)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">end_epoch</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>                     <span class="c1"># number of epochs before ending actor training (-1 means start right away)</span>
+
+        <span class="c1"># alpha value - for weighting critic loss vs. BC loss</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">2.5</span>
+
+        <span class="c1"># target network related parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">discount</span> <span class="o">=</span> <span class="mf">0.99</span>                       <span class="c1"># discount factor to use</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">n_step</span> <span class="o">=</span> <span class="mi">1</span>                            <span class="c1"># for using n-step returns in TD-updates</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">target_tau</span> <span class="o">=</span> <span class="mf">0.005</span>                    <span class="c1"># update rate for target networks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">infinite_horizon</span> <span class="o">=</span> <span class="kc">False</span>              <span class="c1"># if True, scale terminal rewards by 1 / (1 - discount) to treat as infinite horizon</span>
+
+        <span class="c1"># ================== Critic Network Config ===================</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">use_huber</span> <span class="o">=</span> <span class="kc">False</span>              <span class="c1"># Huber Loss instead of L2 for critic</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">max_gradient_norm</span> <span class="o">=</span> <span class="kc">None</span>       <span class="c1"># L2 gradient clipping for critic (None to use no clipping)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">value_bounds</span> <span class="o">=</span> <span class="kc">None</span>            <span class="c1"># optional 2-tuple to ensure lower and upper bound on value estimates </span>
+
+        <span class="c1"># critic ensemble parameters (TD3 trick)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">ensemble</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>                 <span class="c1"># number of Q networks in the ensemble</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">ensemble</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mf">1.0</span>          <span class="c1"># weighting for mixing min and max for target Q value</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">layer_dims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>   <span class="c1"># size of critic MLP</span>
+
+        <span class="c1"># ================== Actor Network Config ===================</span>
+
+        <span class="c1"># update actor and target networks every n gradients steps for each critic gradient step</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">update_freq</span> <span class="o">=</span> <span class="mi">2</span>
+
+        <span class="c1"># exploration noise used to form target action for Q-update - clipped Gaussian noise</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">noise_std</span> <span class="o">=</span> <span class="mf">0.2</span>                 <span class="c1"># zero-mean gaussian noise with this std is applied to actions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">noise_clip</span> <span class="o">=</span> <span class="mf">0.5</span>                <span class="c1"># noise is clipped in each dimension to (-noise_clip, noise_clip)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">layer_dims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>    <span class="c1"># size of actor MLP</span>
+</pre></div>
+</div>
+<p>Usually, we only need to implement the <code class="docutils literal notranslate"><span class="pre">algo_config</span></code> function to populate <code class="docutils literal notranslate"><span class="pre">config.algo</span></code> with the keys needed for the algorithm, but we also update the <code class="docutils literal notranslate"><span class="pre">experiment_config</span></code> function and <code class="docutils literal notranslate"><span class="pre">observation_config</span></code> function to make it easier to reproduce experiments on <code class="docutils literal notranslate"><span class="pre">gym</span></code> environments from the paper. See the source file for more details.</p>
+<p>Now we discuss the algorithm implementation. As described in the “Initialization” section above, we first need to implement the <code class="docutils literal notranslate"><span class="pre">algo_config_to_class</span></code> method - this is straightforward since we don’t have multiple variants of this algorithm. We take special care to make sure we register this function with the same algo name that we used for defining the config (<code class="docutils literal notranslate"><span class="pre">&quot;td3_bc&quot;</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@register_algo_factory_func</span><span class="p">(</span><span class="s2">&quot;td3_bc&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">algo_config_to_class</span><span class="p">(</span><span class="n">algo_config</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Maps algo config to the TD3_BC algo class to instantiate, along with additional algo kwargs.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        algo_config (Config instance): algo config</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        algo_class: subclass of Algo</span>
+<span class="sd">        algo_kwargs (dict): dictionary of additional kwargs to pass to algorithm</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># only one variant of TD3_BC for now</span>
+    <span class="k">return</span> <span class="n">TD3_BC</span><span class="p">,</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>Next, we’ll describe how we implement the methods outlined in the “Important Methods” section above. We omit several of the methods, since their implementation is extremely similar to the <code class="docutils literal notranslate"><span class="pre">BCQ</span></code> implementation. We start by defining the class and implementing <code class="docutils literal notranslate"><span class="pre">_create_networks</span></code>. The code uses helper functions <code class="docutils literal notranslate"><span class="pre">_create_critics</span></code> and <code class="docutils literal notranslate"><span class="pre">_create_actor</span></code> to create the critic and actor networks, as in the <code class="docutils literal notranslate"><span class="pre">BCQ</span></code> implementation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TD3_BC</span><span class="p">(</span><span class="n">PolicyAlgo</span><span class="p">,</span> <span class="n">ValueAlgo</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_create_networks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates networks and places them into @self.nets.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nets</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleDict</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_critics</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_actor</span><span class="p">()</span>
+
+        <span class="c1"># sync target networks at beginning of training</span>
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">critic_ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">])):</span>
+                <span class="n">TorchUtils</span><span class="o">.</span><span class="n">hard_update</span><span class="p">(</span>
+                    <span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">][</span><span class="n">critic_ind</span><span class="p">],</span> 
+                    <span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic_target&quot;</span><span class="p">][</span><span class="n">critic_ind</span><span class="p">],</span>
+                <span class="p">)</span>
+
+            <span class="n">TorchUtils</span><span class="o">.</span><span class="n">hard_update</span><span class="p">(</span>
+                <span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">],</span> 
+                <span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor_target&quot;</span><span class="p">],</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">nets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">_create_critics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">critic_class</span> <span class="o">=</span> <span class="n">ValueNets</span><span class="o">.</span><span class="n">ActionValueNetwork</span>
+        <span class="n">critic_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">obs_shapes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">obs_shapes</span><span class="p">,</span>
+            <span class="n">ac_dim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ac_dim</span><span class="p">,</span>
+            <span class="n">mlp_layer_dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">layer_dims</span><span class="p">,</span>
+            <span class="n">value_bounds</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">value_bounds</span><span class="p">,</span>
+            <span class="n">goal_shapes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">goal_shapes</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">ObsNets</span><span class="o">.</span><span class="n">obs_encoder_args_from_config</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obs_config</span><span class="o">.</span><span class="n">encoder</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Q network ensemble and target ensemble</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic_target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">ensemble</span><span class="o">.</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">critic</span> <span class="o">=</span> <span class="n">critic_class</span><span class="p">(</span><span class="o">**</span><span class="n">critic_args</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">critic</span><span class="p">)</span>
+
+            <span class="n">critic_target</span> <span class="o">=</span> <span class="n">critic_class</span><span class="p">(</span><span class="o">**</span><span class="n">critic_args</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic_target&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">critic_target</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_create_actor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">actor_class</span> <span class="o">=</span> <span class="n">PolicyNets</span><span class="o">.</span><span class="n">ActorNetwork</span>
+        <span class="n">actor_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">obs_shapes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">obs_shapes</span><span class="p">,</span>
+            <span class="n">goal_shapes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">goal_shapes</span><span class="p">,</span>
+            <span class="n">ac_dim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ac_dim</span><span class="p">,</span>
+            <span class="n">mlp_layer_dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">layer_dims</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">ObsNets</span><span class="o">.</span><span class="n">obs_encoder_args_from_config</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obs_config</span><span class="o">.</span><span class="n">encoder</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">actor_class</span><span class="p">(</span><span class="o">**</span><span class="n">actor_args</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor_target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">actor_class</span><span class="p">(</span><span class="o">**</span><span class="n">actor_args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next we describe the <code class="docutils literal notranslate"><span class="pre">train_on_batch</span></code> function, which implements the main training logic. The function trains the critic using the <code class="docutils literal notranslate"><span class="pre">_train_critic_on_batch</span></code> helper function, and then actor using the <code class="docutils literal notranslate"><span class="pre">_train_actor_on_batch</span></code> helper function (the actor is trained at a slower rate according to the <code class="docutils literal notranslate"><span class="pre">config.algo.actor.update_freq</span></code> config variable, as in the original author’s implementation). Finally, the target network parameters are moved a little closer to the current network parameters, using <code class="docutils literal notranslate"><span class="pre">TorchUtils.soft_update</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">train_on_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Training on a single batch of data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            batch (dict): dictionary with torch.Tensors sampled</span>
+<span class="sd">                from a data loader and filtered by @process_batch_for_training</span>
+
+<span class="sd">            epoch (int): epoch number - required by some Algos that need</span>
+<span class="sd">                to perform staged training and early stopping</span>
+
+<span class="sd">            validate (bool): if True, don&#39;t perform any learning updates.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            info (dict): dictionary of relevant inputs, outputs, and losses</span>
+<span class="sd">                that might be relevant for logging</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">TorchUtils</span><span class="o">.</span><span class="n">maybe_no_grad</span><span class="p">(</span><span class="n">no_grad</span><span class="o">=</span><span class="n">validate</span><span class="p">):</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">PolicyAlgo</span><span class="o">.</span><span class="n">train_on_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="n">validate</span><span class="p">)</span>
+
+            <span class="c1"># Critic training</span>
+            <span class="n">no_critic_backprop</span> <span class="o">=</span> <span class="n">validate</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_epoch</span><span class="p">(</span><span class="n">net_name</span><span class="o">=</span><span class="s2">&quot;critic&quot;</span><span class="p">,</span> <span class="n">epoch</span><span class="o">=</span><span class="n">epoch</span><span class="p">))</span>
+            <span class="k">with</span> <span class="n">TorchUtils</span><span class="o">.</span><span class="n">maybe_no_grad</span><span class="p">(</span><span class="n">no_grad</span><span class="o">=</span><span class="n">no_critic_backprop</span><span class="p">):</span>
+                <span class="n">critic_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_train_critic_on_batch</span><span class="p">(</span>
+                    <span class="n">batch</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span> 
+                    <span class="n">epoch</span><span class="o">=</span><span class="n">epoch</span><span class="p">,</span> 
+                    <span class="n">no_backprop</span><span class="o">=</span><span class="n">no_critic_backprop</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="n">info</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">critic_info</span><span class="p">)</span>
+
+            <span class="c1"># update actor and target networks at lower frequency</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">no_critic_backprop</span><span class="p">:</span>
+                <span class="c1"># update counter only on critic training gradient steps</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">actor_update_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">do_actor_update</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actor_update_counter</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">update_freq</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="c1"># Actor training</span>
+            <span class="n">no_actor_backprop</span> <span class="o">=</span> <span class="n">validate</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_epoch</span><span class="p">(</span><span class="n">net_name</span><span class="o">=</span><span class="s2">&quot;actor&quot;</span><span class="p">,</span> <span class="n">epoch</span><span class="o">=</span><span class="n">epoch</span><span class="p">))</span>
+            <span class="n">no_actor_backprop</span> <span class="o">=</span> <span class="n">no_actor_backprop</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">do_actor_update</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">TorchUtils</span><span class="o">.</span><span class="n">maybe_no_grad</span><span class="p">(</span><span class="n">no_grad</span><span class="o">=</span><span class="n">no_actor_backprop</span><span class="p">):</span>
+                <span class="n">actor_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_train_actor_on_batch</span><span class="p">(</span>
+                    <span class="n">batch</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span> 
+                    <span class="n">epoch</span><span class="o">=</span><span class="n">epoch</span><span class="p">,</span> 
+                    <span class="n">no_backprop</span><span class="o">=</span><span class="n">no_actor_backprop</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="n">info</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">actor_info</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">no_actor_backprop</span><span class="p">:</span>
+                <span class="c1"># to match original implementation, only update target networks on </span>
+                <span class="c1"># actor gradient steps</span>
+                <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+                    <span class="c1"># update the target critic networks</span>
+                    <span class="k">for</span> <span class="n">critic_ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">])):</span>
+                        <span class="n">TorchUtils</span><span class="o">.</span><span class="n">soft_update</span><span class="p">(</span>
+                            <span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">][</span><span class="n">critic_ind</span><span class="p">],</span> 
+                            <span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic_target&quot;</span><span class="p">][</span><span class="n">critic_ind</span><span class="p">],</span> 
+                            <span class="n">tau</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">target_tau</span><span class="p">,</span>
+                        <span class="p">)</span>
+
+                    <span class="c1"># update target actor network</span>
+                    <span class="n">TorchUtils</span><span class="o">.</span><span class="n">soft_update</span><span class="p">(</span>
+                        <span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">],</span> 
+                        <span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor_target&quot;</span><span class="p">],</span> 
+                        <span class="n">tau</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">target_tau</span><span class="p">,</span>
+                    <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">info</span>
+</pre></div>
+</div>
+<p>Below, we show the helper functions for training the critics, to be explicit in how the Bellman backup is used to construct the TD loss. The target Q values for the TD loss are obtained in the same way as <a class="reference external" href="https://arxiv.org/abs/1802.09477">TD3</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">_train_critic_on_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">no_backprop</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+        <span class="c1"># batch variables</span>
+        <span class="n">s_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;obs&quot;</span><span class="p">]</span>
+        <span class="n">a_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;actions&quot;</span><span class="p">]</span>
+        <span class="n">r_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;rewards&quot;</span><span class="p">]</span>
+        <span class="n">ns_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;next_obs&quot;</span><span class="p">]</span>
+        <span class="n">goal_s_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;goal_obs&quot;</span><span class="p">]</span>
+
+        <span class="c1"># 1 if not done, 0 otherwise</span>
+        <span class="n">done_mask_batch</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;dones&quot;</span><span class="p">]</span>
+        <span class="n">info</span><span class="p">[</span><span class="s2">&quot;done_masks&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">done_mask_batch</span>
+
+        <span class="c1"># Bellman backup for Q-targets</span>
+        <span class="n">q_targets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_target_values</span><span class="p">(</span>
+            <span class="n">next_states</span><span class="o">=</span><span class="n">ns_batch</span><span class="p">,</span> 
+            <span class="n">goal_states</span><span class="o">=</span><span class="n">goal_s_batch</span><span class="p">,</span> 
+            <span class="n">rewards</span><span class="o">=</span><span class="n">r_batch</span><span class="p">,</span> 
+            <span class="n">dones</span><span class="o">=</span><span class="n">done_mask_batch</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">info</span><span class="p">[</span><span class="s2">&quot;critic/q_targets&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">q_targets</span>
+
+        <span class="c1"># Train all critics using this set of targets for regression</span>
+        <span class="k">for</span> <span class="n">critic_ind</span><span class="p">,</span> <span class="n">critic</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">]):</span>
+            <span class="n">critic_loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_critic_loss</span><span class="p">(</span>
+                <span class="n">critic</span><span class="o">=</span><span class="n">critic</span><span class="p">,</span> 
+                <span class="n">states</span><span class="o">=</span><span class="n">s_batch</span><span class="p">,</span> 
+                <span class="n">actions</span><span class="o">=</span><span class="n">a_batch</span><span class="p">,</span> 
+                <span class="n">goal_states</span><span class="o">=</span><span class="n">goal_s_batch</span><span class="p">,</span> 
+                <span class="n">q_targets</span><span class="o">=</span><span class="n">q_targets</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">info</span><span class="p">[</span><span class="s2">&quot;critic/critic</span><span class="si">{}</span><span class="s2">_loss&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">critic_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="n">critic_loss</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">no_backprop</span><span class="p">:</span>
+                <span class="n">critic_grad_norms</span> <span class="o">=</span> <span class="n">TorchUtils</span><span class="o">.</span><span class="n">backprop_for_loss</span><span class="p">(</span>
+                    <span class="n">net</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">][</span><span class="n">critic_ind</span><span class="p">],</span>
+                    <span class="n">optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">optimizers</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">][</span><span class="n">critic_ind</span><span class="p">],</span>
+                    <span class="n">loss</span><span class="o">=</span><span class="n">critic_loss</span><span class="p">,</span> 
+                    <span class="n">max_grad_norm</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">max_gradient_norm</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">info</span><span class="p">[</span><span class="s2">&quot;critic/critic</span><span class="si">{}</span><span class="s2">_grad_norms&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">critic_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="n">critic_grad_norms</span>
+
+        <span class="k">return</span> <span class="n">info</span>
+        
+    <span class="k">def</span> <span class="nf">_get_target_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">next_states</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">,</span> <span class="n">rewards</span><span class="p">,</span> <span class="n">dones</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper function to get target values for training Q-function with TD-loss.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="c1"># get next actions via target actor and noise</span>
+            <span class="n">next_target_actions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor_target&quot;</span><span class="p">](</span><span class="n">next_states</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">)</span>
+            <span class="n">noise</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">randn_like</span><span class="p">(</span><span class="n">next_target_actions</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">noise_std</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">noise_clip</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">noise_clip</span><span class="p">)</span>
+            <span class="n">next_actions</span> <span class="o">=</span> <span class="p">(</span><span class="n">next_target_actions</span> <span class="o">+</span> <span class="n">noise</span><span class="p">)</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+            <span class="c1"># TD3 trick to combine max and min over all Q-ensemble estimates into single target estimates</span>
+            <span class="n">all_value_targets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic_target&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">](</span><span class="n">next_states</span><span class="p">,</span> <span class="n">next_actions</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">max_value_targets</span> <span class="o">=</span> <span class="n">all_value_targets</span>
+            <span class="n">min_value_targets</span> <span class="o">=</span> <span class="n">all_value_targets</span>
+            <span class="k">for</span> <span class="n">critic_target</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic_target&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">:]:</span>
+                <span class="n">all_value_targets</span> <span class="o">=</span> <span class="n">critic_target</span><span class="p">(</span><span class="n">next_states</span><span class="p">,</span> <span class="n">next_actions</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">max_value_targets</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">max_value_targets</span><span class="p">,</span> <span class="n">all_value_targets</span><span class="p">)</span>
+                <span class="n">min_value_targets</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">min_value_targets</span><span class="p">,</span> <span class="n">all_value_targets</span><span class="p">)</span>
+            <span class="n">value_targets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">ensemble</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="n">min_value_targets</span> <span class="o">+</span> \
+                                <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">ensemble</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">*</span> <span class="n">max_value_targets</span>
+            <span class="n">q_targets</span> <span class="o">=</span> <span class="n">rewards</span> <span class="o">+</span> <span class="n">dones</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">discount</span> <span class="o">*</span> <span class="n">value_targets</span>
+
+        <span class="k">return</span> <span class="n">q_targets</span>    
+        
+    <span class="k">def</span> <span class="nf">_compute_critic_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">critic</span><span class="p">,</span> <span class="n">states</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">,</span> <span class="n">q_targets</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper function to compute loss between estimated Q-values and target Q-values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">q_estimated</span> <span class="o">=</span> <span class="n">critic</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">use_huber</span><span class="p">:</span>
+            <span class="n">critic_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">SmoothL1Loss</span><span class="p">()(</span><span class="n">q_estimated</span><span class="p">,</span> <span class="n">q_targets</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">critic_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()(</span><span class="n">q_estimated</span><span class="p">,</span> <span class="n">q_targets</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">critic_loss</span>
+</pre></div>
+</div>
+<p>Next we show the helper function for training the actor, which is trained through a weighted combination of the TD3 (DDPG) and BC loss.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">_train_actor_on_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">no_backprop</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+        <span class="c1"># Actor loss (update with mixture of DDPG loss and BC loss)</span>
+        <span class="n">s_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;obs&quot;</span><span class="p">]</span>
+        <span class="n">a_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;actions&quot;</span><span class="p">]</span>
+        <span class="n">goal_s_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;goal_obs&quot;</span><span class="p">]</span>
+
+        <span class="c1"># lambda mixture weight is combination of hyperparameter (alpha) and Q-value normalization</span>
+        <span class="n">actor_actions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">](</span><span class="n">s_batch</span><span class="p">,</span> <span class="n">goal_s_batch</span><span class="p">)</span>
+        <span class="n">Q_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">](</span><span class="n">s_batch</span><span class="p">,</span> <span class="n">actor_actions</span><span class="p">,</span> <span class="n">goal_s_batch</span><span class="p">)</span>
+        <span class="n">lam</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">alpha</span> <span class="o">/</span> <span class="n">Q_values</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">actor_loss</span> <span class="o">=</span> <span class="o">-</span><span class="n">lam</span> <span class="o">*</span> <span class="n">Q_values</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">+</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()(</span><span class="n">actor_actions</span><span class="p">,</span> <span class="n">a_batch</span><span class="p">)</span>
+        <span class="n">info</span><span class="p">[</span><span class="s2">&quot;actor/loss&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">actor_loss</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">no_backprop</span><span class="p">:</span>
+            <span class="n">actor_grad_norms</span> <span class="o">=</span> <span class="n">TorchUtils</span><span class="o">.</span><span class="n">backprop_for_loss</span><span class="p">(</span>
+                <span class="n">net</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">],</span>
+                <span class="n">optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">optimizers</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">],</span>
+                <span class="n">loss</span><span class="o">=</span><span class="n">actor_loss</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">info</span><span class="p">[</span><span class="s2">&quot;actor/grad_norms&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">actor_grad_norms</span>
+
+        <span class="k">return</span> <span class="n">info</span>
+</pre></div>
+</div>
+<p>Finally, we describe the <code class="docutils literal notranslate"><span class="pre">get_action</span></code> implementation - which is used at test-time during rollouts. The implementation is extremely simple - just query the actor for an action.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">get_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs_dict</span><span class="p">,</span> <span class="n">goal_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get policy action outputs.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            obs_dict (dict): current observation</span>
+<span class="sd">            goal_dict (dict): (optional) goal</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            action (torch.Tensor): action tensor</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="o">.</span><span class="n">training</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">](</span><span class="n">obs_dict</span><span class="o">=</span><span class="n">obs_dict</span><span class="p">,</span> <span class="n">goal_dict</span><span class="o">=</span><span class="n">goal_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That’s it! See <code class="docutils literal notranslate"><span class="pre">algo/td3_bc.py</span></code> for the complete implementation, and compare it to <code class="docutils literal notranslate"><span class="pre">algo/bcq.py</span></code> to see the similarity between the two implementations.</p>
+<p>We can now run the <code class="docutils literal notranslate"><span class="pre">generate_config_templates.py</span></code> script to generate the json template for our new algorithm, and then run it on our desired dataset.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate ../exps/templates/td3_bc.json</span>
+$ python generate_config_templates.py 
+
+<span class="c1"># run training</span>
+$ python train.py --config ../exps/templates/td3_bc.json --dataset /path/to/walker2d_medium_expert.hdf5
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="models.html" class="btn btn-neutral float-right" title="Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dataset.html" class="btn btn-neutral float-left" title="SequenceDataset" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

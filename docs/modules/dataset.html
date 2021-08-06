@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>SequenceDataset &mdash; robomimic 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Algorithms" href="algorithms.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> robomimic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/quickstart.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/advanced.html">Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/examples.html">Working with robomimic Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/datasets.html">Using Demonstration Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/results.html">Reproducing Study Results</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configs.html">Configs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utils</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/robomimic.html">robomimic package</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/contributing.html">Contributing Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/acknowledgments.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/references.html">Projects using robomimic</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robomimic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>SequenceDataset</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/modules/dataset.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="sequencedataset">
+<h1>SequenceDataset<a class="headerlink" href="#sequencedataset" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">robomimic.utils.dataset.SequenceDataset</span></code> class extends PyTorch’s default <code class="docutils literal notranslate"><span class="pre">torch.utils.data.Dataset</span></code> to interface with our demonstration <a class="reference external" href="../introduction/datasets.html">datasets</a>. The class supports accessing demonstration sub-sequences (as opposed to individual states) by index and both on-demand fetching and in-memory caching. This page walks through the key concepts of the <code class="docutils literal notranslate"><span class="pre">SequenceDataset</span></code> interface. Please refer to the official PyTorch <a class="reference external" href="https://pytorch.org/docs/stable/data.html">documentation</a> and a short <a class="reference external" href="../introduction/examples.html#train-loop-example">example</a> on how to use the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> and <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code> interfaces to build a training pipeline. Also, please see the <a class="reference external" href="../introduction/results.html#downloading-released-datasets">released datasets section</a> for guidance on downloading datasets that work out of the box with the repository.</p>
+<p>Here is a sample dataset object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">SequenceDataset</span><span class="p">(</span>
+    <span class="n">hdf5_path</span><span class="o">=</span><span class="n">dataset_path</span><span class="p">,</span>
+    <span class="n">obs_keys</span><span class="o">=</span><span class="p">(</span>                      <span class="c1"># observations we want to appear in batches</span>
+        <span class="s2">&quot;robot0_eef_pos&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;robot0_eef_quat&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;image&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">dataset_keys</span><span class="o">=</span><span class="p">(</span>                  <span class="c1"># can optionally specify more keys here if they should appear in batches</span>
+        <span class="s2">&quot;actions&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;rewards&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;dones&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">seq_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>                  <span class="c1"># length-10 temporal sequences</span>
+    <span class="n">pad_seq_length</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>            <span class="c1"># pad last obs per trajectory to ensure all sequences are sampled</span>
+    <span class="n">hdf5_cache_mode</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span>          <span class="c1"># cache dataset in memory to avoid repeated file i/o</span>
+    <span class="n">hdf5_normalize_obs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">filter_by_attribute</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>       <span class="c1"># can optionally provide a filter key here</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hdf5_path</span></code></p>
+<ul>
+<li><p>The absolute / relative path to the hdf5 file containing training demonstrations. See <a class="reference external" href="../introduction/datasets.html">datasets</a> page for the expected data structure.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">obs_keys</span></code></p>
+<ul>
+<li><p>A list of strings specifying which observation modalities to read from the dataset. This is typically read from the config file: our implementation pools observation keys from <code class="docutils literal notranslate"><span class="pre">config.observation.modalities.obs.low_dim</span></code> and <code class="docutils literal notranslate"><span class="pre">config.observation.modalities.obs.images</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataset_keys</span></code></p>
+<ul>
+<li><p>Keys of non-observation data to read from a demonstration. Typically include <code class="docutils literal notranslate"><span class="pre">actions</span></code>, <code class="docutils literal notranslate"><span class="pre">rewards</span></code>, <code class="docutils literal notranslate"><span class="pre">dones</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seq_length</span></code></p>
+<ul>
+<li><p>Length of the demonstration sub-sequence to fetch.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pad_seq_length</span></code></p>
+<ul>
+<li><p>Whether to allow fetching subsequence that ends beyond the sequence. For example, given a demo of length 10 and <code class="docutils literal notranslate"><span class="pre">seq_length=10</span></code>, setting <code class="docutils literal notranslate"><span class="pre">pad_seq_length=True</span></code> allows the dataset object to access subsequence at <code class="docutils literal notranslate"><span class="pre">__get_item(index=5)__</span></code> by repeating the last frame 5 times.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hdf5_cache_mode</span></code></p>
+<ul>
+<li><p>Optionally cache the dataset in memory for faster access. The dataset supports three caching modes: <code class="docutils literal notranslate"><span class="pre">[&quot;all&quot;,</span> <span class="pre">&quot;low_dim&quot;,</span> <span class="pre">or</span> <span class="pre">None]</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">all</span></code>: Load the entire dataset into the RAM. This mode minimizes data loading time but incurs the largest memory footprint. Recommended if the dataset is small or when working with low-dimensional observation data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">low_dim</span></code>: Load only the low-dimensional observations into RAM. Always use this mode when possible as loading low-dim data incurs nontrivial overhead. Low-dim observations are specified at <code class="docutils literal notranslate"><span class="pre">config.observation.modalities.obs.low_dim</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code>: Always fetch data on-demand.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hdf5_normalize_obs</span></code></p>
+<ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, normalize observations by computing the mean observation and std of each observation (in each dimension and modality), and normalizing unit mean and variance in each dimension.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filter_by_attribute</span></code></p>
+<ul>
+<li><p>if provided, use the provided filter key to look up a subset of demonstrations to load. See the documentation on <a class="reference external" href="../introduction/datasets.html#filter-keys-and-train-valid-splits">filter keys</a> for more information.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="algorithms.html" class="btn btn-neutral float-right" title="Algorithms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

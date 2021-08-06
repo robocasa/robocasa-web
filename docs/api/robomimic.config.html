@@ -1,0 +1,789 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>robomimic.config package &mdash; robomimic 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="robomimic.envs package" href="robomimic.envs.html" />
+    <link rel="prev" title="robomimic.algo package" href="robomimic.algo.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> robomimic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/quickstart.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/advanced.html">Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/examples.html">Working with robomimic Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/datasets.html">Using Demonstration Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/results.html">Reproducing Study Results</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/utils.html">Utils</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="robomimic.html">robomimic package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="robomimic.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="robomimic.algo.html">robomimic.algo package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">robomimic.config package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robomimic.config.base_config">robomimic.config.base_config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robomimic.config.bc_config">robomimic.config.bc_config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robomimic.config.bcq_config">robomimic.config.bcq_config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robomimic.config.config">robomimic.config.config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robomimic.config.cql_config">robomimic.config.cql_config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robomimic.config.gl_config">robomimic.config.gl_config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robomimic.config.hbc_config">robomimic.config.hbc_config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robomimic.config.iris_config">robomimic.config.iris_config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robomimic.config.td3_bc_config">robomimic.config.td3_bc_config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robomimic.config">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="robomimic.envs.html">robomimic.envs package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robomimic.models.html">robomimic.models package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robomimic.utils.html">robomimic.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robomimic.html#module-robomimic">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/contributing.html">Contributing Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/acknowledgments.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/references.html">Projects using robomimic</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robomimic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="robomimic.html">robomimic package</a> &raquo;</li>
+        
+      <li>robomimic.config package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/api/robomimic.config.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="robomimic-config-package">
+<h1>robomimic.config package<a class="headerlink" href="#robomimic-config-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-robomimic.config.base_config">
+<span id="robomimic-config-base-config-module"></span><h2>robomimic.config.base_config module<a class="headerlink" href="#module-robomimic.config.base_config" title="Permalink to this headline">¶</a></h2>
+<p>The base config class that is used for all algorithm configs in this repository.
+Subclasses get registered into a global dictionary, making it easy to instantiate
+the correct config class given the algorithm name.</p>
+<dl class="py class">
+<dt id="robomimic.config.base_config.BaseConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.config.base_config.</span></code><code class="sig-name descname"><span class="pre">BaseConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.base_config.BaseConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.config.config.Config" title="robomimic.config.config.Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.config.config.Config</span></code></a></p>
+<dl class="py method">
+<dt id="robomimic.config.base_config.BaseConfig.ALGO_NAME">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ALGO_NAME</span></code><a class="headerlink" href="#robomimic.config.base_config.BaseConfig.ALGO_NAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>classmethod(function) -&gt; method</p>
+<p>Convert a function to be a class method.</p>
+<p>A class method receives the class as implicit first argument,
+just like an instance method receives the instance.
+To declare a class method, use this idiom:</p>
+<blockquote>
+<div><dl>
+<dt>class C:</dt><dd><p>&#64;classmethod
+def f(cls, arg1, arg2, …):</p>
+<blockquote>
+<div><p>…</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<p>It can be called either on the class (e.g. C.f()) or on an instance
+(e.g. C().f()).  The instance is ignored except for its class.
+If a class method is called for a derived class, the derived class
+object is passed as the implied first argument.</p>
+<p>Class methods are different than C++ or Java static methods.
+If you want those, see the staticmethod builtin.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.base_config.BaseConfig.algo_config">
+<code class="sig-name descname"><span class="pre">algo_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.base_config.BaseConfig.algo_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function populates the <cite>config.algo</cite> attribute of the config, and is given to the
+<cite>Algo</cite> subclass (see <cite>algo/algo.py</cite>) for each algorithm through the <cite>algo_config</cite>
+argument to the constructor. Any parameter that an algorithm needs to determine its
+training and test-time behavior should be populated here. This function should be
+implemented by every subclass.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.base_config.BaseConfig.all_modalities">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">all_modalities</span></code><a class="headerlink" href="#robomimic.config.base_config.BaseConfig.all_modalities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.base_config.BaseConfig.experiment_config">
+<code class="sig-name descname"><span class="pre">experiment_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.base_config.BaseConfig.experiment_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function populates the <cite>config.experiment</cite> attribute of the config,
+which has several experiment settings such as the name of the training run,
+whether to do logging, whether to save models (and how often), whether to render
+videos, and whether to do rollouts (and how often). This class has a default
+implementation that usually doesn’t need to be overriden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.base_config.BaseConfig.observation_config">
+<code class="sig-name descname"><span class="pre">observation_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.base_config.BaseConfig.observation_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function populates the <cite>config.observation</cite> attribute of the config, and is given
+to the <cite>Algo</cite> subclass (see <cite>algo/algo.py</cite>) for each algorithm through the <cite>obs_config</cite>
+argument to the constructor. This portion of the config is used to specify what
+observation modalities should be used by the networks for training, and how the
+observation modalities should be encoded by the networks. While this class has a
+default implementation that usually doesn’t need to be overriden, certain algorithm
+configs may choose to, in order to have seperate configs for different networks
+in the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.base_config.BaseConfig.train_config">
+<code class="sig-name descname"><span class="pre">train_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.base_config.BaseConfig.train_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function populates the <cite>config.train</cite> attribute of the config, which
+has several settings related to the training process, such as the dataset
+to use for training, and how the data loader should load the data. This
+class has a default implementation that usually doesn’t need to be overriden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.base_config.BaseConfig.use_goals">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">use_goals</span></code><a class="headerlink" href="#robomimic.config.base_config.BaseConfig.use_goals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robomimic.config.base_config.ConfigMeta">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.config.base_config.</span></code><code class="sig-name descname"><span class="pre">ConfigMeta</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.base_config.ConfigMeta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
+<p>Define a metaclass for constructing a config class.
+It registers configs into the global registry.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robomimic.config.base_config.config_factory">
+<code class="sig-prename descclassname"><span class="pre">robomimic.config.base_config.</span></code><code class="sig-name descname"><span class="pre">config_factory</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algo_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.base_config.config_factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an instance of a config from the algo name. Optionally pass
+a dictionary to instantiate the config from the dictionary.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robomimic.config.base_config.get_all_registered_configs">
+<code class="sig-prename descclassname"><span class="pre">robomimic.config.base_config.</span></code><code class="sig-name descname"><span class="pre">get_all_registered_configs</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.base_config.get_all_registered_configs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give access to dictionary of all registered configs for external use.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-robomimic.config.bc_config">
+<span id="robomimic-config-bc-config-module"></span><h2>robomimic.config.bc_config module<a class="headerlink" href="#module-robomimic.config.bc_config" title="Permalink to this headline">¶</a></h2>
+<p>Config for BC algorithm.</p>
+<dl class="py class">
+<dt id="robomimic.config.bc_config.BCConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.config.bc_config.</span></code><code class="sig-name descname"><span class="pre">BCConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.bc_config.BCConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.config.base_config.BaseConfig" title="robomimic.config.base_config.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.config.base_config.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="robomimic.config.bc_config.BCConfig.ALGO_NAME">
+<code class="sig-name descname"><span class="pre">ALGO_NAME</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'bc'</span></em><a class="headerlink" href="#robomimic.config.bc_config.BCConfig.ALGO_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.bc_config.BCConfig.algo_config">
+<code class="sig-name descname"><span class="pre">algo_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.bc_config.BCConfig.algo_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function populates the <cite>config.algo</cite> attribute of the config, and is given to the
+<cite>Algo</cite> subclass (see <cite>algo/algo.py</cite>) for each algorithm through the <cite>algo_config</cite>
+argument to the constructor. Any parameter that an algorithm needs to determine its
+training and test-time behavior should be populated here.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robomimic.config.bcq_config">
+<span id="robomimic-config-bcq-config-module"></span><h2>robomimic.config.bcq_config module<a class="headerlink" href="#module-robomimic.config.bcq_config" title="Permalink to this headline">¶</a></h2>
+<p>Config for BCQ algorithm.</p>
+<dl class="py class">
+<dt id="robomimic.config.bcq_config.BCQConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.config.bcq_config.</span></code><code class="sig-name descname"><span class="pre">BCQConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.bcq_config.BCQConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.config.base_config.BaseConfig" title="robomimic.config.base_config.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.config.base_config.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="robomimic.config.bcq_config.BCQConfig.ALGO_NAME">
+<code class="sig-name descname"><span class="pre">ALGO_NAME</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'bcq'</span></em><a class="headerlink" href="#robomimic.config.bcq_config.BCQConfig.ALGO_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.bcq_config.BCQConfig.algo_config">
+<code class="sig-name descname"><span class="pre">algo_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.bcq_config.BCQConfig.algo_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function populates the <cite>config.algo</cite> attribute of the config, and is given to the
+<cite>Algo</cite> subclass (see <cite>algo/algo.py</cite>) for each algorithm through the <cite>algo_config</cite>
+argument to the constructor. Any parameter that an algorithm needs to determine its
+training and test-time behavior should be populated here.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robomimic.config.config">
+<span id="robomimic-config-config-module"></span><h2>robomimic.config.config module<a class="headerlink" href="#module-robomimic.config.config" title="Permalink to this headline">¶</a></h2>
+<p>Basic config class - provides a convenient way to work with nested
+dictionaries (by exposing keys as attributes) and to save / load from jsons.</p>
+<p>Based on addict: <a class="reference external" href="https://github.com/mewwts/addict">https://github.com/mewwts/addict</a></p>
+<dl class="py class">
+<dt id="robomimic.config.config.Config">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.config.config.</span></code><code class="sig-name descname"><span class="pre">Config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.config.Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+<dl class="py method">
+<dt id="robomimic.config.config.Config.copy">
+<code class="sig-name descname"><span class="pre">copy</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">a</span> <span class="pre">shallow</span> <span class="pre">copy</span> <span class="pre">of</span> <span class="pre">D</span><a class="headerlink" href="#robomimic.config.config.Config.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.deepcopy">
+<code class="sig-name descname"><span class="pre">deepcopy</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.config.Config.deepcopy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.do_not_lock_keys">
+<code class="sig-name descname"><span class="pre">do_not_lock_keys</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.config.Config.do_not_lock_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calling this function on this config indicates that key updates should be
+allowed even when this config is key-locked (but not when it is completely
+locked). This is convenient for attributes that contain kwargs, where there
+might be a variable type and number of arguments contained in the sub-config.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.dump">
+<code class="sig-name descname"><span class="pre">dump</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.config.Config.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dumps the config to a json.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – if not None, save to json file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>json string representation of</dt><dd><p>this config</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>json_string (str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.is_key_locked">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">is_key_locked</span></code><a class="headerlink" href="#robomimic.config.config.Config.is_key_locked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the config is key-locked (no key updates allowed).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.is_locked">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">is_locked</span></code><a class="headerlink" href="#robomimic.config.config.Config.is_locked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the config is locked (no key or value updates allowed).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.key_lockable">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">key_lockable</span></code><a class="headerlink" href="#robomimic.config.config.Config.key_lockable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if this config is key-lockable (new keys cannot be inserted in a
+key-locked lock level).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.lock">
+<code class="sig-name descname"><span class="pre">lock</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.config.Config.lock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lock the config. Afterwards, new keys cannot be added to the
+config, and the values of existing keys cannot be modified.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.lock_keys">
+<code class="sig-name descname"><span class="pre">lock_keys</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.config.Config.lock_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lock this config so that new keys cannot be added.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.setdefault">
+<code class="sig-name descname"><span class="pre">setdefault</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.config.Config.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert key with a value of default if key is not in the dictionary.</p>
+<p>Return the value for key if key is in the dictionary, else default.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.to_dict">
+<code class="sig-name descname"><span class="pre">to_dict</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.config.Config.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.unlock">
+<code class="sig-name descname"><span class="pre">unlock</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.config.Config.unlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unlock the config. Afterwards, new keys can be added to the
+config, and the values of existing keys can be modified.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.unlock_keys">
+<code class="sig-name descname"><span class="pre">unlock_keys</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.config.Config.unlock_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unlock this config so that new keys can be added.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.unlocked">
+<code class="sig-name descname"><span class="pre">unlocked</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.config.Config.unlocked" title="Permalink to this definition">¶</a></dt>
+<dd><p>A context scope for modifying a Config object. Within the scope,
+both keys and values can be updated. Upon leaving the scope,
+the initial level of locking is restored.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.update">
+<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.config.Config.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update this config using another config or nested dictionary.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.config.Config.values_unlocked">
+<code class="sig-name descname"><span class="pre">values_unlocked</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.config.Config.values_unlocked" title="Permalink to this definition">¶</a></dt>
+<dd><p>A context scope for modifying a Config object. Within the scope,
+only values can be updated (new keys cannot be created). Upon
+leaving the scope, the initial level of locking is restored.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robomimic.config.cql_config">
+<span id="robomimic-config-cql-config-module"></span><h2>robomimic.config.cql_config module<a class="headerlink" href="#module-robomimic.config.cql_config" title="Permalink to this headline">¶</a></h2>
+<p>Config for CQL algorithm.</p>
+<dl class="py class">
+<dt id="robomimic.config.cql_config.CQLConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.config.cql_config.</span></code><code class="sig-name descname"><span class="pre">CQLConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.cql_config.CQLConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.config.base_config.BaseConfig" title="robomimic.config.base_config.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.config.base_config.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="robomimic.config.cql_config.CQLConfig.ALGO_NAME">
+<code class="sig-name descname"><span class="pre">ALGO_NAME</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'cql'</span></em><a class="headerlink" href="#robomimic.config.cql_config.CQLConfig.ALGO_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.cql_config.CQLConfig.algo_config">
+<code class="sig-name descname"><span class="pre">algo_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.cql_config.CQLConfig.algo_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function populates the <cite>config.algo</cite> attribute of the config, and is given to the
+<cite>Algo</cite> subclass (see <cite>algo/algo.py</cite>) for each algorithm through the <cite>algo_config</cite>
+argument to the constructor. Any parameter that an algorithm needs to determine its
+training and test-time behavior should be populated here.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.cql_config.CQLConfig.train_config">
+<code class="sig-name descname"><span class="pre">train_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.cql_config.CQLConfig.train_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update from superclass to change default batch size.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robomimic.config.gl_config">
+<span id="robomimic-config-gl-config-module"></span><h2>robomimic.config.gl_config module<a class="headerlink" href="#module-robomimic.config.gl_config" title="Permalink to this headline">¶</a></h2>
+<p>Config for Goal Learning (sub-algorithm used by hierarchical models like HBC and IRIS).
+This class of model predicts (or samples) subgoal observations given a current observation.</p>
+<dl class="py class">
+<dt id="robomimic.config.gl_config.GLConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.config.gl_config.</span></code><code class="sig-name descname"><span class="pre">GLConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.gl_config.GLConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.config.base_config.BaseConfig" title="robomimic.config.base_config.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.config.base_config.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="robomimic.config.gl_config.GLConfig.ALGO_NAME">
+<code class="sig-name descname"><span class="pre">ALGO_NAME</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'gl'</span></em><a class="headerlink" href="#robomimic.config.gl_config.GLConfig.ALGO_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.gl_config.GLConfig.algo_config">
+<code class="sig-name descname"><span class="pre">algo_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.gl_config.GLConfig.algo_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function populates the <cite>config.algo</cite> attribute of the config, and is given to the
+<cite>Algo</cite> subclass (see <cite>algo/algo.py</cite>) for each algorithm through the <cite>algo_config</cite>
+argument to the constructor. Any parameter that an algorithm needs to determine its
+training and test-time behavior should be populated here.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.gl_config.GLConfig.all_modalities">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">all_modalities</span></code><a class="headerlink" href="#robomimic.config.gl_config.GLConfig.all_modalities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update from superclass to include subgoals.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.gl_config.GLConfig.observation_config">
+<code class="sig-name descname"><span class="pre">observation_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.gl_config.GLConfig.observation_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update from superclass to specify subgoal modalities.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robomimic.config.hbc_config">
+<span id="robomimic-config-hbc-config-module"></span><h2>robomimic.config.hbc_config module<a class="headerlink" href="#module-robomimic.config.hbc_config" title="Permalink to this headline">¶</a></h2>
+<p>Config for HBC algorithm.</p>
+<dl class="py class">
+<dt id="robomimic.config.hbc_config.HBCConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.config.hbc_config.</span></code><code class="sig-name descname"><span class="pre">HBCConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.hbc_config.HBCConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.config.base_config.BaseConfig" title="robomimic.config.base_config.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.config.base_config.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="robomimic.config.hbc_config.HBCConfig.ALGO_NAME">
+<code class="sig-name descname"><span class="pre">ALGO_NAME</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'hbc'</span></em><a class="headerlink" href="#robomimic.config.hbc_config.HBCConfig.ALGO_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.hbc_config.HBCConfig.algo_config">
+<code class="sig-name descname"><span class="pre">algo_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.hbc_config.HBCConfig.algo_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function populates the <cite>config.algo</cite> attribute of the config, and is given to the
+<cite>Algo</cite> subclass (see <cite>algo/algo.py</cite>) for each algorithm through the <cite>algo_config</cite>
+argument to the constructor. Any parameter that an algorithm needs to determine its
+training and test-time behavior should be populated here.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.hbc_config.HBCConfig.all_modalities">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">all_modalities</span></code><a class="headerlink" href="#robomimic.config.hbc_config.HBCConfig.all_modalities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update from superclass to include modalities from planner and actor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.hbc_config.HBCConfig.observation_config">
+<code class="sig-name descname"><span class="pre">observation_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.hbc_config.HBCConfig.observation_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update from superclass so that planner and actor each get their own observation config.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.hbc_config.HBCConfig.train_config">
+<code class="sig-name descname"><span class="pre">train_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.hbc_config.HBCConfig.train_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update from superclass to change default sequence length to load from dataset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.hbc_config.HBCConfig.use_goals">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">use_goals</span></code><a class="headerlink" href="#robomimic.config.hbc_config.HBCConfig.use_goals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update from superclass - planner goal modalities determine goal-conditioning</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robomimic.config.iris_config">
+<span id="robomimic-config-iris-config-module"></span><h2>robomimic.config.iris_config module<a class="headerlink" href="#module-robomimic.config.iris_config" title="Permalink to this headline">¶</a></h2>
+<p>Config for IRIS algorithm.</p>
+<dl class="py class">
+<dt id="robomimic.config.iris_config.IRISConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.config.iris_config.</span></code><code class="sig-name descname"><span class="pre">IRISConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.iris_config.IRISConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.config.hbc_config.HBCConfig" title="robomimic.config.hbc_config.HBCConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.config.hbc_config.HBCConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="robomimic.config.iris_config.IRISConfig.ALGO_NAME">
+<code class="sig-name descname"><span class="pre">ALGO_NAME</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'iris'</span></em><a class="headerlink" href="#robomimic.config.iris_config.IRISConfig.ALGO_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.iris_config.IRISConfig.algo_config">
+<code class="sig-name descname"><span class="pre">algo_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.iris_config.IRISConfig.algo_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function populates the <cite>config.algo</cite> attribute of the config, and is given to the
+<cite>Algo</cite> subclass (see <cite>algo/algo.py</cite>) for each algorithm through the <cite>algo_config</cite>
+argument to the constructor. Any parameter that an algorithm needs to determine its
+training and test-time behavior should be populated here.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.iris_config.IRISConfig.all_modalities">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">all_modalities</span></code><a class="headerlink" href="#robomimic.config.iris_config.IRISConfig.all_modalities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update from superclass to include modalities from value planner and actor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.iris_config.IRISConfig.observation_config">
+<code class="sig-name descname"><span class="pre">observation_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.iris_config.IRISConfig.observation_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update from superclass so that value planner and actor each get their own obs config.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.iris_config.IRISConfig.use_goals">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">use_goals</span></code><a class="headerlink" href="#robomimic.config.iris_config.IRISConfig.use_goals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update from superclass - value planner goal modalities determine goal-conditioning.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robomimic.config.td3_bc_config">
+<span id="robomimic-config-td3-bc-config-module"></span><h2>robomimic.config.td3_bc_config module<a class="headerlink" href="#module-robomimic.config.td3_bc_config" title="Permalink to this headline">¶</a></h2>
+<p>Config for TD3_BC.</p>
+<dl class="py class">
+<dt id="robomimic.config.td3_bc_config.TD3_BCConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.config.td3_bc_config.</span></code><code class="sig-name descname"><span class="pre">TD3_BCConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.td3_bc_config.TD3_BCConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.config.base_config.BaseConfig" title="robomimic.config.base_config.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.config.base_config.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt id="robomimic.config.td3_bc_config.TD3_BCConfig.ALGO_NAME">
+<code class="sig-name descname"><span class="pre">ALGO_NAME</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'td3_bc'</span></em><a class="headerlink" href="#robomimic.config.td3_bc_config.TD3_BCConfig.ALGO_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.td3_bc_config.TD3_BCConfig.algo_config">
+<code class="sig-name descname"><span class="pre">algo_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.td3_bc_config.TD3_BCConfig.algo_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function populates the <cite>config.algo</cite> attribute of the config, and is given to the
+<cite>Algo</cite> subclass (see <cite>algo/algo.py</cite>) for each algorithm through the <cite>algo_config</cite>
+argument to the constructor. Any parameter that an algorithm needs to determine its
+training and test-time behavior should be populated here.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.td3_bc_config.TD3_BCConfig.experiment_config">
+<code class="sig-name descname"><span class="pre">experiment_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.td3_bc_config.TD3_BCConfig.experiment_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update from subclass to set paper defaults for gym envs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.td3_bc_config.TD3_BCConfig.observation_config">
+<code class="sig-name descname"><span class="pre">observation_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.td3_bc_config.TD3_BCConfig.observation_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update from superclass to use flat observations from gym envs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.config.td3_bc_config.TD3_BCConfig.train_config">
+<code class="sig-name descname"><span class="pre">train_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.td3_bc_config.TD3_BCConfig.train_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update from subclass to set paper defaults for gym envs.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robomimic.config">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robomimic.config" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="robomimic.envs.html" class="btn btn-neutral float-right" title="robomimic.envs package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="robomimic.algo.html" class="btn btn-neutral float-left" title="robomimic.algo package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

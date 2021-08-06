@@ -1,0 +1,455 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Advanced Features &mdash; robomimic 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Working with robomimic Modules" href="examples.html" />
+    <link rel="prev" title="Getting Started" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> robomimic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-hyperparameter-helper-to-launch-runs">Using the Hyperparameter Helper to launch runs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Working with robomimic Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Using Demonstration Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Reproducing Study Results</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/utils.html">Utils</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/robomimic.html">robomimic package</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/contributing.html">Contributing Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/acknowledgments.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/references.html">Projects using robomimic</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robomimic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Advanced Features</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/introduction/advanced.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="advanced-features">
+<h1>Advanced Features<a class="headerlink" href="#advanced-features" title="Permalink to this headline">¶</a></h1>
+<p>This section discusses some advanced features of <strong>robomimic</strong>.</p>
+<div class="section" id="using-the-hyperparameter-helper-to-launch-runs">
+<h2>Using the Hyperparameter Helper to launch runs<a class="headerlink" href="#using-the-hyperparameter-helper-to-launch-runs" title="Permalink to this headline">¶</a></h2>
+<p>While copying an algorithm’s template json from <code class="docutils literal notranslate"><span class="pre">exps/templates</span></code> and modifying it manually is a perfectly valid way to run experiments, we also provide the <code class="docutils literal notranslate"><span class="pre">hyperparam_helper.py</span></code> script to easily generate config jsons to use with the <code class="docutils literal notranslate"><span class="pre">train.py</span></code> script. <strong>This is the preferred way to launch training runs using the repository.</strong> It also makes hyperparameter scans a breeze. We’ll walk through an example below, by reproducing sections of the <code class="docutils literal notranslate"><span class="pre">hyperparam_helper.py</span></code> script.</p>
+<p>The first step is to start with a base config json. A common choice is to copy one of the templates in <code class="docutils literal notranslate"><span class="pre">exps/templates</span></code> (such as <code class="docutils literal notranslate"><span class="pre">exps/templates/bc.json</span></code>) into a new folder (where additional config jsons will be generated).</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ cp ../exps/templates/bc.json /tmp/gen_configs/base.json
+</pre></div>
+</div>
+<p>Sections of the config that are not involved in the scan and that do not differ from the default values in the template can also be omitted, if desired. For instance, in the example below, we don’t need the <code class="docutils literal notranslate"><span class="pre">config.algo.gaussian</span></code>,  <code class="docutils literal notranslate"><span class="pre">config.algo.vae</span></code>, and <code class="docutils literal notranslate"><span class="pre">config.observation</span></code> portions (since we don’t sweep over them, and we didn’t want to set them to anything other than the default values), so we deleted them. We also added a base experiment name (<code class="docutils literal notranslate"><span class="pre">&quot;bc_rnn_hyper&quot;</span></code>) and specified the dataset path (<code class="docutils literal notranslate"><span class="pre">&quot;/tmp/test.hdf5&quot;</span></code>).</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ cat /tmp/gen_configs/base.json
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;algo_name&quot;</span><span class="p">:</span> <span class="s2">&quot;bc&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;experiment&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;bc_rnn_hyper&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;validate&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;save&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;every_n_seconds&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;every_n_epochs&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="nt">&quot;epochs&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;on_best_validation&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;on_best_rollout_return&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;on_best_rollout_success_rate&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;epoch_every_n_steps&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="nt">&quot;validation_epoch_every_n_steps&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="nt">&quot;rollout&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;n&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="nt">&quot;horizon&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+            <span class="nt">&quot;rate&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="nt">&quot;warmstart&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;terminate_on_success&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;train&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;/tmp/test.hdf5&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;output_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;../bc_trained_models&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;num_data_workers&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;hdf5_cache_mode&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;hdf5_use_swmr&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;hdf5_normalize_obs&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;hdf5_filter_key&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;seq_length&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;goal_mode&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;cuda&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;batch_size&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="nt">&quot;num_epochs&quot;</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+        <span class="nt">&quot;seed&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;algo&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;optim_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;policy&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;learning_rate&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;initial&quot;</span><span class="p">:</span> <span class="mf">0.0001</span><span class="p">,</span>
+                    <span class="nt">&quot;decay_factor&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+                    <span class="nt">&quot;epoch_schedule&quot;</span><span class="p">:</span> <span class="p">[]</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;regularization&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;L2&quot;</span><span class="p">:</span> <span class="mf">0.0</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;actor_layer_dims&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="mi">1024</span><span class="p">,</span>
+            <span class="mi">1024</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;gmm&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;num_modes&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;min_std&quot;</span><span class="p">:</span> <span class="mf">0.0001</span><span class="p">,</span>
+            <span class="nt">&quot;std_activation&quot;</span><span class="p">:</span> <span class="s2">&quot;softplus&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;low_noise_eval&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;rnn&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;horizon&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="nt">&quot;hidden_dim&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+            <span class="nt">&quot;rnn_type&quot;</span><span class="p">:</span> <span class="s2">&quot;LSTM&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;num_layers&quot;</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The next step is to define a function that returns a <code class="docutils literal notranslate"><span class="pre">ConfigGenerator</span></code>. In our example, we would like to  run the BC-RNN algorithm with an RNN horizon of 10. This requires setting <code class="docutils literal notranslate"><span class="pre">config.train.seq_length</span> <span class="pre">=</span> <span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">config.algo.rnn.enabled</span> <span class="pre">=</span> <span class="pre">True</span></code> – we could have modified our base json file directly (as mentioned above) but we opted to set it in the generator function below. The first three calls to <code class="docutils literal notranslate"><span class="pre">add_param</span></code> do exactly this. Leaving <code class="docutils literal notranslate"><span class="pre">name=&quot;&quot;</span></code> ensures that the experiment name is not determined by these parameter values.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">robomimic</span>
+<span class="kn">import</span> <span class="nn">robomimic.utils.hyperparam_utils</span> <span class="k">as</span> <span class="nn">HyperparamUtils</span>
+
+
+<span class="k">def</span> <span class="nf">make_generator</span><span class="p">(</span><span class="n">config_file</span><span class="p">,</span> <span class="n">script_file</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implement this function to setup your own hyperparameter scan!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">generator</span> <span class="o">=</span> <span class="n">HyperparamUtils</span><span class="o">.</span><span class="n">ConfigGenerator</span><span class="p">(</span>
+        <span class="n">base_config_file</span><span class="o">=</span><span class="n">config_file</span><span class="p">,</span> <span class="n">script_file</span><span class="o">=</span><span class="n">script_file</span>
+    <span class="p">)</span>
+
+    <span class="c1"># use RNN with horizon 10</span>
+    <span class="n">generator</span><span class="o">.</span><span class="n">add_param</span><span class="p">(</span>
+        <span class="n">key</span><span class="o">=</span><span class="s2">&quot;algo.rnn.enabled&quot;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> 
+        <span class="n">group</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">generator</span><span class="o">.</span><span class="n">add_param</span><span class="p">(</span>
+        <span class="n">key</span><span class="o">=</span><span class="s2">&quot;train.seq_length&quot;</span><span class="p">,</span> 
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> 
+        <span class="n">group</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> 
+    <span class="p">)</span>
+    <span class="n">generator</span><span class="o">.</span><span class="n">add_param</span><span class="p">(</span>
+        <span class="n">key</span><span class="o">=</span><span class="s2">&quot;algo.rnn.horizon&quot;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> 
+        <span class="n">group</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> 
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we define our scan - we could like to sweep the policy learning rate in [1e-3, 1e-4], whether to use a GMM policy or not, and whether to use an RNN dimension of 400 with an MLP of size (1024, 1024) or an RNN dimension of 1000 with an empty MLP. Notice that the learning rate goes in <code class="docutils literal notranslate"><span class="pre">group</span></code> 1, the GMM enabled parameter goes in <code class="docutils literal notranslate"><span class="pre">group</span></code> 2, and the RNN dimension and MLP layer dims both go in <code class="docutils literal notranslate"><span class="pre">group</span></code> 3.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">group</span></code> argument specifies which arguments should be modified together. The hyperparameter script will generate a training run for each hyperparameter setting in the cartesian product between all groups. Thus, putting the RNN dimension and MLP layer dims in the same group ensures that the parameters change together (RNN dimension 400 always occurs with MLP layer dims (1024, 1024), and RNN dimension 1000 always occurs with an empty MLP). Finally, notice the use of the <code class="docutils literal notranslate"><span class="pre">value_names</span></code> argument  – by default, the generated config will have an experiment name consisting of the base name under <code class="docutils literal notranslate"><span class="pre">config.experiment.name</span></code> already present in the base json, and then the <code class="docutils literal notranslate"><span class="pre">name</span></code> specified for each parameter, along with the string representation of the selected value in <code class="docutils literal notranslate"><span class="pre">values</span></code>, but <code class="docutils literal notranslate"><span class="pre">value_names</span></code> allows you to override this with a custom string for the corresponding value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># LR - 1e-3, 1e-4</span>
+    <span class="n">generator</span><span class="o">.</span><span class="n">add_param</span><span class="p">(</span>
+        <span class="n">key</span><span class="o">=</span><span class="s2">&quot;algo.optim_params.policy.learning_rate.initial&quot;</span><span class="p">,</span> 
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;plr&quot;</span><span class="p">,</span> 
+        <span class="n">group</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e-4</span><span class="p">],</span> 
+    <span class="p">)</span>
+
+    <span class="c1"># GMM y / n</span>
+    <span class="n">generator</span><span class="o">.</span><span class="n">add_param</span><span class="p">(</span>
+        <span class="n">key</span><span class="o">=</span><span class="s2">&quot;algo.gmm.enabled&quot;</span><span class="p">,</span> 
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;gmm&quot;</span><span class="p">,</span> 
+        <span class="n">group</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> 
+        <span class="n">value_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="c1"># RNN dim 400 + MLP dims (1024, 1024) vs. RNN dim 1000 + empty MLP dims ()</span>
+    <span class="n">generator</span><span class="o">.</span><span class="n">add_param</span><span class="p">(</span>
+        <span class="n">key</span><span class="o">=</span><span class="s2">&quot;algo.rnn.hidden_dim&quot;</span><span class="p">,</span> 
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;rnnd&quot;</span><span class="p">,</span> 
+        <span class="n">group</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span>
+            <span class="mi">400</span><span class="p">,</span> 
+            <span class="mi">1000</span><span class="p">,</span>
+        <span class="p">],</span> 
+    <span class="p">)</span>
+    <span class="n">generator</span><span class="o">.</span><span class="n">add_param</span><span class="p">(</span>
+        <span class="n">key</span><span class="o">=</span><span class="s2">&quot;algo.actor_layer_dims&quot;</span><span class="p">,</span> 
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mlp&quot;</span><span class="p">,</span> 
+        <span class="n">group</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">[</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">1024</span><span class="p">],</span> 
+            <span class="p">[],</span>
+        <span class="p">],</span> 
+        <span class="n">value_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;1024&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">generator</span>
+</pre></div>
+</div>
+<p>Finally, we run the hyperparameter helper script (which contains the function we defined above).</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python hyperparam_helper.py --config /tmp/gen_configs/base.json --script /tmp/gen_configs/out.sh
+</pre></div>
+</div>
+<p>All generated configs have been added to <code class="docutils literal notranslate"><span class="pre">/tmp/gen_configs</span></code>, along with a helpful bash script that can be used to launch your training runs.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ cat /tmp/gen_configs/out.sh
+
+<span class="c1">#!/bin/bash</span>
+
+python train.py --config /tmp/gen_configs/bc_rnn_hyper_plr_0.001_gmm_t_rnnd_400_mlp_1024.json
+python train.py --config /tmp/gen_configs/bc_rnn_hyper_plr_0.001_gmm_t_rnnd_1000_mlp_0.json
+python train.py --config /tmp/gen_configs/bc_rnn_hyper_plr_0.001_gmm_f_rnnd_400_mlp_1024.json
+python train.py --config /tmp/gen_configs/bc_rnn_hyper_plr_0.001_gmm_f_rnnd_1000_mlp_0.json
+python train.py --config /tmp/gen_configs/bc_rnn_hyper_plr_0.0001_gmm_t_rnnd_400_mlp_1024.json
+python train.py --config /tmp/gen_configs/bc_rnn_hyper_plr_0.0001_gmm_t_rnnd_1000_mlp_0.json
+python train.py --config /tmp/gen_configs/bc_rnn_hyper_plr_0.0001_gmm_f_rnnd_400_mlp_1024.json
+python train.py --config /tmp/gen_configs/bc_rnn_hyper_plr_0.0001_gmm_f_rnnd_1000_mlp_0.json
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="examples.html" class="btn btn-neutral float-right" title="Working with robomimic Modules" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

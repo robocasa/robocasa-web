@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Utils &mdash; robomimic 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="robomimic package" href="../api/robomimic.html" />
+    <link rel="prev" title="Environments" href="environments.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> robomimic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/quickstart.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/advanced.html">Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/examples.html">Working with robomimic Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/datasets.html">Using Demonstration Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/results.html">Reproducing Study Results</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configs.html">Configs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Utils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tensorutils">TensorUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#obsutils">ObsUtils</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/robomimic.html">robomimic package</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/contributing.html">Contributing Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/acknowledgments.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/references.html">Projects using robomimic</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robomimic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Utils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/modules/utils.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="utils">
+<h1>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h1>
+<p>This section highlights some important utility functions / classes used in the codebase.</p>
+<div class="section" id="tensorutils">
+<h2>TensorUtils<a class="headerlink" href="#tensorutils" title="Permalink to this headline">¶</a></h2>
+<p>Most models in <strong>robomimic</strong> operate on nested tensor dictionaries, both for input and training labels. We provide a suite of utilities to work with these dictionaries in <code class="docutils literal notranslate"><span class="pre">robomimic.utils.tensor_utils</span></code>. For example, given a numpy dictionary of observations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;image&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">),</span>
+    <span class="s1">&#39;proprio&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;eef_pos&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+        <span class="s1">&#39;eef_rot&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For example, we can use <code class="docutils literal notranslate"><span class="pre">robomimic.utils.tensor_utils</span></code> to convert them to pytorch tensors, add a batch dimension, and send them to GPU:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">robomimic.utils.tensor_utils</span> <span class="k">as</span> <span class="nn">TensorUtils</span>
+
+<span class="c1"># Converts all numpy arrays in nested dictionary or list or tuple to torch tensors</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">TensorUtils</span><span class="o">.</span><span class="n">to_tensor</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  
+
+<span class="c1"># add a batch dimension to all tensors in the dict</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">TensorUtils</span><span class="o">.</span><span class="n">to_batch</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># send all nested tensors to GPU (if available)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">TensorUtils</span><span class="o">.</span><span class="n">to_device</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:0&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The library also supports nontrivial shape operations on the nested dict. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new dimension at dim=1 and expand the dimension size to 10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">TensorUtils</span><span class="o">.</span><span class="n">unsqueeze_expand_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
+<span class="c1"># x[&quot;image&quot;].shape == torch.Size([1, 10, 3, 224, 224])</span>
+
+<span class="c1"># repeat the 0-th dimension 10 times</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">TensorUtils</span><span class="o">.</span><span class="n">repeat_by_expand_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  
+<span class="c1"># x[&quot;image&quot;].shape == torch.Size([10, 10, 3, 224, 224])</span>
+
+<span class="c1"># gather the sequence dimension (dim=1) by some index</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">TensorUtils</span><span class="o">.</span><span class="n">gather_sequence</span><span class="p">(</span><span class="n">x_seq</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> 
+<span class="c1"># x[&quot;image&quot;].shape == torch.Size([10, 3, 224, 224])</span>
+</pre></div>
+</div>
+<p>In addition, <code class="docutils literal notranslate"><span class="pre">map_tensor</span></code> allows applying an arbitrary function to all tensors in a nested dictionary or list of tensors and returns the same nested structure.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">TensorUtils</span><span class="o">.</span><span class="n">map_tensor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">your_func</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The complete documentation of <code class="docutils literal notranslate"><span class="pre">robomimic.utils.tensor_utils.py</span></code> is available <a class="reference external" href="../api/robomimic.utils.html#module-robomimic.utils.tensor_utils">here</a>.</p>
+</div>
+<div class="section" id="obsutils">
+<h2>ObsUtils<a class="headerlink" href="#obsutils" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">robomimic.utils.obs_utils</span></code> implements a suite of utility functions to preprocess different observation modalities such as images and functions to determine types of observations in order to create suitable encoder network architectures. Below we list the important functions.</p>
+<ul>
+<li><p><strong>initialize_obs_utils_with_obs_specs(obs_modality_specs)</strong></p>
+<p>This function initialize a global registry of mapping between observation modality names and observation types e.g. which ones are low-dimensional, and which ones are images). For example, given an <code class="docutils literal notranslate"><span class="pre">obs_modality_specs</span></code> of the following format:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;obs&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;low_dim&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;robot0_eef_pos&quot;</span><span class="p">,</span> <span class="s2">&quot;robot0_eef_quat&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;agentview_image&quot;</span><span class="p">,</span> <span class="s2">&quot;robot0_eye_in_hand&quot;</span><span class="p">],</span>
+    <span class="p">}</span>
+    <span class="s2">&quot;goal&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;low_dim&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;robot0_eef_pos&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;agentview_image&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The function will create a mapping between observation names such as <code class="docutils literal notranslate"><span class="pre">'agentview_image'</span></code> and observation types such as <code class="docutils literal notranslate"><span class="pre">'image'</span></code>. The registry is stored in <code class="docutils literal notranslate"><span class="pre">OBS_TYPE_TO_MODALITIES</span></code> and can be accessed globally. Utility functions such as <code class="docutils literal notranslate"><span class="pre">key_is_image()</span></code> rely on this global registry to determine observation types.</p>
+</li>
+<li><p><strong>process_obs(obs_dict)</strong></p>
+<p>Preprocess a dictionary of observations to be fed to a neural network. For example, image observations will be casted to <code class="docutils literal notranslate"><span class="pre">float</span></code> format, rescaled to <code class="docutils literal notranslate"><span class="pre">[0-1]</span></code>, and axis-transposed to <code class="docutils literal notranslate"><span class="pre">[C,</span> <span class="pre">H,</span> <span class="pre">W]</span></code> format.</p>
+</li>
+<li><p><strong>unprocess_obs(obs_dict)</strong></p>
+<p>Revert the preprocessing transformation applied to observations by <code class="docutils literal notranslate"><span class="pre">process_obs</span></code>. Useful for converting images back to <code class="docutils literal notranslate"><span class="pre">uint8</span></code> for efficient storage.</p>
+</li>
+<li><p><strong>normalize_obs(obs_dict, obs_normalization_stats)</strong></p>
+<p>Normalize observations by computing the mean observation and std of each observation (in each dimension and modality), and normalizing unit mean and variance in each dimension.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../api/robomimic.html" class="btn btn-neutral float-right" title="robomimic package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="environments.html" class="btn btn-neutral float-left" title="Environments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

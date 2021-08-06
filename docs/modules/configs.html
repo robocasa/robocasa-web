@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Configs &mdash; robomimic 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Environments" href="environments.html" />
+    <link rel="prev" title="Models" href="models.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> robomimic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/quickstart.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/advanced.html">Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/examples.html">Working with robomimic Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/datasets.html">Using Demonstration Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/results.html">Reproducing Study Results</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#config-factory">Config Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#config-structure">Config Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#config-locking">Config Locking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#minimum-example">Minimum Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utils</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/robomimic.html">robomimic package</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/contributing.html">Contributing Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/acknowledgments.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/references.html">Projects using robomimic</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robomimic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Configs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/modules/configs.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="configs">
+<h1>Configs<a class="headerlink" href="#configs" title="Permalink to this headline">¶</a></h1>
+<p>Configs are instances of the <code class="docutils literal notranslate"><span class="pre">Config</span></code> class defined in <code class="docutils literal notranslate"><span class="pre">config/config.py</span></code>. The implementation is largely based on <a class="reference external" href="https://github.com/mewwts/addict">addict</a>, which makes working with nested dictionaries convenient. At their core, configs are essentially nested dictionaries (similar to loaded json objects), with an easy way to access and set nested keys by using attributes. See the example below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robomimic.config</span> <span class="kn">import</span> <span class="n">Config</span>
+
+<span class="c1"># normal way to create nested dictionaries and read values</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">c</span><span class="p">[</span><span class="s2">&quot;experiment&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">c</span><span class="p">[</span><span class="s2">&quot;experiment&quot;</span><span class="p">][</span><span class="s2">&quot;save&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">c</span><span class="p">[</span><span class="s2">&quot;experiment&quot;</span><span class="p">][</span><span class="s2">&quot;save&quot;</span><span class="p">][</span><span class="s2">&quot;enabled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;save enabled: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;experiment&quot;</span><span class="p">][</span><span class="s2">&quot;save&quot;</span><span class="p">][</span><span class="s2">&quot;enabled&quot;</span><span class="p">]))</span>
+
+<span class="c1"># can use dot syntax instead of key lookup to create nested dictionaries</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">experiment</span><span class="o">.</span><span class="n">save</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># can also use dot syntax to access attributes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;save enabled: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">experiment</span><span class="o">.</span><span class="n">save</span><span class="o">.</span><span class="n">enabled</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>It’s easy to go back and forth between<code class="docutils literal notranslate"><span class="pre">Config</span></code> objects and jsons as well, which is convenient when saving config objects to disk (this happens when generating new config jsons for training, and when saving the config in a model checkpoint), and loading configs from jsons.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># dump config as a json string</span>
+<span class="n">json_string</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>
+
+<span class="c1"># dump config to a json file</span>
+<span class="n">c</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;c.json&quot;</span><span class="p">)</span>
+
+<span class="c1"># load config from json</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="n">json_dic</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span><span class="n">json_dic</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>All algorithm config classes (one class per algorithm type) are subclasses of the <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code> class (defined in <code class="docutils literal notranslate"><span class="pre">config/base_config.py</span></code>), which is a subclass of the general <code class="docutils literal notranslate"><span class="pre">Config</span></code> class. The algorithm config classes are kept in a global registry (more details on this later). The <code class="docutils literal notranslate"><span class="pre">generate_config_templates.py</span></code> script uses the functionality demonstrated above to easily generate template config jsons for each algorithm, by instantiating the default config object per class. <strong>This script should be run any time changes are made to default settings, or new config settings are added.</strong> We reproduce the code snippet below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">robomimic</span>
+<span class="kn">from</span> <span class="nn">robomimic.config</span> <span class="kn">import</span> <span class="n">get_all_registered_configs</span>
+
+<span class="c1"># store template config jsons in this directory</span>
+<span class="n">target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">robomimic</span><span class="o">.</span><span class="n">__path__</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;exps/templates/&quot;</span><span class="p">)</span>
+
+<span class="c1"># iterate through registered algorithm config classes</span>
+<span class="n">all_configs</span> <span class="o">=</span> <span class="n">get_all_registered_configs</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">algo_name</span> <span class="ow">in</span> <span class="n">all_configs</span><span class="p">:</span>
+    <span class="c1"># make config class for this algorithm</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">all_configs</span><span class="p">[</span><span class="n">algo_name</span><span class="p">]()</span>
+    <span class="c1"># dump to json</span>
+    <span class="n">json_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">.json&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">algo_name</span><span class="p">))</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">json_path</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We now go over the general structure of algorithm config classes by dicusssing the <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code> class, which has more specific functionality than the general <code class="docutils literal notranslate"><span class="pre">Config</span></code> class for use with this repository.</p>
+<div class="section" id="config-factory">
+<h2>Config Factory<a class="headerlink" href="#config-factory" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code> class has a property and classmethod called <code class="docutils literal notranslate"><span class="pre">ALGO_NAME</span></code> that must be filled out by all subclasses – this should correspond to the algorithm name for each config, and should match the algorithm name that is passed to <code class="docutils literal notranslate"><span class="pre">register_algo_factory_func</span></code> at the top of each algorithm implementation file. For example, for <code class="docutils literal notranslate"><span class="pre">BCConfig</span></code>, <code class="docutils literal notranslate"><span class="pre">ALGO_NAME</span> <span class="pre">=</span> <span class="pre">&quot;bc&quot;</span></code>. This property is important in order to make sure that all configs that subclass <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code> get registered into the <code class="docutils literal notranslate"><span class="pre">REGISTERED_CONFIGS</span></code> global registry (<code class="docutils literal notranslate"><span class="pre">ALGO_NAME</span></code> is used as a key to register the class into the registry). This also allows the <code class="docutils literal notranslate"><span class="pre">config_factory</span></code> function to easily create the appropriate config class for an algorithm – <strong>this is the standard entry point for creating config objects in the codebase</strong>. While config jsons can also be used to load configs during training (as discussed in the Quick Start section of the documentation), the <code class="docutils literal notranslate"><span class="pre">config_factory</span></code> function is still used to create an initial config object, which is then updated (see the example below).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">robomimic.config</span> <span class="kn">import</span> <span class="n">config_factory</span>
+
+<span class="c1"># base config for algorithm with default values</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">config_factory</span><span class="p">(</span><span class="s2">&quot;bc&quot;</span><span class="p">)</span>
+
+<span class="c1"># update defaults with config json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/path/to/config.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">ext_config_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ext_config_json</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At test-time, when loading a model from a checkpoint, the config is restored by reading the json string from the checkpoint, and then using it to instantiate the config. An example is below (modified slightlyt from <code class="docutils literal notranslate"><span class="pre">config_from_checkpoint</span></code> in <code class="docutils literal notranslate"><span class="pre">utils/file_utils.py</span></code>)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">robomimic.utils.file_utils</span> <span class="k">as</span> <span class="nn">FileUtils</span>
+<span class="n">ckpt_dict</span> <span class="o">=</span> <span class="n">FileUtils</span><span class="o">.</span><span class="n">load_dict_from_checkpoint</span><span class="p">(</span><span class="s2">&quot;path/to/ckpt.pth&quot;</span><span class="p">)</span>
+<span class="n">config_json</span> <span class="o">=</span> <span class="n">ckpt_dict</span><span class="p">[</span><span class="s2">&quot;config&quot;</span><span class="p">]</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">config_factory</span><span class="p">(</span><span class="n">ckpt_dict</span><span class="p">[</span><span class="s2">&quot;algo_name&quot;</span><span class="p">],</span> <span class="n">dic</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">config_json</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="config-structure">
+<h2>Config Structure<a class="headerlink" href="#config-structure" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code> class (and all subclasses) have 4 important sections that need to be filled out – each is a method of the config class. See <code class="docutils literal notranslate"><span class="pre">config/base_config.py</span></code> (and the relevant algorithm config files like <code class="docutils literal notranslate"><span class="pre">config/bc_config.py</span></code>) for details on the specific settings under each section.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">experiment_config(self)</span></code></p>
+<ul>
+<li><p>This function populates the <code class="docutils literal notranslate"><span class="pre">config.experiment</span></code> attribute of the config, which has several experiment settings such as the name of the training run, whether to do logging, whether to save models (and how often), whether to render videos, and whether to do rollouts (and how often). The <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code> class has a default implementation that usually doesn’t need to be overriden.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">train_config(self)</span></code></p>
+<ul>
+<li><p>This function populates the <code class="docutils literal notranslate"><span class="pre">config.train</span></code> attribute of the config, which has several settings related to the training process, such as the dataset to use for training, and how the data loader should load the data. The <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code> class has a default implementation that usually doesn’t need to be overriden.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">algo_config(self)</span></code></p>
+<ul>
+<li><p>This function populates the <code class="docutils literal notranslate"><span class="pre">config.algo</span></code> attribute of the config, and is given to the <code class="docutils literal notranslate"><span class="pre">Algo</span></code> subclass (see <code class="docutils literal notranslate"><span class="pre">algo/algo.py</span></code>) for each algorithm through the <code class="docutils literal notranslate"><span class="pre">algo_config</span></code> argument to the constructor. Any parameter that an algorithm needs to determine its training and test-time behavior should be populated here. This function should be implemented by every subclass.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">observation_config(self)</span></code></p>
+<ul>
+<li><p>This function populates the <code class="docutils literal notranslate"><span class="pre">config.observation</span></code> attribute of the config, and is given to the <code class="docutils literal notranslate"><span class="pre">Algo</span></code> subclass (see <code class="docutils literal notranslate"><span class="pre">algo/algo.py</span></code>) for each algorithm through the <code class="docutils literal notranslate"><span class="pre">obs_config</span></code> argument to the constructor. This portion of the config is used to specify what observation modalities should be used by the networks for training, and how the observation modalities should be encoded by the networks. While the <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code> class has a default implementation that usually doesn’t need to be overriden, certain algorithm configs may choose to, in order to have seperate configs for different networks in the algorithm.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="config-locking">
+<h2>Config Locking<a class="headerlink" href="#config-locking" title="Permalink to this headline">¶</a></h2>
+<p>To prevent accidental config modification, each <code class="docutils literal notranslate"><span class="pre">Config</span></code> object implements a two-level locking mechanism: <em>key-locked</em> and <em>all-locked</em>. A <code class="docutils literal notranslate"><span class="pre">Config</span></code> object can be put into the <em>key-locked</em> state by calling <code class="docutils literal notranslate"><span class="pre">config.lock_keys()</span></code>. Under the <em>key-locked</em>  state, a <code class="docutils literal notranslate"><span class="pre">Config</span></code> object does not allow adding new keys but only changing the values of existing keys. A <code class="docutils literal notranslate"><span class="pre">Config</span></code> object can be put into the <em>all-locked</em> state by calling <code class="docutils literal notranslate"><span class="pre">config.lock()</span></code>. In this state, the object does not allow adding new keys nor changing existing values.</p>
+<p>All <code class="docutils literal notranslate"><span class="pre">Config</span></code> objects that inherit the constructor of <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code> are <em>key-locked</em> by default. Upon finishing constructing the object, it is recommended to put the config object into the <em>all-locked</em> state by calling <code class="docutils literal notranslate"><span class="pre">config.lock()</span></code>. <code class="docutils literal notranslate"><span class="pre">Config</span></code> objects also implement context manager functions that allow convenient and controlled config modification within a scope.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">value_unlocked()</span></code></p>
+<ul>
+<li><p>This context scope allows values of existing keys to be modified if the <code class="docutils literal notranslate"><span class="pre">Config</span></code> object is <em>all-locked</em>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unlocked()</span></code></p>
+<ul>
+<li><p>This context scope allows new keys to be added as well as values of existing keys to be modified, regardless of the locking state.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="minimum-example">
+<h2>Minimum Example<a class="headerlink" href="#minimum-example" title="Permalink to this headline">¶</a></h2>
+<p>Please see the <a class="reference external" href="../introduction/examples.html#config-example">examples section</a> for more information on how to use the Config object, and examples on how the locking mechanism works.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="environments.html" class="btn btn-neutral float-right" title="Environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="models.html" class="btn btn-neutral float-left" title="Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

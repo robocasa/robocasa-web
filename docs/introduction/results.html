@@ -1,0 +1,615 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Reproducing Study Results &mdash; robomimic 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Overview" href="../modules/overview.html" />
+    <link rel="prev" title="Using the Model Zoo" href="model_zoo.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> robomimic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Working with robomimic Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Using Demonstration Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reproducing Study Results</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quick-example">Quick Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-released-datasets">Downloading Released Datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#proficient-human-ph">Proficient-Human (PH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multi-human-mh">Multi-Human (MH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine-generated-mg">Machine-Generated (MG)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paired">Paired</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#results-on-released-datasets">Results on Released Datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reproducing-experiments">Reproducing Experiments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overview-of-included-experiments">Overview of Included Experiments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#d4rl">D4RL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#downloading-d4rl-datasets">Downloading D4RL Datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reproduce-d4rl-results">Reproduce D4RL Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/utils.html">Utils</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/robomimic.html">robomimic package</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/contributing.html">Contributing Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/acknowledgments.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/references.html">Projects using robomimic</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robomimic</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Reproducing Study Results</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/introduction/results.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="reproducing-study-results">
+<h1>Reproducing Study Results<a class="headerlink" href="#reproducing-study-results" title="Permalink to this headline">¶</a></h1>
+<p>This section provides a guide on how to reproduce different experiment results from the study. Please see the <a class="reference external" href="https://arise-initiative.github.io/robomimic-web/assets/paper.pdf">paper</a> and the <a class="reference external" href="https://arise-initiative.github.io/robomimic-web/study/">study website</a> for more information.</p>
+<p><strong>Warning:</strong> When working with the robosuite datasets, please make sure that you have installed <a class="reference external" href="https://robosuite.ai/">robosuite</a>, and that you are on the <code class="docutils literal notranslate"><span class="pre">offline_study</span></code> branch of robosuite.</p>
+<div class="section" id="quick-example">
+<h2>Quick Example<a class="headerlink" href="#quick-example" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we show a simple example of how to reproduce one of the results from the study - the BC-RNN result on the Lift (Proficient-Human) low-dim dataset.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># default behavior for download script - just download lift proficient-human low-dim dataset to robomimic/../datasets</span>
+$ python download_datasets.py
+
+<span class="c1"># generate json configs for running all experiments at robomimic/exps/paper</span>
+$ python generate_paper_configs.py --output_dir /tmp/experiment_results
+
+<span class="c1"># the training command can be found in robomimic/exps/paper/core.sh</span>
+<span class="c1"># Training results can be viewed at /tmp/experiment_results (--output_dir when generating paper configs).</span>
+$ python train.py --config ../exps/paper/core/lift/ph/low_dim/bc.json
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="./results.html#downloading-released-datasets">downloading released datasets</a> section below for more information on downloading different datasets, and the <a class="reference external" href="./results.html#results-on-released-datasets">results on released datasets</a> section below for more detailed information on reproducing different results from the study.</p>
+</div>
+<div class="section" id="downloading-released-datasets">
+<h2>Downloading Released Datasets<a class="headerlink" href="#downloading-released-datasets" title="Permalink to this headline">¶</a></h2>
+<p>Released datasets can be downloaded easily by using the <code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> script. <strong>This is the preferred method for downloading the datasets</strong>, because the script will also set up a directory structure for the datasets that works out of the box with examples for reproducing some benchmark results with the repository. A few examples of using this script are provided below.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># default behavior - just download lift proficient-human low-dim dataset</span>
+$ python download_datasets.py
+
+<span class="c1"># download low-dim proficient-human datasets for all simulation tasks</span>
+<span class="c1"># (do a dry run first to see which datasets would be downloaded)</span>
+$ python download_datasets.py --tasks sim --dataset_types ph --hdf5_types low_dim --dry_run
+$ python download_datasets.py --tasks sim --dataset_types ph --hdf5_types low_dim
+
+<span class="c1"># download all low-dim and image multi-human datasets for the can and square tasks</span>
+$ python download_datasets.py --tasks can square --dataset_types mh --hdf5_types low_dim image
+
+<span class="c1"># download the sparse reward machine-generated low-dim datasets</span>
+$ python download_datasets.py --tasks all --dataset_types mg --hdf5_types low_dim_sparse
+
+<span class="c1"># download all real robot datasets</span>
+$ python download_datasets.py --tasks real
+
+<span class="c1"># specify a different location for downloading the datasets</span>
+$ python download_datasets.py --download_dir /tmp/datasets
+</pre></div>
+</div>
+<p>For convenience, we also provide links to each dataset below - to make it easy to manually download any dataset of interest. See the <a class="reference external" href="https://arise-initiative.github.io/robomimic-web/study/">study</a> for more information on the datasets.</p>
+<div class="section" id="proficient-human-ph">
+<h3>Proficient-Human (PH)<a class="headerlink" href="#proficient-human-ph" title="Permalink to this headline">¶</a></h3>
+<p>These datasets were collected by 1 operator using the <a class="reference external" href="https://roboturk.stanford.edu/">RoboTurk</a> platform. Each dataset consists of 200 successful trajectories.</p>
+<img src="../images/proficient_human.png" alt="proficient_human" style="zoom:33%;" /><table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center"><strong>Lift<br />(PH)</strong></th>
+<th align="center"><strong>Can<br />(PH)</strong></th>
+<th align="center"><strong>Square<br />(PH)</strong></th>
+<th align="center"><strong>Transport<br />(PH)</strong></th>
+<th align="center"><strong>Tool Hang<br />(PH)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="lift" src="../images/lift.png" /></td>
+<td align="center"><img alt="can" src="../images/can.png" /></td>
+<td align="center"><img alt="square" src="../images/square.png" /></td>
+<td align="center"><img alt="transport" src="../images/transport.png" /></td>
+<td align="center"><img alt="tool_hang" src="../images/tool_hang.png" /></td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/lift/ph/demo.hdf5">raw</a><br />(21 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/ph/demo.hdf5">raw</a><br />(45 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/square/ph/demo.hdf5">raw</a><br />(49 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/transport/ph/demo.hdf5">raw</a><br />(185 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/tool_hang/ph/demo.hdf5">raw</a><br />(127 MB)</td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/lift/ph/low_dim.hdf5">low_dim</a><br />(18 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/ph/low_dim.hdf5">low_dim</a><br />(44 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/square/ph/low_dim.hdf5">low_dim</a><br />(48 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/transport/ph/low_dim.hdf5">low_dim</a><br />(296 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/tool_hang/ph/low_dim.hdf5">low_dim</a><br />(193 MB)</td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/lift/ph/image.hdf5">image</a><br />(801 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/ph/image.hdf5">image</a><br />(1.9 GB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/square/ph/image.hdf5">image</a><br />(2.5 GB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/transport/ph/image.hdf5">image</a><br />(16 GB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/tool_hang/ph/image.hdf5">image</a><br />(63 GB)</td>
+</tr>
+</tbody>
+</table><table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center"><strong>Lift Real<br />(PH)</strong></th>
+<th align="center"><strong>Can Real<br />(PH)</strong></th>
+<th align="center"><strong>Tool Hang Real<br />(PH)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="lift_real" src="../images/lift_real.jpg" /></td>
+<td align="center"><img alt="can_real" src="../images/can_real.jpg" /></td>
+<td align="center"><img alt="tool_hang_real" src="../images/tool_hang_real.jpg" /></td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/lift_real/ph/demo.hdf5">image</a> (1.9 GB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can_real/ph/demo.hdf5">image</a> (5.3 GB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/tool_hang_real/ph/demo.hdf5">image</a> (58 GB)</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="multi-human-mh">
+<h3>Multi-Human (MH)<a class="headerlink" href="#multi-human-mh" title="Permalink to this headline">¶</a></h3>
+<p>These datasets were collected by 6 operators using the <a class="reference external" href="https://roboturk.stanford.edu/">RoboTurk</a> platform. Each dataset consists of 50 trajectories provided by each operator, for a total of 300 successful trajectories. The operators were varied in proficiency – there were 2 “worse” operators, 2 “okay” operators, and 2 “better” operators, resulting in diverse, mixed quality datasets.</p>
+<img src="../images/multi_human.png" alt="multi_human" style="zoom:33%;" /><table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center"><strong>Lift<br />(MH)</strong></th>
+<th align="center"><strong>Can<br />(MH)</strong></th>
+<th align="center"><strong>Square<br />(MH)</strong></th>
+<th align="center"><strong>Transport<br />(MH)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="lift" src="../images/lift.png" /></td>
+<td align="center"><img alt="can" src="../images/can.png" /></td>
+<td align="center"><img alt="square" src="../images/square.png" /></td>
+<td align="center"><img alt="transport" src="../images/transport.png" /></td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/lift/mh/demo.hdf5">raw</a><br />(20 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/mh/demo.hdf5">raw</a><br />(51 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/square/mh/demo.hdf5">raw</a><br />(45 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/transport/mh/demo.hdf5">raw</a><br />(212 MB)</td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/lift/mh/low_dim.hdf5">low_dim</a><br />(46 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/mh/low_dim.hdf5">low_dim</a><br />(108 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/square/mh/low_dim.hdf5">low_dim</a><br />(119 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/transport/mh/low_dim.hdf5">low_dim</a><br />(609 MB)</td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/lift/mh/image.hdf5">image</a><br />(2.6 GB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/mh/image.hdf5">image</a><br />(5.1 GB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/square/mh/image.hdf5">image</a><br />(6.5 GB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/transport/mh/image.hdf5">image</a><br />(32 GB)</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="machine-generated-mg">
+<h3>Machine-Generated (MG)<a class="headerlink" href="#machine-generated-mg" title="Permalink to this headline">¶</a></h3>
+<p>These datasets were generated by <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite-benchmark">training</a> an <a class="reference external" href="https://arxiv.org/abs/1801.01290">SAC</a> agent for each task, and then using each policy checkpoint saved during training to generate a mixed quality dataset. 300 rollouts were collected for each checkpoint, with 5 checkpoints for the Lift dataset (total of 1500 trajectories), and 13 checkpoints for the Can dataset (total of 3900 trajectories).</p>
+<img src="../images/machine_generated.png" alt="machine_generated" style="zoom:33%;" /><table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center"><strong>Lift<br />(MG)</strong></th>
+<th align="center"><strong>Can<br />(MG)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="lift" src="../images/lift.png" /></td>
+<td align="center"><img alt="can" src="../images/can.png" /></td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/lift/mg/demo.hdf5">raw</a><br />(96 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/mg/demo.hdf5">raw</a><br />(457 MB)</td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/lift/mg/low_dim_sparse.hdf5">low_dim (sparse)</a><br />(303 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/mg/low_dim_sparse.hdf5">low_dim (sparse)</a><br />(1.1 GB)</td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/lift/mg/low_dim_dense.hdf5">low_dim (dense)</a><br />(303 MB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/mg/low_dim_dense.hdf5">low_dim (dense)</a><br />(1.1 GB)</td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/lift/mg/image_sparse.hdf5">image (sparse)</a><br />(19 GB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/mg/image_sparse.hdf5">image (sparse)</a><br />(48 GB)</td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/lift/mg/image_dense.hdf5">image (dense)</a><br />(19 GB)</td>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/mg/image_dense.hdf5">image (dense)</a><br />(48 GB)</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="paired">
+<h3>Paired<a class="headerlink" href="#paired" title="Permalink to this headline">¶</a></h3>
+<p>This is a diagnostic dataset to test the ability of algorithms to learn from mixed quality human data. A single experienced operator collected 2 demonstrations for each of 100 task initializations on the Can task, resulting in 200 total demonstrations. Each pair of demonstrations consists of a “good” trajectory, where the can is picked up and placed in the correct bin, and a “bad” trajectory, where the can is picked up, and tossed outside of the robot workspace. Since the task initializations are identical, and the first part of each trajectory leading up to the can grasp is similar, there is a strong expectation for algorithms that deal with suboptimal data, to be able to filter the good trajectories from the bad ones, and achieve near-perfect performance.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center"><strong>Can Paired</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img src="../images/can_paired.png" alt="can_paired" style="zoom:12%;" /></td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/paired/demo.hdf5">raw</a><br />(39 MB)</td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/paired/low_dim.hdf5">low_dim (sparse)</a><br />(39 MB)</td>
+</tr>
+<tr>
+<td align="center"><a href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/can/paired/image.hdf5">image (sparse)</a><br />(1.7 GB)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="section" id="results-on-released-datasets">
+<h2>Results on Released Datasets<a class="headerlink" href="#results-on-released-datasets" title="Permalink to this headline">¶</a></h2>
+<p>This section discusses how to reproduce the results from the <a class="reference external" href="https://arise-initiative.github.io/robomimic-web/study/">study</a>.</p>
+<div class="section" id="reproducing-experiments">
+<h3>Reproducing Experiments<a class="headerlink" href="#reproducing-experiments" title="Permalink to this headline">¶</a></h3>
+<p>After downloading the appropriate datasets you’re interested in using by running the <code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> script, the <code class="docutils literal notranslate"><span class="pre">generate_paper_configs.py</span></code> script can be used to generate all training config json files necessary to reproduce the experiments in the <a class="reference external" href="https://arise-initiative.github.io/robomimic-web/study/">study</a>. The script takes 3 important arguments – <code class="docutils literal notranslate"><span class="pre">--config_dir</span></code> can be used to specify where the config json files will be generated (defaults to <code class="docutils literal notranslate"><span class="pre">robomimic/exps/paper</span></code>). The <code class="docutils literal notranslate"><span class="pre">--dataset_dir</span></code> specifies where the released datasets can be found, and should be consistent with the <code class="docutils literal notranslate"><span class="pre">--download_dir</span></code> argument supplied to <code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> earlier (if omitted, both scripts default to <code class="docutils literal notranslate"><span class="pre">robomimic/../datasets</span></code>). The <code class="docutils literal notranslate"><span class="pre">--output_dir</span></code> argument specifies where training results will be written (including model checkpoints, logs, and rollout videos). A few examples are below.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assume datasets already exist in robomimic/../datasets folder. Configs will be generated under robomimic/exps/paper, and training results will be at /tmp/experiment_results when launching training runs.</span>
+$ python generate_paper_configs.py --output_dir /tmp/experiment_results
+
+<span class="c1"># Alternatively, specify where datasets exist, and specify where configs should be generated.</span>
+$ python generate_paper_configs.py --config_dir /tmp/configs --dataset_dir /tmp/datasets --output_dir /tmp/experiment_results
+</pre></div>
+</div>
+<p>Then, to reproduce a specific set of training runs for different experiment groups (see below), we can simply navigate to the generated config directory, and copy training commands from the generated shell script there. As an example, we can reproduce the low-dim BC and BC-RNN training results on the Lift PH dataset, by looking for the correct set of commands in <code class="docutils literal notranslate"><span class="pre">robomimic/exps/paper/core.sh</span></code> and running them. The relevant section of the shell script is reproduced below.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#  task: lift</span>
+<span class="c1">#    dataset type: ph</span>
+<span class="c1">#      hdf5 type: low_dim</span>
+python /path/to/robomimic/scripts/train.py --config /path/to/robomimic/exps/paper/core/lift/ph/low_dim/bc.json
+python /path/to/robomimic/scripts/train.py --config /path/to/robomimic/exps/paper/core/lift/ph/low_dim/bc_rnn.json
+</pre></div>
+</div>
+</div>
+<div class="section" id="overview-of-included-experiments">
+<h3>Overview of Included Experiments<a class="headerlink" href="#overview-of-included-experiments" title="Permalink to this headline">¶</a></h3>
+<p>Each group of experiments below has a shell script (for example <code class="docutils literal notranslate"><span class="pre">core.sh</span></code>) and a folder that is generated by the <code class="docutils literal notranslate"><span class="pre">generate_paper_configs.py</span></code> script at <code class="docutils literal notranslate"><span class="pre">--config_dir</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">robomimic/exps/paper</span></code>). The Tables and Figures below refer to the ones in this paper.</p>
+<ul class="simple">
+<li><p><strong>core:</strong> the main experiment results across all tasks, datasets, and observation spaces. This includes the results in Table 1, Table 3, and Table 16</p></li>
+<li><p><strong>subopt:</strong> results on suboptimal data subsets of the multi-human datasets (with the exception of results on the can-paired dataset, which are actually contained in <code class="docutils literal notranslate"><span class="pre">core</span></code> above). This includes Table 2, Table 17, Table 23, and Table 24.</p></li>
+<li><p><strong>dataset_size:</strong> results on the 20% and 50% size subsets. This includes Figure 3, Table 27, and Table 28.</p></li>
+<li><p><strong>obs_ablation:</strong> results on different observation spaces from the study. This includes Figure 2a, Table 22, and Table 25.</p></li>
+<li><p><strong>hyper_ablation:</strong> results on the hyperparameter sensitivity study. This includes Figure 2b, Figure 2c, and Table 26.</p></li>
+<li><p><strong>d4rl:</strong> results on D4RL datasets (see section below)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="d4rl">
+<h2>D4RL<a class="headerlink" href="#d4rl" title="Permalink to this headline">¶</a></h2>
+<p>Below, we provide a table of results on common D4RL datasets using the algorithms included in the released codebase. We follow the convention in the TD3-BC paper, where we average results over the final 10 rollout evaluations, but we use 50 rollouts instead of 10 for each evaluation. Apart from a small handful of the halfcheetah results, the results align with those presented in the <a class="reference external" href="https://arxiv.org/abs/2106.06860">TD3_BC paper</a>. We suspect the halfcheetah results are different because we used <code class="docutils literal notranslate"><span class="pre">mujoco-py</span></code> version <code class="docutils literal notranslate"><span class="pre">2.0.2.13</span></code> in our evaluations, as opposed to <code class="docutils literal notranslate"><span class="pre">1.5</span></code> in order to be consistent with the version we were using for robosuite datasets. The results below were generated with <code class="docutils literal notranslate"><span class="pre">gym</span></code> version <code class="docutils literal notranslate"><span class="pre">0.17.3</span></code> and this <code class="docutils literal notranslate"><span class="pre">d4rl</span></code> <a class="reference external" href="https://github.com/rail-berkeley/d4rl/tree/9b68f31bab6a8546edfb28ff0bd9d5916c62fd1f">commit</a>.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th></th>
+<th><strong>BCQ</strong></th>
+<th><strong>CQL</strong></th>
+<th><strong>TD3-BC</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HalfCheetah-Medium</strong></td>
+<td>40.8% (4791)</td>
+<td>38.5% (4497)</td>
+<td>41.7% (4902)</td>
+</tr>
+<tr>
+<td><strong>Hopper-Medium</strong></td>
+<td>36.9% (1181)</td>
+<td>30.7% (980)</td>
+<td>97.9% (3167)</td>
+</tr>
+<tr>
+<td><strong>Walker2d-Medium</strong></td>
+<td>66.4% (3050)</td>
+<td>65.2% (2996)</td>
+<td>77.0% (3537)</td>
+</tr>
+<tr>
+<td><strong>HalfCheetah-Medium-Expert</strong></td>
+<td>74.9% (9016)</td>
+<td>21.5% (2389)</td>
+<td>79.4% (9578)</td>
+</tr>
+<tr>
+<td><strong>Hopper-Medium-Expert</strong></td>
+<td>83.8% (2708)</td>
+<td>111.7% (3614)</td>
+<td>112.2% (3631)</td>
+</tr>
+<tr>
+<td><strong>Walker2d-Medium-Expert</strong></td>
+<td>70.2% (3224)</td>
+<td>77.4% (3554)</td>
+<td>102.0% (4683)</td>
+</tr>
+<tr>
+<td><strong>HalfCheetah-Expert</strong></td>
+<td>94.3% (11427)</td>
+<td>29.2% (3342)</td>
+<td>95.4% (11569)</td>
+</tr>
+<tr>
+<td><strong>Hopper-Expert</strong></td>
+<td>104.7% (3389)</td>
+<td>111.8% (3619)</td>
+<td>112.2% (3633)</td>
+</tr>
+<tr>
+<td><strong>Walker2d-Expert</strong></td>
+<td>80.5% (3699)</td>
+<td>108.0% (4958)</td>
+<td>105.3% (4837)</td>
+</tr>
+</tbody>
+</table><div class="section" id="downloading-d4rl-datasets">
+<h3>Downloading D4RL Datasets<a class="headerlink" href="#downloading-d4rl-datasets" title="Permalink to this headline">¶</a></h3>
+<p>To download and convert D4RL datasets to be compatible with this repository, use the following conversion script in the <code class="docutils literal notranslate"><span class="pre">scripts/conversion</span></code> folder, and specify the <code class="docutils literal notranslate"><span class="pre">--env</span></code> that the dataset corresponds to, and optionally the <code class="docutils literal notranslate"><span class="pre">--folder</span></code> where you want to download the dataset. If no folder is provided, the <code class="docutils literal notranslate"><span class="pre">datasets</span></code> folder at the top-level of the repository will be used. The example below downloads and converts the <code class="docutils literal notranslate"><span class="pre">walker2d-medium-expert-v0</span></code> dataset. This should be done for all D4RL datasets of interest.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># by default, download to robomimic/datasets</span>
+$ python convert_d4rl.py --env walker2d-medium-expert-v0
+<span class="c1"># download to specific folder</span>
+$ python convert_d4rl.py --env walker2d-medium-expert-v0 --folder /path/to/output/folder/
+</pre></div>
+</div>
+<p>The script will download the raw hdf5 dataset to the folder, and the converted one that is compatible with this repository into the <code class="docutils literal notranslate"><span class="pre">converted</span></code> subfolder.</p>
+</div>
+<div class="section" id="reproduce-d4rl-results">
+<h3>Reproduce D4RL Results<a class="headerlink" href="#reproduce-d4rl-results" title="Permalink to this headline">¶</a></h3>
+<p>In order to reproduce the results above, first make sure that the <code class="docutils literal notranslate"><span class="pre">generate_paper_configs.py</span></code> script has been run, where the <code class="docutils literal notranslate"><span class="pre">--dataset_dir</span></code> argument is consistent with the folder where the D4RL datasets were downloaded using the <code class="docutils literal notranslate"><span class="pre">convert_d4rl.py</span></code> script. This is also the first step for reproducing results on the released robot manipulation datasets. The <code class="docutils literal notranslate"><span class="pre">--config_dir</span></code> directory used in the script (<code class="docutils literal notranslate"><span class="pre">robomimic/exps/paper</span></code> by default) will contain a <code class="docutils literal notranslate"><span class="pre">d4rl.sh</span></code> script, and a <code class="docutils literal notranslate"><span class="pre">d4rl</span></code> subdirectory that contains all the json configs. The table results above can be generated simply by running the training commands in the shell script.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../modules/overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="model_zoo.html" class="btn btn-neutral float-left" title="Using the Model Zoo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
