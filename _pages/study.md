@@ -5,7 +5,7 @@ permalink: /study/
 
 # What Matters in Learning from Offline Human Demonstrations for Robot Manipulation
 
-The full paper can be found [here](https://arise-initiative.github.io/robomimic-web/assets/paper.pdf).
+The full paper can be found [here](https://arxiv.org/abs/2108.03298).
 
 ## Video Summary
 
@@ -15,7 +15,7 @@ The full paper can be found [here](https://arise-initiative.github.io/robomimic-
 
 ## Overview
 
-- In [this paper](https://arise-initiative.github.io/robomimic-web/assets/paper.pdf), we conduct an extensive study of six offline learning algorithms for robot manipulation on five simulated and three real-world multi-stage manipulation tasks of varying complexity, and with datasets of varying quality. 
+- In [this paper](https://arxiv.org/abs/2108.03298), we conduct an extensive study of six offline learning algorithms for robot manipulation on five simulated and three real-world multi-stage manipulation tasks of varying complexity, and with datasets of varying quality. 
 - Our study analyzes the most critical challenges when learning from offline human data for manipulation.
 - Based on the study, we derive a series of lessons to guide future work, and also highlight opportunities in learning from human datasets, such as the ability to learn proficient policies on challenging, multi-stage tasks and easily scale to natural, real-world manipulation scenarios.
 - **We have open-sourced our datasets and all algorithm implementations to facilitate future research and fair comparisons in learning from human demonstration data.**
@@ -46,7 +46,7 @@ We explore five challenges in learning from human-labeled datasets.
 <br><br>
 - **(C5) Sensitivity to Agent Design Decisions.** Performance can be very sensitive to important agent design decisions, like the observation space and hyperparameters used for learning.
 
-Next, we summarize the tasks (5 simulation and 3 real), datasets (3 different variants), algorithms (6 offline methods, including 3 imitation and 3 batch reinforcement), and observations spaces (2 main variants) that we explored in our study.
+Next, we summarize the tasks (5 simulation and 3 real), datasets (3 different variants), algorithms (6 offline methods, including 3 imitation and 3 batch reinforcement), and observation spaces (2 main variants) that we explored in our study.
 
 ## Study Design: Tasks
 
