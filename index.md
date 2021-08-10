@@ -30,13 +30,11 @@ videoId: "robomimic_video.mp4"
 
 # Citation
 
-TODO: this is a placeholder
-
 ```bibtex
-@inproceedings{robosuite2020,
-  title={robosuite: A Modular Simulation Framework and Benchmark for Robot Learning},
-  author={Yuke Zhu and Josiah Wong and Ajay Mandlekar and Roberto Mart\'{i}n-Mart\'{i}n},
-  booktitle={arXiv preprint arXiv:2009.12293},
-  year={2020}
+@inproceedings{robomimic2021,
+  title={What Matters in Learning from Offline Human Demonstrations for Robot Manipulation},
+  author={Ajay Mandlekar and Danfei Xu and Josiah Wong and Soroush Nasiriany and Chen Wang and Rohun Kulkarni and Li Fei-Fei and Silvio Savarese and Yuke Zhu and Roberto Mart\'{i}n-Mart\'{i}n},
+  booktitle={arXiv preprint arXiv:2108.03298},
+  year={2021}
 }
 ```
