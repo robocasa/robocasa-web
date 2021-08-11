@@ -5,7 +5,10 @@ permalink: /study/
 
 # What Matters in Learning from Offline Human Demonstrations for Robot Manipulation
 
+Please see the paper and blog post for more information (links below).
+
 **Paper:** [link](https://arxiv.org/abs/2108.03298)
+
 **Blog Post:** [link](https://ai.stanford.edu/blog/robomimic/)
 
 ## Video Summary
