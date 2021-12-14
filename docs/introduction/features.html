@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Using the Model Zoo &mdash; robomimic 0.2.0 documentation</title>
+  <title>Features Overview &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reproducing Study Results" href="results.html" />
-    <link rel="prev" title="Using Demonstration Datasets" href="datasets.html" /> 
+    <link rel="next" title="Advanced Features" href="advanced.html" />
+    <link rel="prev" title="Getting Started" href="quickstart.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,36 +95,15 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="features.html">Features Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Features Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supported-datasets">Supported Datasets</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Working with robomimic Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Using Demonstration Datasets</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Using the Model Zoo</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#proficient-human-ph">Proficient-Human (PH)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#lift-ph">Lift (PH)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#bc-rnn">BC-RNN</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#can-ph">Can (PH)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">BC-RNN</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#square-ph">Square (PH)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">BC-RNN</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#transport-ph">Transport (PH)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id3">BC-RNN</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#tool-hang-ph">Tool Hang (PH)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id4">BC-RNN</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Reproducing Study Results</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
@@ -197,13 +176,13 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Using the Model Zoo</li>
+      <li>Features Overview</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../sources/introduction/model_zoo.md.txt" rel="nofollow"> View page source</a>
+            <a href="../sources/introduction/features.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -240,62 +219,85 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="using-the-model-zoo">
-<h1>Using the Model Zoo<a class="headerlink" href="#using-the-model-zoo" title="Permalink to this headline">¶</a></h1>
-<p>This section provides several proficient trained policy models that can be downloaded and used as-is. See the <a class="reference external" href="./quickstart.html#evaluating-trained-policies">“Evaluating Trained Policies”</a> section for instructions on loading these agents. The model zoo will be updated over time to include more tasks and policies. All success rates listed below are approximate - they may vary.</p>
-<p><strong>Warning:</strong> When using these trained models, please make sure that robosuite is on the <code class="docutils literal notranslate"><span class="pre">offline_study</span></code> branch of robosuite.</p>
-<div class="section" id="proficient-human-ph">
-<h2>Proficient-Human (PH)<a class="headerlink" href="#proficient-human-ph" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="lift-ph">
-<h3>Lift (PH)<a class="headerlink" href="#lift-ph" title="Permalink to this headline">¶</a></h3>
-<img src="../images/lift.png" alt="proficient_human" style="zoom:33%;" /><div class="section" id="bc-rnn">
-<h4>BC-RNN<a class="headerlink" href="#bc-rnn" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="features-overview">
+<h1>Features Overview<a class="headerlink" href="#features-overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we briefly summarize some key features and where you should look to learn more about them.</p>
+<ol class="simple">
+<li><p><strong>Datasets supported by robomimic</strong></p>
 <ul class="simple">
-<li><p>low-dim agent (success rate ~100%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/lift/bc_rnn/lift_ph_low_dim_epoch_1000_succ_100.pth">download</a>)</p></li>
-<li><p>image agent (success rate ~100%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/lift/bc_rnn/lift_ph_image_epoch_500_succ_100.pth">download</a>)</p></li>
+<li><p>See a list of supported datasets <a class="reference external" href="./quickstart.html#supported-datasets">here</a>.<br><br></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="can-ph">
-<h3>Can (PH)<a class="headerlink" href="#can-ph" title="Permalink to this headline">¶</a></h3>
-<img src="../images/can.png" alt="proficient_human" style="zoom:33%;" /><div class="section" id="id1">
-<h4>BC-RNN<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+</li>
+<li><p><strong>Visualizing datasets</strong></p>
 <ul class="simple">
-<li><p>low-dim agent (success rate ~100%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/can/bc_rnn/can_ph_low_dim_epoch_1150_succ_100.pth">download</a>)</p></li>
-<li><p>image agent (success rate ~100%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/can/bc_rnn/can_ph_image_epoch_300_succ_100.pth">download</a>)</p></li>
+<li><p>Learn how to visualize dataset trajectories <a class="reference external" href="./datasets.html#view-dataset-structure-and-videos">here</a>.<br><br></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="square-ph">
-<h3>Square (PH)<a class="headerlink" href="#square-ph" title="Permalink to this headline">¶</a></h3>
-<img src="../images/square.png" alt="proficient_human" style="zoom:33%;" /><div class="section" id="id2">
-<h4>BC-RNN<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+</li>
+<li><p><strong>Reproducing paper experiments</strong></p>
 <ul class="simple">
-<li><p>low-dim agent (success rate ~84%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/square/bc_rnn/square_ph_low_dim_epoch_1850_succ_84.pth">download</a>)</p></li>
-<li><p>image agent (success rate ~78%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/square/bc_rnn/square_ph_image_epoch_540_succ_78.pth">download</a>)</p></li>
+<li><p>Easily reproduce experiments from the following papers</p>
+<ul>
+<li><p>robomimic: <a class="reference external" href="./results.html">here</a></p></li>
+<li><p>MOMART: <a class="reference external" href="https://sites.google.com/view/il-for-mm/datasets">here</a><br><br></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="transport-ph">
-<h3>Transport (PH)<a class="headerlink" href="#transport-ph" title="Permalink to this headline">¶</a></h3>
-<img src="../images/transport.png" alt="proficient_human" style="zoom:33%;" /><div class="section" id="id3">
-<h4>BC-RNN<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+</li>
+</ul>
+</li>
+<li><p><strong>Making your own dataset</strong></p>
 <ul class="simple">
-<li><p>low-dim agent (success rate ~78%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/transport/bc_rnn/transport_ph_low_dim_epoch_1000_succ_78.pth">download</a>)</p></li>
-<li><p>image agent (success rate ~70%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/transport/bc_rnn/transport_ph_image_epoch_580_succ_70.pth">download</a>)</p></li>
+<li><p>Learn how to make your own collected dataset compatible with this repository <a class="reference external" href="./datasets.html#dataset-structure">here</a>.</p></li>
+<li><p>Note that <strong>all datasets collected through robosuite are also readily compatible</strong> (see <a class="reference external" href="./datasets.html#converting-robosuite-hdf5-datasets">here</a>).<br><br></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="tool-hang-ph">
-<h3>Tool Hang (PH)<a class="headerlink" href="#tool-hang-ph" title="Permalink to this headline">¶</a></h3>
-<img src="../images/tool_hang.png" alt="proficient_human" style="zoom:33%;" /><div class="section" id="id4">
-<h4>BC-RNN<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+</li>
+<li><p><strong>Using filter keys to easily train on subsets of a dataset</strong></p>
 <ul class="simple">
-<li><p>low-dim agent (success rate ~14%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/tool_hang/bc_rnn/tool_hang_ph_low_dim_epoch_2000_succ_14.pth">download</a>)</p></li>
-<li><p>image agent (success rate ~ 50-74%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/tool_hang/bc_rnn/tool_hang_ph_image_epoch_440_succ_74.pth">download</a>)</p></li>
+<li><p>See <a class="reference external" href="./datasets.html#filter-keys-and-train-valid-splits">this section</a> on how to use filter keys.<br><br></p></li>
 </ul>
+</li>
+<li><p><strong>Running hyperparameter scans easily</strong></p>
+<ul class="simple">
+<li><p>See <a class="reference external" href="./advanced.html#using-the-hyperparameter-helper-to-launch-runs">this guide</a> on running hyperparameter scans.<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Using pretrained models in the model zoo</strong></p>
+<ul class="simple">
+<li><p>See <a class="reference external" href="./model_zoo.html">this link</a> to download and use pretrained models.<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Getting familiar with configs</strong></p>
+<ul class="simple">
+<li><p>Learn about how configs work <a class="reference external" href="../modules/configs.html">here</a>.<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Getting familiar with operations over tensor collections</strong></p>
+<ul class="simple">
+<li><p>Learn about using useful tensor utilities <a class="reference external" href="../modules/utils.html#tensorutils">here</a>.<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Creating your own observation modalities</strong></p>
+<ul class="simple">
+<li><p>Learn how to make your own observation modalities and process them with custom network architectures <a class="reference external" href="../modules/observations.html">here</a>.<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Creating your own algorithm</strong></p>
+<ul class="simple">
+<li><p>Learn how to implement your own learning algorithm <a class="reference external" href="../modules/algorithms.html#building-your-own-algorithm">here</a>.<br><br></p></li>
+</ul>
+</li>
+</ol>
 </div>
-</div>
+<div class="section" id="supported-datasets">
+<h2>Supported Datasets<a class="headerlink" href="#supported-datasets" title="Permalink to this headline">¶</a></h2>
+<p>This is a list of datasets that we currently support, along with links on how to work with them. This list will be expanded as more datasets are made compatible with robomimic.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="./results.html#downloading-released-datasets">robomimic</a></p></li>
+<li><p><a class="reference external" href="./datasets.html#converting-robosuite-hdf5-datasets">robosuite</a></p></li>
+<li><p><a class="reference external" href="./datasets.html#momart-datasets">MOMART</a></p></li>
+<li><p><a class="reference external" href="./results.html#d4rl">D4RL</a></p></li>
+<li><p><a class="reference external" href="./datasets.html#roboturk-pilot-datasets">RoboTurk Pilot</a></p></li>
+</ul>
 </div>
 </div>
 
@@ -305,8 +307,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="results.html" class="btn btn-neutral float-right" title="Reproducing Study Results" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="datasets.html" class="btn btn-neutral float-left" title="Using Demonstration Datasets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="advanced.html" class="btn btn-neutral float-right" title="Advanced Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
