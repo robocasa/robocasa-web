@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Index &mdash; robomimic 0.1.0 documentation</title>
+  <title>Index &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
             
           
@@ -98,11 +98,13 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction/datasets.html">Using Demonstration Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction/model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction/results.html">Reproducing Study Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction/model_zoo.html">Using the Model Zoo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="modules/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/observations.html">Observations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/algorithms.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/models.html">Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/configs.html">Configs</a></li>
@@ -222,6 +224,8 @@
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.ActorNetwork">ActorNetwork (class in robomimic.models.policy_nets)</a>
 </li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.Modality.add_keys">add_keys() (robomimic.utils.obs_utils.Modality class method)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.hyperparam_utils.ConfigGenerator.add_param">add_param() (robomimic.utils.hyperparam_utils.ConfigGenerator method)</a>
 </li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.algo.Algo">Algo (class in robomimic.algo.algo)</a>
@@ -246,6 +250,8 @@
       </ul></li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.algo.algo_factory">algo_factory() (in module robomimic.algo.algo)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.config.html#robomimic.config.bc_config.BCConfig.ALGO_NAME">ALGO_NAME (robomimic.config.bc_config.BCConfig attribute)</a>
 
       <ul>
@@ -262,22 +268,20 @@
         <li><a href="api/robomimic.config.html#robomimic.config.td3_bc_config.TD3_BCConfig.ALGO_NAME">(robomimic.config.td3_bc_config.TD3_BCConfig attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.config.html#robomimic.config.base_config.BaseConfig.ALGO_NAME">ALGO_NAME() (robomimic.config.base_config.BaseConfig property)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.file_utils.algo_name_from_checkpoint">algo_name_from_checkpoint() (in module robomimic.utils.file_utils)</a>
 </li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.algo.algo_name_to_factory_func">algo_name_to_factory_func() (in module robomimic.algo.algo)</a>
 </li>
-      <li><a href="api/robomimic.config.html#robomimic.config.base_config.BaseConfig.all_modalities">all_modalities() (robomimic.config.base_config.BaseConfig property)</a>
+      <li><a href="api/robomimic.config.html#robomimic.config.base_config.BaseConfig.all_obs_keys">all_obs_keys() (robomimic.config.base_config.BaseConfig property)</a>
 
       <ul>
-        <li><a href="api/robomimic.config.html#robomimic.config.gl_config.GLConfig.all_modalities">(robomimic.config.gl_config.GLConfig property)</a>
+        <li><a href="api/robomimic.config.html#robomimic.config.gl_config.GLConfig.all_obs_keys">(robomimic.config.gl_config.GLConfig property)</a>
 </li>
-        <li><a href="api/robomimic.config.html#robomimic.config.hbc_config.HBCConfig.all_modalities">(robomimic.config.hbc_config.HBCConfig property)</a>
+        <li><a href="api/robomimic.config.html#robomimic.config.hbc_config.HBCConfig.all_obs_keys">(robomimic.config.hbc_config.HBCConfig property)</a>
 </li>
-        <li><a href="api/robomimic.config.html#robomimic.config.iris_config.IRISConfig.all_modalities">(robomimic.config.iris_config.IRISConfig property)</a>
+        <li><a href="api/robomimic.config.html#robomimic.config.iris_config.IRISConfig.all_obs_keys">(robomimic.config.iris_config.IRISConfig property)</a>
 </li>
       </ul></li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.assert_size_at_dim">assert_size_at_dim() (in module robomimic.utils.tensor_utils)</a>
@@ -360,6 +364,8 @@
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.contiguous">contiguous() (in module robomimic.utils.tensor_utils)</a>
 </li>
+      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Conv1dBase">Conv1dBase (class in robomimic.models.base_nets)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ConvBase">ConvBase (class in robomimic.models.base_nets)</a>
@@ -414,6 +420,8 @@
       </ul></li>
       <li><a href="api/robomimic.config.html#robomimic.config.config.Config.deepcopy">deepcopy() (robomimic.config.config.Config method)</a>
 </li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.DepthModality">DepthModality (class in robomimic.utils.obs_utils)</a>
+</li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.algo.Algo.deserialize">deserialize() (robomimic.algo.algo.Algo method)</a>
 
       <ul>
@@ -454,15 +462,19 @@
         <li><a href="api/robomimic.models.html#robomimic.models.vae_nets.VAE.encode">(robomimic.models.vae_nets.VAE method)</a>
 </li>
       </ul></li>
+      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.EncoderCore">EncoderCore (class in robomimic.models.base_nets)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.file_utils.env_from_checkpoint">env_from_checkpoint() (in module robomimic.utils.file_utils)</a>
 </li>
       <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvBase">EnvBase (class in robomimic.envs.env_base)</a>
 </li>
       <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvType">EnvType (class in robomimic.envs.env_base)</a>
 </li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.test_utils.example_dataset_path">example_dataset_path() (in module robomimic.utils.test_utils)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robomimic.utils.html#robomimic.utils.test_utils.example_dataset_path">example_dataset_path() (in module robomimic.utils.test_utils)</a>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.test_utils.example_momart_dataset_path">example_momart_dataset_path() (in module robomimic.utils.test_utils)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.expand_at">expand_at() (in module robomimic.utils.tensor_utils)</a>
 </li>
@@ -474,6 +486,10 @@
         <li><a href="api/robomimic.config.html#robomimic.config.td3_bc_config.TD3_BCConfig.experiment_config">(robomimic.config.td3_bc_config.TD3_BCConfig method)</a>
 </li>
       </ul></li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.python_utils.extract_class_init_kwargs_from_dict">extract_class_init_kwargs_from_dict() (in module robomimic.utils.python_utils)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.python_utils.extract_subset_dict">extract_subset_dict() (in module robomimic.utils.python_utils)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -490,9 +506,11 @@
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.log_utils.PrintLogger.flush">flush() (robomimic.utils.log_utils.PrintLogger method)</a>
 </li>
-      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ConvBase.forward">forward() (robomimic.models.base_nets.ConvBase method)</a>
+      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Conv1dBase.forward">forward() (robomimic.models.base_nets.Conv1dBase method)</a>
 
       <ul>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ConvBase.forward">(robomimic.models.base_nets.ConvBase method)</a>
+</li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CoordConv2d.forward">(robomimic.models.base_nets.CoordConv2d method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.FeatureAggregator.forward">(robomimic.models.base_nets.FeatureAggregator method)</a>
@@ -503,9 +521,15 @@
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.RNN_Base.forward">(robomimic.models.base_nets.RNN_Base method)</a>
 </li>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ScanCore.forward">(robomimic.models.base_nets.ScanCore method)</a>
+</li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.SpatialMeanPool.forward">(robomimic.models.base_nets.SpatialMeanPool method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.SpatialSoftmax.forward">(robomimic.models.base_nets.SpatialSoftmax method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Squeeze.forward">(robomimic.models.base_nets.Squeeze method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Unsqueeze.forward">(robomimic.models.base_nets.Unsqueeze method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.VisualCore.forward">(robomimic.models.base_nets.VisualCore method)</a>
 </li>
@@ -636,6 +660,8 @@
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.test_utils.get_base_config">get_base_config() (in module robomimic.utils.test_utils)</a>
 </li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.python_utils.get_class_init_kwargs">get_class_init_kwargs() (in module robomimic.utils.python_utils)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.dataset.SequenceDataset.get_dataset_for_ep">get_dataset_for_ep() (robomimic.utils.dataset.SequenceDataset method)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.dataset.SequenceDataset.get_dataset_sampler">get_dataset_sampler() (robomimic.utils.dataset.SequenceDataset method)</a>
@@ -667,6 +693,8 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvBase.get_observation">get_observation() (robomimic.envs.env_base.EnvBase method)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.get_processed_shape">get_processed_shape() (in module robomimic.utils.obs_utils)</a>
 </li>
       <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvBase.get_reward">get_reward() (robomimic.envs.env_base.EnvBase method)</a>
 </li>
@@ -750,7 +778,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.utils.html#robomimic.utils.torch_utils.hard_update">hard_update() (in module robomimic.utils.torch_utils)</a>
 </li>
-      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.has_image">has_image() (in module robomimic.utils.obs_utils)</a>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.has_modality">has_modality() (in module robomimic.utils.obs_utils)</a>
 </li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.hbc.HBC">HBC (class in robomimic.algo.hbc)</a>
 </li>
@@ -770,22 +798,30 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvType.IG_MOMART_TYPE">IG_MOMART_TYPE (robomimic.envs.env_base.EnvType attribute)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.vis_utils.image_tensor_to_disk">image_tensor_to_disk() (in module robomimic.utils.vis_utils)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.vis_utils.image_tensor_to_numpy">image_tensor_to_numpy() (in module robomimic.utils.vis_utils)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.vis_utils.image_to_disk">image_to_disk() (in module robomimic.utils.vis_utils)</a>
 </li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.ImageModality">ImageModality (class in robomimic.utils.obs_utils)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.index_at_time">index_at_time() (in module robomimic.utils.tensor_utils)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.initialize_default_obs_encoder">initialize_default_obs_encoder() (in module robomimic.utils.obs_utils)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.initialize_obs_modality_mapping_from_dict">initialize_obs_modality_mapping_from_dict() (in module robomimic.utils.obs_utils)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.initialize_obs_utils_with_config">initialize_obs_utils_with_config() (in module robomimic.utils.obs_utils)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.initialize_obs_utils_with_obs_specs">initialize_obs_utils_with_obs_specs() (in module robomimic.utils.obs_utils)</a>
 </li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.iris.IRIS">IRIS (class in robomimic.algo.iris)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.config.html#robomimic.config.iris_config.IRISConfig">IRISConfig (class in robomimic.config.iris_config)</a>
 </li>
       <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvBase.is_done">is_done() (robomimic.envs.env_base.EnvBase method)</a>
@@ -816,11 +852,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CoordConv2d.kernel_size">kernel_size (robomimic.models.base_nets.CoordConv2d attribute)</a>
 </li>
-      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.key_is_image">key_is_image() (in module robomimic.utils.obs_utils)</a>
-</li>
-      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.key_is_obs_type">key_is_obs_type() (in module robomimic.utils.obs_utils)</a>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.key_is_obs_modality">key_is_obs_modality() (in module robomimic.utils.obs_utils)</a>
 </li>
       <li><a href="api/robomimic.config.html#robomimic.config.config.Config.key_lockable">key_lockable() (robomimic.config.config.Config property)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.Modality.keys">keys (robomimic.utils.obs_utils.Modality attribute)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.vae_nets.CategoricalPrior.kl_loss">kl_loss() (robomimic.models.vae_nets.CategoricalPrior method)</a>
 
@@ -904,6 +940,8 @@
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.distributions.DiscreteValueDistribution.logits">logits() (robomimic.models.distributions.DiscreteValueDistribution property)</a>
 </li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.LowDimModality">LowDimModality (class in robomimic.utils.obs_utils)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.torch_utils.lr_scheduler_from_optim_params">lr_scheduler_from_optim_params() (in module robomimic.utils.torch_utils)</a>
 </li>
   </ul></td>
@@ -937,6 +975,8 @@
       <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.MIMO_MLP">MIMO_MLP (class in robomimic.models.obs_nets)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.MLP">MLP (class in robomimic.models.base_nets)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.Modality">Modality (class in robomimic.utils.obs_utils)</a>
 </li>
       <li>
     module
@@ -1014,7 +1054,11 @@
 </li>
         <li><a href="api/robomimic.utils.html#module-robomimic.utils.loss_utils">robomimic.utils.loss_utils</a>
 </li>
+        <li><a href="api/robomimic.utils.html#module-robomimic.utils.macros">robomimic.utils.macros</a>
+</li>
         <li><a href="api/robomimic.utils.html#module-robomimic.utils.obs_utils">robomimic.utils.obs_utils</a>
+</li>
+        <li><a href="api/robomimic.utils.html#module-robomimic.utils.python_utils">robomimic.utils.python_utils</a>
 </li>
         <li><a href="api/robomimic.utils.html#module-robomimic.utils.tensor_utils">robomimic.utils.tensor_utils</a>
 </li>
@@ -1037,12 +1081,24 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.DepthModality.name">name (robomimic.utils.obs_utils.DepthModality attribute)</a>
+
+      <ul>
+        <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.ImageModality.name">(robomimic.utils.obs_utils.ImageModality attribute)</a>
+</li>
+        <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.LowDimModality.name">(robomimic.utils.obs_utils.LowDimModality attribute)</a>
+</li>
+        <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.Modality.name">(robomimic.utils.obs_utils.Modality attribute)</a>
+</li>
+        <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.ScanModality.name">(robomimic.utils.obs_utils.ScanModality attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvBase.name">name() (robomimic.envs.env_base.EnvBase property)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.named_reduce">named_reduce() (in module robomimic.utils.tensor_utils)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.named_reduce_single">named_reduce_single() (in module robomimic.utils.tensor_utils)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.normalize_obs">normalize_obs() (in module robomimic.utils.obs_utils)</a>
@@ -1057,9 +1113,9 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.obs_encoder_args_from_config">obs_encoder_args_from_config() (in module robomimic.models.obs_nets)</a>
-</li>
       <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.obs_encoder_factory">obs_encoder_factory() (in module robomimic.models.obs_nets)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.obs_encoder_kwargs_from_config">obs_encoder_kwargs_from_config() (in module robomimic.utils.obs_utils)</a>
 </li>
       <li><a href="api/robomimic.config.html#robomimic.config.base_config.BaseConfig.observation_config">observation_config() (robomimic.config.base_config.BaseConfig method)</a>
 
@@ -1078,6 +1134,8 @@
       <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.ObservationEncoder">ObservationEncoder (class in robomimic.models.obs_nets)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.ObservationGroupEncoder">ObservationGroupEncoder (class in robomimic.models.obs_nets)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.ObservationKeyToModalityDict">ObservationKeyToModalityDict (class in robomimic.utils.obs_utils)</a>
 </li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.algo.Algo.on_epoch_end">on_epoch_end() (robomimic.algo.algo.Algo method)</a>
 
@@ -1099,9 +1157,11 @@
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CoordConv2d.output_padding">output_padding (robomimic.models.base_nets.CoordConv2d attribute)</a>
 </li>
-      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ConvBase.output_shape">output_shape() (robomimic.models.base_nets.ConvBase method)</a>
+      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Conv1dBase.output_shape">output_shape() (robomimic.models.base_nets.Conv1dBase method)</a>
 
       <ul>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ConvBase.output_shape">(robomimic.models.base_nets.ConvBase method)</a>
+</li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CoordConv2d.output_shape">(robomimic.models.base_nets.CoordConv2d method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.FeatureAggregator.output_shape">(robomimic.models.base_nets.FeatureAggregator method)</a>
@@ -1118,6 +1178,8 @@
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.RNN_Base.output_shape">(robomimic.models.base_nets.RNN_Base method)</a>
 </li>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ScanCore.output_shape">(robomimic.models.base_nets.ScanCore method)</a>
+</li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Sequential.output_shape">(robomimic.models.base_nets.Sequential method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ShallowConv.output_shape">(robomimic.models.base_nets.ShallowConv method)</a>
@@ -1125,6 +1187,10 @@
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.SpatialMeanPool.output_shape">(robomimic.models.base_nets.SpatialMeanPool method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.SpatialSoftmax.output_shape">(robomimic.models.base_nets.SpatialSoftmax method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Squeeze.output_shape">(robomimic.models.base_nets.Squeeze method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Unsqueeze.output_shape">(robomimic.models.base_nets.Unsqueeze method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.VisualCore.output_shape">(robomimic.models.base_nets.VisualCore method)</a>
 </li>
@@ -1217,11 +1283,17 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.process_image">process_image() (in module robomimic.utils.obs_utils)</a>
-</li>
-      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.process_image_shape">process_image_shape() (in module robomimic.utils.obs_utils)</a>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.process_frame">process_frame() (in module robomimic.utils.obs_utils)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.process_obs">process_obs() (in module robomimic.utils.obs_utils)</a>
+
+      <ul>
+        <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.Modality.process_obs">(robomimic.utils.obs_utils.Modality class method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.process_obs_dict">process_obs_dict() (in module robomimic.utils.obs_utils)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.Modality.process_obs_from_dict">process_obs_from_dict() (robomimic.utils.obs_utils.Modality class method)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.loss_utils.project_values_onto_atoms">project_values_onto_atoms() (in module robomimic.utils.loss_utils)</a>
 </li>
@@ -1243,9 +1315,21 @@
 </li>
       <li><a href="api/robomimic.html#robomimic.register_all_links">register_all_links() (in module robomimic)</a>
 </li>
+      <li><a href="api/robomimic.html#robomimic.register_all_momart_links">register_all_momart_links() (in module robomimic)</a>
+</li>
       <li><a href="api/robomimic.html#robomimic.register_dataset_link">register_dataset_link() (in module robomimic)</a>
 </li>
-      <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.ObservationEncoder.register_modality">register_modality() (robomimic.models.obs_nets.ObservationEncoder method)</a>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.register_encoder_core">register_encoder_core() (in module robomimic.utils.obs_utils)</a>
+</li>
+      <li><a href="api/robomimic.html#robomimic.register_momart_dataset_link">register_momart_dataset_link() (in module robomimic)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.register_obs_key">register_obs_key() (in module robomimic.utils.obs_utils)</a>
+
+      <ul>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.ObservationEncoder.register_obs_key">(robomimic.models.obs_nets.ObservationEncoder method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.register_randomizer">register_randomizer() (in module robomimic.utils.obs_utils)</a>
 </li>
       <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvBase.render">render() (robomimic.envs.env_base.EnvBase method)</a>
 </li>
@@ -1546,10 +1630,24 @@
 </li>
       </ul></li>
       <li>
+    robomimic.utils.macros
+
+      <ul>
+        <li><a href="api/robomimic.utils.html#module-robomimic.utils.macros">module</a>
+</li>
+      </ul></li>
+      <li>
     robomimic.utils.obs_utils
 
       <ul>
         <li><a href="api/robomimic.utils.html#module-robomimic.utils.obs_utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    robomimic.utils.python_utils
+
+      <ul>
+        <li><a href="api/robomimic.utils.html#module-robomimic.utils.python_utils">module</a>
 </li>
       </ul></li>
       <li>
@@ -1641,6 +1739,10 @@
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.train_utils.save_model">save_model() (in module robomimic.utils.train_utils)</a>
 </li>
+      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ScanCore">ScanCore (class in robomimic.models.base_nets)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.ScanModality">ScanModality (class in robomimic.utils.obs_utils)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.dataset.SequenceDataset">SequenceDataset (class in robomimic.utils.dataset)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Sequential">Sequential (class in robomimic.models.base_nets)</a>
@@ -1679,6 +1781,12 @@
         <li><a href="api/robomimic.models.html#robomimic.models.vae_nets.VAE.set_gumbel_temperature">(robomimic.models.vae_nets.VAE method)</a>
 </li>
       </ul></li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.Modality.set_keys">set_keys() (robomimic.utils.obs_utils.Modality class method)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.Modality.set_obs_processor">set_obs_processor() (robomimic.utils.obs_utils.Modality class method)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.Modality.set_obs_unprocessor">set_obs_unprocessor() (robomimic.utils.obs_utils.Modality class method)</a>
+</li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.algo.Algo.set_train">set_train() (robomimic.algo.algo.Algo method)</a>
 
       <ul>
@@ -1710,6 +1818,8 @@
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.SpatialMeanPool">SpatialMeanPool (class in robomimic.models.base_nets)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.SpatialSoftmax">SpatialSoftmax (class in robomimic.models.base_nets)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Squeeze">Squeeze (class in robomimic.models.base_nets)</a>
 </li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.algo.RolloutPolicy.start_episode">start_episode() (robomimic.algo.algo.RolloutPolicy method)</a>
 </li>
@@ -1799,12 +1909,14 @@
         <li><a href="api/robomimic.algo.html#robomimic.algo.td3_bc.TD3_BC.train_on_batch">(robomimic.algo.td3_bc.TD3_BC method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ConvBase.training">training (robomimic.models.base_nets.ConvBase attribute)</a>
+      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Conv1dBase.training">training (robomimic.models.base_nets.Conv1dBase attribute)</a>
 
       <ul>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ConvBase.training">(robomimic.models.base_nets.ConvBase attribute)</a>
+</li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CropRandomizer.training">(robomimic.models.base_nets.CropRandomizer attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.EncoderCore.training">(robomimic.models.base_nets.EncoderCore attribute)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.FeatureAggregator.training">(robomimic.models.base_nets.FeatureAggregator attribute)</a>
 </li>
@@ -1820,6 +1932,8 @@
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.RNN_Base.training">(robomimic.models.base_nets.RNN_Base attribute)</a>
 </li>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ScanCore.training">(robomimic.models.base_nets.ScanCore attribute)</a>
+</li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Sequential.training">(robomimic.models.base_nets.Sequential attribute)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ShallowConv.training">(robomimic.models.base_nets.ShallowConv attribute)</a>
@@ -1827,6 +1941,10 @@
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.SpatialMeanPool.training">(robomimic.models.base_nets.SpatialMeanPool attribute)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.SpatialSoftmax.training">(robomimic.models.base_nets.SpatialSoftmax attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Squeeze.training">(robomimic.models.base_nets.Squeeze attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Unsqueeze.training">(robomimic.models.base_nets.Unsqueeze attribute)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.VisualCore.training">(robomimic.models.base_nets.VisualCore attribute)</a>
 </li>
@@ -1869,6 +1987,8 @@
         <li><a href="api/robomimic.models.html#robomimic.models.value_nets.ValueNetwork.training">(robomimic.models.value_nets.ValueNetwork attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CoordConv2d.transposed">transposed (robomimic.models.base_nets.CoordConv2d attribute)</a>
 </li>
       <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvBase.type">type() (robomimic.envs.env_base.EnvBase property)</a>
@@ -1885,14 +2005,22 @@
 </li>
       <li><a href="api/robomimic.config.html#robomimic.config.config.Config.unlocked">unlocked() (robomimic.config.config.Config method)</a>
 </li>
-      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.unprocess_image">unprocess_image() (in module robomimic.utils.obs_utils)</a>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.unprocess_frame">unprocess_frame() (in module robomimic.utils.obs_utils)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.unprocess_obs">unprocess_obs() (in module robomimic.utils.obs_utils)</a>
+
+      <ul>
+        <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.Modality.unprocess_obs">(robomimic.utils.obs_utils.Modality class method)</a>
 </li>
-      <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.unsqueeze">unsqueeze() (in module robomimic.utils.tensor_utils)</a>
+      </ul></li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.unprocess_obs_dict">unprocess_obs_dict() (in module robomimic.utils.obs_utils)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Unsqueeze">Unsqueeze (class in robomimic.models.base_nets)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.unsqueeze">unsqueeze() (in module robomimic.utils.tensor_utils)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.unsqueeze_expand_at">unsqueeze_expand_at() (in module robomimic.utils.tensor_utils)</a>
 </li>
       <li><a href="api/robomimic.config.html#robomimic.config.config.Config.update">update() (robomimic.config.config.Config method)</a>

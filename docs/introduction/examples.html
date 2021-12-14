@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Working with robomimic Modules &mdash; robomimic 0.1.0 documentation</title>
+  <title>Working with robomimic Modules &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
             
           
@@ -100,16 +100,19 @@
 <li class="toctree-l2"><a class="reference internal" href="#train-loop-example">Train Loop Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#config-example">Config Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#observation-networks-example">Observation Networks Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-observation-modalities-example">Custom Observation Modalities Example</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Using Demonstration Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Reproducing Study Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/observations.html">Observations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
@@ -356,6 +359,10 @@
 <div class="section" id="observation-networks-example">
 <h2>Observation Networks Example<a class="headerlink" href="#observation-networks-example" title="Permalink to this headline">¶</a></h2>
 <p>The example script in <code class="docutils literal notranslate"><span class="pre">examples/simple_obs_net.py</span></code> discusses how to construct networks for taking observation dictionaries as input, and that produce dictionaries as outputs. See <a class="reference external" href="../modules/models.html#observation-encoder-and-decoder">this section</a> in the documentation for more details.</p>
+</div>
+<div class="section" id="custom-observation-modalities-example">
+<h2>Custom Observation Modalities Example<a class="headerlink" href="#custom-observation-modalities-example" title="Permalink to this headline">¶</a></h2>
+<p>The example script in <code class="docutils literal notranslate"><span class="pre">examples/add_new_modality.py</span></code> discusses how to (a) modify pre-existing observation modalities, and (b) add your own custom observation modalities with custom encoding. See <a class="reference external" href="../modules/models.html#observation-encoder-and-decoder">this section</a> in the documentation for more details about the encoding and decoding process.</p>
 </div>
 </div>
 

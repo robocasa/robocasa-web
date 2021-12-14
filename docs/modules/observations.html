@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Overview &mdash; robomimic 0.2.0 documentation</title>
+  <title>Observations &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SequenceDataset" href="dataset.html" />
-    <link rel="prev" title="Reproducing Study Results" href="../introduction/results.html" /> 
+    <link rel="next" title="Algorithms" href="algorithms.html" />
+    <link rel="prev" title="SequenceDataset" href="dataset.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,9 +104,12 @@
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataset.html">SequenceDataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="observations.html">Observations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Observations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modifying-and-adding-your-own-observation-modalities">Modifying and Adding Your Own Observation Modalities</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configs.html">Configs</a></li>
@@ -172,13 +175,13 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Overview</li>
+      <li>Observations</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../sources/modules/overview.md.txt" rel="nofollow"> View page source</a>
+            <a href="../sources/modules/observations.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -215,23 +218,26 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<p><img alt="overview" src="../images/module_overview.png" /></p>
-<p>The <strong>robomimic</strong> framework consists of several modular pieces that interact to train and evaluate a policy. A <a class="reference external" href="./configs.html">Config</a> object is used to define all settings for a particular training run, including the hdf5 dataset that will be used to train the agent, and algorithm hyperparameters. The demonstrations in the hdf5 dataset are loaded into a <a class="reference external" href="./dataset.html">SequenceDataset</a> object, which is used to provide minibatches for the train loop. Training consists of an <a class="reference external" href="./algorithms.html">Algorithm</a> object that trains a set of <a class="reference external" href="./models.html">Models</a> (including the Policy) by repeatedly sampling minibatches from the fixed, offline dataset. Every so often, the policy is evaluated in the <a class="reference external" href="./environments.html">Environment</a> by conducting a set of rollouts. Statistics and other important information during the training process are logged to disk (e.g. tensorboard outputs, model checkpoints, and evaluation rollout videos). We also provide additional utilities in <a class="reference external" href="./tensor_utils.html">TensorUtils</a> to work with complex observations in the form of nested tensor dictionaries.</p>
-<p>The directory structure of the repository is as follows.</p>
+<div class="section" id="observations">
+<h1>Observations<a class="headerlink" href="#observations" title="Permalink to this headline">¶</a></h1>
+<p><strong>robomimic</strong> natively supports multiple different observation modalities, and provides integrated support for modifying observations and adding your own custom ones.</p>
+<p>First, we highlight semantic distinctions when referring to different aspects of observations:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/algo</span></code>: policy learning algorithm implementations (see <a class="reference external" href="./algorithms.html">Algorithm documentation</a> for more information)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/config</span></code>: config classes (see <a class="reference external" href="./configs.html">Config documentation</a> for more information)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/envs</span></code>: wrappers for environments, used during evaluation rollouts (see <a class="reference external" href="./environments.html">Environment documentation</a> for more information)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/exps/templates</span></code>: config templates for each policy learning algorithm (these are auto-generated with the <code class="docutils literal notranslate"><span class="pre">robomimic/scripts/generate_config_templates.py</span></code> script)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/models</span></code>: network implementations (see <a class="reference external" href="./models.html">Models documentation</a> for more information)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/scripts</span></code>: main repository scripts</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/utils</span></code>: a collection of utilities, including the <a class="reference external" href="./dataset.html">SequenceDataset</a> class to load hdf5 datasets into a torch training pipeline, and <a class="reference external" href="./tensor_utils.html">TensorUtils</a> to work with nested tensor dictionaries</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tests</span></code>: test scripts for validating repository functionality</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">examples</span></code>: some simple examples to better understand modular components in the codebase (see the <a class="reference external" href="../introduction/examples.html">Examples documentation</a> for more information)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">docs</span></code>: files to generate sphinx documentation</p></li>
+<li><p><strong>Keys</strong> are individual observations that are received from an environment / dataset. For example, <code class="docutils literal notranslate"><span class="pre">rgb_wrist</span></code>, <code class="docutils literal notranslate"><span class="pre">eef_pos</span></code>, and <code class="docutils literal notranslate"><span class="pre">joint_vel</span></code> could be keys, depending on the dataset / environment.</p></li>
+<li><p><strong>Modalities</strong> are different observation modes. For example, low dimensional states are considered a single mode, whereas RGB observations might be another mode. <strong>robomimic</strong> natively supports four modalities: <code class="docutils literal notranslate"><span class="pre">low_dim</span></code>, <code class="docutils literal notranslate"><span class="pre">rgb</span></code>, <code class="docutils literal notranslate"><span class="pre">depth</span></code>, and <code class="docutils literal notranslate"><span class="pre">scan</span></code>. Each modality owns it own set of observation keys.</p></li>
+<li><p><strong>Groups</strong> consist of potentially multiple modalities and multiple keys per modality, which are together passed to a learning model. For example, <strong>robomimic</strong> commonly uses three different groups: <code class="docutils literal notranslate"><span class="pre">obs</span></code>, which contains the normal observations passed to any model using these as inputs, and <code class="docutils literal notranslate"><span class="pre">goal</span></code> / <code class="docutils literal notranslate"><span class="pre">subgoal</span></code>, which means any specified modalities / keys correspond to a goal / subgoal to be learned.</p></li>
 </ul>
+<p>Observations are handled in the following way:</p>
+<ol class="simple">
+<li><p>Each observation key is according to their modality via their <code class="docutils literal notranslate"><span class="pre">Modality</span></code> class,</p></li>
+<li><p>All observations for a given modality are concatenated and passed through an <code class="docutils literal notranslate"><span class="pre">ObservationEncoder</span></code> for that modality,</p></li>
+<li><p>All processed observations over all modalities are concatenated together and passed to a learning network</p></li>
+</ol>
+<div class="section" id="modifying-and-adding-your-own-observation-modalities">
+<h2>Modifying and Adding Your Own Observation Modalities<a class="headerlink" href="#modifying-and-adding-your-own-observation-modalities" title="Permalink to this headline">¶</a></h2>
+<p><strong>robomimic</strong> natively supports low dimensional (<code class="docutils literal notranslate"><span class="pre">low_dim</span></code>), RGB images (<code class="docutils literal notranslate"><span class="pre">rgb</span></code>), depth images (<code class="docutils literal notranslate"><span class="pre">depth</span></code>), and scan arrays (<code class="docutils literal notranslate"><span class="pre">scan</span></code>). The way each of these modalities are processed and encoded can be easily specified by modifying their respective <code class="docutils literal notranslate"><span class="pre">encoder</span></code> parameters in your <code class="docutils literal notranslate"><span class="pre">Config</span></code> class.</p>
+<p>You may want to specify your own custom modalities that get processed and encoded in a certain way (e.g.: semantic segmentation, optical flow, etc…). This can also easily be done, and we refer you to our <a class="reference external" href="../introduction/examples.html#custom-observation-modalities-example">example script</a> which walks through the process.</p>
+</div>
 </div>
 
 
@@ -240,8 +246,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="dataset.html" class="btn btn-neutral float-right" title="SequenceDataset" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../introduction/results.html" class="btn btn-neutral float-left" title="Reproducing Study Results" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="algorithms.html" class="btn btn-neutral float-right" title="Algorithms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dataset.html" class="btn btn-neutral float-left" title="SequenceDataset" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

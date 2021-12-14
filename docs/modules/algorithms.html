@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Algorithms &mdash; robomimic 0.1.0 documentation</title>
+  <title>Algorithms &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Models" href="models.html" />
-    <link rel="prev" title="SequenceDataset" href="dataset.html" /> 
+    <link rel="prev" title="Observations" href="observations.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
             
           
@@ -100,11 +100,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction/datasets.html">Using Demonstration Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/results.html">Reproducing Study Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observations.html">Observations</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Algorithms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#initialization">Initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#important-class-methods">Important Class Methods</a></li>
@@ -406,7 +408,7 @@
 <span class="n">model</span> <span class="o">=</span> <span class="n">algo_factory</span><span class="p">(</span>
     <span class="n">algo_name</span><span class="p">,</span>
     <span class="n">config</span><span class="p">,</span>
-    <span class="n">modality_shapes</span><span class="o">=</span><span class="n">ckpt_dict</span><span class="p">[</span><span class="s2">&quot;shape_metadata&quot;</span><span class="p">][</span><span class="s2">&quot;all_shapes&quot;</span><span class="p">],</span>
+    <span class="n">obs_key_shapes</span><span class="o">=</span><span class="n">ckpt_dict</span><span class="p">[</span><span class="s2">&quot;shape_metadata&quot;</span><span class="p">][</span><span class="s2">&quot;all_shapes&quot;</span><span class="p">],</span>
     <span class="n">ac_dim</span><span class="o">=</span><span class="n">ckpt_dict</span><span class="p">[</span><span class="s2">&quot;shape_metadata&quot;</span><span class="p">][</span><span class="s2">&quot;ac_dim&quot;</span><span class="p">],</span>
     <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
 <span class="p">)</span>
@@ -839,7 +841,7 @@ $ python train.py --config ../exps/templates/td3_bc.json --dataset /path/to/walk
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="models.html" class="btn btn-neutral float-right" title="Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="dataset.html" class="btn btn-neutral float-left" title="SequenceDataset" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="observations.html" class="btn btn-neutral float-left" title="Observations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

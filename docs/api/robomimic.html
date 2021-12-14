@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>robomimic package &mdash; robomimic 0.1.0 documentation</title>
+  <title>robomimic package &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
             
           
@@ -100,11 +100,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction/datasets.html">Using Demonstration Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/results.html">Reproducing Study Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/observations.html">Observations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
@@ -261,6 +263,7 @@
 <li class="toctree-l2"><a class="reference internal" href="robomimic.envs.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.envs.html#module-robomimic.envs.env_base">robomimic.envs.env_base module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.envs.html#robomimic-envs-env-gym-module">robomimic.envs.env_gym module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomimic.envs.html#robomimic-envs-env-ig-momart-module">robomimic.envs.env_ig_momart module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.envs.html#robomimic-envs-env-robosuite-module">robomimic.envs.env_robosuite module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.envs.html#module-robomimic.envs">Module contents</a></li>
 </ul>
@@ -284,7 +287,9 @@
 <li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.hyperparam_utils">robomimic.utils.hyperparam_utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.log_utils">robomimic.utils.log_utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.loss_utils">robomimic.utils.loss_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.macros">robomimic.utils.macros module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.obs_utils">robomimic.utils.obs_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.python_utils">robomimic.utils.python_utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.tensor_utils">robomimic.utils.tensor_utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.test_utils">robomimic.utils.test_utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.torch_utils">robomimic.utils.torch_utils module</a></li>
@@ -305,6 +310,12 @@
 </dd></dl>
 
 <dl class="py function">
+<dt id="robomimic.register_all_momart_links">
+<code class="sig-prename descclassname"><span class="pre">robomimic.</span></code><code class="sig-name descname"><span class="pre">register_all_momart_links</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.register_all_momart_links" title="Permalink to this definition">¶</a></dt>
+<dd><p>Record all dataset links in this function.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="robomimic.register_dataset_link">
 <code class="sig-prename descclassname"><span class="pre">robomimic.</span></code><code class="sig-name descname"><span class="pre">register_dataset_link</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdf5_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.register_dataset_link" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper function to register dataset link in global dictionary.
@@ -319,6 +330,24 @@ rollout horizon that should be used during training.</p>
 to identify the kind of observations in the dataset</p></li>
 <li><p><strong>link</strong> (<em>str</em>) – download link for the dataset</p></li>
 <li><p><strong>horizon</strong> (<em>int</em>) – evaluation rollout horizon that should be used with this dataset</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robomimic.register_momart_dataset_link">
+<code class="sig-prename descclassname"><span class="pre">robomimic.</span></code><code class="sig-name descname"><span class="pre">register_momart_dataset_link</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.register_momart_dataset_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to register dataset link in global dictionary.
+Also takes a &#64;horizon parameter - this corresponds to the evaluation
+rollout horizon that should be used during training.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>task</strong> (<em>str</em>) – name of task for this dataset</p></li>
+<li><p><strong>dataset_type</strong> (<em>str</em>) – type of dataset (usually identifies the dataset source)</p></li>
+<li><p><strong>link</strong> (<em>str</em>) – download link for the dataset</p></li>
+<li><p><strong>dataset_size</strong> (<em>float</em>) – size of the dataset, in GB</p></li>
 </ul>
 </dd>
 </dl>

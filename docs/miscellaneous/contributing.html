@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Contributing Guidelines &mdash; robomimic 0.1.0 documentation</title>
+  <title>Contributing Guidelines &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
             
           
@@ -100,11 +100,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction/datasets.html">Using Demonstration Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/results.html">Reproducing Study Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/observations.html">Observations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
@@ -262,7 +264,7 @@
 <p>We also list additional suggested contributing guidelines that we adhered to during development.</p>
 <ul class="simple">
 <li><p>When creating new networks (e.g. subclasses of <code class="docutils literal notranslate"><span class="pre">Module</span></code> in <code class="docutils literal notranslate"><span class="pre">models/base_nets.py</span></code>), always sub-modules into a property called <code class="docutils literal notranslate"><span class="pre">self.nets</span></code>, and if there is more than one sub-module, make it a module collection (such as a <code class="docutils literal notranslate"><span class="pre">torch.nn.ModuleDict</span></code>). This is to ensure that the pattern <code class="docutils literal notranslate"><span class="pre">model.to(device)</span></code> works as expected with multiple levels of nested torch modules. As an example of nesting, see the <code class="docutils literal notranslate"><span class="pre">_create_networks</span></code> function in the <code class="docutils literal notranslate"><span class="pre">VAE</span></code> class (<code class="docutils literal notranslate"><span class="pre">models/vae_nets.py</span></code>) and the <code class="docutils literal notranslate"><span class="pre">MIMO_MLP</span></code> class (<code class="docutils literal notranslate"><span class="pre">models/obs_nets.py</span></code>).</p></li>
-<li><p>Do not use default mutable arguments – they can lead to terrible bugs and unexpected behavior (see <a class="reference external" href="https://florimond.dev/blog/articles/2018/08/python-mutable-defaults-are-the-source-of-all-evil/">this link</a> for more information). For this reason, in functions that expect optional dictionaries and lists (for example, the <code class="docutils literal notranslate"><span class="pre">visual_core_kwargs</span></code> argument in the  <code class="docutils literal notranslate"><span class="pre">obs_encoder_factory</span></code> function, or the <code class="docutils literal notranslate"><span class="pre">layer_dims</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">MLP</span></code> class constructor), we use a default argument of <code class="docutils literal notranslate"><span class="pre">visual_core_kwargs=None</span></code> or an empty tuple (since tuples are immutable) <code class="docutils literal notranslate"><span class="pre">layer_dims=()</span></code>.</p></li>
+<li><p>Do not use default mutable arguments – they can lead to terrible bugs and unexpected behavior (see <a class="reference external" href="https://florimond.dev/blog/articles/2018/08/python-mutable-defaults-are-the-source-of-all-evil/">this link</a> for more information). For this reason, in functions that expect optional dictionaries and lists (for example, the <code class="docutils literal notranslate"><span class="pre">core_kwargs</span></code> argument in the  <code class="docutils literal notranslate"><span class="pre">obs_encoder_factory</span></code> function, or the <code class="docutils literal notranslate"><span class="pre">layer_dims</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">MLP</span></code> class constructor), we use a default argument of <code class="docutils literal notranslate"><span class="pre">core_kwargs=None</span></code> or an empty tuple (since tuples are immutable) <code class="docutils literal notranslate"><span class="pre">layer_dims=()</span></code>.</p></li>
 <li><p>Prefer <code class="docutils literal notranslate"><span class="pre">torch.expand</span></code> over <code class="docutils literal notranslate"><span class="pre">torch.repeat</span></code> wherever possible, for memory efficiency. See <a class="reference external" href="https://discuss.pytorch.org/t/expand-vs-repeat-semantic-difference/59789">this link</a> for more details.</p></li>
 </ul>
 <p>We look forward to your contributions. Thanks!</p>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Getting Started &mdash; robomimic 0.1.0 documentation</title>
+  <title>Getting Started &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
             
           
@@ -110,6 +110,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#evaluating-trained-policies">Evaluating Trained Policies</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#features-overview">Features Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supported-datasets">Supported Datasets</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Features</a></li>
@@ -117,11 +119,13 @@
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Using Demonstration Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Reproducing Study Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/observations.html">Observations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
@@ -320,6 +324,83 @@
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="features-overview">
+<h2>Features Overview<a class="headerlink" href="#features-overview" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we briefly summarize some key features and where you should look to learn more about them.</p>
+<ol class="simple">
+<li><p><strong>Datasets supported by robomimic</strong></p>
+<ul class="simple">
+<li><p>See a list of supported datasets <a class="reference external" href="./quickstart.html#supported-datasets">here</a>.<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Visualizing datasets</strong></p>
+<ul class="simple">
+<li><p>Learn how to visualize dataset trajectories <a class="reference external" href="./datasets.html#view-dataset-structure-and-videos">here</a>.<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Reproducing paper experiments</strong></p>
+<ul class="simple">
+<li><p>Easily reproduce experiments from the following papers</p>
+<ul>
+<li><p>robomimic: <a class="reference external" href="./results.html">here</a></p></li>
+<li><p>MOMART: <a class="reference external" href="https://sites.google.com/view/il-for-mm/datasets">here</a><br><br></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Making your own dataset</strong></p>
+<ul class="simple">
+<li><p>Learn how to make your own collected dataset compatible with this repository <a class="reference external" href="./datasets.html#dataset-structure">here</a>.</p></li>
+<li><p>Note that <strong>all datasets collected through robosuite are also readily compatible</strong> (see <a class="reference external" href="./datasets.html#converting-robosuite-hdf5-datasets">here</a>).<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Using filter keys to easily train on subsets of a dataset</strong></p>
+<ul class="simple">
+<li><p>See <a class="reference external" href="./datasets.html#filter-keys-and-train-valid-splits">this section</a> on how to use filter keys.<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Running hyperparameter scans easily</strong></p>
+<ul class="simple">
+<li><p>See <a class="reference external" href="./advanced.html#using-the-hyperparameter-helper-to-launch-runs">this guide</a> on running hyperparameter scans.<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Using pretrained models in the model zoo</strong></p>
+<ul class="simple">
+<li><p>See <a class="reference external" href="./model_zoo.html">this link</a> to download and use pretrained models.<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Getting familiar with configs</strong></p>
+<ul class="simple">
+<li><p>Learn about how configs work <a class="reference external" href="../modules/configs.html">here</a>.<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Getting familiar with operations over tensor collections</strong></p>
+<ul class="simple">
+<li><p>Learn about using useful tensor utilities <a class="reference external" href="../modules/utils.html#tensorutils">here</a>.<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Creating your own observation modalities</strong></p>
+<ul class="simple">
+<li><p>Learn how to make your own observation modalities and process them with custom network architectures <a class="reference external" href="../modules/observations.html">here</a>.<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Creating your own algorithm</strong></p>
+<ul class="simple">
+<li><p>Learn how to implement your own learning algorithm <a class="reference external" href="../modules/algorithms.html#building-your-own-algorithm">here</a>.<br><br></p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="supported-datasets">
+<h2>Supported Datasets<a class="headerlink" href="#supported-datasets" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="./results.html#downloading-released-datasets">robomimic</a></p></li>
+<li><p><a class="reference external" href="./datasets.html#converting-robosuite-hdf5-datasets">robosuite</a></p></li>
+<li><p><a class="reference external" href="./datasets.html#momart-datasets">MOMART</a></p></li>
+<li><p><a class="reference external" href="./results.html#d4rl">D4RL</a></p></li>
+<li><p><a class="reference external" href="./datasets.html#roboturk-pilot-datasets">RoboTurk Pilot</a></p></li>
+</ul>
 </div>
 </div>
 

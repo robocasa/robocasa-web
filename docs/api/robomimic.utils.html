@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>robomimic.utils package &mdash; robomimic 0.1.0 documentation</title>
+  <title>robomimic.utils package &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
             
           
@@ -100,11 +100,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction/datasets.html">Using Demonstration Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/results.html">Reproducing Study Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/observations.html">Observations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
@@ -127,7 +129,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#module-robomimic.utils.hyperparam_utils">robomimic.utils.hyperparam_utils module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-robomimic.utils.log_utils">robomimic.utils.log_utils module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-robomimic.utils.loss_utils">robomimic.utils.loss_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robomimic.utils.macros">robomimic.utils.macros module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-robomimic.utils.obs_utils">robomimic.utils.obs_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robomimic.utils.python_utils">robomimic.utils.python_utils module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-robomimic.utils.tensor_utils">robomimic.utils.tensor_utils module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-robomimic.utils.test_utils">robomimic.utils.test_utils module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-robomimic.utils.torch_utils">robomimic.utils.torch_utils module</a></li>
@@ -306,12 +310,12 @@ See the <cite>train</cite> function in scripts/train.py, and torch
 <dl class="py method">
 <dt id="robomimic.utils.dataset.SequenceDataset.get_obs_normalization_stats">
 <code class="sig-name descname"><span class="pre">get_obs_normalization_stats</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.dataset.SequenceDataset.get_obs_normalization_stats" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns dictionary of mean and std for each observation modality if using
+<dd><p>Returns dictionary of mean and std for each observation key if using
 observation normalization, otherwise None.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><dl class="simple">
-<dt>a dictionary for observation</dt><dd><p>normalization. This maps observation modality keys to dicts
+<dt>a dictionary for observation</dt><dd><p>normalization. This maps observation keys to dicts
 with a “mean” and “std” of shape (1, …) where … is the default
 shape for the observation.</p>
 </dd>
@@ -746,7 +750,7 @@ correspond to this filter key. For example, [“demo_0”,
 
 <dl class="py function">
 <dt id="robomimic.utils.file_utils.download_url">
-<code class="sig-prename descclassname"><span class="pre">robomimic.utils.file_utils.</span></code><code class="sig-name descname"><span class="pre">download_url</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.file_utils.download_url" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.file_utils.</span></code><code class="sig-name descname"><span class="pre">download_url</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.file_utils.download_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>First checks that &#64;url is reachable, then downloads the file
 at that url into the directory specified by &#64;download_dir.
 Prints a progress bar during the download using tqdm.</p>
@@ -757,6 +761,8 @@ Prints a progress bar during the download using tqdm.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>url</strong> (<em>str</em>) – url string</p></li>
 <li><p><strong>download_dir</strong> (<em>str</em>) – path to directory where file should be downloaded</p></li>
+<li><p><strong>check_overwrite</strong> (<em>bool</em>) – if True, will sanity check the download fpath to make sure a file of that name
+doesn’t already exist there</p></li>
 </ul>
 </dd>
 </dl>
@@ -824,13 +830,13 @@ is forced to be True if saved model uses image observations.</p></li>
 
 <dl class="py function">
 <dt id="robomimic.utils.file_utils.get_shape_metadata_from_dataset">
-<code class="sig-prename descclassname"><span class="pre">robomimic.utils.file_utils.</span></code><code class="sig-name descname"><span class="pre">get_shape_metadata_from_dataset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_modalities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.file_utils.get_shape_metadata_from_dataset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.file_utils.</span></code><code class="sig-name descname"><span class="pre">get_shape_metadata_from_dataset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_obs_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.file_utils.get_shape_metadata_from_dataset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves shape metadata from dataset.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dataset_path</strong> (<em>str</em>) – path to dataset</p></li>
-<li><p><strong>all_modalities</strong> (<em>list</em>) – list of all modalities used by the model. If not provided, all modalities
+<li><p><strong>all_obs_keys</strong> (<em>list</em>) – list of all modalities used by the model. If not provided, all modalities
 present in the file are used.</p></li>
 <li><p><strong>verbose</strong> (<em>bool</em>) – if True, include print statements</p></li>
 </ul>
@@ -843,9 +849,9 @@ present in the file are used.</p></li>
 <dd class="field-odd"><p>action space dimension</p>
 </dd>
 <dt class="field-even"><cite>’all_shapes’</cite></dt>
-<dd class="field-even"><p>dictionary that maps observation modality string to modality shape</p>
+<dd class="field-even"><p>dictionary that maps observation key string to shape</p>
 </dd>
-<dt class="field-odd"><cite>’all_modalities’</cite></dt>
+<dt class="field-odd"><cite>’all_obs_keys’</cite></dt>
 <dd class="field-odd"><p>list of all observation modalities used</p>
 </dd>
 <dt class="field-even"><cite>’use_images’</cite></dt>
@@ -1347,10 +1353,198 @@ onto &#64;atoms</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-robomimic.utils.macros">
+<span id="robomimic-utils-macros-module"></span><h2>robomimic.utils.macros module<a class="headerlink" href="#module-robomimic.utils.macros" title="Permalink to this headline">¶</a></h2>
+<p>Set of global variables shared across robomimic</p>
+</div>
 <div class="section" id="module-robomimic.utils.obs_utils">
 <span id="robomimic-utils-obs-utils-module"></span><h2>robomimic.utils.obs_utils module<a class="headerlink" href="#module-robomimic.utils.obs_utils" title="Permalink to this headline">¶</a></h2>
 <p>A collection of utilities for working with observation dictionaries and
 different kinds of modalities such as images.</p>
+<dl class="py class">
+<dt id="robomimic.utils.obs_utils.DepthModality">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">DepthModality</span></code><a class="headerlink" href="#robomimic.utils.obs_utils.DepthModality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.utils.obs_utils.Modality" title="robomimic.utils.obs_utils.Modality"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.utils.obs_utils.Modality</span></code></a></p>
+<p>Modality for depth observations</p>
+<dl class="py attribute">
+<dt id="robomimic.utils.obs_utils.DepthModality.name">
+<code class="sig-name descname"><span class="pre">name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'depth'</span></em><a class="headerlink" href="#robomimic.utils.obs_utils.DepthModality.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robomimic.utils.obs_utils.ImageModality">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">ImageModality</span></code><a class="headerlink" href="#robomimic.utils.obs_utils.ImageModality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.utils.obs_utils.Modality" title="robomimic.utils.obs_utils.Modality"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.utils.obs_utils.Modality</span></code></a></p>
+<p>Modality for RGB image observations</p>
+<dl class="py attribute">
+<dt id="robomimic.utils.obs_utils.ImageModality.name">
+<code class="sig-name descname"><span class="pre">name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'rgb'</span></em><a class="headerlink" href="#robomimic.utils.obs_utils.ImageModality.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robomimic.utils.obs_utils.LowDimModality">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">LowDimModality</span></code><a class="headerlink" href="#robomimic.utils.obs_utils.LowDimModality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.utils.obs_utils.Modality" title="robomimic.utils.obs_utils.Modality"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.utils.obs_utils.Modality</span></code></a></p>
+<p>Modality for low dimensional observations</p>
+<dl class="py attribute">
+<dt id="robomimic.utils.obs_utils.LowDimModality.name">
+<code class="sig-name descname"><span class="pre">name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'low_dim'</span></em><a class="headerlink" href="#robomimic.utils.obs_utils.LowDimModality.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robomimic.utils.obs_utils.Modality">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">Modality</span></code><a class="headerlink" href="#robomimic.utils.obs_utils.Modality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Observation Modality class to encapsulate necessary functions needed to
+process observations of this modality</p>
+<dl class="py method">
+<dt id="robomimic.utils.obs_utils.Modality.add_keys">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">add_keys</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.Modality.add_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the observation &#64;keys associated with this modality to the current set of keys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>keys</strong> (<em>list</em><em> or </em><em>set</em>) – observation keys to add to associate with this modality</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="robomimic.utils.obs_utils.Modality.keys">
+<code class="sig-name descname"><span class="pre">keys</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#robomimic.utils.obs_utils.Modality.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="robomimic.utils.obs_utils.Modality.name">
+<code class="sig-name descname"><span class="pre">name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#robomimic.utils.obs_utils.Modality.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.utils.obs_utils.Modality.process_obs">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">process_obs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.Modality.process_obs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepares an observation &#64;obs of this modality for network input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obs</strong> (<em>np.array</em><em> or </em><em>torch.Tensor</em>) – raw observation, which may include a leading batch dimension</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>processed observation</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array or torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.utils.obs_utils.Modality.process_obs_from_dict">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">process_obs_from_dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.Modality.process_obs_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives a dictionary of keyword mapped observations &#64;obs_dict, and processes the observations with keys
+corresponding to this modality. A copy will be made of the received dictionary unless &#64;inplace is True</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obs_dict</strong> (<em>dict</em>) – Dictionary mapping observation keys to observations</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – If True, will modify &#64;obs_dict in place, otherwise, will create a copy</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>observation dictionary with processed observations corresponding to this modality</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.utils.obs_utils.Modality.set_keys">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">set_keys</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.Modality.set_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the observation keys associated with this modality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>keys</strong> (<em>list</em><em> or </em><em>set</em>) – observation keys to associate with this modality</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.utils.obs_utils.Modality.set_obs_processor">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">set_obs_processor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">processor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.Modality.set_obs_processor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the processor for this observation modality. If &#64;processor is set to None, then
+the obs processor will use the default one (self.process_obs(…)). Otherwise, &#64;processor
+should be a function to process this corresponding observation modality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>processor</strong> (<em>function</em><em> or </em><em>None</em>) – If not None, should be function that takes in either a
+np.array or torch.Tensor and output the processed array / tensor. If None, will reset
+to the default processor (self.process_obs(…))</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.utils.obs_utils.Modality.set_obs_unprocessor">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">set_obs_unprocessor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unprocessor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.Modality.set_obs_unprocessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the unprocessor for this observation modality. If &#64;unprocessor is set to None, then
+the obs unprocessor will use the default one (self.unprocess_obs(…)). Otherwise, &#64;unprocessor
+should be a function to process this corresponding observation modality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>unprocessor</strong> (<em>function</em><em> or </em><em>None</em>) – If not None, should be function that takes in either a
+np.array or torch.Tensor and output the unprocessed array / tensor. If None, will reset
+to the default unprocessor (self.unprocess_obs(…))</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.utils.obs_utils.Modality.unprocess_obs">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">unprocess_obs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.Modality.unprocess_obs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepares an observation &#64;obs of this modality for deployment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obs</strong> (<em>np.array</em><em> or </em><em>torch.Tensor</em>) – processed observation, which may include a leading batch dimension</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>unprocessed observation</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array or torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robomimic.utils.obs_utils.ObservationKeyToModalityDict">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">ObservationKeyToModalityDict</span></code><a class="headerlink" href="#robomimic.utils.obs_utils.ObservationKeyToModalityDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+<p>Custom dictionary class with the sole additional purpose of automatically registering new “keys” at runtime
+without breaking. This is mainly for backwards compatibility, where certain keys such as “latent”, “actions”, etc.
+are used automatically by certain models (e.g.: VAEs) but were never specified by the user externally in their
+config. Thus, this dictionary will automatically handle those keys by implicitly associating them with the low_dim
+modality.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="robomimic.utils.obs_utils.ScanModality">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">ScanModality</span></code><a class="headerlink" href="#robomimic.utils.obs_utils.ScanModality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.utils.obs_utils.Modality" title="robomimic.utils.obs_utils.Modality"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.utils.obs_utils.Modality</span></code></a></p>
+<p>Modality for scan observations</p>
+<dl class="py attribute">
+<dt id="robomimic.utils.obs_utils.ScanModality.name">
+<code class="sig-name descname"><span class="pre">name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'scan'</span></em><a class="headerlink" href="#robomimic.utils.obs_utils.ScanModality.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py function">
 <dt id="robomimic.utils.obs_utils.batch_image_chw_to_hwc">
 <code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">batch_image_chw_to_hwc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.batch_image_chw_to_hwc" title="Permalink to this definition">¶</a></dt>
@@ -1449,12 +1643,65 @@ H and W are the height and width of &#64;images and CH and CW are
 </dd></dl>
 
 <dl class="py function">
-<dt id="robomimic.utils.obs_utils.has_image">
-<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">has_image</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.has_image" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if image modalities are present in the list of modalities.</p>
+<dt id="robomimic.utils.obs_utils.get_processed_shape">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">get_processed_shape</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_modality</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.get_processed_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given observation modality &#64;obs_modality and expected inputs of shape &#64;input_shape (excluding batch dimension), return the
+expected processed observation shape resulting from process_{obs_modality}.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>obs_key</strong> (<em>list</em>) – list of modalities</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obs_modality</strong> (<em>str</em>) – Observation modality to use (e.g.: low_dim, rgb, depth, etc…)</p></li>
+<li><p><strong>input_shape</strong> (<em>list of int</em>) – Expected input dimensions, excluding the batch dimension</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>expected processed input shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list of int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robomimic.utils.obs_utils.has_modality">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">has_modality</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modality</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.has_modality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if &#64;modality is present in the list of observation keys &#64;obs_keys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>modality</strong> (<em>str</em>) – modality to check for, e.g.: rgb, depth, etc.</p></li>
+<li><p><strong>obs_keys</strong> (<em>list</em>) – list of observation keys</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robomimic.utils.obs_utils.initialize_default_obs_encoder">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">initialize_default_obs_encoder</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_encoder_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.initialize_default_obs_encoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the default observation encoder kwarg information to be used by all networks if no values are manually
+specified at runtime.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obs_encoder_config</strong> (<a class="reference internal" href="robomimic.config.html#robomimic.config.config.Config" title="robomimic.config.config.Config"><em>Config</em></a>) – Observation encoder config to use.
+Should be equivalent to config.observation.encoder</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robomimic.utils.obs_utils.initialize_obs_modality_mapping_from_dict">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">initialize_obs_modality_mapping_from_dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modality_mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.initialize_obs_modality_mapping_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is an alternative to &#64;initialize_obs_utils_with_obs_specs, that allows manually setting of modalities.
+NOTE: Only one of these should be called at runtime – not both! (Note that all training scripts that use a config)</p>
+<blockquote>
+<div><p>automatically handle obs modality mapping, so using this function is usually unnecessary)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>modality_mapping</strong> (<em>dict</em>) – Maps modality string names (e.g.: rgb, low_dim, etc.) to a list of observation
+keys that should belong to that modality</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1462,8 +1709,8 @@ H and W are the height and width of &#64;images and CH and CW are
 <dl class="py function">
 <dt id="robomimic.utils.obs_utils.initialize_obs_utils_with_config">
 <code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">initialize_obs_utils_with_config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.initialize_obs_utils_with_config" title="Permalink to this definition">¶</a></dt>
-<dd><p>Utility function to parse config and call &#64;initialize_obs_utils_with_obs_specs with the
-correct arguments.</p>
+<dd><p>Utility function to parse config and call &#64;initialize_obs_utils_with_obs_specs and
+&#64;initialize_default_obs_encoder_kwargs with the correct arguments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>config</strong> (<em>BaseConfig instance</em>) – config object</p>
@@ -1474,16 +1721,17 @@ correct arguments.</p>
 <dl class="py function">
 <dt id="robomimic.utils.obs_utils.initialize_obs_utils_with_obs_specs">
 <code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">initialize_obs_utils_with_obs_specs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_modality_specs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.initialize_obs_utils_with_obs_specs" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function should be called before using any modality-specific
+<dd><p>This function should be called before using any observation key-specific
 functions in this file, in order to make sure that all utility
-functions are aware of the observation types (e.g. which ones
-are low-dimensional, and which ones are images). It constructs
-a dictionary that map observation type (e.g. low_dim, image) to
-a list of observation modalities under that type.</p>
+functions are aware of the observation modalities (e.g. which ones
+are low-dimensional, which ones are rgb, etc.).</p>
+<p>It constructs two dictionaries: (1) that map observation modality (e.g. low_dim, rgb) to
+a list of observation keys under that modality, and (2) that maps the inverse, specific
+observation keys to their corresponding observation modality.</p>
 <p>Input should be a nested dictionary (or list of such dicts) with the following structure:</p>
 <blockquote>
 <div><dl class="simple">
-<dt>obs_variant (str):</dt><dd><p>obs_type (str): modalities (list)
+<dt>obs_variant (str):</dt><dd><p>obs_modality (str): observation keys (list)
 …</p>
 </dd>
 </dl>
@@ -1493,23 +1741,23 @@ a list of observation modalities under that type.</p>
 <dl>
 <dt>{</dt><dd><dl class="simple">
 <dt>“obs”: {</dt><dd><p>“low_dim”: [“robot0_eef_pos”, “robot0_eef_quat”],
-“image”: [“agentview_image”, “robot0_eye_in_hand”],</p>
+“rgb”: [“agentview_image”, “robot0_eye_in_hand”],</p>
 </dd>
 </dl>
 <p>}
 “goal”: {</p>
 <blockquote>
 <div><p>“low_dim”: [“robot0_eef_pos”],
-“image”: [“agentview_image”]</p>
+“rgb”: [“agentview_image”]</p>
 </div></blockquote>
 <p>}</p>
 </dd>
 </dl>
 <p>}</p>
-<p>In the example, raw observations consist of low-dim and image types, with
+<p>In the example, raw observations consist of low-dim and rgb modalities, with
 the robot end effector pose under low-dim, and the agentview and wrist camera
-images under image, while goal observations also consist of low-dim and image
-types, with a subset of the raw observation modalities per type.</p>
+images under rgb, while goal observations also consist of low-dim and rgb modalities,
+with a subset of the raw observation keys per modality.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>obs_modality_specs</strong> (<em>dict</em><em> or </em><em>list</em>) – A nested dictionary (see docstring above for an example)
@@ -1520,20 +1768,14 @@ situations where multiple modules may each have their own modality spec.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="robomimic.utils.obs_utils.key_is_image">
-<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">key_is_image</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.key_is_image" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if observation key corresponds to image observation.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="robomimic.utils.obs_utils.key_is_obs_type">
-<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">key_is_obs_type</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.key_is_obs_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if observation key corresponds to a type &#64;obs_type.</p>
+<dt id="robomimic.utils.obs_utils.key_is_obs_modality">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">key_is_obs_modality</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_modality</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.key_is_obs_modality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if observation key corresponds to modality &#64;obs_modality.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>key</strong> (<em>str</em>) – modality name to check</p></li>
-<li><p><strong>obs_type</strong> (<em>str</em>) – observation type - usually one of “low_dim” or “image”</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – obs key name to check</p></li>
+<li><p><strong>obs_modality</strong> (<em>str</em>) – observation modality - e.g.: “low_dim”, “rgb”</p></li>
 </ul>
 </dd>
 </dl>
@@ -1543,14 +1785,14 @@ situations where multiple modules may each have their own modality spec.</p>
 <dt id="robomimic.utils.obs_utils.normalize_obs">
 <code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">normalize_obs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_normalization_stats</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.normalize_obs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normalize observations using the provided “mean” and “std” entries
-for each observation modality. The observation dictionary will be
+for each observation key. The observation dictionary will be
 modified in-place.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>obs_dict</strong> (<em>dict</em>) – dictionary mappping observation modality to np.array or
+<li><p><strong>obs_dict</strong> (<em>dict</em>) – dictionary mapping observation key to np.array or
 torch.Tensor. Leading batch dimensions are optional.</p></li>
-<li><p><strong>obs_normalization_stats</strong> (<em>dict</em>) – this should map observation modality keys to dicts
+<li><p><strong>obs_normalization_stats</strong> (<em>dict</em>) – this should map observation keys to dicts
 with a “mean” and “std” of shape (1, …) where … is the default
 shape for the observation.</p></li>
 </ul>
@@ -1565,68 +1807,103 @@ shape for the observation.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt id="robomimic.utils.obs_utils.process_image">
-<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">process_image</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.process_image" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given image fetched from dataset, process for network input. Converts array
-to float (from uint8), normalizes pixels to [0, 1], and channel swaps
-from (H, W, C) to (C, H, W).</p>
+<dt id="robomimic.utils.obs_utils.obs_encoder_kwargs_from_config">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">obs_encoder_kwargs_from_config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_encoder_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.obs_encoder_kwargs_from_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a set of args used to create visual backbones for networks
+from the observation encoder config.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>image</strong> (<em>np.array</em><em> or </em><em>torch.Tensor</em>) – image array</p>
+<dd class="field-odd"><p><strong>obs_encoder_config</strong> (<a class="reference internal" href="robomimic.config.html#robomimic.config.config.Config" title="robomimic.config.config.Config"><em>Config</em></a>) – Config object containing relevant encoder information. Should be equivalent to
+config.observation.encoder</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>processed image</p>
+<dd class="field-even"><p>Processed encoder kwargs</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>processed_image (np.array or torch.Tensor)</p>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="robomimic.utils.obs_utils.process_image_shape">
-<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">process_image_shape</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.process_image_shape" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given image shape in dataset, infer the network input shape. This accounts
-for the channel swap to prepare images for torch training (see &#64;process_image).</p>
+<dt id="robomimic.utils.obs_utils.process_frame">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">process_frame</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.process_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given frame fetched from dataset, process for network input. Converts array
+to float (from uint8), normalizes pixels from range [0, &#64;scale] to [0, 1], and channel swaps
+from (H, W, C) to (C, H, W).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>image_shape</strong> (<em>tuple</em><em> or </em><em>list</em>) – tuple or list of size 3 or 4, corresponding
-to the image shape to process</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame</strong> (<em>np.array</em><em> or </em><em>torch.Tensor</em>) – frame array</p></li>
+<li><p><strong>channel_dim</strong> (<em>int</em>) – Number of channels to sanity check for</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Value to normalize inputs by</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>image shape that would result from the</dt><dd><p>output of &#64;process_image</p>
-</dd>
-</dl>
-</p>
+<dd class="field-even"><p>processed frame</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>processed_image_shape (tuple)</p>
+<dd class="field-odd"><p>processed_frame (np.array or torch.Tensor)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt id="robomimic.utils.obs_utils.process_obs">
-<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">process_obs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.process_obs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Process image observations in observation dictionary to prepare for network input.</p>
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">process_obs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_modality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.process_obs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process observation &#64;obs corresponding to &#64;obs_modality modality (or implicitly inferred from &#64;obs_key)
+to prepare for network input.</p>
+<p>Note that either obs_modality OR obs_key must be specified!</p>
+<p>If both are specified, obs_key will override obs_modality</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>obs_dict</strong> (<em>dict</em>) – dictionary mappping observation modality to np.array or
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obs</strong> (<em>np.array</em><em> or </em><em>torch.Tensor</em>) – Observation to process. Leading batch dimension is optional</p></li>
+<li><p><strong>obs_modality</strong> (<em>str</em>) – Observation modality (e.g.: depth, image, low_dim, etc.)</p></li>
+<li><p><strong>obs_key</strong> (<em>str</em>) – Name of observation from which to infer &#64;obs_modality</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>processed observation</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>processed_obs (np.array or torch.Tensor)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robomimic.utils.obs_utils.process_obs_dict">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">process_obs_dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.process_obs_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process observations in observation dictionary to prepare for network input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obs_dict</strong> (<em>dict</em>) – dictionary mapping observation keys to np.array or
 torch.Tensor. Leading batch dimensions are optional.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>dictionary where image modalities have been processsed by</dt><dd><p>&#64;process_image</p>
-</dd>
-</dl>
-</p>
+<dd class="field-even"><p>dictionary where observation keys have been processed by their corresponding processors</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>new_dict (dict)</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py function">
+<dt id="robomimic.utils.obs_utils.register_encoder_core">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">register_encoder_core</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_class</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.register_encoder_core" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="robomimic.utils.obs_utils.register_obs_key">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">register_obs_key</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_class</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.register_obs_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="robomimic.utils.obs_utils.register_randomizer">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">register_randomizer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_class</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.register_randomizer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py function">
 <dt id="robomimic.utils.obs_utils.repeat_and_stack_observation">
@@ -1641,7 +1918,7 @@ each modality.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>obs_dict</strong> (<em>dict</em>) – dictionary mappping observation modality to np.array or
+<li><p><strong>obs_dict</strong> (<em>dict</em>) – dictionary mapping observation key to np.array or
 torch.Tensor. Leading batch dimensions are optional.</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – number to repeat by</p></li>
 </ul>
@@ -1688,46 +1965,145 @@ it was sampled from.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt id="robomimic.utils.obs_utils.unprocess_image">
-<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">unprocess_image</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.unprocess_image" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given image prepared for network input, prepare for saving to dataset.
-Inverse of &#64;process_image.</p>
+<dt id="robomimic.utils.obs_utils.unprocess_frame">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">unprocess_frame</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.unprocess_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given frame prepared for network input, prepare for saving to dataset.
+Inverse of &#64;process_frame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>image</strong> (<em>np.array</em><em> or </em><em>torch.Tensor</em>) – image array</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame</strong> (<em>np.array</em><em> or </em><em>torch.Tensor</em>) – frame array</p></li>
+<li><p><strong>channel_dim</strong> (<em>int</em>) – What channel dimension should be (used for sanity check)</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Scaling factor to apply during denormalization</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><dl class="simple">
-<dt>image passed through</dt><dd><p>inverse operation of &#64;process_image</p>
+<dt>frame passed through</dt><dd><p>inverse operation of &#64;process_frame</p>
 </dd>
 </dl>
 </p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>unprocessed_image (np.array or torch.Tensor)</p>
+<dd class="field-odd"><p>unprocessed_frame (np.array or torch.Tensor)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt id="robomimic.utils.obs_utils.unprocess_obs">
-<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">unprocess_obs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.unprocess_obs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Prepare processed image observations for saving to dataset. Inverse of
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">unprocess_obs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_modality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.unprocess_obs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare observation &#64;obs corresponding to &#64;obs_modality modality (or implicitly inferred from &#64;obs_key)
+to prepare for deployment.</p>
+<p>Note that either obs_modality OR obs_key must be specified!</p>
+<p>If both are specified, obs_key will override obs_modality</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obs</strong> (<em>np.array</em><em> or </em><em>torch.Tensor</em>) – Observation to unprocess. Leading batch dimension is optional</p></li>
+<li><p><strong>obs_modality</strong> (<em>str</em>) – Observation modality (e.g.: depth, image, low_dim, etc.)</p></li>
+<li><p><strong>obs_key</strong> (<em>str</em>) – Name of observation from which to infer &#64;obs_modality</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>unprocessed observation</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>unprocessed_obs (np.array or torch.Tensor)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robomimic.utils.obs_utils.unprocess_obs_dict">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.obs_utils.</span></code><code class="sig-name descname"><span class="pre">unprocess_obs_dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.obs_utils.unprocess_obs_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare processed observation dictionary for saving to dataset. Inverse of
 &#64;process_obs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>obs_dict</strong> (<em>dict</em>) – dictionary mappping observation modality to np.array or
+<dd class="field-odd"><p><strong>obs_dict</strong> (<em>dict</em>) – dictionary mapping observation keys to np.array or
 torch.Tensor. Leading batch dimensions are optional.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><dl class="simple">
-<dt>dictionary where image modalities have been processsed by</dt><dd><p>&#64;unprocess_image</p>
+<dt>dictionary where observation keys have been unprocessed by</dt><dd><p>their respective unprocessor methods</p>
 </dd>
 </dl>
 </p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>new_dict (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-robomimic.utils.python_utils">
+<span id="robomimic-utils-python-utils-module"></span><h2>robomimic.utils.python_utils module<a class="headerlink" href="#module-robomimic.utils.python_utils" title="Permalink to this headline">¶</a></h2>
+<p>Set of general purpose utility functions for easier interfacing with Python API</p>
+<dl class="py function">
+<dt id="robomimic.utils.python_utils.extract_class_init_kwargs_from_dict">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.python_utils.</span></code><code class="sig-name descname"><span class="pre">extract_class_init_kwargs_from_dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.python_utils.extract_class_init_kwargs_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to return a dictionary of key-values that specifically correspond to &#64;cls class’s __init__
+constructor method, from &#64;dic which may or may not contain additional, irrelevant kwargs.</p>
+<p>Note that &#64;dic may possibly be missing certain kwargs as specified by cls.__init__. No error will be raised.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cls</strong> (<em>object</em>) – Class from which to grab __init__ kwargs that will be be used as filtering keys for &#64;dic</p></li>
+<li><p><strong>dic</strong> (<em>dict</em>) – Dictionary containing multiple key-values</p></li>
+<li><p><strong>copy</strong> (<em>bool</em>) – If True, will deepcopy all values corresponding to the specified &#64;keys</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – If True (or if macro DEBUG is True), then will print out mismatched keys</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Extracted subset dictionary possibly containing only the specified keys from cls.__init__ and their</dt><dd><p>corresponding values</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robomimic.utils.python_utils.extract_subset_dict">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.python_utils.</span></code><code class="sig-name descname"><span class="pre">extract_subset_dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.python_utils.extract_subset_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to extract a subset of dictionary key-values from a current dictionary. Optionally (deep)copies
+the values extracted from the original &#64;dic if &#64;copy is True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dic</strong> (<em>dict</em>) – Dictionary containing multiple key-values</p></li>
+<li><p><strong>keys</strong> (<em>Iterable</em>) – Specific keys to extract from &#64;dic. If the key doesn’t exist in &#64;dic, then the key is skipped</p></li>
+<li><p><strong>copy</strong> (<em>bool</em>) – If True, will deepcopy all values corresponding to the specified &#64;keys</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Extracted subset dictionary containing only the specified &#64;keys and their corresponding values</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robomimic.utils.python_utils.get_class_init_kwargs">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.python_utils.</span></code><code class="sig-name descname"><span class="pre">get_class_init_kwargs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.python_utils.get_class_init_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to return a list of all valid keyword arguments (excluding “self”) for the given &#64;cls class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cls</strong> (<em>object</em>) – Class from which to grab __init__ kwargs</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>All keyword arguments (excluding “self”) specified by &#64;cls __init__ constructor method</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2680,6 +3056,14 @@ from a server if it does not exist.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt id="robomimic.utils.test_utils.example_momart_dataset_path">
+<code class="sig-prename descclassname"><span class="pre">robomimic.utils.test_utils.</span></code><code class="sig-name descname"><span class="pre">example_momart_dataset_path</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.test_utils.example_momart_dataset_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to momart dataset to use for testing and example purposes. It should
+exist under the tests/assets directory, and will be downloaded
+from a server if it does not exist.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="robomimic.utils.test_utils.get_base_config">
 <code class="sig-prename descclassname"><span class="pre">robomimic.utils.test_utils.</span></code><code class="sig-name descname"><span class="pre">get_base_config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algo_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.test_utils.get_base_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base config for testing algorithms.</p>
@@ -3157,7 +3541,7 @@ rate given by &#64;video_skip</p></li>
 <li><p><strong>shape_meta</strong> (<em>dict</em>) – shape metdata for this training run</p></li>
 <li><p><strong>ckpt_path</strong> (<em>str</em>) – writes model checkpoint to this path</p></li>
 <li><p><strong>obs_normalization_stats</strong> (<em>dict</em>) – optionally pass a dictionary for observation
-normalization. This should map observation modality keys to dicts
+normalization. This should map observation keys to dicts
 with a “mean” and “std” of shape (1, …) where … is the default
 shape for the observation.</p></li>
 </ul>

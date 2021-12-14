@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Utils &mdash; robomimic 0.1.0 documentation</title>
+  <title>Utils &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
             
           
@@ -100,11 +100,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction/datasets.html">Using Demonstration Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/results.html">Reproducing Study Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observations.html">Observations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configs.html">Configs</a></li>
@@ -251,15 +253,15 @@
 <p>The library also supports nontrivial shape operations on the nested dict. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new dimension at dim=1 and expand the dimension size to 10</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">TensorUtils</span><span class="o">.</span><span class="n">unsqueeze_expand_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
-<span class="c1"># x[&quot;image&quot;].shape == torch.Size([1, 10, 3, 224, 224])</span>
+<span class="c1"># x[&quot;rgb&quot;].shape == torch.Size([1, 10, 3, 224, 224])</span>
 
 <span class="c1"># repeat the 0-th dimension 10 times</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">TensorUtils</span><span class="o">.</span><span class="n">repeat_by_expand_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  
-<span class="c1"># x[&quot;image&quot;].shape == torch.Size([10, 10, 3, 224, 224])</span>
+<span class="c1"># x[&quot;rgb&quot;].shape == torch.Size([10, 10, 3, 224, 224])</span>
 
 <span class="c1"># gather the sequence dimension (dim=1) by some index</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">TensorUtils</span><span class="o">.</span><span class="n">gather_sequence</span><span class="p">(</span><span class="n">x_seq</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> 
-<span class="c1"># x[&quot;image&quot;].shape == torch.Size([10, 3, 224, 224])</span>
+<span class="c1"># x[&quot;rgb&quot;].shape == torch.Size([10, 3, 224, 224])</span>
 </pre></div>
 </div>
 <p>In addition, <code class="docutils literal notranslate"><span class="pre">map_tensor</span></code> allows applying an arbitrary function to all tensors in a nested dictionary or list of tensors and returns the same nested structure.</p>
@@ -273,20 +275,20 @@
 <p><code class="docutils literal notranslate"><span class="pre">robomimic.utils.obs_utils</span></code> implements a suite of utility functions to preprocess different observation modalities such as images and functions to determine types of observations in order to create suitable encoder network architectures. Below we list the important functions.</p>
 <ul>
 <li><p><strong>initialize_obs_utils_with_obs_specs(obs_modality_specs)</strong></p>
-<p>This function initialize a global registry of mapping between observation modality names and observation types e.g. which ones are low-dimensional, and which ones are images). For example, given an <code class="docutils literal notranslate"><span class="pre">obs_modality_specs</span></code> of the following format:</p>
+<p>This function initialize a global registry of mapping between observation key names and observation modalities e.g. which ones are low-dimensional, and which ones are rgb images). For example, given an <code class="docutils literal notranslate"><span class="pre">obs_modality_specs</span></code> of the following format:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;obs&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;low_dim&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;robot0_eef_pos&quot;</span><span class="p">,</span> <span class="s2">&quot;robot0_eef_quat&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;agentview_image&quot;</span><span class="p">,</span> <span class="s2">&quot;robot0_eye_in_hand&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;rgb&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;agentview_image&quot;</span><span class="p">,</span> <span class="s2">&quot;robot0_eye_in_hand&quot;</span><span class="p">],</span>
     <span class="p">}</span>
     <span class="s2">&quot;goal&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;low_dim&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;robot0_eef_pos&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;agentview_image&quot;</span><span class="p">]</span>
+        <span class="s2">&quot;rgb&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;agentview_image&quot;</span><span class="p">]</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The function will create a mapping between observation names such as <code class="docutils literal notranslate"><span class="pre">'agentview_image'</span></code> and observation types such as <code class="docutils literal notranslate"><span class="pre">'image'</span></code>. The registry is stored in <code class="docutils literal notranslate"><span class="pre">OBS_TYPE_TO_MODALITIES</span></code> and can be accessed globally. Utility functions such as <code class="docutils literal notranslate"><span class="pre">key_is_image()</span></code> rely on this global registry to determine observation types.</p>
+<p>The function will create a mapping between observation names such as <code class="docutils literal notranslate"><span class="pre">'agentview_image'</span></code> and observation modalities such as <code class="docutils literal notranslate"><span class="pre">'rgb'</span></code>. The registry is stored in <code class="docutils literal notranslate"><span class="pre">OBS_MODALITIES_TO_KEYS</span></code> and can be accessed globally. Utility functions such as <code class="docutils literal notranslate"><span class="pre">key_is_obs_modality()</span></code> rely on this global registry to determine observation modalities.</p>
 </li>
 <li><p><strong>process_obs(obs_dict)</strong></p>
 <p>Preprocess a dictionary of observations to be fed to a neural network. For example, image observations will be casted to <code class="docutils literal notranslate"><span class="pre">float</span></code> format, rescaled to <code class="docutils literal notranslate"><span class="pre">[0-1]</span></code>, and axis-transposed to <code class="docutils literal notranslate"><span class="pre">[C,</span> <span class="pre">H,</span> <span class="pre">W]</span></code> format.</p>
@@ -295,7 +297,7 @@
 <p>Revert the preprocessing transformation applied to observations by <code class="docutils literal notranslate"><span class="pre">process_obs</span></code>. Useful for converting images back to <code class="docutils literal notranslate"><span class="pre">uint8</span></code> for efficient storage.</p>
 </li>
 <li><p><strong>normalize_obs(obs_dict, obs_normalization_stats)</strong></p>
-<p>Normalize observations by computing the mean observation and std of each observation (in each dimension and modality), and normalizing unit mean and variance in each dimension.</p>
+<p>Normalize observations by computing the mean observation and std of each observation (in each dimension and observation key), and normalizing unit mean and variance in each dimension.</p>
 </li>
 </ul>
 </div>

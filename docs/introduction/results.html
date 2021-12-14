@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Reproducing Study Results &mdash; robomimic 0.1.0 documentation</title>
+  <title>Reproducing Study Results &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
             
           
@@ -101,6 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Reproducing Study Results</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#quick-example">Quick Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Quick Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#downloading-released-datasets">Downloading Released Datasets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#proficient-human-ph">Proficient-Human (PH)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#multi-human-mh">Multi-Human (MH)</a></li>
@@ -120,11 +121,13 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/observations.html">Observations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
@@ -239,6 +242,22 @@
 <p><strong>Warning:</strong> When working with the robosuite datasets, please make sure that you have installed <a class="reference external" href="https://robosuite.ai/">robosuite</a>, and that you are on the <code class="docutils literal notranslate"><span class="pre">offline_study</span></code> branch of robosuite.</p>
 <div class="section" id="quick-example">
 <h2>Quick Example<a class="headerlink" href="#quick-example" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we show a simple example of how to reproduce one of the results from the study - the BC-RNN result on the Lift (Proficient-Human) low-dim dataset.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># default behavior for download script - just download lift proficient-human low-dim dataset to robomimic/../datasets</span>
+$ python download_datasets.py
+
+<span class="c1"># generate json configs for running all experiments at robomimic/exps/paper</span>
+$ python generate_paper_configs.py --output_dir /tmp/experiment_results
+
+<span class="c1"># the training command can be found in robomimic/exps/paper/core.sh</span>
+<span class="c1"># Training results can be viewed at /tmp/experiment_results (--output_dir when generating paper configs).</span>
+$ python train.py --config ../exps/paper/core/lift/ph/low_dim/bc.json
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="./results.html#downloading-released-datasets">downloading released datasets</a> section below for more information on downloading different datasets, and the <a class="reference external" href="./results.html#results-on-released-datasets">results on released datasets</a> section below for more detailed information on reproducing different results from the study.</p>
+</div>
+<div class="section" id="id1">
+<h2>Quick Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>In this section, we show a simple example of how to reproduce one of the results from the study - the BC-RNN result on the Lift (Proficient-Human) low-dim dataset.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># default behavior for download script - just download lift proficient-human low-dim dataset to robomimic/../datasets</span>
 $ python download_datasets.py

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>robomimic.config package &mdash; robomimic 0.1.0 documentation</title>
+  <title>robomimic.config package &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
             
           
@@ -100,11 +100,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction/datasets.html">Using Demonstration Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/results.html">Reproducing Study Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/observations.html">Observations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
@@ -290,9 +292,22 @@ implemented by every subclass.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robomimic.config.base_config.BaseConfig.all_modalities">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">all_modalities</span></code><a class="headerlink" href="#robomimic.config.base_config.BaseConfig.all_modalities" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="robomimic.config.base_config.BaseConfig.all_obs_keys">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">all_obs_keys</span></code><a class="headerlink" href="#robomimic.config.base_config.BaseConfig.all_obs_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>low_dim, rgb, depth, etc.) and over all
+modality groups (e.g: obs, goal, subgoal, etc…)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>all observation keys used for this model</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>n-array</p>
+</dd>
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>This grabs the union of observation keys over all modalities (e.g.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="robomimic.config.base_config.BaseConfig.experiment_config">
@@ -587,8 +602,8 @@ training and test-time behavior should be populated here.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robomimic.config.gl_config.GLConfig.all_modalities">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">all_modalities</span></code><a class="headerlink" href="#robomimic.config.gl_config.GLConfig.all_modalities" title="Permalink to this definition">¶</a></dt>
+<dt id="robomimic.config.gl_config.GLConfig.all_obs_keys">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">all_obs_keys</span></code><a class="headerlink" href="#robomimic.config.gl_config.GLConfig.all_obs_keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update from superclass to include subgoals.</p>
 </dd></dl>
 
@@ -623,8 +638,8 @@ training and test-time behavior should be populated here.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robomimic.config.hbc_config.HBCConfig.all_modalities">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">all_modalities</span></code><a class="headerlink" href="#robomimic.config.hbc_config.HBCConfig.all_modalities" title="Permalink to this definition">¶</a></dt>
+<dt id="robomimic.config.hbc_config.HBCConfig.all_obs_keys">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">all_obs_keys</span></code><a class="headerlink" href="#robomimic.config.hbc_config.HBCConfig.all_obs_keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update from superclass to include modalities from planner and actor.</p>
 </dd></dl>
 
@@ -671,8 +686,8 @@ training and test-time behavior should be populated here.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robomimic.config.iris_config.IRISConfig.all_modalities">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">all_modalities</span></code><a class="headerlink" href="#robomimic.config.iris_config.IRISConfig.all_modalities" title="Permalink to this definition">¶</a></dt>
+<dt id="robomimic.config.iris_config.IRISConfig.all_obs_keys">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">all_obs_keys</span></code><a class="headerlink" href="#robomimic.config.iris_config.IRISConfig.all_obs_keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update from superclass to include modalities from value planner and actor.</p>
 </dd></dl>
 

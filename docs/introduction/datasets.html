@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Using Demonstration Datasets &mdash; robomimic 0.1.0 documentation</title>
+  <title>Using Demonstration Datasets &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
             
           
@@ -111,17 +111,20 @@
 <li class="toctree-l3"><a class="reference internal" href="#extracting-observations-from-mujoco-states">Extracting Observations from MuJoCo states</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#momart-datasets">MOMART Datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#d4rl-datasets">D4RL Datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#roboturk-pilot-datasets">RoboTurk Pilot Datasets</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Reproducing Study Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/observations.html">Observations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
@@ -253,16 +256,16 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">actions</span></code> (dataset) - environment actions, ordered by time. Shape (N, A) where N is the length of the trajectory, and A is the action space dimension</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">rewards</span></code> (dataset) - environment rewards, ordered by time. Shape (N,) where N is the length of the trajectory.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dones</span></code> (dataset) - done signal, equal to 1 if playing the corresponding action in the state should terminate the episode. Shape (N,) where N is the length of the trajectory.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">obs</span></code> (group) - group for the observation modalities. Each modality is stored as a dataset.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">obs</span></code> (group) - group for the observation keys. Each key is stored as a dataset.</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modality_1&gt;</span></code> (dataset) - the first observation modality. Note that the name of this dataset and shape will vary. As an example, the name could be “agentview_image”, and the shape could be (N, 84, 84, 3).</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;obs_key_1&gt;</span></code> (dataset) - the first observation key. Note that the name of this dataset and shape will vary. As an example, the name could be “agentview_image”, and the shape could be (N, 84, 84, 3).</p>
 <p>…</p>
 </li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">next_obs</span></code> (group) - group for the next observations.</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;modality_1&gt;</span></code> (dataset) - the first observation modality.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;obs_key_1&gt;</span></code> (dataset) - the first observation key.</p>
 <p>…</p>
 </li>
 </ul>
@@ -370,6 +373,10 @@ $ python dataset_states_to_obs.py --dataset /path/to/demo.hdf5 --output_name ima
 </div>
 <p>For more details on how the released <code class="docutils literal notranslate"><span class="pre">demo.hdf5</span></code> dataset files were used to generate the <code class="docutils literal notranslate"><span class="pre">low_dim.hdf5</span></code> and <code class="docutils literal notranslate"><span class="pre">image.hdf5</span></code> files, please see the <code class="docutils literal notranslate"><span class="pre">extract_obs_from_raw_datasets.sh</span></code> script, which contains the commands that were used for our released datasets.</p>
 </div>
+</div>
+<div class="section" id="momart-datasets">
+<h2>MOMART Datasets<a class="headerlink" href="#momart-datasets" title="Permalink to this headline">¶</a></h2>
+<p>This repository is fully compatible with <a class="reference external" href="https://sites.google.com/view/il-for-mm/home">MOMART</a> datasets, a large collection of long-horizon, multi-stage simulated kitchen tasks executed by a mobile manipulator robot. See <a class="reference external" href="https://sites.google.com/view/il-for-mm/datasets">this link</a> for a breakdown of the MOMART dataset structure, guide on downloading MOMART datasets, and running experiments using the datasets.</p>
 </div>
 <div class="section" id="d4rl-datasets">
 <h2>D4RL Datasets<a class="headerlink" href="#d4rl-datasets" title="Permalink to this headline">¶</a></h2>

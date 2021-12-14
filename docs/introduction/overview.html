@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Overview &mdash; robomimic 0.1.0 documentation</title>
+  <title>Overview &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
             
           
@@ -106,11 +106,13 @@
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Using Demonstration Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="results.html">Reproducing Study Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/observations.html">Observations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
@@ -233,11 +235,11 @@
  </p><p><strong>robomimic</strong> is a framework for robot learning from demonstration. It offers a broad set of demonstration datasets collected on robot manipulation domains, and learning algorithms to learn from these datasets. This project is part of the broader <a class="reference external" href="https://github.com/ARISE-Initiative">Advancing Robot Intelligence through Simulated Environments (ARISE) Initiative</a>, with the aim of lowering the barriers of entry for cutting-edge research at the intersection of AI and Robotics.</p>
 <p>Imitating human demonstrations is a promising approach to endow robots with various manipulation capabilities. While recent advances have been made in imitation learning and batch (offline) reinforcement learning, a lack of open-source human datasets and reproducible learning methods make assessing the state of the field difficult. The overarching goal of <strong>robomimic</strong> is to provide researchers and practitioners with:</p>
 <ul class="simple">
-<li><p>a <strong>standardized set of large demonstration datasets</strong> across several benchmarking tasks to facilitate fair comparisons, with a focus on learning from human-provided demonstrations</p></li>
+<li><p>a <strong>standardized set of large demonstration datasets</strong> across several benchmarking tasks to facilitate fair comparisons, with a focus on learning from human-provided demonstrations (see <a class="reference external" href="./quickstart.html#supported-datasets">this link</a> for a list of supported datasets)</p></li>
 <li><p><strong>high-quality implementations of several learning algorithms</strong> for training closed-loop policies from offline datasets to make reproducing results easy and lower the barrier to entry</p></li>
 <li><p>a <strong>modular design</strong> that offers great flexibility in extending algorithms and designing new algorithms</p></li>
 </ul>
-<p>This release of <strong>robomimic</strong> contains seven offline learning <a class="reference external" href="../modules/algorithms.html">algorithms</a> and standardized <a class="reference external" href="./results.html">datasets</a> collected across five simulated and three real-world multi-stage manipulation tasks of varying complexity. We highlight some features below:</p>
+<p>This release of <strong>robomimic</strong> contains seven offline learning <a class="reference external" href="../modules/algorithms.html">algorithms</a> and standardized <a class="reference external" href="./results.html">datasets</a> collected across five simulated and three real-world multi-stage manipulation tasks of varying complexity. We highlight some features below (for a more thorough list of features, see <a class="reference external" href="./quickstart.html#features-overview">this link</a>):</p>
 <ul class="simple">
 <li><p><strong>standardized datasets:</strong> a set of datasets collected from different sources (single proficient human, multiple humans, and machine-generated) across several simulated and real-world tasks, along with a plug-and-play <a class="reference external" href="../modules/datasets.html">Dataset class</a> to easily use the datasets outside of this project</p></li>
 <li><p><strong>algorithm implementations:</strong> several high-quality implementations of offline learning algorithms, including BC, BC-RNN, HBC, IRIS, BCQ, CQL, and TD3-BC</p></li>

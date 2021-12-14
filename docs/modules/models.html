@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Models &mdash; robomimic 0.1.0 documentation</title>
+  <title>Models &mdash; robomimic 0.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
             
           
@@ -100,11 +100,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction/datasets.html">Using Demonstration Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/results.html">Reproducing Study Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataset.html">SequenceDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observations.html">Observations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Models</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#base-modules">Base Modules</a></li>
@@ -280,12 +282,12 @@
 
 <span class="n">vis_net</span> <span class="o">=</span> <span class="n">VisualCore</span><span class="p">(</span>
   <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">),</span>
-  <span class="n">visual_core_class</span><span class="o">=</span><span class="s2">&quot;ResNet18Conv&quot;</span><span class="p">,</span>  <span class="c1"># use ResNet18 as the visualcore backbone</span>
-  <span class="n">visual_core_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pretrained&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;input_coord_conv&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>  <span class="c1"># kwargs for the ResNet18Conv class</span>
+  <span class="n">core_class</span><span class="o">=</span><span class="s2">&quot;ResNet18Conv&quot;</span><span class="p">,</span>  <span class="c1"># use ResNet18 as the visualcore backbone</span>
+  <span class="n">core_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pretrained&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;input_coord_conv&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>  <span class="c1"># kwargs for the ResNet18Conv class</span>
   <span class="n">pool_class</span><span class="o">=</span><span class="s2">&quot;SpatialSoftmax&quot;</span><span class="p">,</span>  <span class="c1"># use spatial softmax to regularize the model output</span>
   <span class="n">pool_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;num_kp&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">},</span>  <span class="c1"># kwargs for the SpatialSoftmax --- use 32 keypoints</span>
   <span class="n">flatten</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># flatten the output of the spatial softmax layer</span>
-  <span class="n">visual_feature_dimension</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>  <span class="c1"># project the flattened feature into a 64-dim vector through a linear layer </span>
+  <span class="n">feature_dimension</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>  <span class="c1"># project the flattened feature into a 64-dim vector through a linear layer </span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -298,7 +300,7 @@
 </div>
 <div class="section" id="observation-encoder-and-decoder">
 <h2>Observation Encoder and Decoder<a class="headerlink" href="#observation-encoder-and-decoder" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">ObservationEncoder</span></code> and <code class="docutils literal notranslate"><span class="pre">ObservationDecoder</span></code> are basic building blocks for dealing with observation dictionary inputs and outputs. They are designed to take in multiple streams of observation modalities as input (e.g. a dictionary containing images and robot proprioception signals), and output a dictionary of predictions like actions and subgoals. Below is an example of how to manually create an <code class="docutils literal notranslate"><span class="pre">ObservationEncoder</span></code> instance by registering observation modalities with the <code class="docutils literal notranslate"><span class="pre">register_modality</span></code> function.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ObservationEncoder</span></code> and <code class="docutils literal notranslate"><span class="pre">ObservationDecoder</span></code> are basic building blocks for dealing with observation dictionary inputs and outputs. They are designed to take in multiple streams of observation modalities as input (e.g. a dictionary containing images and robot proprioception signals), and output a dictionary of predictions like actions and subgoals. Below is an example of how to manually create an <code class="docutils literal notranslate"><span class="pre">ObservationEncoder</span></code> instance by registering observation modalities with the <code class="docutils literal notranslate"><span class="pre">register_obs_key</span></code> function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robomimic.models.obs_nets</span> <span class="kn">import</span> <span class="n">ObservationEncoder</span><span class="p">,</span> <span class="n">CropRandomizer</span><span class="p">,</span> <span class="n">MLP</span><span class="p">,</span> <span class="n">VisualCore</span><span class="p">,</span> <span class="n">ObservationDecoder</span>
 
 <span class="n">obs_encoder</span> <span class="o">=</span> <span class="n">ObservationEncoder</span><span class="p">(</span><span class="n">feature_activation</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">)</span>
@@ -310,33 +312,33 @@
 <span class="n">image_randomizer</span> <span class="o">=</span> <span class="n">CropRandomizer</span><span class="p">(</span><span class="n">input_shape</span><span class="o">=</span><span class="n">camera2_shape</span><span class="p">,</span> <span class="n">crop_height</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">crop_width</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 
 <span class="c1"># We will use a reconfigurable image processing backbone VisualCore to process the input image modality</span>
-<span class="n">mod_net_class</span> <span class="o">=</span> <span class="s2">&quot;VisualCore&quot;</span>  <span class="c1"># this is defined in models/base_nets.py</span>
+<span class="n">net_class</span> <span class="o">=</span> <span class="s2">&quot;VisualCore&quot;</span>  <span class="c1"># this is defined in models/base_nets.py</span>
 
 <span class="c1"># kwargs for VisualCore network</span>
-<span class="n">mod_net_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+<span class="n">net_kwargs</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;input_shape&quot;</span><span class="p">:</span> <span class="n">camera1_shape</span><span class="p">,</span>
-    <span class="s2">&quot;visual_core_class&quot;</span><span class="p">:</span> <span class="s2">&quot;ResNet18Conv&quot;</span><span class="p">,</span>  <span class="c1"># use ResNet18 as the visualcore backbone</span>
-    <span class="s2">&quot;visual_core_kwargs&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;pretrained&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;input_coord_conv&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+    <span class="s2">&quot;core_class&quot;</span><span class="p">:</span> <span class="s2">&quot;ResNet18Conv&quot;</span><span class="p">,</span>  <span class="c1"># use ResNet18 as the visualcore backbone</span>
+    <span class="s2">&quot;core_kwargs&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;pretrained&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;input_coord_conv&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
     <span class="s2">&quot;pool_class&quot;</span><span class="p">:</span> <span class="s2">&quot;SpatialSoftmax&quot;</span><span class="p">,</span>  <span class="c1"># use spatial softmax to regularize the model output</span>
     <span class="s2">&quot;pool_kwargs&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;num_kp&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1"># register the network for processing the modality</span>
-<span class="n">obs_encoder</span><span class="o">.</span><span class="n">register_modality</span><span class="p">(</span>
-    <span class="n">mod_name</span><span class="o">=</span><span class="s2">&quot;camera1&quot;</span><span class="p">,</span>
-    <span class="n">mod_shape</span><span class="o">=</span><span class="n">camera1_shape</span><span class="p">,</span>
-    <span class="n">mod_net_class</span><span class="o">=</span><span class="n">mod_net_class</span><span class="p">,</span>
-    <span class="n">mod_net_kwargs</span><span class="o">=</span><span class="n">mod_net_kwargs</span><span class="p">,</span>
-    <span class="n">mod_randomizer</span><span class="o">=</span><span class="n">image_randomizer</span>
+<span class="n">obs_encoder</span><span class="o">.</span><span class="n">register_obs_key</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;camera1&quot;</span><span class="p">,</span>
+    <span class="n">shape</span><span class="o">=</span><span class="n">camera1_shape</span><span class="p">,</span>
+    <span class="n">net_class</span><span class="o">=</span><span class="n">net_class</span><span class="p">,</span>
+    <span class="n">net_kwargs</span><span class="o">=</span><span class="n">net_kwargs</span><span class="p">,</span>
+    <span class="n">randomizer</span><span class="o">=</span><span class="n">image_randomizer</span>
 <span class="p">)</span>
 
 <span class="c1"># We could mix low-dimensional observation, e.g., proprioception signal, in the encoder</span>
 <span class="n">proprio_shape</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">]</span>
-<span class="n">mod_net</span> <span class="o">=</span> <span class="n">MLP</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">output_dim</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">layer_dims</span><span class="o">=</span><span class="p">(</span><span class="mi">128</span><span class="p">,),</span> <span class="n">output_activation</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="n">obs_encoder</span><span class="o">.</span><span class="n">register_modality</span><span class="p">(</span>
-    <span class="n">mod_name</span><span class="o">=</span><span class="s2">&quot;proprio&quot;</span><span class="p">,</span>
-    <span class="n">mod_shape</span><span class="o">=</span><span class="n">proprio_shape</span><span class="p">,</span>
-    <span class="n">mod_net</span><span class="o">=</span><span class="n">mod_net</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">MLP</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">output_dim</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">layer_dims</span><span class="o">=</span><span class="p">(</span><span class="mi">128</span><span class="p">,),</span> <span class="n">output_activation</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">obs_encoder</span><span class="o">.</span><span class="n">register_obs_key</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;proprio&quot;</span><span class="p">,</span>
+    <span class="n">shape</span><span class="o">=</span><span class="n">proprio_shape</span><span class="p">,</span>
+    <span class="n">net</span><span class="o">=</span><span class="n">net</span>
 <span class="p">)</span>
 </pre></div>
 </div>
