@@ -1,36 +1,40 @@
 ---
 layout: main
-title: robosuite
+title: robomimic
 subtitle: 
-project_tagline: "A Modular Simulation Framework and Benchmark for Robot Learning"
-description: "robosuite: A Modular Simulation Framework and Benchmark for Robot Learning"
-videoId: "robosuite-video-faster.mp4"
+project_tagline: "A Framework for Robot Learning from Demonstration"
+videoId: "robomimic_video.mp4"
 ---
 
-![pull figure]({{ 'assets/images/gallery_logo.jpg' | absolute_url }})
+![pull figure]({{ 'assets/images/gallery_logo.png' | absolute_url }})
 
-**robosuite** is a simulation framework powered by the [MuJoCo](http://mujoco.org/) physics engine for robot learning. It also offers a suite of benchmark environments for reproducible research. The current release (v1.3) features rendering tools, ground-truth of vision modalities, and camera utilities. This project is part of the broader [Advancing Robot Intelligence through Simulated Environments (ARISE) Initiative](https://github.com/ARISE-Initiative), with the aim of lowering the barriers of entry for cutting-edge research at the intersection of AI and Robotics.
-
-# New Releases
-- 10/19/2021 - **v1.3**: Ray tracing and physically based rendering tools :sparkles: and access to additional vision modalities 🎥 [[video spotlight]](https://www.youtube.com/watch?v=2xesly6JrQ8) [[release notes]](https://github.com/ARISE-Initiative/robosuite/releases/tag/v1.3)
-- 02/17/2021 - **v1.2**: Added observable sensor models :eyes: and dynamics randomization :game_die: [[release notes]](https://github.com/ARISE-Initiative/robosuite/releases/tag/v1.2)
-- 12/17/2020 - **v1.1**: Refactored infrastructure and standardized model classes for much easier environment prototyping :wrench: [[release notes]](https://github.com/ARISE-Initiative/robosuite/releases/tag/v1.1)
+**robomimic** is a framework for robot learning from demonstration. It offers a broad set of demonstration datasets collected on robot manipulation domains, and learning algorithms to learn from these datasets. This project is part of the broader [Advancing Robot Intelligence through Simulated Environments (ARISE) Initiative](https://github.com/ARISE-Initiative), with the aim of lowering the barriers of entry for cutting-edge research at the intersection of AI and Robotics.
 
 # Video Overview
 
-{% include video/rawVideo.html fileName=page.videoId %}
+<figure class="figure"><div class="figure__main">
+<video autoplay loop muted playsinline controls class="postimagefullwidth">
+  <source src="{{ site.baseurl }}/assets/robomimic_video.mp4" type="video/mp4">
+</video>
+</div></figure>
 
 # Team
 
+## Core Developers
+
 {% include members.html %}
+
+## Project Advisors
+
+{% include advisors.html %}
 
 # Citation
 
 ```bibtex
-@inproceedings{robosuite2020,
-  title={robosuite: A Modular Simulation Framework and Benchmark for Robot Learning},
-  author={Yuke Zhu and Josiah Wong and Ajay Mandlekar and Roberto Mart\'{i}n-Mart\'{i}n},
-  booktitle={arXiv preprint arXiv:2009.12293},
-  year={2020}
+@inproceedings{robomimic2021,
+  title={What Matters in Learning from Offline Human Demonstrations for Robot Manipulation},
+  author={Ajay Mandlekar and Danfei Xu and Josiah Wong and Soroush Nasiriany and Chen Wang and Rohun Kulkarni and Li Fei-Fei and Silvio Savarese and Yuke Zhu and Roberto Mart\'{i}n-Mart\'{i}n},
+  booktitle={arXiv preprint arXiv:2108.03298},
+  year={2021}
 }
 ```
