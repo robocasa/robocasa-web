@@ -110,7 +110,11 @@
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Models</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#base-modules">Base Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#visualcore">VisualCore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#encodercore">EncoderCore</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#visualcore">VisualCore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scancore">ScanCore</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#randomizers">Randomizers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#observation-encoder-and-decoder">Observation Encoder and Decoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#multi-input-multi-output-mimo-modules">Multi-Input, Multi-Output (MIMO) Modules</a></li>
@@ -275,8 +279,17 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="encodercore">
+<h2>EncoderCore<a class="headerlink" href="#encodercore" title="Permalink to this headline">¶</a></h2>
+<p>We create the <code class="docutils literal notranslate"><span class="pre">EncoderCore</span></code> abstract class to encapsulate any network intended to encode a specific type of observation modality (e.g.: <code class="docutils literal notranslate"><span class="pre">VisualCore</span></code> for RGB and depth observations, and <code class="docutils literal notranslate"><span class="pre">ScanCore</span></code> for range scanner observations. See below for descriptions of both!). When a new encoder class is subclassed from <code class="docutils literal notranslate"><span class="pre">EncoderCore</span></code>, it will automatically be registered internally in robomimic, allowing the user to directly refer to their custom encoder classes in their config in string form. For example, if the user specifies a custom <code class="docutils literal notranslate"><span class="pre">EncoderCore</span></code>-based class named <code class="docutils literal notranslate"><span class="pre">MyCustomRGBEncoder</span></code> to encode RGB observations, they can directly set this in their config:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">observation</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">rgb</span><span class="o">.</span><span class="n">core_class</span> <span class="o">=</span> <span class="s2">&quot;MyCustomRGBEncoder&quot;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">observation</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">rgb</span><span class="o">.</span><span class="n">core_kwargs</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>Any corresponding keyword arguments that should be passed to the encoder constructor should be specified in <code class="docutils literal notranslate"><span class="pre">core_kwargs</span></code> in the config. For more information on creating your own custom encoder, please see our <a class="reference external" href="../introduction/examples.html#custom-observation-modalities-example">example script</a>.</p>
+<p>Below, we provide descriptions of specific EncoderCore-based classes used to encode RGB and depth observations (<code class="docutils literal notranslate"><span class="pre">VisualCore</span></code>) and range scanner observations (<code class="docutils literal notranslate"><span class="pre">ScanCore</span></code>).</p>
 <div class="section" id="visualcore">
-<h2>VisualCore<a class="headerlink" href="#visualcore" title="Permalink to this headline">¶</a></h2>
+<h3>VisualCore<a class="headerlink" href="#visualcore" title="Permalink to this headline">¶</a></h3>
 <p>We provide a <code class="docutils literal notranslate"><span class="pre">VisualCore</span></code> module for constructing custom vision architectures. A <code class="docutils literal notranslate"><span class="pre">VisualCore</span></code> consists of a backbone network that featurizes image input — typically a <code class="docutils literal notranslate"><span class="pre">ConvBase</span></code> module — and a pooling module that reduces the feature tensor into a fixed-sized vector representation.  Below is a <code class="docutils literal notranslate"><span class="pre">VisualCore</span></code> built from a <code class="docutils literal notranslate"><span class="pre">ResNet18Conv</span></code> backbone and a <code class="docutils literal notranslate"><span class="pre">SpatialSoftmax</span></code> (<a class="reference external" href="https://rll.berkeley.edu/dsae/dsae.pdf">paper</a>) pooling module.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robomimic.models.base_nets</span> <span class="kn">import</span> <span class="n">VisualCore</span><span class="p">,</span> <span class="n">ResNet18Conv</span><span class="p">,</span> <span class="n">SpatialSoftmax</span>
 
@@ -292,6 +305,28 @@
 </pre></div>
 </div>
 <p>New vision backbone and pooling classes can be added by subclassing <code class="docutils literal notranslate"><span class="pre">ConvBase</span></code>.</p>
+</div>
+<div class="section" id="scancore">
+<h3>ScanCore<a class="headerlink" href="#scancore" title="Permalink to this headline">¶</a></h3>
+<p>We provide a <code class="docutils literal notranslate"><span class="pre">ScanCore</span></code> module for constructing custom range finder architectures. <code class="docutils literal notranslate"><span class="pre">ScanCore</span></code> consists of a 1D Convolution backbone network (<code class="docutils literal notranslate"><span class="pre">Conv1dBase</span></code>) that featurizes a high-dimensional 1D input, and a pooling module that reduces the feature tensor into a fixed-sized vector representation.  Below is an example of a <code class="docutils literal notranslate"><span class="pre">ScanCore</span></code> network with a <code class="docutils literal notranslate"><span class="pre">SpatialSoftmax</span></code> (<a class="reference external" href="https://rll.berkeley.edu/dsae/dsae.pdf">paper</a>) pooling module.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robomimic.models.base_nets</span> <span class="kn">import</span> <span class="n">ScanCore</span><span class="p">,</span> <span class="n">SpatialSoftmax</span>
+
+<span class="n">vis_net</span> <span class="o">=</span> <span class="n">VisualCore</span><span class="p">(</span>
+  <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span>
+  <span class="n">conv_kwargs</span><span class="o">=</span><span class="p">{</span>
+      <span class="s2">&quot;out_channels&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">],</span>
+      <span class="s2">&quot;kernel_size&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+      <span class="s2">&quot;stride&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+  <span class="p">},</span>    <span class="c1"># kwarg settings to pass to individual Conv1d layers</span>
+  <span class="n">conv_activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span>   <span class="c1"># use relu in between each Conv1d layer</span>
+  <span class="n">pool_class</span><span class="o">=</span><span class="s2">&quot;SpatialSoftmax&quot;</span><span class="p">,</span>  <span class="c1"># use spatial softmax to regularize the model output</span>
+  <span class="n">pool_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;num_kp&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">},</span>  <span class="c1"># kwargs for the SpatialSoftmax --- use 32 keypoints</span>
+  <span class="n">flatten</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># flatten the output of the spatial softmax layer</span>
+  <span class="n">feature_dimension</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>  <span class="c1"># project the flattened feature into a 64-dim vector through a linear layer </span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="randomizers">
 <h2>Randomizers<a class="headerlink" href="#randomizers" title="Permalink to this headline">¶</a></h2>
