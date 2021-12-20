@@ -124,7 +124,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#module-robomimic.envs.env_base">robomimic.envs.env_base module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#robomimic-envs-env-gym-module">robomimic.envs.env_gym module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#robomimic-envs-env-ig-momart-module">robomimic.envs.env_ig_momart module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#robomimic-envs-env-robosuite-module">robomimic.envs.env_robosuite module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robomimic.envs.env_robosuite">robomimic.envs.env_robosuite module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-robomimic.envs">Module contents</a></li>
 </ul>
 </li>
@@ -440,8 +440,195 @@ These act as identifiers for different environments.</p>
 <div class="section" id="robomimic-envs-env-ig-momart-module">
 <h2>robomimic.envs.env_ig_momart module<a class="headerlink" href="#robomimic-envs-env-ig-momart-module" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="robomimic-envs-env-robosuite-module">
-<h2>robomimic.envs.env_robosuite module<a class="headerlink" href="#robomimic-envs-env-robosuite-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-robomimic.envs.env_robosuite">
+<span id="robomimic-envs-env-robosuite-module"></span><h2>robomimic.envs.env_robosuite module<a class="headerlink" href="#module-robomimic.envs.env_robosuite" title="Permalink to this headline">¶</a></h2>
+<p>This file contains the robosuite environment wrapper that is used
+to provide a standardized environment API for training policies and interacting
+with metadata present in datasets.</p>
+<dl class="py class">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">robomimic.envs.env_robosuite.</span></code><code class="sig-name descname"><span class="pre">EnvRobosuite</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_offscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_image_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">postprocess_visual_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.envs.env_base.EnvBase" title="robomimic.envs.env_base.EnvBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.envs.env_base.EnvBase</span></code></a></p>
+<p>Wrapper class for robosuite environments (<a class="reference external" href="https://github.com/ARISE-Initiative/robosuite">https://github.com/ARISE-Initiative/robosuite</a>)</p>
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.action_dimension">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">action_dimension</span></code><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.action_dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns dimension of actions (int).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.create_for_data_processing">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">create_for_data_processing</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward_shaping</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.create_for_data_processing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create environment for processing datasets, which includes extracting
+observations, labeling dense / sparse rewards, and annotating dones in
+transitions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>env_name</strong> (<em>str</em>) – name of environment</p></li>
+<li><p><strong>camera_names</strong> (<em>list of str</em>) – list of camera names that correspond to image observations</p></li>
+<li><p><strong>camera_height</strong> (<em>int</em>) – camera height for all cameras</p></li>
+<li><p><strong>camera_width</strong> (<em>int</em>) – camera width for all cameras</p></li>
+<li><p><strong>reward_shaping</strong> (<em>bool</em>) – if True, use shaped environment rewards, else use sparse task completion rewards</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.get_goal">
+<code class="sig-name descname"><span class="pre">get_goal</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.get_goal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get goal observation. Not all environments support this.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.get_observation">
+<code class="sig-name descname"><span class="pre">get_observation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">di</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.get_observation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get current environment observation dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>di</strong> (<em>dict</em>) – current raw observation dictionary from robosuite to wrap and provide
+as a dictionary. If not provided, will be queried from robosuite.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.get_reward">
+<code class="sig-name descname"><span class="pre">get_reward</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.get_reward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get current reward.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.get_state">
+<code class="sig-name descname"><span class="pre">get_state</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.get_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get current environment simulator state as a dictionary. Should be compatible with &#64;reset_to.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.is_done">
+<code class="sig-name descname"><span class="pre">is_done</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.is_done" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the task is done (not necessarily successful).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.is_success">
+<code class="sig-name descname"><span class="pre">is_success</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.is_success" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the task condition(s) is reached. Should return a dictionary
+{ str: bool } with at least a “task” key for the overall task success,
+and additional optional keys corresponding to other task criteria.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.name">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns name of environment name (str).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.render">
+<code class="sig-name descname"><span class="pre">render</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'human'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'agentview'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render from simulation to either an on-screen window or off-screen to RGB array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mode</strong> (<em>str</em>) – pass “human” for on-screen rendering or “rgb_array” for off-screen rendering</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – height of image to render - only used if mode is “rgb_array”</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – width of image to render - only used if mode is “rgb_array”</p></li>
+<li><p><strong>camera_name</strong> (<em>str</em>) – camera name to use for rendering</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.reset">
+<code class="sig-name descname"><span class="pre">reset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>initial observation dictionary.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>observation (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.reset_to">
+<code class="sig-name descname"><span class="pre">reset_to</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.reset_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset to a specific simulator state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>dict</em>) – current simulator state that contains one or more of:
+- states (np.ndarray): initial state of the mujoco environment
+- model (str): mujoco scene xml</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>observation dictionary after setting the simulator state (only</dt><dd><p>if “states” is in &#64;state)</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>observation (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.rollout_exceptions">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">rollout_exceptions</span></code><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.rollout_exceptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return tuple of exceptions to except when doing rollouts. This is useful to ensure
+that the entire training run doesn’t crash because of a bad policy that causes unstable
+simulation computations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.serialize">
+<code class="sig-name descname"><span class="pre">serialize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.serialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save all information needed to re-instantiate this environment in a dictionary.
+This is the same as &#64;env_meta - environment metadata stored in hdf5 datasets,
+and used in utils/env_utils.py.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.set_goal">
+<code class="sig-name descname"><span class="pre">set_goal</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.set_goal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set goal observation with external specification. Not all environments support this.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.step">
+<code class="sig-name descname"><span class="pre">step</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Step in the environment with an action.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>np.array</em>) – action to take</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>new observation dictionary
+reward (float): reward for this step
+done (bool): whether the task is done
+info (dict): extra information</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>observation (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robomimic.envs.env_robosuite.EnvRobosuite.type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">type</span></code><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns environment type (int) for this kind of environment.
+This helps identify this env class.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="module-robomimic.envs">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robomimic.envs" title="Permalink to this headline">¶</a></h2>
