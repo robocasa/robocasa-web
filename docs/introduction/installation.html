@@ -1,309 +1,691 @@
 
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Installation &mdash; robomimic 0.2.0 documentation</title>
-  
 
-  
-  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installation &#8212; robomimic 0.2.0 documentation</title>
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
-        <script src="../static/jquery.js"></script>
-        <script src="../static/underscore.js"></script>
-        <script src="../static/doctools.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../static/js/theme.js"></script>
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Getting Started" href="quickstart.html" />
-    <link rel="prev" title="Overview" href="overview.html" /> 
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
+    <link rel="next" title="Getting Started" href="getting_started.html" />
+    <link rel="prev" title="Overview" href="overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
 
-          
-            <a href="../index.html" class="icon icon-home"> robomimic
-          
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-          
-          </a>
+    
+    <div class="container-fluid" id="banner"></div>
 
-          
-            
-            
-              <div class="version">
-                0.2.0
-              </div>
-            
-          
+    
 
+    <div class="container-xl">
+      <div class="row">
           
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Introduction</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#install-from-source-preferred">Install from source (preferred)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-from-pip">Install from pip</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-simulators">Install simulators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#robosuite">Robosuite</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#d4rl">D4RL</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#test-your-installation">Test your installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-released-datasets">Installing released datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installation-for-generating-docs">Installation for generating docs</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="features.html">Features Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Working with robomimic Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datasets.html">Using Demonstration Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model_zoo.html">Using the Model Zoo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="results.html">Reproducing Study Results</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Modules</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/dataset.html">SequenceDataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/observations.html">Observations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/algorithms.html">Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/models.html">Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/configs.html">Configs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/utils.html">Utils</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Source API</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/robomimic.html">robomimic package</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Miscellaneous</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/contributing.html">Contributing Guidelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/team.html">Team</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/acknowledgments.html">Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/references.html">Projects using robomimic</a></li>
-</ul>
-
-            
-          
-        </div>
-        
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">robomimic</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>Installation</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../sources/introduction/installation.md.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.2.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
+   Getting Started
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/robomimic_v0.1.html">
+   robomimic v0.1 (CoRL 2021)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/robosuite.html">
+   robosuite Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/d4rl.html">
+   D4RL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/momart.html">
+   MOMART Datasets and Experiments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/roboturk_pilot.html">
+   RoboTurk Pilot
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Pretrained Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../model_zoo/robomimic_v0.1.html">
+   robomimic-v0.1
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/understanding_dataset_contents.html">
+   Understanding Dataset Contents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
+   Using Pretrained Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/making_your_own_dataset.html">
+   Making Your Own Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/hyperparam_scan.html">
+   Running Hyperparameter Scans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/configs.html">
+   Getting Familiar with Configs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/observations.html">
+   Observations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/custom_algorithms.html">
+   Implementing Custom Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/tensor_collections.html">
+   Operations over Tensor Collections
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/dataset.html">
+   SequenceDataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/algorithms.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/models.html">
+   Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/configs.html">
+   Configs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/environments.html">
+   Environments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/robomimic.html">
+   robomimic package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.algo.html">
+     robomimic.algo package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.config.html">
+     robomimic.config package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.envs.html">
+     robomimic.envs package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.models.html">
+     robomimic.models package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.utils.html">
+     robomimic.utils package
+    </a>
+   </li>
   </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/contributing.html">
+   Contributing Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/team.html">
+   Team
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/acknowledgments.html">
+   Acknowledgments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/references.html">
+   Projects using robomimic
+  </a>
+ </li>
+</ul>
 
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-<style>
-/* CSS overrides for sphinx_rtd_theme */
 
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
 
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
+</label>
 
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
 
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p><strong>robomimic</strong> officially supports Mac OS X and Linux on Python 3. We strongly recommend using a virtual environment with <a class="reference external" href="https://www.anaconda.com/products/individual">conda</a> (<a class="reference external" href="https://virtualenv.pypa.io/en/latest/">virtualenv</a> is also an acceptable alternative). To get started, create a virtual env (we use conda in our examples below).</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a python 3.7 virtual environment</span>
-$ conda create -n robomimic_venv <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7.9
-<span class="c1"># activate virtual env</span>
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../sources/introduction/installation.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Installation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#requirements">
+     Requirements
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-robomimic">
+     Install robomimic
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optional-installations">
+   Optional Installations
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-simulators">
+     Install simulators
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-your-installation">
+     Test your installation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#downloading-released-datasets">
+     Downloading released datasets
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-doc-dependencies">
+     Install doc dependencies
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Installation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Installation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#requirements">
+     Requirements
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-robomimic">
+     Install robomimic
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optional-installations">
+   Optional Installations
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-simulators">
+     Install simulators
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-your-installation">
+     Test your installation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#downloading-released-datasets">
+     Downloading released datasets
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-doc-dependencies">
+     Install doc dependencies
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h1>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Mac OS X or Linux machine</p></li>
+<li><p>Python &gt;= 3.6 (recommended 3.7.9)</p></li>
+<li><p><a class="reference external" href="https://www.anaconda.com/products/individual">conda</a></p>
+<ul>
+<li><p><a class="reference external" href="https://virtualenv.pypa.io/en/latest/">virtualenv</a> is also an acceptable alternative, but we assume you have conda installed in our examples below</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="install-robomimic">
+<h2>Install robomimic<a class="headerlink" href="#install-robomimic" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Create and activate conda environment</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ conda create -n robomimic_venv <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7.9
 $ conda activate robomimic_venv
 </pre></div>
 </div>
-<p>Next, install <a class="reference external" href="https://pytorch.org/">PyTorch</a> (in our example below, we chose to use version <code class="docutils literal notranslate"><span class="pre">1.6.0</span></code> with CUDA <code class="docutils literal notranslate"><span class="pre">10.2</span></code>). You can omit the <code class="docutils literal notranslate"><span class="pre">cudatoolkit=10.2</span></code> if you’re on a machine without a CUDA-capable GPU (such as a Macbook).</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># install pytorch with specific version of cuda</span>
+<ol class="simple">
+<li><p>Install <a class="reference external" href="https://pytorch.org/">PyTorch</a></p></li>
+</ol>
+<details>
+  <summary><b>Mac</b></summary>
+<p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Can change pytorch, torchvision versions</span>
+<span class="c1"># We don&#39;t install cudatoolkit since Mac does not have NVIDIA GPU</span>
+$ conda install <span class="nv">pytorch</span><span class="o">==</span><span class="m">1</span>.6.0 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.7.0 -c pytorch
+</pre></div>
+</div>
+</p>
+</details><details>
+  <summary><b>Linux</b></summary>
+<p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Can change pytorch, torchvision versions</span>
 $ conda install <span class="nv">pytorch</span><span class="o">==</span><span class="m">1</span>.6.0 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.7.0 <span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">10</span>.2 -c pytorch
 </pre></div>
 </div>
-<p>Next, we’ll install the repository and its requirements. We provide two options - installing from source, and installing from pip. <strong>We strongly recommend installing from source</strong>, as it allows greater flexibility and easier access to scripts and examples.</p>
-<div class="section" id="install-from-source-preferred">
-<h2>Install from source (preferred)<a class="headerlink" href="#install-from-source-preferred" title="Permalink to this headline">¶</a></h2>
-<p>First, clone the repository from github.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># clone the repository</span>
+</p>
+</details><ol class="simple">
+<li><p>Install robomimic</p></li>
+</ol>
+<details>
+  <summary><b>Option 1: Install from source <i>(recommended)</i></b></summary>
+<p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> &lt;PATH_TO_YOUR_INSTALL_DIRECTORY&gt;
 $ git clone https://github.com/ARISE-Initiative/robomimic.git
 $ <span class="nb">cd</span> robomimic
-</pre></div>
-</div>
-<p>Next, install the repository in editable mode with pip.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># install such that changes to source code will be reflected directly in the installation</span>
 $ pip install -e .
 </pre></div>
 </div>
-<p>To run a quick test, without any dependence on simulators, run the following example</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python examples/simple_train_loop.py
+</p>
+</details><details>
+  <summary><b>Option 2: Install via pip</b></summary>
+<p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip install robomimic
 </pre></div>
 </div>
-<p>For maximum functionality though, we also recommend installing <a class="reference external" href="https://robosuite.ai/">robosuite</a> – see the section on simulators below.</p>
-</div>
-<div class="section" id="install-from-pip">
-<h2>Install from pip<a class="headerlink" href="#install-from-pip" title="Permalink to this headline">¶</a></h2>
-<p>While not preferred, the repository can also be installed directly via pip.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip install robomimic
-</pre></div>
+</p>
+</details><p>That’s it!</p>
 </div>
 </div>
+<div class="section" id="optional-installations">
+<h1>Optional Installations<a class="headerlink" href="#optional-installations" title="Permalink to this headline">#</a></h1>
 <div class="section" id="install-simulators">
-<h2>Install simulators<a class="headerlink" href="#install-simulators" title="Permalink to this headline">¶</a></h2>
-<p>While the <strong>robomimic</strong> repository does not depend on particular simulators, installing the following simulators is strongly encouraged, in order to run the examples provided with the repository and work with released datasets.</p>
-<div class="section" id="robosuite">
-<h3>Robosuite<a class="headerlink" href="#robosuite" title="Permalink to this headline">¶</a></h3>
-<p>Most of our examples and released datasets use <a class="reference external" href="https://robosuite.ai/">robosuite</a>, so we strongly recommend installing it. Install it using <a class="reference external" href="https://robosuite.ai/docs/installation.html">the instructions here</a>, and once again, we recommend installing from source. While the repository is compatible with robosuite <code class="docutils literal notranslate"><span class="pre">v1.2+</span></code>, switch to the <code class="docutils literal notranslate"><span class="pre">offline_study</span></code> branch (by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">offline_study</span></code> in the <code class="docutils literal notranslate"><span class="pre">robosuite</span></code> root directory) in order to easily work with our released datasets and reproduce our experiments.</p>
-<p><strong>Note:</strong> robosuite has a dependency on <a class="reference external" href="https://github.com/openai/mujoco-py">mujoco-py</a>. If you are on an Ubuntu machine with a GPU, you should make sure that the <code class="docutils literal notranslate"><span class="pre">GPU</span></code> version of <code class="docutils literal notranslate"><span class="pre">mujoco-py</span></code> gets built, so that image rendering is fast (this is extremely important for working with image datasets). An easy way to ensure this is to clone the repository, change <a class="reference external" href="https://github.com/openai/mujoco-py/blob/4830435a169c1f3e3b5f9b58a7c3d9c39bdf4acb/mujoco_py/builder.py#L74">this line</a> to <code class="docutils literal notranslate"><span class="pre">Builder</span> <span class="pre">=</span> <span class="pre">LinuxGPUExtensionBuilder</span></code>, and install from source by running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> in the <code class="docutils literal notranslate"><span class="pre">mujoco-py</span></code> root directory.</p>
+<h2>Install simulators<a class="headerlink" href="#install-simulators" title="Permalink to this headline">#</a></h2>
+<p>If you would like to run robomimic examples and work with released datasets, please install the following simulators:</p>
+<details>
+  <summary><b>robosuite</b></summary>
+<p>
+ Required for running most robomimic examples and released datasets. Compatible with robosuite v1.2+. Install via:<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># From source (recommended)</span>
+$ <span class="nb">cd</span> &lt;PATH_TO_INSTALL_DIR&gt;
+$ git clone https://github.com/ARISE-Initiative/robosuite.git
+$ <span class="nb">cd</span> robosuite
+$ pip install -r requirements.txt
+OR
+<span class="c1"># Via pip</span>
+$ pip install robosuite
+</pre></div>
 </div>
-<div class="section" id="d4rl">
-<h3>D4RL<a class="headerlink" href="#d4rl" title="Permalink to this headline">¶</a></h3>
-<p>We also have examples to run some of our algorithms on the <a class="reference external" href="https://arxiv.org/abs/2004.07219">D4RL</a> datasets. Follow the instructions <a class="reference external" href="https://github.com/rail-berkeley/d4rl">here</a> to install them, in order to reproduce our results or run further evaluations on these datasets.</p>
+<p><strong>(Optional)</strong> to use our released datasets and reproduce our experiments, switch to our <code class="docutils literal notranslate"><span class="pre">offline_study</span></code> branch (requires installing robousite from source):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git checkout offline_study
+</pre></div>
 </div>
-</div>
+<div class="admonition warning">
+<p class="admonition-title">mujoco-py dependency!</p><p>Robosuite requires <a class="reference external" href="https://github.com/openai/mujoco-py">mujoco-py</a>. If you are on an Ubuntu machine with a GPU, you should make sure that the <code class="docutils literal notranslate"><span class="pre">GPU</span></code> version of <code class="docutils literal notranslate"><span class="pre">mujoco-py</span></code> gets built, so that image rendering is fast (crucial for working with image datasets!).</p>
+<p>An easy way to ensure this is to clone the repository, change <a class="reference external" href="https://github.com/openai/mujoco-py/blob/4830435a169c1f3e3b5f9b58a7c3d9c39bdf4acb/mujoco_py/builder.py#L74">this line</a> to <code class="docutils literal notranslate"><span class="pre">Builder</span> <span class="pre">=</span> <span class="pre">LinuxGPUExtensionBuilder</span></code>, and install from source by running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> in the <code class="docutils literal notranslate"><span class="pre">mujoco-py</span></code> root directory.</p>
+</div></p>
+</details><details>
+  <summary><b>D4RL</b></summary>
+<p><p>Useful for running some of our algorithms on the <a class="reference external" href="https://arxiv.org/abs/2004.07219">D4RL</a> datasets.</p>
+<p>Install via the instructions <a class="reference external" href="https://github.com/rail-berkeley/d4rl">here</a>.</p>
+</p>
+</details></div>
 <div class="section" id="test-your-installation">
-<h2>Test your installation<a class="headerlink" href="#test-your-installation" title="Permalink to this headline">¶</a></h2>
-<p>To run a quick test, run the following script (see the <a class="reference external" href="./quickstart.html#run-a-quick-example">Getting Started</a> section for more information).</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python examples/train_bc_rnn.py --debug
+<h2>Test your installation<a class="headerlink" href="#test-your-installation" title="Permalink to this headline">#</a></h2>
+<p>This assumes you have installed robomimic from source.</p>
+<p>Run a quick debugging (dummy) training loop to make sure robomimic is installed correctly:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> &lt;PATH_TO_ROBOMIMIC_INSTALL_DIR&gt;
+$ python examples/train_bc_rnn.py --debug
 </pre></div>
 </div>
-<p>To run a much more thorough test of several algorithms and scripts, navigate to the <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory and run the following command. <strong>Warning: this script may take several minutes to finish.</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ bash test.sh
+<p>Run a much more thorough test of several algorithms and scripts (<strong>Warning: this script may take several minutes to finish!</strong>):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> &lt;PATH_TO_ROBOMIMIC_INSTALL_DIR&gt;/tests
+$ bash test.sh
 </pre></div>
 </div>
+<p>For additional intro scripts, see <a class="reference external" href="./quickstart.html#run-a-quick-example">Getting Started</a>.</p>
 </div>
-<div class="section" id="installing-released-datasets">
-<h2>Installing released datasets<a class="headerlink" href="#installing-released-datasets" title="Permalink to this headline">¶</a></h2>
-<p>To download and get started with the suite of released datasets, please see <a class="reference external" href="./results.html#downloading-released-datasets">this section</a>.</p>
+<div class="section" id="downloading-released-datasets">
+<h2>Downloading released datasets<a class="headerlink" href="#downloading-released-datasets" title="Permalink to this headline">#</a></h2>
+<p>See <a class="reference external" href="./results.html#downloading-released-datasets">this section</a>.</p>
 </div>
-<div class="section" id="installation-for-generating-docs">
-<h2>Installation for generating docs<a class="headerlink" href="#installation-for-generating-docs" title="Permalink to this headline">¶</a></h2>
-<p>If you plan to contribute to the repository and add new features, you may want to install additional requirements required to build the documentation locally (in case the docs need to be updated).</p>
+<div class="section" id="install-doc-dependencies">
+<h2>Install doc dependencies<a class="headerlink" href="#install-doc-dependencies" title="Permalink to this headline">#</a></h2>
+<p>If you plan to contribute to the repository and add new features, you must install the additional requirements required to build the documentation locally:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements-docs.txt
 </pre></div>
 </div>
-<p>Then, you can test generating the documentation and viewing it locally in a web browser. Run the following commands to generate documentation.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> docs/
+<p>You can test generating the documentation and viewing it locally in a web browser:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> &lt;PATH_TO_ROBOMIMIC_INSTALL_DIR&gt;/docs
 $ make clean
 $ make apidoc
 $ make html
@@ -314,51 +696,50 @@ $ make html
 </div>
 
 
-           </div>
-           
-          </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="quickstart.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.
-
-    </p>
-  </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Overview</p>
         </div>
-      </div>
-
-    </section>
-
-  </div>
+    </a>
+    <a class='right-next' id="next-link" href="getting_started.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Getting Started</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
   
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
+    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
   
-  
+      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+</p>
+        </footer>
+    </div>
     
-   
+</div>
 
-</body>
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
 </html>

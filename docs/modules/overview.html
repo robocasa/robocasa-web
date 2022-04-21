@@ -1,285 +1,525 @@
 
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Overview &mdash; robomimic 0.2.0 documentation</title>
-  
 
-  
-  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview &#8212; robomimic 0.2.0 documentation</title>
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
-        <script src="../static/jquery.js"></script>
-        <script src="../static/underscore.js"></script>
-        <script src="../static/doctools.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../static/js/theme.js"></script>
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SequenceDataset" href="dataset.html" />
-    <link rel="prev" title="Reproducing Study Results" href="../introduction/results.html" /> 
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
+    <link rel="prev" title="Operations over Tensor Collections" href="../tutorials/tensor_collections.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
 
-          
-            <a href="../index.html" class="icon icon-home"> robomimic
-          
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-          
-          </a>
+    
+    <div class="container-fluid" id="banner"></div>
 
-          
-            
-            
-              <div class="version">
-                0.2.0
-              </div>
-            
-          
+    
 
+    <div class="container-xl">
+      <div class="row">
           
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Introduction</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/quickstart.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/features.html">Features Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/advanced.html">Advanced Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/examples.html">Working with robomimic Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/datasets.html">Using Demonstration Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/model_zoo.html">Using the Model Zoo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/results.html">Reproducing Study Results</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Modules</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dataset.html">SequenceDataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="observations.html">Observations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="configs.html">Configs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utils.html">Utils</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Source API</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/robomimic.html">robomimic package</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Miscellaneous</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/contributing.html">Contributing Guidelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/team.html">Team</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/acknowledgments.html">Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/references.html">Projects using robomimic</a></li>
-</ul>
-
-            
-          
-        </div>
-        
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">robomimic</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>Overview</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../sources/modules/overview.md.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.2.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/getting_started.html">
+   Getting Started
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/robomimic_v0.1.html">
+   robomimic v0.1 (CoRL 2021)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/robosuite.html">
+   robosuite Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/d4rl.html">
+   D4RL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/momart.html">
+   MOMART Datasets and Experiments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/roboturk_pilot.html">
+   RoboTurk Pilot
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Pretrained Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../model_zoo/robomimic_v0.1.html">
+   robomimic-v0.1
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/understanding_dataset_contents.html">
+   Understanding Dataset Contents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
+   Using Pretrained Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/making_your_own_dataset.html">
+   Making Your Own Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/hyperparam_scan.html">
+   Running Hyperparameter Scans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/configs.html">
+   Getting Familiar with Configs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/observations.html">
+   Observations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/custom_algorithms.html">
+   Implementing Custom Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/tensor_collections.html">
+   Operations over Tensor Collections
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataset.html">
+   SequenceDataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithms.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="models.html">
+   Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configs.html">
+   Configs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="environments.html">
+   Environments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/robomimic.html">
+   robomimic package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.algo.html">
+     robomimic.algo package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.config.html">
+     robomimic.config package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.envs.html">
+     robomimic.envs package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.models.html">
+     robomimic.models package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.utils.html">
+     robomimic.utils package
+    </a>
+   </li>
   </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/contributing.html">
+   Contributing Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/team.html">
+   Team
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/acknowledgments.html">
+   Acknowledgments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/references.html">
+   Projects using robomimic
+  </a>
+ </li>
+</ul>
 
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-<style>
-/* CSS overrides for sphinx_rtd_theme */
 
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
 
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
+</label>
 
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
 
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<div class="section" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<p><img alt="overview" src="../images/module_overview.png" /></p>
-<p>The <strong>robomimic</strong> framework consists of several modular pieces that interact to train and evaluate a policy. A <a class="reference external" href="./configs.html">Config</a> object is used to define all settings for a particular training run, including the hdf5 dataset that will be used to train the agent, and algorithm hyperparameters. The demonstrations in the hdf5 dataset are loaded into a <a class="reference external" href="./dataset.html">SequenceDataset</a> object, which is used to provide minibatches for the train loop. Training consists of an <a class="reference external" href="./algorithms.html">Algorithm</a> object that trains a set of <a class="reference external" href="./models.html">Models</a> (including the Policy) by repeatedly sampling minibatches from the fixed, offline dataset. Every so often, the policy is evaluated in the <a class="reference external" href="./environments.html">Environment</a> by conducting a set of rollouts. Statistics and other important information during the training process are logged to disk (e.g. tensorboard outputs, model checkpoints, and evaluation rollout videos). We also provide additional utilities in <a class="reference external" href="./tensor_utils.html">TensorUtils</a> to work with complex observations in the form of nested tensor dictionaries.</p>
-<p>The directory structure of the repository is as follows.</p>
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../sources/modules/overview.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Overview</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
+<p align="center">
+  <img width="100.0%" src="../images/module_overview.png">
+ </p><p>The <strong>robomimic</strong> framework consists of several modular components that interact to train and evaluate a policy:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/algo</span></code>: policy learning algorithm implementations (see <a class="reference external" href="./algorithms.html">Algorithm documentation</a> for more information)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/config</span></code>: config classes (see <a class="reference external" href="./configs.html">Config documentation</a> for more information)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/envs</span></code>: wrappers for environments, used during evaluation rollouts (see <a class="reference external" href="./environments.html">Environment documentation</a> for more information)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/exps/templates</span></code>: config templates for each policy learning algorithm (these are auto-generated with the <code class="docutils literal notranslate"><span class="pre">robomimic/scripts/generate_config_templates.py</span></code> script)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/models</span></code>: network implementations (see <a class="reference external" href="./models.html">Models documentation</a> for more information)</p></li>
+<li><p><strong>Experiment config</strong>: a config object defines all settings for a training run</p></li>
+<li><p><strong>Data</strong>: an hdf5 dataset is loaded into a dataloader, which provides minibatches to the algorithm</p></li>
+<li><p><strong>Training</strong>: an algorithm object trains a set of models (including the policy)</p></li>
+<li><p><strong>Evaluation</strong>: the policy is evaluated in the environment by conducting a set of rollouts</p></li>
+<li><p><strong>Logging</strong>: experiment statistics, model checkpoints, and videos are saved to disk</p></li>
+</ul>
+<p>These modules are encapsulated by the robomimic directory structure:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">examples</span></code>: examples to better understand modular components in the codebase</p></li>
+<li><p><a class="reference external" href="./algorithms.html"><code class="docutils literal notranslate"><span class="pre">robomimic/algo</span></code></a>: policy learning algorithm implementations</p></li>
+<li><p><a class="reference external" href="./configs.html"><code class="docutils literal notranslate"><span class="pre">robomimic/config</span></code></a>: default algorithm configs</p></li>
+<li><p><a class="reference external" href="./environments.html"><code class="docutils literal notranslate"><span class="pre">robomimic/envs</span></code></a>: wrappers for environments, used during evaluation rollouts</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/exps/templates</span></code>: config templates for experiments</p></li>
+<li><p><a class="reference external" href="./models.html"><code class="docutils literal notranslate"><span class="pre">robomimic/models</span></code></a>: network implementations</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">robomimic/scripts</span></code>: main repository scripts</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/utils</span></code>: a collection of utilities, including the <a class="reference external" href="./dataset.html">SequenceDataset</a> class to load hdf5 datasets into a torch training pipeline, and <a class="reference external" href="./tensor_utils.html">TensorUtils</a> to work with nested tensor dictionaries</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tests</span></code>: test scripts for validating repository functionality</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">examples</span></code>: some simple examples to better understand modular components in the codebase (see the <a class="reference external" href="../introduction/examples.html">Examples documentation</a> for more information)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">docs</span></code>: files to generate sphinx documentation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">robomimic/utils</span></code>: a collection of utilities, including the <a class="reference external" href="./dataset.html">SequenceDataset</a> class to load datasets, and <a class="reference external" href="../tutorials/tensor_collections.html#tensorutils">TensorUtils</a> to work with nested tensor dictionaries</p></li>
 </ul>
 </div>
 
 
-           </div>
-           
-          </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="dataset.html" class="btn btn-neutral float-right" title="SequenceDataset" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../introduction/results.html" class="btn btn-neutral float-left" title="Reproducing Study Results" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.
-
-    </p>
-  </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../tutorials/tensor_collections.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Operations over Tensor Collections</p>
         </div>
-      </div>
-
-    </section>
-
-  </div>
+    </a>
+    <a class='right-next' id="next-link" href="dataset.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SequenceDataset</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
   
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
+    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
   
-  
+      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+</p>
+        </footer>
+    </div>
     
-   
+</div>
 
-</body>
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
 </html>

@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview &#8212; robomimic 0.2.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="robomimic v0.1 (CoRL 2021)" href="robomimic_v0.1.html" />
+    <link rel="prev" title="Getting Started" href="../introduction/getting_started.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.2.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/getting_started.html">
+   Getting Started
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="robomimic_v0.1.html">
+   robomimic v0.1 (CoRL 2021)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="robosuite.html">
+   robosuite Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="d4rl.html">
+   D4RL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="momart.html">
+   MOMART Datasets and Experiments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="roboturk_pilot.html">
+   RoboTurk Pilot
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Pretrained Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../model_zoo/robomimic_v0.1.html">
+   robomimic-v0.1
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/understanding_dataset_contents.html">
+   Understanding Dataset Contents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
+   Using Pretrained Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/making_your_own_dataset.html">
+   Making Your Own Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/hyperparam_scan.html">
+   Running Hyperparameter Scans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/configs.html">
+   Getting Familiar with Configs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/observations.html">
+   Observations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/custom_algorithms.html">
+   Implementing Custom Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/tensor_collections.html">
+   Operations over Tensor Collections
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/dataset.html">
+   SequenceDataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/algorithms.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/models.html">
+   Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/configs.html">
+   Configs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/environments.html">
+   Environments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/robomimic.html">
+   robomimic package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.algo.html">
+     robomimic.algo package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.config.html">
+     robomimic.config package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.envs.html">
+     robomimic.envs package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.models.html">
+     robomimic.models package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.utils.html">
+     robomimic.utils package
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/contributing.html">
+   Contributing Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/team.html">
+   Team
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/acknowledgments.html">
+   Acknowledgments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/references.html">
+   Projects using robomimic
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../sources/datasets/overview.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-pipeline">
+   Dataset Pipeline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-your-own-dataset">
+   Generating Your Own Dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-structure">
+   Dataset Structure
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-conventions">
+     Data Conventions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filter-keys">
+     Filter Keys
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Overview</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-pipeline">
+   Dataset Pipeline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-your-own-dataset">
+   Generating Your Own Dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-structure">
+   Dataset Structure
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-conventions">
+     Data Conventions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filter-keys">
+     Filter Keys
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
+<div class="section" id="dataset-pipeline">
+<h2>Dataset Pipeline<a class="headerlink" href="#dataset-pipeline" title="Permalink to this headline">#</a></h2>
+<style>
+table{
+margin: auto;
+}
+</style><p>Datasets capture recorded environment data and are used as inputs to a given offline RL or IL algorithm in <strong>robomimic</strong>. In general, you can use datasets with <strong>robomimic</strong> by:</p>
+<ol class="simple">
+<li><p><strong>Downloading</strong> the desired dataset</p></li>
+<li><p><strong>Postprocessing</strong> the dataset to guarantee compatibility with robomimic</p></li>
+<li><p><strong>Training</strong> agent(s) in robomimic with dataset</p></li>
+</ol>
+<p><strong>robomimic</strong> currently supports the following datasets out of the box. Click on the corresponding <strong>(1) Downloading</strong> link to download the dataset and the corresponding <strong>(2) Postprocessing</strong> link for postprocessing that dataset.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th><strong>Dataset</strong></th>
+<th align="center"><strong>Task Types</strong></th>
+<th align="center"><strong>Downloading</strong></th>
+<th align="center"><strong>Postprocessing</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="robomimic_v0.1.html"><strong>robomimic v0.1</strong></a></td>
+<td align="center">Sim + Real Robot Manipulation</td>
+<td align="center"><a href="robomimic_v0.1.html#downloading">Link</a></td>
+<td align="center"><a href="robomimic_v0.1.html#postprocessing">Link</a></td>
+</tr>
+<tr>
+<td><a href="d4rl.html"><strong>D4RL</strong></a></td>
+<td align="center">Sim Locomotion</td>
+<td align="center"><a href="d4rl.html#downloading">Link</a></td>
+<td align="center"><a href="d4rl.html#postprocessing">Link</a></td>
+</tr>
+<tr>
+<td><a href="momart.html"><strong>MOMART</strong></a></td>
+<td align="center">Sim Mobile Manipulation</td>
+<td align="center"><a href="momart.html#downloading">Link</a></td>
+<td align="center"><a href="momart.html#postprocessing">Link</a></td>
+</tr>
+<tr>
+<td><a href="roboturk_pilot.html"><strong>RoboTurk Pilot</strong></a></td>
+<td align="center">Sim Robot Manipulation</td>
+<td align="center"><a href="roboturk_pilot.html#downloading">Link</a></td>
+<td align="center"><a href="roboturk_pilot.html#postprocessing">Link</a></td>
+</tr>
+</tbody>
+</table><p>After downloading and postprocessing, <strong>(3) Training</strong> with the dataset is straightforward and unified across all datasets:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python train.py --dataset &lt;PATH_TO_POSTPROCESSED_DATASET&gt; --config &lt;PATH_TO_CONFIG&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="generating-your-own-dataset">
+<h2>Generating Your Own Dataset<a class="headerlink" href="#generating-your-own-dataset" title="Permalink to this headline">#</a></h2>
+<p><strong>robomimic</strong> provides tutorials for collecting custom datasets for specific environment platforms. Click on any of the links below for more information for the specific environment setup:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th><strong>Environment Platform</strong></th>
+<th align="center"><strong>Task Types</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=".robosuite.html"><strong>robosuite</strong></a></td>
+<td align="center">Robot Manipulation</td>
+</tr>
+</tbody>
+</table><div class="admonition note">
+<p class="admonition-title">Create Your Own Environment Wrapper!</p><p>If you want to generate your own dataset in a custom environment platform that is not listed above, please see <a class="reference internal" href="../modules/environments.html#implement-an-environment-wrapper"><span class="std std-ref">THIS PAGE</span></a>.</p>
+</div></div>
+<div class="section" id="dataset-structure">
+<h2>Dataset Structure<a class="headerlink" href="#dataset-structure" title="Permalink to this headline">#</a></h2>
+<p>All postprocessed <strong>robomimic</strong> compatible datasets share the same data structure. A single dataset is a single HDF5 file with the following structure:</p>
+<details>
+  <summary><b>HDF5 Structure</b></summary>
+<p><ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong> (group)</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">total</span></code></strong> (attribute) - number of state-action samples in the dataset</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">env_args</span></code></strong> (attribute) - a json string that contains metadata on the environment and relevant arguments used for collecting data. Three keys: <code class="docutils literal notranslate"><span class="pre">env_name</span></code>, the name of the environment or task to create, <code class="docutils literal notranslate"><span class="pre">env_type</span></code>, one of robomimic’s supported <a class="reference external" href="https://github.com/ARISE-Initiative/robomimic/blob/master/robomimic/envs/env_base.py#L9">environment types</a>, and <code class="docutils literal notranslate"><span class="pre">env_kwargs</span></code>, a dictionary of keyword-arguments to be passed into the environment of type <code class="docutils literal notranslate"><span class="pre">env_name</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">mask</span></code></strong> (group) - this group will exist in hdf5 datasets that contain filter keys</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;filter_key_1&gt;</span></code></strong> (dataset) - the first filter key. Note that the name of this dataset and length will vary. As an example, this could be the “valid” filter key, and contain the list [“demo_0”, “demo_19”, “demo_35”], corresponding to 3 validation trajectories.</p>
+<p>…</p>
+</li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">demo_0</span></code></strong> (group) - group for the first trajectory (every trajectory has a group)</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">num_samples</span></code></strong> (attribute) - the number of state-action samples in this trajectory</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">model_file</span></code></strong> (attribute) - the xml string corresponding to the MJCF MuJoCo model. Only present for robosuite datasets.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">states</span></code></strong> (dataset) - flattened raw MuJoCo states, ordered by time. Shape (N, D) where N is the length of the trajectory, and D is the dimension of the state vector. Should be empty or have dummy values for non-robosuite datasets.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">actions</span></code></strong> (dataset) - environment actions, ordered by time. Shape (N, A) where N is the length of the trajectory, and A is the action space dimension</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">rewards</span></code></strong> (dataset) - environment rewards, ordered by time. Shape (N,) where N is the length of the trajectory.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">dones</span></code></strong> (dataset) - done signal, equal to 1 if playing the corresponding action in the state should terminate the episode. Shape (N,) where N is the length of the trajectory.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">obs</span></code></strong> (group) - group for the observation keys. Each key is stored as a dataset.</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;obs_key_1&gt;</span></code></strong> (dataset) - the first observation key. Note that the name of this dataset and shape will vary. As an example, the name could be “agentview_image”, and the shape could be (N, 84, 84, 3).</p>
+<p>…</p>
+</li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">next_obs</span></code></strong> (group) - group for the next observations.</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;obs_key_1&gt;</span></code></strong> (dataset) - the first observation key.</p>
+<p>…</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">demo_1</span></code></strong> (group) - group for the second trajectory</p>
+<p>…</p>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+</details><div class="section" id="data-conventions">
+<h3>Data Conventions<a class="headerlink" href="#data-conventions" title="Permalink to this headline">#</a></h3>
+<p><strong>robomimic</strong>-compatible datasets expect certain values (such as images and actions) to be formatted a specific way. See the below sections for further details:</p>
+<details>
+  <summary><b>Storing images</b></summary>
+<p>
+<div class="admonition warning">
+<p class="admonition-title">Warning!</p><p>Dataset images should be of type <code class="docutils literal notranslate"><span class="pre">np.uint8</span></code> and be stored in channel-last <code class="docutils literal notranslate"><span class="pre">(H,</span> <span class="pre">W,</span> <span class="pre">C)</span></code> format. This is because:</p>
+<ul class="simple">
+<li><p><strong>(1)</strong> this is a common format that many <code class="docutils literal notranslate"><span class="pre">gym</span></code> environments and all <code class="docutils literal notranslate"><span class="pre">robosuite</span></code> environments return image observations in</p></li>
+<li><p><strong>(2)</strong> using <code class="docutils literal notranslate"><span class="pre">np.uint8</span></code> (vs floats) saves space in dataset storage</p></li>
+</ul>
+<p>Note that the robosuite observation extraction script (<code class="docutils literal notranslate"><span class="pre">dataset_states_to_obs.py</span></code>) already stores images in the correct format.</p>
+</div></p>
+</details><details>
+  <summary><b>Storing actions</b></summary>
+<p>
+<div class="admonition warning">
+<p class="admonition-title">Warning!</p><p>Actions should be <strong>normalized between -1 and 1</strong>. This is because this range enables easier policy learning the use of <code class="docutils literal notranslate"><span class="pre">tanh</span></code> layers).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">get_dataset_info.py</span></code> script can be used to sanity check stored actions, and will throw an <code class="docutils literal notranslate"><span class="pre">Exception</span></code> if there is a violation.</p>
+</div></p>
+</details></div>
+<div class="section" id="filter-keys">
+<h3>Filter Keys<a class="headerlink" href="#filter-keys" title="Permalink to this headline">#</a></h3>
+<p>Filter keys enable arbitrary splitting of a dataset into sub-groups, and allow training on a specific subset of the data.</p>
+<p>A common use-case is to split data into train-validation splits. We provide a convenience script for doing this in the <code class="docutils literal notranslate"><span class="pre">robomimic/scripts</span></code> directory:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python split_train_val.py --dataset /path/to/dataset.hdf5 --ratio <span class="m">0</span>.1 --filter_key &lt;FILTER_KEY_NAME&gt;
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">--filter_key</span></code> is not set, this script creates <code class="docutils literal notranslate"><span class="pre">train</span></code> / <code class="docutils literal notranslate"><span class="pre">valid</span></code> filter keys under <code class="docutils literal notranslate"><span class="pre">mask/</span></code> in the HDF5 dataset, which contain 90% / 10% of the dataset’s demo IDs, respectively. If <code class="docutils literal notranslate"><span class="pre">config.experiment.validate=True</span></code> in the training config, only the <code class="docutils literal notranslate"><span class="pre">train</span></code> demos will be used for training and <code class="docutils literal notranslate"><span class="pre">valid</span></code> demos used for validation. Setting <code class="docutils literal notranslate"><span class="pre">--filter_key</span></code> prepends <code class="docutils literal notranslate"><span class="pre">&lt;FILTER_KEY_NAME&gt;_</span></code> to both <code class="docutils literal notranslate"><span class="pre">train</span></code> and <code class="docutils literal notranslate"><span class="pre">val</span></code>.</p>
+<p>If a custom <code class="docutils literal notranslate"><span class="pre">&lt;FILTER_KEY_NAME&gt;</span></code> is used, set <code class="docutils literal notranslate"><span class="pre">config.train.hdf5_filter_key=&lt;FILTER_KEY_NAME&gt;</span></code> in the training config to use that train / val split generated (assuming <code class="docutils literal notranslate"><span class="pre">config.experiment.validate=True</span></code>).</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../introduction/getting_started.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Getting Started</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="robomimic_v0.1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">robomimic v0.1 (CoRL 2021)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+  
+      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
