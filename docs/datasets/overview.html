@@ -598,7 +598,7 @@ margin: auto;
 </thead>
 <tbody>
 <tr>
-<td><a href=".robosuite.html"><strong>robosuite</strong></a></td>
+<td><a href="robosuite.html"><strong>robosuite</strong></a></td>
 <td align="center">Robot Manipulation</td>
 </tr>
 </tbody>
@@ -671,7 +671,7 @@ margin: auto;
   <summary><b>Storing actions</b></summary>
 <p>
 <div class="admonition warning">
-<p class="admonition-title">Warning!</p><p>Actions should be <strong>normalized between -1 and 1</strong>. This is because this range enables easier policy learning the use of <code class="docutils literal notranslate"><span class="pre">tanh</span></code> layers).</p>
+<p class="admonition-title">Warning!</p><p>Actions should be <strong>normalized between -1 and 1</strong>. This is because this range enables easier policy learning via the use of <code class="docutils literal notranslate"><span class="pre">tanh</span></code> layers).</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">get_dataset_info.py</span></code> script can be used to sanity check stored actions, and will throw an <code class="docutils literal notranslate"><span class="pre">Exception</span></code> if there is a violation.</p>
 </div></p>
 </details></div>
@@ -682,8 +682,15 @@ margin: auto;
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python split_train_val.py --dataset /path/to/dataset.hdf5 --ratio <span class="m">0</span>.1 --filter_key &lt;FILTER_KEY_NAME&gt;
 </pre></div>
 </div>
-<p>If <code class="docutils literal notranslate"><span class="pre">--filter_key</span></code> is not set, this script creates <code class="docutils literal notranslate"><span class="pre">train</span></code> / <code class="docutils literal notranslate"><span class="pre">valid</span></code> filter keys under <code class="docutils literal notranslate"><span class="pre">mask/</span></code> in the HDF5 dataset, which contain 90% / 10% of the dataset’s demo IDs, respectively. If <code class="docutils literal notranslate"><span class="pre">config.experiment.validate=True</span></code> in the training config, only the <code class="docutils literal notranslate"><span class="pre">train</span></code> demos will be used for training and <code class="docutils literal notranslate"><span class="pre">valid</span></code> demos used for validation. Setting <code class="docutils literal notranslate"><span class="pre">--filter_key</span></code> prepends <code class="docutils literal notranslate"><span class="pre">&lt;FILTER_KEY_NAME&gt;_</span></code> to both <code class="docutils literal notranslate"><span class="pre">train</span></code> and <code class="docutils literal notranslate"><span class="pre">val</span></code>.</p>
-<p>If a custom <code class="docutils literal notranslate"><span class="pre">&lt;FILTER_KEY_NAME&gt;</span></code> is used, set <code class="docutils literal notranslate"><span class="pre">config.train.hdf5_filter_key=&lt;FILTER_KEY_NAME&gt;</span></code> in the training config to use that train / val split generated (assuming <code class="docutils literal notranslate"><span class="pre">config.experiment.validate=True</span></code>).</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--dataset</span></code> specifies the path to the hdf5 dataset</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--ratio</span></code> specifies the amount of validation data you would like to create. In the example above, 10% of the demonstrations will be put into the validation group.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--filter_key</span></code> (optional) By default, this script splits all demonstration keys in the hdf5 into 2 new hdf5 groups - one under <code class="docutils literal notranslate"><span class="pre">mask/train</span></code>, and one under <code class="docutils literal notranslate"><span class="pre">mask/valid</span></code>. If this argument is provided, the demonstration keys corresponding to this filter key (under <code class="docutils literal notranslate"><span class="pre">mask/&lt;FILTER_KEY_NAME&gt;</span></code>) will be split into 2 groups - <code class="docutils literal notranslate"><span class="pre">mask/&lt;FILTER_KEY_NAME&gt;_train</span></code> and <code class="docutils literal notranslate"><span class="pre">mask/&lt;FILTER_KEY_NAME&gt;_valid</span></code>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note!.</p><p>You can easily list the filter keys present in a dataset with the <code class="docutils literal notranslate"><span class="pre">get_dataset_info.py</span></code> script (see <a class="reference external" href="../tutorials/understanding_dataset_contents.html#view-dataset-structure-and-videos">this link</a>), and you can even pass a <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> flag to list the exact demonstrations that each filter key corresponds to.</p>
+</div><p>Using filter keys during training is easy. To use the generated train-valid split, you can set <code class="docutils literal notranslate"><span class="pre">config.experiment.validate=True</span></code> so that the demos under <code class="docutils literal notranslate"><span class="pre">mask/train</span></code> are used for training, and the demos under <code class="docutils literal notranslate"><span class="pre">mask/valid</span></code> are used for validation.</p>
+<p>You can also use a custom filter key for training by setting <code class="docutils literal notranslate"><span class="pre">config.train.hdf5_filter_key=&lt;FILTER_KEY_NAME&gt;</span></code>. This ensures that only the demos under <code class="docutils literal notranslate"><span class="pre">mask/&lt;FILTER_KEY_NAME&gt;</span></code> are used during training. If you also set <code class="docutils literal notranslate"><span class="pre">config.experiment.validate=True</span></code>, this filter key’s train-valid split will be used.</p>
 </div>
 </div>
 </div>

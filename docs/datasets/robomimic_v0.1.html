@@ -509,13 +509,13 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#study-results-using-the-datasets">
-   Study Results Using the Datasets
+  <a class="reference internal nav-link" href="#reproduce-study-results">
+   Reproduce Study Results
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reproducing-experiments">
-     Reproducing Experiments
+    <a class="reference internal nav-link" href="#running-experiments">
+     Running Experiments
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -610,13 +610,13 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#study-results-using-the-datasets">
-   Study Results Using the Datasets
+  <a class="reference internal nav-link" href="#reproduce-study-results">
+   Reproduce Study Results
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reproducing-experiments">
-     Reproducing Experiments
+    <a class="reference internal nav-link" href="#running-experiments">
+     Running Experiments
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -685,7 +685,7 @@ $ python download_datasets.py --download_dir /tmp/datasets
 </div>
 <div class="section" id="method-2-using-direct-download-links">
 <h3>Method 2: Using Direct Download Links<a class="headerlink" href="#method-2-using-direct-download-links" title="Permalink to this headline">#</a></h3>
-<p>For each type of dataset, we also provide a direct download links that will download the raw HDF5 file:</p>
+<p>We also provide direct download links for each hdf5 dataset:</p>
 <p><strong>Proficient-Human (PH)</strong> <a class="reference external" href="robomimic_v0.1.html#proficient-human-ph"><strong>info</strong></a></p>
 <details>
   <summary><b>Download Links</b></summary>
@@ -878,11 +878,11 @@ $ python download_datasets.py --download_dir /tmp/datasets
 <p>This is a diagnostic dataset to test the ability of algorithms to learn from mixed quality human data. A single experienced operator collected 2 demonstrations for each of 100 task initializations on the Can task, resulting in 200 total demonstrations. Each pair of demonstrations consists of a “good” trajectory, where the can is picked up and placed in the correct bin, and a “bad” trajectory, where the can is picked up, and tossed outside of the robot workspace. Since the task initializations are identical, and the first part of each trajectory leading up to the can grasp is similar, there is a strong expectation for algorithms that deal with suboptimal data, to be able to filter the good trajectories from the bad ones, and achieve near-perfect performance.</p>
 </div>
 </div>
-<div class="section" id="study-results-using-the-datasets">
-<h2><a class="reference external" href="https://arise-initiative.github.io/robomimic-web/study/">Study</a> Results Using the Datasets<a class="headerlink" href="#study-results-using-the-datasets" title="Permalink to this headline">#</a></h2>
-<div class="section" id="reproducing-experiments">
-<h3>Reproducing Experiments<a class="headerlink" href="#reproducing-experiments" title="Permalink to this headline">#</a></h3>
-<p>After downloading the appropriate datasets you’re interested in using by running the <code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> script, the <code class="docutils literal notranslate"><span class="pre">generate_paper_configs.py</span></code> script can be used to generate all training config json files necessary to reproduce the experiments in the <a class="reference external" href="https://arise-initiative.github.io/robomimic-web/study/">study</a>. The script takes 3 important arguments – <code class="docutils literal notranslate"><span class="pre">--config_dir</span></code> can be used to specify where the config json files will be generated (defaults to <code class="docutils literal notranslate"><span class="pre">robomimic/exps/paper</span></code>). The <code class="docutils literal notranslate"><span class="pre">--dataset_dir</span></code> specifies where the released datasets can be found, and should be consistent with the <code class="docutils literal notranslate"><span class="pre">--download_dir</span></code> argument supplied to <code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> earlier (if omitted, both scripts default to <code class="docutils literal notranslate"><span class="pre">robomimic/../datasets</span></code>). The <code class="docutils literal notranslate"><span class="pre">--output_dir</span></code> argument specifies where training results will be written (including model checkpoints, logs, and rollout videos). A few examples are below.</p>
+<div class="section" id="reproduce-study-results">
+<h2>Reproduce <a class="reference external" href="https://arise-initiative.github.io/robomimic-web/study/">Study</a> Results<a class="headerlink" href="#reproduce-study-results" title="Permalink to this headline">#</a></h2>
+<div class="section" id="running-experiments">
+<h3>Running Experiments<a class="headerlink" href="#running-experiments" title="Permalink to this headline">#</a></h3>
+<p>After downloading the appropriate datasets you’re interested in using by running the <code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> script, the <code class="docutils literal notranslate"><span class="pre">generate_paper_configs.py</span></code> script can be used to generate all training config json files necessary to reproduce the experiments in the <a class="reference external" href="https://arise-initiative.github.io/robomimic-web/study/">study</a>. A few examples are below.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assume datasets already exist in robomimic/../datasets folder. Configs will be generated under robomimic/exps/paper, and training results will be at /tmp/experiment_results when launching training runs.</span>
 $ python generate_paper_configs.py --output_dir /tmp/experiment_results
 
@@ -890,7 +890,12 @@ $ python generate_paper_configs.py --output_dir /tmp/experiment_results
 $ python generate_paper_configs.py --config_dir /tmp/configs --dataset_dir /tmp/datasets --output_dir /tmp/experiment_results
 </pre></div>
 </div>
-<p>Then, to reproduce a specific set of training runs for different experiment groups (see below), we can simply navigate to the generated config directory, and copy training commands from the generated shell script there. As an example, we can reproduce the low-dim BC and BC-RNN training results on the Lift PH dataset, by looking for the correct set of commands in <code class="docutils literal notranslate"><span class="pre">robomimic/exps/paper/core.sh</span></code> and running them. The relevant section of the shell script is reproduced below.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--config_dir</span></code> specifies where the config json files will be generated (defaults to <code class="docutils literal notranslate"><span class="pre">robomimic/exps/paper</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--dataset_dir</span></code> specifies where the released datasets can be found, and should be consistent with the <code class="docutils literal notranslate"><span class="pre">--download_dir</span></code> argument supplied to <code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> earlier. (if omitted, both scripts default to <code class="docutils literal notranslate"><span class="pre">robomimic/../datasets</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--output_dir</span></code> specifies where training results will be written (including model checkpoints, logs, and rollout videos)</p></li>
+</ul>
+<p>Then, to reproduce a specific set of training runs for different experiment groups, we can simply navigate to the generated config directory, and copy training commands from the generated shell script there. As an example, we can reproduce the low-dim BC and BC-RNN training results on the Lift PH dataset, by looking for the correct set of commands in <code class="docutils literal notranslate"><span class="pre">robomimic/exps/paper/core.sh</span></code> and running them. The relevant section of the shell script is reproduced below.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#  task: lift</span>
 <span class="c1">#    dataset type: ph</span>
 <span class="c1">#      hdf5 type: low_dim</span>

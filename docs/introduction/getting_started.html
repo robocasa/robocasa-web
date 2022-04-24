@@ -537,12 +537,12 @@ title="Print to PDF"
 <h2>Running experiments<a class="headerlink" href="#running-experiments" title="Permalink to this headline">#</a></h2>
 <p>We begin with a quick tutorial on downloading datasets and running experiments.</p>
 <p>Before beginning, make sure you are at the base repo path:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> <span class="o">{</span>/base/repo/path<span class="o">}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> <span class="o">{</span>/path/to/robomimic<span class="o">}</span>
 </pre></div>
 </div>
 <div class="section" id="step-1-download-dataset">
 <h3>Step 1: Download dataset<a class="headerlink" href="#step-1-download-dataset" title="Permalink to this headline">#</a></h3>
-<p>Download the robosuite lift proficient human dataset:</p>
+<p>Download the robosuite <strong>Lift (PH)</strong> dataset (see <a class="reference external" href="../datasets/robomimic_v0.1.html#proficient-human-ph">this link</a> for more information on this dataset):</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python robomimic/scripts/download_datasets.py --tasks lift --dataset_types ph
 </pre></div>
 </div>
@@ -604,8 +604,8 @@ utils/                    # utils for training, evaluation, visualization, hp sw
 ```
 --><p>For next steps, please refer to the remaining documentation sections:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="../datasets/overview.html">Datasets</a>: downloading and benchmarking datasets</p></li>
-<li><p><a class="reference external" href="../tutorials/understanding_dataset_contents.html">Tutorials</a>: creating datasets and algorithms, and running experiments</p></li>
+<li><p><a class="reference external" href="../datasets/overview.html">Datasets</a>: downloading datasets and reproducing experiments</p></li>
+<li><p><a class="reference external" href="../tutorials/understanding_dataset_contents.html">Tutorials</a>: working with datasets, running experiments, using trained models, and more</p></li>
 <li><p><a class="reference external" href="../modules/overview.html">Modules</a>: detailed information on robomimic modules, eg. algorithms, architectures, experiments configs, etc</p></li>
 <li><p><a class="reference external" href="../miscellaneous/troubleshooting.html">Troubleshooting</a> and <a class="reference external" href="../miscellaneous/contributing.html">Contributing guidelines</a></p></li>
 </ul>

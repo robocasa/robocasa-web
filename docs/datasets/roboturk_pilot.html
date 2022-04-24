@@ -519,11 +519,11 @@ title="Print to PDF"
 <h2>Downloading<a class="headerlink" href="#downloading" title="Permalink to this headline">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning!</p><p>When working with these datasets, please make sure that you have installed <a class="reference external" href="https://robosuite.ai/">robosuite</a> from source and are on the <code class="docutils literal notranslate"><span class="pre">roboturk_v1</span></code> branch.</p>
-</div><p>Download the dataset (~9GB) <a class="reference external" href="http://cvgl.stanford.edu/projects/roboturk/RoboTurkPilot.zip">here</a> (~9 GB download), and unzip the file, resulting in a <code class="docutils literal notranslate"><span class="pre">RoboTurkPilot</span></code> folder.</p>
+</div><p>Download the dataset <a class="reference external" href="http://cvgl.stanford.edu/projects/roboturk/RoboTurkPilot.zip">here</a> (~9 GB download), and unzip the file, resulting in a <code class="docutils literal notranslate"><span class="pre">RoboTurkPilot</span></code> folder.</p>
 </div>
 <div class="section" id="postprocessing">
 <h2>Postprocessing<a class="headerlink" href="#postprocessing" title="Permalink to this headline">#</a></h2>
-<p>First, the dataset must be updated to a format compatible with <strong>robomimic</strong>. Run (kwargs given as an example):</p>
+<p>First, the dataset must be updated to a format compatible with <strong>robomimic</strong>. Run the following script (these arguments are provided as an example):</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert the Can demonstrations, and also create a &quot;fastest_225&quot; filter_key (prior work such as IRIS has trained on this subset)</span>
 $ python conversion/convert_roboturk_pilot.py --folder /path/to/RoboTurkPilot/bins-Can --n <span class="m">225</span>
 </pre></div>
