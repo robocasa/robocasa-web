@@ -19,11 +19,18 @@ The dataset can be found at `datasets/lift/ph/low_dim.hdf5`
 
 ### Step 2: Launch experiment
 
-Now, we will run an experiment using `train.py`. In this case we would like to run behavior cloning (BC) for the lift dataset we just downloaded. We add the flag `--debug` to run a quick sample experiment:
+Now, we will run an experiment using `train.py`. In this case we would like to run behavior cloning (BC) for the lift dataset we just downloaded.
 
 ```sh
 $ python robomimic/scripts/train.py --config robomimic/exps/templates/bc.json --dataset datasets/lift/ph/low_dim.hdf5 --debug
 ```
+
+<div class="admonition note">
+<p class="admonition-title">Running quick sanity check experiments</p>
+
+Make sure to add the `--debug` flag to your experiments as a sanity check that your implementation works.
+
+</div>
 
 <div class="admonition warning">
 <p class="admonition-title">Warning!</p>
@@ -77,8 +84,10 @@ utils/                    # utils for training, evaluation, visualization, hp sw
   ...
 ```
 -->
-For next steps, please refer to the remaining documentation sections: 
-- [Datasets](../datasets/overview.html): downloading datasets and reproducing experiments
-- [Tutorials](../tutorials/understanding_dataset_contents.html): working with datasets, running experiments, using trained models, and more
-- [Modules](../modules/overview.html): detailed information on robomimic modules, eg. algorithms, architectures, experiments configs, etc
-- [Troubleshooting](../miscellaneous/troubleshooting.html) and [Contributing guidelines](../miscellaneous/contributing.html)
+Please refer to the remaining documentation sections. Some helpful suggestions on pages to view next:
+- [Configuring and Launching Training Runs](../tutorials/configs.html)
+- [Logging and Viewing Training Results](../tutorials/viewing_results.html)
+- [Running Hyperparameter Scans](../tutorials/hyperparam_scan.html)
+- [Overview of Datasets](../datasets/overview.html)
+- [Dataset Contents and Visualization](../tutorials/dataset_contents.html)
+- [Overview of Modules](../modules/overview.html)

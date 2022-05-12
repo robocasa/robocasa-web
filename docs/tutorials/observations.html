@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Observations &#8212; robomimic 0.2.0 documentation</title>
+    <title>Multimodal Observations &#8212; robomimic 0.2.0 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -34,7 +34,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Implementing Custom Algorithms" href="custom_algorithms.html" />
-    <link rel="prev" title="Getting Familiar with Configs" href="configs.html" />
+    <link rel="prev" title="Using Pretrained Models" href="using_pretrained_models.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -95,6 +95,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/installation.html">
    Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/implemented_algorithms.html">
+   Implemented Algorithms
   </a>
  </li>
  <li class="toctree-l1">
@@ -159,23 +164,13 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="understanding_dataset_contents.html">
-   Understanding Dataset Contents
+  <a class="reference internal" href="configs.html">
+   Configuring and Launching Training Runs
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="using_pretrained_models.html">
-   Using Pretrained Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="reproducing_experiments.html">
-   Reproducing Experiments and Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="making_your_own_dataset.html">
-   Making Your Own Dataset
+  <a class="reference internal" href="viewing_results.html">
+   Logging and Viewing Training Results
   </a>
  </li>
  <li class="toctree-l1">
@@ -184,13 +179,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="configs.html">
-   Getting Familiar with Configs
+  <a class="reference internal" href="reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataset_contents.html">
+   Dataset Contents and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="using_pretrained_models.html">
+   Using Pretrained Models
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Observations
+   Multimodal Observations
   </a>
  </li>
  <li class="toctree-l1">
@@ -462,7 +467,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Observations</h1>
+                <h1>Multimodal Observations</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -487,9 +492,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="observations">
-<h1>Observations<a class="headerlink" href="#observations" title="Permalink to this headline">#</a></h1>
-<p>TODO: decide if more observation-related examples (modalities, nets, etc.) should go here instead of elsewhere, like in modules/models docs.</p>
+  <div class="section" id="multimodal-observations">
+<h1>Multimodal Observations<a class="headerlink" href="#multimodal-observations" title="Permalink to this headline">#</a></h1>
 <p><strong>robomimic</strong> natively supports multiple different observation modalities, and provides integrated support for modifying observations and adding your own custom ones.</p>
 <p>First, we highlight semantic distinctions when referring to different aspects of observations:</p>
 <ul class="simple">
@@ -506,7 +510,7 @@ title="Print to PDF"
 <div class="section" id="modifying-and-adding-your-own-observation-modalities">
 <h2>Modifying and Adding Your Own Observation Modalities<a class="headerlink" href="#modifying-and-adding-your-own-observation-modalities" title="Permalink to this headline">#</a></h2>
 <p><strong>robomimic</strong> natively supports low dimensional (<code class="docutils literal notranslate"><span class="pre">low_dim</span></code>), RGB images (<code class="docutils literal notranslate"><span class="pre">rgb</span></code>), depth images (<code class="docutils literal notranslate"><span class="pre">depth</span></code>), and scan arrays (<code class="docutils literal notranslate"><span class="pre">scan</span></code>). The way each of these modalities are processed and encoded can be easily specified by modifying their respective <code class="docutils literal notranslate"><span class="pre">encoder</span></code> parameters in your <code class="docutils literal notranslate"><span class="pre">Config</span></code> class.</p>
-<p>You may want to specify your own custom modalities that get processed and encoded in a certain way (e.g.: semantic segmentation, optical flow, etc…). This can also easily be done, and we refer you to our <a class="reference external" href="../introduction/examples.html#custom-observation-modalities-example">example script</a> which walks through the process.</p>
+<p>You may want to specify your own custom modalities that get processed and encoded in a certain way (e.g.: semantic segmentation, optical flow, etc…). This can also easily be done, and we refer you to our <a class="reference external" href="https://github.com/ARISE-Initiative/robomimic/blob/master/examples/simple_obs_nets.py">example script</a> which walks through the process.</p>
 </div>
 </div>
 
@@ -518,11 +522,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="configs.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="using_pretrained_models.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Getting Familiar with Configs</p>
+            <p class="prev-next-title">Using Pretrained Models</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="custom_algorithms.html" title="next page">

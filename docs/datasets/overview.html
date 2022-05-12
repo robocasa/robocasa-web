@@ -98,6 +98,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/implemented_algorithms.html">
+   Implemented Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../introduction/getting_started.html">
    Getting Started
   </a>
@@ -159,23 +164,13 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/understanding_dataset_contents.html">
-   Understanding Dataset Contents
+  <a class="reference internal" href="../tutorials/configs.html">
+   Configuring and Launching Training Runs
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
-   Using Pretrained Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
-   Reproducing Experiments and Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/making_your_own_dataset.html">
-   Making Your Own Dataset
+  <a class="reference internal" href="../tutorials/viewing_results.html">
+   Logging and Viewing Training Results
   </a>
  </li>
  <li class="toctree-l1">
@@ -184,13 +179,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/configs.html">
-   Getting Familiar with Configs
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/dataset_contents.html">
+   Dataset Contents and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
+   Using Pretrained Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/observations.html">
-   Observations
+   Multimodal Observations
   </a>
  </li>
  <li class="toctree-l1">
@@ -550,7 +555,7 @@ margin: auto;
 <thead>
 <tr>
 <th><strong>Dataset</strong></th>
-<th align="center"><strong>Task Types</strong></th>
+<th align="center"><center><strong>Task Types</strong></center></th>
 <th align="center"><strong>Downloading</strong></th>
 <th align="center"><strong>Postprocessing</strong></th>
 </tr>
@@ -609,7 +614,7 @@ margin: auto;
 <h2>Dataset Structure<a class="headerlink" href="#dataset-structure" title="Permalink to this headline">#</a></h2>
 <p>All postprocessed <strong>robomimic</strong> compatible datasets share the same data structure. A single dataset is a single HDF5 file with the following structure:</p>
 <details>
-  <summary><b>HDF5 Structure</b></summary>
+  <summary><b>HDF5 Structure <span style="color:red;">(click to expand)</span></b></summary>
 <p><ul>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong> (group)</p>
 <ul>
@@ -688,7 +693,7 @@ margin: auto;
 <li><p><code class="docutils literal notranslate"><span class="pre">--filter_key</span></code> (optional) By default, this script splits all demonstration keys in the hdf5 into 2 new hdf5 groups - one under <code class="docutils literal notranslate"><span class="pre">mask/train</span></code>, and one under <code class="docutils literal notranslate"><span class="pre">mask/valid</span></code>. If this argument is provided, the demonstration keys corresponding to this filter key (under <code class="docutils literal notranslate"><span class="pre">mask/&lt;FILTER_KEY_NAME&gt;</span></code>) will be split into 2 groups - <code class="docutils literal notranslate"><span class="pre">mask/&lt;FILTER_KEY_NAME&gt;_train</span></code> and <code class="docutils literal notranslate"><span class="pre">mask/&lt;FILTER_KEY_NAME&gt;_valid</span></code>.</p></li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Note!.</p><p>You can easily list the filter keys present in a dataset with the <code class="docutils literal notranslate"><span class="pre">get_dataset_info.py</span></code> script (see <a class="reference external" href="../tutorials/understanding_dataset_contents.html#view-dataset-structure-and-videos">this link</a>), and you can even pass a <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> flag to list the exact demonstrations that each filter key corresponds to.</p>
+<p class="admonition-title">Note!</p><p>You can easily list the filter keys present in a dataset with the <code class="docutils literal notranslate"><span class="pre">get_dataset_info.py</span></code> script (see <a class="reference external" href="../tutorials/dataset_contents.html#view-dataset-structure-and-videos">this link</a>), and you can even pass a <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> flag to list the exact demonstrations that each filter key corresponds to.</p>
 </div><p>Using filter keys during training is easy. To use the generated train-valid split, you can set <code class="docutils literal notranslate"><span class="pre">config.experiment.validate=True</span></code> so that the demos under <code class="docutils literal notranslate"><span class="pre">mask/train</span></code> are used for training, and the demos under <code class="docutils literal notranslate"><span class="pre">mask/valid</span></code> are used for validation.</p>
 <p>You can also use a custom filter key for training by setting <code class="docutils literal notranslate"><span class="pre">config.train.hdf5_filter_key=&lt;FILTER_KEY_NAME&gt;</span></code>. This ensures that only the demos under <code class="docutils literal notranslate"><span class="pre">mask/&lt;FILTER_KEY_NAME&gt;</span></code> are used during training. If you also set <code class="docutils literal notranslate"><span class="pre">config.experiment.validate=True</span></code>, this filter key’s train-valid split will be used.</p>
 </div>

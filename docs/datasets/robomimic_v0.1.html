@@ -98,6 +98,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/implemented_algorithms.html">
+   Implemented Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../introduction/getting_started.html">
    Getting Started
   </a>
@@ -159,23 +164,13 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/understanding_dataset_contents.html">
-   Understanding Dataset Contents
+  <a class="reference internal" href="../tutorials/configs.html">
+   Configuring and Launching Training Runs
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
-   Using Pretrained Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
-   Reproducing Experiments and Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/making_your_own_dataset.html">
-   Making Your Own Dataset
+  <a class="reference internal" href="../tutorials/viewing_results.html">
+   Logging and Viewing Training Results
   </a>
  </li>
  <li class="toctree-l1">
@@ -184,13 +179,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/configs.html">
-   Getting Familiar with Configs
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/dataset_contents.html">
+   Dataset Contents and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
+   Using Pretrained Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/observations.html">
-   Observations
+   Multimodal Observations
   </a>
  </li>
  <li class="toctree-l1">
@@ -530,6 +535,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#citation">
+   Citation
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -631,6 +641,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#citation">
+   Citation
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -685,7 +700,7 @@ $ python download_datasets.py --download_dir /tmp/datasets
 </div>
 <div class="section" id="method-2-using-direct-download-links">
 <h3>Method 2: Using Direct Download Links<a class="headerlink" href="#method-2-using-direct-download-links" title="Permalink to this headline">#</a></h3>
-<p>We also provide direct download links for each hdf5 dataset:</p>
+<p>We also provide direct download links for each hdf5 dataset (the download links for the raw datasets are also included – they allow flexibility in extracting different kinds of observations and rewards during postprocessing):</p>
 <p><strong>Proficient-Human (PH)</strong> <a class="reference external" href="robomimic_v0.1.html#proficient-human-ph"><strong>info</strong></a></p>
 <details>
   <summary><b>Download Links</b></summary>
@@ -750,7 +765,8 @@ $ python download_datasets.py --download_dir /tmp/datasets
 </tr>
 </tbody>
 </table></p>
-</details><p><strong>Multi-Human (MH)</strong> <a class="reference external" href="robomimic_v0.1.html#multi-human-mh"><strong>info</strong></a></p>
+</details><br/>
+<br/><p><strong>Multi-Human (MH)</strong> <a class="reference external" href="robomimic_v0.1.html#multi-human-mh"><strong>info</strong></a></p>
 <details>
   <summary><b>Download Links</b></summary>
 <p>
@@ -790,7 +806,8 @@ $ python download_datasets.py --download_dir /tmp/datasets
 </tr>
 </tbody>
 </table></p>
-</details><p><strong>Machine-Generated (MG)</strong> <a class="reference external" href="robomimic_v0.1.html#machine-generated-mg"><strong>info</strong></a></p>
+</details><br/>
+<br/><p><strong>Machine-Generated (MG)</strong> <a class="reference external" href="robomimic_v0.1.html#machine-generated-mg"><strong>info</strong></a></p>
 <details>
   <summary><b>Download Links</b></summary>
 <p><img src="../images/machine_generated.png" alt="machine_generated" style="zoom:33%;" /><table border="1" class="docutils">
@@ -827,7 +844,8 @@ $ python download_datasets.py --download_dir /tmp/datasets
 </tr>
 </tbody>
 </table></p>
-</details><p><strong>Paired</strong> <a class="reference external" href="robomimic_v0.1.html#paired"><strong>info</strong></a></p>
+</details><br/>
+<br/><p><strong>Paired</strong> <a class="reference external" href="robomimic_v0.1.html#paired"><strong>info</strong></a></p>
 <details>
   <summary><b>Download Links</b></summary>
 <p><table border="1" class="docutils">
@@ -903,7 +921,10 @@ python /path/to/robomimic/scripts/train.py --config /path/to/robomimic/exps/pape
 python /path/to/robomimic/scripts/train.py --config /path/to/robomimic/exps/paper/core/lift/ph/low_dim/bc_rnn.json
 </pre></div>
 </div>
-</div>
+<div class="admonition info">
+<p class="admonition-title">Want to Run Experiments on Custom Observations?</p><p>We provide the raw (observation-free) <code class="docutils literal notranslate"><span class="pre">demo.hdf5</span></code> datasets so that you can generate your own custom set of observations, such as additional camera viewpoints. For information, see <a class="reference internal" href="robosuite.html#extracting-observations-from-mujoco-states"><span class="std std-ref">Extracting Observations from Datasets</span></a>.</p>
+<p><strong>NOTE</strong>: To compare against how our paper’s released datasets were generated, please see the <code class="docutils literal notranslate"><span class="pre">extract_obs_from_raw_datasets.sh</span></code> script.</p>
+</div></div>
 <div class="section" id="overview-of-included-experiments">
 <h3>Overview of Included Experiments<a class="headerlink" href="#overview-of-included-experiments" title="Permalink to this headline">#</a></h3>
 <p>Each group of experiments below has a shell script (for example <code class="docutils literal notranslate"><span class="pre">core.sh</span></code>) and a folder that is generated by the <code class="docutils literal notranslate"><span class="pre">generate_paper_configs.py</span></code> script at <code class="docutils literal notranslate"><span class="pre">--config_dir</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">robomimic/exps/paper</span></code>). The Tables and Figures below refer to the ones in this paper.</p>
@@ -930,6 +951,17 @@ $ python generate_paper_configs.py --output_dir /tmp/experiment_results
 $ python train.py --config ../exps/paper/core/lift/ph/low_dim/bc.json
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>@inproceedings<span class="o">{</span>mandlekar2021matters,
+  <span class="nv">title</span><span class="o">={</span>What Matters <span class="k">in</span> Learning from Offline Human Demonstrations <span class="k">for</span> Robot Manipulation<span class="o">}</span>,
+  <span class="nv">author</span><span class="o">={</span>Mandlekar, Ajay and Xu, Danfei and Wong, Josiah and Nasiriany, Soroush and Wang, Chen and Kulkarni, Rohun and Fei-Fei, Li and Savarese, Silvio and Zhu, Yuke and Mart<span class="o">{</span><span class="se">\&#39;\i</span><span class="o">}</span>n-Mart<span class="o">{</span><span class="se">\&#39;\i</span><span class="o">}</span>n, Roberto<span class="o">}</span>,
+  <span class="nv">booktitle</span><span class="o">={</span>5th Annual Conference on Robot Learning<span class="o">}</span>,
+  <span class="nv">year</span><span class="o">={</span><span class="m">2021</span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
 </div>
 </div>
 </div>

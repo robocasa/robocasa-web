@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Getting Familiar with Configs &#8212; robomimic 0.2.0 documentation</title>
+    <title>Configuring and Launching Training Runs &#8212; robomimic 0.2.0 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -33,8 +33,8 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Observations" href="observations.html" />
-    <link rel="prev" title="Running Hyperparameter Scans" href="hyperparam_scan.html" />
+    <link rel="next" title="Logging and Viewing Training Results" href="viewing_results.html" />
+    <link rel="prev" title="robomimic-v0.1" href="../model_zoo/robomimic_v0.1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -98,6 +98,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/implemented_algorithms.html">
+   Implemented Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../introduction/getting_started.html">
    Getting Started
   </a>
@@ -158,9 +163,29 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Configuring and Launching Training Runs
+  </a>
+ </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="understanding_dataset_contents.html">
-   Understanding Dataset Contents
+  <a class="reference internal" href="viewing_results.html">
+   Logging and Viewing Training Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hyperparam_scan.html">
+   Running Hyperparameter Scans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataset_contents.html">
+   Dataset Contents and Visualization
   </a>
  </li>
  <li class="toctree-l1">
@@ -169,28 +194,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="reproducing_experiments.html">
-   Reproducing Experiments and Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="making_your_own_dataset.html">
-   Making Your Own Dataset
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="hyperparam_scan.html">
-   Running Hyperparameter Scans
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Getting Familiar with Configs
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="observations.html">
-   Observations
+   Multimodal Observations
   </a>
  </li>
  <li class="toctree-l1">
@@ -426,23 +431,80 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#best-practices">
+   Best practices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-a-config-json-preferred">
+   1. Using a config json (preferred)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-a-config-object-in-code">
+   2. Constructing a config object in code
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Getting Familiar with Configs</h1>
+                <h1>Configuring and Launching Training Runs</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#best-practices">
+   Best practices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-a-config-json-preferred">
+   1. Using a config json (preferred)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-a-config-object-in-code">
+   2. Constructing a config object in code
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -450,61 +512,49 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="getting-familiar-with-configs">
-<h1>Getting Familiar with Configs<a class="headerlink" href="#getting-familiar-with-configs" title="Permalink to this headline">#</a></h1>
-<p>The simple config example script at <code class="docutils literal notranslate"><span class="pre">examples/simple_config.py</span></code> shows how the <code class="docutils literal notranslate"><span class="pre">Config</span></code> object can easily be instantiated and modified safely with different levels of locking. We reproduce certain portions of the script. First, we can create a <code class="docutils literal notranslate"><span class="pre">Config</span></code> object and call <code class="docutils literal notranslate"><span class="pre">lock</span></code> when we think we won’t need to change it anymore.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robomimic.config.base_config</span> <span class="kn">import</span> <span class="n">Config</span>
-
-<span class="c1"># create config</span>
-<span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span>
-
-<span class="c1"># add nested attributes to the config</span>
-<span class="n">config</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">config</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">1e-3</span>
-<span class="n">config</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">actor_network_size</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]</span>
-<span class="n">config</span><span class="o">.</span><span class="n">lock</span><span class="p">()</span>  <span class="c1"># prevent accidental changes</span>
+  <div class="section" id="configuring-and-launching-training-runs">
+<h1>Configuring and Launching Training Runs<a class="headerlink" href="#configuring-and-launching-training-runs" title="Permalink to this headline">#</a></h1>
+<p>Robomimic uses a centralized <a class="reference external" href="../modules/configs.html">configuration system</a> to specify (hyper)parameters at all levels. Below we walk through two ways to configure and launching training runs.</p>
+<div class="section" id="best-practices">
+<h2>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h2>
+<p><em>WARNING</em>: Do not directly modify the default configs such as <code class="docutils literal notranslate"><span class="pre">config/bc_config.py</span></code>, especially if using the codebase with version control (e.g. git). Modifying these files modifies the default settings, and it’s easy to forget that these changes were made, or unintentionally commit these changes so that they become the new defaults.</p>
+<p>Please see the <a class="reference external" href="../modules/configs.html">Config documentation</a> for more information on Config objects, and the <a class="reference external" href="../tutorials/hyperparam_scan.html">hyperparameter scan tutorial</a> for configuring hyperparameter sweeps.</p>
+</div>
+<div class="section" id="using-a-config-json-preferred">
+<h2>1. Using a config json (preferred)<a class="headerlink" href="#using-a-config-json-preferred" title="Permalink to this headline">#</a></h2>
+<p>The preferred way to specify training parameters is to pass a config json to the main training script <code class="docutils literal notranslate"><span class="pre">train.py</span></code> via the <code class="docutils literal notranslate"><span class="pre">--config</span></code> argument. The dataset can be specified by setting the <code class="docutils literal notranslate"><span class="pre">data</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">train</span></code> section of the config json, or specified via the <code class="docutils literal notranslate"><span class="pre">--dataset</span></code> argument. The example below runs a default template json for the BC algorithm. <strong>This is the preferred way to launch training runs.</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python train.py --config ../exps/templates/bc.json --dataset ../../tests/assets/test.hdf5
 </pre></div>
 </div>
-<p>Now, when we try to add a new key (or modify the value of an existing key), the config will throw an error.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the config is locked --- cannot add new keys or modify existing keys</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="s2">&quot;Adam&quot;</span>
-<span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<p>Please see the <a class="reference external" href="./advanced.html#using-the-hyperparameter-helper-to-launch-runs">hyperparameter helper docs</a> to see how to easily generate json configs for launching training runs.</p>
+</div>
+<div class="section" id="constructing-a-config-object-in-code">
+<h2>2. Constructing a config object in code<a class="headerlink" href="#constructing-a-config-object-in-code" title="Permalink to this headline">#</a></h2>
+<p>Another way to launch a training run is to make a default config (with a line like <code class="docutils literal notranslate"><span class="pre">config</span> <span class="pre">=</span> <span class="pre">config_factory(algo_name=&quot;bc&quot;)</span></code>), modify the config in python code, and then call the train function, like in the <code class="docutils literal notranslate"><span class="pre">examples/train_bc_rnn.py</span></code> script.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">robomimic</span>
+<span class="kn">import</span> <span class="nn">robomimic.utils.torch_utils</span> <span class="k">as</span> <span class="nn">TorchUtils</span>
+<span class="kn">from</span> <span class="nn">robomimic.config</span> <span class="kn">import</span> <span class="n">config_factory</span>
+<span class="kn">from</span> <span class="nn">robomimic.scripts.train</span> <span class="kn">import</span> <span class="n">train</span>
+
+<span class="c1"># make default BC config</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">config_factory</span><span class="p">(</span><span class="n">algo_name</span><span class="o">=</span><span class="s2">&quot;bc&quot;</span><span class="p">)</span>
+
+<span class="c1"># set config attributes here that you would like to update</span>
+<span class="n">config</span><span class="o">.</span><span class="n">experiment</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bc_rnn_example&quot;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="s2">&quot;/path/to/dataset.hdf5&quot;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">output_dir</span> <span class="o">=</span> <span class="s2">&quot;/path/to/desired/output_dir&quot;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">config</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">config</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">gmm</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># get torch device</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">TorchUtils</span><span class="o">.</span><span class="n">get_torch_device</span><span class="p">(</span><span class="n">try_to_use_cuda</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># launch training run</span>
+<span class="n">train</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>However, the config can be safely modified using appropriate contexts.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># values_unlocked scope allows modifying values of existing keys, but not adding keys</span>
-<span class="k">with</span> <span class="n">config</span><span class="o">.</span><span class="n">values_unlocked</span><span class="p">():</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">200</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;batch_size=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">batch_size</span><span class="p">))</span>
-
-<span class="c1"># unlock config within the scope, allowing new keys to be inserted</span>
-<span class="k">with</span> <span class="n">config</span><span class="o">.</span><span class="n">unlocked</span><span class="p">():</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">num_eval</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="c1"># verify that the config remains locked outside of the scope</span>
-<span class="k">assert</span> <span class="n">config</span><span class="o">.</span><span class="n">is_locked</span>
-<span class="k">assert</span> <span class="n">config</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">is_locked</span>
-</pre></div>
 </div>
-<p>Finally, the config can also be updated by using external dictionaries - this is helpful for loading config jsons.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># update this config with external config from a dict</span>
-<span class="n">ext_config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;learning_rate&quot;</span><span class="p">:</span> <span class="mf">1e-3</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;algo&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;actor_network_size&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="k">with</span> <span class="n">config</span><span class="o">.</span><span class="n">values_unlocked</span><span class="p">():</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ext_config</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Please see the <a class="reference external" href="../modules/configs.html">Config documentation</a> for more information on Config objects.</p>
 </div>
 
 
@@ -515,17 +565,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="hyperparam_scan.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../model_zoo/robomimic_v0.1.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Running Hyperparameter Scans</p>
+            <p class="prev-next-title">robomimic-v0.1</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="observations.html" title="next page">
+    <a class='right-next' id="next-link" href="viewing_results.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Observations</p>
+        <p class="prev-next-title">Logging and Viewing Training Results</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

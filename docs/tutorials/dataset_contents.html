@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Making Your Own Dataset &#8212; robomimic 0.2.0 documentation</title>
+    <title>Dataset Contents and Visualization &#8212; robomimic 0.2.0 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -33,8 +33,8 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Running Hyperparameter Scans" href="hyperparam_scan.html" />
-    <link rel="prev" title="Reproducing Experiments and Results" href="reproducing_experiments.html" />
+    <link rel="next" title="Using Pretrained Models" href="using_pretrained_models.html" />
+    <link rel="prev" title="Reproducing Published Experiments and Results" href="reproducing_experiments.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -95,6 +95,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/installation.html">
    Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/implemented_algorithms.html">
+   Implemented Algorithms
   </a>
  </li>
  <li class="toctree-l1">
@@ -159,23 +164,13 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="understanding_dataset_contents.html">
-   Understanding Dataset Contents
+  <a class="reference internal" href="configs.html">
+   Configuring and Launching Training Runs
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="using_pretrained_models.html">
-   Using Pretrained Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="reproducing_experiments.html">
-   Reproducing Experiments and Results
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Making Your Own Dataset
+  <a class="reference internal" href="viewing_results.html">
+   Logging and Viewing Training Results
   </a>
  </li>
  <li class="toctree-l1">
@@ -184,13 +179,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="configs.html">
-   Getting Familiar with Configs
+  <a class="reference internal" href="reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Dataset Contents and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="using_pretrained_models.html">
+   Using Pretrained Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="observations.html">
-   Observations
+   Multimodal Observations
   </a>
  </li>
  <li class="toctree-l1">
@@ -389,7 +394,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../sources/tutorials/making_your_own_dataset.md.txt"
+        <a href="../sources/tutorials/dataset_contents.md.txt"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -426,23 +431,70 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#viewing-hdf5-dataset-structure">
+   Viewing HDF5 Dataset Structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualize-dataset-trajectories">
+   Visualize Dataset Trajectories
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Making Your Own Dataset</h1>
+                <h1>Dataset Contents and Visualization</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#viewing-hdf5-dataset-structure">
+   Viewing HDF5 Dataset Structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualize-dataset-trajectories">
+   Visualize Dataset Trajectories
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -450,12 +502,46 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="making-your-own-dataset">
-<h1>Making Your Own Dataset<a class="headerlink" href="#making-your-own-dataset" title="Permalink to this headline">#</a></h1>
-<p>TODO: add link to page on dataset structure here
-TODO: add some information on collecting datasets (e.g. robosuite has tools for this + conversion script, but if not
-you need to collect a set of trajectories with the dataset structure above)
-TODO: add some instructions in step by step guide here on this (e.g. need to have environment code + metadata as well)</p>
+  <div class="section" id="dataset-contents-and-visualization">
+<h1>Dataset Contents and Visualization<a class="headerlink" href="#dataset-contents-and-visualization" title="Permalink to this headline">#</a></h1>
+<p>This tutorial shows how to view contents of robomimic hdf5 datasets.</p>
+<div class="section" id="viewing-hdf5-dataset-structure">
+<h2>Viewing HDF5 Dataset Structure<a class="headerlink" href="#viewing-hdf5-dataset-structure" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note: HDF5 Dataset Structure.</p><p><a class="reference external" href="../datasets/overview.html#dataset-structure">This link</a> shows the expected structure of each hdf5 dataset.</p>
+</div><p>The repository offers a simple utility script (<code class="docutils literal notranslate"><span class="pre">get_dataset_info.py</span></code>) to view the hdf5 dataset structure and some statistics of hdf5 datasets. The script displays the following information:</p>
+<ul class="simple">
+<li><p>statistics about the trajectories (number, average length, etc.)</p></li>
+<li><p>the <a class="reference external" href="../datasets/overview.html#filter-keys">filter keys</a> in the dataset</p></li>
+<li><p>the <a class="reference external" href="../modules/environments.html#initialize-an-environment-from-a-dataset">environment metadata</a> in the dataset, which is used to construct the same simulator environment that the data was collected on</p></li>
+<li><p>the dataset structure for the first demonstration</p></li>
+</ul>
+<p>Pass the <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> argument to print the list of demonstration keys under each filter key, and the dataset structure for all demonstrations. An example, using the small hdf5 dataset packaged with the repository in <code class="docutils literal notranslate"><span class="pre">tests/assets/test.hdf5</span></code> is shown below.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python get_dataset_info.py --dataset ../../tests/assets/test.hdf5
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Jupyter Notebook: A Deep Dive into Dataset Structure</p><p>Any user wishing to write custom code that works with robomimic datasets should also look at the jupyter notebook at <code class="docutils literal notranslate"><span class="pre">examples/notebooks/datasets.ipynb</span></code>, which showcases several useful python code snippets for working with robomimic hdf5 datasets.</p>
+</div></div>
+<div class="section" id="visualize-dataset-trajectories">
+<h2>Visualize Dataset Trajectories<a class="headerlink" href="#visualize-dataset-trajectories" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note: These examples are compatible with any robomimic dataset.</p><p>The examples in this section use the small hdf5 dataset packaged with the repository in <code class="docutils literal notranslate"><span class="pre">tests/assets/test.hdf5</span></code>, but you can run these examples with any robomimic hdf5 dataset. If you are using the default dataset, please make sure that robosuite is on the <code class="docutils literal notranslate"><span class="pre">offline_study</span></code> branch of robosuite – this is necessary for the playback scripts to function properly.</p>
+</div><p>Use the <code class="docutils literal notranslate"><span class="pre">playback_dataset.py</span></code> script to easily view dataset trajectories.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># For the first 5 trajectories, load environment simulator states one-by-one, and render &quot;agentview&quot; and &quot;robot0_eye_in_hand&quot; cameras to video at /tmp/playback_dataset.mp4</span>
+$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --render_image_names agentview robot0_eye_in_hand --video_path /tmp/playback_dataset.mp4 --n <span class="m">5</span>
+
+<span class="c1"># Directly visualize the image observations in the dataset. This is especially useful for real robot datasets where there is no simulator to use for rendering.</span>
+$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --use-obs --render_image_names agentview_image --video_path /tmp/obs_trajectory.mp4
+
+<span class="c1"># Play the dataset actions in the environment to verify that the recorded actions are reasonable.</span>
+$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --use-actions --render_image_names agentview --video_path /tmp/playback_dataset_with_actions.mp4
+
+<span class="c1"># Visualize only the initial demonstration frames.</span>
+$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --first --render_image_names agentview --video_path /tmp/dataset_task_inits.mp4
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -470,13 +556,13 @@ TODO: add some instructions in step by step guide here on this (e.g. need to hav
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Reproducing Experiments and Results</p>
+            <p class="prev-next-title">Reproducing Published Experiments and Results</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="hyperparam_scan.html" title="next page">
+    <a class='right-next' id="next-link" href="using_pretrained_models.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Running Hyperparameter Scans</p>
+        <p class="prev-next-title">Using Pretrained Models</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

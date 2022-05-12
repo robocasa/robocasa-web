@@ -34,7 +34,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Operations over Tensor Collections" href="tensor_collections.html" />
-    <link rel="prev" title="Observations" href="observations.html" />
+    <link rel="prev" title="Multimodal Observations" href="observations.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -95,6 +95,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/installation.html">
    Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/implemented_algorithms.html">
+   Implemented Algorithms
   </a>
  </li>
  <li class="toctree-l1">
@@ -159,23 +164,13 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="understanding_dataset_contents.html">
-   Understanding Dataset Contents
+  <a class="reference internal" href="configs.html">
+   Configuring and Launching Training Runs
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="using_pretrained_models.html">
-   Using Pretrained Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="reproducing_experiments.html">
-   Reproducing Experiments and Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="making_your_own_dataset.html">
-   Making Your Own Dataset
+  <a class="reference internal" href="viewing_results.html">
+   Logging and Viewing Training Results
   </a>
  </li>
  <li class="toctree-l1">
@@ -184,13 +179,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="configs.html">
-   Getting Familiar with Configs
+  <a class="reference internal" href="reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataset_contents.html">
+   Dataset Contents and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="using_pretrained_models.html">
+   Using Pretrained Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="observations.html">
-   Observations
+   Multimodal Observations
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -449,8 +454,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-your-own-algorithm">
-   Building your own Algorithm
+  <a class="reference internal nav-link" href="#implementing-the-config-class">
+   Implementing the Config class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementing-the-algo-class">
+   Implementing the Algo class
   </a>
  </li>
 </ul>
@@ -473,8 +483,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-your-own-algorithm">
-   Building your own Algorithm
+  <a class="reference internal nav-link" href="#implementing-the-config-class">
+   Implementing the Config class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementing-the-algo-class">
+   Implementing the Algo class
   </a>
  </li>
 </ul>
@@ -489,11 +504,15 @@ title="Print to PDF"
                 
   <div class="section" id="implementing-custom-algorithms">
 <h1>Implementing Custom Algorithms<a class="headerlink" href="#implementing-custom-algorithms" title="Permalink to this headline">#</a></h1>
-<div class="section" id="building-your-own-algorithm">
-<h2>Building your own Algorithm<a class="headerlink" href="#building-your-own-algorithm" title="Permalink to this headline">#</a></h2>
-<p>In this section, we walk through an example of implementing a custom algorithm, to show how easy it is to extend the functionality in the repository. We choose to implement the recently proposed <a class="reference external" href="https://arxiv.org/abs/2106.06860">TD3-BC</a> algorithm.</p>
-<p>This requires implementing two new files - <code class="docutils literal notranslate"><span class="pre">algo/td3_bc.py</span></code> (which contains the <code class="docutils literal notranslate"><span class="pre">Algo</span></code> subclass implementation) and <code class="docutils literal notranslate"><span class="pre">config/td3_bc_config.py</span></code> (which contains the <code class="docutils literal notranslate"><span class="pre">Config</span></code> subclass implementation). We also make sure to add the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">robomimic.algo.td3_bc</span> <span class="pre">import</span> <span class="pre">TD3_BC</span></code> to <code class="docutils literal notranslate"><span class="pre">algo/__init__.py</span></code> and <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">robomimicL.config.td3_bc_config</span> <span class="pre">import</span> <span class="pre">TD3_BCConfig</span></code> to <code class="docutils literal notranslate"><span class="pre">config/__init__.py</span></code> to <code class="docutils literal notranslate"><span class="pre">config/__init__.py</span></code> to make sure the <code class="docutils literal notranslate"><span class="pre">Algo</span></code> and <code class="docutils literal notranslate"><span class="pre">Config</span></code> subclasses can be found.</p>
-<p>We first describe the config implementation - we implement a <code class="docutils literal notranslate"><span class="pre">TD3_BCConfig</span></code> config class that subclasses from <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code>. Importantly, we set the class variable <code class="docutils literal notranslate"><span class="pre">ALGO_NAME</span> <span class="pre">=</span> <span class="pre">&quot;td3_bc&quot;</span></code> to register this config under that algo name. We implement the <code class="docutils literal notranslate"><span class="pre">algo_config</span></code> function to populate <code class="docutils literal notranslate"><span class="pre">config.algo</span></code> with the keys needed for the algorithm - it is extremely similar to the <code class="docutils literal notranslate"><span class="pre">BCQConfig</span></code> implementation. Portions of the code are reproduced below.</p>
+<p>This tutorial provides an example of implementing a custom algorithm in robomimic. We choose to implement the recently proposed <a class="reference external" href="https://arxiv.org/abs/2106.06860">TD3-BC</a> algorithm.</p>
+<p>This consists of the following steps:</p>
+<ol class="simple">
+<li><p>Implement a custom <code class="docutils literal notranslate"><span class="pre">Config</span></code> class for TD3-BC.</p></li>
+<li><p>Implement a custom <code class="docutils literal notranslate"><span class="pre">Algo</span></code> class for TD3-BC.</p></li>
+</ol>
+<div class="section" id="implementing-the-config-class">
+<h2>Implementing the Config class<a class="headerlink" href="#implementing-the-config-class" title="Permalink to this headline">#</a></h2>
+<p>We will implement the config class in <code class="docutils literal notranslate"><span class="pre">config/td3_bc_config.py</span></code>. We implement a <code class="docutils literal notranslate"><span class="pre">TD3_BCConfig</span></code> config class that subclasses from <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code>. Importantly, we set the class variable <code class="docutils literal notranslate"><span class="pre">ALGO_NAME</span> <span class="pre">=</span> <span class="pre">&quot;td3_bc&quot;</span></code> to register this config under that algo name. We implement the <code class="docutils literal notranslate"><span class="pre">algo_config</span></code> function to populate <code class="docutils literal notranslate"><span class="pre">config.algo</span></code> with the keys needed for the algorithm - it is extremely similar to the <code class="docutils literal notranslate"><span class="pre">BCQConfig</span></code> implementation. Portions of the code are reproduced below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TD3_BCConfig</span><span class="p">(</span><span class="n">BaseConfig</span><span class="p">):</span>
     <span class="n">ALGO_NAME</span> <span class="o">=</span> <span class="s2">&quot;td3_bc&quot;</span>
     
@@ -546,7 +565,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>Usually, we only need to implement the <code class="docutils literal notranslate"><span class="pre">algo_config</span></code> function to populate <code class="docutils literal notranslate"><span class="pre">config.algo</span></code> with the keys needed for the algorithm, but we also update the <code class="docutils literal notranslate"><span class="pre">experiment_config</span></code> function and <code class="docutils literal notranslate"><span class="pre">observation_config</span></code> function to make it easier to reproduce experiments on <code class="docutils literal notranslate"><span class="pre">gym</span></code> environments from the paper. See the source file for more details.</p>
-<p>Now we discuss the algorithm implementation. As described in the “Initialization” section above, we first need to implement the <code class="docutils literal notranslate"><span class="pre">algo_config_to_class</span></code> method - this is straightforward since we don’t have multiple variants of this algorithm. We take special care to make sure we register this function with the same algo name that we used for defining the config (<code class="docutils literal notranslate"><span class="pre">&quot;td3_bc&quot;</span></code>).</p>
+<p>Finally, we add the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">robomimic.config.td3_bc_config</span> <span class="pre">import</span> <span class="pre">TD3_BCConfig</span></code> to <code class="docutils literal notranslate"><span class="pre">config/__init__.py</span></code> to make sure this <code class="docutils literal notranslate"><span class="pre">Config</span></code> subclass is registered by <code class="docutils literal notranslate"><span class="pre">robomimic</span></code>.</p>
+</div>
+<div class="section" id="implementing-the-algo-class">
+<h2>Implementing the Algo class<a class="headerlink" href="#implementing-the-algo-class" title="Permalink to this headline">#</a></h2>
+<p>We will implement the algo class in <code class="docutils literal notranslate"><span class="pre">algo/td3_bc.py</span></code>. As described in the <a class="reference external" href="../modules/algorithms.html#initialization">Algorithm documentation</a>, we first need to implement the <code class="docutils literal notranslate"><span class="pre">algo_config_to_class</span></code> method - this is straightforward since we don’t have multiple variants of this algorithm. We take special care to make sure we register this function with the same algo name that we used for defining the config (<code class="docutils literal notranslate"><span class="pre">&quot;td3_bc&quot;</span></code>).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@register_algo_factory_func</span><span class="p">(</span><span class="s2">&quot;td3_bc&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">algo_config_to_class</span><span class="p">(</span><span class="n">algo_config</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -563,7 +586,7 @@ title="Print to PDF"
     <span class="k">return</span> <span class="n">TD3_BC</span><span class="p">,</span> <span class="p">{}</span>
 </pre></div>
 </div>
-<p>Next, we’ll describe how we implement the methods outlined in the “Important Methods” section above. We omit several of the methods, since their implementation is extremely similar to the <code class="docutils literal notranslate"><span class="pre">BCQ</span></code> implementation. We start by defining the class and implementing <code class="docutils literal notranslate"><span class="pre">_create_networks</span></code>. The code uses helper functions <code class="docutils literal notranslate"><span class="pre">_create_critics</span></code> and <code class="docutils literal notranslate"><span class="pre">_create_actor</span></code> to create the critic and actor networks, as in the <code class="docutils literal notranslate"><span class="pre">BCQ</span></code> implementation.</p>
+<p>Next, we’ll describe how we implement the methods outlined in the <a class="reference external" href="../modules/algorithms.html#important-class-methods">Algorithm documentation</a>. We omit several of the methods, since their implementation is extremely similar to the <code class="docutils literal notranslate"><span class="pre">BCQ</span></code> implementation. We start by defining the class and implementing <code class="docutils literal notranslate"><span class="pre">_create_networks</span></code>. The code uses helper functions <code class="docutils literal notranslate"><span class="pre">_create_critics</span></code> and <code class="docutils literal notranslate"><span class="pre">_create_actor</span></code> to create the critic and actor networks, as in the <code class="docutils literal notranslate"><span class="pre">BCQ</span></code> implementation.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TD3_BC</span><span class="p">(</span><span class="n">PolicyAlgo</span><span class="p">,</span> <span class="n">ValueAlgo</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">_create_networks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -823,6 +846,7 @@ title="Print to PDF"
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">](</span><span class="n">obs_dict</span><span class="o">=</span><span class="n">obs_dict</span><span class="p">,</span> <span class="n">goal_dict</span><span class="o">=</span><span class="n">goal_dict</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Finally, we add the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">robomimic.algo.td3_bc</span> <span class="pre">import</span> <span class="pre">TD3_BC</span></code> to <code class="docutils literal notranslate"><span class="pre">algo/__init__.py</span></code> to make sure this <code class="docutils literal notranslate"><span class="pre">Algo</span></code> subclass is registered by <code class="docutils literal notranslate"><span class="pre">robomimic</span></code>.</p>
 <p>That’s it! See <code class="docutils literal notranslate"><span class="pre">algo/td3_bc.py</span></code> for the complete implementation, and compare it to <code class="docutils literal notranslate"><span class="pre">algo/bcq.py</span></code> to see the similarity between the two implementations.</p>
 <p>We can now run the <code class="docutils literal notranslate"><span class="pre">generate_config_templates.py</span></code> script to generate the json template for our new algorithm, and then run it on our desired dataset.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate ../exps/templates/td3_bc.json</span>
@@ -847,7 +871,7 @@ $ python train.py --config ../exps/templates/td3_bc.json --dataset /path/to/walk
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Observations</p>
+            <p class="prev-next-title">Multimodal Observations</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="tensor_collections.html" title="next page">

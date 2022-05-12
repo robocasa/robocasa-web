@@ -98,6 +98,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/implemented_algorithms.html">
+   Implemented Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../introduction/getting_started.html">
    Getting Started
   </a>
@@ -159,23 +164,13 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/understanding_dataset_contents.html">
-   Understanding Dataset Contents
+  <a class="reference internal" href="../tutorials/configs.html">
+   Configuring and Launching Training Runs
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
-   Using Pretrained Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
-   Reproducing Experiments and Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/making_your_own_dataset.html">
-   Making Your Own Dataset
+  <a class="reference internal" href="../tutorials/viewing_results.html">
+   Logging and Viewing Training Results
   </a>
  </li>
  <li class="toctree-l1">
@@ -184,13 +179,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/configs.html">
-   Getting Familiar with Configs
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/dataset_contents.html">
+   Dataset Contents and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
+   Using Pretrained Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/observations.html">
-   Observations
+   Multimodal Observations
   </a>
  </li>
  <li class="toctree-l1">
@@ -472,43 +477,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#implemented-algorithms">
    Implemented Algorithms
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bc">
-     BC
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bc-rnn">
-     BC-RNN
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hbc">
-     HBC
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iris">
-     IRIS
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bcq">
-     BCQ
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cql">
-     CQL
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#td3-bc">
-     TD3-BC
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#building-your-own-algorithm">
@@ -558,43 +526,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#implemented-algorithms">
    Implemented Algorithms
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bc">
-     BC
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bc-rnn">
-     BC-RNN
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hbc">
-     HBC
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iris">
-     IRIS
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bcq">
-     BCQ
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cql">
-     CQL
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#td3-bc">
-     TD3-BC
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#building-your-own-algorithm">
@@ -824,48 +755,7 @@ title="Print to PDF"
 </div>
 <div class="section" id="implemented-algorithms">
 <h2>Implemented Algorithms<a class="headerlink" href="#implemented-algorithms" title="Permalink to this headline">#</a></h2>
-<div class="section" id="bc">
-<h3>BC<a class="headerlink" href="#bc" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Vanilla Behavioral Cloning (see <a class="reference external" href="https://papers.nips.cc/paper/1988/file/812b4ba287f5ee0bc9d43bbf5bbe87fb-Paper.pdf">this paper</a>), consisting of simple supervised regression from observations to actions. Implemented in the <code class="docutils literal notranslate"><span class="pre">BC</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/bc.py</span></code>, along with some variants such as <code class="docutils literal notranslate"><span class="pre">BC_GMM</span></code> (stochastic GMM policy) and <code class="docutils literal notranslate"><span class="pre">BC_VAE</span></code> (stochastic VAE policy)</p></li>
-</ul>
-</div>
-<div class="section" id="bc-rnn">
-<h3>BC-RNN<a class="headerlink" href="#bc-rnn" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Behavioral Cloning with an RNN network. Implemented in the <code class="docutils literal notranslate"><span class="pre">BC_RNN</span></code> and <code class="docutils literal notranslate"><span class="pre">BC_RNN_GMM</span></code> (recurrent GMM policy) classes in <code class="docutils literal notranslate"><span class="pre">algo/bc.py</span></code>.</p></li>
-</ul>
-</div>
-<div class="section" id="hbc">
-<h3>HBC<a class="headerlink" href="#hbc" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Hierarchical Behavioral Cloning - the implementation is largely based off of <a class="reference external" href="https://arxiv.org/abs/2003.06085">this paper</a>. Implemented in the <code class="docutils literal notranslate"><span class="pre">HBC</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/hbc.py</span></code>.</p></li>
-</ul>
-</div>
-<div class="section" id="iris">
-<h3>IRIS<a class="headerlink" href="#iris" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>A recent batch offline RL algorithm from <a class="reference external" href="https://arxiv.org/abs/1911.05321">this paper</a>. Implemented in the <code class="docutils literal notranslate"><span class="pre">IRIS</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/iris.py</span></code>.</p></li>
-</ul>
-</div>
-<div class="section" id="bcq">
-<h3>BCQ<a class="headerlink" href="#bcq" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>A recent batch offline RL algorithm from <a class="reference external" href="https://arxiv.org/abs/1812.02900">this paper</a>. Implemented in the <code class="docutils literal notranslate"><span class="pre">BCQ</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/bcq.py</span></code>.</p></li>
-</ul>
-</div>
-<div class="section" id="cql">
-<h3>CQL<a class="headerlink" href="#cql" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>A recent batch offline RL algorithm from <a class="reference external" href="https://arxiv.org/abs/2006.04779">this paper</a>. Implemented in the <code class="docutils literal notranslate"><span class="pre">CQL</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/cql.py</span></code>.</p></li>
-</ul>
-</div>
-<div class="section" id="td3-bc">
-<h3>TD3-BC<a class="headerlink" href="#td3-bc" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>A recent algorithm from <a class="reference external" href="https://arxiv.org/abs/2106.06860">this paper</a>. We implemented it as an example (see section below on building your own algorithm). Implemented in the <code class="docutils literal notranslate"><span class="pre">TD3_BC</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/td3_bc.py</span></code>.</p></li>
-</ul>
-</div>
+<p>Refer <a class="reference external" href="../introduction/implemented_algorithms.html">here</a> for the list of algorithms currently implemented in robomimic</p>
 </div>
 <div class="section" id="building-your-own-algorithm">
 <h2>Building your own Algorithm<a class="headerlink" href="#building-your-own-algorithm" title="Permalink to this headline">#</a></h2>

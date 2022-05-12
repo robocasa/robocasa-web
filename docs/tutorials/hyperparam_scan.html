@@ -33,8 +33,8 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Getting Familiar with Configs" href="configs.html" />
-    <link rel="prev" title="Making Your Own Dataset" href="making_your_own_dataset.html" />
+    <link rel="next" title="Reproducing Published Experiments and Results" href="reproducing_experiments.html" />
+    <link rel="prev" title="Logging and Viewing Training Results" href="viewing_results.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -95,6 +95,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/installation.html">
    Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/implemented_algorithms.html">
+   Implemented Algorithms
   </a>
  </li>
  <li class="toctree-l1">
@@ -159,23 +164,13 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="understanding_dataset_contents.html">
-   Understanding Dataset Contents
+  <a class="reference internal" href="configs.html">
+   Configuring and Launching Training Runs
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="using_pretrained_models.html">
-   Using Pretrained Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="reproducing_experiments.html">
-   Reproducing Experiments and Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="making_your_own_dataset.html">
-   Making Your Own Dataset
+  <a class="reference internal" href="viewing_results.html">
+   Logging and Viewing Training Results
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -184,13 +179,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="configs.html">
-   Getting Familiar with Configs
+  <a class="reference internal" href="reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataset_contents.html">
+   Dataset Contents and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="using_pretrained_models.html">
+   Using Pretrained Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="observations.html">
-   Observations
+   Multimodal Observations
   </a>
  </li>
  <li class="toctree-l1">
@@ -449,8 +454,30 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-the-hyperparameter-helper-to-launch-runs">
-   Using the Hyperparameter Helper to launch runs
+  <a class="reference internal nav-link" href="#step-1-create-base-config-json">
+   Step 1: create base config json
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-create-config-generator">
+   Step 2: create config generator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-fixed-values">
+     Set fixed values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-hyperparameter-scan-values">
+     Define hyperparameter scan values
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-run-hyperparameter-helper-script">
+   Step 3: run hyperparameter helper script
   </a>
  </li>
 </ul>
@@ -473,8 +500,30 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-the-hyperparameter-helper-to-launch-runs">
-   Using the Hyperparameter Helper to launch runs
+  <a class="reference internal nav-link" href="#step-1-create-base-config-json">
+   Step 1: create base config json
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-create-config-generator">
+   Step 2: create config generator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-fixed-values">
+     Set fixed values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-hyperparameter-scan-values">
+     Define hyperparameter scan values
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-run-hyperparameter-helper-script">
+   Step 3: run hyperparameter helper script
   </a>
  </li>
 </ul>
@@ -489,18 +538,21 @@ title="Print to PDF"
                 
   <div class="section" id="running-hyperparameter-scans">
 <h1>Running Hyperparameter Scans<a class="headerlink" href="#running-hyperparameter-scans" title="Permalink to this headline">#</a></h1>
-<div class="section" id="using-the-hyperparameter-helper-to-launch-runs">
-<h2>Using the Hyperparameter Helper to launch runs<a class="headerlink" href="#using-the-hyperparameter-helper-to-launch-runs" title="Permalink to this headline">#</a></h2>
-<p>While copying an algorithm’s template json from <code class="docutils literal notranslate"><span class="pre">exps/templates</span></code> and modifying it manually is a perfectly valid way to run experiments, we also provide the <code class="docutils literal notranslate"><span class="pre">hyperparam_helper.py</span></code> script to easily generate config jsons to use with the <code class="docutils literal notranslate"><span class="pre">train.py</span></code> script. <strong>This is the preferred way to launch multiple training runs using the repository.</strong> It also makes hyperparameter scans a breeze. We’ll walk through an example below, by reproducing sections of the <code class="docutils literal notranslate"><span class="pre">hyperparam_helper.py</span></code> script.</p>
+<p>We provide the <code class="docutils literal notranslate"><span class="pre">hyperparam_helper.py</span></code> script to generate config jsons to use with the <code class="docutils literal notranslate"><span class="pre">train.py</span></code> script. <strong>This is the preferred way to launch multiple training runs using the repository.</strong>
+Follow the steps below for running your own hyperparameter scan.</p>
+<div class="section" id="step-1-create-base-config-json">
+<h2>Step 1: create base config json<a class="headerlink" href="#step-1-create-base-config-json" title="Permalink to this headline">#</a></h2>
 <p>The first step is to start with a base config json. A common choice is to copy one of the templates in <code class="docutils literal notranslate"><span class="pre">exps/templates</span></code> (such as <code class="docutils literal notranslate"><span class="pre">exps/templates/bc.json</span></code>) into a new folder (where additional config jsons will be generated).</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ cp ../exps/templates/bc.json /tmp/gen_configs/base.json
 </pre></div>
 </div>
-<p>Sections of the config that are not involved in the scan and that do not differ from the default values in the template can also be omitted, if desired. For instance, in the example below, we don’t need the <code class="docutils literal notranslate"><span class="pre">config.algo.gaussian</span></code>,  <code class="docutils literal notranslate"><span class="pre">config.algo.vae</span></code>, and <code class="docutils literal notranslate"><span class="pre">config.observation</span></code> portions (since we don’t sweep over them, and we didn’t want to set them to anything other than the default values), so we deleted them. We also added a base experiment name (<code class="docutils literal notranslate"><span class="pre">&quot;bc_rnn_hyper&quot;</span></code>) and specified the dataset path (<code class="docutils literal notranslate"><span class="pre">&quot;/tmp/test.hdf5&quot;</span></code>).</p>
+<p>Sections of the config that are not involved in the scan and that do not differ from the default values in the template can also be omitted, if desired. We also added a base experiment name (<code class="docutils literal notranslate"><span class="pre">&quot;bc_rnn_hyper&quot;</span></code>) and specified the dataset path (<code class="docutils literal notranslate"><span class="pre">&quot;/tmp/test.hdf5&quot;</span></code>).</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ cat /tmp/gen_configs/base.json
 </pre></div>
 </div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<details>
+  <summary><b>Click to see output</b></summary>
+<p><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;algo_name&quot;</span><span class="p">:</span> <span class="s2">&quot;bc&quot;</span><span class="p">,</span>
     <span class="nt">&quot;experiment&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;bc_rnn_hyper&quot;</span><span class="p">,</span>
@@ -575,7 +627,11 @@ title="Print to PDF"
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The next step is to define a function that returns a <code class="docutils literal notranslate"><span class="pre">ConfigGenerator</span></code>. In our example, we would like to  run the BC-RNN algorithm with an RNN horizon of 10. This requires setting <code class="docutils literal notranslate"><span class="pre">config.train.seq_length</span> <span class="pre">=</span> <span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">config.algo.rnn.enabled</span> <span class="pre">=</span> <span class="pre">True</span></code> – we could have modified our base json file directly (as mentioned above) but we opted to set it in the generator function below. The first three calls to <code class="docutils literal notranslate"><span class="pre">add_param</span></code> do exactly this. Leaving <code class="docutils literal notranslate"><span class="pre">name=&quot;&quot;</span></code> ensures that the experiment name is not determined by these parameter values.</p>
+</p>
+</details></div>
+<div class="section" id="step-2-create-config-generator">
+<h2>Step 2: create config generator<a class="headerlink" href="#step-2-create-config-generator" title="Permalink to this headline">#</a></h2>
+<p>The next step is to define a function that returns a <code class="docutils literal notranslate"><span class="pre">ConfigGenerator</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">robomimic</span>
 <span class="kn">import</span> <span class="nn">robomimic.utils.hyperparam_utils</span> <span class="k">as</span> <span class="nn">HyperparamUtils</span>
 
@@ -587,8 +643,15 @@ title="Print to PDF"
     <span class="n">generator</span> <span class="o">=</span> <span class="n">HyperparamUtils</span><span class="o">.</span><span class="n">ConfigGenerator</span><span class="p">(</span>
         <span class="n">base_config_file</span><span class="o">=</span><span class="n">config_file</span><span class="p">,</span> <span class="n">script_file</span><span class="o">=</span><span class="n">script_file</span>
     <span class="p">)</span>
-
-    <span class="c1"># use RNN with horizon 10</span>
+    
+    <span class="c1"># next: add parameters</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="section" id="set-fixed-values">
+<h3>Set fixed values<a class="headerlink" href="#set-fixed-values" title="Permalink to this headline">#</a></h3>
+<p>In our example, we would like to  run the BC-RNN algorithm with an RNN horizon of 10. This requires setting <code class="docutils literal notranslate"><span class="pre">config.train.seq_length</span> <span class="pre">=</span> <span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">config.algo.rnn.enabled</span> <span class="pre">=</span> <span class="pre">True</span></code> – we could have modified our base json file directly (as mentioned above) but we opted to set it in the generator function below. The first three calls to <code class="docutils literal notranslate"><span class="pre">add_param</span></code> do exactly this. Leaving <code class="docutils literal notranslate"><span class="pre">name=&quot;&quot;</span></code> ensures that the experiment name is not determined by these parameter values.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># use RNN with horizon 10</span>
     <span class="n">generator</span><span class="o">.</span><span class="n">add_param</span><span class="p">(</span>
         <span class="n">key</span><span class="o">=</span><span class="s2">&quot;algo.rnn.enabled&quot;</span><span class="p">,</span>
         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> 
@@ -609,8 +672,18 @@ title="Print to PDF"
     <span class="p">)</span>
 </pre></div>
 </div>
-<p>Now we define our scan - we could like to sweep the policy learning rate in [1e-3, 1e-4], whether to use a GMM policy or not, and whether to use an RNN dimension of 400 with an MLP of size (1024, 1024) or an RNN dimension of 1000 with an empty MLP. Notice that the learning rate goes in <code class="docutils literal notranslate"><span class="pre">group</span></code> 1, the GMM enabled parameter goes in <code class="docutils literal notranslate"><span class="pre">group</span></code> 2, and the RNN dimension and MLP layer dims both go in <code class="docutils literal notranslate"><span class="pre">group</span></code> 3.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">group</span></code> argument specifies which arguments should be modified together. The hyperparameter script will generate a training run for each hyperparameter setting in the cartesian product between all groups. Thus, putting the RNN dimension and MLP layer dims in the same group ensures that the parameters change together (RNN dimension 400 always occurs with MLP layer dims (1024, 1024), and RNN dimension 1000 always occurs with an empty MLP). Finally, notice the use of the <code class="docutils literal notranslate"><span class="pre">value_names</span></code> argument  – by default, the generated config will have an experiment name consisting of the base name under <code class="docutils literal notranslate"><span class="pre">config.experiment.name</span></code> already present in the base json, and then the <code class="docutils literal notranslate"><span class="pre">name</span></code> specified for each parameter, along with the string representation of the selected value in <code class="docutils literal notranslate"><span class="pre">values</span></code>, but <code class="docutils literal notranslate"><span class="pre">value_names</span></code> allows you to override this with a custom string for the corresponding value.</p>
+</div>
+<div class="section" id="define-hyperparameter-scan-values">
+<h3>Define hyperparameter scan values<a class="headerlink" href="#define-hyperparameter-scan-values" title="Permalink to this headline">#</a></h3>
+<p>Now we define our scan - we could like to sweep the following:</p>
+<ul class="simple">
+<li><p>policy learning rate in [1e-3, 1e-4]</p></li>
+<li><p>whether to use a GMM policy or not</p></li>
+<li><p>whether to use an RNN dimension of 400 with an MLP of size (1024, 1024) or an RNN dimension of 1000 with an empty MLP</p></li>
+</ul>
+<p>Notice that the learning rate goes in <code class="docutils literal notranslate"><span class="pre">group</span></code> 1, the GMM enabled parameter goes in <code class="docutils literal notranslate"><span class="pre">group</span></code> 2, and the RNN dimension and MLP layer dims both go in <code class="docutils literal notranslate"><span class="pre">group</span></code> 3.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">group</span></code> argument specifies which arguments should be modified together. The hyperparameter script will generate a training run for each hyperparameter setting in the cartesian product between all groups. Thus, putting the RNN dimension and MLP layer dims in the same group ensures that the parameters change together (RNN dimension 400 always occurs with MLP layer dims (1024, 1024), and RNN dimension 1000 always occurs with an empty MLP).</p>
+<p>Finally, notice the use of the <code class="docutils literal notranslate"><span class="pre">value_names</span></code> argument  – by default, the generated config will have an experiment name consisting of the base name under <code class="docutils literal notranslate"><span class="pre">config.experiment.name</span></code> already present in the base json, and then the <code class="docutils literal notranslate"><span class="pre">name</span></code> specified for each parameter, along with the string representation of the selected value in <code class="docutils literal notranslate"><span class="pre">values</span></code>, but <code class="docutils literal notranslate"><span class="pre">value_names</span></code> allows you to override this with a custom string for the corresponding value.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># LR - 1e-3, 1e-4</span>
     <span class="n">generator</span><span class="o">.</span><span class="n">add_param</span><span class="p">(</span>
         <span class="n">key</span><span class="o">=</span><span class="s2">&quot;algo.optim_params.policy.learning_rate.initial&quot;</span><span class="p">,</span> 
@@ -652,6 +725,10 @@ title="Print to PDF"
     <span class="k">return</span> <span class="n">generator</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="step-3-run-hyperparameter-helper-script">
+<h2>Step 3: run hyperparameter helper script<a class="headerlink" href="#step-3-run-hyperparameter-helper-script" title="Permalink to this headline">#</a></h2>
 <p>Finally, we run the hyperparameter helper script (which contains the function we defined above).</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python hyperparam_helper.py --config /tmp/gen_configs/base.json --script /tmp/gen_configs/out.sh
 </pre></div>
@@ -682,17 +759,17 @@ python train.py --config /tmp/gen_configs/bc_rnn_hyper_plr_0.0001_gmm_f_rnnd_100
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="making_your_own_dataset.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="viewing_results.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Making Your Own Dataset</p>
+            <p class="prev-next-title">Logging and Viewing Training Results</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="configs.html" title="next page">
+    <a class='right-next' id="next-link" href="reproducing_experiments.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Getting Familiar with Configs</p>
+        <p class="prev-next-title">Reproducing Published Experiments and Results</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -34,7 +34,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Overview" href="../datasets/overview.html" />
-    <link rel="prev" title="Installation" href="installation.html" />
+    <link rel="prev" title="Implemented Algorithms" href="implemented_algorithms.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -95,6 +95,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="installation.html">
    Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="implemented_algorithms.html">
+   Implemented Algorithms
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -159,23 +164,13 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/understanding_dataset_contents.html">
-   Understanding Dataset Contents
+  <a class="reference internal" href="../tutorials/configs.html">
+   Configuring and Launching Training Runs
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
-   Using Pretrained Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
-   Reproducing Experiments and Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/making_your_own_dataset.html">
-   Making Your Own Dataset
+  <a class="reference internal" href="../tutorials/viewing_results.html">
+   Logging and Viewing Training Results
   </a>
  </li>
  <li class="toctree-l1">
@@ -184,13 +179,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/configs.html">
-   Getting Familiar with Configs
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/dataset_contents.html">
+   Dataset Contents and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
+   Using Pretrained Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/observations.html">
-   Observations
+   Multimodal Observations
   </a>
  </li>
  <li class="toctree-l1">
@@ -550,11 +555,13 @@ title="Print to PDF"
 </div>
 <div class="section" id="step-2-launch-experiment">
 <h3>Step 2: Launch experiment<a class="headerlink" href="#step-2-launch-experiment" title="Permalink to this headline">#</a></h3>
-<p>Now, we will run an experiment using <code class="docutils literal notranslate"><span class="pre">train.py</span></code>. In this case we would like to run behavior cloning (BC) for the lift dataset we just downloaded. We add the flag <code class="docutils literal notranslate"><span class="pre">--debug</span></code> to run a quick sample experiment:</p>
+<p>Now, we will run an experiment using <code class="docutils literal notranslate"><span class="pre">train.py</span></code>. In this case we would like to run behavior cloning (BC) for the lift dataset we just downloaded.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python robomimic/scripts/train.py --config robomimic/exps/templates/bc.json --dataset datasets/lift/ph/low_dim.hdf5 --debug
 </pre></div>
 </div>
-<div class="admonition warning">
+<div class="admonition note">
+<p class="admonition-title">Running quick sanity check experiments</p><p>Make sure to add the <code class="docutils literal notranslate"><span class="pre">--debug</span></code> flag to your experiments as a sanity check that your implementation works.</p>
+</div><div class="admonition warning">
 <p class="admonition-title">Warning!</p><p>This example <a class="reference external" href="./installation.html#robosuite">requires robosuite</a> to be installed (under the <code class="docutils literal notranslate"><span class="pre">offline_study</span></code> branch), but it can be run without robosuite by disabling rollouts in <code class="docutils literal notranslate"><span class="pre">robomimic/exps/templates/bc.json</span></code>: simply change the <code class="docutils literal notranslate"><span class="pre">experiment.rollout.enabled</span></code> flag to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </div></div>
 <div class="section" id="step-3-view-experiment-results">
@@ -602,12 +609,14 @@ scripts/                  # scripts
 utils/                    # utils for training, evaluation, visualization, hp sweeps, etc
   ...
 ```
---><p>For next steps, please refer to the remaining documentation sections:</p>
+--><p>Please refer to the remaining documentation sections. Some helpful suggestions on pages to view next:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="../datasets/overview.html">Datasets</a>: downloading datasets and reproducing experiments</p></li>
-<li><p><a class="reference external" href="../tutorials/understanding_dataset_contents.html">Tutorials</a>: working with datasets, running experiments, using trained models, and more</p></li>
-<li><p><a class="reference external" href="../modules/overview.html">Modules</a>: detailed information on robomimic modules, eg. algorithms, architectures, experiments configs, etc</p></li>
-<li><p><a class="reference external" href="../miscellaneous/troubleshooting.html">Troubleshooting</a> and <a class="reference external" href="../miscellaneous/contributing.html">Contributing guidelines</a></p></li>
+<li><p><a class="reference external" href="../tutorials/configs.html">Configuring and Launching Training Runs</a></p></li>
+<li><p><a class="reference external" href="../tutorials/viewing_results.html">Logging and Viewing Training Results</a></p></li>
+<li><p><a class="reference external" href="../tutorials/hyperparam_scan.html">Running Hyperparameter Scans</a></p></li>
+<li><p><a class="reference external" href="../datasets/overview.html">Overview of Datasets</a></p></li>
+<li><p><a class="reference external" href="../tutorials/dataset_contents.html">Dataset Contents and Visualization</a></p></li>
+<li><p><a class="reference external" href="../modules/overview.html">Overview of Modules</a></p></li>
 </ul>
 </div>
 </div>
@@ -620,11 +629,11 @@ utils/                    # utils for training, evaluation, visualization, hp sw
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="installation.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="implemented_algorithms.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Installation</p>
+            <p class="prev-next-title">Implemented Algorithms</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../datasets/overview.html" title="next page">

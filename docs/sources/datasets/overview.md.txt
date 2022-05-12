@@ -17,7 +17,7 @@ Datasets capture recorded environment data and are used as inputs to a given off
 **robomimic** currently supports the following datasets out of the box. Click on the corresponding **(1) Downloading** link to download the dataset and the corresponding **(2) Postprocessing** link for postprocessing that dataset.
 
 
-|          **Dataset**          | **Task Types** | **Downloading** | **Postprocessing**  |
+|          **Dataset**          | <center>**Task Types**</center> | **Downloading** | **Postprocessing**  |
 | ----------------------------- | :-------------: | :-------------: | :-------------: |
 | [**robomimic v0.1**](robomimic_v0.1.html)| Sim + Real Robot Manipulation | [Link](robomimic_v0.1.html#downloading)  | [Link](robomimic_v0.1.html#postprocessing)  |
 | [**D4RL**](d4rl.html)                      | Sim Locomotion | [Link](d4rl.html#downloading)  | [Link](d4rl.html#postprocessing)  |
@@ -52,7 +52,7 @@ If you want to generate your own dataset in a custom environment platform that i
 All postprocessed **robomimic** compatible datasets share the same data structure. A single dataset is a single HDF5 file with the following structure:
 
 <details>
-  <summary><b>HDF5 Structure</b></summary>
+  <summary><b>HDF5 Structure <span style="color:red;">(click to expand)</span></b></summary>
 <p>
 
 - **`data`** (group)
@@ -154,9 +154,9 @@ $ python split_train_val.py --dataset /path/to/dataset.hdf5 --ratio 0.1 --filter
 - `--filter_key` (optional) By default, this script splits all demonstration keys in the hdf5 into 2 new hdf5 groups - one under `mask/train`, and one under `mask/valid`. If this argument is provided, the demonstration keys corresponding to this filter key (under `mask/<FILTER_KEY_NAME>`) will be split into 2 groups - `mask/<FILTER_KEY_NAME>_train` and `mask/<FILTER_KEY_NAME>_valid`.
 
 <div class="admonition note">
-<p class="admonition-title">Note!.</p>
+<p class="admonition-title">Note!</p>
 
-You can easily list the filter keys present in a dataset with the `get_dataset_info.py` script (see [this link](../tutorials/understanding_dataset_contents.html#view-dataset-structure-and-videos)), and you can even pass a `--verbose` flag to list the exact demonstrations that each filter key corresponds to.
+You can easily list the filter keys present in a dataset with the `get_dataset_info.py` script (see [this link](../tutorials/dataset_contents.html#view-dataset-structure-and-videos)), and you can even pass a `--verbose` flag to list the exact demonstrations that each filter key corresponds to.
 
 </div>
 

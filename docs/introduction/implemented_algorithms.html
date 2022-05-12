@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Understanding Dataset Contents &#8212; robomimic 0.2.0 documentation</title>
+    <title>Implemented Algorithms &#8212; robomimic 0.2.0 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -33,8 +33,8 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Using Pretrained Models" href="using_pretrained_models.html" />
-    <link rel="prev" title="robomimic-v0.1" href="../model_zoo/robomimic_v0.1.html" />
+    <link rel="next" title="Getting Started" href="getting_started.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -86,19 +86,24 @@
   Introduction
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/overview.html">
+  <a class="reference internal" href="overview.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/installation.html">
+  <a class="reference internal" href="installation.html">
    Installation
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Implemented Algorithms
+  </a>
+ </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/getting_started.html">
+  <a class="reference internal" href="getting_started.html">
    Getting Started
   </a>
  </li>
@@ -157,49 +162,49 @@
   Tutorials
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Understanding Dataset Contents
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/configs.html">
+   Configuring and Launching Training Runs
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="using_pretrained_models.html">
-   Using Pretrained Models
+  <a class="reference internal" href="../tutorials/viewing_results.html">
+   Logging and Viewing Training Results
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="reproducing_experiments.html">
-   Reproducing Experiments and Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="making_your_own_dataset.html">
-   Making Your Own Dataset
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="hyperparam_scan.html">
+  <a class="reference internal" href="../tutorials/hyperparam_scan.html">
    Running Hyperparameter Scans
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="configs.html">
-   Getting Familiar with Configs
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Published Experiments and Results
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="observations.html">
-   Observations
+  <a class="reference internal" href="../tutorials/dataset_contents.html">
+   Dataset Contents and Visualization
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="custom_algorithms.html">
+  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
+   Using Pretrained Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/observations.html">
+   Multimodal Observations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="tensor_collections.html">
+  <a class="reference internal" href="../tutorials/tensor_collections.html">
    Operations over Tensor Collections
   </a>
  </li>
@@ -389,7 +394,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../sources/tutorials/understanding_dataset_contents.md.txt"
+        <a href="../sources/introduction/implemented_algorithms.md.txt"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -449,9 +454,53 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#view-dataset-structure-and-videos">
-   View Dataset Structure and Videos
+  <a class="reference internal nav-link" href="#imitation-learning">
+   Imitation Learning
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bc">
+     BC
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bc-rnn">
+     BC-RNN
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hbc">
+     HBC
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#offline-reinforcement-learning">
+   Offline Reinforcement Learning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iris">
+     IRIS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bcq">
+     BCQ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cql">
+     CQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#td3-bc">
+     TD3-BC
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -462,7 +511,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Understanding Dataset Contents</h1>
+                <h1>Implemented Algorithms</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -473,9 +522,53 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#view-dataset-structure-and-videos">
-   View Dataset Structure and Videos
+  <a class="reference internal nav-link" href="#imitation-learning">
+   Imitation Learning
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bc">
+     BC
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bc-rnn">
+     BC-RNN
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hbc">
+     HBC
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#offline-reinforcement-learning">
+   Offline Reinforcement Learning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iris">
+     IRIS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bcq">
+     BCQ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cql">
+     CQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#td3-bc">
+     TD3-BC
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -487,34 +580,55 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="understanding-dataset-contents">
-<h1>Understanding Dataset Contents<a class="headerlink" href="#understanding-dataset-contents" title="Permalink to this headline">#</a></h1>
-<p>This tutorial shows some easy ways to understand the contents of each hdf5 dataset.</p>
-<div class="admonition tip">
-<p class="admonition-title">Jupyter Notebook: A Deep Dive into Dataset Structure</p><p>The rest of this tutorial shows how to use utility scripts to work with robomimic datasets. While this should suffice for most users, any user wishing to write custom code that works with robomimic datasets should look at the jupyter notebook at <code class="docutils literal notranslate"><span class="pre">examples/notebooks/datasets.ipynb</span></code>, which showcases several useful python code snippets for working with robomimic hdf5 datasets.</p>
-</div><div class="section" id="view-dataset-structure-and-videos">
-<h2>View Dataset Structure and Videos<a class="headerlink" href="#view-dataset-structure-and-videos" title="Permalink to this headline">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note: These examples are compatible with any robomimic dataset.</p><p>The examples in this section use the small hdf5 dataset packaged with the repository in <code class="docutils literal notranslate"><span class="pre">tests/assets/test.hdf5</span></code>, but you can run these examples with any robomimic hdf5 dataset. If you are using the default dataset, please make sure that robosuite is on the <code class="docutils literal notranslate"><span class="pre">offline_study</span></code> branch of robosuite – this is necessary for the playback scripts to function properly.</p>
-</div><p>The repository offers a simple utility script (<code class="docutils literal notranslate"><span class="pre">get_dataset_info.py</span></code>) to view the hdf5 dataset structure and some statistics of hdf5 datasets. The script will print out some statistics about the trajectories, the filter keys present in the dataset, the environment metadata in the dataset, and the dataset structure for the first demonstration. Pass the <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> argument to print the list of demonstration keys under each filter key, and the dataset structure for all demonstrations.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python get_dataset_info.py --dataset ../../tests/assets/test.hdf5
-</pre></div>
+  <div class="section" id="implemented-algorithms">
+<h1>Implemented Algorithms<a class="headerlink" href="#implemented-algorithms" title="Permalink to this headline">#</a></h1>
+<p><strong>robomimic</strong> includes several high-quality implementations of offline learning algorithms, and offers tools to easily build <a class="reference external" href="../tutorials/custom_algorithms.html">your own learning algorithms</a>.</p>
+<div class="section" id="imitation-learning">
+<h2>Imitation Learning<a class="headerlink" href="#imitation-learning" title="Permalink to this headline">#</a></h2>
+<div class="section" id="bc">
+<h3>BC<a class="headerlink" href="#bc" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Vanilla Behavioral Cloning (see <a class="reference external" href="https://papers.nips.cc/paper/1988/file/812b4ba287f5ee0bc9d43bbf5bbe87fb-Paper.pdf">this paper</a>), consisting of simple supervised regression from observations to actions. Implemented in the <code class="docutils literal notranslate"><span class="pre">BC</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/bc.py</span></code>, along with some variants such as <code class="docutils literal notranslate"><span class="pre">BC_GMM</span></code> (stochastic GMM policy) and <code class="docutils literal notranslate"><span class="pre">BC_VAE</span></code> (stochastic VAE policy)</p></li>
+</ul>
 </div>
-<p>The repository also offers a utility script (<code class="docutils literal notranslate"><span class="pre">playback_dataset.py</span></code>) that allows you to easily view dataset trajectories, and verify that the recorded dataset actions are reasonable. The example below loads the saved MuJoCo simulator states one by one in a simulation environment, and renders frames from some simulation cameras to generate a video, for the first 5 trajectories. This is an easy way to view trajectories from the dataset. After this script runs, you can view the video at <code class="docutils literal notranslate"><span class="pre">/tmp/playback_dataset.mp4</span></code>.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --render_image_names agentview robot0_eye_in_hand --video_path /tmp/playback_dataset.mp4 --n <span class="m">5</span>
-</pre></div>
+<div class="section" id="bc-rnn">
+<h3>BC-RNN<a class="headerlink" href="#bc-rnn" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Behavioral Cloning with an RNN network. Implemented in the <code class="docutils literal notranslate"><span class="pre">BC_RNN</span></code> and <code class="docutils literal notranslate"><span class="pre">BC_RNN_GMM</span></code> (recurrent GMM policy) classes in <code class="docutils literal notranslate"><span class="pre">algo/bc.py</span></code>.</p></li>
+</ul>
 </div>
-<p>An alternative way to view the demonstrations is to directly visualize the image observations in the dataset. This is especially useful for real robot datasets, where there is no simulator to use for rendering.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --use-obs --render_image_names agentview_image --video_path /tmp/obs_trajectory.mp4
-</pre></div>
+<div class="section" id="hbc">
+<h3>HBC<a class="headerlink" href="#hbc" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Hierarchical Behavioral Cloning - the implementation is largely based off of <a class="reference external" href="https://arxiv.org/abs/2003.06085">this paper</a>. Implemented in the <code class="docutils literal notranslate"><span class="pre">HBC</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/hbc.py</span></code>.</p></li>
+</ul>
 </div>
-<p>It’s also easy to use the script to verify that the dataset actions are reasonable, by playing the actions back one by one in the environment.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --use-actions --render_image_names agentview --video_path /tmp/playback_dataset_with_actions.mp4
-</pre></div>
 </div>
-<p>Finally, the script can be used to visualize the initial states in the demonstration data.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --first --render_image_names agentview --video_path /tmp/dataset_task_inits.mp4
-</pre></div>
+<div class="section" id="offline-reinforcement-learning">
+<h2>Offline Reinforcement Learning<a class="headerlink" href="#offline-reinforcement-learning" title="Permalink to this headline">#</a></h2>
+<div class="section" id="iris">
+<h3>IRIS<a class="headerlink" href="#iris" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>A recent batch offline RL algorithm from <a class="reference external" href="https://arxiv.org/abs/1911.05321">this paper</a>. Implemented in the <code class="docutils literal notranslate"><span class="pre">IRIS</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/iris.py</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="bcq">
+<h3>BCQ<a class="headerlink" href="#bcq" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>A recent batch offline RL algorithm from <a class="reference external" href="https://arxiv.org/abs/1812.02900">this paper</a>. Implemented in the <code class="docutils literal notranslate"><span class="pre">BCQ</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/bcq.py</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="cql">
+<h3>CQL<a class="headerlink" href="#cql" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>A recent batch offline RL algorithm from <a class="reference external" href="https://arxiv.org/abs/2006.04779">this paper</a>. Implemented in the <code class="docutils literal notranslate"><span class="pre">CQL</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/cql.py</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="td3-bc">
+<h3>TD3-BC<a class="headerlink" href="#td3-bc" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>A recent algorithm from <a class="reference external" href="https://arxiv.org/abs/2106.06860">this paper</a>. We implemented it as an example (see section below on building your own algorithm). Implemented in the <code class="docutils literal notranslate"><span class="pre">TD3_BC</span></code> class in <code class="docutils literal notranslate"><span class="pre">algo/td3_bc.py</span></code>.</p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -527,17 +641,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../model_zoo/robomimic_v0.1.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="installation.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">robomimic-v0.1</p>
+            <p class="prev-next-title">Installation</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="using_pretrained_models.html" title="next page">
+    <a class='right-next' id="next-link" href="getting_started.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Using Pretrained Models</p>
+        <p class="prev-next-title">Getting Started</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

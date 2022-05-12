@@ -98,6 +98,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/implemented_algorithms.html">
+   Implemented Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../introduction/getting_started.html">
    Getting Started
   </a>
@@ -159,23 +164,13 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/understanding_dataset_contents.html">
-   Understanding Dataset Contents
+  <a class="reference internal" href="../tutorials/configs.html">
+   Configuring and Launching Training Runs
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
-   Using Pretrained Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
-   Reproducing Experiments and Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/making_your_own_dataset.html">
-   Making Your Own Dataset
+  <a class="reference internal" href="../tutorials/viewing_results.html">
+   Logging and Viewing Training Results
   </a>
  </li>
  <li class="toctree-l1">
@@ -184,13 +179,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/configs.html">
-   Getting Familiar with Configs
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/dataset_contents.html">
+   Dataset Contents and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
+   Using Pretrained Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/observations.html">
-   Observations
+   Multimodal Observations
   </a>
  </li>
  <li class="toctree-l1">
@@ -463,6 +468,11 @@ title="Print to PDF"
    Postprocessing
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#citation">
+   Citation
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -497,6 +507,11 @@ title="Print to PDF"
    Postprocessing
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#citation">
+   Citation
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -514,7 +529,7 @@ title="Print to PDF"
 <p>The first <a class="reference external" href="https://arxiv.org/abs/1811.02790">RoboTurk paper</a> released <a class="reference external" href="https://roboturk.stanford.edu/dataset_sim.html">large-scale pilot datasets</a> collected with robosuite <code class="docutils literal notranslate"><span class="pre">v0.3</span></code>. These datasets consist of over 1000 task demonstrations each on several Sawyer <code class="docutils literal notranslate"><span class="pre">PickPlace</span></code> and <code class="docutils literal notranslate"><span class="pre">NutAssembly</span></code> task variants, collected by several human operators. This repository is fully compatible with these datasets.</p>
 <p align="center">
   <img width="100.0%" src="../images/roboturk_pilot.png">
- </p></div>
+</p></div>
 <div class="section" id="downloading">
 <h2>Downloading<a class="headerlink" href="#downloading" title="Permalink to this headline">#</a></h2>
 <div class="admonition warning">
@@ -529,6 +544,19 @@ $ python conversion/convert_roboturk_pilot.py --folder /path/to/RoboTurkPilot/bi
 </pre></div>
 </div>
 <p>Then, the dataset must be postprocessed since there are no observations stored. You must run <code class="docutils literal notranslate"><span class="pre">dataset_states_to_obs.py</span></code>. For more information, see <a class="reference external" href="robosuite.html#extracting-observations-from-mujoco-states">this page</a>.</p>
+</div>
+<div class="section" id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>@inproceedings<span class="o">{</span>mandlekar2018roboturk,
+  <span class="nv">title</span><span class="o">={</span>Roboturk: A crowdsourcing platform <span class="k">for</span> robotic skill learning through imitation<span class="o">}</span>,
+  <span class="nv">author</span><span class="o">={</span>Mandlekar, Ajay and Zhu, Yuke and Garg, Animesh and Booher, Jonathan and Spero, Max and Tung, Albert and Gao, Julian and Emmons, John and Gupta, Anchit and Orbay, Emre and others<span class="o">}</span>,
+  <span class="nv">booktitle</span><span class="o">={</span>Conference on Robot Learning<span class="o">}</span>,
+  <span class="nv">pages</span><span class="o">={</span><span class="m">879</span>--893<span class="o">}</span>,
+  <span class="nv">year</span><span class="o">={</span><span class="m">2018</span><span class="o">}</span>,
+  <span class="nv">organization</span><span class="o">={</span>PMLR<span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 

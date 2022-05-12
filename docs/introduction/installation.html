@@ -33,7 +33,7 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Getting Started" href="getting_started.html" />
+    <link rel="next" title="Implemented Algorithms" href="implemented_algorithms.html" />
     <link rel="prev" title="Overview" href="overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -98,6 +98,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="implemented_algorithms.html">
+   Implemented Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="getting_started.html">
    Getting Started
   </a>
@@ -159,23 +164,13 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/understanding_dataset_contents.html">
-   Understanding Dataset Contents
+  <a class="reference internal" href="../tutorials/configs.html">
+   Configuring and Launching Training Runs
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
-   Using Pretrained Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
-   Reproducing Experiments and Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/making_your_own_dataset.html">
-   Making Your Own Dataset
+  <a class="reference internal" href="../tutorials/viewing_results.html">
+   Logging and Viewing Training Results
   </a>
  </li>
  <li class="toctree-l1">
@@ -184,13 +179,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/configs.html">
-   Getting Familiar with Configs
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/dataset_contents.html">
+   Dataset Contents and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/using_pretrained_models.html">
+   Using Pretrained Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/observations.html">
-   Observations
+   Multimodal Observations
   </a>
  </li>
  <li class="toctree-l1">
@@ -471,6 +476,11 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#downloading-datasets-and-reproducing-experiments">
+     Downloading datasets and reproducing experiments
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#install-simulators">
      Install simulators
     </a>
@@ -481,13 +491,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#downloading-released-datasets">
-     Downloading released datasets
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#install-doc-dependencies">
-     Install doc dependencies
+    <a class="reference internal nav-link" href="#install-documentation-dependencies">
+     Install documentation dependencies
     </a>
    </li>
   </ul>
@@ -534,6 +539,11 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#downloading-datasets-and-reproducing-experiments">
+     Downloading datasets and reproducing experiments
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#install-simulators">
      Install simulators
     </a>
@@ -544,13 +554,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#downloading-released-datasets">
-     Downloading released datasets
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#install-doc-dependencies">
-     Install doc dependencies
+    <a class="reference internal nav-link" href="#install-documentation-dependencies">
+     Install documentation dependencies
     </a>
    </li>
   </ul>
@@ -581,18 +586,15 @@ title="Print to PDF"
 </div>
 <div class="section" id="install-robomimic">
 <h2>Install robomimic<a class="headerlink" href="#install-robomimic" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>Create and activate conda environment</p></li>
-</ol>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ conda create -n robomimic_venv <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7.9
+<div class="admonition note">
+<p class="admonition-title">1. Create and activate conda environment</p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ conda create -n robomimic_venv <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7.9
 $ conda activate robomimic_venv
 </pre></div>
 </div>
-<ol class="simple">
-<li><p>Install <a class="reference external" href="https://pytorch.org/">PyTorch</a></p></li>
-</ol>
+</div><div class="admonition note">
+<p class="admonition-title">2. Install PyTorch</p><p><a class="reference external" href="https://pytorch.org/">PyTorch</a> reference</p>
 <details>
-  <summary><b>Mac</b></summary>
+  <summary><b>Option 1: Mac</b></summary>
 <p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Can change pytorch, torchvision versions</span>
 <span class="c1"># We don&#39;t install cudatoolkit since Mac does not have NVIDIA GPU</span>
 $ conda install <span class="nv">pytorch</span><span class="o">==</span><span class="m">1</span>.6.0 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.7.0 -c pytorch
@@ -600,16 +602,14 @@ $ conda install <span class="nv">pytorch</span><span class="o">==</span><span cl
 </div>
 </p>
 </details><details>
-  <summary><b>Linux</b></summary>
+  <summary><b>Option 2: Linux</b></summary>
 <p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Can change pytorch, torchvision versions</span>
 $ conda install <span class="nv">pytorch</span><span class="o">==</span><span class="m">1</span>.6.0 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.7.0 <span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">10</span>.2 -c pytorch
 </pre></div>
 </div>
 </p>
-</details><ol class="simple">
-<li><p>Install robomimic</p></li>
-</ol>
-<details>
+</details></div><div class="admonition note">
+<p class="admonition-title">3. Install robomimic</p><details>
   <summary><b>Option 1: Install from source <i>(recommended)</i></b></summary>
 <p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> &lt;PATH_TO_YOUR_INSTALL_DIRECTORY&gt;
 $ git clone https://github.com/ARISE-Initiative/robomimic.git
@@ -624,11 +624,16 @@ $ pip install -e .
 </pre></div>
 </div>
 </p>
-</details><p>That’s it!</p>
-</div>
+</details></div><div class="admonition warning">
+<p class="admonition-title">Warning! Additional dependencies might be required</p><p>This is all you need for using the suite of algorithms and utilities packaged with robomimic. However, to use our demonstration datasets, you may need additional dependencies. Please see the <a class="reference external" href="../datasets/overview.html">datasets page</a> for more information on downloading datasets and reproducing experiments, and see <a class="reference external" href="installation.html#install-simulators">the simulators section below</a>.</p>
+</div></div>
 </div>
 <div class="section" id="optional-installations">
 <h1>Optional Installations<a class="headerlink" href="#optional-installations" title="Permalink to this headline">#</a></h1>
+<div class="section" id="downloading-datasets-and-reproducing-experiments">
+<h2>Downloading datasets and reproducing experiments<a class="headerlink" href="#downloading-datasets-and-reproducing-experiments" title="Permalink to this headline">#</a></h2>
+<p>See the <a class="reference external" href="../datasets/overview.html">datasets page</a> for more information on downloading datasets and reproducing experiments.</p>
+</div>
 <div class="section" id="install-simulators">
 <h2>Install simulators<a class="headerlink" href="#install-simulators" title="Permalink to this headline">#</a></h2>
 <p>If you would like to run robomimic examples and work with released datasets, please install the following simulators:</p>
@@ -674,12 +679,8 @@ $ bash test.sh
 </div>
 <p>To run some easy examples, see the <a class="reference external" href="./getting_started.html">Getting Started</a> section.</p>
 </div>
-<div class="section" id="downloading-released-datasets">
-<h2>Downloading released datasets<a class="headerlink" href="#downloading-released-datasets" title="Permalink to this headline">#</a></h2>
-<p>See the <a class="reference external" href="../datasets/overview.html">datasets page</a> for more information on downloading datasets and reproducing experiments.</p>
-</div>
-<div class="section" id="install-doc-dependencies">
-<h2>Install doc dependencies<a class="headerlink" href="#install-doc-dependencies" title="Permalink to this headline">#</a></h2>
+<div class="section" id="install-documentation-dependencies">
+<h2>Install documentation dependencies<a class="headerlink" href="#install-documentation-dependencies" title="Permalink to this headline">#</a></h2>
 <p>If you plan to contribute to the repository and add new features, you must install the additional requirements required to build the documentation locally:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements-docs.txt
 </pre></div>
@@ -710,10 +711,10 @@ $ make html
             <p class="prev-next-title">Overview</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="getting_started.html" title="next page">
+    <a class='right-next' id="next-link" href="implemented_algorithms.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Getting Started</p>
+        <p class="prev-next-title">Implemented Algorithms</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
