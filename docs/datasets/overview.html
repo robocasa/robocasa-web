@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Overview &#8212; robomimic 0.2.0 documentation</title>
+    <title>Overview &#8212; robomimic 0.2.1 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -73,7 +73,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.0 documentation</h1>
+      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -620,13 +620,6 @@ margin: auto;
 <ul>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">total</span></code></strong> (attribute) - number of state-action samples in the dataset</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">env_args</span></code></strong> (attribute) - a json string that contains metadata on the environment and relevant arguments used for collecting data. Three keys: <code class="docutils literal notranslate"><span class="pre">env_name</span></code>, the name of the environment or task to create, <code class="docutils literal notranslate"><span class="pre">env_type</span></code>, one of robomimic’s supported <a class="reference external" href="https://github.com/ARISE-Initiative/robomimic/blob/master/robomimic/envs/env_base.py#L9">environment types</a>, and <code class="docutils literal notranslate"><span class="pre">env_kwargs</span></code>, a dictionary of keyword-arguments to be passed into the environment of type <code class="docutils literal notranslate"><span class="pre">env_name</span></code>.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">mask</span></code></strong> (group) - this group will exist in hdf5 datasets that contain filter keys</p>
-<ul>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;filter_key_1&gt;</span></code></strong> (dataset) - the first filter key. Note that the name of this dataset and length will vary. As an example, this could be the “valid” filter key, and contain the list [“demo_0”, “demo_19”, “demo_35”], corresponding to 3 validation trajectories.</p>
-<p>…</p>
-</li>
-</ul>
-</li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">demo_0</span></code></strong> (group) - group for the first trajectory (every trajectory has a group)</p>
 <ul>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">num_samples</span></code></strong> (attribute) - the number of state-action samples in this trajectory</p></li>
@@ -652,6 +645,13 @@ margin: auto;
 </ul>
 </li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">demo_1</span></code></strong> (group) - group for the second trajectory</p>
+<p>…</p>
+</li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">mask</span></code></strong> (group) - this group will exist in hdf5 datasets that contain filter keys</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;filter_key_1&gt;</span></code></strong> (dataset) - the first filter key. Note that the name of this dataset and length will vary. As an example, this could be the “valid” filter key, and contain the list [“demo_0”, “demo_19”, “demo_35”], corresponding to 3 validation trajectories.</p>
 <p>…</p>
 </li>
 </ul>

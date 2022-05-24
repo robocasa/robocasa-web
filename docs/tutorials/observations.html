@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Multimodal Observations &#8212; robomimic 0.2.0 documentation</title>
+    <title>Multimodal Observations &#8212; robomimic 0.2.1 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -73,7 +73,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.0 documentation</h1>
+      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -509,7 +509,14 @@ title="Print to PDF"
 </ol>
 <div class="section" id="modifying-and-adding-your-own-observation-modalities">
 <h2>Modifying and Adding Your Own Observation Modalities<a class="headerlink" href="#modifying-and-adding-your-own-observation-modalities" title="Permalink to this headline">#</a></h2>
-<p><strong>robomimic</strong> natively supports low dimensional (<code class="docutils literal notranslate"><span class="pre">low_dim</span></code>), RGB images (<code class="docutils literal notranslate"><span class="pre">rgb</span></code>), depth images (<code class="docutils literal notranslate"><span class="pre">depth</span></code>), and scan arrays (<code class="docutils literal notranslate"><span class="pre">scan</span></code>). The way each of these modalities are processed and encoded can be easily specified by modifying their respective <code class="docutils literal notranslate"><span class="pre">encoder</span></code> parameters in your <code class="docutils literal notranslate"><span class="pre">Config</span></code> class.</p>
+<p><strong>robomimic</strong> natively supports the following modalities:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">low_dim</span></code>: low-dimensional states</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rgb</span></code>: RGB images</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">depth</span></code>: depth images</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scan</span></code>: scan arrays</p></li>
+</ul>
+<p>The way each of these modalities are processed and encoded can be easily specified by modifying their respective <code class="docutils literal notranslate"><span class="pre">encoder</span></code> parameters in your <code class="docutils literal notranslate"><span class="pre">Config</span></code> class.</p>
 <p>You may want to specify your own custom modalities that get processed and encoded in a certain way (e.g.: semantic segmentation, optical flow, etc…). This can also easily be done, and we refer you to our <a class="reference external" href="https://github.com/ARISE-Initiative/robomimic/blob/master/examples/simple_obs_nets.py">example script</a> which walks through the process.</p>
 </div>
 </div>

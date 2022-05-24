@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Logging and Viewing Training Results &#8212; robomimic 0.2.0 documentation</title>
+    <title>Logging and Viewing Training Results &#8212; robomimic 0.2.1 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -73,7 +73,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.0 documentation</h1>
+      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -592,29 +592,33 @@ title="Print to PDF"
 <div class="section" id="saving-experiment-logs">
 <h3>Saving Experiment Logs<a class="headerlink" href="#saving-experiment-logs" title="Permalink to this headline">#</a></h3>
 <p>Configured under <code class="docutils literal notranslate"><span class="pre">experiment.logging</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># save terminal outputs under `logs/log.txt` in experiment folder</span>
-<span class="n">terminal_output_to_txt</span> <span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
-
-<span class="c1"># save tensorboard logs under `logs/tb` in experiment folder</span>
-<span class="n">log_tb</span> <span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;logging&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1"># save terminal outputs under `logs/log.txt` in experiment folder</span>
+    <span class="s2">&quot;terminal_output_to_txt&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    
+    <span class="c1"># save tensorboard logs under `logs/tb` in experiment folder</span>
+    <span class="s2">&quot;log_tb&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">},</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="saving-model-checkpoints">
 <h3>Saving Model Checkpoints<a class="headerlink" href="#saving-model-checkpoints" title="Permalink to this headline">#</a></h3>
 <p>Configured under <code class="docutils literal notranslate"><span class="pre">experiment.save</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># enable saving model checkpoints</span>
-<span class="n">enabled</span> <span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
-
-<span class="c1"># controlling frequency of checkpoints</span>
-<span class="n">every_n_epochs</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">every_n_seconds</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">epochs</span> <span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-
-<span class="c1"># saving the best checkpoints</span>
-<span class="n">on_best_validation</span> <span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
-<span class="n">on_best_rollout_return</span> <span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
-<span class="n">on_best_rollout_success_rate</span> <span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;save&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1"># enable saving model checkpoints</span>
+    <span class="s2">&quot;enabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    
+    <span class="c1"># controlling frequency of checkpoints</span>
+    <span class="s2">&quot;every_n_seconds&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;every_n_epochs&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s2">&quot;epochs&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    
+    <span class="c1"># saving the best checkpoints</span>
+    <span class="s2">&quot;on_best_validation&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">&quot;on_best_rollout_return&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">&quot;on_best_rollout_success_rate&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">},</span>
 </pre></div>
 </div>
 </div>
@@ -623,12 +627,13 @@ title="Print to PDF"
 <div class="section" id="evaluating-rollouts">
 <h4>Evaluating Rollouts<a class="headerlink" href="#evaluating-rollouts" title="Permalink to this headline">#</a></h4>
 <p>Configured under <code class="docutils literal notranslate"><span class="pre">experiment.rollout</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">enabled</span> <span class="p">(</span><span class="nb">bool</span><span class="p">)</span>                <span class="c1"># enable evaluation rollouts</span>
-
-<span class="n">n</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span>                       <span class="c1"># number of rollouts per evaluation</span>
-<span class="n">horizon</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span>                 <span class="c1"># number of timesteps per rollout</span>
-<span class="n">rate</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span>                    <span class="c1"># frequency of evaluation (in epochs)</span>
-<span class="n">terminate_on_success</span> <span class="p">(</span><span class="nb">bool</span><span class="p">)</span>   <span class="c1"># terminating rollouts upon task success</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;rollout&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;enabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>              <span class="c1"># enable evaluation rollouts</span>
+    <span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>                      <span class="c1"># number of rollouts per evaluation</span>
+    <span class="s2">&quot;horizon&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>               <span class="c1"># number of timesteps per rollout</span>
+    <span class="s2">&quot;rate&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>                   <span class="c1"># frequency of evaluation (in epochs)</span>
+    <span class="s2">&quot;terminate_on_success&quot;</span><span class="p">:</span> <span class="n">true</span>  <span class="c1"># terminating rollouts upon task success</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -660,13 +665,19 @@ title="Print to PDF"
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ tensorboard --logdir &lt;experiment-log-dir&gt; --bind_all
 </pre></div>
 </div>
-<p>Below is a snapshot of the tensorboard dashboard:</p>
+<p>Below is a snapshot of the tensorboard dashboard:
+<a href="../images/tensorboard.png" target="_blank"></p>
 <p align="center">
   <img width="99.0%" src="../images/tensorboard.png">
-</p><p>Experiment results (y-axis) are logged across epochs (x-axis).
+</p>
+</a><p>Experiment results (y-axis) are logged across epochs (x-axis).
 You may find the following logging metrics useful:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Rollout/</span></code>: evaluation rollout metrics, eg. success rate, rewards, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rollout/</span></code>: evaluation rollout metrics, eg. success rate, rewards, etc.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rollout/Success_Rate/{envname}-max</span></code>: maximum success rate over time (this is the metric the <a class="reference external" href="https://arxiv.org/abs/2108.03298">study paper</a> uses to evaluate baselines)</p></li>
+</ul>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Timing_Stats/</span></code>: time spent by the algorithm loading data, training, performing rollouts, etc.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Timing_Stats/</span></code>: time spent by the algorithm loading data, training, performing rollouts, etc.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Train/</span></code>: training stats</p></li>

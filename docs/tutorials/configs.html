@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Configuring and Launching Training Runs &#8212; robomimic 0.2.0 documentation</title>
+    <title>Configuring and Launching Training Runs &#8212; robomimic 0.2.1 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -73,7 +73,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.0 documentation</h1>
+      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -517,8 +517,9 @@ title="Print to PDF"
 <p>Robomimic uses a centralized <a class="reference external" href="../modules/configs.html">configuration system</a> to specify (hyper)parameters at all levels. Below we walk through two ways to configure and launching training runs.</p>
 <div class="section" id="best-practices">
 <h2>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h2>
-<p><em>WARNING</em>: Do not directly modify the default configs such as <code class="docutils literal notranslate"><span class="pre">config/bc_config.py</span></code>, especially if using the codebase with version control (e.g. git). Modifying these files modifies the default settings, and it’s easy to forget that these changes were made, or unintentionally commit these changes so that they become the new defaults.</p>
-<p>Please see the <a class="reference external" href="../modules/configs.html">Config documentation</a> for more information on Config objects, and the <a class="reference external" href="../tutorials/hyperparam_scan.html">hyperparameter scan tutorial</a> for configuring hyperparameter sweeps.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning! Do not modify default configs!</p><p>Do not directly modify the default configs such as <code class="docutils literal notranslate"><span class="pre">config/bc_config.py</span></code>, especially if using the codebase with version control (e.g. git). Modifying these files modifies the default settings, and it’s easy to forget that these changes were made, or unintentionally commit these changes so that they become the new defaults.</p>
+</div><p>Please see the <a class="reference external" href="../modules/configs.html">Config documentation</a> for more information on Config objects, and the <a class="reference external" href="../tutorials/hyperparam_scan.html">hyperparameter scan tutorial</a> for configuring hyperparameter sweeps.</p>
 </div>
 <div class="section" id="using-a-config-json-preferred">
 <h2>1. Using a config json (preferred)<a class="headerlink" href="#using-a-config-json-preferred" title="Permalink to this headline">#</a></h2>
