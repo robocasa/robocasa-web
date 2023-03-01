@@ -1,0 +1,909 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Implementing Custom Algorithms &#8212; robomimic 0.2.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Operations over Tensor Collections" href="tensor_collections.html" />
+    <link rel="prev" title="Multimodal Observations" href="observations.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/implemented_algorithms.html">
+   Implemented Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/getting_started.html">
+   Getting Started
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/robomimic_v0.1.html">
+   robomimic v0.1 (CoRL 2021)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/robosuite.html">
+   robosuite Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/d4rl.html">
+   D4RL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/momart.html">
+   MOMART Datasets and Experiments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/roboturk_pilot.html">
+   RoboTurk Pilot
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Pretrained Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../model_zoo/robomimic_v0.1.html">
+   robomimic-v0.1
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="configs.html">
+   Configuring and Launching Training Runs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="viewing_results.html">
+   Logging and Viewing Training Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hyperparam_scan.html">
+   Running Hyperparameter Scans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataset_contents.html">
+   Dataset Contents and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="using_pretrained_models.html">
+   Using Pretrained Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="observations.html">
+   Multimodal Observations
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Implementing Custom Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tensor_collections.html">
+   Operations over Tensor Collections
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/dataset.html">
+   SequenceDataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/algorithms.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/models.html">
+   Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/configs.html">
+   Configs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/environments.html">
+   Environments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/robomimic.html">
+   robomimic package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.algo.html">
+     robomimic.algo package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.config.html">
+     robomimic.config package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.envs.html">
+     robomimic.envs package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.models.html">
+     robomimic.models package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robomimic.utils.html">
+     robomimic.utils package
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/contributing.html">
+   Contributing Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/team.html">
+   Team
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/acknowledgments.html">
+   Acknowledgments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/references.html">
+   Projects using robomimic
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../sources/tutorials/custom_algorithms.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementing-the-config-class">
+   Implementing the Config class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementing-the-algo-class">
+   Implementing the Algo class
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Implementing Custom Algorithms</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementing-the-config-class">
+   Implementing the Config class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementing-the-algo-class">
+   Implementing the Algo class
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="implementing-custom-algorithms">
+<h1>Implementing Custom Algorithms<a class="headerlink" href="#implementing-custom-algorithms" title="Permalink to this headline">#</a></h1>
+<p>This tutorial provides an example of implementing a custom algorithm in robomimic. We choose to implement the recently proposed <a class="reference external" href="https://arxiv.org/abs/2106.06860">TD3-BC</a> algorithm.</p>
+<p>This consists of the following steps:</p>
+<ol class="simple">
+<li><p>Implement a custom <code class="docutils literal notranslate"><span class="pre">Config</span></code> class for TD3-BC.</p></li>
+<li><p>Implement a custom <code class="docutils literal notranslate"><span class="pre">Algo</span></code> class for TD3-BC.</p></li>
+</ol>
+<div class="section" id="implementing-the-config-class">
+<h2>Implementing the Config class<a class="headerlink" href="#implementing-the-config-class" title="Permalink to this headline">#</a></h2>
+<p>We will implement the config class in <code class="docutils literal notranslate"><span class="pre">config/td3_bc_config.py</span></code>. We implement a <code class="docutils literal notranslate"><span class="pre">TD3_BCConfig</span></code> config class that subclasses from <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code>. Importantly, we set the class variable <code class="docutils literal notranslate"><span class="pre">ALGO_NAME</span> <span class="pre">=</span> <span class="pre">&quot;td3_bc&quot;</span></code> to register this config under that algo name. We implement the <code class="docutils literal notranslate"><span class="pre">algo_config</span></code> function to populate <code class="docutils literal notranslate"><span class="pre">config.algo</span></code> with the keys needed for the algorithm - it is extremely similar to the <code class="docutils literal notranslate"><span class="pre">BCQConfig</span></code> implementation. Portions of the code are reproduced below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TD3_BCConfig</span><span class="p">(</span><span class="n">BaseConfig</span><span class="p">):</span>
+    <span class="n">ALGO_NAME</span> <span class="o">=</span> <span class="s2">&quot;td3_bc&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">algo_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># optimization parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">learning_rate</span><span class="o">.</span><span class="n">initial</span> <span class="o">=</span> <span class="mf">3e-4</span>      <span class="c1"># critic learning rate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">learning_rate</span><span class="o">.</span><span class="n">decay_factor</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># factor to decay LR by (if epoch schedule non-empty)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">learning_rate</span><span class="o">.</span><span class="n">epoch_schedule</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># epochs where LR decay occurs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">regularization</span><span class="o">.</span><span class="n">L2</span> <span class="o">=</span> <span class="mf">0.00</span>          <span class="c1"># L2 regularization strength</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">start_epoch</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>                  <span class="c1"># number of epochs before starting critic training (-1 means start right away)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">end_epoch</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>                    <span class="c1"># number of epochs before ending critic training (-1 means start right away)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">learning_rate</span><span class="o">.</span><span class="n">initial</span> <span class="o">=</span> <span class="mf">3e-4</span>       <span class="c1"># actor learning rate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">learning_rate</span><span class="o">.</span><span class="n">decay_factor</span> <span class="o">=</span> <span class="mf">0.1</span>   <span class="c1"># factor to decay LR by (if epoch schedule non-empty)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">learning_rate</span><span class="o">.</span><span class="n">epoch_schedule</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># epochs where LR decay occurs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">regularization</span><span class="o">.</span><span class="n">L2</span> <span class="o">=</span> <span class="mf">0.00</span>           <span class="c1"># L2 regularization strength</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">start_epoch</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>                   <span class="c1"># number of epochs before starting actor training (-1 means start right away)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">optim_params</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">end_epoch</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>                     <span class="c1"># number of epochs before ending actor training (-1 means start right away)</span>
+
+        <span class="c1"># alpha value - for weighting critic loss vs. BC loss</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">2.5</span>
+
+        <span class="c1"># target network related parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">discount</span> <span class="o">=</span> <span class="mf">0.99</span>                       <span class="c1"># discount factor to use</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">n_step</span> <span class="o">=</span> <span class="mi">1</span>                            <span class="c1"># for using n-step returns in TD-updates</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">target_tau</span> <span class="o">=</span> <span class="mf">0.005</span>                    <span class="c1"># update rate for target networks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">infinite_horizon</span> <span class="o">=</span> <span class="kc">False</span>              <span class="c1"># if True, scale terminal rewards by 1 / (1 - discount) to treat as infinite horizon</span>
+
+        <span class="c1"># ================== Critic Network Config ===================</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">use_huber</span> <span class="o">=</span> <span class="kc">False</span>              <span class="c1"># Huber Loss instead of L2 for critic</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">max_gradient_norm</span> <span class="o">=</span> <span class="kc">None</span>       <span class="c1"># L2 gradient clipping for critic (None to use no clipping)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">value_bounds</span> <span class="o">=</span> <span class="kc">None</span>            <span class="c1"># optional 2-tuple to ensure lower and upper bound on value estimates </span>
+
+        <span class="c1"># critic ensemble parameters (TD3 trick)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">ensemble</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>                 <span class="c1"># number of Q networks in the ensemble</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">ensemble</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mf">1.0</span>          <span class="c1"># weighting for mixing min and max for target Q value</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">layer_dims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>   <span class="c1"># size of critic MLP</span>
+
+        <span class="c1"># ================== Actor Network Config ===================</span>
+
+        <span class="c1"># update actor and target networks every n gradients steps for each critic gradient step</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">update_freq</span> <span class="o">=</span> <span class="mi">2</span>
+
+        <span class="c1"># exploration noise used to form target action for Q-update - clipped Gaussian noise</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">noise_std</span> <span class="o">=</span> <span class="mf">0.2</span>                 <span class="c1"># zero-mean gaussian noise with this std is applied to actions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">noise_clip</span> <span class="o">=</span> <span class="mf">0.5</span>                <span class="c1"># noise is clipped in each dimension to (-noise_clip, noise_clip)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">algo</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">layer_dims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>    <span class="c1"># size of actor MLP</span>
+</pre></div>
+</div>
+<p>Usually, we only need to implement the <code class="docutils literal notranslate"><span class="pre">algo_config</span></code> function to populate <code class="docutils literal notranslate"><span class="pre">config.algo</span></code> with the keys needed for the algorithm, but we also update the <code class="docutils literal notranslate"><span class="pre">experiment_config</span></code> function and <code class="docutils literal notranslate"><span class="pre">observation_config</span></code> function to make it easier to reproduce experiments on <code class="docutils literal notranslate"><span class="pre">gym</span></code> environments from the paper. See the source file for more details.</p>
+<p>Finally, we add the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">robomimic.config.td3_bc_config</span> <span class="pre">import</span> <span class="pre">TD3_BCConfig</span></code> to <code class="docutils literal notranslate"><span class="pre">config/__init__.py</span></code> to make sure this <code class="docutils literal notranslate"><span class="pre">Config</span></code> subclass is registered by <code class="docutils literal notranslate"><span class="pre">robomimic</span></code>.</p>
+</div>
+<div class="section" id="implementing-the-algo-class">
+<h2>Implementing the Algo class<a class="headerlink" href="#implementing-the-algo-class" title="Permalink to this headline">#</a></h2>
+<p>We will implement the algo class in <code class="docutils literal notranslate"><span class="pre">algo/td3_bc.py</span></code>. As described in the <a class="reference external" href="../modules/algorithms.html#initialization">Algorithm documentation</a>, we first need to implement the <code class="docutils literal notranslate"><span class="pre">algo_config_to_class</span></code> method - this is straightforward since we don’t have multiple variants of this algorithm. We take special care to make sure we register this function with the same algo name that we used for defining the config (<code class="docutils literal notranslate"><span class="pre">&quot;td3_bc&quot;</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@register_algo_factory_func</span><span class="p">(</span><span class="s2">&quot;td3_bc&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">algo_config_to_class</span><span class="p">(</span><span class="n">algo_config</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Maps algo config to the TD3_BC algo class to instantiate, along with additional algo kwargs.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        algo_config (Config instance): algo config</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        algo_class: subclass of Algo</span>
+<span class="sd">        algo_kwargs (dict): dictionary of additional kwargs to pass to algorithm</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># only one variant of TD3_BC for now</span>
+    <span class="k">return</span> <span class="n">TD3_BC</span><span class="p">,</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>Next, we’ll describe how we implement the methods outlined in the <a class="reference external" href="../modules/algorithms.html#important-class-methods">Algorithm documentation</a>. We omit several of the methods, since their implementation is extremely similar to the <code class="docutils literal notranslate"><span class="pre">BCQ</span></code> implementation. We start by defining the class and implementing <code class="docutils literal notranslate"><span class="pre">_create_networks</span></code>. The code uses helper functions <code class="docutils literal notranslate"><span class="pre">_create_critics</span></code> and <code class="docutils literal notranslate"><span class="pre">_create_actor</span></code> to create the critic and actor networks, as in the <code class="docutils literal notranslate"><span class="pre">BCQ</span></code> implementation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TD3_BC</span><span class="p">(</span><span class="n">PolicyAlgo</span><span class="p">,</span> <span class="n">ValueAlgo</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_create_networks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates networks and places them into @self.nets.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nets</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleDict</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_critics</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_actor</span><span class="p">()</span>
+
+        <span class="c1"># sync target networks at beginning of training</span>
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">critic_ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">])):</span>
+                <span class="n">TorchUtils</span><span class="o">.</span><span class="n">hard_update</span><span class="p">(</span>
+                    <span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">][</span><span class="n">critic_ind</span><span class="p">],</span> 
+                    <span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic_target&quot;</span><span class="p">][</span><span class="n">critic_ind</span><span class="p">],</span>
+                <span class="p">)</span>
+
+            <span class="n">TorchUtils</span><span class="o">.</span><span class="n">hard_update</span><span class="p">(</span>
+                <span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">],</span> 
+                <span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor_target&quot;</span><span class="p">],</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">nets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">_create_critics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">critic_class</span> <span class="o">=</span> <span class="n">ValueNets</span><span class="o">.</span><span class="n">ActionValueNetwork</span>
+        <span class="n">critic_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">obs_shapes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">obs_shapes</span><span class="p">,</span>
+            <span class="n">ac_dim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ac_dim</span><span class="p">,</span>
+            <span class="n">mlp_layer_dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">layer_dims</span><span class="p">,</span>
+            <span class="n">value_bounds</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">value_bounds</span><span class="p">,</span>
+            <span class="n">goal_shapes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">goal_shapes</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">ObsNets</span><span class="o">.</span><span class="n">obs_encoder_args_from_config</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obs_config</span><span class="o">.</span><span class="n">encoder</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Q network ensemble and target ensemble</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic_target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">ensemble</span><span class="o">.</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">critic</span> <span class="o">=</span> <span class="n">critic_class</span><span class="p">(</span><span class="o">**</span><span class="n">critic_args</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">critic</span><span class="p">)</span>
+
+            <span class="n">critic_target</span> <span class="o">=</span> <span class="n">critic_class</span><span class="p">(</span><span class="o">**</span><span class="n">critic_args</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic_target&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">critic_target</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_create_actor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">actor_class</span> <span class="o">=</span> <span class="n">PolicyNets</span><span class="o">.</span><span class="n">ActorNetwork</span>
+        <span class="n">actor_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">obs_shapes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">obs_shapes</span><span class="p">,</span>
+            <span class="n">goal_shapes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">goal_shapes</span><span class="p">,</span>
+            <span class="n">ac_dim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ac_dim</span><span class="p">,</span>
+            <span class="n">mlp_layer_dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">layer_dims</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">ObsNets</span><span class="o">.</span><span class="n">obs_encoder_args_from_config</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obs_config</span><span class="o">.</span><span class="n">encoder</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">actor_class</span><span class="p">(</span><span class="o">**</span><span class="n">actor_args</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor_target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">actor_class</span><span class="p">(</span><span class="o">**</span><span class="n">actor_args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next we describe the <code class="docutils literal notranslate"><span class="pre">train_on_batch</span></code> function, which implements the main training logic. The function trains the critic using the <code class="docutils literal notranslate"><span class="pre">_train_critic_on_batch</span></code> helper function, and then actor using the <code class="docutils literal notranslate"><span class="pre">_train_actor_on_batch</span></code> helper function (the actor is trained at a slower rate according to the <code class="docutils literal notranslate"><span class="pre">config.algo.actor.update_freq</span></code> config variable, as in the original author’s implementation). Finally, the target network parameters are moved a little closer to the current network parameters, using <code class="docutils literal notranslate"><span class="pre">TorchUtils.soft_update</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">train_on_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Training on a single batch of data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            batch (dict): dictionary with torch.Tensors sampled</span>
+<span class="sd">                from a data loader and filtered by @process_batch_for_training</span>
+
+<span class="sd">            epoch (int): epoch number - required by some Algos that need</span>
+<span class="sd">                to perform staged training and early stopping</span>
+
+<span class="sd">            validate (bool): if True, don&#39;t perform any learning updates.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            info (dict): dictionary of relevant inputs, outputs, and losses</span>
+<span class="sd">                that might be relevant for logging</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">TorchUtils</span><span class="o">.</span><span class="n">maybe_no_grad</span><span class="p">(</span><span class="n">no_grad</span><span class="o">=</span><span class="n">validate</span><span class="p">):</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">PolicyAlgo</span><span class="o">.</span><span class="n">train_on_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="n">validate</span><span class="p">)</span>
+
+            <span class="c1"># Critic training</span>
+            <span class="n">no_critic_backprop</span> <span class="o">=</span> <span class="n">validate</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_epoch</span><span class="p">(</span><span class="n">net_name</span><span class="o">=</span><span class="s2">&quot;critic&quot;</span><span class="p">,</span> <span class="n">epoch</span><span class="o">=</span><span class="n">epoch</span><span class="p">))</span>
+            <span class="k">with</span> <span class="n">TorchUtils</span><span class="o">.</span><span class="n">maybe_no_grad</span><span class="p">(</span><span class="n">no_grad</span><span class="o">=</span><span class="n">no_critic_backprop</span><span class="p">):</span>
+                <span class="n">critic_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_train_critic_on_batch</span><span class="p">(</span>
+                    <span class="n">batch</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span> 
+                    <span class="n">epoch</span><span class="o">=</span><span class="n">epoch</span><span class="p">,</span> 
+                    <span class="n">no_backprop</span><span class="o">=</span><span class="n">no_critic_backprop</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="n">info</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">critic_info</span><span class="p">)</span>
+
+            <span class="c1"># update actor and target networks at lower frequency</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">no_critic_backprop</span><span class="p">:</span>
+                <span class="c1"># update counter only on critic training gradient steps</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">actor_update_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">do_actor_update</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actor_update_counter</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">update_freq</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="c1"># Actor training</span>
+            <span class="n">no_actor_backprop</span> <span class="o">=</span> <span class="n">validate</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_epoch</span><span class="p">(</span><span class="n">net_name</span><span class="o">=</span><span class="s2">&quot;actor&quot;</span><span class="p">,</span> <span class="n">epoch</span><span class="o">=</span><span class="n">epoch</span><span class="p">))</span>
+            <span class="n">no_actor_backprop</span> <span class="o">=</span> <span class="n">no_actor_backprop</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">do_actor_update</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">TorchUtils</span><span class="o">.</span><span class="n">maybe_no_grad</span><span class="p">(</span><span class="n">no_grad</span><span class="o">=</span><span class="n">no_actor_backprop</span><span class="p">):</span>
+                <span class="n">actor_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_train_actor_on_batch</span><span class="p">(</span>
+                    <span class="n">batch</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span> 
+                    <span class="n">epoch</span><span class="o">=</span><span class="n">epoch</span><span class="p">,</span> 
+                    <span class="n">no_backprop</span><span class="o">=</span><span class="n">no_actor_backprop</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="n">info</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">actor_info</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">no_actor_backprop</span><span class="p">:</span>
+                <span class="c1"># to match original implementation, only update target networks on </span>
+                <span class="c1"># actor gradient steps</span>
+                <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+                    <span class="c1"># update the target critic networks</span>
+                    <span class="k">for</span> <span class="n">critic_ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">])):</span>
+                        <span class="n">TorchUtils</span><span class="o">.</span><span class="n">soft_update</span><span class="p">(</span>
+                            <span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">][</span><span class="n">critic_ind</span><span class="p">],</span> 
+                            <span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic_target&quot;</span><span class="p">][</span><span class="n">critic_ind</span><span class="p">],</span> 
+                            <span class="n">tau</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">target_tau</span><span class="p">,</span>
+                        <span class="p">)</span>
+
+                    <span class="c1"># update target actor network</span>
+                    <span class="n">TorchUtils</span><span class="o">.</span><span class="n">soft_update</span><span class="p">(</span>
+                        <span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">],</span> 
+                        <span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor_target&quot;</span><span class="p">],</span> 
+                        <span class="n">tau</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">target_tau</span><span class="p">,</span>
+                    <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">info</span>
+</pre></div>
+</div>
+<p>Below, we show the helper functions for training the critics, to be explicit in how the Bellman backup is used to construct the TD loss. The target Q values for the TD loss are obtained in the same way as <a class="reference external" href="https://arxiv.org/abs/1802.09477">TD3</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">_train_critic_on_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">no_backprop</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+        <span class="c1"># batch variables</span>
+        <span class="n">s_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;obs&quot;</span><span class="p">]</span>
+        <span class="n">a_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;actions&quot;</span><span class="p">]</span>
+        <span class="n">r_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;rewards&quot;</span><span class="p">]</span>
+        <span class="n">ns_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;next_obs&quot;</span><span class="p">]</span>
+        <span class="n">goal_s_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;goal_obs&quot;</span><span class="p">]</span>
+
+        <span class="c1"># 1 if not done, 0 otherwise</span>
+        <span class="n">done_mask_batch</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;dones&quot;</span><span class="p">]</span>
+        <span class="n">info</span><span class="p">[</span><span class="s2">&quot;done_masks&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">done_mask_batch</span>
+
+        <span class="c1"># Bellman backup for Q-targets</span>
+        <span class="n">q_targets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_target_values</span><span class="p">(</span>
+            <span class="n">next_states</span><span class="o">=</span><span class="n">ns_batch</span><span class="p">,</span> 
+            <span class="n">goal_states</span><span class="o">=</span><span class="n">goal_s_batch</span><span class="p">,</span> 
+            <span class="n">rewards</span><span class="o">=</span><span class="n">r_batch</span><span class="p">,</span> 
+            <span class="n">dones</span><span class="o">=</span><span class="n">done_mask_batch</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">info</span><span class="p">[</span><span class="s2">&quot;critic/q_targets&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">q_targets</span>
+
+        <span class="c1"># Train all critics using this set of targets for regression</span>
+        <span class="k">for</span> <span class="n">critic_ind</span><span class="p">,</span> <span class="n">critic</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">]):</span>
+            <span class="n">critic_loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_critic_loss</span><span class="p">(</span>
+                <span class="n">critic</span><span class="o">=</span><span class="n">critic</span><span class="p">,</span> 
+                <span class="n">states</span><span class="o">=</span><span class="n">s_batch</span><span class="p">,</span> 
+                <span class="n">actions</span><span class="o">=</span><span class="n">a_batch</span><span class="p">,</span> 
+                <span class="n">goal_states</span><span class="o">=</span><span class="n">goal_s_batch</span><span class="p">,</span> 
+                <span class="n">q_targets</span><span class="o">=</span><span class="n">q_targets</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">info</span><span class="p">[</span><span class="s2">&quot;critic/critic</span><span class="si">{}</span><span class="s2">_loss&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">critic_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="n">critic_loss</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">no_backprop</span><span class="p">:</span>
+                <span class="n">critic_grad_norms</span> <span class="o">=</span> <span class="n">TorchUtils</span><span class="o">.</span><span class="n">backprop_for_loss</span><span class="p">(</span>
+                    <span class="n">net</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">][</span><span class="n">critic_ind</span><span class="p">],</span>
+                    <span class="n">optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">optimizers</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">][</span><span class="n">critic_ind</span><span class="p">],</span>
+                    <span class="n">loss</span><span class="o">=</span><span class="n">critic_loss</span><span class="p">,</span> 
+                    <span class="n">max_grad_norm</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">max_gradient_norm</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">info</span><span class="p">[</span><span class="s2">&quot;critic/critic</span><span class="si">{}</span><span class="s2">_grad_norms&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">critic_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="n">critic_grad_norms</span>
+
+        <span class="k">return</span> <span class="n">info</span>
+        
+    <span class="k">def</span> <span class="nf">_get_target_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">next_states</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">,</span> <span class="n">rewards</span><span class="p">,</span> <span class="n">dones</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper function to get target values for training Q-function with TD-loss.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="c1"># get next actions via target actor and noise</span>
+            <span class="n">next_target_actions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor_target&quot;</span><span class="p">](</span><span class="n">next_states</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">)</span>
+            <span class="n">noise</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">randn_like</span><span class="p">(</span><span class="n">next_target_actions</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">noise_std</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">noise_clip</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">noise_clip</span><span class="p">)</span>
+            <span class="n">next_actions</span> <span class="o">=</span> <span class="p">(</span><span class="n">next_target_actions</span> <span class="o">+</span> <span class="n">noise</span><span class="p">)</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+            <span class="c1"># TD3 trick to combine max and min over all Q-ensemble estimates into single target estimates</span>
+            <span class="n">all_value_targets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic_target&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">](</span><span class="n">next_states</span><span class="p">,</span> <span class="n">next_actions</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">max_value_targets</span> <span class="o">=</span> <span class="n">all_value_targets</span>
+            <span class="n">min_value_targets</span> <span class="o">=</span> <span class="n">all_value_targets</span>
+            <span class="k">for</span> <span class="n">critic_target</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic_target&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">:]:</span>
+                <span class="n">all_value_targets</span> <span class="o">=</span> <span class="n">critic_target</span><span class="p">(</span><span class="n">next_states</span><span class="p">,</span> <span class="n">next_actions</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">max_value_targets</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">max_value_targets</span><span class="p">,</span> <span class="n">all_value_targets</span><span class="p">)</span>
+                <span class="n">min_value_targets</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">min_value_targets</span><span class="p">,</span> <span class="n">all_value_targets</span><span class="p">)</span>
+            <span class="n">value_targets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">ensemble</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="n">min_value_targets</span> <span class="o">+</span> \
+                                <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">ensemble</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">*</span> <span class="n">max_value_targets</span>
+            <span class="n">q_targets</span> <span class="o">=</span> <span class="n">rewards</span> <span class="o">+</span> <span class="n">dones</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">discount</span> <span class="o">*</span> <span class="n">value_targets</span>
+
+        <span class="k">return</span> <span class="n">q_targets</span>    
+        
+    <span class="k">def</span> <span class="nf">_compute_critic_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">critic</span><span class="p">,</span> <span class="n">states</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">,</span> <span class="n">q_targets</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper function to compute loss between estimated Q-values and target Q-values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">q_estimated</span> <span class="o">=</span> <span class="n">critic</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">critic</span><span class="o">.</span><span class="n">use_huber</span><span class="p">:</span>
+            <span class="n">critic_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">SmoothL1Loss</span><span class="p">()(</span><span class="n">q_estimated</span><span class="p">,</span> <span class="n">q_targets</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">critic_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()(</span><span class="n">q_estimated</span><span class="p">,</span> <span class="n">q_targets</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">critic_loss</span>
+</pre></div>
+</div>
+<p>Next we show the helper function for training the actor, which is trained through a weighted combination of the TD3 (DDPG) and BC loss.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">_train_actor_on_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">no_backprop</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+        <span class="c1"># Actor loss (update with mixture of DDPG loss and BC loss)</span>
+        <span class="n">s_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;obs&quot;</span><span class="p">]</span>
+        <span class="n">a_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;actions&quot;</span><span class="p">]</span>
+        <span class="n">goal_s_batch</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;goal_obs&quot;</span><span class="p">]</span>
+
+        <span class="c1"># lambda mixture weight is combination of hyperparameter (alpha) and Q-value normalization</span>
+        <span class="n">actor_actions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">](</span><span class="n">s_batch</span><span class="p">,</span> <span class="n">goal_s_batch</span><span class="p">)</span>
+        <span class="n">Q_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;critic&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">](</span><span class="n">s_batch</span><span class="p">,</span> <span class="n">actor_actions</span><span class="p">,</span> <span class="n">goal_s_batch</span><span class="p">)</span>
+        <span class="n">lam</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo_config</span><span class="o">.</span><span class="n">alpha</span> <span class="o">/</span> <span class="n">Q_values</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">actor_loss</span> <span class="o">=</span> <span class="o">-</span><span class="n">lam</span> <span class="o">*</span> <span class="n">Q_values</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">+</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()(</span><span class="n">actor_actions</span><span class="p">,</span> <span class="n">a_batch</span><span class="p">)</span>
+        <span class="n">info</span><span class="p">[</span><span class="s2">&quot;actor/loss&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">actor_loss</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">no_backprop</span><span class="p">:</span>
+            <span class="n">actor_grad_norms</span> <span class="o">=</span> <span class="n">TorchUtils</span><span class="o">.</span><span class="n">backprop_for_loss</span><span class="p">(</span>
+                <span class="n">net</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">],</span>
+                <span class="n">optim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">optimizers</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">],</span>
+                <span class="n">loss</span><span class="o">=</span><span class="n">actor_loss</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">info</span><span class="p">[</span><span class="s2">&quot;actor/grad_norms&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">actor_grad_norms</span>
+
+        <span class="k">return</span> <span class="n">info</span>
+</pre></div>
+</div>
+<p>Finally, we describe the <code class="docutils literal notranslate"><span class="pre">get_action</span></code> implementation - which is used at test-time during rollouts. The implementation is extremely simple - just query the actor for an action.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">get_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs_dict</span><span class="p">,</span> <span class="n">goal_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get policy action outputs.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            obs_dict (dict): current observation</span>
+<span class="sd">            goal_dict (dict): (optional) goal</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            action (torch.Tensor): action tensor</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="o">.</span><span class="n">training</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nets</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">](</span><span class="n">obs_dict</span><span class="o">=</span><span class="n">obs_dict</span><span class="p">,</span> <span class="n">goal_dict</span><span class="o">=</span><span class="n">goal_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, we add the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">robomimic.algo.td3_bc</span> <span class="pre">import</span> <span class="pre">TD3_BC</span></code> to <code class="docutils literal notranslate"><span class="pre">algo/__init__.py</span></code> to make sure this <code class="docutils literal notranslate"><span class="pre">Algo</span></code> subclass is registered by <code class="docutils literal notranslate"><span class="pre">robomimic</span></code>.</p>
+<p>That’s it! See <code class="docutils literal notranslate"><span class="pre">algo/td3_bc.py</span></code> for the complete implementation, and compare it to <code class="docutils literal notranslate"><span class="pre">algo/bcq.py</span></code> to see the similarity between the two implementations.</p>
+<p>We can now run the <code class="docutils literal notranslate"><span class="pre">generate_config_templates.py</span></code> script to generate the json template for our new algorithm, and then run it on our desired dataset.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate ../exps/templates/td3_bc.json</span>
+$ python generate_config_templates.py 
+
+<span class="c1"># run training</span>
+$ python train.py --config ../exps/templates/td3_bc.json --dataset /path/to/walker2d_medium_expert.hdf5
+</pre></div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="observations.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Multimodal Observations</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="tensor_collections.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Operations over Tensor Collections</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+  
+      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
