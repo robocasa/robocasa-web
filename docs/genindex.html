@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; robomimic 0.2.1 documentation</title>
+    <title>Index &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +20,7 @@
     href="static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="static/pygments.css" />
-    <link rel="stylesheet" href="static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +29,7 @@
     <script src="static/jquery.js"></script>
     <script src="static/underscore.js"></script>
     <script src="static/doctools.js"></script>
-    <script src="static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
@@ -69,9 +69,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -197,6 +202,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -317,6 +327,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -467,6 +489,8 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.config.html#robomimic.config.hbc_config.HBCConfig.algo_config">(robomimic.config.hbc_config.HBCConfig method)</a>
 </li>
+        <li><a href="api/robomimic.config.html#robomimic.config.iql_config.IQLConfig.algo_config">(robomimic.config.iql_config.IQLConfig method)</a>
+</li>
         <li><a href="api/robomimic.config.html#robomimic.config.iris_config.IRISConfig.algo_config">(robomimic.config.iris_config.IRISConfig method)</a>
 </li>
         <li><a href="api/robomimic.config.html#robomimic.config.td3_bc_config.TD3_BCConfig.algo_config">(robomimic.config.td3_bc_config.TD3_BCConfig method)</a>
@@ -488,6 +512,8 @@ title="Fullscreen mode"
         <li><a href="api/robomimic.config.html#robomimic.config.gl_config.GLConfig.ALGO_NAME">(robomimic.config.gl_config.GLConfig attribute)</a>
 </li>
         <li><a href="api/robomimic.config.html#robomimic.config.hbc_config.HBCConfig.ALGO_NAME">(robomimic.config.hbc_config.HBCConfig attribute)</a>
+</li>
+        <li><a href="api/robomimic.config.html#robomimic.config.iql_config.IQLConfig.ALGO_NAME">(robomimic.config.iql_config.IQLConfig attribute)</a>
 </li>
         <li><a href="api/robomimic.config.html#robomimic.config.iris_config.IRISConfig.ALGO_NAME">(robomimic.config.iris_config.IRISConfig attribute)</a>
 </li>
@@ -534,9 +560,13 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.bc.BC_RNN">BC_RNN (class in robomimic.algo.bc)</a>
 </li>
+      <li><a href="api/robomimic.algo.html#robomimic.algo.bc.BC_RNN_GMM">BC_RNN_GMM (class in robomimic.algo.bc)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robomimic.algo.html#robomimic.algo.bc.BC_RNN_GMM">BC_RNN_GMM (class in robomimic.algo.bc)</a>
+      <li><a href="api/robomimic.algo.html#robomimic.algo.bc.BC_Transformer">BC_Transformer (class in robomimic.algo.bc)</a>
+</li>
+      <li><a href="api/robomimic.algo.html#robomimic.algo.bc.BC_Transformer_GMM">BC_Transformer_GMM (class in robomimic.algo.bc)</a>
 </li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.bc.BC_VAE">BC_VAE (class in robomimic.algo.bc)</a>
 </li>
@@ -558,13 +588,21 @@ title="Fullscreen mode"
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robomimic.envs.html#robomimic.envs.wrappers.FrameStackWrapper.cache_obs_history">cache_obs_history() (robomimic.envs.wrappers.FrameStackWrapper method)</a>
+</li>
       <li><a href="api/robomimic.models.html#robomimic.models.vae_nets.CategoricalPrior">CategoricalPrior (class in robomimic.models.vae_nets)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.transformers.CausalSelfAttention">CausalSelfAttention (class in robomimic.models.transformers)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.center_crop">center_crop() (in module robomimic.utils.obs_utils)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.env_utils.check_env_type">check_env_type() (in module robomimic.utils.env_utils)</a>
 </li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.env_utils.check_env_version">check_env_version() (in module robomimic.utils.env_utils)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.test_utils.checkpoint_path_from_test_run">checkpoint_path_from_test_run() (in module robomimic.utils.test_utils)</a>
+</li>
+      <li><a href="api/robomimic.envs.html#robomimic.envs.wrappers.EnvWrapper.class_name">class_name() (robomimic.envs.wrappers.EnvWrapper class method)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.FeatureAggregator.clear_weight">clear_weight() (robomimic.models.base_nets.FeatureAggregator method)</a>
 </li>
@@ -573,6 +611,8 @@ title="Fullscreen mode"
       <li><a href="api/robomimic.utils.html#robomimic.utils.log_utils.DataLogger.close">close() (robomimic.utils.log_utils.DataLogger method)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.dataset.SequenceDataset.close_and_delete_hdf5_handle">close_and_delete_hdf5_handle() (robomimic.utils.dataset.SequenceDataset method)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_core.ColorRandomizer">ColorRandomizer (class in robomimic.models.obs_core)</a>
 </li>
       <li><a href="api/robomimic.config.html#robomimic.config.config.Config">Config (class in robomimic.config.config)</a>
 </li>
@@ -586,12 +626,12 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.config.html#robomimic.config.base_config.ConfigMeta">ConfigMeta (class in robomimic.config.base_config)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.contiguous">contiguous() (in module robomimic.utils.tensor_utils)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Conv1dBase">Conv1dBase (class in robomimic.models.base_nets)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ConvBase">ConvBase (class in robomimic.models.base_nets)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CoordConv2d">CoordConv2d (class in robomimic.models.base_nets)</a>
@@ -620,7 +660,7 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.crop_image_from_indices">crop_image_from_indices() (in module robomimic.utils.obs_utils)</a>
 </li>
-      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CropRandomizer">CropRandomizer (class in robomimic.models.base_nets)</a>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_core.CropRandomizer">CropRandomizer (class in robomimic.models.obs_core)</a>
 </li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.algo.HierarchicalAlgo.current_subgoal">current_subgoal (robomimic.algo.algo.HierarchicalAlgo property)</a>
 
@@ -684,13 +724,15 @@ title="Fullscreen mode"
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.MIMO_Transformer.embed_timesteps">embed_timesteps() (robomimic.models.obs_nets.MIMO_Transformer method)</a>
+</li>
       <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.VAEActor.encode">encode() (robomimic.models.policy_nets.VAEActor method)</a>
 
       <ul>
         <li><a href="api/robomimic.models.html#robomimic.models.vae_nets.VAE.encode">(robomimic.models.vae_nets.VAE method)</a>
 </li>
       </ul></li>
-      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.EncoderCore">EncoderCore (class in robomimic.models.base_nets)</a>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_core.EncoderCore">EncoderCore (class in robomimic.models.obs_core)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.file_utils.env_from_checkpoint">env_from_checkpoint() (in module robomimic.utils.file_utils)</a>
 </li>
@@ -702,6 +744,8 @@ title="Fullscreen mode"
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robomimic.envs.html#robomimic.envs.wrappers.EnvWrapper">EnvWrapper (class in robomimic.envs.wrappers)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.test_utils.example_dataset_path">example_dataset_path() (in module robomimic.utils.test_utils)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.test_utils.example_momart_dataset_path">example_momart_dataset_path() (in module robomimic.utils.test_utils)</a>
@@ -736,6 +780,8 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.log_utils.PrintLogger.flush">flush() (robomimic.utils.log_utils.PrintLogger method)</a>
 </li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.log_utils.flush_warnings">flush_warnings() (in module robomimic.utils.log_utils)</a>
+</li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Conv1dBase.forward">forward() (robomimic.models.base_nets.Conv1dBase method)</a>
 
       <ul>
@@ -747,11 +793,11 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.MLP.forward">(robomimic.models.base_nets.MLP method)</a>
 </li>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.MVPConv.forward">(robomimic.models.base_nets.MVPConv method)</a>
+</li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Parameter.forward">(robomimic.models.base_nets.Parameter method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.RNN_Base.forward">(robomimic.models.base_nets.RNN_Base method)</a>
-</li>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ScanCore.forward">(robomimic.models.base_nets.ScanCore method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.SpatialMeanPool.forward">(robomimic.models.base_nets.SpatialMeanPool method)</a>
 </li>
@@ -761,9 +807,13 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Unsqueeze.forward">(robomimic.models.base_nets.Unsqueeze method)</a>
 </li>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.VisualCore.forward">(robomimic.models.base_nets.VisualCore method)</a>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.ScanCore.forward">(robomimic.models.obs_core.ScanCore method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.VisualCore.forward">(robomimic.models.obs_core.VisualCore method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.MIMO_MLP.forward">(robomimic.models.obs_nets.MIMO_MLP method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.MIMO_Transformer.forward">(robomimic.models.obs_nets.MIMO_Transformer method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.ObservationDecoder.forward">(robomimic.models.obs_nets.ObservationDecoder method)</a>
 </li>
@@ -785,7 +835,21 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.RNNGMMActorNetwork.forward">(robomimic.models.policy_nets.RNNGMMActorNetwork method)</a>
 </li>
+        <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.TransformerActorNetwork.forward">(robomimic.models.policy_nets.TransformerActorNetwork method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.TransformerGMMActorNetwork.forward">(robomimic.models.policy_nets.TransformerGMMActorNetwork method)</a>
+</li>
         <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.VAEActor.forward">(robomimic.models.policy_nets.VAEActor method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.transformers.CausalSelfAttention.forward">(robomimic.models.transformers.CausalSelfAttention method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.transformers.GEGLU.forward">(robomimic.models.transformers.GEGLU method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.transformers.GPT_Backbone.forward">(robomimic.models.transformers.GPT_Backbone method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.transformers.PositionalEncoding.forward">(robomimic.models.transformers.PositionalEncoding method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.transformers.SelfAttentionBlock.forward">(robomimic.models.transformers.SelfAttentionBlock method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.vae_nets.CategoricalPrior.forward">(robomimic.models.vae_nets.CategoricalPrior method)</a>
 </li>
@@ -804,18 +868,10 @@ title="Fullscreen mode"
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CropRandomizer.forward_in">forward_in() (robomimic.models.base_nets.CropRandomizer method)</a>
-
-      <ul>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Randomizer.forward_in">(robomimic.models.base_nets.Randomizer method)</a>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_core.Randomizer.forward_in">forward_in() (robomimic.models.obs_core.Randomizer method)</a>
 </li>
-      </ul></li>
-      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CropRandomizer.forward_out">forward_out() (robomimic.models.base_nets.CropRandomizer method)</a>
-
-      <ul>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Randomizer.forward_out">(robomimic.models.base_nets.Randomizer method)</a>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_core.Randomizer.forward_out">forward_out() (robomimic.models.obs_core.Randomizer method)</a>
 </li>
-      </ul></li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.RNN_Base.forward_step">forward_step() (robomimic.models.base_nets.RNN_Base method)</a>
 
       <ul>
@@ -833,12 +889,18 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.RNNGMMActorNetwork.forward_train">(robomimic.models.policy_nets.RNNGMMActorNetwork method)</a>
 </li>
+        <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.TransformerGMMActorNetwork.forward_train">(robomimic.models.policy_nets.TransformerGMMActorNetwork method)</a>
+</li>
         <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.VAEActor.forward_train">(robomimic.models.policy_nets.VAEActor method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.value_nets.DistributionalActionValueNetwork.forward_train">(robomimic.models.value_nets.DistributionalActionValueNetwork method)</a>
 </li>
       </ul></li>
       <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.RNNGMMActorNetwork.forward_train_step">forward_train_step() (robomimic.models.policy_nets.RNNGMMActorNetwork method)</a>
+</li>
+      <li><a href="api/robomimic.envs.html#robomimic.envs.wrappers.FrameStackWrapper">FrameStackWrapper (class in robomimic.envs.wrappers)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Sequential.freeze">freeze() (robomimic.models.base_nets.Sequential method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -856,7 +918,13 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.GaussianActorNetwork">GaussianActorNetwork (class in robomimic.models.policy_nets)</a>
 </li>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_core.GaussianNoiseRandomizer">GaussianNoiseRandomizer (class in robomimic.models.obs_core)</a>
+</li>
       <li><a href="api/robomimic.models.html#robomimic.models.vae_nets.GaussianPrior">GaussianPrior (class in robomimic.models.vae_nets)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.transformers.GEGLU">GEGLU (class in robomimic.models.transformers)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.transformers.GEGLU.geglu">geglu() (robomimic.models.transformers.GEGLU method)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.hyperparam_utils.ConfigGenerator.generate">generate() (robomimic.utils.hyperparam_utils.ConfigGenerator method)</a>
 </li>
@@ -869,6 +937,8 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.bc.BC_RNN.get_action">(robomimic.algo.bc.BC_RNN method)</a>
 </li>
+        <li><a href="api/robomimic.algo.html#robomimic.algo.bc.BC_Transformer.get_action">(robomimic.algo.bc.BC_Transformer method)</a>
+</li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.bcq.BCQ.get_action">(robomimic.algo.bcq.BCQ method)</a>
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.cql.CQL.get_action">(robomimic.algo.cql.CQL method)</a>
@@ -876,6 +946,8 @@ title="Fullscreen mode"
         <li><a href="api/robomimic.algo.html#robomimic.algo.gl.GL.get_action">(robomimic.algo.gl.GL method)</a>
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.hbc.HBC.get_action">(robomimic.algo.hbc.HBC method)</a>
+</li>
+        <li><a href="api/robomimic.algo.html#robomimic.algo.iql.IQL.get_action">(robomimic.algo.iql.IQL method)</a>
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.td3_bc.TD3_BC.get_action">(robomimic.algo.td3_bc.TD3_BC method)</a>
 </li>
@@ -890,6 +962,8 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.test_utils.get_base_config">get_base_config() (in module robomimic.utils.test_utils)</a>
 </li>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_core.ColorRandomizer.get_batch_transform">get_batch_transform() (robomimic.models.obs_core.ColorRandomizer method)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.python_utils.get_class_init_kwargs">get_class_init_kwargs() (in module robomimic.utils.python_utils)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.dataset.SequenceDataset.get_dataset_for_ep">get_dataset_for_ep() (robomimic.utils.dataset.SequenceDataset method)</a>
@@ -897,6 +971,8 @@ title="Fullscreen mode"
       <li><a href="api/robomimic.utils.html#robomimic.utils.dataset.SequenceDataset.get_dataset_sampler">get_dataset_sampler() (robomimic.utils.dataset.SequenceDataset method)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.dataset.SequenceDataset.get_dataset_sequence_from_demo">get_dataset_sequence_from_demo() (robomimic.utils.dataset.SequenceDataset method)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.file_utils.get_demos_for_filter_key">get_demos_for_filter_key() (in module robomimic.utils.file_utils)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.env_utils.get_env_class">get_env_class() (in module robomimic.utils.env_utils)</a>
 </li>
@@ -922,6 +998,8 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.dataset.SequenceDataset.get_obs_normalization_stats">get_obs_normalization_stats() (robomimic.utils.dataset.SequenceDataset method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.utils.html#robomimic.utils.dataset.SequenceDataset.get_obs_sequence_from_demo">get_obs_sequence_from_demo() (robomimic.utils.dataset.SequenceDataset method)</a>
 </li>
       <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvBase.get_observation">get_observation() (robomimic.envs.env_base.EnvBase method)</a>
@@ -930,8 +1008,6 @@ title="Fullscreen mode"
         <li><a href="api/robomimic.envs.html#robomimic.envs.env_robosuite.EnvRobosuite.get_observation">(robomimic.envs.env_robosuite.EnvRobosuite method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.get_processed_shape">get_processed_shape() (in module robomimic.utils.obs_utils)</a>
 </li>
       <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvBase.get_reward">get_reward() (robomimic.envs.env_base.EnvBase method)</a>
@@ -1002,6 +1078,8 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.dataset.SequenceDataset.get_trajectory_at_index">get_trajectory_at_index() (robomimic.utils.dataset.SequenceDataset method)</a>
 </li>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_core.ColorRandomizer.get_transform">get_transform() (robomimic.models.obs_core.ColorRandomizer method)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.hyperparam_utils.get_value_for_key">get_value_for_key() (in module robomimic.utils.hyperparam_utils)</a>
 </li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.gl.GL">GL (class in robomimic.algo.gl)</a>
@@ -1011,6 +1089,8 @@ title="Fullscreen mode"
       <li><a href="api/robomimic.config.html#robomimic.config.gl_config.GLConfig">GLConfig (class in robomimic.config.gl_config)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.GMMActorNetwork">GMMActorNetwork (class in robomimic.models.policy_nets)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.transformers.GPT_Backbone">GPT_Backbone (class in robomimic.models.transformers)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CoordConv2d.groups">groups (robomimic.models.base_nets.CoordConv2d attribute)</a>
 </li>
@@ -1064,8 +1144,14 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.initialize_obs_utils_with_obs_specs">initialize_obs_utils_with_obs_specs() (in module robomimic.utils.obs_utils)</a>
 </li>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.MIMO_Transformer.input_embedding">input_embedding() (robomimic.models.obs_nets.MIMO_Transformer method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robomimic.algo.html#robomimic.algo.iql.IQL">IQL (class in robomimic.algo.iql)</a>
+</li>
+      <li><a href="api/robomimic.config.html#robomimic.config.iql_config.IQLConfig">IQLConfig (class in robomimic.config.iql_config)</a>
+</li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.iris.IRIS">IRIS (class in robomimic.algo.iris)</a>
 </li>
       <li><a href="api/robomimic.config.html#robomimic.config.iris_config.IRISConfig">IRISConfig (class in robomimic.config.iris_config)</a>
@@ -1163,6 +1249,8 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.bc.BC_RNN_GMM.log_info">(robomimic.algo.bc.BC_RNN_GMM method)</a>
 </li>
+        <li><a href="api/robomimic.algo.html#robomimic.algo.bc.BC_Transformer_GMM.log_info">(robomimic.algo.bc.BC_Transformer_GMM method)</a>
+</li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.bc.BC_VAE.log_info">(robomimic.algo.bc.BC_VAE method)</a>
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.bcq.BCQ.log_info">(robomimic.algo.bcq.BCQ method)</a>
@@ -1176,6 +1264,8 @@ title="Fullscreen mode"
         <li><a href="api/robomimic.algo.html#robomimic.algo.gl.ValuePlanner.log_info">(robomimic.algo.gl.ValuePlanner method)</a>
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.hbc.HBC.log_info">(robomimic.algo.hbc.HBC method)</a>
+</li>
+        <li><a href="api/robomimic.algo.html#robomimic.algo.iql.IQL.log_info">(robomimic.algo.iql.IQL method)</a>
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.td3_bc.TD3_BC.log_info">(robomimic.algo.td3_bc.TD3_BC method)</a>
 </li>
@@ -1191,6 +1281,8 @@ title="Fullscreen mode"
       <li><a href="api/robomimic.models.html#robomimic.models.distributions.TanhWrappedDistribution.log_prob">log_prob() (robomimic.models.distributions.TanhWrappedDistribution method)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.loss_utils.log_sum_exp">log_sum_exp() (in module robomimic.utils.loss_utils)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.log_utils.log_warning">log_warning() (in module robomimic.utils.log_utils)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.distributions.DiscreteValueDistribution.logits">logits (robomimic.models.distributions.DiscreteValueDistribution property)</a>
 </li>
@@ -1224,7 +1316,11 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.distributions.DiscreteValueDistribution.mean">mean() (robomimic.models.distributions.DiscreteValueDistribution method)</a>
 </li>
+      <li><a href="api/robomimic.config.html#robomimic.config.base_config.BaseConfig.meta_config">meta_config() (robomimic.config.base_config.BaseConfig method)</a>
+</li>
       <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.MIMO_MLP">MIMO_MLP (class in robomimic.models.obs_nets)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.MIMO_Transformer">MIMO_Transformer (class in robomimic.models.obs_nets)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.MLP">MLP (class in robomimic.models.base_nets)</a>
 </li>
@@ -1250,6 +1346,8 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.algo.html#module-robomimic.algo.hbc">robomimic.algo.hbc</a>
 </li>
+        <li><a href="api/robomimic.algo.html#module-robomimic.algo.iql">robomimic.algo.iql</a>
+</li>
         <li><a href="api/robomimic.algo.html#module-robomimic.algo.iris">robomimic.algo.iris</a>
 </li>
         <li><a href="api/robomimic.algo.html#module-robomimic.algo.td3_bc">robomimic.algo.td3_bc</a>
@@ -1270,6 +1368,8 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.config.html#module-robomimic.config.hbc_config">robomimic.config.hbc_config</a>
 </li>
+        <li><a href="api/robomimic.config.html#module-robomimic.config.iql_config">robomimic.config.iql_config</a>
+</li>
         <li><a href="api/robomimic.config.html#module-robomimic.config.iris_config">robomimic.config.iris_config</a>
 </li>
         <li><a href="api/robomimic.config.html#module-robomimic.config.td3_bc_config">robomimic.config.td3_bc_config</a>
@@ -1280,15 +1380,23 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.envs.html#module-robomimic.envs.env_robosuite">robomimic.envs.env_robosuite</a>
 </li>
+        <li><a href="api/robomimic.envs.html#module-robomimic.envs.wrappers">robomimic.envs.wrappers</a>
+</li>
+        <li><a href="api/robomimic.html#module-robomimic.macros">robomimic.macros</a>
+</li>
         <li><a href="api/robomimic.models.html#module-robomimic.models">robomimic.models</a>
 </li>
         <li><a href="api/robomimic.models.html#module-robomimic.models.base_nets">robomimic.models.base_nets</a>
 </li>
         <li><a href="api/robomimic.models.html#module-robomimic.models.distributions">robomimic.models.distributions</a>
 </li>
+        <li><a href="api/robomimic.models.html#module-robomimic.models.obs_core">robomimic.models.obs_core</a>
+</li>
         <li><a href="api/robomimic.models.html#module-robomimic.models.obs_nets">robomimic.models.obs_nets</a>
 </li>
         <li><a href="api/robomimic.models.html#module-robomimic.models.policy_nets">robomimic.models.policy_nets</a>
+</li>
+        <li><a href="api/robomimic.models.html#module-robomimic.models.transformers">robomimic.models.transformers</a>
 </li>
         <li><a href="api/robomimic.models.html#module-robomimic.models.vae_nets">robomimic.models.vae_nets</a>
 </li>
@@ -1308,8 +1416,6 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.utils.html#module-robomimic.utils.loss_utils">robomimic.utils.loss_utils</a>
 </li>
-        <li><a href="api/robomimic.utils.html#module-robomimic.utils.macros">robomimic.utils.macros</a>
-</li>
         <li><a href="api/robomimic.utils.html#module-robomimic.utils.obs_utils">robomimic.utils.obs_utils</a>
 </li>
         <li><a href="api/robomimic.utils.html#module-robomimic.utils.python_utils">robomimic.utils.python_utils</a>
@@ -1328,6 +1434,8 @@ title="Fullscreen mode"
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Module">Module (class in robomimic.models.base_nets)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.MVPConv">MVPConv (class in robomimic.models.base_nets)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1404,6 +1512,8 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.hbc.HBC.on_epoch_end">(robomimic.algo.hbc.HBC method)</a>
 </li>
+        <li><a href="api/robomimic.algo.html#robomimic.algo.iql.IQL.on_epoch_end">(robomimic.algo.iql.IQL method)</a>
+</li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.td3_bc.TD3_BC.on_epoch_end">(robomimic.algo.td3_bc.TD3_BC method)</a>
 </li>
       </ul></li>
@@ -1426,15 +1536,15 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Module.output_shape">(robomimic.models.base_nets.Module method)</a>
 </li>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.MVPConv.output_shape">(robomimic.models.base_nets.MVPConv method)</a>
+</li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Parameter.output_shape">(robomimic.models.base_nets.Parameter method)</a>
 </li>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Randomizer.output_shape">(robomimic.models.base_nets.Randomizer method)</a>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.R3MConv.output_shape">(robomimic.models.base_nets.R3MConv method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ResNet18Conv.output_shape">(robomimic.models.base_nets.ResNet18Conv method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.RNN_Base.output_shape">(robomimic.models.base_nets.RNN_Base method)</a>
-</li>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ScanCore.output_shape">(robomimic.models.base_nets.ScanCore method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Sequential.output_shape">(robomimic.models.base_nets.Sequential method)</a>
 </li>
@@ -1448,9 +1558,15 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Unsqueeze.output_shape">(robomimic.models.base_nets.Unsqueeze method)</a>
 </li>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.VisualCore.output_shape">(robomimic.models.base_nets.VisualCore method)</a>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.Randomizer.output_shape">(robomimic.models.obs_core.Randomizer method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.ScanCore.output_shape">(robomimic.models.obs_core.ScanCore method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.VisualCore.output_shape">(robomimic.models.obs_core.VisualCore method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.MIMO_MLP.output_shape">(robomimic.models.obs_nets.MIMO_MLP method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.MIMO_Transformer.output_shape">(robomimic.models.obs_nets.MIMO_Transformer method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.ObservationDecoder.output_shape">(robomimic.models.obs_nets.ObservationDecoder method)</a>
 </li>
@@ -1464,7 +1580,15 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.RNNActorNetwork.output_shape">(robomimic.models.policy_nets.RNNActorNetwork method)</a>
 </li>
+        <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.TransformerActorNetwork.output_shape">(robomimic.models.policy_nets.TransformerActorNetwork method)</a>
+</li>
         <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.VAEActor.output_shape">(robomimic.models.policy_nets.VAEActor method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.transformers.CausalSelfAttention.output_shape">(robomimic.models.transformers.CausalSelfAttention method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.transformers.GPT_Backbone.output_shape">(robomimic.models.transformers.GPT_Backbone method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.transformers.SelfAttentionBlock.output_shape">(robomimic.models.transformers.SelfAttentionBlock method)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.vae_nets.Prior.output_shape">(robomimic.models.vae_nets.Prior method)</a>
 </li>
@@ -1473,16 +1597,24 @@ title="Fullscreen mode"
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CropRandomizer.output_shape_in">output_shape_in() (robomimic.models.base_nets.CropRandomizer method)</a>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_core.ColorRandomizer.output_shape_in">output_shape_in() (robomimic.models.obs_core.ColorRandomizer method)</a>
 
       <ul>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Randomizer.output_shape_in">(robomimic.models.base_nets.Randomizer method)</a>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.CropRandomizer.output_shape_in">(robomimic.models.obs_core.CropRandomizer method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.GaussianNoiseRandomizer.output_shape_in">(robomimic.models.obs_core.GaussianNoiseRandomizer method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.Randomizer.output_shape_in">(robomimic.models.obs_core.Randomizer method)</a>
 </li>
       </ul></li>
-      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CropRandomizer.output_shape_out">output_shape_out() (robomimic.models.base_nets.CropRandomizer method)</a>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_core.ColorRandomizer.output_shape_out">output_shape_out() (robomimic.models.obs_core.ColorRandomizer method)</a>
 
       <ul>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Randomizer.output_shape_out">(robomimic.models.base_nets.Randomizer method)</a>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.CropRandomizer.output_shape_out">(robomimic.models.obs_core.CropRandomizer method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.GaussianNoiseRandomizer.output_shape_out">(robomimic.models.obs_core.GaussianNoiseRandomizer method)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.Randomizer.output_shape_out">(robomimic.models.obs_core.Randomizer method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1509,6 +1641,10 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.algo.html#robomimic.algo.algo.PolicyAlgo">PolicyAlgo (class in robomimic.algo.algo)</a>
 </li>
+      <li><a href="api/robomimic.models.html#robomimic.models.transformers.PositionalEncoding">PositionalEncoding (class in robomimic.models.transformers)</a>
+</li>
+      <li><a href="api/robomimic.algo.html#robomimic.algo.algo.Algo.postprocess_batch_for_training">postprocess_batch_for_training() (robomimic.algo.algo.Algo method)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.log_utils.PrintLogger">PrintLogger (class in robomimic.utils.log_utils)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.vae_nets.Prior">Prior (class in robomimic.models.vae_nets)</a>
@@ -1522,6 +1658,8 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.bc.BC_RNN.process_batch_for_training">(robomimic.algo.bc.BC_RNN method)</a>
 </li>
+        <li><a href="api/robomimic.algo.html#robomimic.algo.bc.BC_Transformer.process_batch_for_training">(robomimic.algo.bc.BC_Transformer method)</a>
+</li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.bcq.BCQ.process_batch_for_training">(robomimic.algo.bcq.BCQ method)</a>
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.cql.CQL.process_batch_for_training">(robomimic.algo.cql.CQL method)</a>
@@ -1531,6 +1669,8 @@ title="Fullscreen mode"
         <li><a href="api/robomimic.algo.html#robomimic.algo.gl.ValuePlanner.process_batch_for_training">(robomimic.algo.gl.ValuePlanner method)</a>
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.hbc.HBC.process_batch_for_training">(robomimic.algo.hbc.HBC method)</a>
+</li>
+        <li><a href="api/robomimic.algo.html#robomimic.algo.iql.IQL.process_batch_for_training">(robomimic.algo.iql.IQL method)</a>
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.iris.IRIS.process_batch_for_training">(robomimic.algo.iris.IRIS method)</a>
 </li>
@@ -1559,7 +1699,9 @@ title="Fullscreen mode"
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Randomizer">Randomizer (class in robomimic.models.base_nets)</a>
+      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.R3MConv">R3MConv (class in robomimic.models.base_nets)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_core.Randomizer">Randomizer (class in robomimic.models.obs_core)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.vae_nets.VAE.reconstruction_loss">reconstruction_loss() (robomimic.models.vae_nets.VAE method)</a>
 </li>
@@ -1616,11 +1758,15 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.envs.html#robomimic.envs.env_robosuite.EnvRobosuite.reset">(robomimic.envs.env_robosuite.EnvRobosuite method)</a>
 </li>
+        <li><a href="api/robomimic.envs.html#robomimic.envs.wrappers.FrameStackWrapper.reset">(robomimic.envs.wrappers.FrameStackWrapper method)</a>
+</li>
       </ul></li>
       <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvBase.reset_to">reset_to() (robomimic.envs.env_base.EnvBase method)</a>
 
       <ul>
         <li><a href="api/robomimic.envs.html#robomimic.envs.env_robosuite.EnvRobosuite.reset_to">(robomimic.envs.env_robosuite.EnvRobosuite method)</a>
+</li>
+        <li><a href="api/robomimic.envs.html#robomimic.envs.wrappers.FrameStackWrapper.reset_to">(robomimic.envs.wrappers.FrameStackWrapper method)</a>
 </li>
       </ul></li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.reshape_dimensions">reshape_dimensions() (in module robomimic.utils.tensor_utils)</a>
@@ -1698,6 +1844,13 @@ title="Fullscreen mode"
 </li>
       </ul></li>
       <li>
+    robomimic.algo.iql
+
+      <ul>
+        <li><a href="api/robomimic.algo.html#module-robomimic.algo.iql">module</a>
+</li>
+      </ul></li>
+      <li>
     robomimic.algo.iris
 
       <ul>
@@ -1770,6 +1923,13 @@ title="Fullscreen mode"
 </li>
       </ul></li>
       <li>
+    robomimic.config.iql_config
+
+      <ul>
+        <li><a href="api/robomimic.config.html#module-robomimic.config.iql_config">module</a>
+</li>
+      </ul></li>
+      <li>
     robomimic.config.iris_config
 
       <ul>
@@ -1805,6 +1965,20 @@ title="Fullscreen mode"
 </li>
       </ul></li>
       <li>
+    robomimic.envs.wrappers
+
+      <ul>
+        <li><a href="api/robomimic.envs.html#module-robomimic.envs.wrappers">module</a>
+</li>
+      </ul></li>
+      <li>
+    robomimic.macros
+
+      <ul>
+        <li><a href="api/robomimic.html#module-robomimic.macros">module</a>
+</li>
+      </ul></li>
+      <li>
     robomimic.models
 
       <ul>
@@ -1826,6 +2000,13 @@ title="Fullscreen mode"
 </li>
       </ul></li>
       <li>
+    robomimic.models.obs_core
+
+      <ul>
+        <li><a href="api/robomimic.models.html#module-robomimic.models.obs_core">module</a>
+</li>
+      </ul></li>
+      <li>
     robomimic.models.obs_nets
 
       <ul>
@@ -1837,6 +2018,13 @@ title="Fullscreen mode"
 
       <ul>
         <li><a href="api/robomimic.models.html#module-robomimic.models.policy_nets">module</a>
+</li>
+      </ul></li>
+      <li>
+    robomimic.models.transformers
+
+      <ul>
+        <li><a href="api/robomimic.models.html#module-robomimic.models.transformers">module</a>
 </li>
       </ul></li>
       <li>
@@ -1900,13 +2088,6 @@ title="Fullscreen mode"
 
       <ul>
         <li><a href="api/robomimic.utils.html#module-robomimic.utils.loss_utils">module</a>
-</li>
-      </ul></li>
-      <li>
-    robomimic.utils.macros
-
-      <ul>
-        <li><a href="api/robomimic.utils.html#module-robomimic.utils.macros">module</a>
 </li>
       </ul></li>
       <li>
@@ -2016,9 +2197,11 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.train_utils.save_model">save_model() (in module robomimic.utils.train_utils)</a>
 </li>
-      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ScanCore">ScanCore (class in robomimic.models.base_nets)</a>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_core.ScanCore">ScanCore (class in robomimic.models.obs_core)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.obs_utils.ScanModality">ScanModality (class in robomimic.utils.obs_utils)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.transformers.SelfAttentionBlock">SelfAttentionBlock (class in robomimic.models.transformers)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.dataset.SequenceDataset">SequenceDataset (class in robomimic.utils.dataset)</a>
 </li>
@@ -2113,6 +2296,8 @@ title="Fullscreen mode"
       <ul>
         <li><a href="api/robomimic.envs.html#robomimic.envs.env_robosuite.EnvRobosuite.step">(robomimic.envs.env_robosuite.EnvRobosuite method)</a>
 </li>
+        <li><a href="api/robomimic.envs.html#robomimic.envs.wrappers.FrameStackWrapper.step">(robomimic.envs.wrappers.FrameStackWrapper method)</a>
+</li>
       </ul></li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CoordConv2d.stride">stride (robomimic.models.base_nets.CoordConv2d attribute)</a>
 </li>
@@ -2164,9 +2349,13 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.to_uint8">to_uint8() (in module robomimic.utils.tensor_utils)</a>
 </li>
+      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Sequential.train">train() (robomimic.models.base_nets.Sequential method)</a>
+</li>
       <li><a href="api/robomimic.config.html#robomimic.config.base_config.BaseConfig.train_config">train_config() (robomimic.config.base_config.BaseConfig method)</a>
 
       <ul>
+        <li><a href="api/robomimic.config.html#robomimic.config.bc_config.BCConfig.train_config">(robomimic.config.bc_config.BCConfig method)</a>
+</li>
         <li><a href="api/robomimic.config.html#robomimic.config.cql_config.CQLConfig.train_config">(robomimic.config.cql_config.CQLConfig method)</a>
 </li>
         <li><a href="api/robomimic.config.html#robomimic.config.hbc_config.HBCConfig.train_config">(robomimic.config.hbc_config.HBCConfig method)</a>
@@ -2193,6 +2382,8 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.hbc.HBC.train_on_batch">(robomimic.algo.hbc.HBC method)</a>
 </li>
+        <li><a href="api/robomimic.algo.html#robomimic.algo.iql.IQL.train_on_batch">(robomimic.algo.iql.IQL method)</a>
+</li>
         <li><a href="api/robomimic.algo.html#robomimic.algo.td3_bc.TD3_BC.train_on_batch">(robomimic.algo.td3_bc.TD3_BC method)</a>
 </li>
       </ul></li>
@@ -2201,25 +2392,21 @@ title="Fullscreen mode"
       <ul>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ConvBase.training">(robomimic.models.base_nets.ConvBase attribute)</a>
 </li>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CropRandomizer.training">(robomimic.models.base_nets.CropRandomizer attribute)</a>
-</li>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.EncoderCore.training">(robomimic.models.base_nets.EncoderCore attribute)</a>
-</li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.FeatureAggregator.training">(robomimic.models.base_nets.FeatureAggregator attribute)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.MLP.training">(robomimic.models.base_nets.MLP attribute)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Module.training">(robomimic.models.base_nets.Module attribute)</a>
 </li>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.MVPConv.training">(robomimic.models.base_nets.MVPConv attribute)</a>
+</li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Parameter.training">(robomimic.models.base_nets.Parameter attribute)</a>
 </li>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Randomizer.training">(robomimic.models.base_nets.Randomizer attribute)</a>
+        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.R3MConv.training">(robomimic.models.base_nets.R3MConv attribute)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ResNet18Conv.training">(robomimic.models.base_nets.ResNet18Conv attribute)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.RNN_Base.training">(robomimic.models.base_nets.RNN_Base attribute)</a>
-</li>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.ScanCore.training">(robomimic.models.base_nets.ScanCore attribute)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Sequential.training">(robomimic.models.base_nets.Sequential attribute)</a>
 </li>
@@ -2233,9 +2420,23 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Unsqueeze.training">(robomimic.models.base_nets.Unsqueeze attribute)</a>
 </li>
-        <li><a href="api/robomimic.models.html#robomimic.models.base_nets.VisualCore.training">(robomimic.models.base_nets.VisualCore attribute)</a>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.ColorRandomizer.training">(robomimic.models.obs_core.ColorRandomizer attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.CropRandomizer.training">(robomimic.models.obs_core.CropRandomizer attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.EncoderCore.training">(robomimic.models.obs_core.EncoderCore attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.GaussianNoiseRandomizer.training">(robomimic.models.obs_core.GaussianNoiseRandomizer attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.Randomizer.training">(robomimic.models.obs_core.Randomizer attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.ScanCore.training">(robomimic.models.obs_core.ScanCore attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_core.VisualCore.training">(robomimic.models.obs_core.VisualCore attribute)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.MIMO_MLP.training">(robomimic.models.obs_nets.MIMO_MLP attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.MIMO_Transformer.training">(robomimic.models.obs_nets.MIMO_Transformer attribute)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.obs_nets.ObservationDecoder.training">(robomimic.models.obs_nets.ObservationDecoder attribute)</a>
 </li>
@@ -2257,7 +2458,21 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.RNNGMMActorNetwork.training">(robomimic.models.policy_nets.RNNGMMActorNetwork attribute)</a>
 </li>
+        <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.TransformerActorNetwork.training">(robomimic.models.policy_nets.TransformerActorNetwork attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.TransformerGMMActorNetwork.training">(robomimic.models.policy_nets.TransformerGMMActorNetwork attribute)</a>
+</li>
         <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.VAEActor.training">(robomimic.models.policy_nets.VAEActor attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.transformers.CausalSelfAttention.training">(robomimic.models.transformers.CausalSelfAttention attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.transformers.GEGLU.training">(robomimic.models.transformers.GEGLU attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.transformers.GPT_Backbone.training">(robomimic.models.transformers.GPT_Backbone attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.transformers.PositionalEncoding.training">(robomimic.models.transformers.PositionalEncoding attribute)</a>
+</li>
+        <li><a href="api/robomimic.models.html#robomimic.models.transformers.SelfAttentionBlock.training">(robomimic.models.transformers.SelfAttentionBlock attribute)</a>
 </li>
         <li><a href="api/robomimic.models.html#robomimic.models.vae_nets.CategoricalPrior.training">(robomimic.models.vae_nets.CategoricalPrior attribute)</a>
 </li>
@@ -2276,6 +2491,12 @@ title="Fullscreen mode"
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.transformer_args_from_config">transformer_args_from_config() (in module robomimic.models.base_nets)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.TransformerActorNetwork">TransformerActorNetwork (class in robomimic.models.policy_nets)</a>
+</li>
+      <li><a href="api/robomimic.models.html#robomimic.models.policy_nets.TransformerGMMActorNetwork">TransformerGMMActorNetwork (class in robomimic.models.policy_nets)</a>
+</li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.CoordConv2d.transposed">transposed (robomimic.models.base_nets.CoordConv2d attribute)</a>
 </li>
       <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvBase.type">type (robomimic.envs.env_base.EnvBase property)</a>
@@ -2290,6 +2511,8 @@ title="Fullscreen mode"
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robomimic.envs.html#robomimic.envs.wrappers.FrameStackWrapper.uncache_obs_history">uncache_obs_history() (robomimic.envs.wrappers.FrameStackWrapper method)</a>
+</li>
       <li><a href="api/robomimic.config.html#robomimic.config.config.Config.unlock">unlock() (robomimic.config.config.Config method)</a>
 </li>
       <li><a href="api/robomimic.config.html#robomimic.config.config.Config.unlock_keys">unlock_keys() (robomimic.config.config.Config method)</a>
@@ -2308,15 +2531,19 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.base_nets.Unsqueeze">Unsqueeze (class in robomimic.models.base_nets)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.unsqueeze">unsqueeze() (in module robomimic.utils.tensor_utils)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.utils.html#robomimic.utils.tensor_utils.unsqueeze_expand_at">unsqueeze_expand_at() (in module robomimic.utils.tensor_utils)</a>
+</li>
+      <li><a href="api/robomimic.envs.html#robomimic.envs.wrappers.EnvWrapper.unwrapped">unwrapped (robomimic.envs.wrappers.EnvWrapper property)</a>
 </li>
       <li><a href="api/robomimic.config.html#robomimic.config.config.Config.update">update() (robomimic.config.config.Config method)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.file_utils.update_config">update_config() (in module robomimic.utils.file_utils)</a>
+</li>
+      <li><a href="api/robomimic.envs.html#robomimic.envs.wrappers.FrameStackWrapper.update_obs">update_obs() (robomimic.envs.wrappers.FrameStackWrapper method)</a>
 </li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.file_utils.DownloadProgressBar.update_to">update_to() (robomimic.utils.file_utils.DownloadProgressBar method)</a>
 </li>
@@ -2346,17 +2573,25 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.value_nets.ValueNetwork">ValueNetwork (class in robomimic.models.value_nets)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.algo.html#robomimic.algo.gl.ValuePlanner">ValuePlanner (class in robomimic.algo.gl)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robomimic.models.html#robomimic.models.distributions.DiscreteValueDistribution.values">values (robomimic.models.distributions.DiscreteValueDistribution property)</a>
 </li>
       <li><a href="api/robomimic.config.html#robomimic.config.config.Config.values_unlocked">values_unlocked() (robomimic.config.config.Config method)</a>
 </li>
       <li><a href="api/robomimic.models.html#robomimic.models.distributions.DiscreteValueDistribution.variance">variance() (robomimic.models.distributions.DiscreteValueDistribution method)</a>
 </li>
-      <li><a href="api/robomimic.models.html#robomimic.models.base_nets.VisualCore">VisualCore (class in robomimic.models.base_nets)</a>
+      <li><a href="api/robomimic.envs.html#robomimic.envs.env_base.EnvBase.version">version (robomimic.envs.env_base.EnvBase property)</a>
+
+      <ul>
+        <li><a href="api/robomimic.envs.html#robomimic.envs.env_robosuite.EnvRobosuite.version">(robomimic.envs.env_robosuite.EnvRobosuite property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/robomimic.models.html#robomimic.models.obs_core.VisualCore">VisualCore (class in robomimic.models.obs_core)</a>
+</li>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.vis_utils.visualize_image_randomizer">visualize_image_randomizer() (in module robomimic.utils.vis_utils)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -2368,6 +2603,8 @@ title="Fullscreen mode"
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robomimic.utils.html#robomimic.utils.env_utils.wrap_env_from_config">wrap_env_from_config() (in module robomimic.utils.env_utils)</a>
+</li>
       <li><a href="api/robomimic.utils.html#robomimic.utils.log_utils.PrintLogger.write">write() (robomimic.utils.log_utils.PrintLogger method)</a>
 </li>
   </ul></td>
@@ -2389,9 +2626,9 @@ title="Fullscreen mode"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

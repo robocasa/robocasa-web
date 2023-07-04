@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>robomimic.config package &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>robomimic.config package &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -494,6 +517,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robomimic.config.iql_config">
+   robomimic.config.iql_config module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic.config.iris_config">
    robomimic.config.iris_config module
   </a>
@@ -568,6 +596,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robomimic.config.iql_config">
+   robomimic.config.iql_config module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic.config.iris_config">
    robomimic.config.iris_config module
   </a>
@@ -592,12 +625,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="robomimic-config-package">
+  <section id="robomimic-config-package">
 <h1>robomimic.config package<a class="headerlink" href="#robomimic-config-package" title="Permalink to this headline">#</a></h1>
-<div class="section" id="submodules">
+<section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
-</div>
-<div class="section" id="module-robomimic.config.base_config">
+</section>
+<section id="module-robomimic.config.base_config">
 <span id="robomimic-config-base-config-module"></span><h2>robomimic.config.base_config module<a class="headerlink" href="#module-robomimic.config.base_config" title="Permalink to this headline">#</a></h2>
 <p>The base config class that is used for all algorithm configs in this repository.
 Subclasses get registered into a global dictionary, making it easy to instantiate
@@ -671,6 +704,16 @@ implementation that usually doesn’t need to be overriden.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="robomimic.config.base_config.BaseConfig.meta_config">
+<span class="sig-name descname"><span class="pre">meta_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.base_config.BaseConfig.meta_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.meta</cite> attribute of the config. This portion of the config
+is used to specify job information primarily for hyperparameter sweeps.
+It contains hyperparameter keys and values, which are populated automatically
+by the hyperparameter config generator (see <cite>utils/hyperparam_utils.py</cite>).
+These values are read by the wandb logger (see <cite>utils/log_utils.py</cite>) to set job tags.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="robomimic.config.base_config.BaseConfig.observation_config">
 <span class="sig-name descname"><span class="pre">observation_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.base_config.BaseConfig.observation_config" title="Permalink to this definition">#</a></dt>
 <dd><p>This function populates the <cite>config.observation</cite> attribute of the config, and is given
@@ -720,8 +763,8 @@ a dictionary to instantiate the config from the dictionary.</p>
 <dd><p>Give access to dictionary of all registered configs for external use.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.config.bc_config">
+</section>
+<section id="module-robomimic.config.bc_config">
 <span id="robomimic-config-bc-config-module"></span><h2>robomimic.config.bc_config module<a class="headerlink" href="#module-robomimic.config.bc_config" title="Permalink to this headline">#</a></h2>
 <p>Config for BC algorithm.</p>
 <dl class="py class">
@@ -742,10 +785,16 @@ argument to the constructor. Any parameter that an algorithm needs to determine 
 training and test-time behavior should be populated here.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.config.bc_config.BCConfig.train_config">
+<span class="sig-name descname"><span class="pre">train_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.bc_config.BCConfig.train_config" title="Permalink to this definition">#</a></dt>
+<dd><p>BC algorithms don’t need “next_obs” from hdf5 - so save on storage and compute by disabling it.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.config.bcq_config">
+</dd></dl>
+
+</section>
+<section id="module-robomimic.config.bcq_config">
 <span id="robomimic-config-bcq-config-module"></span><h2>robomimic.config.bcq_config module<a class="headerlink" href="#module-robomimic.config.bcq_config" title="Permalink to this headline">#</a></h2>
 <p>Config for BCQ algorithm.</p>
 <dl class="py class">
@@ -768,8 +817,8 @@ training and test-time behavior should be populated here.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.config.config">
+</section>
+<section id="module-robomimic.config.config">
 <span id="robomimic-config-config-module"></span><h2>robomimic.config.config module<a class="headerlink" href="#module-robomimic.config.config" title="Permalink to this headline">#</a></h2>
 <p>Basic config class - provides a convenient way to work with nested
 dictionaries (by exposing keys as attributes) and to save / load from jsons.</p>
@@ -899,8 +948,8 @@ leaving the scope, the initial level of locking is restored.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.config.cql_config">
+</section>
+<section id="module-robomimic.config.cql_config">
 <span id="robomimic-config-cql-config-module"></span><h2>robomimic.config.cql_config module<a class="headerlink" href="#module-robomimic.config.cql_config" title="Permalink to this headline">#</a></h2>
 <p>Config for CQL algorithm.</p>
 <dl class="py class">
@@ -929,8 +978,8 @@ training and test-time behavior should be populated here.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.config.gl_config">
+</section>
+<section id="module-robomimic.config.gl_config">
 <span id="robomimic-config-gl-config-module"></span><h2>robomimic.config.gl_config module<a class="headerlink" href="#module-robomimic.config.gl_config" title="Permalink to this headline">#</a></h2>
 <p>Config for Goal Learning (sub-algorithm used by hierarchical models like HBC and IRIS).
 This class of model predicts (or samples) subgoal observations given a current observation.</p>
@@ -966,8 +1015,8 @@ training and test-time behavior should be populated here.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.config.hbc_config">
+</section>
+<section id="module-robomimic.config.hbc_config">
 <span id="robomimic-config-hbc-config-module"></span><h2>robomimic.config.hbc_config module<a class="headerlink" href="#module-robomimic.config.hbc_config" title="Permalink to this headline">#</a></h2>
 <p>Config for HBC algorithm.</p>
 <dl class="py class">
@@ -1014,8 +1063,32 @@ training and test-time behavior should be populated here.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.config.iris_config">
+</section>
+<section id="module-robomimic.config.iql_config">
+<span id="robomimic-config-iql-config-module"></span><h2>robomimic.config.iql_config module<a class="headerlink" href="#module-robomimic.config.iql_config" title="Permalink to this headline">#</a></h2>
+<p>Config for IQL algorithm.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.config.iql_config.IQLConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.config.iql_config.</span></span><span class="sig-name descname"><span class="pre">IQLConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.iql_config.IQLConfig" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.config.base_config.BaseConfig" title="robomimic.config.base_config.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.config.base_config.BaseConfig</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.config.iql_config.IQLConfig.ALGO_NAME">
+<span class="sig-name descname"><span class="pre">ALGO_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'iql'</span></em><a class="headerlink" href="#robomimic.config.iql_config.IQLConfig.ALGO_NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.config.iql_config.IQLConfig.algo_config">
+<span class="sig-name descname"><span class="pre">algo_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.config.iql_config.IQLConfig.algo_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.algo</cite> attribute of the config, and is given to the
+<cite>Algo</cite> subclass (see <cite>algo/algo.py</cite>) for each algorithm through the <cite>algo_config</cite>
+argument to the constructor. Any parameter that an algorithm needs to determine its
+training and test-time behavior should be populated here.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robomimic.config.iris_config">
 <span id="robomimic-config-iris-config-module"></span><h2>robomimic.config.iris_config module<a class="headerlink" href="#module-robomimic.config.iris_config" title="Permalink to this headline">#</a></h2>
 <p>Config for IRIS algorithm.</p>
 <dl class="py class">
@@ -1056,8 +1129,8 @@ training and test-time behavior should be populated here.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.config.td3_bc_config">
+</section>
+<section id="module-robomimic.config.td3_bc_config">
 <span id="robomimic-config-td3-bc-config-module"></span><h2>robomimic.config.td3_bc_config module<a class="headerlink" href="#module-robomimic.config.td3_bc_config" title="Permalink to this headline">#</a></h2>
 <p>Config for TD3_BC.</p>
 <dl class="py class">
@@ -1098,11 +1171,11 @@ training and test-time behavior should be populated here.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.config">
+</section>
+<section id="module-robomimic.config">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robomimic.config" title="Permalink to this headline">#</a></h2>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -1133,9 +1206,9 @@ training and test-time behavior should be populated here.</p>
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

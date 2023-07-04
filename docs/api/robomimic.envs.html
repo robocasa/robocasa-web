@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>robomimic.envs package &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>robomimic.envs package &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -479,6 +502,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robomimic.envs.wrappers">
+   robomimic.envs.wrappers module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic.envs">
    Module contents
   </a>
@@ -528,6 +556,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robomimic.envs.wrappers">
+   robomimic.envs.wrappers module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic.envs">
    Module contents
   </a>
@@ -542,12 +575,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="robomimic-envs-package">
+  <section id="robomimic-envs-package">
 <h1>robomimic.envs package<a class="headerlink" href="#robomimic-envs-package" title="Permalink to this headline">#</a></h1>
-<div class="section" id="submodules">
+<section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
-</div>
-<div class="section" id="module-robomimic.envs.env_base">
+</section>
+<section id="module-robomimic.envs.env_base">
 <span id="robomimic-envs-env-base-module"></span><h2>robomimic.envs.env_base module<a class="headerlink" href="#module-robomimic.envs.env_base" title="Permalink to this headline">#</a></h2>
 <p>This file contains the base class for environment wrappers that are used
 to provide a standardized environment API for training policies and interacting
@@ -714,6 +747,13 @@ info (dict): extra information</p>
 This helps identify this env class.</p>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="robomimic.envs.env_base.EnvBase.version">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#robomimic.envs.env_base.EnvBase.version" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns version of environment (str).
+This is not an abstract method, some subclasses do not implement it</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -739,14 +779,14 @@ These act as identifiers for different environments.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="robomimic-envs-env-gym-module">
+</section>
+<section id="robomimic-envs-env-gym-module">
 <h2>robomimic.envs.env_gym module<a class="headerlink" href="#robomimic-envs-env-gym-module" title="Permalink to this headline">#</a></h2>
-</div>
-<div class="section" id="robomimic-envs-env-ig-momart-module">
+</section>
+<section id="robomimic-envs-env-ig-momart-module">
 <h2>robomimic.envs.env_ig_momart module<a class="headerlink" href="#robomimic-envs-env-ig-momart-module" title="Permalink to this headline">#</a></h2>
-</div>
-<div class="section" id="module-robomimic.envs.env_robosuite">
+</section>
+<section id="module-robomimic.envs.env_robosuite">
 <span id="robomimic-envs-env-robosuite-module"></span><h2>robomimic.envs.env_robosuite module<a class="headerlink" href="#module-robomimic.envs.env_robosuite" title="Permalink to this headline">#</a></h2>
 <p>This file contains the robosuite environment wrapper that is used
 to provide a standardized environment API for training policies and interacting
@@ -933,13 +973,139 @@ info (dict): extra information</p>
 This helps identify this env class.</p>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="robomimic.envs.env_robosuite.EnvRobosuite.version">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.version" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns version of robosuite used for this environment, eg. 1.2.0</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.envs">
+</dd></dl>
+
+</section>
+<section id="module-robomimic.envs.wrappers">
+<span id="robomimic-envs-wrappers-module"></span><h2>robomimic.envs.wrappers module<a class="headerlink" href="#module-robomimic.envs.wrappers" title="Permalink to this headline">#</a></h2>
+<p>A collection of useful environment wrappers.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.envs.wrappers.EnvWrapper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.envs.wrappers.</span></span><span class="sig-name descname"><span class="pre">EnvWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.wrappers.EnvWrapper" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for all environment wrappers in robomimic.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.envs.wrappers.EnvWrapper.class_name">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">class_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.wrappers.EnvWrapper.class_name" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robomimic.envs.wrappers.EnvWrapper.unwrapped">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unwrapped</span></span><a class="headerlink" href="#robomimic.envs.wrappers.EnvWrapper.unwrapped" title="Permalink to this definition">#</a></dt>
+<dd><p>Grabs unwrapped environment</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Unwrapped environment</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>env (EnvBase instance)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.envs.wrappers.FrameStackWrapper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.envs.wrappers.</span></span><span class="sig-name descname"><span class="pre">FrameStackWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_frames</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.wrappers.FrameStackWrapper" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.envs.wrappers.EnvWrapper" title="robomimic.envs.wrappers.EnvWrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.envs.wrappers.EnvWrapper</span></code></a></p>
+<p>Wrapper for frame stacking observations during rollouts. The agent
+receives a sequence of past observations instead of a single observation
+when it calls &#64;env.reset, &#64;env.reset_to, or &#64;env.step in the rollout loop.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.envs.wrappers.FrameStackWrapper.cache_obs_history">
+<span class="sig-name descname"><span class="pre">cache_obs_history</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.wrappers.FrameStackWrapper.cache_obs_history" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.envs.wrappers.FrameStackWrapper.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.wrappers.FrameStackWrapper.reset" title="Permalink to this definition">#</a></dt>
+<dd><p>Modify to return frame stacked observation which is &#64;self.num_frames copies of
+the initial observation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>each observation key in original observation now has</dt><dd><p>leading shape &#64;self.num_frames and consists of the previous &#64;self.num_frames
+observations</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>obs_stacked (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.envs.wrappers.FrameStackWrapper.reset_to">
+<span class="sig-name descname"><span class="pre">reset_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.wrappers.FrameStackWrapper.reset_to" title="Permalink to this definition">#</a></dt>
+<dd><p>Modify to return frame stacked observation which is &#64;self.num_frames copies of
+the initial observation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>each observation key in original observation now has</dt><dd><p>leading shape &#64;self.num_frames and consists of the previous &#64;self.num_frames
+observations</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>obs_stacked (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.envs.wrappers.FrameStackWrapper.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.wrappers.FrameStackWrapper.step" title="Permalink to this definition">#</a></dt>
+<dd><p>Modify to update the internal frame history and return frame stacked observation,
+which will have leading dimension &#64;self.num_frames for each key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>np.array</em>) – action to take</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>each observation key in original observation now has</dt><dd><p>leading shape &#64;self.num_frames and consists of the previous &#64;self.num_frames
+observations</p>
+</dd>
+</dl>
+<p>reward (float): reward for this step
+done (bool): whether the task is done
+info (dict): extra information</p>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>obs_stacked (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.envs.wrappers.FrameStackWrapper.uncache_obs_history">
+<span class="sig-name descname"><span class="pre">uncache_obs_history</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.wrappers.FrameStackWrapper.uncache_obs_history" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.envs.wrappers.FrameStackWrapper.update_obs">
+<span class="sig-name descname"><span class="pre">update_obs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.wrappers.FrameStackWrapper.update_obs" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robomimic.envs">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robomimic.envs" title="Permalink to this headline">#</a></h2>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -970,9 +1136,9 @@ This helps identify this env class.</p>
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

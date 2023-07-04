@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Configuring and Launching Training Runs &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Configuring and Launching Training Runs &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -512,24 +535,24 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="configuring-and-launching-training-runs">
+  <section id="configuring-and-launching-training-runs">
 <h1>Configuring and Launching Training Runs<a class="headerlink" href="#configuring-and-launching-training-runs" title="Permalink to this headline">#</a></h1>
 <p>Robomimic uses a centralized <a class="reference external" href="../modules/configs.html">configuration system</a> to specify (hyper)parameters at all levels. Below we walk through two ways to configure and launching training runs.</p>
-<div class="section" id="best-practices">
+<section id="best-practices">
 <h2>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning! Do not modify default configs!</p><p>Do not directly modify the default configs such as <code class="docutils literal notranslate"><span class="pre">config/bc_config.py</span></code>, especially if using the codebase with version control (e.g. git). Modifying these files modifies the default settings, and it’s easy to forget that these changes were made, or unintentionally commit these changes so that they become the new defaults.</p>
 </div><p>Please see the <a class="reference external" href="../modules/configs.html">Config documentation</a> for more information on Config objects, and the <a class="reference external" href="../tutorials/hyperparam_scan.html">hyperparameter scan tutorial</a> for configuring hyperparameter sweeps.</p>
-</div>
-<div class="section" id="using-a-config-json-preferred">
+</section>
+<section id="using-a-config-json-preferred">
 <h2>1. Using a config json (preferred)<a class="headerlink" href="#using-a-config-json-preferred" title="Permalink to this headline">#</a></h2>
 <p>The preferred way to specify training parameters is to pass a config json to the main training script <code class="docutils literal notranslate"><span class="pre">train.py</span></code> via the <code class="docutils literal notranslate"><span class="pre">--config</span></code> argument. The dataset can be specified by setting the <code class="docutils literal notranslate"><span class="pre">data</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">train</span></code> section of the config json, or specified via the <code class="docutils literal notranslate"><span class="pre">--dataset</span></code> argument. The example below runs a default template json for the BC algorithm. <strong>This is the preferred way to launch training runs.</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python train.py --config ../exps/templates/bc.json --dataset ../../tests/assets/test.hdf5
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python train.py --config ../exps/templates/bc.json --dataset ../../tests/assets/test_v141.hdf5
 </pre></div>
 </div>
-<p>Please see the <a class="reference external" href="./advanced.html#using-the-hyperparameter-helper-to-launch-runs">hyperparameter helper docs</a> to see how to easily generate json configs for launching training runs.</p>
-</div>
-<div class="section" id="constructing-a-config-object-in-code">
+<p>Please see the <a class="reference external" href="../tutorials/hyperparam_scan.html">hyperparameter helper tutorial</a> to see how to easily generate json configs for launching training runs.</p>
+</section>
+<section id="constructing-a-config-object-in-code">
 <h2>2. Constructing a config object in code<a class="headerlink" href="#constructing-a-config-object-in-code" title="Permalink to this headline">#</a></h2>
 <p>Another way to launch a training run is to make a default config (with a line like <code class="docutils literal notranslate"><span class="pre">config</span> <span class="pre">=</span> <span class="pre">config_factory(algo_name=&quot;bc&quot;)</span></code>), modify the config in python code, and then call the train function, like in the <code class="docutils literal notranslate"><span class="pre">examples/train_bc_rnn.py</span></code> script.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">robomimic</span>
@@ -555,8 +578,8 @@ title="Print to PDF"
 <span class="n">train</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -587,9 +610,9 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Models &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Models &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -718,12 +741,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="models">
+  <section id="models">
 <h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">#</a></h1>
 <p align="center">
   <img width="100.0%" src="../images/modules.png">
  </p><p><strong>robomimic</strong> implements a suite of reusable network modules at different abstraction levels that make creating new policy models easy.</p>
-<div class="section" id="base-modules">
+<section id="base-modules">
 <h2>Base Modules<a class="headerlink" href="#base-modules" title="Permalink to this headline">#</a></h2>
 <p>To support automated shape resolution when dealing with multiple modalities, all basic modules such as MLP and ConvNets defined in <code class="docutils literal notranslate"><span class="pre">robomimic.models.base_nets</span></code> are a subclass of <code class="docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code>, which requires implementing the abstract method <code class="docutils literal notranslate"><span class="pre">output_shape(self,</span> <span class="pre">input_shape=None)</span></code>. The function resolves the output shape (excluding the batch dimension) of the module either based on an external <code class="docutils literal notranslate"><span class="pre">input_shape</span></code> or internal instance variables. To implement new base modules, simply inherit <code class="docutils literal notranslate"><span class="pre">robomimic.models.Module</span></code> or <code class="docutils literal notranslate"><span class="pre">robomimic.models.ConvBase</span></code> (if adding a ConvNet) and implement the abstract functions. Below is a sample implementation of a ResNet-18 base module.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robomimic.models.base_nets</span> <span class="kn">import</span> <span class="n">ConvBase</span>
@@ -750,8 +773,8 @@ title="Print to PDF"
       <span class="k">return</span> <span class="p">[</span><span class="mi">512</span><span class="p">,</span> <span class="n">out_h</span><span class="p">,</span> <span class="n">out_w</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="encodercore">
+</section>
+<section id="encodercore">
 <h2>EncoderCore<a class="headerlink" href="#encodercore" title="Permalink to this headline">#</a></h2>
 <p>We create the <code class="docutils literal notranslate"><span class="pre">EncoderCore</span></code> abstract class to encapsulate any network intended to encode a specific type of observation modality (e.g.: <code class="docutils literal notranslate"><span class="pre">VisualCore</span></code> for RGB and depth observations, and <code class="docutils literal notranslate"><span class="pre">ScanCore</span></code> for range scanner observations. See below for descriptions of both!). When a new encoder class is subclassed from <code class="docutils literal notranslate"><span class="pre">EncoderCore</span></code>, it will automatically be registered internally in robomimic, allowing the user to directly refer to their custom encoder classes in their config in string form. For example, if the user specifies a custom <code class="docutils literal notranslate"><span class="pre">EncoderCore</span></code>-based class named <code class="docutils literal notranslate"><span class="pre">MyCustomRGBEncoder</span></code> to encode RGB observations, they can directly set this in their config:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">observation</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">rgb</span><span class="o">.</span><span class="n">core_class</span> <span class="o">=</span> <span class="s2">&quot;MyCustomRGBEncoder&quot;</span>
@@ -760,10 +783,11 @@ title="Print to PDF"
 </div>
 <p>Any corresponding keyword arguments that should be passed to the encoder constructor should be specified in <code class="docutils literal notranslate"><span class="pre">core_kwargs</span></code> in the config. For more information on creating your own custom encoder, please see our <a class="reference external" href="../introduction/examples.html#custom-observation-modalities-example">example script</a>.</p>
 <p>Below, we provide descriptions of specific EncoderCore-based classes used to encode RGB and depth observations (<code class="docutils literal notranslate"><span class="pre">VisualCore</span></code>) and range scanner observations (<code class="docutils literal notranslate"><span class="pre">ScanCore</span></code>).</p>
-<div class="section" id="visualcore">
+<section id="visualcore">
 <h3>VisualCore<a class="headerlink" href="#visualcore" title="Permalink to this headline">#</a></h3>
 <p>We provide a <code class="docutils literal notranslate"><span class="pre">VisualCore</span></code> module for constructing custom vision architectures. A <code class="docutils literal notranslate"><span class="pre">VisualCore</span></code> consists of a backbone network that featurizes image input — typically a <code class="docutils literal notranslate"><span class="pre">ConvBase</span></code> module — and a pooling module that reduces the feature tensor into a fixed-sized vector representation.  Below is a <code class="docutils literal notranslate"><span class="pre">VisualCore</span></code> built from a <code class="docutils literal notranslate"><span class="pre">ResNet18Conv</span></code> backbone and a <code class="docutils literal notranslate"><span class="pre">SpatialSoftmax</span></code> (<a class="reference external" href="https://rll.berkeley.edu/dsae/dsae.pdf">paper</a>) pooling module.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robomimic.models.base_nets</span> <span class="kn">import</span> <span class="n">VisualCore</span><span class="p">,</span> <span class="n">ResNet18Conv</span><span class="p">,</span> <span class="n">SpatialSoftmax</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robomimic.models.obs_core</span> <span class="kn">import</span> <span class="n">VisualCore</span>
+<span class="kn">from</span> <span class="nn">robomimic.models.base_nets</span> <span class="kn">import</span> <span class="n">ResNet18Conv</span><span class="p">,</span> <span class="n">SpatialSoftmax</span>
 
 <span class="n">vis_net</span> <span class="o">=</span> <span class="n">VisualCore</span><span class="p">(</span>
   <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">),</span>
@@ -777,13 +801,14 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>New vision backbone and pooling classes can be added by subclassing <code class="docutils literal notranslate"><span class="pre">ConvBase</span></code>.</p>
-</div>
-<div class="section" id="scancore">
+</section>
+<section id="scancore">
 <h3>ScanCore<a class="headerlink" href="#scancore" title="Permalink to this headline">#</a></h3>
 <p>We provide a <code class="docutils literal notranslate"><span class="pre">ScanCore</span></code> module for constructing custom range finder architectures. <code class="docutils literal notranslate"><span class="pre">ScanCore</span></code> consists of a 1D Convolution backbone network (<code class="docutils literal notranslate"><span class="pre">Conv1dBase</span></code>) that featurizes a high-dimensional 1D input, and a pooling module that reduces the feature tensor into a fixed-sized vector representation.  Below is an example of a <code class="docutils literal notranslate"><span class="pre">ScanCore</span></code> network with a <code class="docutils literal notranslate"><span class="pre">SpatialSoftmax</span></code> (<a class="reference external" href="https://rll.berkeley.edu/dsae/dsae.pdf">paper</a>) pooling module.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robomimic.models.base_nets</span> <span class="kn">import</span> <span class="n">ScanCore</span><span class="p">,</span> <span class="n">SpatialSoftmax</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robomimic.models.obs_core</span> <span class="kn">import</span> <span class="n">ScanCore</span>
+<span class="kn">from</span> <span class="nn">robomimic.models.base_nets</span> <span class="kn">import</span> <span class="n">SpatialSoftmax</span>
 
-<span class="n">vis_net</span> <span class="o">=</span> <span class="n">VisualCore</span><span class="p">(</span>
+<span class="n">vis_net</span> <span class="o">=</span> <span class="n">ScanCore</span><span class="p">(</span>
   <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span>
   <span class="n">conv_kwargs</span><span class="o">=</span><span class="p">{</span>
       <span class="s2">&quot;out_channels&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">],</span>
@@ -798,17 +823,20 @@ title="Print to PDF"
 <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="randomizers">
+</section>
+</section>
+<section id="randomizers">
 <h2>Randomizers<a class="headerlink" href="#randomizers" title="Permalink to this headline">#</a></h2>
 <p>Randomizers are <code class="docutils literal notranslate"><span class="pre">Modules</span></code> that perturb network inputs during training, and optionally during evaluation. A <code class="docutils literal notranslate"><span class="pre">Randomizer</span></code> implements a <code class="docutils literal notranslate"><span class="pre">forward_in</span></code> and a <code class="docutils literal notranslate"><span class="pre">forward_out</span></code> function, which are intended to process the input and output of a neural network module. As an example, the <code class="docutils literal notranslate"><span class="pre">forward_in</span></code> function of a <code class="docutils literal notranslate"><span class="pre">CropRandomizer</span></code> instance perturbs an input image by taking a random crop of the image (as shown in th gif below). If the <code class="docutils literal notranslate"><span class="pre">CropRandomizer</span></code> is configured to take more than one random crop (<code class="docutils literal notranslate"><span class="pre">n_crops</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>) of each input image, it will send all random crops through the image network and reduce the network output by average pooling the outputs along the <code class="docutils literal notranslate"><span class="pre">n_crops</span></code> dimension in the <code class="docutils literal notranslate"><span class="pre">forward_out</span></code> function.</p>
 <img src="../images/randomizer.gif" alt="Image illustration of a CropRandomizer" style="zoom:50%;" /><p><code class="docutils literal notranslate"><span class="pre">Randomizer</span></code> modules are intended to be used alongside an <code class="docutils literal notranslate"><span class="pre">ObservationEncoder</span></code> — see the next section for more details. Additional randomizer classes can be implemented by subclassing the <code class="docutils literal notranslate"><span class="pre">Randomizer</span></code> class and implementing the necessary abstract functions.</p>
-</div>
-<div class="section" id="observation-encoder-and-decoder">
+<p><strong>Visualizing randomized input:</strong> To visualize the original and randomized image input, set <code class="docutils literal notranslate"><span class="pre">VISUALIZE_RANDOMIZER</span> <span class="pre">=</span> <span class="pre">True</span></code> in <code class="docutils literal notranslate"><span class="pre">robomimic/macros.py</span></code></p>
+</section>
+<section id="observation-encoder-and-decoder">
 <h2>Observation Encoder and Decoder<a class="headerlink" href="#observation-encoder-and-decoder" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">ObservationEncoder</span></code> and <code class="docutils literal notranslate"><span class="pre">ObservationDecoder</span></code> are basic building blocks for dealing with observation dictionary inputs and outputs. They are designed to take in multiple streams of observation modalities as input (e.g. a dictionary containing images and robot proprioception signals), and output a dictionary of predictions like actions and subgoals. Below is an example of how to manually create an <code class="docutils literal notranslate"><span class="pre">ObservationEncoder</span></code> instance by registering observation modalities with the <code class="docutils literal notranslate"><span class="pre">register_obs_key</span></code> function.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robomimic.models.obs_nets</span> <span class="kn">import</span> <span class="n">ObservationEncoder</span><span class="p">,</span> <span class="n">CropRandomizer</span><span class="p">,</span> <span class="n">MLP</span><span class="p">,</span> <span class="n">VisualCore</span><span class="p">,</span> <span class="n">ObservationDecoder</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robomimic.models.base_nets</span> <span class="kn">import</span> <span class="n">MLP</span>
+<span class="kn">from</span> <span class="nn">robomimic.models.obs_core</span> <span class="kn">import</span> <span class="n">VisualCore</span><span class="p">,</span> <span class="n">CropRandomizer</span>
+<span class="kn">from</span> <span class="nn">robomimic.models.obs_nets</span> <span class="kn">import</span> <span class="n">ObservationEncoder</span><span class="p">,</span> <span class="n">ObservationDecoder</span>
 
 <span class="n">obs_encoder</span> <span class="o">=</span> <span class="n">ObservationEncoder</span><span class="p">(</span><span class="n">feature_activation</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">)</span>
 
@@ -859,99 +887,99 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>See <code class="docutils literal notranslate"><span class="pre">examples/simple_obs_nets.py</span></code> for the complete example that shows additional functionalities such as weight sharing among modality networks.</p>
-</div>
-<div class="section" id="multi-input-multi-output-mimo-modules">
+</section>
+<section id="multi-input-multi-output-mimo-modules">
 <h2>Multi-Input, Multi-Output (MIMO) Modules<a class="headerlink" href="#multi-input-multi-output-mimo-modules" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">MIMO_MLP</span></code> and <code class="docutils literal notranslate"><span class="pre">RNN_MIMO_MLP</span></code> are highest-level wrappers that use <code class="docutils literal notranslate"><span class="pre">ObservationGroupEncoder</span></code> and <code class="docutils literal notranslate"><span class="pre">ObservationDecoder</span></code> to create multi-input, multi-output network architectures. <code class="docutils literal notranslate"><span class="pre">MIMO_MLP</span></code> optionally adds additional MLP layers before piping the encoded feature vector to the decoder.</p>
 <p><code class="docutils literal notranslate"><span class="pre">RNN_MIMO_MLP</span></code> encodes each observation in an observation sequence using <code class="docutils literal notranslate"><span class="pre">ObservationGroupEncoder</span></code> and digests the feature sequence using RNN-variants such as LSTM and GRU networks.</p>
 <p><code class="docutils literal notranslate"><span class="pre">MIMO_MLP</span></code> and <code class="docutils literal notranslate"><span class="pre">RNN_MIMO_MLP</span></code> serve as <strong>the backbone for all policy and value network models</strong> – these models simple subclass a <code class="docutils literal notranslate"><span class="pre">MIMO_MLP</span></code> or <code class="docutils literal notranslate"><span class="pre">RNN_MIMO_MLP</span></code>, and adds specific input and output shapes.</p>
-</div>
-<div class="section" id="implemented-policy-networks">
+</section>
+<section id="implemented-policy-networks">
 <h2>Implemented Policy Networks<a class="headerlink" href="#implemented-policy-networks" title="Permalink to this headline">#</a></h2>
 <p>These networks take an observation dictionary as input (and possibly additional conditioning, such as subgoal or goal dictionaries) and produce action predictions, samples, or distributions as outputs. Note that actions are assumed to lie in <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">1]</span></code>, and most networks will have a final <code class="docutils literal notranslate"><span class="pre">tanh</span></code> activation to help ensure that outputs lie within this range. See <code class="docutils literal notranslate"><span class="pre">robomimic/models/policy_nets.py</span></code> for complete implementations.</p>
-<div class="section" id="actornetwork">
+<section id="actornetwork">
 <h3>ActorNetwork<a class="headerlink" href="#actornetwork" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>A basic policy network that predicts actions from observations. Can optionally be goal conditioned on future observations.</p></li>
 </ul>
-</div>
-<div class="section" id="perturbationactornetwork">
+</section>
+<section id="perturbationactornetwork">
 <h3>PerturbationActorNetwork<a class="headerlink" href="#perturbationactornetwork" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>An action perturbation network - primarily used in BCQ. It takes states and actions and returns action perturbations.</p></li>
 </ul>
-</div>
-<div class="section" id="gaussianactornetwork">
+</section>
+<section id="gaussianactornetwork">
 <h3>GaussianActorNetwork<a class="headerlink" href="#gaussianactornetwork" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Variant of actor network that outputs a diagonal unimodal Gaussian distribution as action predictions.</p></li>
 </ul>
-</div>
-<div class="section" id="gmmactornetwork">
+</section>
+<section id="gmmactornetwork">
 <h3>GMMActorNetwork<a class="headerlink" href="#gmmactornetwork" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Variant of actor network that outputs a multimodal Gaussian mixture distribution as action predictions.</p></li>
 </ul>
-</div>
-<div class="section" id="rnnactornetwork">
+</section>
+<section id="rnnactornetwork">
 <h3>RNNActorNetwork<a class="headerlink" href="#rnnactornetwork" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>An RNN policy network that predicts actions from a sequence of observations.</p></li>
 </ul>
-</div>
-<div class="section" id="rnngmmactornetwork">
+</section>
+<section id="rnngmmactornetwork">
 <h3>RNNGMMActorNetwork<a class="headerlink" href="#rnngmmactornetwork" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>An RNN policy network that outputs a multimodal Gaussian mixture distribution over actions from a sequence of observations.</p></li>
 </ul>
-</div>
-<div class="section" id="vaeactor">
+</section>
+<section id="vaeactor">
 <h3>VAEActor<a class="headerlink" href="#vaeactor" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>A VAE that models a distribution of actions conditioned on observations. The VAE prior and decoder are used at test-time as the policy.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="implemented-value-networks">
+</section>
+</section>
+<section id="implemented-value-networks">
 <h2>Implemented Value Networks<a class="headerlink" href="#implemented-value-networks" title="Permalink to this headline">#</a></h2>
 <p>These networks take an observation dictionary as input (and possibly additional conditioning, such as subgoal or goal dictionaries) and produce value or action-value estimates or distributions. See <code class="docutils literal notranslate"><span class="pre">robomimic/models/value_nets.py</span></code> for complete implementations.</p>
-<div class="section" id="valuenetwork">
+<section id="valuenetwork">
 <h3>ValueNetwork<a class="headerlink" href="#valuenetwork" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>A basic value network that predicts values from observations. Can optionally be goal conditioned on future observations.</p></li>
 </ul>
-</div>
-<div class="section" id="distributionalactionvaluenetwork">
+</section>
+<section id="distributionalactionvaluenetwork">
 <h3>DistributionalActionValueNetwork<a class="headerlink" href="#distributionalactionvaluenetwork" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>Distributional Q (action-value) network that outputs a categorical distribution over a discrete grid of value atoms. See the [paper](https://arxiv.org/pdf/1707.06887.pdf for more details).</p></li>
+<li><p>Distributional Q (action-value) network that outputs a categorical distribution over a discrete grid of value atoms. See the <a class="reference external" href="https://arxiv.org/abs/1707.06887">paper</a> for more details.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="implemented-vaes">
+</section>
+</section>
+<section id="implemented-vaes">
 <h2>Implemented VAEs<a class="headerlink" href="#implemented-vaes" title="Permalink to this headline">#</a></h2>
 <p>The library implements a general VAE architecture and a number of prior distributions. See <code class="docutils literal notranslate"><span class="pre">robomimic/models/vae_nets.py</span></code> for complete implementations.</p>
-<div class="section" id="vae">
+<section id="vae">
 <h3>VAE<a class="headerlink" href="#vae" title="Permalink to this headline">#</a></h3>
-<p>A general Variational Autoencoder (VAE) implementation, as described in https://arxiv.org/abs/1312.6114.</p>
+<p>A general Variational Autoencoder (VAE) implementation, as described in this <a class="reference external" href="https://arxiv.org/abs/1312.6114">paper</a>.</p>
 <p>Models a distribution p(X) or a conditional distribution p(X | Y), where each variable can consist of multiple modalities. The target variable X, whose distribution is modeled, is specified through the <code class="docutils literal notranslate"><span class="pre">input_shapes</span></code> argument, which is a map between modalities (strings) and expected shapes. In this way, a variable that consists of multiple kinds of data (e.g. image and flat-dimensional) can be modeled as well. A separate <code class="docutils literal notranslate"><span class="pre">output_shapes</span></code> argument is used to specify the expected reconstructions - this allows for asymmetric reconstruction (for example, reconstructing low-resolution images).</p>
 <p>This implementation supports learning conditional distributions as well (cVAE). The conditioning variable Y is specified through the <code class="docutils literal notranslate"><span class="pre">condition_shapes</span></code> argument, which is also a map between modalities (strings) and expected shapes. In this way, variables with multiple kinds of data (e.g. image and flat-dimensional) can jointly be conditioned on. By default, the decoder takes the conditioning variable Y as input. To force the decoder to reconstruct from just the latent, set <code class="docutils literal notranslate"><span class="pre">decoder_is_conditioned</span></code> to False (in this case, the prior must be conditioned).</p>
 <p>The implementation also supports learning expressive priors instead of using the usual N(0, 1) prior. There are three kinds of priors supported - Gaussian, Gaussian Mixture Model (GMM), and Categorical. For each prior, the parameters can be learned as independent parameters, or be learned as functions of the conditioning variable Y (by setting <code class="docutils literal notranslate"><span class="pre">prior_is_conditioned</span></code>).</p>
-</div>
-<div class="section" id="gaussianprior">
+</section>
+<section id="gaussianprior">
 <h3>GaussianPrior<a class="headerlink" href="#gaussianprior" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>A class that holds functionality for learning both unimodal Gaussian priors and multimodal Gaussian Mixture Model priors for use in VAEs. Supports learnable priors, learnable / fixed mixture weights for GMM, and observation-conditioned priors,</p></li>
 </ul>
-</div>
-<div class="section" id="categoricalprior">
+</section>
+<section id="categoricalprior">
 <h3>CategoricalPrior<a class="headerlink" href="#categoricalprior" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>A class that holds functionality for learning categorical priors for use in VAEs.</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>
@@ -982,9 +1010,9 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

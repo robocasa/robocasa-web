@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contributing Guidelines &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Contributing Guidelines &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -522,7 +545,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="contributing-guidelines">
+  <section id="contributing-guidelines">
 <h1>Contributing Guidelines<a class="headerlink" href="#contributing-guidelines" title="Permalink to this headline">#</a></h1>
 <p>Our team wholeheartedly welcomes the community to contribute to robomimic. Contributions from members of the community will help ensure the long-term success of this project. Before you plan to make contributions, here are important resources to get started with:</p>
 <ul class="simple">
@@ -537,19 +560,19 @@ title="Print to PDF"
 <li><p><strong>New algorithms:</strong> Develop new algorithms or re-implement existing algorithms for learning from robot manipulation datasets.</p></li>
 <li><p><strong>Implement new functionalities:</strong> Implement new features, such as training with new kinds of observations (depth images, lidar, force/torque sensors).</p></li>
 </ul>
-<div class="section" id="testing">
+<section id="testing">
 <h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">#</a></h2>
 <p>Before submitting your contributions, make sure that the changes do not break existing functionalities. We have a handful of tests for verifying the correctness of the code.</p>
 <p>You can run all the tests with the following command in the tests folder of robomimic. Make sure that it does not throw any error before you proceed to the next step. Note that the tests can take a few minutes to run.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ bash test.sh
 </pre></div>
 </div>
-</div>
-<div class="section" id="submission">
+</section>
+<section id="submission">
 <h2>Submission<a class="headerlink" href="#submission" title="Permalink to this headline">#</a></h2>
 <p>Please read the coding conventions below and make sure that your code is consistent with ours. When making a contribution, make a <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/collaborating-with-issues-and-pull-requests/proposing-changes-to-your-work-with-pull-requests">pull request</a> to robomimic with an itemized list of what you have done. When you submit a pull request, it is immensely helpful to include example script(s) that showcase the proposed changes and highlight any new APIs. We always love to see more test coverage. When it is appropriate, add a new test to the tests folder for checking the correctness of your code.</p>
-</div>
-<div class="section" id="coding-conventions">
+</section>
+<section id="coding-conventions">
 <h2>Coding Conventions<a class="headerlink" href="#coding-conventions" title="Permalink to this headline">#</a></h2>
 <p>We value readability and adhere to the following coding conventions:</p>
 <ul class="simple">
@@ -558,19 +581,20 @@ title="Print to PDF"
 <li><p>Use <a class="reference external" href="https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings">Google Python Style</a> for the docstrings</p></li>
 <li><p>For scripts such as in the <code class="docutils literal notranslate"><span class="pre">scripts</span></code> and <code class="docutils literal notranslate"><span class="pre">examples</span></code> folders, include a docstring at the top of the file that describes the high-level purpose of the script and/or instructions on how to use the scripts (if relevant).</p></li>
 </ul>
-</div>
-<div class="section" id="additional-coding-guidelines">
+</section>
+<section id="additional-coding-guidelines">
 <h2>Additional Coding Guidelines<a class="headerlink" href="#additional-coding-guidelines" title="Permalink to this headline">#</a></h2>
 <p>We also list additional suggested contributing guidelines that we adhered to during development.</p>
 <ul class="simple">
 <li><p>When creating new networks (e.g. subclasses of <code class="docutils literal notranslate"><span class="pre">Module</span></code> in <code class="docutils literal notranslate"><span class="pre">models/base_nets.py</span></code>), always put sub-modules into a property called <code class="docutils literal notranslate"><span class="pre">self.nets</span></code>, and if there is more than one sub-module, make it a module collection (such as a <code class="docutils literal notranslate"><span class="pre">torch.nn.ModuleDict</span></code>). This is to ensure that the pattern <code class="docutils literal notranslate"><span class="pre">model.to(device)</span></code> works as expected with multiple levels of nested torch modules. As an example of nesting, see the <code class="docutils literal notranslate"><span class="pre">_create_networks</span></code> function in the <code class="docutils literal notranslate"><span class="pre">VAE</span></code> class (<code class="docutils literal notranslate"><span class="pre">models/vae_nets.py</span></code>) and the <code class="docutils literal notranslate"><span class="pre">MIMO_MLP</span></code> class (<code class="docutils literal notranslate"><span class="pre">models/obs_nets.py</span></code>).</p></li>
 <li><p>Do not use default mutable arguments – they can lead to terrible bugs and unexpected behavior (see <a class="reference external" href="https://florimond.dev/blog/articles/2018/08/python-mutable-defaults-are-the-source-of-all-evil/">this link</a> for more information). For this reason, in functions that expect optional dictionaries and lists (for example, the <code class="docutils literal notranslate"><span class="pre">core_kwargs</span></code> argument in the  <code class="docutils literal notranslate"><span class="pre">obs_encoder_factory</span></code> function, or the <code class="docutils literal notranslate"><span class="pre">layer_dims</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">MLP</span></code> class constructor), we use a default argument of <code class="docutils literal notranslate"><span class="pre">core_kwargs=None</span></code> or an empty tuple (since tuples are immutable) <code class="docutils literal notranslate"><span class="pre">layer_dims=()</span></code>.</p></li>
 <li><p>Prefer <code class="docutils literal notranslate"><span class="pre">torch.expand</span></code> over <code class="docutils literal notranslate"><span class="pre">torch.repeat</span></code> wherever possible, for memory efficiency. See <a class="reference external" href="https://discuss.pytorch.org/t/expand-vs-repeat-semantic-difference/59789">this link</a> for more details.</p></li>
+<li><p>When implementing new configs that specify kwargs that will be unpacked by a downstream python class (for example, the property <code class="docutils literal notranslate"><span class="pre">self.observation.encoder.rgb.core_kwargs</span></code> in the <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code> class, which is fed to the class specified by <code class="docutils literal notranslate"><span class="pre">self.observation.encoder.rgb.core_class</span></code>), the default config class should specify an empty config object (essentially an empty dictionary) for the kwargs. This is to make sure that external config jsons will be able to completely override both the class and the kwargs without worrying about existing default kwargs that could break the initialization of the class. For example, while the default <code class="docutils literal notranslate"><span class="pre">VisualCore</span></code> class takes a kwarg called <code class="docutils literal notranslate"><span class="pre">feature_dimension</span></code>, another class may not take this argument. If this kwarg already existed in the base config, the external json will just add additional kwargs.</p></li>
 </ul>
 <p>We look forward to your contributions. Thanks!</p>
 <p><strong>The robomimic core team</strong></p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -601,9 +625,9 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

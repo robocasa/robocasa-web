@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>robomimic-v0.1 &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>robomimic-v0.1 &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -616,67 +639,67 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="robomimic-v0-1">
+  <section id="robomimic-v0-1">
 <h1>robomimic-v0.1<a class="headerlink" href="#robomimic-v0-1" title="Permalink to this headline">#</a></h1>
 <p>We provide links below to several pretrained models that were trained with robomimic-v0.1 for our CoRL 2021 study. All success rates listed below are approximate - they may vary.</p>
 <div class="admonition note">
 <p class="admonition-title">Note: see tutorial on using these models</p><p>See the <a class="reference external" href="../tutorials/using_pretrained_models.html">“Using Pretrained Models”</a> tutorial for instructions on using these models.</p>
 </div><div class="admonition warning">
-<p class="admonition-title">Warning: use correct robosuite branch!</p><p>When using these trained models, please make sure that robosuite is on the <code class="docutils literal notranslate"><span class="pre">offline_study</span></code> branch of robosuite.</p>
-</div><div class="section" id="proficient-human-ph">
+<p class="admonition-title">Warning: use correct robosuite branch!</p><p>When using these trained models, please make sure that robosuite is on the <code class="docutils literal notranslate"><span class="pre">offline_study</span></code> branch of robosuite. Consult the <a class="reference external" href="https://robomimic.github.io/docs/v0.2/datasets/robomimic_v0.1.html">v0.2 docs</a> for more information.</p>
+</div><section id="proficient-human-ph">
 <h2>Proficient-Human (PH)<a class="headerlink" href="#proficient-human-ph" title="Permalink to this headline">#</a></h2>
-<div class="section" id="lift-ph">
+<section id="lift-ph">
 <h3>Lift (PH)<a class="headerlink" href="#lift-ph" title="Permalink to this headline">#</a></h3>
-<img src="../images/lift.png" alt="proficient_human" style="zoom:33%;" /><div class="section" id="bc-rnn">
+<img src="../images/lift.png" alt="proficient_human" style="zoom:33%;" /><section id="bc-rnn">
 <h4>BC-RNN<a class="headerlink" href="#bc-rnn" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>low-dim agent (success rate ~100%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/lift/bc_rnn/lift_ph_low_dim_epoch_1000_succ_100.pth">download</a>)</p></li>
 <li><p>image agent (success rate ~100%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/lift/bc_rnn/lift_ph_image_epoch_500_succ_100.pth">download</a>)</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="can-ph">
+</section>
+</section>
+<section id="can-ph">
 <h3>Can (PH)<a class="headerlink" href="#can-ph" title="Permalink to this headline">#</a></h3>
-<img src="../images/can.png" alt="proficient_human" style="zoom:33%;" /><div class="section" id="id1">
+<img src="../images/can.png" alt="proficient_human" style="zoom:33%;" /><section id="id1">
 <h4>BC-RNN<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>low-dim agent (success rate ~100%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/can/bc_rnn/can_ph_low_dim_epoch_1150_succ_100.pth">download</a>)</p></li>
 <li><p>image agent (success rate ~100%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/can/bc_rnn/can_ph_image_epoch_300_succ_100.pth">download</a>)</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="square-ph">
+</section>
+</section>
+<section id="square-ph">
 <h3>Square (PH)<a class="headerlink" href="#square-ph" title="Permalink to this headline">#</a></h3>
-<img src="../images/square.png" alt="proficient_human" style="zoom:33%;" /><div class="section" id="id2">
+<img src="../images/square.png" alt="proficient_human" style="zoom:33%;" /><section id="id2">
 <h4>BC-RNN<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>low-dim agent (success rate ~84%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/square/bc_rnn/square_ph_low_dim_epoch_1850_succ_84.pth">download</a>)</p></li>
 <li><p>image agent (success rate ~78%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/square/bc_rnn/square_ph_image_epoch_540_succ_78.pth">download</a>)</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="transport-ph">
+</section>
+</section>
+<section id="transport-ph">
 <h3>Transport (PH)<a class="headerlink" href="#transport-ph" title="Permalink to this headline">#</a></h3>
-<img src="../images/transport.png" alt="proficient_human" style="zoom:33%;" /><div class="section" id="id3">
+<img src="../images/transport.png" alt="proficient_human" style="zoom:33%;" /><section id="id3">
 <h4>BC-RNN<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>low-dim agent (success rate ~78%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/transport/bc_rnn/transport_ph_low_dim_epoch_1000_succ_78.pth">download</a>)</p></li>
 <li><p>image agent (success rate ~70%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/transport/bc_rnn/transport_ph_image_epoch_580_succ_70.pth">download</a>)</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="tool-hang-ph">
+</section>
+</section>
+<section id="tool-hang-ph">
 <h3>Tool Hang (PH)<a class="headerlink" href="#tool-hang-ph" title="Permalink to this headline">#</a></h3>
-<img src="../images/tool_hang.png" alt="proficient_human" style="zoom:33%;" /><div class="section" id="id4">
+<img src="../images/tool_hang.png" alt="proficient_human" style="zoom:33%;" /><section id="id4">
 <h4>BC-RNN<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>low-dim agent (success rate ~14%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/tool_hang/bc_rnn/tool_hang_ph_low_dim_epoch_2000_succ_14.pth">download</a>)</p></li>
 <li><p>image agent (success rate ~ 50-74%) (<a class="reference external" href="http://downloads.cs.stanford.edu/downloads/rt_benchmark/model_zoo/tool_hang/bc_rnn/tool_hang_ph_image_epoch_440_succ_74.pth">download</a>)</p></li>
 </ul>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
               </div>
@@ -707,9 +730,9 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dataset Contents and Visualization &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Dataset Contents and Visualization &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -502,10 +525,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="dataset-contents-and-visualization">
+  <section id="dataset-contents-and-visualization">
 <h1>Dataset Contents and Visualization<a class="headerlink" href="#dataset-contents-and-visualization" title="Permalink to this headline">#</a></h1>
 <p>This tutorial shows how to view contents of robomimic hdf5 datasets.</p>
-<div class="section" id="viewing-hdf5-dataset-structure">
+<section id="viewing-hdf5-dataset-structure">
 <h2>Viewing HDF5 Dataset Structure<a class="headerlink" href="#viewing-hdf5-dataset-structure" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note: HDF5 Dataset Structure.</p><p><a class="reference external" href="../datasets/overview.html#dataset-structure">This link</a> shows the expected structure of each hdf5 dataset.</p>
@@ -516,33 +539,33 @@ title="Print to PDF"
 <li><p>the <a class="reference external" href="../modules/environments.html#initialize-an-environment-from-a-dataset">environment metadata</a> in the dataset, which is used to construct the same simulator environment that the data was collected on</p></li>
 <li><p>the dataset structure for the first demonstration</p></li>
 </ul>
-<p>Pass the <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> argument to print the list of demonstration keys under each filter key, and the dataset structure for all demonstrations. An example, using the small hdf5 dataset packaged with the repository in <code class="docutils literal notranslate"><span class="pre">tests/assets/test.hdf5</span></code> is shown below.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python get_dataset_info.py --dataset ../../tests/assets/test.hdf5
+<p>Pass the <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> argument to print the list of demonstration keys under each filter key, and the dataset structure for all demonstrations. An example, using the small hdf5 dataset packaged with the repository in <code class="docutils literal notranslate"><span class="pre">tests/assets/test_v141.hdf5</span></code> is shown below.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python get_dataset_info.py --dataset ../../tests/assets/test_v141.hdf5
 </pre></div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Jupyter Notebook: A Deep Dive into Dataset Structure</p><p>Any user wishing to write custom code that works with robomimic datasets should also look at the <a class="reference external" href="https://github.com/ARISE-Initiative/robomimic/blob/master/examples/notebooks/datasets.ipynb">jupyter notebook</a> at <code class="docutils literal notranslate"><span class="pre">examples/notebooks/datasets.ipynb</span></code>, which showcases several useful python code snippets for working with robomimic hdf5 datasets.</p>
-</div></div>
-<div class="section" id="visualize-dataset-trajectories">
+</div></section>
+<section id="visualize-dataset-trajectories">
 <h2>Visualize Dataset Trajectories<a class="headerlink" href="#visualize-dataset-trajectories" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
-<p class="admonition-title">Note: These examples are compatible with any robomimic dataset.</p><p>The examples in this section use the small hdf5 dataset packaged with the repository in <code class="docutils literal notranslate"><span class="pre">tests/assets/test.hdf5</span></code>, but you can run these examples with any robomimic hdf5 dataset. If you are using the default dataset, please make sure that robosuite is on the <code class="docutils literal notranslate"><span class="pre">offline_study</span></code> branch of robosuite – this is necessary for the playback scripts to function properly.</p>
+<p class="admonition-title">Note: These examples are compatible with any robomimic dataset.</p><p>The examples in this section use the small hdf5 dataset packaged with the repository in <code class="docutils literal notranslate"><span class="pre">tests/assets/test_v141.hdf5</span></code> (which requires robosuite v1.4.1), but you can run these examples with any robomimic hdf5 dataset.</p>
 </div><p>Use the <code class="docutils literal notranslate"><span class="pre">playback_dataset.py</span></code> script to easily view dataset trajectories.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># For the first 5 trajectories, load environment simulator states one-by-one, and render &quot;agentview&quot; and &quot;robot0_eye_in_hand&quot; cameras to video at /tmp/playback_dataset.mp4</span>
-$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --render_image_names agentview robot0_eye_in_hand --video_path /tmp/playback_dataset.mp4 --n <span class="m">5</span>
+$ python playback_dataset.py --dataset ../../tests/assets/test_v141.hdf5 --render_image_names agentview robot0_eye_in_hand --video_path /tmp/playback_dataset.mp4 --n <span class="m">5</span>
 
 <span class="c1"># Directly visualize the image observations in the dataset. This is especially useful for real robot datasets where there is no simulator to use for rendering.</span>
-$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --use-obs --render_image_names agentview_image --video_path /tmp/obs_trajectory.mp4
+$ python playback_dataset.py --dataset ../../tests/assets/test_v141.hdf5 --use-obs --render_image_names agentview_image --video_path /tmp/obs_trajectory.mp4
 
 <span class="c1"># Play the dataset actions in the environment to verify that the recorded actions are reasonable.</span>
-$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --use-actions --render_image_names agentview --video_path /tmp/playback_dataset_with_actions.mp4
+$ python playback_dataset.py --dataset ../../tests/assets/test_v141.hdf5 --use-actions --render_image_names agentview --video_path /tmp/playback_dataset_with_actions.mp4
 
 <span class="c1"># Visualize only the initial demonstration frames.</span>
-$ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --first --render_image_names agentview --video_path /tmp/dataset_task_inits.mp4
+$ python playback_dataset.py --dataset ../../tests/assets/test_v141.hdf5 --first --render_image_names agentview --video_path /tmp/dataset_task_inits.mp4
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -573,9 +596,9 @@ $ python playback_dataset.py --dataset ../../tests/assets/test.hdf5 --first --re
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Overview &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Overview &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -536,9 +559,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="overview">
+  <section id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
-<div class="section" id="dataset-pipeline">
+<section id="dataset-pipeline">
 <h2>Dataset Pipeline<a class="headerlink" href="#dataset-pipeline" title="Permalink to this headline">#</a></h2>
 <style>
 table{
@@ -555,62 +578,62 @@ margin: auto;
 <thead>
 <tr>
 <th><strong>Dataset</strong></th>
-<th align="center"><center><strong>Task Types</strong></center></th>
-<th align="center"><strong>Downloading</strong></th>
-<th align="center"><strong>Postprocessing</strong></th>
+<th style="text-align: center;"><center><strong>Task Types</strong></center></th>
+<th style="text-align: center;"><strong>Downloading</strong></th>
+<th style="text-align: center;"><strong>Postprocessing</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="robomimic_v0.1.html"><strong>robomimic v0.1</strong></a></td>
-<td align="center">Sim + Real Robot Manipulation</td>
-<td align="center"><a href="robomimic_v0.1.html#downloading">Link</a></td>
-<td align="center"><a href="robomimic_v0.1.html#postprocessing">Link</a></td>
+<td style="text-align: center;">Sim + Real Robot Manipulation</td>
+<td style="text-align: center;"><a href="robomimic_v0.1.html#downloading">Link</a></td>
+<td style="text-align: center;"><a href="robomimic_v0.1.html#postprocessing">Link</a></td>
 </tr>
 <tr>
 <td><a href="d4rl.html"><strong>D4RL</strong></a></td>
-<td align="center">Sim Locomotion</td>
-<td align="center"><a href="d4rl.html#downloading">Link</a></td>
-<td align="center"><a href="d4rl.html#postprocessing">Link</a></td>
+<td style="text-align: center;">Sim Locomotion</td>
+<td style="text-align: center;"><a href="d4rl.html#downloading">Link</a></td>
+<td style="text-align: center;"><a href="d4rl.html#postprocessing">Link</a></td>
 </tr>
 <tr>
 <td><a href="momart.html"><strong>MOMART</strong></a></td>
-<td align="center">Sim Mobile Manipulation</td>
-<td align="center"><a href="momart.html#downloading">Link</a></td>
-<td align="center"><a href="momart.html#postprocessing">Link</a></td>
+<td style="text-align: center;">Sim Mobile Manipulation</td>
+<td style="text-align: center;"><a href="momart.html#downloading">Link</a></td>
+<td style="text-align: center;"><a href="momart.html#postprocessing">Link</a></td>
 </tr>
 <tr>
 <td><a href="roboturk_pilot.html"><strong>RoboTurk Pilot</strong></a></td>
-<td align="center">Sim Robot Manipulation</td>
-<td align="center"><a href="roboturk_pilot.html#downloading">Link</a></td>
-<td align="center"><a href="roboturk_pilot.html#postprocessing">Link</a></td>
+<td style="text-align: center;">Sim Robot Manipulation</td>
+<td style="text-align: center;"><a href="roboturk_pilot.html#downloading">Link</a></td>
+<td style="text-align: center;"><a href="roboturk_pilot.html#postprocessing">Link</a></td>
 </tr>
 </tbody>
 </table><p>After downloading and postprocessing, <strong>(3) Training</strong> with the dataset is straightforward and unified across all datasets:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python train.py --dataset &lt;PATH_TO_POSTPROCESSED_DATASET&gt; --config &lt;PATH_TO_CONFIG&gt;
 </pre></div>
 </div>
-</div>
-<div class="section" id="generating-your-own-dataset">
+</section>
+<section id="generating-your-own-dataset">
 <h2>Generating Your Own Dataset<a class="headerlink" href="#generating-your-own-dataset" title="Permalink to this headline">#</a></h2>
 <p><strong>robomimic</strong> provides tutorials for collecting custom datasets for specific environment platforms. Click on any of the links below for more information for the specific environment setup:</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
 <th><strong>Environment Platform</strong></th>
-<th align="center"><strong>Task Types</strong></th>
+<th style="text-align: center;"><strong>Task Types</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="robosuite.html"><strong>robosuite</strong></a></td>
-<td align="center">Robot Manipulation</td>
+<td style="text-align: center;">Robot Manipulation</td>
 </tr>
 </tbody>
 </table><div class="admonition note">
 <p class="admonition-title">Create Your Own Environment Wrapper!</p><p>If you want to generate your own dataset in a custom environment platform that is not listed above, please see <a class="reference internal" href="../modules/environments.html#implement-an-environment-wrapper"><span class="std std-ref">THIS PAGE</span></a>.</p>
-</div></div>
-<div class="section" id="dataset-structure">
+</div></section>
+<section id="dataset-structure">
 <h2>Dataset Structure<a class="headerlink" href="#dataset-structure" title="Permalink to this headline">#</a></h2>
 <p>All postprocessed <strong>robomimic</strong> compatible datasets share the same data structure. A single dataset is a single HDF5 file with the following structure:</p>
 <details>
@@ -651,14 +674,14 @@ margin: auto;
 </li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">mask</span></code></strong> (group) - this group will exist in hdf5 datasets that contain filter keys</p>
 <ul>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;filter_key_1&gt;</span></code></strong> (dataset) - the first filter key. Note that the name of this dataset and length will vary. As an example, this could be the “valid” filter key, and contain the list [“demo_0”, “demo_19”, “demo_35”], corresponding to 3 validation trajectories.</p>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;filter_key_1&gt;</span></code></strong> (dataset) - the first filter key. Note that the name of this dataset and length will vary. As an example, this could be the “valid” filter key, and contain the list [”demo_0”, “demo_19”, “demo_35”], corresponding to 3 validation trajectories.</p>
 <p>…</p>
 </li>
 </ul>
 </li>
 </ul>
 </p>
-</details><div class="section" id="data-conventions">
+</details><section id="data-conventions">
 <h3>Data Conventions<a class="headerlink" href="#data-conventions" title="Permalink to this headline">#</a></h3>
 <p><strong>robomimic</strong>-compatible datasets expect certain values (such as images and actions) to be formatted a specific way. See the below sections for further details:</p>
 <details>
@@ -679,8 +702,8 @@ margin: auto;
 <p class="admonition-title">Warning!</p><p>Actions should be <strong>normalized between -1 and 1</strong>. This is because this range enables easier policy learning via the use of <code class="docutils literal notranslate"><span class="pre">tanh</span></code> layers).</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">get_dataset_info.py</span></code> script can be used to sanity check stored actions, and will throw an <code class="docutils literal notranslate"><span class="pre">Exception</span></code> if there is a violation.</p>
 </div></p>
-</details></div>
-<div class="section" id="filter-keys">
+</details></section>
+<section id="filter-keys">
 <h3>Filter Keys<a class="headerlink" href="#filter-keys" title="Permalink to this headline">#</a></h3>
 <p>Filter keys enable arbitrary splitting of a dataset into sub-groups, and allow training on a specific subset of the data.</p>
 <p>A common use-case is to split data into train-validation splits. We provide a convenience script for doing this in the <code class="docutils literal notranslate"><span class="pre">robomimic/scripts</span></code> directory:</p>
@@ -694,11 +717,11 @@ margin: auto;
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note!</p><p>You can easily list the filter keys present in a dataset with the <code class="docutils literal notranslate"><span class="pre">get_dataset_info.py</span></code> script (see <a class="reference external" href="../tutorials/dataset_contents.html#view-dataset-structure-and-videos">this link</a>), and you can even pass a <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> flag to list the exact demonstrations that each filter key corresponds to.</p>
-</div><p>Using filter keys during training is easy. To use the generated train-valid split, you can set <code class="docutils literal notranslate"><span class="pre">config.experiment.validate=True</span></code> so that the demos under <code class="docutils literal notranslate"><span class="pre">mask/train</span></code> are used for training, and the demos under <code class="docutils literal notranslate"><span class="pre">mask/valid</span></code> are used for validation.</p>
-<p>You can also use a custom filter key for training by setting <code class="docutils literal notranslate"><span class="pre">config.train.hdf5_filter_key=&lt;FILTER_KEY_NAME&gt;</span></code>. This ensures that only the demos under <code class="docutils literal notranslate"><span class="pre">mask/&lt;FILTER_KEY_NAME&gt;</span></code> are used during training. If you also set <code class="docutils literal notranslate"><span class="pre">config.experiment.validate=True</span></code>, this filter key’s train-valid split will be used.</p>
-</div>
-</div>
-</div>
+</div><p>Using filter keys during training is easy. To use the generated train-valid split, you can set <code class="docutils literal notranslate"><span class="pre">config.experiment.validate=True</span></code> to ensure that validation will run after each training epoch, and then set <code class="docutils literal notranslate"><span class="pre">config.train.hdf5_filter_key=&quot;train&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">config.train.hdf5_validation_filter_key=&quot;valid&quot;</span></code> so that the demos under <code class="docutils literal notranslate"><span class="pre">mask/train</span></code> are used for training, and the demos under <code class="docutils literal notranslate"><span class="pre">mask/valid</span></code> are used for validation.</p>
+<p>You can also use a custom filter key for training by setting <code class="docutils literal notranslate"><span class="pre">config.train.hdf5_filter_key=&lt;FILTER_KEY_NAME&gt;</span></code>. This ensures that only the demos under <code class="docutils literal notranslate"><span class="pre">mask/&lt;FILTER_KEY_NAME&gt;</span></code> are used during training. You can also specify a custom filter key for validation by setting <code class="docutils literal notranslate"><span class="pre">config.train.hdf5_validation_filter_key</span></code>.</p>
+</section>
+</section>
+</section>
 
 
               </div>
@@ -729,9 +752,9 @@ margin: auto;
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

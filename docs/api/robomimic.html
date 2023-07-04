@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>robomimic package &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>robomimic package &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -459,6 +482,16 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robomimic.macros">
+   robomimic.macros module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic">
    Module contents
   </a>
@@ -488,6 +521,16 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robomimic.macros">
+   robomimic.macros module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic">
    Module contents
   </a>
@@ -502,9 +545,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="robomimic-package">
+  <section id="robomimic-package">
 <h1>robomimic package<a class="headerlink" href="#robomimic-package" title="Permalink to this headline">#</a></h1>
-<div class="section" id="subpackages">
+<section id="subpackages">
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -516,6 +559,7 @@ title="Print to PDF"
 <li class="toctree-l2"><a class="reference internal" href="robomimic.algo.html#module-robomimic.algo.cql">robomimic.algo.cql module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.algo.html#module-robomimic.algo.gl">robomimic.algo.gl module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.algo.html#module-robomimic.algo.hbc">robomimic.algo.hbc module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomimic.algo.html#module-robomimic.algo.iql">robomimic.algo.iql module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.algo.html#module-robomimic.algo.iris">robomimic.algo.iris module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.algo.html#module-robomimic.algo.td3_bc">robomimic.algo.td3_bc module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.algo.html#module-robomimic.algo">Module contents</a></li>
@@ -530,6 +574,7 @@ title="Print to PDF"
 <li class="toctree-l2"><a class="reference internal" href="robomimic.config.html#module-robomimic.config.cql_config">robomimic.config.cql_config module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.config.html#module-robomimic.config.gl_config">robomimic.config.gl_config module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.config.html#module-robomimic.config.hbc_config">robomimic.config.hbc_config module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomimic.config.html#module-robomimic.config.iql_config">robomimic.config.iql_config module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.config.html#module-robomimic.config.iris_config">robomimic.config.iris_config module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.config.html#module-robomimic.config.td3_bc_config">robomimic.config.td3_bc_config module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.config.html#module-robomimic.config">Module contents</a></li>
@@ -541,6 +586,7 @@ title="Print to PDF"
 <li class="toctree-l2"><a class="reference internal" href="robomimic.envs.html#robomimic-envs-env-gym-module">robomimic.envs.env_gym module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.envs.html#robomimic-envs-env-ig-momart-module">robomimic.envs.env_ig_momart module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.envs.html#module-robomimic.envs.env_robosuite">robomimic.envs.env_robosuite module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomimic.envs.html#module-robomimic.envs.wrappers">robomimic.envs.wrappers module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.envs.html#module-robomimic.envs">Module contents</a></li>
 </ul>
 </li>
@@ -548,8 +594,10 @@ title="Print to PDF"
 <li class="toctree-l2"><a class="reference internal" href="robomimic.models.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.models.html#module-robomimic.models.base_nets">robomimic.models.base_nets module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.models.html#module-robomimic.models.distributions">robomimic.models.distributions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomimic.models.html#module-robomimic.models.obs_core">robomimic.models.obs_core module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.models.html#module-robomimic.models.obs_nets">robomimic.models.obs_nets module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.models.html#module-robomimic.models.policy_nets">robomimic.models.policy_nets module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robomimic.models.html#module-robomimic.models.transformers">robomimic.models.transformers module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.models.html#module-robomimic.models.vae_nets">robomimic.models.vae_nets module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.models.html#module-robomimic.models.value_nets">robomimic.models.value_nets module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.models.html#module-robomimic.models">Module contents</a></li>
@@ -563,7 +611,6 @@ title="Print to PDF"
 <li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.hyperparam_utils">robomimic.utils.hyperparam_utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.log_utils">robomimic.utils.log_utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.loss_utils">robomimic.utils.loss_utils module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.macros">robomimic.utils.macros module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.obs_utils">robomimic.utils.obs_utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.python_utils">robomimic.utils.python_utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robomimic.utils.html#module-robomimic.utils.tensor_utils">robomimic.utils.tensor_utils module</a></li>
@@ -576,8 +623,15 @@ title="Print to PDF"
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="module-robomimic">
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="module-robomimic.macros">
+<span id="robomimic-macros-module"></span><h2>robomimic.macros module<a class="headerlink" href="#module-robomimic.macros" title="Permalink to this headline">#</a></h2>
+<p>Set of global variables shared across robomimic</p>
+</section>
+<section id="module-robomimic">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robomimic" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="robomimic.register_all_links">
@@ -629,8 +683,8 @@ rollout horizon that should be used during training.</p>
 </dl>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -661,9 +715,9 @@ rollout horizon that should be used during training.</p>
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

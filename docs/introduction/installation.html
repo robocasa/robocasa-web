@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Installation &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Installation &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -570,24 +593,24 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="installation">
+  <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h1>
-<div class="section" id="requirements">
+<section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Mac OS X or Linux machine</p></li>
-<li><p>Python &gt;= 3.6 (recommended 3.7.9)</p></li>
+<li><p>Python &gt;= 3.6 (recommended 3.8.0)</p></li>
 <li><p><a class="reference external" href="https://www.anaconda.com/products/individual">conda</a></p>
 <ul>
 <li><p><a class="reference external" href="https://virtualenv.pypa.io/en/latest/">virtualenv</a> is also an acceptable alternative, but we assume you have conda installed in our examples below</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="install-robomimic">
+</section>
+<section id="install-robomimic">
 <h2>Install robomimic<a class="headerlink" href="#install-robomimic" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
-<p class="admonition-title">1. Create and activate conda environment</p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ conda create -n robomimic_venv <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7.9
+<p class="admonition-title">1. Create and activate conda environment</p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ conda create -n robomimic_venv <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8.0
 $ conda activate robomimic_venv
 </pre></div>
 </div>
@@ -597,14 +620,14 @@ $ conda activate robomimic_venv
   <summary><b>Option 1: Mac</b></summary>
 <p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Can change pytorch, torchvision versions</span>
 <span class="c1"># We don&#39;t install cudatoolkit since Mac does not have NVIDIA GPU</span>
-$ conda install <span class="nv">pytorch</span><span class="o">==</span><span class="m">1</span>.6.0 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.7.0 -c pytorch
+$ conda install <span class="nv">pytorch</span><span class="o">==</span><span class="m">2</span>.0.0 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.15.1 -c pytorch
 </pre></div>
 </div>
 </p>
 </details><details>
   <summary><b>Option 2: Linux</b></summary>
 <p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Can change pytorch, torchvision versions</span>
-$ conda install <span class="nv">pytorch</span><span class="o">==</span><span class="m">1</span>.6.0 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.7.0 <span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">10</span>.2 -c pytorch
+$ conda install <span class="nv">pytorch</span><span class="o">==</span><span class="m">2</span>.0.0 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.15.1 -c pytorch
 </pre></div>
 </div>
 </p>
@@ -626,15 +649,15 @@ $ pip install -e .
 </p>
 </details></div><div class="admonition warning">
 <p class="admonition-title">Warning! Additional dependencies might be required</p><p>This is all you need for using the suite of algorithms and utilities packaged with robomimic. However, to use our demonstration datasets, you may need additional dependencies. Please see the <a class="reference external" href="../datasets/overview.html">datasets page</a> for more information on downloading datasets and reproducing experiments, and see <a class="reference external" href="installation.html#install-simulators">the simulators section below</a>.</p>
-</div></div>
-</div>
-<div class="section" id="optional-installations">
+</div></section>
+</section>
+<section id="optional-installations">
 <h1>Optional Installations<a class="headerlink" href="#optional-installations" title="Permalink to this headline">#</a></h1>
-<div class="section" id="downloading-datasets-and-reproducing-experiments">
+<section id="downloading-datasets-and-reproducing-experiments">
 <h2>Downloading datasets and reproducing experiments<a class="headerlink" href="#downloading-datasets-and-reproducing-experiments" title="Permalink to this headline">#</a></h2>
 <p>See the <a class="reference external" href="../datasets/overview.html">datasets page</a> for more information on downloading datasets and reproducing experiments.</p>
-</div>
-<div class="section" id="install-simulators">
+</section>
+<section id="install-simulators">
 <h2>Install simulators<a class="headerlink" href="#install-simulators" title="Permalink to this headline">#</a></h2>
 <p>If you would like to run robomimic examples and work with released datasets, please install the following simulators:</p>
 <details>
@@ -650,21 +673,25 @@ OR
 $ pip install robosuite
 </pre></div>
 </div>
-<p><strong>(Optional)</strong> to use our released datasets and reproduce our experiments, switch to our <code class="docutils literal notranslate"><span class="pre">offline_study</span></code> branch (requires installing robosuite from source):</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git checkout offline_study
+<p><strong>(Optional)</strong> to use our released datasets and reproduce our experiments, switch to our <code class="docutils literal notranslate"><span class="pre">v1.4.1</span></code> branch (requires installing robosuite from source):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git checkout v1.4.1
 </pre></div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">mujoco-py dependency!</p><p>Robosuite requires <a class="reference external" href="https://github.com/openai/mujoco-py">mujoco-py</a>. If you are on an Ubuntu machine with a GPU, you should make sure that the <code class="docutils literal notranslate"><span class="pre">GPU</span></code> version of <code class="docutils literal notranslate"><span class="pre">mujoco-py</span></code> gets built, so that image rendering is fast (crucial for working with image datasets!).</p>
-<p>An easy way to ensure this is to clone the repository, change <a class="reference external" href="https://github.com/openai/mujoco-py/blob/4830435a169c1f3e3b5f9b58a7c3d9c39bdf4acb/mujoco_py/builder.py#L74">this line</a> to <code class="docutils literal notranslate"><span class="pre">Builder</span> <span class="pre">=</span> <span class="pre">LinuxGPUExtensionBuilder</span></code>, and install from source by running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> in the <code class="docutils literal notranslate"><span class="pre">mujoco-py</span></code> root directory.</p>
-</div></p>
+<!-- <div class="admonition warning">
+<p class="admonition-title">mujoco-py dependency!</p>
+
+Robosuite requires [mujoco-py](https://github.com/openai/mujoco-py). If you are on an Ubuntu machine with a GPU, you should make sure that the `GPU` version of `mujoco-py` gets built, so that image rendering is fast (crucial for working with image datasets!).
+
+An easy way to ensure this is to clone the repository, change [this line](https://github.com/openai/mujoco-py/blob/4830435a169c1f3e3b5f9b58a7c3d9c39bdf4acb/mujoco_py/builder.py#L74) to `Builder = LinuxGPUExtensionBuilder`, and install from source by running `pip install -e .` in the `mujoco-py` root directory.
+
+</div> --></p>
 </details><details>
   <summary><b>D4RL</b></summary>
 <p><p>Useful for running some of our algorithms on the <a class="reference external" href="https://arxiv.org/abs/2004.07219">D4RL</a> datasets.</p>
 <p>Install via the instructions <a class="reference external" href="https://github.com/rail-berkeley/d4rl">here</a>.</p>
 </p>
-</details></div>
-<div class="section" id="test-your-installation">
+</details></section>
+<section id="test-your-installation">
 <h2>Test your installation<a class="headerlink" href="#test-your-installation" title="Permalink to this headline">#</a></h2>
 <p>This assumes you have installed robomimic from source.</p>
 <p>Run a quick debugging (dummy) training loop to make sure robomimic is installed correctly:</p>
@@ -678,8 +705,8 @@ $ bash test.sh
 </pre></div>
 </div>
 <p>To run some easy examples, see the <a class="reference external" href="./getting_started.html">Getting Started</a> section.</p>
-</div>
-<div class="section" id="install-documentation-dependencies">
+</section>
+<section id="install-documentation-dependencies">
 <h2>Install documentation dependencies<a class="headerlink" href="#install-documentation-dependencies" title="Permalink to this headline">#</a></h2>
 <p>If you plan to contribute to the repository and add new features, you must install the additional requirements required to build the documentation locally:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements-docs.txt
@@ -690,11 +717,12 @@ $ bash test.sh
 $ make clean
 $ make apidoc
 $ make html
+$ cp -r images _build/html/
 </pre></div>
 </div>
 <p>There should be a generated <code class="docutils literal notranslate"><span class="pre">_build</span></code> folder - navigate to <code class="docutils literal notranslate"><span class="pre">_build/html/</span></code> and open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in a web browser to view the documentation.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -725,9 +753,9 @@ $ make html
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

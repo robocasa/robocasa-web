@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Overview &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Overview &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -532,7 +555,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="overview">
+  <section id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
 <p align="center">
   <img width="24.0%" src="../images/task_lift.gif">
@@ -546,7 +569,7 @@ title="Print to PDF"
  </p><p><strong>robomimic</strong> is a framework for robot learning from demonstration.
 It offers a broad set of demonstration datasets collected on robot manipulation domains and offline learning algorithms to learn from these datasets.
 <strong>robomimic</strong> aims to make robot learning broadly <em>accessible</em> and <em>reproducible</em>, allowing researchers and practitioners to benchmark tasks and algorithms fairly and to develop the next generation of robot learning algorithms.</p>
-<div class="section" id="core-features">
+<section id="core-features">
 <h2>Core Features<a class="headerlink" href="#core-features" title="Permalink to this headline">#</a></h2>
 <!-- <div style="box-sizing:border-box;" >
 <section class="page-section" style="box-sizing:border-box;display:block;" >
@@ -644,36 +667,36 @@ Datasets collected from different sources (single proficient human, multiple hum
 3. **Modular Design**
 Support for learning both low-dimensional and visuomotor policies, diverse network architectures, and interface to easily use external datasets
 4. **Flexible Experiment Workflow**
-Utilities for running hyperparameter sweeps, visualizing demonstration data and trained policies, and collecting new datasets using trained policies --></div>
-<div class="section" id="reproducing-benchmarks">
+Utilities for running hyperparameter sweeps, visualizing demonstration data and trained policies, and collecting new datasets using trained policies --></section>
+<section id="reproducing-benchmarks">
 <h2>Reproducing benchmarks<a class="headerlink" href="#reproducing-benchmarks" title="Permalink to this headline">#</a></h2>
 <p>The robomimic framework also makes reproducing the results from different benchmarks and datasets easy. See the <a class="reference external" href="../datasets/overview.html">datasets page</a> for more information on downloading datasets and reproducing experiments.</p>
-</div>
-<div class="section" id="troubleshooting">
+</section>
+<section id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h2>
 <p>Please see the <a class="reference external" href="../miscellaneous/troubleshooting.html">troubleshooting</a> section for common fixes, or <a class="reference external" href="https://github.com/ARISE-Initiative/robomimic/issues">submit an issue</a> on our github page.</p>
-</div>
-<div class="section" id="contributing-to-robomimic">
+</section>
+<section id="contributing-to-robomimic">
 <h2>Contributing to robomimic<a class="headerlink" href="#contributing-to-robomimic" title="Permalink to this headline">#</a></h2>
 <p>This project is part of the broader <a class="reference external" href="https://github.com/ARISE-Initiative">Advancing Robot Intelligence through Simulated Environments (ARISE) Initiative</a>, with the aim of lowering the barriers of entry for cutting-edge research at the intersection of AI and Robotics.
 The project originally began development in late 2018 by researchers in the <a class="reference external" href="http://svl.stanford.edu/">Stanford Vision and Learning Lab</a> (SVL).
 Now it is actively maintained and used for robotics research projects across multiple labs.
 We welcome community contributions to this project.
 For details please check our <a class="reference external" href="../miscellaneous/contributing.html">contributing guidelines</a>.</p>
-</div>
-<div class="section" id="citation">
+</section>
+<section id="citation">
 <h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
 <p>Please cite <a class="reference external" href="https://arxiv.org/abs/2108.03298">this paper</a> if you use this framework in your work:</p>
-<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">robomimic2021</span><span class="p">,</span>
-  <span class="na">title</span><span class="p">=</span><span class="s">{What Matters in Learning from Offline Human Demonstrations for Robot Manipulation}</span><span class="p">,</span>
-  <span class="na">author</span><span class="p">=</span><span class="s">{Ajay Mandlekar and Danfei Xu and Josiah Wong and Soroush Nasiriany and Chen Wang and Rohun Kulkarni and Li Fei-Fei and Silvio Savarese and Yuke Zhu and Roberto Mart\&#39;{i}n-Mart\&#39;{i}n}</span><span class="p">,</span>
-  <span class="na">booktitle</span><span class="p">=</span><span class="s">{Conference on Robot Learning (CoRL)}</span><span class="p">,</span>
-  <span class="na">year</span><span class="p">=</span><span class="s">{2021}</span>
-<span class="p">}</span>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">robomimic2021</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{What Matters in Learning from Offline Human Demonstrations for Robot Manipulation}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Ajay Mandlekar and Danfei Xu and Josiah Wong and Soroush Nasiriany and Chen Wang and Rohun Kulkarni and Li Fei-Fei and Silvio Savarese and Yuke Zhu and Roberto Mart\&#39;{i}n-Mart\&#39;{i}n}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">booktitle</span><span class="p">=</span><span class="s">{Conference on Robot Learning (CoRL)}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2021}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -704,9 +727,9 @@ For details please check our <a class="reference external" href="../miscellaneou
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

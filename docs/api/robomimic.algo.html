@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>robomimic.algo package &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>robomimic.algo package &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -489,6 +512,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robomimic.algo.iql">
+   robomimic.algo.iql module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic.algo.iris">
    robomimic.algo.iris module
   </a>
@@ -558,6 +586,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robomimic.algo.iql">
+   robomimic.algo.iql module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic.algo.iris">
    robomimic.algo.iris module
   </a>
@@ -582,12 +615,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="robomimic-algo-package">
+  <section id="robomimic-algo-package">
 <h1>robomimic.algo package<a class="headerlink" href="#robomimic-algo-package" title="Permalink to this headline">#</a></h1>
-<div class="section" id="submodules">
+<section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
-</div>
-<div class="section" id="module-robomimic.algo.algo">
+</section>
+<section id="module-robomimic.algo.algo">
 <span id="robomimic-algo-algo-module"></span><h2>robomimic.algo.algo module<a class="headerlink" href="#module-robomimic.algo.algo" title="Permalink to this headline">#</a></h2>
 <p>This file contains base classes that other algorithm classes subclass.
 Each algorithm file also implements a algorithm factory function that
@@ -638,6 +671,33 @@ information to pass to tensorboard for logging.</p>
 <dt class="sig sig-object py" id="robomimic.algo.algo.Algo.on_epoch_end">
 <span class="sig-name descname"><span class="pre">on_epoch_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.algo.Algo.on_epoch_end" title="Permalink to this definition">#</a></dt>
 <dd><p>Called at the end of each epoch.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.algo.algo.Algo.postprocess_batch_for_training">
+<span class="sig-name descname"><span class="pre">postprocess_batch_for_training</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_normalization_stats</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.algo.Algo.postprocess_batch_for_training" title="Permalink to this definition">#</a></dt>
+<dd><p>Does some operations (like channel swap, uint8 to float conversion, normalization)
+after &#64;process_batch_for_training is called, in order to ensure these operations
+take place on GPU.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
+from a data loader. Assumed to be on the device where
+training will occur (after &#64;process_batch_for_training
+is called)</p></li>
+<li><p><strong>obs_normalization_stats</strong> (<em>dict</em><em> or </em><em>None</em>) – if provided, this should map observation
+keys to dicts with a “mean” and “std” of shape (1, …) where … is the
+default shape for the observation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>postproceesed batch</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>batch (dict)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -954,8 +1014,8 @@ Each algorithm implements such a function, and decorates it with this decorator.
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.algo.bc">
+</section>
+<section id="module-robomimic.algo.bc">
 <span id="robomimic-algo-bc-module"></span><h2>robomimic.algo.bc module<a class="headerlink" href="#module-robomimic.algo.bc" title="Permalink to this headline">#</a></h2>
 <p>Implementation of Behavioral Cloning (BC).</p>
 <dl class="py class">
@@ -1167,6 +1227,78 @@ information to pass to tensorboard for logging.</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="robomimic.algo.bc.BC_Transformer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.algo.bc.</span></span><span class="sig-name descname"><span class="pre">BC_Transformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algo_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_key_shapes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ac_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.bc.BC_Transformer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.algo.bc.BC" title="robomimic.algo.bc.BC"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.algo.bc.BC</span></code></a></p>
+<p>BC training with a Transformer policy.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.algo.bc.BC_Transformer.get_action">
+<span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.bc.BC_Transformer.get_action" title="Permalink to this definition">#</a></dt>
+<dd><p>Get policy action outputs.
+:param obs_dict: current observation
+:type obs_dict: dict
+:param goal_dict: (optional) goal
+:type goal_dict: dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>action tensor</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>action (torch.Tensor)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.algo.bc.BC_Transformer.process_batch_for_training">
+<span class="sig-name descname"><span class="pre">process_batch_for_training</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.bc.BC_Transformer.process_batch_for_training" title="Permalink to this definition">#</a></dt>
+<dd><p>Processes input batch from a data loader to filter out
+relevant information and prepare the batch for training.
+:param batch: dictionary with torch.Tensors sampled</p>
+<blockquote>
+<div><p>from a data loader</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>input_batch (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.algo.bc.BC_Transformer_GMM">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.algo.bc.</span></span><span class="sig-name descname"><span class="pre">BC_Transformer_GMM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algo_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_key_shapes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ac_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.bc.BC_Transformer_GMM" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.algo.bc.BC_Transformer" title="robomimic.algo.bc.BC_Transformer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.algo.bc.BC_Transformer</span></code></a></p>
+<p>BC training with a Transformer GMM policy.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.algo.bc.BC_Transformer_GMM.log_info">
+<span class="sig-name descname"><span class="pre">log_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.bc.BC_Transformer_GMM.log_info" title="Permalink to this definition">#</a></dt>
+<dd><p>Process info dictionary from &#64;train_on_batch to summarize
+information to pass to tensorboard for logging.
+:param info: dictionary of info
+:type info: dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>name -&gt; summary statistic</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>loss_log (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="robomimic.algo.bc.BC_VAE">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.algo.bc.</span></span><span class="sig-name descname"><span class="pre">BC_VAE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algo_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_key_shapes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ac_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.bc.BC_VAE" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robomimic.algo.bc.BC" title="robomimic.algo.bc.BC"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.algo.bc.BC</span></code></a></p>
@@ -1197,8 +1329,8 @@ information to pass to tensorboard for logging.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.algo.bcq">
+</section>
+<section id="module-robomimic.algo.bcq">
 <span id="robomimic-algo-bcq-module"></span><h2>robomimic.algo.bcq module<a class="headerlink" href="#module-robomimic.algo.bcq" title="Permalink to this headline">#</a></h2>
 <p>Batch-Constrained Q-Learning (BCQ), with support for more general
 generative action models (the original paper uses a cVAE).
@@ -1376,8 +1508,8 @@ Some parts of this implementation were adapted from ACME (<a class="reference ex
 batch with a GMM.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.algo.cql">
+</section>
+<section id="module-robomimic.algo.cql">
 <span id="robomimic-algo-cql-module"></span><h2>robomimic.algo.cql module<a class="headerlink" href="#module-robomimic.algo.cql" title="Permalink to this headline">#</a></h2>
 <p>Implementation of Conservative Q-Learning (CQL).
 Based off of <a class="reference external" href="https://github.com/aviralkumar2907/CQL">https://github.com/aviralkumar2907/CQL</a>.
@@ -1520,8 +1652,8 @@ to perform staged training and early stopping</p></li>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.algo.gl">
+</section>
+<section id="module-robomimic.algo.gl">
 <span id="robomimic-algo-gl-module"></span><h2>robomimic.algo.gl module<a class="headerlink" href="#module-robomimic.algo.gl" title="Permalink to this headline">#</a></h2>
 <p>Subgoal prediction models, used in HBC / IRIS.</p>
 <dl class="py class">
@@ -2002,8 +2134,8 @@ to perform staged training and early stopping</p></li>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.algo.hbc">
+</section>
+<section id="module-robomimic.algo.hbc">
 <span id="robomimic-algo-hbc-module"></span><h2>robomimic.algo.hbc module<a class="headerlink" href="#module-robomimic.algo.hbc" title="Permalink to this headline">#</a></h2>
 <p>Implementation of Hierarchical Behavioral Cloning, where
 a planner model outputs subgoals (future observations), and
@@ -2153,8 +2285,113 @@ to perform staged training and early stopping</p></li>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.algo.iris">
+</section>
+<section id="module-robomimic.algo.iql">
+<span id="robomimic-algo-iql-module"></span><h2>robomimic.algo.iql module<a class="headerlink" href="#module-robomimic.algo.iql" title="Permalink to this headline">#</a></h2>
+<p>Implementation of Implicit Q-Learning (IQL).
+Based off of <a class="reference external" href="https://github.com/rail-berkeley/rlkit/blob/master/rlkit/torch/sac/iql_trainer.py">https://github.com/rail-berkeley/rlkit/blob/master/rlkit/torch/sac/iql_trainer.py</a>.
+(Paper - <a class="reference external" href="https://arxiv.org/abs/2110.06169">https://arxiv.org/abs/2110.06169</a>).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.algo.iql.IQL">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.algo.iql.</span></span><span class="sig-name descname"><span class="pre">IQL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algo_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_key_shapes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ac_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.iql.IQL" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.algo.algo.PolicyAlgo" title="robomimic.algo.algo.PolicyAlgo"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.algo.algo.PolicyAlgo</span></code></a>, <a class="reference internal" href="#robomimic.algo.algo.ValueAlgo" title="robomimic.algo.algo.ValueAlgo"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.algo.algo.ValueAlgo</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.algo.iql.IQL.get_action">
+<span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.iql.IQL.get_action" title="Permalink to this definition">#</a></dt>
+<dd><p>Get policy action outputs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
+<li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>action tensor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>action (torch.Tensor)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.algo.iql.IQL.log_info">
+<span class="sig-name descname"><span class="pre">log_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.iql.IQL.log_info" title="Permalink to this definition">#</a></dt>
+<dd><p>Process info dictionary from &#64;train_on_batch to summarize
+information to pass to tensorboard for logging.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>name -&gt; summary statistic</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>loss_log (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.algo.iql.IQL.on_epoch_end">
+<span class="sig-name descname"><span class="pre">on_epoch_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.iql.IQL.on_epoch_end" title="Permalink to this definition">#</a></dt>
+<dd><p>Called at the end of each epoch.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.algo.iql.IQL.process_batch_for_training">
+<span class="sig-name descname"><span class="pre">process_batch_for_training</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.iql.IQL.process_batch_for_training" title="Permalink to this definition">#</a></dt>
+<dd><p>Processes input batch from a data loader to filter out relevant info and prepare the batch for training.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
+from a data loader</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>input_batch (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.algo.iql.IQL.train_on_batch">
+<span class="sig-name descname"><span class="pre">train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.iql.IQL.train_on_batch" title="Permalink to this definition">#</a></dt>
+<dd><p>Training on a single batch of data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
+from a data loader and filtered by &#64;process_batch_for_training</p></li>
+<li><p><strong>epoch</strong> (<em>int</em>) – epoch number - required by some Algos that need
+to perform staged training and early stopping</p></li>
+<li><p><strong>validate</strong> (<em>bool</em>) – if True, don’t perform any learning updates.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>dictionary of relevant inputs, outputs, and losses</dt><dd><p>that might be relevant for logging</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>info (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robomimic.algo.iris">
 <span id="robomimic-algo-iris-module"></span><h2>robomimic.algo.iris module<a class="headerlink" href="#module-robomimic.algo.iris" title="Permalink to this headline">#</a></h2>
 <p>Implementation of IRIS (<a class="reference external" href="https://arxiv.org/abs/1911.05321">https://arxiv.org/abs/1911.05321</a>).</p>
 <dl class="py class">
@@ -2228,8 +2465,8 @@ from a data loader</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.algo.td3_bc">
+</section>
+<section id="module-robomimic.algo.td3_bc">
 <span id="robomimic-algo-td3-bc-module"></span><h2>robomimic.algo.td3_bc module<a class="headerlink" href="#module-robomimic.algo.td3_bc" title="Permalink to this headline">#</a></h2>
 <p>Implementation of TD3-BC.
 Based on <a class="reference external" href="https://github.com/sfujim/TD3_BC">https://github.com/sfujim/TD3_BC</a>
@@ -2396,11 +2633,11 @@ to perform staged training and early stopping</p></li>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.algo">
+</section>
+<section id="module-robomimic.algo">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robomimic.algo" title="Permalink to this headline">#</a></h2>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -2431,9 +2668,9 @@ to perform staged training and early stopping</p></li>
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

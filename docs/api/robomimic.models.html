@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>robomimic.models package &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>robomimic.models package &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -469,6 +492,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robomimic.models.obs_core">
+   robomimic.models.obs_core module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic.models.obs_nets">
    robomimic.models.obs_nets module
   </a>
@@ -476,6 +504,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic.models.policy_nets">
    robomimic.models.policy_nets module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robomimic.models.transformers">
+   robomimic.models.transformers module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -528,6 +561,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robomimic.models.obs_core">
+   robomimic.models.obs_core module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic.models.obs_nets">
    robomimic.models.obs_nets module
   </a>
@@ -535,6 +573,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic.models.policy_nets">
    robomimic.models.policy_nets module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robomimic.models.transformers">
+   robomimic.models.transformers module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -562,18 +605,18 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="robomimic-models-package">
+  <section id="robomimic-models-package">
 <h1>robomimic.models package<a class="headerlink" href="#robomimic-models-package" title="Permalink to this headline">#</a></h1>
-<div class="section" id="submodules">
+<section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
-</div>
-<div class="section" id="module-robomimic.models.base_nets">
+</section>
+<section id="module-robomimic.models.base_nets">
 <span id="robomimic-models-base-nets-module"></span><h2>robomimic.models.base_nets module<a class="headerlink" href="#module-robomimic.models.base_nets" title="Permalink to this headline">#</a></h2>
 <p>Contains torch Modules that correspond to basic network building blocks, like
 MLP, RNN, and CNN backbones.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="robomimic.models.base_nets.Conv1dBase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">Conv1dBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">conv_kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Conv1dBase" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">Conv1dBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(32,</span> <span class="pre">64,</span> <span class="pre">64)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(8,</span> <span class="pre">4,</span> <span class="pre">2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(4,</span> <span class="pre">2,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">conv_kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Conv1dBase" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
 <p>Base class for stacked Conv1d layers.</p>
 <dl class="field-list simple">
@@ -582,16 +625,12 @@ MLP, RNN, and CNN backbones.</p>
 <li><p><strong>input_channel</strong> (<em>int</em>) – Number of channels for inputs to this network</p></li>
 <li><p><strong>activation</strong> (<em>None</em><em> or </em><em>str</em>) – Per-layer activation to use. Defaults to “relu”. Valid options are
 currently {relu, None} for no activation</p></li>
-<li><p><strong>conv_kwargs</strong> (<em>dict</em>) – <p>Specific nn.Conv1D args to use, in list form, where the ith element corresponds to the
+<li><p><strong>out_channels</strong> (<em>list of int</em>) – Output channel size for each sequential Conv1d layer</p></li>
+<li><p><strong>kernel_size</strong> (<em>list of int</em>) – Kernel sizes for each sequential Conv1d layer</p></li>
+<li><p><strong>stride</strong> (<em>list of int</em>) – Stride sizes for each sequential Conv1d layer</p></li>
+<li><p><strong>conv_kwargs</strong> (<em>dict</em>) – additional nn.Conv1D args to use, in list form, where the ith element corresponds to the
 argument to be passed to the ith Conv1D layer.
-See <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.Conv1d.html">https://pytorch.org/docs/stable/generated/torch.nn.Conv1d.html</a> for specific possible arguments.</p>
-<dl class="simple">
-<dt>e.g.: common values to use:</dt><dd><p>out_channels (list of int): Output channel size for each sequential Conv1d layer
-kernel_size (list of int): Kernel sizes for each sequential Conv1d layer
-stride (list of int): Stride sizes for each sequential Conv1d layer</p>
-</dd>
-</dl>
-</p></li>
+See <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.Conv1d.html">https://pytorch.org/docs/stable/generated/torch.nn.Conv1d.html</a> for specific possible arguments.</p></li>
 </ul>
 </dd>
 </dl>
@@ -779,87 +818,6 @@ on the size of the input, or if they assume fixed size input.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.CropRandomizer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">CropRandomizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crop_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crop_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_crops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_enc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.CropRandomizer" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.Randomizer" title="robomimic.models.base_nets.Randomizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Randomizer</span></code></a></p>
-<p>Randomly sample crops at input, and then average across crop features at output.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.CropRandomizer.forward_in">
-<span class="sig-name descname"><span class="pre">forward_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.CropRandomizer.forward_in" title="Permalink to this definition">#</a></dt>
-<dd><p>Samples N random crops for each input in the batch, and then reshapes
-inputs to [B * N, …].</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.CropRandomizer.forward_out">
-<span class="sig-name descname"><span class="pre">forward_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.CropRandomizer.forward_out" title="Permalink to this definition">#</a></dt>
-<dd><p>Splits the outputs from shape [B * N, …] -&gt; [B, N, …] and then average across N
-to result in shape [B, …] to make sure the network output is consistent with
-what would have happened if there were no randomization.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.CropRandomizer.output_shape_in">
-<span class="sig-name descname"><span class="pre">output_shape_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.CropRandomizer.output_shape_in" title="Permalink to this definition">#</a></dt>
-<dd><p>Function to compute output shape from inputs to this module. Corresponds to
-the &#64;forward_in operation, where raw inputs (usually observation modalities)
-are passed in.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
-Some modules may not need this argument, if their output does not depend
-on the size of the input, or if they assume fixed size input.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of integers corresponding to output shape</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>out_shape ([int])</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.CropRandomizer.output_shape_out">
-<span class="sig-name descname"><span class="pre">output_shape_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.CropRandomizer.output_shape_out" title="Permalink to this definition">#</a></dt>
-<dd><p>Function to compute output shape from inputs to this module. Corresponds to
-the &#64;forward_out operation, where processed inputs (usually encoded observation
-modalities) are passed in.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
-Some modules may not need this argument, if their output does not depend
-on the size of the input, or if they assume fixed size input.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of integers corresponding to output shape</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>out_shape ([int])</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.CropRandomizer.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.base_nets.CropRandomizer.training" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.EncoderCore">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">EncoderCore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.EncoderCore" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
-<p>Abstract class used to categorize all cores used to encode observations</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.EncoderCore.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.base_nets.EncoderCore.training" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="robomimic.models.base_nets.FeatureAggregator">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">FeatureAggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agg_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'avg'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.FeatureAggregator" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
@@ -947,6 +905,51 @@ on the size of the input, or if they assume fixed size input.</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.base_nets.MVPConv">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">MVPConv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mvp_model_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vitb-mae-egosoup'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freeze</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.MVPConv" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.ConvBase" title="robomimic.models.base_nets.ConvBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.ConvBase</span></code></a></p>
+<p>Base class for ConvNets pretrained with MVP (<a class="reference external" href="https://arxiv.org/abs/2203.06173">https://arxiv.org/abs/2203.06173</a>)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.base_nets.MVPConv.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.MVPConv.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></a> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.base_nets.MVPConv.output_shape">
+<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.MVPConv.output_shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module.
+:param input_shape: shape of input. Does not include batch dimension.</p>
+<blockquote>
+<div><p>Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.base_nets.MVPConv.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.base_nets.MVPConv.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="robomimic.models.base_nets.Module">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">Module</span></span><a class="headerlink" href="#robomimic.models.base_nets.Module" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
@@ -1012,6 +1015,37 @@ on the size of the input, or if they assume fixed size input.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="robomimic.models.base_nets.Parameter.training">
 <span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.base_nets.Parameter.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.base_nets.R3MConv">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">R3MConv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r3m_model_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'resnet18'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freeze</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.R3MConv" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.ConvBase" title="robomimic.models.base_nets.ConvBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.ConvBase</span></code></a></p>
+<p>Base class for ConvNets pretrained with R3M (<a class="reference external" href="https://arxiv.org/abs/2203.12601">https://arxiv.org/abs/2203.12601</a>)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.base_nets.R3MConv.output_shape">
+<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.R3MConv.output_shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module.
+:param input_shape: shape of input. Does not include batch dimension.</p>
+<blockquote>
+<div><p>Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.base_nets.R3MConv.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.base_nets.R3MConv.training" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1116,82 +1150,6 @@ on the size of the input, or if they assume fixed size input.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.Randomizer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">Randomizer</span></span><a class="headerlink" href="#robomimic.models.base_nets.Randomizer" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
-<p>Base class for randomizer networks. Each randomizer should implement the &#64;output_shape_in,
-&#64;output_shape_out, &#64;forward_in, and &#64;forward_out methods. The randomizer’s &#64;forward_in
-method is invoked on raw inputs, and &#64;forward_out is invoked on processed inputs
-(usually processed by a &#64;VisualCore instance). Note that the self.training property
-can be used to change the randomizer’s behavior at train vs. test time.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.Randomizer.forward_in">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">forward_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Randomizer.forward_in" title="Permalink to this definition">#</a></dt>
-<dd><p>Randomize raw inputs.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.Randomizer.forward_out">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">forward_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Randomizer.forward_out" title="Permalink to this definition">#</a></dt>
-<dd><p>Processing for network outputs.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.Randomizer.output_shape">
-<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Randomizer.output_shape" title="Permalink to this definition">#</a></dt>
-<dd><p>This function is unused. See &#64;output_shape_in and &#64;output_shape_out.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.Randomizer.output_shape_in">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_shape_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Randomizer.output_shape_in" title="Permalink to this definition">#</a></dt>
-<dd><p>Function to compute output shape from inputs to this module. Corresponds to
-the &#64;forward_in operation, where raw inputs (usually observation modalities)
-are passed in.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
-Some modules may not need this argument, if their output does not depend
-on the size of the input, or if they assume fixed size input.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of integers corresponding to output shape</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>out_shape ([int])</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.Randomizer.output_shape_out">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_shape_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Randomizer.output_shape_out" title="Permalink to this definition">#</a></dt>
-<dd><p>Function to compute output shape from inputs to this module. Corresponds to
-the &#64;forward_out operation, where processed inputs (usually encoded observation
-modalities) are passed in.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
-Some modules may not need this argument, if their output does not depend
-on the size of the input, or if they assume fixed size input.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of integers corresponding to output shape</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>out_shape ([int])</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.Randomizer.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.base_nets.Randomizer.training" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="robomimic.models.base_nets.ResNet18Conv">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">ResNet18Conv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_coord_conv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.ResNet18Conv" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.ConvBase" title="robomimic.models.base_nets.ConvBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.ConvBase</span></code></a></p>
@@ -1223,20 +1181,18 @@ on the size of the input, or if they assume fixed size input.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.ScanCore">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">ScanCore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_kwargs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.ScanCore" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.EncoderCore" title="robomimic.models.base_nets.EncoderCore"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.EncoderCore</span></code></a>, <a class="reference internal" href="#robomimic.models.base_nets.ConvBase" title="robomimic.models.base_nets.ConvBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.ConvBase</span></code></a></p>
-<p>A network block that combines a Conv1D backbone network with optional pooling
-and linear layers.</p>
+<dt class="sig sig-object py" id="robomimic.models.base_nets.Sequential">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">Sequential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_output_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Sequential" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.container.Sequential</span></code>, <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
+<p>Compose multiple Modules together (defined above).</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.ScanCore.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.ScanCore.forward" title="Permalink to this definition">#</a></dt>
-<dd><p>Forward pass through visual core.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="robomimic.models.base_nets.Sequential.freeze">
+<span class="sig-name descname"><span class="pre">freeze</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Sequential.freeze" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.ScanCore.output_shape">
-<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.ScanCore.output_shape" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="robomimic.models.base_nets.Sequential.output_shape">
+<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Sequential.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1253,33 +1209,24 @@ on the size of the input, or if they assume fixed size input.</p>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.ScanCore.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.base_nets.ScanCore.training" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.Sequential">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">Sequential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Sequential" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.container.Sequential</span></code>, <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
-<p>Compose multiple Modules together (defined above).</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.Sequential.output_shape">
-<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Sequential.output_shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Function to compute output shape from inputs to this module.</p>
+<dt class="sig sig-object py" id="robomimic.models.base_nets.Sequential.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Sequential.train" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the module in training mode.</p>
+<p>This has any effect only on certain modules. See documentations of
+particular modules for details of their behaviors in training/evaluation
+mode, if they are affected, e.g. <code class="xref py py-class docutils literal notranslate"><span class="pre">Dropout</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BatchNorm</span></code>,
+etc.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
-Some modules may not need this argument, if their output does not depend
-on the size of the input, or if they assume fixed size input.</p>
+<dd class="field-odd"><p><strong>mode</strong> (<em>bool</em>) – whether to set training mode (<code class="docutils literal notranslate"><span class="pre">True</span></code>) or evaluation
+mode (<code class="docutils literal notranslate"><span class="pre">False</span></code>). Default: <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of integers corresponding to output shape</p>
+<dd class="field-even"><p>self</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>out_shape ([int])</p>
+<dd class="field-odd"><p><a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module">Module</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1362,7 +1309,7 @@ on the size of the input, or if they assume fixed size input.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="robomimic.models.base_nets.SpatialSoftmax">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">SpatialSoftmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_kp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learnable_temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_variance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noise_std</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.SpatialSoftmax" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">SpatialSoftmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_kp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learnable_temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_variance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noise_std</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.SpatialSoftmax" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.ConvBase" title="robomimic.models.base_nets.ConvBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.ConvBase</span></code></a></p>
 <p>Spatial Softmax Layer.</p>
 <p>Based on Deep Spatial Autoencoders for Visuomotor Learning by Finn et al.
@@ -1506,44 +1453,6 @@ on the size of the input, or if they assume fixed size input.</p>
 
 </dd></dl>
 
-<dl class="py class">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.VisualCore">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">VisualCore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backbone_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backbone_kwargs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.VisualCore" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.EncoderCore" title="robomimic.models.base_nets.EncoderCore"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.EncoderCore</span></code></a>, <a class="reference internal" href="#robomimic.models.base_nets.ConvBase" title="robomimic.models.base_nets.ConvBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.ConvBase</span></code></a></p>
-<p>A network block that combines a visual backbone network with optional pooling
-and linear layers.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.VisualCore.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.VisualCore.forward" title="Permalink to this definition">#</a></dt>
-<dd><p>Forward pass through visual core.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.VisualCore.output_shape">
-<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.VisualCore.output_shape" title="Permalink to this definition">#</a></dt>
-<dd><p>Function to compute output shape from inputs to this module.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
-Some modules may not need this argument, if their output does not depend
-on the size of the input, or if they assume fixed size input.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of integers corresponding to output shape</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>out_shape ([int])</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="robomimic.models.base_nets.VisualCore.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.base_nets.VisualCore.training" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
 <dl class="py function">
 <dt class="sig sig-object py" id="robomimic.models.base_nets.rnn_args_from_config">
 <span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">rnn_args_from_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rnn_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.rnn_args_from_config" title="Permalink to this definition">#</a></dt>
@@ -1552,8 +1461,16 @@ on the size of the input, or if they assume fixed size input.</p>
 rnn kwargs for instantiating rnn networks.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.models.distributions">
+<dl class="py function">
+<dt class="sig sig-object py" id="robomimic.models.base_nets.transformer_args_from_config">
+<span class="sig-prename descclassname"><span class="pre">robomimic.models.base_nets.</span></span><span class="sig-name descname"><span class="pre">transformer_args_from_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transformer_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.transformer_args_from_config" title="Permalink to this definition">#</a></dt>
+<dd><p>Takes a Config object corresponding to Transformer settings
+(for example <cite>config.algo.transformer</cite> in BCConfig) and extracts
+transformer kwargs for instantiating transformer networks.</p>
+</dd></dl>
+
+</section>
+<section id="module-robomimic.models.distributions">
 <span id="robomimic-models-distributions-module"></span><h2>robomimic.models.distributions module<a class="headerlink" href="#module-robomimic.models.distributions" title="Permalink to this headline">#</a></h2>
 <p>Contains distribution models used as parts of other networks. These
 classes usually inherit or emulate torch distributions.</p>
@@ -1647,8 +1564,380 @@ See <a class="reference external" href="https://github.com/pytorch/pytorch/issue
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.models.obs_nets">
+</section>
+<section id="module-robomimic.models.obs_core">
+<span id="robomimic-models-obs-core-module"></span><h2>robomimic.models.obs_core module<a class="headerlink" href="#module-robomimic.models.obs_core" title="Permalink to this headline">#</a></h2>
+<p>Contains torch Modules for core observation processing blocks
+such as encoders (e.g. EncoderCore, VisualCore, ScanCore, …)
+and randomizers (e.g. Randomizer, CropRandomizer).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.ColorRandomizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.obs_core.</span></span><span class="sig-name descname"><span class="pre">ColorRandomizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contrast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">saturation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.ColorRandomizer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.obs_core.Randomizer" title="robomimic.models.obs_core.Randomizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.obs_core.Randomizer</span></code></a></p>
+<p>Randomly sample color jitter at input, and then average across color jtters at output.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.ColorRandomizer.get_batch_transform">
+<span class="sig-name descname"><span class="pre">get_batch_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.ColorRandomizer.get_batch_transform" title="Permalink to this definition">#</a></dt>
+<dd><p>Generates a batch transform, where each set of sample(s) along the batch (first) dimension will have the same
+&#64;N unique ColorJitter transforms applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>N</strong> (<em>int</em>) – Number of ColorJitter transforms to apply per set of sample(s) along the batch (first) dimension</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Aggregated transform which will autoamtically apply a different ColorJitter transforms to</dt><dd><p>each sub-set of samples along batch dimension, assumed to be the FIRST dimension in the inputted tensor
+Note: This function will MULTIPLY the first dimension by N</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Lambda</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.ColorRandomizer.get_transform">
+<span class="sig-name descname"><span class="pre">get_transform</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.ColorRandomizer.get_transform" title="Permalink to this definition">#</a></dt>
+<dd><p>Get a randomized transform to be applied on image.</p>
+<p>Implementation taken directly from:</p>
+<p><a class="reference external" href="https://github.com/pytorch/vision/blob/2f40a483d73018ae6e1488a484c5927f2b309969/torchvision/transforms/transforms.py#L1053-L1085">https://github.com/pytorch/vision/blob/2f40a483d73018ae6e1488a484c5927f2b309969/torchvision/transforms/transforms.py#L1053-L1085</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Transform which randomly adjusts brightness, contrast and
+saturation in a random order.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Transform</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.ColorRandomizer.output_shape_in">
+<span class="sig-name descname"><span class="pre">output_shape_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.ColorRandomizer.output_shape_in" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module. Corresponds to
+the &#64;forward_in operation, where raw inputs (usually observation modalities)
+are passed in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
+Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.ColorRandomizer.output_shape_out">
+<span class="sig-name descname"><span class="pre">output_shape_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.ColorRandomizer.output_shape_out" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module. Corresponds to
+the &#64;forward_out operation, where processed inputs (usually encoded observation
+modalities) are passed in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
+Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.ColorRandomizer.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.obs_core.ColorRandomizer.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.CropRandomizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.obs_core.</span></span><span class="sig-name descname"><span class="pre">CropRandomizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crop_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">76</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crop_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">76</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_crops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_enc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.CropRandomizer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.obs_core.Randomizer" title="robomimic.models.obs_core.Randomizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.obs_core.Randomizer</span></code></a></p>
+<p>Randomly sample crops at input, and then average across crop features at output.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.CropRandomizer.output_shape_in">
+<span class="sig-name descname"><span class="pre">output_shape_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.CropRandomizer.output_shape_in" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module. Corresponds to
+the &#64;forward_in operation, where raw inputs (usually observation modalities)
+are passed in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
+Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.CropRandomizer.output_shape_out">
+<span class="sig-name descname"><span class="pre">output_shape_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.CropRandomizer.output_shape_out" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module. Corresponds to
+the &#64;forward_out operation, where processed inputs (usually encoded observation
+modalities) are passed in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
+Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.CropRandomizer.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.obs_core.CropRandomizer.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.EncoderCore">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.obs_core.</span></span><span class="sig-name descname"><span class="pre">EncoderCore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.EncoderCore" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
+<p>Abstract class used to categorize all cores used to encode observations</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.EncoderCore.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.obs_core.EncoderCore.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.GaussianNoiseRandomizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.obs_core.</span></span><span class="sig-name descname"><span class="pre">GaussianNoiseRandomizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noise_mean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noise_std</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.GaussianNoiseRandomizer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.obs_core.Randomizer" title="robomimic.models.obs_core.Randomizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.obs_core.Randomizer</span></code></a></p>
+<p>Randomly sample gaussian noise at input, and then average across noises at output.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.GaussianNoiseRandomizer.output_shape_in">
+<span class="sig-name descname"><span class="pre">output_shape_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.GaussianNoiseRandomizer.output_shape_in" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module. Corresponds to
+the &#64;forward_in operation, where raw inputs (usually observation modalities)
+are passed in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
+Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.GaussianNoiseRandomizer.output_shape_out">
+<span class="sig-name descname"><span class="pre">output_shape_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.GaussianNoiseRandomizer.output_shape_out" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module. Corresponds to
+the &#64;forward_out operation, where processed inputs (usually encoded observation
+modalities) are passed in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
+Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.GaussianNoiseRandomizer.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.obs_core.GaussianNoiseRandomizer.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.Randomizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.obs_core.</span></span><span class="sig-name descname"><span class="pre">Randomizer</span></span><a class="headerlink" href="#robomimic.models.obs_core.Randomizer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
+<p>Base class for randomizer networks. Each randomizer should implement the &#64;output_shape_in,
+&#64;output_shape_out, &#64;forward_in, and &#64;forward_out methods. The randomizer’s &#64;forward_in
+method is invoked on raw inputs, and &#64;forward_out is invoked on processed inputs
+(usually processed by a &#64;VisualCore instance). Note that the self.training property
+can be used to change the randomizer’s behavior at train vs. test time.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.Randomizer.forward_in">
+<span class="sig-name descname"><span class="pre">forward_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.Randomizer.forward_in" title="Permalink to this definition">#</a></dt>
+<dd><p>Randomize raw inputs if training.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.Randomizer.forward_out">
+<span class="sig-name descname"><span class="pre">forward_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.Randomizer.forward_out" title="Permalink to this definition">#</a></dt>
+<dd><p>Processing for network outputs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.Randomizer.output_shape">
+<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.Randomizer.output_shape" title="Permalink to this definition">#</a></dt>
+<dd><p>This function is unused. See &#64;output_shape_in and &#64;output_shape_out.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.Randomizer.output_shape_in">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_shape_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.Randomizer.output_shape_in" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module. Corresponds to
+the &#64;forward_in operation, where raw inputs (usually observation modalities)
+are passed in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
+Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.Randomizer.output_shape_out">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_shape_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.Randomizer.output_shape_out" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module. Corresponds to
+the &#64;forward_out operation, where processed inputs (usually encoded observation
+modalities) are passed in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
+Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.Randomizer.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.obs_core.Randomizer.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.ScanCore">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.obs_core.</span></span><span class="sig-name descname"><span class="pre">ScanCore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.ScanCore" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.obs_core.EncoderCore" title="robomimic.models.obs_core.EncoderCore"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.obs_core.EncoderCore</span></code></a>, <a class="reference internal" href="#robomimic.models.base_nets.ConvBase" title="robomimic.models.base_nets.ConvBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.ConvBase</span></code></a></p>
+<p>A network block that combines a Conv1D backbone network with optional pooling
+and linear layers.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.ScanCore.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.ScanCore.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Forward pass through visual core.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.ScanCore.output_shape">
+<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.ScanCore.output_shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
+Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.ScanCore.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.obs_core.ScanCore.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.VisualCore">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.obs_core.</span></span><span class="sig-name descname"><span class="pre">VisualCore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backbone_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ResNet18Conv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SpatialSoftmax'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backbone_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.VisualCore" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.obs_core.EncoderCore" title="robomimic.models.obs_core.EncoderCore"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.obs_core.EncoderCore</span></code></a>, <a class="reference internal" href="#robomimic.models.base_nets.ConvBase" title="robomimic.models.base_nets.ConvBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.ConvBase</span></code></a></p>
+<p>A network block that combines a visual backbone network with optional pooling
+and linear layers.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.VisualCore.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.VisualCore.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Forward pass through visual core.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.VisualCore.output_shape">
+<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.VisualCore.output_shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
+Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.obs_core.VisualCore.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.obs_core.VisualCore.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robomimic.models.obs_nets">
 <span id="robomimic-models-obs-nets-module"></span><h2>robomimic.models.obs_nets module<a class="headerlink" href="#module-robomimic.models.obs_nets" title="Permalink to this headline">#</a></h2>
 <p>Contains torch Modules that help deal with inputs consisting of multiple
 modalities. This is extremely common when networks must deal with one or
@@ -1703,6 +1992,92 @@ of a list since outputs are dictionaries.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="robomimic.models.obs_nets.MIMO_MLP.training">
 <span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.obs_nets.MIMO_MLP.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.obs_nets.MIMO_Transformer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.obs_nets.</span></span><span class="sig-name descname"><span class="pre">MIMO_Transformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_obs_group_shapes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_shapes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_embed_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_num_layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_num_heads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_context_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_emb_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_attn_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_block_output_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_sinusoidal_embedding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gelu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_nn_parameter_for_timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_nets.MIMO_Transformer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
+<p>Extension to Transformer (based on GPT architecture) to accept multiple observation
+dictionaries as input and to output dictionaries of tensors. Inputs are specified as
+a dictionary of observation dictionaries, with each key corresponding to an observation group.
+This module utilizes &#64;ObservationGroupEncoder to process the multiple input dictionaries and
+&#64;ObservationDecoder to generate tensor dictionaries. The default behavior
+for encoding the inputs is to process visual inputs with a learned CNN and concatenating
+the flat encodings with the other flat inputs. The default behavior for generating
+outputs is to use a linear layer branch to produce each modality separately
+(including visual outputs).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_nets.MIMO_Transformer.embed_timesteps">
+<span class="sig-name descname"><span class="pre">embed_timesteps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embeddings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_nets.MIMO_Transformer.embed_timesteps" title="Permalink to this definition">#</a></dt>
+<dd><p>Computes timestep-based embeddings (aka positional embeddings) to add to embeddings.
+:param embeddings: embeddings prior to positional embeddings are computed
+:type embeddings: torch.Tensor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>positional embeddings to add to embeddings</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>time_embeddings (torch.Tensor)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_nets.MIMO_Transformer.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_nets.MIMO_Transformer.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Process each set of inputs in its own observation group.
+:param inputs: a dictionary of dictionaries with one dictionary per</p>
+<blockquote>
+<div><p>observation group. Each observation group’s dictionary should map
+modality to torch.Tensor batches. Should be consistent with
+&#64;self.input_obs_group_shapes. First two leading dimensions should
+be batch and time [B, T, …] for each tensor.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>dictionary of output torch.Tensors, that corresponds</dt><dd><p>to &#64;self.output_shapes. Leading dimensions will be batch and time [B, T, …]
+for each tensor.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>outputs (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_nets.MIMO_Transformer.input_embedding">
+<span class="sig-name descname"><span class="pre">input_embedding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_nets.MIMO_Transformer.input_embedding" title="Permalink to this definition">#</a></dt>
+<dd><p>Process encoded observations into embeddings to pass to transformer,
+Adds timestep-based embeddings (aka positional embeddings) to inputs.
+:param inputs: outputs from observation encoder
+:type inputs: torch.Tensor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>input embeddings to pass to transformer backbone.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>embeddings (torch.Tensor)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.obs_nets.MIMO_Transformer.output_shape">
+<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_nets.MIMO_Transformer.output_shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns output shape for this module, which is a dictionary instead
+of a list since outputs are dictionaries.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.obs_nets.MIMO_Transformer.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.obs_nets.MIMO_Transformer.training" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2002,8 +2377,8 @@ obs_randomizer_kwargs: dict</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.models.policy_nets">
+</section>
+<section id="module-robomimic.models.policy_nets">
 <span id="robomimic-models-policy-nets-module"></span><h2>robomimic.models.policy_nets module<a class="headerlink" href="#module-robomimic.models.policy_nets" title="Permalink to this headline">#</a></h2>
 <p>Contains torch Modules for policy networks. These networks take an
 observation dictionary as input (and possibly additional conditioning,
@@ -2363,6 +2738,109 @@ state: updated rnn state</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.policy_nets.TransformerActorNetwork">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.policy_nets.</span></span><span class="sig-name descname"><span class="pre">TransformerActorNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_shapes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ac_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_embed_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_num_layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_num_heads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_context_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_emb_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_attn_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_block_output_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_sinusoidal_embedding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gelu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_nn_parameter_for_timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_shapes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.TransformerActorNetwork" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.obs_nets.MIMO_Transformer" title="robomimic.models.obs_nets.MIMO_Transformer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.obs_nets.MIMO_Transformer</span></code></a></p>
+<p>An Transformer policy network that predicts actions from observation sequences (assumed to be frame stacked
+from previous observations) and possible from previous actions as well (in an autoregressive manner).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.policy_nets.TransformerActorNetwork.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.TransformerActorNetwork.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Forward a sequence of inputs through the Transformer.
+:param obs_dict: batch of observations - each tensor in the dictionary</p>
+<blockquote>
+<div><p>should have leading dimensions batch and time [B, T, …]</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>actions</strong> (<em>torch.Tensor</em>) – batch of actions of shape [B, T, D]</p></li>
+<li><p><strong>goal_dict</strong> (<em>dict</em>) – if not None, batch of goal observations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>contains predicted action sequence, or dictionary</dt><dd><p>with predicted action sequence and predicted observation sequences</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>outputs (torch.Tensor or dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.policy_nets.TransformerActorNetwork.output_shape">
+<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.TransformerActorNetwork.output_shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns output shape for this module, which is a dictionary instead
+of a list since outputs are dictionaries.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.policy_nets.TransformerActorNetwork.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.policy_nets.TransformerActorNetwork.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.policy_nets.TransformerGMMActorNetwork">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.policy_nets.</span></span><span class="sig-name descname"><span class="pre">TransformerGMMActorNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_shapes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ac_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_embed_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_num_layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_num_heads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_context_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_emb_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_attn_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_block_output_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_sinusoidal_embedding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gelu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformer_nn_parameter_for_timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_modes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_std</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std_activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'softplus'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_noise_eval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_tanh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_shapes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.TransformerGMMActorNetwork" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.policy_nets.TransformerActorNetwork" title="robomimic.models.policy_nets.TransformerActorNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.policy_nets.TransformerActorNetwork</span></code></a></p>
+<p>A Transformer GMM policy network that predicts sequences of action distributions from observation
+sequences (assumed to be frame stacked from previous observations).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.policy_nets.TransformerGMMActorNetwork.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.TransformerGMMActorNetwork.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Samples actions from the policy distribution.
+:param obs_dict: batch of observations
+:type obs_dict: dict
+:param actions: batch of actions
+:type actions: torch.Tensor
+:param goal_dict: if not None, batch of goal observations
+:type goal_dict: dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>batch of actions from policy distribution</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>action (torch.Tensor)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.policy_nets.TransformerGMMActorNetwork.forward_train">
+<span class="sig-name descname"><span class="pre">forward_train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_noise_eval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.TransformerGMMActorNetwork.forward_train" title="Permalink to this definition">#</a></dt>
+<dd><p>Return full GMM distribution, which is useful for computing
+quantities necessary at train-time, like log-likelihood, KL
+divergence, etc.
+:param obs_dict: batch of observations
+:type obs_dict: dict
+:param actions: batch of actions
+:type actions: torch.Tensor
+:param goal_dict: if not None, batch of goal observations
+:type goal_dict: dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>sequence of GMM distributions over the timesteps</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dists (Distribution)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.policy_nets.TransformerGMMActorNetwork.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.policy_nets.TransformerGMMActorNetwork.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="robomimic.models.policy_nets.VAEActor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.policy_nets.</span></span><span class="sig-name descname"><span class="pre">VAEActor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_shapes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ac_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_layer_dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoder_layer_dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoder_is_conditioned</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoder_reconstruction_sum_across_elements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent_clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prior_learn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prior_is_conditioned</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prior_layer_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prior_use_gmm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prior_gmm_num_modes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prior_gmm_learn_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prior_use_categorical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prior_categorical_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prior_categorical_gumbel_softmax_hard</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_shapes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.VAEActor" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
@@ -2539,8 +3017,188 @@ used if &#64;prior_use_categorical is True.</p>
 
 </dd></dl>
 
+</section>
+<section id="module-robomimic.models.transformers">
+<span id="robomimic-models-transformers-module"></span><h2>robomimic.models.transformers module<a class="headerlink" href="#module-robomimic.models.transformers" title="Permalink to this headline">#</a></h2>
+<p>Implementation of transformers, mostly based on Andrej’s minGPT model.
+See <a class="reference external" href="https://github.com/karpathy/minGPT/blob/master/mingpt/model.py">https://github.com/karpathy/minGPT/blob/master/mingpt/model.py</a>
+for more details.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.transformers.CausalSelfAttention">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.transformers.</span></span><span class="sig-name descname"><span class="pre">CausalSelfAttention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embed_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_heads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.CausalSelfAttention" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.transformers.CausalSelfAttention.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.CausalSelfAttention.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Forward pass through Self-Attention block.
+Input should be shape (B, T, D) where B is batch size, T is seq length (&#64;self.context_length), and
+D is input dimension (&#64;self.embed_dim).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.transformers.CausalSelfAttention.output_shape">
+<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.CausalSelfAttention.output_shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
+Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.transformers.CausalSelfAttention.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.transformers.CausalSelfAttention.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.transformers.GEGLU">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.transformers.</span></span><span class="sig-name descname"><span class="pre">GEGLU</span></span><a class="headerlink" href="#robomimic.models.transformers.GEGLU" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<p class="rubric">References</p>
+<p>Shazeer et al., “GLU Variants Improve Transformer,” 2020.
+<a class="reference external" href="https://arxiv.org/abs/2002.05202">https://arxiv.org/abs/2002.05202</a></p>
+<p>Implementation: <a class="reference external" href="https://github.com/pfnet-research/deep-table/blob/237c8be8a405349ce6ab78075234c60d9bfe60b7/deep_table/nn/layers/activation.py">https://github.com/pfnet-research/deep-table/blob/237c8be8a405349ce6ab78075234c60d9bfe60b7/deep_table/nn/layers/activation.py</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.transformers.GEGLU.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.GEGLU.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
 </div>
-<div class="section" id="module-robomimic.models.vae_nets">
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.transformers.GEGLU.geglu">
+<span class="sig-name descname"><span class="pre">geglu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.GEGLU.geglu" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.transformers.GEGLU.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.transformers.GEGLU.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.transformers.GPT_Backbone">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.transformers.</span></span><span class="sig-name descname"><span class="pre">GPT_Backbone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embed_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_output_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_layers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_heads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gelu'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.GPT_Backbone" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
+<p>the GPT model, with a context size of block_size</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.transformers.GPT_Backbone.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.GPT_Backbone.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.transformers.GPT_Backbone.output_shape">
+<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.GPT_Backbone.output_shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
+Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.transformers.GPT_Backbone.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.transformers.GPT_Backbone.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.transformers.PositionalEncoding">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.transformers.</span></span><span class="sig-name descname"><span class="pre">PositionalEncoding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embed_dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.PositionalEncoding" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<p>Taken from <a class="reference external" href="https://pytorch.org/tutorials/beginner/transformer_tutorial.html">https://pytorch.org/tutorials/beginner/transformer_tutorial.html</a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.transformers.PositionalEncoding.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.PositionalEncoding.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Input timestep of shape BxT</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.transformers.PositionalEncoding.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.transformers.PositionalEncoding.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robomimic.models.transformers.SelfAttentionBlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.models.transformers.</span></span><span class="sig-name descname"><span class="pre">SelfAttentionBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embed_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_heads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">GELU()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.SelfAttentionBlock" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
+<p>A single Transformer Block, that can be chained together repeatedly.
+It consists of a &#64;CausalSelfAttention module and a small MLP, along with
+layer normalization and residual connections on each input.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.transformers.SelfAttentionBlock.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.SelfAttentionBlock.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Forward pass - chain self-attention + MLP blocks, with residual connections and layer norms.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.models.transformers.SelfAttentionBlock.output_shape">
+<span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.SelfAttentionBlock.output_shape" title="Permalink to this definition">#</a></dt>
+<dd><p>Function to compute output shape from inputs to this module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
+Some modules may not need this argument, if their output does not depend
+on the size of the input, or if they assume fixed size input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of integers corresponding to output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>out_shape ([int])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robomimic.models.transformers.SelfAttentionBlock.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#robomimic.models.transformers.SelfAttentionBlock.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robomimic.models.vae_nets">
 <span id="robomimic-models-vae-nets-module"></span><h2>robomimic.models.vae_nets module<a class="headerlink" href="#module-robomimic.models.vae_nets" title="Permalink to this headline">#</a></h2>
 <p>Contains an implementation of Variational Autoencoder (VAE) and other
 variants, including other priors, and RNN-VAEs.</p>
@@ -3065,8 +3723,8 @@ be used if &#64;self.prior_use_categorical is True.</p>
 of a config (for example see <cite>config.algo.vae</cite> in BCConfig).</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.models.value_nets">
+</section>
+<section id="module-robomimic.models.value_nets">
 <span id="robomimic-models-value-nets-module"></span><h2>robomimic.models.value_nets module<a class="headerlink" href="#module-robomimic.models.value_nets" title="Permalink to this headline">#</a></h2>
 <p>Contains torch Modules for value networks. These networks take an
 observation dictionary as input (and possibly additional conditioning,
@@ -3183,11 +3841,11 @@ on the size of the input, or if they assume fixed size input.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.models">
+</section>
+<section id="module-robomimic.models">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robomimic.models" title="Permalink to this headline">#</a></h2>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -3218,9 +3876,9 @@ on the size of the input, or if they assume fixed size input.</p>
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

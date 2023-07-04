@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>D4RL &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>D4RL &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -546,19 +569,19 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="d4rl">
+  <section id="d4rl">
 <h1>D4RL<a class="headerlink" href="#d4rl" title="Permalink to this headline">#</a></h1>
-<div class="section" id="overview">
+<section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>The <a class="reference external" href="https://arxiv.org/abs/2004.07219">D4RL</a> benchmark provides a set of locomotion tasks and demonstration datasets.</p>
-</div>
-<div class="section" id="downloading">
+</section>
+<section id="downloading">
 <h2>Downloading<a class="headerlink" href="#downloading" title="Permalink to this headline">#</a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">convert_d4rl.py</span></code> in the <code class="docutils literal notranslate"><span class="pre">scripts/conversion</span></code> folder to automatically download and postprocess the D4RL dataset in a single step. For example:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># by default, download to robomimic/datasets</span>
-$ python convert_d4rl.py --env walker2d-medium-expert-v0
+$ python convert_d4rl.py --env walker2d-medium-expert-v2
 <span class="c1"># download to specific folder</span>
-$ python convert_d4rl.py --env walker2d-medium-expert-v0 --folder /path/to/output/folder/
+$ python convert_d4rl.py --env walker2d-medium-expert-v2 --folder /path/to/output/folder/
 </pre></div>
 </div>
 <ul class="simple">
@@ -566,14 +589,14 @@ $ python convert_d4rl.py --env walker2d-medium-expert-v0 --folder /path/to/outpu
 <li><p><code class="docutils literal notranslate"><span class="pre">--folder</span></code> specifies where you want to download the dataset. If no folder is provided, the <code class="docutils literal notranslate"><span class="pre">datasets</span></code> folder at the top-level of the repository will be used.</p></li>
 </ul>
 <p>The script will download the raw hdf5 dataset to <code class="docutils literal notranslate"><span class="pre">--folder</span></code>, and the converted one that is compatible with this repository into the <code class="docutils literal notranslate"><span class="pre">converted</span></code> subfolder.</p>
-</div>
-<div class="section" id="postprocessing">
+</section>
+<section id="postprocessing">
 <h2>Postprocessing<a class="headerlink" href="#postprocessing" title="Permalink to this headline">#</a></h2>
 <p>No postprocessing is required, assuming the above script is run!</p>
-</div>
-<div class="section" id="d4rl-results">
+</section>
+<section id="d4rl-results">
 <h2>D4RL Results<a class="headerlink" href="#d4rl-results" title="Permalink to this headline">#</a></h2>
-<p>Below, we provide a table of results on common D4RL datasets using the algorithms included in the released codebase. We follow the convention in the TD3-BC paper, where we average results over the final 10 rollout evaluations, but we use 50 rollouts instead of 10 for each evaluation. Apart from a small handful of the halfcheetah results, the results align with those presented in the <a class="reference external" href="https://arxiv.org/abs/2106.06860">TD3_BC paper</a>. We suspect the halfcheetah results are different because we used <code class="docutils literal notranslate"><span class="pre">mujoco-py</span></code> version <code class="docutils literal notranslate"><span class="pre">2.0.2.13</span></code> in our evaluations, as opposed to <code class="docutils literal notranslate"><span class="pre">1.5</span></code> in order to be consistent with the version we were using for robosuite datasets. The results below were generated with <code class="docutils literal notranslate"><span class="pre">gym</span></code> version <code class="docutils literal notranslate"><span class="pre">0.17.3</span></code> and this <code class="docutils literal notranslate"><span class="pre">d4rl</span></code> <a class="reference external" href="https://github.com/rail-berkeley/d4rl/tree/9b68f31bab6a8546edfb28ff0bd9d5916c62fd1f">commit</a>.</p>
+<p>Below, we provide a table of results on common D4RL datasets using the algorithms included in the released codebase. We follow the convention in the TD3-BC paper, where we average results over the final 10 rollout evaluations, but we use 50 rollouts instead of 10 for each evaluation. All results are reported on the <code class="docutils literal notranslate"><span class="pre">-v2</span></code> environment variants. Apart from a small handful of the halfcheetah results, the results align with those presented in the <a class="reference external" href="https://arxiv.org/abs/2106.06860">TD3_BC paper</a>. We suspect the halfcheetah results are different because we used <code class="docutils literal notranslate"><span class="pre">mujoco-py</span></code> version <code class="docutils literal notranslate"><span class="pre">2.1.2.14</span></code> in our evaluations, as opposed to <code class="docutils literal notranslate"><span class="pre">1.5</span></code> in order to be consistent with the version we were using for robosuite datasets. The results below were generated with <code class="docutils literal notranslate"><span class="pre">gym</span></code> version <code class="docutils literal notranslate"><span class="pre">0.24.1</span></code> and this <code class="docutils literal notranslate"><span class="pre">d4rl</span></code> <a class="reference external" href="https://github.com/Farama-Foundation/D4RL/tree/305676ebb2e26582d50c6518c8df39fd52dea587">commit</a>.</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -581,70 +604,80 @@ $ python convert_d4rl.py --env walker2d-medium-expert-v0 --folder /path/to/outpu
 <th><strong>BCQ</strong></th>
 <th><strong>CQL</strong></th>
 <th><strong>TD3-BC</strong></th>
+<th><strong>IQL</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>HalfCheetah-Medium</strong></td>
-<td>40.8% (4791)</td>
-<td>38.5% (4497)</td>
-<td>41.7% (4902)</td>
+<td>46.8% (5535)</td>
+<td>46.7% (5516)</td>
+<td>47.9% (5664)</td>
+<td>45.6% (5379)</td>
 </tr>
 <tr>
 <td><strong>Hopper-Medium</strong></td>
-<td>36.9% (1181)</td>
-<td>30.7% (980)</td>
-<td>97.9% (3167)</td>
+<td>63.9% (2059)</td>
+<td>59.2% (1908)</td>
+<td>61.0% (1965)</td>
+<td>53.7% (1729)</td>
 </tr>
 <tr>
 <td><strong>Walker2d-Medium</strong></td>
-<td>66.4% (3050)</td>
-<td>65.2% (2996)</td>
+<td>74.6% (3426)</td>
+<td>79.7% (3659)</td>
+<td>82.9% (3806)</td>
 <td>77.0% (3537)</td>
 </tr>
 <tr>
 <td><strong>HalfCheetah-Medium-Expert</strong></td>
-<td>74.9% (9016)</td>
-<td>21.5% (2389)</td>
-<td>79.4% (9578)</td>
+<td>89.9% (10875)</td>
+<td>77.6% (9358)</td>
+<td>92.1% (11154)</td>
+<td>89.0% (10773)</td>
 </tr>
 <tr>
 <td><strong>Hopper-Medium-Expert</strong></td>
-<td>83.8% (2708)</td>
-<td>111.7% (3614)</td>
-<td>112.2% (3631)</td>
+<td>79.5% (2566)</td>
+<td>62.9% (2027)</td>
+<td>89.7% (2900)</td>
+<td>110.1% (3564)</td>
 </tr>
 <tr>
 <td><strong>Walker2d-Medium-Expert</strong></td>
-<td>70.2% (3224)</td>
-<td>77.4% (3554)</td>
-<td>102.0% (4683)</td>
+<td>98.7% (4535)</td>
+<td>109.0% (5007)</td>
+<td>111.1% (5103)</td>
+<td>109.7% (5037)</td>
 </tr>
 <tr>
 <td><strong>HalfCheetah-Expert</strong></td>
-<td>94.3% (11427)</td>
-<td>29.2% (3342)</td>
-<td>95.4% (11569)</td>
+<td>92.9% (11249)</td>
+<td>67.7% (8126)</td>
+<td>94.6% (11469)</td>
+<td>93.3% (11304)</td>
 </tr>
 <tr>
 <td><strong>Hopper-Expert</strong></td>
-<td>104.7% (3389)</td>
-<td>111.8% (3619)</td>
-<td>112.2% (3633)</td>
+<td>92.3% (2984)</td>
+<td>104.2% (3370)</td>
+<td>108.5% (3512)</td>
+<td>110.5% (3577)</td>
 </tr>
 <tr>
 <td><strong>Walker2d-Expert</strong></td>
-<td>80.5% (3699)</td>
-<td>108.0% (4958)</td>
-<td>105.3% (4837)</td>
+<td>108.6% (4987)</td>
+<td>108.5% (4983)</td>
+<td>110.3% (5066)</td>
+<td>109.1% (5008)</td>
 </tr>
 </tbody>
-</table><div class="section" id="reproducing-d4rl-results">
+</table><section id="reproducing-d4rl-results">
 <h3>Reproducing D4RL Results<a class="headerlink" href="#reproducing-d4rl-results" title="Permalink to this headline">#</a></h3>
 <p>In order to reproduce the results above, first make sure that the <code class="docutils literal notranslate"><span class="pre">generate_paper_configs.py</span></code> script has been run, where the <code class="docutils literal notranslate"><span class="pre">--dataset_dir</span></code> argument is consistent with the folder where the D4RL datasets were downloaded using the <code class="docutils literal notranslate"><span class="pre">convert_d4rl.py</span></code> script. This is also the first step for reproducing results on the released robot manipulation datasets. The <code class="docutils literal notranslate"><span class="pre">--config_dir</span></code> directory used in the script (<code class="docutils literal notranslate"><span class="pre">robomimic/exps/paper</span></code> by default) will contain a <code class="docutils literal notranslate"><span class="pre">d4rl.sh</span></code> script, and a <code class="docutils literal notranslate"><span class="pre">d4rl</span></code> subdirectory that contains all the json configs. The table results above can be generated simply by running the training commands in the shell script.</p>
-</div>
-</div>
-<div class="section" id="citation">
+</section>
+</section>
+<section id="citation">
 <h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>@article<span class="o">{</span>fu2020d4rl,
   <span class="nv">title</span><span class="o">={</span>D4rl: Datasets <span class="k">for</span> deep data-driven reinforcement learning<span class="o">}</span>,
@@ -654,8 +687,8 @@ $ python convert_d4rl.py --env walker2d-medium-expert-v0 --folder /path/to/outpu
 <span class="o">}</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -686,9 +719,9 @@ $ python convert_d4rl.py --env walker2d-medium-expert-v0 --folder /path/to/outpu
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

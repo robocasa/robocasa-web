@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Implementing Custom Algorithms &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Implementing Custom Algorithms &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,12 +30,12 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Operations over Tensor Collections" href="tensor_collections.html" />
-    <link rel="prev" title="Multimodal Observations" href="observations.html" />
+    <link rel="prev" title="Pre-trained Visual Representations" href="pretrained_representations.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -198,6 +204,11 @@
    Multimodal Observations
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Implementing Custom Algorithms
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -502,7 +525,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="implementing-custom-algorithms">
+  <section id="implementing-custom-algorithms">
 <h1>Implementing Custom Algorithms<a class="headerlink" href="#implementing-custom-algorithms" title="Permalink to this headline">#</a></h1>
 <p>This tutorial provides an example of implementing a custom algorithm in robomimic. We choose to implement the recently proposed <a class="reference external" href="https://arxiv.org/abs/2106.06860">TD3-BC</a> algorithm.</p>
 <p>This consists of the following steps:</p>
@@ -510,7 +533,7 @@ title="Print to PDF"
 <li><p>Implement a custom <code class="docutils literal notranslate"><span class="pre">Config</span></code> class for TD3-BC.</p></li>
 <li><p>Implement a custom <code class="docutils literal notranslate"><span class="pre">Algo</span></code> class for TD3-BC.</p></li>
 </ol>
-<div class="section" id="implementing-the-config-class">
+<section id="implementing-the-config-class">
 <h2>Implementing the Config class<a class="headerlink" href="#implementing-the-config-class" title="Permalink to this headline">#</a></h2>
 <p>We will implement the config class in <code class="docutils literal notranslate"><span class="pre">config/td3_bc_config.py</span></code>. We implement a <code class="docutils literal notranslate"><span class="pre">TD3_BCConfig</span></code> config class that subclasses from <code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code>. Importantly, we set the class variable <code class="docutils literal notranslate"><span class="pre">ALGO_NAME</span> <span class="pre">=</span> <span class="pre">&quot;td3_bc&quot;</span></code> to register this config under that algo name. We implement the <code class="docutils literal notranslate"><span class="pre">algo_config</span></code> function to populate <code class="docutils literal notranslate"><span class="pre">config.algo</span></code> with the keys needed for the algorithm - it is extremely similar to the <code class="docutils literal notranslate"><span class="pre">BCQConfig</span></code> implementation. Portions of the code are reproduced below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TD3_BCConfig</span><span class="p">(</span><span class="n">BaseConfig</span><span class="p">):</span>
@@ -566,8 +589,8 @@ title="Print to PDF"
 </div>
 <p>Usually, we only need to implement the <code class="docutils literal notranslate"><span class="pre">algo_config</span></code> function to populate <code class="docutils literal notranslate"><span class="pre">config.algo</span></code> with the keys needed for the algorithm, but we also update the <code class="docutils literal notranslate"><span class="pre">experiment_config</span></code> function and <code class="docutils literal notranslate"><span class="pre">observation_config</span></code> function to make it easier to reproduce experiments on <code class="docutils literal notranslate"><span class="pre">gym</span></code> environments from the paper. See the source file for more details.</p>
 <p>Finally, we add the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">robomimic.config.td3_bc_config</span> <span class="pre">import</span> <span class="pre">TD3_BCConfig</span></code> to <code class="docutils literal notranslate"><span class="pre">config/__init__.py</span></code> to make sure this <code class="docutils literal notranslate"><span class="pre">Config</span></code> subclass is registered by <code class="docutils literal notranslate"><span class="pre">robomimic</span></code>.</p>
-</div>
-<div class="section" id="implementing-the-algo-class">
+</section>
+<section id="implementing-the-algo-class">
 <h2>Implementing the Algo class<a class="headerlink" href="#implementing-the-algo-class" title="Permalink to this headline">#</a></h2>
 <p>We will implement the algo class in <code class="docutils literal notranslate"><span class="pre">algo/td3_bc.py</span></code>. As described in the <a class="reference external" href="../modules/algorithms.html#initialization">Algorithm documentation</a>, we first need to implement the <code class="docutils literal notranslate"><span class="pre">algo_config_to_class</span></code> method - this is straightforward since we don’t have multiple variants of this algorithm. We take special care to make sure we register this function with the same algo name that we used for defining the config (<code class="docutils literal notranslate"><span class="pre">&quot;td3_bc&quot;</span></code>).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@register_algo_factory_func</span><span class="p">(</span><span class="s2">&quot;td3_bc&quot;</span><span class="p">)</span>
@@ -856,8 +879,8 @@ $ python generate_config_templates.py
 $ python train.py --config ../exps/templates/td3_bc.json --dataset /path/to/walker2d_medium_expert.hdf5
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -867,11 +890,11 @@ $ python train.py --config ../exps/templates/td3_bc.json --dataset /path/to/walk
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="observations.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="pretrained_representations.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Multimodal Observations</p>
+            <p class="prev-next-title">Pre-trained Visual Representations</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="tensor_collections.html" title="next page">
@@ -888,9 +911,9 @@ $ python train.py --config ../exps/templates/td3_bc.json --dataset /path/to/walk
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

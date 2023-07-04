@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RoboTurk Pilot &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>RoboTurk Pilot &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -522,21 +545,21 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="roboturk-pilot">
+  <section id="roboturk-pilot">
 <h1>RoboTurk Pilot<a class="headerlink" href="#roboturk-pilot" title="Permalink to this headline">#</a></h1>
-<div class="section" id="overview">
+<section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>The first <a class="reference external" href="https://arxiv.org/abs/1811.02790">RoboTurk paper</a> released <a class="reference external" href="https://roboturk.stanford.edu/dataset_sim.html">large-scale pilot datasets</a> collected with robosuite <code class="docutils literal notranslate"><span class="pre">v0.3</span></code>. These datasets consist of over 1000 task demonstrations each on several Sawyer <code class="docutils literal notranslate"><span class="pre">PickPlace</span></code> and <code class="docutils literal notranslate"><span class="pre">NutAssembly</span></code> task variants, collected by several human operators. This repository is fully compatible with these datasets.</p>
 <p align="center">
   <img width="100.0%" src="../images/roboturk_pilot.png">
-</p></div>
-<div class="section" id="downloading">
+</p></section>
+<section id="downloading">
 <h2>Downloading<a class="headerlink" href="#downloading" title="Permalink to this headline">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning!</p><p>When working with these datasets, please make sure that you have installed <a class="reference external" href="https://robosuite.ai/">robosuite</a> from source and are on the <code class="docutils literal notranslate"><span class="pre">roboturk_v1</span></code> branch.</p>
 </div><p>Download the dataset <a class="reference external" href="http://cvgl.stanford.edu/projects/roboturk/RoboTurkPilot.zip">here</a> (~9 GB download), and unzip the file, resulting in a <code class="docutils literal notranslate"><span class="pre">RoboTurkPilot</span></code> folder.</p>
-</div>
-<div class="section" id="postprocessing">
+</section>
+<section id="postprocessing">
 <h2>Postprocessing<a class="headerlink" href="#postprocessing" title="Permalink to this headline">#</a></h2>
 <p>First, the dataset must be updated to a format compatible with <strong>robomimic</strong>. Run the following script (these arguments are provided as an example):</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert the Can demonstrations, and also create a &quot;fastest_225&quot; filter_key (prior work such as IRIS has trained on this subset)</span>
@@ -544,8 +567,8 @@ $ python conversion/convert_roboturk_pilot.py --folder /path/to/RoboTurkPilot/bi
 </pre></div>
 </div>
 <p>Then, the dataset must be postprocessed since there are no observations stored. You must run <code class="docutils literal notranslate"><span class="pre">dataset_states_to_obs.py</span></code>. For more information, see <a class="reference external" href="robosuite.html#extracting-observations-from-mujoco-states">this page</a>.</p>
-</div>
-<div class="section" id="citation">
+</section>
+<section id="citation">
 <h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>@inproceedings<span class="o">{</span>mandlekar2018roboturk,
   <span class="nv">title</span><span class="o">={</span>Roboturk: A crowdsourcing platform <span class="k">for</span> robotic skill learning through imitation<span class="o">}</span>,
@@ -557,8 +580,8 @@ $ python conversion/convert_roboturk_pilot.py --folder /path/to/RoboTurkPilot/bi
 <span class="o">}</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -589,9 +612,9 @@ $ python conversion/convert_roboturk_pilot.py --folder /path/to/RoboTurkPilot/bi
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

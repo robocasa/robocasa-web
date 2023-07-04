@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>robomimic.utils package &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>robomimic.utils package &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -489,11 +512,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robomimic.utils.macros">
-   robomimic.utils.macros module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic.utils.obs_utils">
    robomimic.utils.obs_utils module
   </a>
@@ -588,11 +606,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robomimic.utils.macros">
-   robomimic.utils.macros module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robomimic.utils.obs_utils">
    robomimic.utils.obs_utils module
   </a>
@@ -642,12 +655,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="robomimic-utils-package">
+  <section id="robomimic-utils-package">
 <h1>robomimic.utils package<a class="headerlink" href="#robomimic-utils-package" title="Permalink to this headline">#</a></h1>
-<div class="section" id="submodules">
+<section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
-</div>
-<div class="section" id="module-robomimic.utils.dataset">
+</section>
+<section id="module-robomimic.utils.dataset">
 <span id="robomimic-utils-dataset-module"></span><h2>robomimic.utils.dataset module<a class="headerlink" href="#module-robomimic.utils.dataset" title="Permalink to this headline">#</a></h2>
 <p>This file contains Dataset classes that are used by torch dataloaders
 to fetch batches from hdf5 files.</p>
@@ -680,7 +693,7 @@ See the <cite>train</cite> function in scripts/train.py, and torch
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robomimic.utils.dataset.SequenceDataset.get_dataset_sequence_from_demo">
-<span class="sig-name descname"><span class="pre">get_dataset_sequence_from_demo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">demo_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_in_demo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.dataset.SequenceDataset.get_dataset_sequence_from_demo" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_dataset_sequence_from_demo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">demo_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_in_demo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_frames_to_stack</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.dataset.SequenceDataset.get_dataset_sequence_from_demo" title="Permalink to this definition">#</a></dt>
 <dd><p>Extract a (sub)sequence of dataset items from a demo given the &#64;keys of the items (e.g., states, actions).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -688,6 +701,7 @@ See the <cite>train</cite> function in scripts/train.py, and torch
 <li><p><strong>demo_id</strong> (<em>str</em>) – id of the demo, e.g., demo_0</p></li>
 <li><p><strong>index_in_demo</strong> (<em>int</em>) – beginning index of the sequence wrt the demo</p></li>
 <li><p><strong>keys</strong> (<em>tuple</em>) – list of keys to extract</p></li>
+<li><p><strong>num_frames_to_stack</strong> (<em>int</em>) – numbers of frame to stack. Seq gets prepended with repeated items if out of range</p></li>
 <li><p><strong>seq_length</strong> (<em>int</em>) – sequence length to extract. Seq gets post-pended with repeated items if out of range</p></li>
 </ul>
 </dd>
@@ -835,8 +849,8 @@ filter key) are used.</p></li>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.utils.env_utils">
+</section>
+<section id="module-robomimic.utils.env_utils">
 <span id="robomimic-utils-env-utils-module"></span><h2>robomimic.utils.env_utils module<a class="headerlink" href="#module-robomimic.utils.env_utils" title="Permalink to this headline">#</a></h2>
 <p>This file contains several utility functions for working with environment
 wrappers provided by the repository, and with environment metadata saved
@@ -870,6 +884,31 @@ hdf5 with &#64;FileUtils.get_env_metadata_from_dataset or from checkpoint (see
 <li><p><strong>env_type</strong> (<em>int</em>) – the type of environment, which determines the env class that will
 be instantiated. Should be a value in EB.EnvType.</p></li>
 <li><p><strong>env</strong> (<em>instance of EB.EnvBase</em>) – environment instance</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robomimic.utils.env_utils.check_env_version">
+<span class="sig-prename descclassname"><span class="pre">robomimic.utils.env_utils.</span></span><span class="sig-name descname"><span class="pre">check_env_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_meta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.env_utils.check_env_version" title="Permalink to this definition">#</a></dt>
+<dd><p>Checks whether the passed env and env_meta dictionary having matching environment versions.
+Logs warning if cannot find version or versions do not match.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>env</strong> (<em>instance of EB.EnvBase</em>) – environment instance</p></li>
+<li><p><strong>env_meta</strong> (<em>dict</em>) – <p>environment metadata, which should be loaded from demonstration
+hdf5 with &#64;FileUtils.get_env_metadata_from_dataset or from checkpoint (see
+&#64;FileUtils.env_from_checkpoint). Contains following key:</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd"><cite>’env_version’</cite></dt>
+<dd class="field-odd"><p>environment version, type str</p>
+</dd>
+</dl>
+</div></blockquote>
+</p></li>
 </ul>
 </dd>
 </dl>
@@ -1042,8 +1081,15 @@ be instantiated. Should be a value in EB.EnvType.</p></li>
 either env_meta, env_type, or env.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.utils.file_utils">
+<dl class="py function">
+<dt class="sig sig-object py" id="robomimic.utils.env_utils.wrap_env_from_config">
+<span class="sig-prename descclassname"><span class="pre">robomimic.utils.env_utils.</span></span><span class="sig-name descname"><span class="pre">wrap_env_from_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.env_utils.wrap_env_from_config" title="Permalink to this definition">#</a></dt>
+<dd><p>Wraps environment using the provided Config object to determine which wrappers
+to use (if any).</p>
+</dd></dl>
+
+</section>
+<section id="module-robomimic.utils.file_utils">
 <span id="robomimic-utils-file-utils-module"></span><h2>robomimic.utils.file_utils module<a class="headerlink" href="#module-robomimic.utils.file_utils" title="Permalink to this headline">#</a></h2>
 <p>A collection of utility functions for working with files, such as reading metadata from
 demonstration datasets, loading model checkpoints, or downloading dataset files.</p>
@@ -1189,6 +1235,31 @@ is forced to be True if saved model uses image observations.</p></li>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>env (EnvBase instance)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robomimic.utils.file_utils.get_demos_for_filter_key">
+<span class="sig-prename descclassname"><span class="pre">robomimic.utils.file_utils.</span></span><span class="sig-name descname"><span class="pre">get_demos_for_filter_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdf5_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.file_utils.get_demos_for_filter_key" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets demo keys that correspond to a particular filter key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf5_path</strong> (<em>str</em>) – path to hdf5 file</p></li>
+<li><p><strong>filter_key</strong> (<em>str</em>) – name of filter key</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>list of demonstration keys that</dt><dd><p>correspond to this filter key. For example, [“demo_0”,
+“demo_1”].</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>demo_keys ([str])</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1362,13 +1433,13 @@ From <a class="reference external" href="https://gist.github.com/dehowell/884204
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.utils.hyperparam_utils">
+</section>
+<section id="module-robomimic.utils.hyperparam_utils">
 <span id="robomimic-utils-hyperparam-utils-module"></span><h2>robomimic.utils.hyperparam_utils module<a class="headerlink" href="#module-robomimic.utils.hyperparam_utils" title="Permalink to this headline">#</a></h2>
 <p>A collection of utility functions and classes for generating config jsons for hyperparameter sweeps.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="robomimic.utils.hyperparam_utils.ConfigGenerator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.utils.hyperparam_utils.</span></span><span class="sig-name descname"><span class="pre">ConfigGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_config_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.hyperparam_utils.ConfigGenerator" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.utils.hyperparam_utils.</span></span><span class="sig-name descname"><span class="pre">ConfigGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_config_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wandb_proj_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'debug'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generated_config_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.hyperparam_utils.ConfigGenerator" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Useful class to keep track of hyperparameters to sweep, and to generate
 the json configs for each experiment run.</p>
@@ -1479,14 +1550,14 @@ by “.”.</p></li>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.utils.log_utils">
+</section>
+<section id="module-robomimic.utils.log_utils">
 <span id="robomimic-utils-log-utils-module"></span><h2>robomimic.utils.log_utils module<a class="headerlink" href="#module-robomimic.utils.log_utils" title="Permalink to this headline">#</a></h2>
 <p>This file contains utility classes and functions for logging to stdout, stderr,
 and to tensorboard.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="robomimic.utils.log_utils.DataLogger">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.utils.log_utils.</span></span><span class="sig-name descname"><span class="pre">DataLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_tb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.log_utils.DataLogger" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.utils.log_utils.</span></span><span class="sig-name descname"><span class="pre">DataLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_tb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_wandb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.log_utils.DataLogger" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Logging class to log metrics to tensorboard and/or retrieve running statistics about logged data.</p>
 <dl class="py method">
@@ -1498,16 +1569,15 @@ and to tensorboard.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robomimic.utils.log_utils.DataLogger.get_stats">
 <span class="sig-name descname"><span class="pre">get_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.log_utils.DataLogger.get_stats" title="Permalink to this definition">#</a></dt>
-<dd><p>Computes running statistics for a particular key.</p>
+<dd><p>Computes running statistics for a particular key.
+:param k: key string
+:type k: str</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>k</strong> (<em>str</em>) – key string</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of statistics</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>dictionary of statistics</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>stats (dict)</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>stats (dict)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1515,18 +1585,16 @@ and to tensorboard.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robomimic.utils.log_utils.DataLogger.record">
 <span class="sig-name descname"><span class="pre">record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'scalar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.log_utils.DataLogger.record" title="Permalink to this definition">#</a></dt>
-<dd><p>Record data with logger.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>k</strong> (<em>str</em>) – key string</p></li>
-<li><p><strong>v</strong> (<em>float</em><em> or </em><em>image</em>) – value to store</p></li>
-<li><p><strong>epoch</strong> – current epoch number</p></li>
-<li><p><strong>data_type</strong> (<em>str</em>) – the type of data. either ‘scalar’ or ‘image’</p></li>
-<li><p><strong>log_stats</strong> (<em>bool</em>) – whether to store the mean/max/min/std for all data logged so far with key k</p></li>
-</ul>
-</dd>
-</dl>
+<dd><p>Record data with logger.
+:param k: key string
+:type k: str
+:param v: value to store
+:type v: float or image
+:param epoch: current epoch number
+:param data_type: the type of data. either ‘scalar’ or ‘image’
+:type data_type: str
+:param log_stats: whether to store the mean/max/min/std for all data logged so far with key k
+:type log_stats: bool</p>
 </dd></dl>
 
 </dd></dl>
@@ -1558,6 +1626,31 @@ to stdout.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="robomimic.utils.log_utils.flush_warnings">
+<span class="sig-prename descclassname"><span class="pre">robomimic.utils.log_utils.</span></span><span class="sig-name descname"><span class="pre">flush_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.log_utils.flush_warnings" title="Permalink to this definition">#</a></dt>
+<dd><p>This function flushes all warnings from the global warning buffer to the terminal and
+clears the global registry.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robomimic.utils.log_utils.log_warning">
+<span class="sig-prename descclassname"><span class="pre">robomimic.utils.log_utils.</span></span><span class="sig-name descname"><span class="pre">log_warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'yellow'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_now</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.log_utils.log_warning" title="Permalink to this definition">#</a></dt>
+<dd><p>This function logs a warning message by recording it in a global warning buffer.
+The global registry will be maintained until &#64;flush_warnings is called, at
+which point the warnings will get printed to the terminal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>str</em>) – warning message to display</p></li>
+<li><p><strong>color</strong> (<em>str</em>) – color of message - defaults to “yellow”</p></li>
+<li><p><strong>print_now</strong> (<em>bool</em>) – if True (default), will print to terminal immediately, in
+addition to adding it to the global warning buffer</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="robomimic.utils.log_utils.silence_stdout">
 <span class="sig-prename descclassname"><span class="pre">robomimic.utils.log_utils.</span></span><span class="sig-name descname"><span class="pre">silence_stdout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.log_utils.silence_stdout" title="Permalink to this definition">#</a></dt>
 <dd><p>This contextmanager will redirect stdout so that nothing is printed
@@ -1565,8 +1658,8 @@ to the terminal. Taken from the link below:</p>
 <p><a class="reference external" href="https://stackoverflow.com/questions/6735917/redirecting-stdout-to-nothing-in-python">https://stackoverflow.com/questions/6735917/redirecting-stdout-to-nothing-in-python</a></p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.utils.loss_utils">
+</section>
+<section id="module-robomimic.utils.loss_utils">
 <span id="robomimic-utils-loss-utils-module"></span><h2>robomimic.utils.loss_utils module<a class="headerlink" href="#module-robomimic.utils.loss_utils" title="Permalink to this headline">#</a></h2>
 <p>This file contains a collection of useful loss functions for use with torch tensors.</p>
 <dl class="py function">
@@ -1760,12 +1853,8 @@ onto &#64;atoms</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.utils.macros">
-<span id="robomimic-utils-macros-module"></span><h2>robomimic.utils.macros module<a class="headerlink" href="#module-robomimic.utils.macros" title="Permalink to this headline">#</a></h2>
-<p>Set of global variables shared across robomimic</p>
-</div>
-<div class="section" id="module-robomimic.utils.obs_utils">
+</section>
+<section id="module-robomimic.utils.obs_utils">
 <span id="robomimic-utils-obs-utils-module"></span><h2>robomimic.utils.obs_utils module<a class="headerlink" href="#module-robomimic.utils.obs_utils" title="Permalink to this headline">#</a></h2>
 <p>A collection of utilities for working with observation dictionaries and
 different kinds of modalities such as images.</p>
@@ -2445,8 +2534,8 @@ torch.Tensor. Leading batch dimensions are optional.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.utils.python_utils">
+</section>
+<section id="module-robomimic.utils.python_utils">
 <span id="robomimic-utils-python-utils-module"></span><h2>robomimic.utils.python_utils module<a class="headerlink" href="#module-robomimic.utils.python_utils" title="Permalink to this headline">#</a></h2>
 <p>Set of general purpose utility functions for easier interfacing with Python API</p>
 <dl class="py function">
@@ -2516,8 +2605,8 @@ the values extracted from the original &#64;dic if &#64;copy is True.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.utils.tensor_utils">
+</section>
+<section id="module-robomimic.utils.tensor_utils">
 <span id="robomimic-utils-tensor-utils-module"></span><h2>robomimic.utils.tensor_utils module<a class="headerlink" href="#module-robomimic.utils.tensor_utils" title="Permalink to this headline">#</a></h2>
 <p>A collection of utilities for working with nested tensor structures consisting
 of numpy arrays and torch tensors.</p>
@@ -3107,7 +3196,7 @@ to a target dimension.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>dict</em><em> or </em><em>list</em><em> or </em><em>tuple</em>) – a possibly nested dictionary or list or tuple</p></li>
 <li><p><strong>begin_axis</strong> (<em>int</em>) – begin dimension</p></li>
-<li><p><strong>end_axis</strong> (<em>int</em>) – end dimension</p></li>
+<li><p><strong>end_axis</strong> (<em>int</em>) – end dimension (inclusive)</p></li>
 <li><p><strong>target_dims</strong> (<em>tuple</em><em> or </em><em>list</em>) – target shape for the range of dimensions
 (&#64;begin_axis, &#64;end_axis)</p></li>
 </ul>
@@ -3130,7 +3219,7 @@ to a target dimension.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>torch.Tensor</em>) – tensor to reshape</p></li>
 <li><p><strong>begin_axis</strong> (<em>int</em>) – begin dimension</p></li>
-<li><p><strong>end_axis</strong> (<em>int</em>) – end dimension</p></li>
+<li><p><strong>end_axis</strong> (<em>int</em>) – end dimension (inclusive)</p></li>
 <li><p><strong>target_dims</strong> (<em>tuple</em><em> or </em><em>list</em>) – target shape for the range of dimensions
 (&#64;begin_axis, &#64;end_axis)</p></li>
 </ul>
@@ -3426,8 +3515,8 @@ in nested dictionary or list or tuple and returns a new nested structure.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.utils.test_utils">
+</section>
+<section id="module-robomimic.utils.test_utils">
 <span id="robomimic-utils-test-utils-module"></span><h2>robomimic.utils.test_utils module<a class="headerlink" href="#module-robomimic.utils.test_utils" title="Permalink to this headline">#</a></h2>
 <p>Utilities for testing algorithm implementations - used mainly by scripts in tests directory.</p>
 <dl class="py function">
@@ -3570,8 +3659,8 @@ input, and modifies it</p></li>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.utils.torch_utils">
+</section>
+<section id="module-robomimic.utils.torch_utils">
 <span id="robomimic-utils-torch-utils-module"></span><h2>robomimic.utils.torch_utils module<a class="headerlink" href="#module-robomimic.utils.torch_utils" title="Permalink to this headline">#</a></h2>
 <p>This file contains some PyTorch utilities.</p>
 <dl class="py function">
@@ -3739,8 +3828,8 @@ with strength &#64;tau. The update follows target = target * (1 - tau) + source 
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.utils.train_utils">
+</section>
+<section id="module-robomimic.utils.train_utils">
 <span id="robomimic-utils-train-utils-module"></span><h2>robomimic.utils.train_utils module<a class="headerlink" href="#module-robomimic.utils.train_utils" title="Permalink to this headline">#</a></h2>
 <p>This file contains several utility functions used to define the main training loop. It
 mainly consists of functions to assist with logging, rollouts, and the &#64;run_epoch function,
@@ -3885,7 +3974,7 @@ be rolled out in each env.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="robomimic.utils.train_utils.run_epoch">
-<span class="sig-prename descclassname"><span class="pre">robomimic.utils.train_utils.</span></span><span class="sig-name descname"><span class="pre">run_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_loader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.train_utils.run_epoch" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robomimic.utils.train_utils.</span></span><span class="sig-name descname"><span class="pre">run_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_loader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_normalization_stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.train_utils.run_epoch" title="Permalink to this definition">#</a></dt>
 <dd><p>Run an epoch of training or validation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3898,6 +3987,9 @@ to the model</p></li>
 whether to do gradient steps or purely do forward passes.</p></li>
 <li><p><strong>num_steps</strong> (<em>int</em>) – if provided, this epoch lasts for a fixed number of batches (gradient steps),
 otherwise the epoch is a complete pass through the training dataset</p></li>
+<li><p><strong>obs_normalization_stats</strong> (<em>dict</em><em> or </em><em>None</em>) – if provided, this should map observation keys to dicts
+with a “mean” and “std” of shape (1, …) where … is the default
+shape for the observation.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -3996,8 +4088,8 @@ new best rollout success rate</p></li>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.utils.vis_utils">
+</section>
+<section id="module-robomimic.utils.vis_utils">
 <span id="robomimic-utils-vis-utils-module"></span><h2>robomimic.utils.vis_utils module<a class="headerlink" href="#module-robomimic.utils.vis_utils" title="Permalink to this headline">#</a></h2>
 <p>This file contains utility functions for visualizing image observations in the training pipeline.
 These functions can be a useful debugging tool.</p>
@@ -4049,11 +4141,25 @@ A useful utility function for visualizing images in the middle of training.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robomimic.utils">
+<dl class="py function">
+<dt class="sig sig-object py" id="robomimic.utils.vis_utils.visualize_image_randomizer">
+<span class="sig-prename descclassname"><span class="pre">robomimic.utils.vis_utils.</span></span><span class="sig-name descname"><span class="pre">visualize_image_randomizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomized_image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomizer_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.vis_utils.visualize_image_randomizer" title="Permalink to this definition">#</a></dt>
+<dd><p>A function that visualizes the before and after of an image-based input randomizer
+:param original_image: batch of original image shaped [B, H, W, 3]
+:param randomized_image: randomized image shaped [B, N, H, W, 3]. N is the number of randomization per input sample
+:param randomizer_name: (Optional) name of the randomizer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-robomimic.utils">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robomimic.utils" title="Permalink to this headline">#</a></h2>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -4084,9 +4190,9 @@ A useful utility function for visualizing images in the middle of training.</p>
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>

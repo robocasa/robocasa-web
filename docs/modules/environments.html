@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Environments &#8212; robomimic 0.2.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Environments &#8212; robomimic 0.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,7 +21,7 @@
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -29,7 +30,7 @@
     <script src="../static/jquery.js"></script>
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robomimic 0.2.1 documentation</h1>
+      <img src="../static/robomimic_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -199,6 +205,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/pretrained_representations.html">
+   Pre-trained Visual Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/custom_algorithms.html">
    Implementing Custom Algorithms
   </a>
@@ -319,6 +330,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../miscellaneous/references.html">
    Projects using robomimic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Previous Versions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../versions/v0.2.html">
+   v0.2
   </a>
  </li>
 </ul>
@@ -502,7 +525,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="environments">
+  <section id="environments">
 <h1>Environments<a class="headerlink" href="#environments" title="Permalink to this headline">#</a></h1>
 <p><strong>robomimic</strong> interfaces trained policy models with standard simulated environments such as <a class="reference external" href="https://robosuite.ai/">robosuite</a> and <a class="reference external" href="https://gym.openai.com/">OpenAI-Gym</a> through a standardized wrapper class. The base wrapper is located at <code class="docutils literal notranslate"><span class="pre">envs.env_base</span></code>. The standard entry point for creating an environment is through the <code class="docutils literal notranslate"><span class="pre">create_env_from_metadata</span></code> function located at <code class="docutils literal notranslate"><span class="pre">robomimic.utils.env_utils</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_env_from_metadata</span><span class="p">(</span>
@@ -555,7 +578,7 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">env_kwargs</span></code> specifies the keyword args that are required to initialize an environment. The <code class="docutils literal notranslate"><span class="pre">env_kwargs</span></code> will be passed to the constructor of the wrapped environment as keyword arguments through the <code class="docutils literal notranslate"><span class="pre">robomimic.utils.env_utils.create_env()</span></code> helper function.</p></li>
 </ul>
 <p>Although it is possible to manually specify the <code class="docutils literal notranslate"><span class="pre">env_meta</span></code> dictionary, the <strong>robomimic</strong> training pipeline reads the <code class="docutils literal notranslate"><span class="pre">env_meta</span></code> from the hdf5 dataset as an attribute. Please refer to the <a class="reference external" href="../introduction/datasets.html">Dataset section</a> for more details on where the metadata is stored, and the <code class="docutils literal notranslate"><span class="pre">robomimic.utils.file_utils.get_env_metadata_from_dataset</span></code> function to see how it is loaded from the dataset at run-time.</p>
-<div class="section" id="initialize-an-environment-from-a-dataset">
+<section id="initialize-an-environment-from-a-dataset">
 <h2>Initialize an Environment from a Dataset<a class="headerlink" href="#initialize-an-environment-from-a-dataset" title="Permalink to this headline">#</a></h2>
 <p>The demonstration dataset file should contain all necessary information to construct an environment. Here is standalone example for initializing a <code class="docutils literal notranslate"><span class="pre">EnvRobosuite</span></code> environment instance by reading environment metadata from the a dataset.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">robomimic.utils.env_utils</span> <span class="k">as</span> <span class="nn">EnvUtils</span>
@@ -644,8 +667,8 @@ title="Print to PDF"
 ...
 </pre></div>
 </div>
-</div>
-<div class="section" id="implement-an-environment-wrapper">
+</section>
+<section id="implement-an-environment-wrapper">
 <h2>Implement an Environment Wrapper<a class="headerlink" href="#implement-an-environment-wrapper" title="Permalink to this headline">#</a></h2>
 <p>While we provide wrappers for <a class="reference external" href="https://robosuite.ai/">robosuite</a> environments and  several standard <a class="reference external" href="https://gym.openai.com/">OpenAI-Gym</a> environments, it is possible to implement your own wrapper for a new type of environment (for example, perhaps <a class="reference external" href="https://pybullet.org/wordpress/">PyBullet</a>). This is useful if you have your own hdf5 dataset collected in this type of environment, and would like to conduct evaluation rollouts during the training process (note that no environment is needed if <code class="docutils literal notranslate"><span class="pre">config.experiment.rollout.enabled</span></code> is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>). To do this, in addition to implementing a wrapper class by inheriting the <code class="docutils literal notranslate"><span class="pre">EnvBase</span></code> class, you will also need to (1) add a new environment type in the <code class="docutils literal notranslate"><span class="pre">robomimic.envs.env_base.EnvType</span></code> enum class and (2) modify <code class="docutils literal notranslate"><span class="pre">get_env_type()</span></code> and <code class="docutils literal notranslate"><span class="pre">get_env_class()</span></code> in <code class="docutils literal notranslate"><span class="pre">robomimic.utils.env_utils</span></code> to allow the environment class to be found automatically.</p>
 <p>Below we outline important methods that each <code class="docutils literal notranslate"><span class="pre">EnvBase</span></code> subclass needs to implement or override. The implementation mostly follows the OpenAI-Gym convention.</p>
@@ -711,8 +734,8 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -743,9 +766,9 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang<br/>
+    By the robomimic core team<br/>
   
-      &copy; Copyright 2022, Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang.<br/>
+      &copy; Copyright the robomimic core team, 2023.<br/>
 </p>
         </footer>
     </div>
