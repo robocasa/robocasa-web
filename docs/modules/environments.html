@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Environments &#8212; robomimic 0.3 documentation</title>
     
@@ -539,7 +539,7 @@ title="Print to PDF"
     <span class="n">render_offscreen</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
     <span class="n">use_image_obs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Create environment.</span>
 
 <span class="sd">    Args:</span>
@@ -582,7 +582,7 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> is an enum defined in <code class="docutils literal notranslate"><span class="pre">robomimicenvs.env_base.EnvType</span></code> that specifies the type of environment. <code class="docutils literal notranslate"><span class="pre">type</span></code> is mainly used by the <code class="docutils literal notranslate"><span class="pre">robomimic.utils.env_utils.get_env_class()</span></code> function to look up the correct environment wrapper class.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">env_kwargs</span></code> specifies the keyword args that are required to initialize an environment. The <code class="docutils literal notranslate"><span class="pre">env_kwargs</span></code> will be passed to the constructor of the wrapped environment as keyword arguments through the <code class="docutils literal notranslate"><span class="pre">robomimic.utils.env_utils.create_env()</span></code> helper function.</p></li>
 </ul>
-<p>Although it is possible to manually specify the <code class="docutils literal notranslate"><span class="pre">env_meta</span></code> dictionary, the <strong>robomimic</strong> training pipeline reads the <code class="docutils literal notranslate"><span class="pre">env_meta</span></code> from the hdf5 dataset as an attribute. Please refer to the <a class="reference external" href="../introduction/datasets.html">Dataset section</a> for more details on where the metadata is stored, and the <code class="docutils literal notranslate"><span class="pre">robomimic.utils.file_utils.get_env_metadata_from_dataset</span></code> function to see how it is loaded from the dataset at run-time.</p>
+<p>Although it is possible to manually specify the <code class="docutils literal notranslate"><span class="pre">env_meta</span></code> dictionary, the <strong>robomimic</strong> training pipeline reads the <code class="docutils literal notranslate"><span class="pre">env_meta</span></code> from the hdf5 dataset as an attribute. Please refer to the <a class="reference external" href="../datasets/overview.html#dataset-structure">Dataset section</a> for more details on where the metadata is stored, and the <code class="docutils literal notranslate"><span class="pre">robomimic.utils.file_utils.get_env_metadata_from_dataset</span></code> function to see how it is loaded from the dataset at run-time.</p>
 <section id="initialize-an-environment-from-a-dataset">
 <h2>Initialize an Environment from a Dataset<a class="headerlink" href="#initialize-an-environment-from-a-dataset" title="Permalink to this headline">#</a></h2>
 <p>The demonstration dataset file should contain all necessary information to construct an environment. Here is standalone example for initializing a <code class="docutils literal notranslate"><span class="pre">EnvRobosuite</span></code> environment instance by reading environment metadata from the a dataset.</p>
@@ -601,72 +601,72 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>The repo offers a simple utility tool <code class="docutils literal notranslate"><span class="pre">robomimic/scripts/get_dataset_info.py</span></code> to view the environment metadata included in a dataset. For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python robomimic/scripts/get_dataset_info.py --dataset path/to/the/dataset.hdf5
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>robomimic/scripts/get_dataset_info.py<span class="w"> </span>--dataset<span class="w"> </span>path/to/the/dataset.hdf5
 
 ...
 
-<span class="o">====</span> Env <span class="nv">Meta</span> <span class="o">====</span>
+<span class="o">====</span><span class="w"> </span>Env<span class="w"> </span><span class="nv">Meta</span><span class="w"> </span><span class="o">====</span>
 <span class="o">{</span>
-    <span class="s2">&quot;env_name&quot;</span>: <span class="s2">&quot;Lift&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="m">1</span>,
-    <span class="s2">&quot;env_kwargs&quot;</span>: <span class="o">{</span>
-        <span class="s2">&quot;has_renderer&quot;</span>: false,
-        <span class="s2">&quot;has_offscreen_renderer&quot;</span>: true,
-        <span class="s2">&quot;ignore_done&quot;</span>: true,
-        <span class="s2">&quot;use_object_obs&quot;</span>: true,
-        <span class="s2">&quot;use_camera_obs&quot;</span>: true,
-        <span class="s2">&quot;control_freq&quot;</span>: <span class="m">20</span>,
-        <span class="s2">&quot;controller_configs&quot;</span>: <span class="o">{</span>
-            <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;OSC_POSE&quot;</span>,
-            <span class="s2">&quot;input_max&quot;</span>: <span class="m">1</span>,
-            <span class="s2">&quot;input_min&quot;</span>: -1,
-            <span class="s2">&quot;output_max&quot;</span>: <span class="o">[</span>
-                <span class="m">0</span>.05,
-                <span class="m">0</span>.05,
-                <span class="m">0</span>.05,
-                <span class="m">0</span>.5,
-                <span class="m">0</span>.5,
-                <span class="m">0</span>.5
-            <span class="o">]</span>,
-            <span class="s2">&quot;output_min&quot;</span>: <span class="o">[</span>
-                -0.05,
-                -0.05,
-                -0.05,
-                -0.5,
-                -0.5,
-                -0.5
-            <span class="o">]</span>,
-            <span class="s2">&quot;kp&quot;</span>: <span class="m">150</span>,
-            <span class="s2">&quot;damping&quot;</span>: <span class="m">1</span>,
-            <span class="s2">&quot;impedance_mode&quot;</span>: <span class="s2">&quot;fixed&quot;</span>,
-            <span class="s2">&quot;kp_limits&quot;</span>: <span class="o">[</span>
-                <span class="m">0</span>,
-                <span class="m">300</span>
-            <span class="o">]</span>,
-            <span class="s2">&quot;damping_limits&quot;</span>: <span class="o">[</span>
-                <span class="m">0</span>,
-                <span class="m">10</span>
-            <span class="o">]</span>,
-            <span class="s2">&quot;position_limits&quot;</span>: null,
-            <span class="s2">&quot;orientation_limits&quot;</span>: null,
-            <span class="s2">&quot;uncouple_pos_ori&quot;</span>: true,
-            <span class="s2">&quot;control_delta&quot;</span>: true,
-            <span class="s2">&quot;interpolation&quot;</span>: null,
-            <span class="s2">&quot;ramp_ratio&quot;</span>: <span class="m">0</span>.2
-        <span class="o">}</span>,
-        <span class="s2">&quot;robots&quot;</span>: <span class="o">[</span>
-            <span class="s2">&quot;Panda&quot;</span>
-        <span class="o">]</span>,
-        <span class="s2">&quot;camera_depths&quot;</span>: false,
-        <span class="s2">&quot;camera_heights&quot;</span>: <span class="m">84</span>,
-        <span class="s2">&quot;camera_widths&quot;</span>: <span class="m">84</span>,
-        <span class="s2">&quot;reward_shaping&quot;</span>: false,
-        <span class="s2">&quot;camera_names&quot;</span>: <span class="o">[</span>
-            <span class="s2">&quot;agentview&quot;</span>,
-            <span class="s2">&quot;robot0_eye_in_hand&quot;</span>
-        <span class="o">]</span>,
-        <span class="s2">&quot;render_gpu_device_id&quot;</span>: <span class="m">0</span>
-    <span class="o">}</span>
+<span class="w">    </span><span class="s2">&quot;env_name&quot;</span>:<span class="w"> </span><span class="s2">&quot;Lift&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;type&quot;</span>:<span class="w"> </span><span class="m">1</span>,
+<span class="w">    </span><span class="s2">&quot;env_kwargs&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;has_renderer&quot;</span>:<span class="w"> </span>false,
+<span class="w">        </span><span class="s2">&quot;has_offscreen_renderer&quot;</span>:<span class="w"> </span>true,
+<span class="w">        </span><span class="s2">&quot;ignore_done&quot;</span>:<span class="w"> </span>true,
+<span class="w">        </span><span class="s2">&quot;use_object_obs&quot;</span>:<span class="w"> </span>true,
+<span class="w">        </span><span class="s2">&quot;use_camera_obs&quot;</span>:<span class="w"> </span>true,
+<span class="w">        </span><span class="s2">&quot;control_freq&quot;</span>:<span class="w"> </span><span class="m">20</span>,
+<span class="w">        </span><span class="s2">&quot;controller_configs&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="s2">&quot;type&quot;</span>:<span class="w"> </span><span class="s2">&quot;OSC_POSE&quot;</span>,
+<span class="w">            </span><span class="s2">&quot;input_max&quot;</span>:<span class="w"> </span><span class="m">1</span>,
+<span class="w">            </span><span class="s2">&quot;input_min&quot;</span>:<span class="w"> </span>-1,
+<span class="w">            </span><span class="s2">&quot;output_max&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">                </span><span class="m">0</span>.05,
+<span class="w">                </span><span class="m">0</span>.05,
+<span class="w">                </span><span class="m">0</span>.05,
+<span class="w">                </span><span class="m">0</span>.5,
+<span class="w">                </span><span class="m">0</span>.5,
+<span class="w">                </span><span class="m">0</span>.5
+<span class="w">            </span><span class="o">]</span>,
+<span class="w">            </span><span class="s2">&quot;output_min&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">                </span>-0.05,
+<span class="w">                </span>-0.05,
+<span class="w">                </span>-0.05,
+<span class="w">                </span>-0.5,
+<span class="w">                </span>-0.5,
+<span class="w">                </span>-0.5
+<span class="w">            </span><span class="o">]</span>,
+<span class="w">            </span><span class="s2">&quot;kp&quot;</span>:<span class="w"> </span><span class="m">150</span>,
+<span class="w">            </span><span class="s2">&quot;damping&quot;</span>:<span class="w"> </span><span class="m">1</span>,
+<span class="w">            </span><span class="s2">&quot;impedance_mode&quot;</span>:<span class="w"> </span><span class="s2">&quot;fixed&quot;</span>,
+<span class="w">            </span><span class="s2">&quot;kp_limits&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">                </span><span class="m">0</span>,
+<span class="w">                </span><span class="m">300</span>
+<span class="w">            </span><span class="o">]</span>,
+<span class="w">            </span><span class="s2">&quot;damping_limits&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">                </span><span class="m">0</span>,
+<span class="w">                </span><span class="m">10</span>
+<span class="w">            </span><span class="o">]</span>,
+<span class="w">            </span><span class="s2">&quot;position_limits&quot;</span>:<span class="w"> </span>null,
+<span class="w">            </span><span class="s2">&quot;orientation_limits&quot;</span>:<span class="w"> </span>null,
+<span class="w">            </span><span class="s2">&quot;uncouple_pos_ori&quot;</span>:<span class="w"> </span>true,
+<span class="w">            </span><span class="s2">&quot;control_delta&quot;</span>:<span class="w"> </span>true,
+<span class="w">            </span><span class="s2">&quot;interpolation&quot;</span>:<span class="w"> </span>null,
+<span class="w">            </span><span class="s2">&quot;ramp_ratio&quot;</span>:<span class="w"> </span><span class="m">0</span>.2
+<span class="w">        </span><span class="o">}</span>,
+<span class="w">        </span><span class="s2">&quot;robots&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">            </span><span class="s2">&quot;Panda&quot;</span>
+<span class="w">        </span><span class="o">]</span>,
+<span class="w">        </span><span class="s2">&quot;camera_depths&quot;</span>:<span class="w"> </span>false,
+<span class="w">        </span><span class="s2">&quot;camera_heights&quot;</span>:<span class="w"> </span><span class="m">84</span>,
+<span class="w">        </span><span class="s2">&quot;camera_widths&quot;</span>:<span class="w"> </span><span class="m">84</span>,
+<span class="w">        </span><span class="s2">&quot;reward_shaping&quot;</span>:<span class="w"> </span>false,
+<span class="w">        </span><span class="s2">&quot;camera_names&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">            </span><span class="s2">&quot;agentview&quot;</span>,
+<span class="w">            </span><span class="s2">&quot;robot0_eye_in_hand&quot;</span>
+<span class="w">        </span><span class="o">]</span>,
+<span class="w">        </span><span class="s2">&quot;render_gpu_device_id&quot;</span>:<span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="o">}</span>
 <span class="o">}</span>
 
 ...

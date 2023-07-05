@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Algorithms &#8212; robomimic 0.3 documentation</title>
     
@@ -579,7 +579,7 @@ title="Print to PDF"
 <p>Therefore, every algorithm file (for example <code class="docutils literal notranslate"><span class="pre">algo/bc.py</span></code>) implements an <code class="docutils literal notranslate"><span class="pre">algo_config_to_class</span></code> function. The function should have the <code class="docutils literal notranslate"><span class="pre">register_algo_factory_func</span></code> decorator with the algo name (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;bc&quot;</span></code>) - this registers the function into the registry used by <code class="docutils literal notranslate"><span class="pre">algo_factory</span></code>. The algo name should match the <code class="docutils literal notranslate"><span class="pre">ALGO_NAME</span></code> property in the corresponding config class for the algorithm (for BC, this is in the <code class="docutils literal notranslate"><span class="pre">BCConfig</span></code> class in <code class="docutils literal notranslate"><span class="pre">configs/bc_config.py</span></code>). The implementation from <code class="docutils literal notranslate"><span class="pre">algo/bc.py</span></code> is reproduced below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@register_algo_factory_func</span><span class="p">(</span><span class="s2">&quot;bc&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">algo_config_to_class</span><span class="p">(</span><span class="n">algo_config</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Maps algo config to the BC algo class to instantiate, along with additional algo kwargs.</span>
 
 <span class="sd">    Args:</span>

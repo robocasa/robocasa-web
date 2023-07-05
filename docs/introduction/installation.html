@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Installation &#8212; robomimic 0.3 documentation</title>
     
@@ -615,8 +615,8 @@ title="Print to PDF"
 <section id="install-robomimic">
 <h2>Install robomimic<a class="headerlink" href="#install-robomimic" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
-<p class="admonition-title">1. Create and activate conda environment</p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ conda create -n robomimic_venv <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8.0
-$ conda activate robomimic_venv
+<p class="admonition-title">1. Create and activate conda environment</p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>robomimic_venv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8.0
+$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>robomimic_venv
 </pre></div>
 </div>
 </div><div class="admonition note">
@@ -625,30 +625,30 @@ $ conda activate robomimic_venv
   <summary><b>Option 1: Mac</b></summary>
 <p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Can change pytorch, torchvision versions</span>
 <span class="c1"># We don&#39;t install cudatoolkit since Mac does not have NVIDIA GPU</span>
-$ conda install <span class="nv">pytorch</span><span class="o">==</span><span class="m">2</span>.0.0 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.15.1 -c pytorch
+$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span><span class="nv">pytorch</span><span class="o">==</span><span class="m">2</span>.0.0<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.15.1<span class="w"> </span>-c<span class="w"> </span>pytorch
 </pre></div>
 </div>
 </p>
 </details><details>
   <summary><b>Option 2: Linux</b></summary>
 <p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Can change pytorch, torchvision versions</span>
-$ conda install <span class="nv">pytorch</span><span class="o">==</span><span class="m">2</span>.0.0 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.15.1 -c pytorch
+$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span><span class="nv">pytorch</span><span class="o">==</span><span class="m">2</span>.0.0<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.15.1<span class="w"> </span>-c<span class="w"> </span>pytorch
 </pre></div>
 </div>
 </p>
 </details></div><div class="admonition note">
 <p class="admonition-title">3. Install robomimic</p><details>
   <summary><b>Option 1: Install from source <i>(recommended)</i></b></summary>
-<p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> &lt;PATH_TO_YOUR_INSTALL_DIRECTORY&gt;
-$ git clone https://github.com/ARISE-Initiative/robomimic.git
-$ <span class="nb">cd</span> robomimic
-$ pip install -e .
+<p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_YOUR_INSTALL_DIRECTORY&gt;
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ARISE-Initiative/robomimic.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>robomimic
+$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
 </p>
 </details><details>
   <summary><b>Option 2: Install via pip</b></summary>
-<p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip install robomimic
+<p><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>robomimic
 </pre></div>
 </div>
 </p>
@@ -669,17 +669,17 @@ $ pip install -e .
   <summary><b>robosuite</b></summary>
 <p>
  Required for running most robomimic examples and released datasets. Compatible with robosuite v1.2+. Install via:<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># From source (recommended)</span>
-$ <span class="nb">cd</span> &lt;PATH_TO_INSTALL_DIR&gt;
-$ git clone https://github.com/ARISE-Initiative/robosuite.git
-$ <span class="nb">cd</span> robosuite
-$ pip install -r requirements.txt
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_INSTALL_DIR&gt;
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ARISE-Initiative/robosuite.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>robosuite
+$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 OR
 <span class="c1"># Via pip</span>
-$ pip install robosuite
+$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>robosuite
 </pre></div>
 </div>
 <p><strong>(Optional)</strong> to use our released datasets and reproduce our experiments, switch to our <code class="docutils literal notranslate"><span class="pre">v1.4.1</span></code> branch (requires installing robosuite from source):</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git checkout v1.4.1
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>v1.4.1
 </pre></div>
 </div>
 <!-- <div class="admonition warning">
@@ -700,13 +700,13 @@ An easy way to ensure this is to clone the repository, change [this line](https:
 <h2>Test your installation<a class="headerlink" href="#test-your-installation" title="Permalink to this headline">#</a></h2>
 <p>This assumes you have installed robomimic from source.</p>
 <p>Run a quick debugging (dummy) training loop to make sure robomimic is installed correctly:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> &lt;PATH_TO_ROBOMIMIC_INSTALL_DIR&gt;
-$ python examples/train_bc_rnn.py --debug
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_ROBOMIMIC_INSTALL_DIR&gt;
+$<span class="w"> </span>python<span class="w"> </span>examples/train_bc_rnn.py<span class="w"> </span>--debug
 </pre></div>
 </div>
 <p>Run a much more thorough test of several algorithms and scripts (<strong>Warning: this script may take several minutes to finish!</strong>):</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> &lt;PATH_TO_ROBOMIMIC_INSTALL_DIR&gt;/tests
-$ bash test.sh
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_ROBOMIMIC_INSTALL_DIR&gt;/tests
+$<span class="w"> </span>bash<span class="w"> </span>test.sh
 </pre></div>
 </div>
 <p>To run some easy examples, see the <a class="reference external" href="./getting_started.html">Getting Started</a> section.</p>
@@ -714,15 +714,15 @@ $ bash test.sh
 <section id="install-documentation-dependencies">
 <h2>Install documentation dependencies<a class="headerlink" href="#install-documentation-dependencies" title="Permalink to this headline">#</a></h2>
 <p>If you plan to contribute to the repository and add new features, you must install the additional requirements required to build the documentation locally:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements-docs.txt
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements-docs.txt
 </pre></div>
 </div>
 <p>You can test generating the documentation and viewing it locally in a web browser:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> &lt;PATH_TO_ROBOMIMIC_INSTALL_DIR&gt;/docs
-$ make clean
-$ make apidoc
-$ make html
-$ cp -r images _build/html/
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_ROBOMIMIC_INSTALL_DIR&gt;/docs
+$<span class="w"> </span>make<span class="w"> </span>clean
+$<span class="w"> </span>make<span class="w"> </span>apidoc
+$<span class="w"> </span>make<span class="w"> </span>html
+$<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>images<span class="w"> </span>_build/html/
 </pre></div>
 </div>
 <p>There should be a generated <code class="docutils literal notranslate"><span class="pre">_build</span></code> folder - navigate to <code class="docutils literal notranslate"><span class="pre">_build/html/</span></code> and open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in a web browser to view the documentation.</p>

@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>RoboTurk Pilot &#8212; robomimic 0.3 documentation</title>
     
@@ -568,7 +568,7 @@ title="Print to PDF"
 <h2>Postprocessing<a class="headerlink" href="#postprocessing" title="Permalink to this headline">#</a></h2>
 <p>First, the dataset must be updated to a format compatible with <strong>robomimic</strong>. Run the following script (these arguments are provided as an example):</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert the Can demonstrations, and also create a &quot;fastest_225&quot; filter_key (prior work such as IRIS has trained on this subset)</span>
-$ python conversion/convert_roboturk_pilot.py --folder /path/to/RoboTurkPilot/bins-Can --n <span class="m">225</span>
+$<span class="w"> </span>python<span class="w"> </span>conversion/convert_roboturk_pilot.py<span class="w"> </span>--folder<span class="w"> </span>/path/to/RoboTurkPilot/bins-Can<span class="w"> </span>--n<span class="w"> </span><span class="m">225</span>
 </pre></div>
 </div>
 <p>Then, the dataset must be postprocessed since there are no observations stored. You must run <code class="docutils literal notranslate"><span class="pre">dataset_states_to_obs.py</span></code>. For more information, see <a class="reference external" href="robosuite.html#extracting-observations-from-mujoco-states">this page</a>.</p>
@@ -576,12 +576,12 @@ $ python conversion/convert_roboturk_pilot.py --folder /path/to/RoboTurkPilot/bi
 <section id="citation">
 <h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>@inproceedings<span class="o">{</span>mandlekar2018roboturk,
-  <span class="nv">title</span><span class="o">={</span>Roboturk: A crowdsourcing platform <span class="k">for</span> robotic skill learning through imitation<span class="o">}</span>,
-  <span class="nv">author</span><span class="o">={</span>Mandlekar, Ajay and Zhu, Yuke and Garg, Animesh and Booher, Jonathan and Spero, Max and Tung, Albert and Gao, Julian and Emmons, John and Gupta, Anchit and Orbay, Emre and others<span class="o">}</span>,
-  <span class="nv">booktitle</span><span class="o">={</span>Conference on Robot Learning<span class="o">}</span>,
-  <span class="nv">pages</span><span class="o">={</span><span class="m">879</span>--893<span class="o">}</span>,
-  <span class="nv">year</span><span class="o">={</span><span class="m">2018</span><span class="o">}</span>,
-  <span class="nv">organization</span><span class="o">={</span>PMLR<span class="o">}</span>
+<span class="w">  </span><span class="nv">title</span><span class="o">={</span>Roboturk:<span class="w"> </span>A<span class="w"> </span>crowdsourcing<span class="w"> </span>platform<span class="w"> </span><span class="k">for</span><span class="w"> </span>robotic<span class="w"> </span>skill<span class="w"> </span>learning<span class="w"> </span>through<span class="w"> </span>imitation<span class="o">}</span>,
+<span class="w">  </span><span class="nv">author</span><span class="o">={</span>Mandlekar,<span class="w"> </span>Ajay<span class="w"> </span>and<span class="w"> </span>Zhu,<span class="w"> </span>Yuke<span class="w"> </span>and<span class="w"> </span>Garg,<span class="w"> </span>Animesh<span class="w"> </span>and<span class="w"> </span>Booher,<span class="w"> </span>Jonathan<span class="w"> </span>and<span class="w"> </span>Spero,<span class="w"> </span>Max<span class="w"> </span>and<span class="w"> </span>Tung,<span class="w"> </span>Albert<span class="w"> </span>and<span class="w"> </span>Gao,<span class="w"> </span>Julian<span class="w"> </span>and<span class="w"> </span>Emmons,<span class="w"> </span>John<span class="w"> </span>and<span class="w"> </span>Gupta,<span class="w"> </span>Anchit<span class="w"> </span>and<span class="w"> </span>Orbay,<span class="w"> </span>Emre<span class="w"> </span>and<span class="w"> </span>others<span class="o">}</span>,
+<span class="w">  </span><span class="nv">booktitle</span><span class="o">={</span>Conference<span class="w"> </span>on<span class="w"> </span>Robot<span class="w"> </span>Learning<span class="o">}</span>,
+<span class="w">  </span><span class="nv">pages</span><span class="o">={</span><span class="m">879</span>--893<span class="o">}</span>,
+<span class="w">  </span><span class="nv">year</span><span class="o">={</span><span class="m">2018</span><span class="o">}</span>,
+<span class="w">  </span><span class="nv">organization</span><span class="o">={</span>PMLR<span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
 </div>

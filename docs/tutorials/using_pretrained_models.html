@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Using Pretrained Models &#8212; robomimic 0.3 documentation</title>
     
@@ -529,13 +529,13 @@ title="Print to PDF"
 <h2>Evaluating Trained Policies<a class="headerlink" href="#evaluating-trained-policies" title="Permalink to this headline">#</a></h2>
 <p>Saved policy checkpoints in the <code class="docutils literal notranslate"><span class="pre">models</span></code> directory can be evaluated using the <code class="docutils literal notranslate"><span class="pre">run_trained_agent.py</span></code> script:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 50 rollouts with max horizon 400 and render agentview and wrist camera images to video</span>
-$ python run_trained_agent.py --agent /path/to/model.pth --n_rollouts <span class="m">50</span> --horizon <span class="m">400</span> --seed <span class="m">0</span> --video_path /path/to/output.mp4 --camera_names agentview robot0_eye_in_hand 
+$<span class="w"> </span>python<span class="w"> </span>run_trained_agent.py<span class="w"> </span>--agent<span class="w"> </span>/path/to/model.pth<span class="w"> </span>--n_rollouts<span class="w"> </span><span class="m">50</span><span class="w"> </span>--horizon<span class="w"> </span><span class="m">400</span><span class="w"> </span>--seed<span class="w"> </span><span class="m">0</span><span class="w"> </span>--video_path<span class="w"> </span>/path/to/output.mp4<span class="w"> </span>--camera_names<span class="w"> </span>agentview<span class="w"> </span>robot0_eye_in_hand<span class="w"> </span>
 
 <span class="c1"># Write rollouts to a new dataset hdf5</span>
-python run_trained_agent.py --agent /path/to/model.pth --n_rollouts <span class="m">50</span> --horizon <span class="m">400</span> --seed <span class="m">0</span> --dataset_path /path/to/output.hdf5 --dataset_obs
+python<span class="w"> </span>run_trained_agent.py<span class="w"> </span>--agent<span class="w"> </span>/path/to/model.pth<span class="w"> </span>--n_rollouts<span class="w"> </span><span class="m">50</span><span class="w"> </span>--horizon<span class="w"> </span><span class="m">400</span><span class="w"> </span>--seed<span class="w"> </span><span class="m">0</span><span class="w"> </span>--dataset_path<span class="w"> </span>/path/to/output.hdf5<span class="w"> </span>--dataset_obs
 
 <span class="c1"># Write rollouts without explicit observations to hdf5</span>
-python run_trained_agent.py --agent /path/to/model.pth --n_rollouts <span class="m">50</span> --horizon <span class="m">400</span> --seed <span class="m">0</span> --dataset_path /path/to/output.hdf5
+python<span class="w"> </span>run_trained_agent.py<span class="w"> </span>--agent<span class="w"> </span>/path/to/model.pth<span class="w"> </span>--n_rollouts<span class="w"> </span><span class="m">50</span><span class="w"> </span>--horizon<span class="w"> </span><span class="m">400</span><span class="w"> </span>--seed<span class="w"> </span><span class="m">0</span><span class="w"> </span>--dataset_path<span class="w"> </span>/path/to/output.hdf5
 </pre></div>
 </div>
 <p>In the last case, the observations can be (later) extracted later using the <code class="docutils literal notranslate"><span class="pre">dataset_states_to_obs.py</span></code> script (see <a class="reference external" href="../datasets/robosuite.html#extracting-observations-from-mujoco-states">here</a>).</p>

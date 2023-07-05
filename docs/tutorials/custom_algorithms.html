@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Implementing Custom Algorithms &#8212; robomimic 0.3 documentation</title>
     
@@ -600,7 +600,7 @@ title="Print to PDF"
 <p>We will implement the algo class in <code class="docutils literal notranslate"><span class="pre">algo/td3_bc.py</span></code>. As described in the <a class="reference external" href="../modules/algorithms.html#initialization">Algorithm documentation</a>, we first need to implement the <code class="docutils literal notranslate"><span class="pre">algo_config_to_class</span></code> method - this is straightforward since we don’t have multiple variants of this algorithm. We take special care to make sure we register this function with the same algo name that we used for defining the config (<code class="docutils literal notranslate"><span class="pre">&quot;td3_bc&quot;</span></code>).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@register_algo_factory_func</span><span class="p">(</span><span class="s2">&quot;td3_bc&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">algo_config_to_class</span><span class="p">(</span><span class="n">algo_config</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Maps algo config to the TD3_BC algo class to instantiate, along with additional algo kwargs.</span>
 
 <span class="sd">    Args:</span>
@@ -617,7 +617,7 @@ title="Print to PDF"
 <p>Next, we’ll describe how we implement the methods outlined in the <a class="reference external" href="../modules/algorithms.html#important-class-methods">Algorithm documentation</a>. We omit several of the methods, since their implementation is extremely similar to the <code class="docutils literal notranslate"><span class="pre">BCQ</span></code> implementation. We start by defining the class and implementing <code class="docutils literal notranslate"><span class="pre">_create_networks</span></code>. The code uses helper functions <code class="docutils literal notranslate"><span class="pre">_create_critics</span></code> and <code class="docutils literal notranslate"><span class="pre">_create_actor</span></code> to create the critic and actor networks, as in the <code class="docutils literal notranslate"><span class="pre">BCQ</span></code> implementation.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TD3_BC</span><span class="p">(</span><span class="n">PolicyAlgo</span><span class="p">,</span> <span class="n">ValueAlgo</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">_create_networks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates networks and places them into @self.nets.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nets</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleDict</span><span class="p">()</span>
@@ -677,7 +677,7 @@ title="Print to PDF"
 </div>
 <p>Next we describe the <code class="docutils literal notranslate"><span class="pre">train_on_batch</span></code> function, which implements the main training logic. The function trains the critic using the <code class="docutils literal notranslate"><span class="pre">_train_critic_on_batch</span></code> helper function, and then actor using the <code class="docutils literal notranslate"><span class="pre">_train_actor_on_batch</span></code> helper function (the actor is trained at a slower rate according to the <code class="docutils literal notranslate"><span class="pre">config.algo.actor.update_freq</span></code> config variable, as in the original author’s implementation). Finally, the target network parameters are moved a little closer to the current network parameters, using <code class="docutils literal notranslate"><span class="pre">TorchUtils.soft_update</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">train_on_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Training on a single batch of data.</span>
 
 <span class="sd">        Args:</span>
@@ -792,7 +792,7 @@ title="Print to PDF"
         <span class="k">return</span> <span class="n">info</span>
         
     <span class="k">def</span> <span class="nf">_get_target_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">next_states</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">,</span> <span class="n">rewards</span><span class="p">,</span> <span class="n">dones</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Helper function to get target values for training Q-function with TD-loss.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
@@ -819,7 +819,7 @@ title="Print to PDF"
         <span class="k">return</span> <span class="n">q_targets</span>    
         
     <span class="k">def</span> <span class="nf">_compute_critic_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">critic</span><span class="p">,</span> <span class="n">states</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">,</span> <span class="n">q_targets</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Helper function to compute loss between estimated Q-values and target Q-values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">q_estimated</span> <span class="o">=</span> <span class="n">critic</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">goal_states</span><span class="p">)</span>
@@ -859,7 +859,7 @@ title="Print to PDF"
 </div>
 <p>Finally, we describe the <code class="docutils literal notranslate"><span class="pre">get_action</span></code> implementation - which is used at test-time during rollouts. The implementation is extremely simple - just query the actor for an action.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">get_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs_dict</span><span class="p">,</span> <span class="n">goal_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get policy action outputs.</span>
 
 <span class="sd">        Args:</span>
@@ -878,10 +878,10 @@ title="Print to PDF"
 <p>That’s it! See <code class="docutils literal notranslate"><span class="pre">algo/td3_bc.py</span></code> for the complete implementation, and compare it to <code class="docutils literal notranslate"><span class="pre">algo/bcq.py</span></code> to see the similarity between the two implementations.</p>
 <p>We can now run the <code class="docutils literal notranslate"><span class="pre">generate_config_templates.py</span></code> script to generate the json template for our new algorithm, and then run it on our desired dataset.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate ../exps/templates/td3_bc.json</span>
-$ python generate_config_templates.py 
+$<span class="w"> </span>python<span class="w"> </span>generate_config_templates.py<span class="w"> </span>
 
 <span class="c1"># run training</span>
-$ python train.py --config ../exps/templates/td3_bc.json --dataset /path/to/walker2d_medium_expert.hdf5
+$<span class="w"> </span>python<span class="w"> </span>train.py<span class="w"> </span>--config<span class="w"> </span>../exps/templates/td3_bc.json<span class="w"> </span>--dataset<span class="w"> </span>/path/to/walker2d_medium_expert.hdf5
 </pre></div>
 </div>
 </section>

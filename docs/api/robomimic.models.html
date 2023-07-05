@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>robomimic.models package &#8212; robomimic 0.3 documentation</title>
     
@@ -625,7 +625,7 @@ MLP, RNN, and CNN backbones.</p>
 <dd><p>Bases: <a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.models.base_nets.Module</span></code></a></p>
 <p>Base class for stacked Conv1d layers.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input_channel</strong> (<em>int</em>) – Number of channels for inputs to this network</p></li>
 <li><p><strong>activation</strong> (<em>None</em><em> or </em><em>str</em>) – Per-layer activation to use. Defaults to “relu”. Valid options are
@@ -658,15 +658,15 @@ registered hooks while the latter silently ignores them.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Conv1dBase.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -703,15 +703,15 @@ registered hooks while the latter silently ignores them.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.ConvBase.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -781,15 +781,15 @@ registered hooks while the latter silently ignores them.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.CoordConv2d.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -846,15 +846,15 @@ aggregated using this module.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.FeatureAggregator.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -888,15 +888,15 @@ on the size of the input, or if they assume fixed size input.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.MLP.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -938,10 +938,10 @@ registered hooks while the latter silently ignores them.</p>
 on the size of the input, or if they assume fixed size input.</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -965,15 +965,15 @@ requires implementing &#64;output_shape.</p>
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Module.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1003,15 +1003,15 @@ and optimization.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Parameter.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1039,10 +1039,10 @@ on the size of the input, or if they assume fixed size input.</p>
 on the size of the input, or if they assume fixed size input.</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1065,19 +1065,19 @@ on the size of the input, or if they assume fixed size input.</p>
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rnn_init_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.RNN_Base.forward" title="Permalink to this definition">#</a></dt>
 <dd><p>Forward a sequence of inputs through the RNN and the per-step network.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>inputs</strong> (<em>torch.Tensor</em>) – tensor input of shape [B, T, D], where D is the RNN input size</p></li>
 <li><p><strong>rnn_init_state</strong> – rnn hidden state, initialize to zero state if set to None</p></li>
 <li><p><strong>return_state</strong> (<em>bool</em>) – whether to return hidden state</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p>outputs of the per_step_net</p>
 <p>rnn_state: return rnn state at the end if return_state is set to True</p>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>outputs</p>
 </dd>
 </dl>
@@ -1091,12 +1091,12 @@ on the size of the input, or if they assume fixed size input.</p>
 :type inputs: torch.Tensor
 :param rnn_state: rnn hidden state, initialize to zero state if set to None</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><p>outputs of the per_step_net</p>
 <p>rnn_state: return the new rnn state</p>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>outputs</p>
 </dd>
 </dl>
@@ -1110,14 +1110,14 @@ on the size of the input, or if they assume fixed size input.</p>
 :type batch_size: int
 :param device: device the hidden state should be sent to.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><dl class="simple">
 <dt>returns hidden state tensor or tuple of hidden state tensors</dt><dd><p>depending on the RNN type</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>hidden_state (torch.Tensor or tuple)</p>
 </dd>
 </dl>
@@ -1128,15 +1128,15 @@ on the size of the input, or if they assume fixed size input.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.RNN_Base.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1164,15 +1164,15 @@ on the size of the input, or if they assume fixed size input.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.ResNet18Conv.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1200,15 +1200,15 @@ on the size of the input, or if they assume fixed size input.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Sequential.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1223,14 +1223,14 @@ particular modules for details of their behaviors in training/evaluation
 mode, if they are affected, e.g. <code class="xref py py-class docutils literal notranslate"><span class="pre">Dropout</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BatchNorm</span></code>,
 etc.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mode</strong> (<em>bool</em>) – whether to set training mode (<code class="docutils literal notranslate"><span class="pre">True</span></code>) or evaluation
 mode (<code class="docutils literal notranslate"><span class="pre">False</span></code>). Default: <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>self</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#robomimic.models.base_nets.Module" title="robomimic.models.base_nets.Module">Module</a></p>
 </dd>
 </dl>
@@ -1253,15 +1253,15 @@ mode (<code class="docutils literal notranslate"><span class="pre">False</span><
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.ShallowConv.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1291,15 +1291,15 @@ leaving only the batch and channel dimensions.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.SpatialMeanPool.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1328,7 +1328,7 @@ pixel locations. This distribution is used to compute the expected value of
 the pixel location, which becomes a keypoint of dimension 2. K such keypoints
 are created.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><dl class="simple">
 <dt>mean keypoints of shape [B, K, 2], and possibly</dt><dd><p>keypoint variance of shape [B, K, 2, 2] corresponding to the covariance
 under the 2D spatial softmax distribution</p>
@@ -1336,7 +1336,7 @@ under the 2D spatial softmax distribution</p>
 </dl>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>out (torch.Tensor or tuple)</p>
 </dd>
 </dl>
@@ -1347,15 +1347,15 @@ under the 2D spatial softmax distribution</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.SpatialSoftmax.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1392,15 +1392,15 @@ registered hooks while the latter silently ignores them.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Squeeze.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1437,15 +1437,15 @@ registered hooks while the latter silently ignores them.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.base_nets.Unsqueeze.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1533,7 +1533,7 @@ Tanh Normal distribution - adapted from rlkit and CQL codebase
 <dt class="sig sig-object py" id="robomimic.models.distributions.TanhWrappedDistribution.log_prob">
 <span class="sig-name descname"><span class="pre">log_prob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_tanh_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.distributions.TanhWrappedDistribution.log_prob" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<em>torch.Tensor</em>) – some tensor to compute log probabilities for</p></li>
 <li><p><strong>pre_tanh_value</strong> – If specified, will not calculate atanh manually from &#64;value. More numerically stable</p></li>
@@ -1586,10 +1586,10 @@ and randomizers (e.g. Randomizer, CropRandomizer).</p>
 <dd><p>Generates a batch transform, where each set of sample(s) along the batch (first) dimension will have the same
 &#64;N unique ColorJitter transforms applied.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>N</strong> (<em>int</em>) – Number of ColorJitter transforms to apply per set of sample(s) along the batch (first) dimension</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>Aggregated transform which will autoamtically apply a different ColorJitter transforms to</dt><dd><p>each sub-set of samples along batch dimension, assumed to be the FIRST dimension in the inputted tensor
 Note: This function will MULTIPLY the first dimension by N</p>
@@ -1597,7 +1597,7 @@ Note: This function will MULTIPLY the first dimension by N</p>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Lambda</p>
 </dd>
 </dl>
@@ -1610,11 +1610,11 @@ Note: This function will MULTIPLY the first dimension by N</p>
 <p>Implementation taken directly from:</p>
 <p><a class="reference external" href="https://github.com/pytorch/vision/blob/2f40a483d73018ae6e1488a484c5927f2b309969/torchvision/transforms/transforms.py#L1053-L1085">https://github.com/pytorch/vision/blob/2f40a483d73018ae6e1488a484c5927f2b309969/torchvision/transforms/transforms.py#L1053-L1085</a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Transform which randomly adjusts brightness, contrast and
 saturation in a random order.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>Transform</p>
 </dd>
 </dl>
@@ -1627,15 +1627,15 @@ saturation in a random order.</p>
 the &#64;forward_in operation, where raw inputs (usually observation modalities)
 are passed in.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1648,15 +1648,15 @@ on the size of the input, or if they assume fixed size input.</p>
 the &#64;forward_out operation, where processed inputs (usually encoded observation
 modalities) are passed in.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1681,15 +1681,15 @@ on the size of the input, or if they assume fixed size input.</p>
 the &#64;forward_in operation, where raw inputs (usually observation modalities)
 are passed in.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1702,15 +1702,15 @@ on the size of the input, or if they assume fixed size input.</p>
 the &#64;forward_out operation, where processed inputs (usually encoded observation
 modalities) are passed in.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1747,15 +1747,15 @@ on the size of the input, or if they assume fixed size input.</p>
 the &#64;forward_in operation, where raw inputs (usually observation modalities)
 are passed in.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1768,15 +1768,15 @@ on the size of the input, or if they assume fixed size input.</p>
 the &#64;forward_out operation, where processed inputs (usually encoded observation
 modalities) are passed in.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1823,15 +1823,15 @@ can be used to change the randomizer’s behavior at train vs. test time.</p>
 the &#64;forward_in operation, where raw inputs (usually observation modalities)
 are passed in.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1844,15 +1844,15 @@ on the size of the input, or if they assume fixed size input.</p>
 the &#64;forward_out operation, where processed inputs (usually encoded observation
 modalities) are passed in.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1882,15 +1882,15 @@ and linear layers.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.ScanCore.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1920,15 +1920,15 @@ and linear layers.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_core.VisualCore.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -1968,20 +1968,20 @@ outputs is to use a linear layer branch to produce each modality separately
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_nets.MIMO_MLP.forward" title="Permalink to this definition">#</a></dt>
 <dd><p>Process each set of inputs in its own observation group.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>inputs</strong> (<em>dict</em>) – a dictionary of dictionaries with one dictionary per
 observation group. Each observation group’s dictionary should map
 modality to torch.Tensor batches. Should be consistent with
 &#64;self.input_obs_group_shapes.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of output torch.Tensors, that corresponds</dt><dd><p>to &#64;self.output_shapes</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>outputs (dict)</p>
 </dd>
 </dl>
@@ -2021,10 +2021,10 @@ outputs is to use a linear layer branch to produce each modality separately
 :param embeddings: embeddings prior to positional embeddings are computed
 :type embeddings: torch.Tensor</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>positional embeddings to add to embeddings</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>time_embeddings (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2042,7 +2042,7 @@ modality to torch.Tensor batches. Should be consistent with
 be batch and time [B, T, …] for each tensor.</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><dl class="simple">
 <dt>dictionary of output torch.Tensors, that corresponds</dt><dd><p>to &#64;self.output_shapes. Leading dimensions will be batch and time [B, T, …]
 for each tensor.</p>
@@ -2050,7 +2050,7 @@ for each tensor.</p>
 </dl>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>outputs (dict)</p>
 </dd>
 </dl>
@@ -2064,10 +2064,10 @@ Adds timestep-based embeddings (aka positional embeddings) to inputs.
 :param inputs: outputs from observation encoder
 :type inputs: torch.Tensor</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>input embeddings to pass to transformer backbone.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>embeddings (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2132,16 +2132,16 @@ modality, it is processed with a randomizer (if present), an encoder
 network (if present), and again with the randomizer (if present), flattened,
 and then concatenated with the other processed modalities.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>obs_dict</strong> (<em>OrderedDict</em>) – dictionary that maps modalities to torch.Tensor
 batches that agree with &#64;self.obs_shapes. All modalities in
 &#64;self.obs_shapes must be present, but additional modalities
 can also be present.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>flat features of shape [B, D]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>feats (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2164,7 +2164,7 @@ can also be present.</p>
 <span class="sig-name descname"><span class="pre">register_obs_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">share_net_from</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_nets.ObservationEncoder.register_obs_key" title="Permalink to this definition">#</a></dt>
 <dd><p>Register an observation key that this encoder should be responsible for.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – modality name</p></li>
 <li><p><strong>shape</strong> (<em>int tuple</em>) – shape of modality</p></li>
@@ -2207,7 +2207,7 @@ expected input shapes (e.g. { ‘image’ : (3, 120, 160) }).</p>
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_nets.ObservationGroupEncoder.forward" title="Permalink to this definition">#</a></dt>
 <dd><p>Process each set of inputs in its own observation group.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>inputs</strong> (<em>dict</em>) – dictionary that maps observation groups to observation
 dictionaries of torch.Tensor batches that agree with
 &#64;self.observation_group_shapes. All observation groups in
@@ -2216,10 +2216,10 @@ observation groups can also be present. Note that these are specified
 as kwargs for ease of use with networks that name each observation
 stream in their forward calls.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>flat outputs of shape [B, D]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>outputs (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2250,7 +2250,7 @@ followed by an RNN, and then a per-step multi-output MLP.</p>
 <dt class="sig sig-object py" id="robomimic.models.obs_nets.RNN_MIMO_MLP.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rnn_init_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_nets.RNN_MIMO_MLP.forward" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>inputs</strong> (<em>dict</em>) – a dictionary of dictionaries with one dictionary per
 observation group. Each observation group’s dictionary should map
@@ -2261,7 +2261,7 @@ be batch and time [B, T, …] for each tensor.</p></li>
 <li><p><strong>return_state</strong> (<em>bool</em>) – whether to return hidden state</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of output torch.Tensors, that corresponds</dt><dd><p>to &#64;self.output_shapes. Leading dimensions will be batch and time [B, T, …]
 for each tensor.</p>
@@ -2270,7 +2270,7 @@ for each tensor.</p>
 <p>rnn_state (torch.Tensor or tuple): return the new rnn state (if &#64;return_state)</p>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>outputs (dict)</p>
 </dd>
 </dl>
@@ -2281,7 +2281,7 @@ for each tensor.</p>
 <span class="sig-name descname"><span class="pre">forward_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rnn_state</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_nets.RNN_MIMO_MLP.forward_step" title="Permalink to this definition">#</a></dt>
 <dd><p>Unroll network over a single timestep.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>inputs</strong> (<em>dict</em>) – expects same modalities as &#64;self.input_shapes, with
 additional batch dimension (but NOT time), since this is a
@@ -2289,7 +2289,7 @@ single time step.</p></li>
 <li><p><strong>rnn_state</strong> (<em>torch.Tensor</em>) – rnn hidden state</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of output torch.Tensors, that corresponds</dt><dd><p>to &#64;self.output_shapes. Does not contain time dimension.</p>
 </dd>
@@ -2297,7 +2297,7 @@ single time step.</p></li>
 <p>rnn_state: return the new rnn state</p>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>outputs (dict)</p>
 </dd>
 </dl>
@@ -2308,20 +2308,20 @@ single time step.</p></li>
 <span class="sig-name descname"><span class="pre">get_rnn_init_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_nets.RNN_MIMO_MLP.get_rnn_init_state" title="Permalink to this definition">#</a></dt>
 <dd><p>Get a default RNN state (zeros)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch_size</strong> (<em>int</em>) – batch size dimension</p></li>
 <li><p><strong>device</strong> – device the hidden state should be sent to.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>returns hidden state tensor or tuple of hidden state tensors</dt><dd><p>depending on the RNN type</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>hidden_state (torch.Tensor or tuple)</p>
 </dd>
 </dl>
@@ -2333,7 +2333,7 @@ single time step.</p></li>
 <dd><p>Returns output shape for this module, which is a dictionary instead
 of a list since outputs are dictionaries.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>dict</em>) – dictionary of dictionaries, where each top-level key
 corresponds to an observation group, and the low-level dictionaries
 specify the shape for each modality in an observation dictionary</p>
@@ -2353,7 +2353,7 @@ specify the shape for each modality in an observation dictionary</p>
 <span class="sig-prename descclassname"><span class="pre">robomimic.models.obs_nets.</span></span><span class="sig-name descname"><span class="pre">obs_encoder_factory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_shapes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_activation=&lt;class</span> <span class="pre">'torch.nn.modules.activation.ReLU'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_kwargs=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.obs_nets.obs_encoder_factory" title="Permalink to this definition">#</a></dt>
 <dd><p>Utility function to create an &#64;ObservationEncoder from kwargs specified in config.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_shapes</strong> (<em>OrderedDict</em>) – a dictionary that maps observation key to
 expected shapes for observations.</p></li>
@@ -2402,20 +2402,20 @@ Can optionally be goal conditioned on future observations.</p>
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.ActorNetwork.forward" title="Permalink to this definition">#</a></dt>
 <dd><p>Process each set of inputs in its own observation group.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>inputs</strong> (<em>dict</em>) – a dictionary of dictionaries with one dictionary per
 observation group. Each observation group’s dictionary should map
 modality to torch.Tensor batches. Should be consistent with
 &#64;self.input_obs_group_shapes.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of output torch.Tensors, that corresponds</dt><dd><p>to &#64;self.output_shapes</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>outputs (dict)</p>
 </dd>
 </dl>
@@ -2446,16 +2446,16 @@ over actions.</p>
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.GMMActorNetwork.forward" title="Permalink to this definition">#</a></dt>
 <dd><p>Samples actions from the policy distribution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – batch of observations</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – if not None, batch of goal observations</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>batch of actions from policy distribution</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2468,16 +2468,16 @@ over actions.</p>
 quantities necessary at train-time, like log-likelihood, KL
 divergence, etc.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – batch of observations</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – if not None, batch of goal observations</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>GMM distribution</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dist (Distribution)</p>
 </dd>
 </dl>
@@ -2501,16 +2501,16 @@ over actions.</p>
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.GaussianActorNetwork.forward" title="Permalink to this definition">#</a></dt>
 <dd><p>Samples actions from the policy distribution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – batch of observations</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – if not None, batch of goal observations</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>batch of actions from policy distribution</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2523,16 +2523,16 @@ over actions.</p>
 quantities necessary at train-time, like log-likelihood, KL
 divergence, etc.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – batch of observations</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – if not None, batch of goal observations</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Gaussian distribution</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dist (Distribution)</p>
 </dd>
 </dl>
@@ -2574,7 +2574,7 @@ It takes states and actions and returns action perturbations.</p>
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rnn_init_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.RNNActorNetwork.forward" title="Permalink to this definition">#</a></dt>
 <dd><p>Forward a sequence of inputs through the RNN and the per-step network.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – batch of observations - each tensor in the dictionary
 should have leading dimensions batch and time [B, T, …]</p></li>
@@ -2583,11 +2583,11 @@ should have leading dimensions batch and time [B, T, …]</p></li>
 <li><p><strong>return_state</strong> (<em>bool</em>) – whether to return hidden state</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>predicted action sequence
 rnn_state: return rnn state at the end if return_state is set to True</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>actions (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2598,7 +2598,7 @@ rnn_state: return rnn state at the end if return_state is set to True</p>
 <span class="sig-name descname"><span class="pre">forward_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rnn_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.RNNActorNetwork.forward_step" title="Permalink to this definition">#</a></dt>
 <dd><p>Unroll RNN over single timestep to get actions.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – batch of observations. Should not contain
 time dimension.</p></li>
@@ -2606,11 +2606,11 @@ time dimension.</p></li>
 <li><p><strong>rnn_state</strong> – rnn hidden state, initialize to zero state if set to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>batch of actions - does not contain time dimension
 state: updated rnn state</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>actions (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2622,7 +2622,7 @@ state: updated rnn state</p>
 <dd><p>Returns output shape for this module, which is a dictionary instead
 of a list since outputs are dictionaries.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>dict</em>) – dictionary of dictionaries, where each top-level key
 corresponds to an observation group, and the low-level dictionaries
 specify the shape for each modality in an observation dictionary</p>
@@ -2647,16 +2647,16 @@ specify the shape for each modality in an observation dictionary</p>
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rnn_init_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.RNNGMMActorNetwork.forward" title="Permalink to this definition">#</a></dt>
 <dd><p>Samples actions from the policy distribution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – batch of observations</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – if not None, batch of goal observations</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>batch of actions from policy distribution</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2667,7 +2667,7 @@ specify the shape for each modality in an observation dictionary</p>
 <span class="sig-name descname"><span class="pre">forward_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rnn_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.RNNGMMActorNetwork.forward_step" title="Permalink to this definition">#</a></dt>
 <dd><p>Unroll RNN over single timestep to get sampled actions.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – batch of observations. Should not contain
 time dimension.</p></li>
@@ -2675,11 +2675,11 @@ time dimension.</p></li>
 <li><p><strong>rnn_state</strong> – rnn hidden state, initialize to zero state if set to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>batch of actions - does not contain time dimension
 state: updated rnn state</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>acts (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2692,7 +2692,7 @@ state: updated rnn state</p>
 quantities necessary at train-time, like log-likelihood, KL
 divergence, etc.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – batch of observations</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – if not None, batch of goal observations</p></li>
@@ -2700,11 +2700,11 @@ divergence, etc.</p>
 <li><p><strong>return_state</strong> (<em>bool</em>) – whether to return hidden state</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>sequence of GMM distributions over the timesteps
 rnn_state: return rnn state at the end if return_state is set to True</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dists (Distribution)</p>
 </dd>
 </dl>
@@ -2717,7 +2717,7 @@ rnn_state: return rnn state at the end if return_state is set to True</p>
 is useful for computing quantities necessary at train-time, like
 log-likelihood, KL divergence, etc.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – batch of observations. Should not contain
 time dimension.</p></li>
@@ -2725,11 +2725,11 @@ time dimension.</p></li>
 <li><p><strong>rnn_state</strong> – rnn hidden state, initialize to zero state if set to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>GMM action distributions
 state: updated rnn state</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ad (Distribution)</p>
 </dd>
 </dl>
@@ -2757,20 +2757,20 @@ from previous observations) and possible from previous actions as well (in an au
 <div><p>should have leading dimensions batch and time [B, T, …]</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>actions</strong> (<em>torch.Tensor</em>) – batch of actions of shape [B, T, D]</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – if not None, batch of goal observations</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>contains predicted action sequence, or dictionary</dt><dd><p>with predicted action sequence and predicted observation sequences</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>outputs (torch.Tensor or dict)</p>
 </dd>
 </dl>
@@ -2807,10 +2807,10 @@ sequences (assumed to be frame stacked from previous observations).</p>
 :param goal_dict: if not None, batch of goal observations
 :type goal_dict: dict</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>batch of actions from policy distribution</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2829,10 +2829,10 @@ divergence, etc.
 :param goal_dict: if not None, batch of goal observations
 :type goal_dict: dict</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>sequence of GMM distributions over the timesteps</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>dists (Distribution)</p>
 </dd>
 </dl>
@@ -2856,7 +2856,7 @@ The VAE prior and decoder are used at test-time as the policy.</p>
 <span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.VAEActor.decode" title="Permalink to this definition">#</a></dt>
 <dd><p>Thin wrapper around &#64;VaeNets.VAE implementation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – a dictionary that maps modalities to torch.Tensor
 batches. Only needs to be provided if &#64;decoder_is_conditioned
@@ -2870,14 +2870,14 @@ generate from the prior. Only required if &#64;z is None - i.e.
 sampling takes place</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of reconstructed inputs (this will be a dictionary</dt><dd><p>with a single “action” key)</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>recons (dict)</p>
 </dd>
 </dl>
@@ -2887,7 +2887,7 @@ sampling takes place</p></li>
 <dt class="sig sig-object py" id="robomimic.models.policy_nets.VAEActor.encode">
 <span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.VAEActor.encode" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>actions</strong> (<em>torch.Tensor</em>) – a batch of actions</p></li>
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – a dictionary that maps modalities to torch.Tensor
@@ -2897,7 +2897,7 @@ used for conditioning in either the decoder or the prior (or both).</p></li>
 batches. These should correspond to goal modalities.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p>dictionary with the following keys:</p>
 <blockquote>
 <div><p>mean (torch.Tensor): posterior encoder means</p>
@@ -2905,7 +2905,7 @@ batches. These should correspond to goal modalities.</p></li>
 </div></blockquote>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>posterior params (dict)</p>
 </dd>
 </dl>
@@ -2916,7 +2916,7 @@ batches. These should correspond to goal modalities.</p></li>
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.VAEActor.forward" title="Permalink to this definition">#</a></dt>
 <dd><p>Samples actions from the policy distribution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – batch of observations</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – if not None, batch of goal observations</p></li>
@@ -2924,10 +2924,10 @@ batches. These should correspond to goal modalities.</p></li>
 of sampling from the prior</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>batch of actions from policy distribution</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2939,7 +2939,7 @@ of sampling from the prior</p></li>
 <dd><p>A full pass through the VAE network used during training to construct KL
 and reconstruction losses. See &#64;VAE class for more info.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>actions</strong> (<em>torch.Tensor</em>) – a batch of actions</p></li>
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – a dictionary that maps modalities to torch.Tensor
@@ -2949,7 +2949,7 @@ used for conditioning in either the decoder or the prior (or both).</p></li>
 batches. These should correspond to goal modalities.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p>a dictionary that contains the following outputs.</p>
 <blockquote>
 <div><dl class="simple">
@@ -2963,7 +2963,7 @@ batches. These should correspond to goal modalities.</p></li>
 </div></blockquote>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>vae_outputs (dict)</p>
 </dd>
 </dl>
@@ -2988,7 +2988,7 @@ never chain this module to other ones.</p>
 <span class="sig-name descname"><span class="pre">sample_prior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.policy_nets.VAEActor.sample_prior" title="Permalink to this definition">#</a></dt>
 <dd><p>Thin wrapper around &#64;VaeNets.VAE implementation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – this argument is used to specify the number
 of samples to generate from the prior.</p></li>
@@ -2998,10 +2998,10 @@ batches. Only needs to be provided if &#64;prior_is_conditioned.</p></li>
 batches. These should correspond to goal modalities.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>latents sampled from the prior</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>z (torch.Tensor)</p>
 </dd>
 </dl>
@@ -3045,15 +3045,15 @@ D is input dimension (&#64;self.embed_dim).</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.CausalSelfAttention.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -3124,15 +3124,15 @@ registered hooks while the latter silently ignores them.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.GPT_Backbone.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -3181,15 +3181,15 @@ layer normalization and residual connections on each input.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.transformers.SelfAttentionBlock.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>
@@ -3218,7 +3218,7 @@ in VAEs.</p>
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.vae_nets.CategoricalPrior.forward" title="Permalink to this definition">#</a></dt>
 <dd><p>Computes prior logits (unnormalized log-probs).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch_size</strong> (<em>int</em>) – batch size - this is needed for parameters that are
 not obs-dependent, to make sure the leading dimension is correct
@@ -3228,10 +3228,10 @@ if any prior parameters are obs-dependent.</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – inputs according to &#64;goal_shapes (only if using goal observations)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>dictionary containing prior parameters</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>prior_params (dict)</p>
 </dd>
 </dl>
@@ -3243,7 +3243,7 @@ if any prior parameters are obs-dependent.</p></li>
 <dd><p>Computes KL divergence loss between the Categorical distribution
 given by the unnormalized logits &#64;logits and the prior distribution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>posterior_params</strong> (<em>dict</em>) – dictionary with key “logits” corresponding
 to torch.Tensor batch of unnormalized logits of shape [B, D * C]
@@ -3254,10 +3254,10 @@ if any prior parameters are obs-dependent.</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – inputs according to &#64;goal_shapes (only if using goal observations)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>KL divergence loss</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>kl_loss (torch.Tensor)</p>
 </dd>
 </dl>
@@ -3268,7 +3268,7 @@ if any prior parameters are obs-dependent.</p></li>
 <span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.vae_nets.CategoricalPrior.sample" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a batch of samples from the prior distribution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – this argument is used to specify the number
 of samples to generate from the prior.</p></li>
@@ -3278,10 +3278,10 @@ be consistent with &#64;n, the number of samples to generate.</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – inputs according to &#64;goal_shapes (only if using goal observations)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>batch of sampled latent vectors.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>z (torch.Tensor)</p>
 </dd>
 </dl>
@@ -3305,7 +3305,7 @@ multimodal Gaussian Mixture Model priors for use in VAEs.</p>
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.vae_nets.GaussianPrior.forward" title="Permalink to this definition">#</a></dt>
 <dd><p>Computes means, logvars, and GMM weights (if using GMM and learning weights).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch_size</strong> (<em>int</em>) – batch size - this is needed for parameters that are
 not obs-dependent, to make sure the leading dimension is correct
@@ -3315,10 +3315,10 @@ if any prior parameters are obs-dependent.</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – inputs according to &#64;goal_shapes (only if using goal observations)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>dictionary containing prior parameters</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>prior_params (dict)</p>
 </dd>
 </dl>
@@ -3330,7 +3330,7 @@ if any prior parameters are obs-dependent.</p></li>
 <dd><p>Computes sample-based KL divergence loss between the Gaussian distribution
 given by &#64;mu, &#64;logvar and the prior distribution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>posterior_params</strong> (<em>dict</em>) – dictionary with keys “mu” and “logvar” corresponding
 to torch.Tensor batch of means and log-variances of posterior Gaussian
@@ -3342,10 +3342,10 @@ if any prior parameters are obs-dependent.</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – inputs according to &#64;goal_shapes (only if using goal observations)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>KL divergence loss</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>kl_loss (torch.Tensor)</p>
 </dd>
 </dl>
@@ -3356,7 +3356,7 @@ if any prior parameters are obs-dependent.</p></li>
 <span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.vae_nets.GaussianPrior.sample" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a batch of samples from the prior distribution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – this argument is used to specify the number
 of samples to generate from the prior.</p></li>
@@ -3366,10 +3366,10 @@ be consistent with &#64;n, the number of samples to generate.</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – inputs according to &#64;goal_shapes (only if using goal observations)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>batch of sampled latent vectors.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>z (torch.Tensor)</p>
 </dd>
 </dl>
@@ -3395,7 +3395,7 @@ torch Parameters instead of observation-dependent mappings.</p>
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.vae_nets.Prior.forward" title="Permalink to this definition">#</a></dt>
 <dd><p>Computes prior parameters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch_size</strong> (<em>int</em>) – batch size - this is needed for parameters that are
 not obs-dependent, to make sure the leading dimension is correct
@@ -3405,10 +3405,10 @@ if any prior parameters are obs-dependent.</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – inputs according to &#64;goal_shapes (only if using goal observations)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>dictionary containing prior parameters</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>prior_params (dict)</p>
 </dd>
 </dl>
@@ -3420,7 +3420,7 @@ if any prior parameters are obs-dependent.</p></li>
 <dd><p>Computes sample-based KL divergence loss between the Gaussian distribution
 given by &#64;mu, &#64;logvar and the prior distribution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>posterior_params</strong> (<em>dict</em>) – dictionary with keys “mu” and “logvar” corresponding
 to torch.Tensor batch of means and log-variances of posterior Gaussian
@@ -3432,10 +3432,10 @@ if any prior parameters are obs-dependent.</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – inputs according to &#64;goal_shapes (only if using goal observations)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>KL divergence loss</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>kl_loss (torch.Tensor)</p>
 </dd>
 </dl>
@@ -3453,7 +3453,7 @@ of a list since outputs are dictionaries.</p>
 <span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.vae_nets.Prior.sample" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a batch of samples from the prior distribution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – this argument is used to specify the number
 of samples to generate from the prior.</p></li>
@@ -3463,10 +3463,10 @@ be consistent with &#64;n, the number of samples to generate.</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – inputs according to &#64;goal_shapes (only if using goal observations)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>batch of sampled latent vectors.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>z (torch.Tensor)</p>
 </dd>
 </dl>
@@ -3512,7 +3512,7 @@ this function at train-time for backpropagation, but they
 can be left out at test-time. In this case, latents will
 be sampled using the VAE prior.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>conditions</strong> (<em>dict</em>) – a dictionary that maps modalities to torch.Tensor
 batches. These should correspond to the modalities used for conditioning
@@ -3526,10 +3526,10 @@ generate from the prior. Only required if &#64;z is None - i.e.
 sampling takes place</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>dictionary of reconstructed inputs</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>recons (dict)</p>
 </dd>
 </dl>
@@ -3539,7 +3539,7 @@ sampling takes place</p></li>
 <dt class="sig sig-object py" id="robomimic.models.vae_nets.VAE.encode">
 <span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conditions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.vae_nets.VAE.encode" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>inputs</strong> (<em>dict</em>) – a dictionary that maps input modalities to torch.Tensor
 batches. These should correspond to the encoder-only modalities
@@ -3551,10 +3551,10 @@ in either the decoder or the prior (or both). Only for cVAEs.</p></li>
 batches. These should correspond to goal modalities. Only for cVAEs.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>dictionary with posterior parameters</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>posterior params (dict)</p>
 </dd>
 </dl>
@@ -3566,7 +3566,7 @@ batches. These should correspond to goal modalities. Only for cVAEs.</p></li>
 <dd><p>A full pass through the VAE network to construct KL and reconstruction
 losses.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>inputs</strong> (<em>dict</em>) – a dictionary that maps input modalities to torch.Tensor
 batches. These should correspond to the encoder-only modalities
@@ -3583,7 +3583,7 @@ batches. These should correspond to goal modalities. Only for cVAEs.</p></li>
 encoder outputs. Useful for doing staged VAE training.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p>a dictionary that contains the following outputs.</p>
 <blockquote>
 <div><dl class="simple">
@@ -3597,7 +3597,7 @@ encoder outputs. Useful for doing staged VAE training.</p></li>
 </div></blockquote>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>vae_outputs (dict)</p>
 </dd>
 </dl>
@@ -3616,7 +3616,7 @@ encoder outputs. Useful for doing staged VAE training.</p></li>
 <dd><p>Computes KL divergence loss given the results of the VAE encoder forward
 pass and the conditioning and goal modalities (if the prior is input-dependent).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>posterior_params</strong> (<em>dict</em>) – dictionary with keys “mu” and “logvar” corresponding
 to torch.Tensor batch of means and log-variances of posterior Gaussian
@@ -3628,10 +3628,10 @@ if any prior parameters are input-dependent.</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – inputs according to &#64;self.goal_shapes (only if using goal observations)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>VAE KL divergence loss</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>kl_loss (torch.Tensor)</p>
 </dd>
 </dl>
@@ -3647,7 +3647,7 @@ need to be tuned in practice for each situation (see
 <a class="reference external" href="https://twitter.com/memotv/status/973323454350090240">https://twitter.com/memotv/status/973323454350090240</a> for more
 discussion).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>reconstructions</strong> (<em>dict</em>) – reconstructed inputs, consistent with
 &#64;self.output_shapes</p></li>
@@ -3655,10 +3655,10 @@ discussion).</p>
 &#64;self.output_shapes</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>VAE reconstruction loss</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>reconstruction_loss (torch.Tensor)</p>
 </dd>
 </dl>
@@ -3668,14 +3668,14 @@ discussion).</p>
 <dt class="sig sig-object py" id="robomimic.models.vae_nets.VAE.reparameterize">
 <span class="sig-name descname"><span class="pre">reparameterize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">posterior_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.vae_nets.VAE.reparameterize" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>params</strong> (<em>posterior</em>) – dictionary from encoder forward pass that
 parametrizes the encoder distribution</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>sampled latents that are also differentiable</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>z (torch.Tensor)</p>
 </dd>
 </dl>
@@ -3686,7 +3686,7 @@ parametrizes the encoder distribution</p>
 <span class="sig-name descname"><span class="pre">sample_prior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conditions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.vae_nets.VAE.sample_prior" title="Permalink to this definition">#</a></dt>
 <dd><p>Samples from the prior using the prior parameters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – this argument is used to specify the number
 of samples to generate from the prior.</p></li>
@@ -3697,10 +3697,10 @@ in either the decoder or the prior (or both). Only for cVAEs.</p></li>
 batches. These should correspond to goal modalities. Only for cVAEs.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>sampled latents from the prior</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>z (torch.Tensor)</p>
 </dd>
 </dl>
@@ -3767,17 +3767,17 @@ more details.</p>
 <dd><p>Return mean of critic categorical distribution. Useful for obtaining
 point estimates of critic values.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – batch of observations</p></li>
 <li><p><strong>acts</strong> (<em>torch.Tensor</em>) – batch of actions</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – if not None, batch of goal observations</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>expectation of value distribution</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>mean_value (torch.Tensor)</p>
 </dd>
 </dl>
@@ -3788,14 +3788,14 @@ point estimates of critic values.</p>
 <span class="sig-name descname"><span class="pre">forward_train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.value_nets.DistributionalActionValueNetwork.forward_train" title="Permalink to this definition">#</a></dt>
 <dd><p>Return full critic categorical distribution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – batch of observations</p></li>
 <li><p><strong>acts</strong> (<em>torch.Tensor</em>) – batch of actions</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – if not None, batch of goal observations</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>value_distribution (DiscreteValueDistribution instance)</p>
 </dd>
 </dl>
@@ -3825,15 +3825,15 @@ Can optionally be goal conditioned on future observations.</p>
 <span class="sig-name descname"><span class="pre">output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.models.value_nets.ValueNetwork.output_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to compute output shape from inputs to this module.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input_shape</strong> (<em>iterable of int</em>) – shape of input. Does not include batch dimension.
 Some modules may not need this argument, if their output does not depend
 on the size of the input, or if they assume fixed size input.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of integers corresponding to output shape</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>out_shape ([int])</p>
 </dd>
 </dl>

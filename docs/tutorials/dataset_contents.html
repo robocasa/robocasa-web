@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Dataset Contents and Visualization &#8212; robomimic 0.3 documentation</title>
     
@@ -545,7 +545,7 @@ title="Print to PDF"
 <li><p>the dataset structure for the first demonstration</p></li>
 </ul>
 <p>Pass the <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> argument to print the list of demonstration keys under each filter key, and the dataset structure for all demonstrations. An example, using the small hdf5 dataset packaged with the repository in <code class="docutils literal notranslate"><span class="pre">tests/assets/test_v141.hdf5</span></code> is shown below.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python get_dataset_info.py --dataset ../../tests/assets/test_v141.hdf5
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>get_dataset_info.py<span class="w"> </span>--dataset<span class="w"> </span>../../tests/assets/test_v141.hdf5
 </pre></div>
 </div>
 <div class="admonition tip">
@@ -557,16 +557,16 @@ title="Print to PDF"
 <p class="admonition-title">Note: These examples are compatible with any robomimic dataset.</p><p>The examples in this section use the small hdf5 dataset packaged with the repository in <code class="docutils literal notranslate"><span class="pre">tests/assets/test_v141.hdf5</span></code> (which requires robosuite v1.4.1), but you can run these examples with any robomimic hdf5 dataset.</p>
 </div><p>Use the <code class="docutils literal notranslate"><span class="pre">playback_dataset.py</span></code> script to easily view dataset trajectories.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># For the first 5 trajectories, load environment simulator states one-by-one, and render &quot;agentview&quot; and &quot;robot0_eye_in_hand&quot; cameras to video at /tmp/playback_dataset.mp4</span>
-$ python playback_dataset.py --dataset ../../tests/assets/test_v141.hdf5 --render_image_names agentview robot0_eye_in_hand --video_path /tmp/playback_dataset.mp4 --n <span class="m">5</span>
+$<span class="w"> </span>python<span class="w"> </span>playback_dataset.py<span class="w"> </span>--dataset<span class="w"> </span>../../tests/assets/test_v141.hdf5<span class="w"> </span>--render_image_names<span class="w"> </span>agentview<span class="w"> </span>robot0_eye_in_hand<span class="w"> </span>--video_path<span class="w"> </span>/tmp/playback_dataset.mp4<span class="w"> </span>--n<span class="w"> </span><span class="m">5</span>
 
 <span class="c1"># Directly visualize the image observations in the dataset. This is especially useful for real robot datasets where there is no simulator to use for rendering.</span>
-$ python playback_dataset.py --dataset ../../tests/assets/test_v141.hdf5 --use-obs --render_image_names agentview_image --video_path /tmp/obs_trajectory.mp4
+$<span class="w"> </span>python<span class="w"> </span>playback_dataset.py<span class="w"> </span>--dataset<span class="w"> </span>../../tests/assets/test_v141.hdf5<span class="w"> </span>--use-obs<span class="w"> </span>--render_image_names<span class="w"> </span>agentview_image<span class="w"> </span>--video_path<span class="w"> </span>/tmp/obs_trajectory.mp4
 
 <span class="c1"># Play the dataset actions in the environment to verify that the recorded actions are reasonable.</span>
-$ python playback_dataset.py --dataset ../../tests/assets/test_v141.hdf5 --use-actions --render_image_names agentview --video_path /tmp/playback_dataset_with_actions.mp4
+$<span class="w"> </span>python<span class="w"> </span>playback_dataset.py<span class="w"> </span>--dataset<span class="w"> </span>../../tests/assets/test_v141.hdf5<span class="w"> </span>--use-actions<span class="w"> </span>--render_image_names<span class="w"> </span>agentview<span class="w"> </span>--video_path<span class="w"> </span>/tmp/playback_dataset_with_actions.mp4
 
 <span class="c1"># Visualize only the initial demonstration frames.</span>
-$ python playback_dataset.py --dataset ../../tests/assets/test_v141.hdf5 --first --render_image_names agentview --video_path /tmp/dataset_task_inits.mp4
+$<span class="w"> </span>python<span class="w"> </span>playback_dataset.py<span class="w"> </span>--dataset<span class="w"> </span>../../tests/assets/test_v141.hdf5<span class="w"> </span>--first<span class="w"> </span>--render_image_names<span class="w"> </span>agentview<span class="w"> </span>--video_path<span class="w"> </span>/tmp/dataset_task_inits.mp4
 </pre></div>
 </div>
 </section>

@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>robomimic v0.1 (CoRL 2021) &#8212; robomimic 0.3 documentation</title>
     
@@ -707,24 +707,24 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> is a python script that provides a programmatic way of installing all datasets. This is the preferred method, because this script also sets up a directory structure for the datasets that works out of the box with examples for reproducing benchmark results.</p>
 <p>A few examples of using this script are provided below:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># default behavior - just download lift proficient-human low-dim dataset</span>
-$ python download_datasets.py
+$<span class="w"> </span>python<span class="w"> </span>download_datasets.py
 
 <span class="c1"># download low-dim proficient-human datasets for all simulation tasks</span>
 <span class="c1"># (do a dry run first to see which datasets would be downloaded)</span>
-$ python download_datasets.py --tasks sim --dataset_types ph --hdf5_types low_dim --dry_run
-$ python download_datasets.py --tasks sim --dataset_types ph --hdf5_types low_dim
+$<span class="w"> </span>python<span class="w"> </span>download_datasets.py<span class="w"> </span>--tasks<span class="w"> </span>sim<span class="w"> </span>--dataset_types<span class="w"> </span>ph<span class="w"> </span>--hdf5_types<span class="w"> </span>low_dim<span class="w"> </span>--dry_run
+$<span class="w"> </span>python<span class="w"> </span>download_datasets.py<span class="w"> </span>--tasks<span class="w"> </span>sim<span class="w"> </span>--dataset_types<span class="w"> </span>ph<span class="w"> </span>--hdf5_types<span class="w"> </span>low_dim
 
 <span class="c1"># download all low-dim multi-human datasets for the can and square tasks</span>
-$ python download_datasets.py --tasks can square --dataset_types mh --hdf5_types low_dim
+$<span class="w"> </span>python<span class="w"> </span>download_datasets.py<span class="w"> </span>--tasks<span class="w"> </span>can<span class="w"> </span>square<span class="w"> </span>--dataset_types<span class="w"> </span>mh<span class="w"> </span>--hdf5_types<span class="w"> </span>low_dim
 
 <span class="c1"># download the sparse reward machine-generated low-dim datasets</span>
-$ python download_datasets.py --tasks all --dataset_types mg --hdf5_types low_dim_sparse
+$<span class="w"> </span>python<span class="w"> </span>download_datasets.py<span class="w"> </span>--tasks<span class="w"> </span>all<span class="w"> </span>--dataset_types<span class="w"> </span>mg<span class="w"> </span>--hdf5_types<span class="w"> </span>low_dim_sparse
 
 <span class="c1"># download all real robot datasets</span>
-$ python download_datasets.py --tasks real
+$<span class="w"> </span>python<span class="w"> </span>download_datasets.py<span class="w"> </span>--tasks<span class="w"> </span>real
 
 <span class="c1"># specify a different location for downloading the datasets</span>
-$ python download_datasets.py --download_dir /tmp/datasets
+$<span class="w"> </span>python<span class="w"> </span>download_datasets.py<span class="w"> </span>--download_dir<span class="w"> </span>/tmp/datasets
 </pre></div>
 </div>
 </section>
@@ -919,10 +919,10 @@ $ python download_datasets.py --download_dir /tmp/datasets
 <h3>Running Experiments<a class="headerlink" href="#running-experiments" title="Permalink to this headline">#</a></h3>
 <p>After downloading the appropriate datasets you’re interested in using by running the <code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> script, the <code class="docutils literal notranslate"><span class="pre">generate_paper_configs.py</span></code> script can be used to generate all training config json files necessary to reproduce the experiments in the <a class="reference external" href="https://arise-initiative.github.io/robomimic-web/study/">study</a>. A few examples are below.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assume datasets already exist in robomimic/../datasets folder. Configs will be generated under robomimic/exps/paper, and training results will be at /tmp/experiment_results when launching training runs.</span>
-$ python generate_paper_configs.py --output_dir /tmp/experiment_results
+$<span class="w"> </span>python<span class="w"> </span>generate_paper_configs.py<span class="w"> </span>--output_dir<span class="w"> </span>/tmp/experiment_results
 
 <span class="c1"># Alternatively, specify where datasets exist, and specify where configs should be generated.</span>
-$ python generate_paper_configs.py --config_dir /tmp/configs --dataset_dir /tmp/datasets --output_dir /tmp/experiment_results
+$<span class="w"> </span>python<span class="w"> </span>generate_paper_configs.py<span class="w"> </span>--config_dir<span class="w"> </span>/tmp/configs<span class="w"> </span>--dataset_dir<span class="w"> </span>/tmp/datasets<span class="w"> </span>--output_dir<span class="w"> </span>/tmp/experiment_results
 </pre></div>
 </div>
 <ul class="simple">
@@ -934,8 +934,8 @@ $ python generate_paper_configs.py --config_dir /tmp/configs --dataset_dir /tmp/
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#  task: lift</span>
 <span class="c1">#    dataset type: ph</span>
 <span class="c1">#      hdf5 type: low_dim</span>
-python /path/to/robomimic/scripts/train.py --config /path/to/robomimic/exps/paper/core/lift/ph/low_dim/bc.json
-python /path/to/robomimic/scripts/train.py --config /path/to/robomimic/exps/paper/core/lift/ph/low_dim/bc_rnn.json
+python<span class="w"> </span>/path/to/robomimic/scripts/train.py<span class="w"> </span>--config<span class="w"> </span>/path/to/robomimic/exps/paper/core/lift/ph/low_dim/bc.json
+python<span class="w"> </span>/path/to/robomimic/scripts/train.py<span class="w"> </span>--config<span class="w"> </span>/path/to/robomimic/exps/paper/core/lift/ph/low_dim/bc_rnn.json
 </pre></div>
 </div>
 <div class="admonition info">
@@ -958,26 +958,26 @@ python /path/to/robomimic/scripts/train.py --config /path/to/robomimic/exps/pape
 <h3>Quick Example<a class="headerlink" href="#quick-example" title="Permalink to this headline">#</a></h3>
 <p>Below, we show a simple example of how to reproduce one of the results from the study - the BC-RNN result on the Lift (Proficient-Human) low-dim dataset:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># default behavior for download script - just download lift proficient-human low-dim dataset to robomimic/../datasets</span>
-$ python download_datasets.py
+$<span class="w"> </span>python<span class="w"> </span>download_datasets.py
 
 <span class="c1"># generate json configs for running all experiments at robomimic/exps/paper</span>
-$ python generate_paper_configs.py --output_dir /tmp/experiment_results
+$<span class="w"> </span>python<span class="w"> </span>generate_paper_configs.py<span class="w"> </span>--output_dir<span class="w"> </span>/tmp/experiment_results
 
 <span class="c1"># the training command can be found in robomimic/exps/paper/core.sh</span>
 <span class="c1"># Training results can be viewed at /tmp/experiment_results (--output_dir when generating paper configs).</span>
-$ python train.py --config ../exps/paper/core/lift/ph/low_dim/bc_rnn.json
+$<span class="w"> </span>python<span class="w"> </span>train.py<span class="w"> </span>--config<span class="w"> </span>../exps/paper/core/lift/ph/low_dim/bc_rnn.json
 </pre></div>
 </div>
 </section>
 </section>
 <section id="citation">
 <h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
-<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">robomimic2021</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{What Matters in Learning from Offline Human Demonstrations for Robot Manipulation}</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Mandlekar, Ajay and Xu, Danfei and Wong, Josiah and Nasiriany, Soroush and Wang, Chen and Kulkarni, Rohun and Fei-Fei, Li and Savarese, Silvio and Zhu, Yuke and Mart{\&#39;\i}n-Mart{\&#39;\i}n, Roberto}</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="na">booktitle</span><span class="p">=</span><span class="s">{5th Annual Conference on Robot Learning}</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2021}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">robomimic2021</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{What Matters in Learning from Offline Human Demonstrations for Robot Manipulation}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Mandlekar, Ajay and Xu, Danfei and Wong, Josiah and Nasiriany, Soroush and Wang, Chen and Kulkarni, Rohun and Fei-Fei, Li and Savarese, Silvio and Zhu, Yuke and Mart{\&#39;\i}n-Mart{\&#39;\i}n, Roberto}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">booktitle</span><span class="p">=</span><span class="s">{5th Annual Conference on Robot Learning}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2021}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>

@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Training Transformers &#8212; robomimic 0.3 documentation</title>
     
@@ -544,7 +544,7 @@ title="Print to PDF"
 <section id="using-default-configurations">
 <h2>1. Using default configurations<a class="headerlink" href="#using-default-configurations" title="Permalink to this headline">#</a></h2>
 <p>The easiest way to train a transformer policy network is to pass the default template json to the main training script <code class="docutils literal notranslate"><span class="pre">train.py</span></code> via the <code class="docutils literal notranslate"><span class="pre">--config</span></code> argument. The dataset can be specified by setting the <code class="docutils literal notranslate"><span class="pre">data</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">train</span></code> section of the config json, or specified via the <code class="docutils literal notranslate"><span class="pre">--dataset</span></code> argument.  You may find that your data has different rollout horizon lengths, observation modalities, or other incompatibilities with the default template.  In this scenario, we suggest defining custom parameters as described in (2).</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python train.py --config ../config/default_templates/bc_transformer.json --dataset /path/to/dataset.hdf5
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>train.py<span class="w"> </span>--config<span class="w"> </span>../config/default_templates/bc_transformer.json<span class="w"> </span>--dataset<span class="w"> </span>/path/to/dataset.hdf5
 </pre></div>
 </div>
 </section>

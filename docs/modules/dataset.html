@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>SequenceDataset &#8212; robomimic 0.3 documentation</title>
     
@@ -485,7 +485,7 @@ title="Print to PDF"
                 
   <section id="sequencedataset">
 <h1>SequenceDataset<a class="headerlink" href="#sequencedataset" title="Permalink to this headline">#</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">robomimic.utils.dataset.SequenceDataset</span></code> class extends PyTorch’s default <code class="docutils literal notranslate"><span class="pre">torch.utils.data.Dataset</span></code> to interface with our demonstration <a class="reference external" href="../introduction/datasets.html">datasets</a>. The class supports accessing demonstration sub-sequences (as opposed to individual states) by index and both on-demand fetching and in-memory caching. This page walks through the key concepts of the <code class="docutils literal notranslate"><span class="pre">SequenceDataset</span></code> interface. Please refer to the official PyTorch <a class="reference external" href="https://pytorch.org/docs/stable/data.html">documentation</a> and a short <a class="reference external" href="../introduction/examples.html#train-loop-example">example</a> on how to use the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> and <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code> interfaces to build a training pipeline. Also, please see the <a class="reference external" href="../introduction/results.html#downloading-released-datasets">released datasets section</a> for guidance on downloading datasets that work out of the box with the repository.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">robomimic.utils.dataset.SequenceDataset</span></code> class extends PyTorch’s default <code class="docutils literal notranslate"><span class="pre">torch.utils.data.Dataset</span></code> to interface with our demonstration <a class="reference external" href="../datasets/overview.html">datasets</a>. The class supports accessing demonstration sub-sequences (as opposed to individual states) by index and both on-demand fetching and in-memory caching. This page walks through the key concepts of the <code class="docutils literal notranslate"><span class="pre">SequenceDataset</span></code> interface. Please refer to the official PyTorch <a class="reference external" href="https://pytorch.org/docs/stable/data.html">documentation</a> and a short <a class="reference external" href="https://github.com/ARISE-Initiative/robomimic/blob/master/examples/simple_train_loop.py">example</a> on how to use the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> and <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code> interfaces to build a training pipeline.</p>
 <p>Here is a sample dataset object:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">SequenceDataset</span><span class="p">(</span>
     <span class="n">hdf5_path</span><span class="o">=</span><span class="n">dataset_path</span><span class="p">,</span>
@@ -513,7 +513,7 @@ title="Print to PDF"
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">hdf5_path</span></code></p>
 <ul>
-<li><p>The absolute / relative path to the hdf5 file containing training demonstrations. See <a class="reference external" href="../introduction/datasets.html">datasets</a> page for the expected data structure.</p></li>
+<li><p>The absolute / relative path to the hdf5 file containing training demonstrations. See the <a class="reference external" href="../datasets/overview.html#dataset-structure">datasets page</a> for the expected data structure.</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">obs_keys</span></code></p>
@@ -564,7 +564,7 @@ title="Print to PDF"
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">filter_by_attribute</span></code></p>
 <ul>
-<li><p>if provided, use the provided filter key to look up a subset of demonstrations to load. See the documentation on <a class="reference external" href="../introduction/datasets.html#filter-keys-and-train-valid-splits">filter keys</a> for more information.</p></li>
+<li><p>if provided, use the provided filter key to look up a subset of demonstrations to load. See the documentation on <a class="reference external" href="../datasets/overview.html#filter-keys">filter keys</a> for more information.</p></li>
 </ul>
 </li>
 </ul>

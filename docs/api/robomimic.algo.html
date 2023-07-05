@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>robomimic.algo package &#8212; robomimic 0.3 documentation</title>
     
@@ -647,7 +647,7 @@ utils/train_utils.py.</p>
 <span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.algo.Algo.deserialize" title="Permalink to this definition">#</a></dt>
 <dd><p>Load model from a checkpoint.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>model_dict</strong> (<em>dict</em>) – a dictionary saved by self.serialize() that contains
 the same keys as &#64;self.network_classes</p>
 </dd>
@@ -660,13 +660,13 @@ the same keys as &#64;self.network_classes</p>
 <dd><p>Process info dictionary from &#64;train_on_batch to summarize
 information to pass to tensorboard for logging.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>loss log (dict)</p>
 </dd>
 </dl>
@@ -685,7 +685,7 @@ information to pass to tensorboard for logging.</p>
 after &#64;process_batch_for_training is called, in order to ensure these operations
 take place on GPU.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader. Assumed to be on the device where
@@ -696,10 +696,10 @@ keys to dicts with a “mean” and “std” of shape (1, …) where … is the
 default shape for the observation.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>postproceesed batch</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>batch (dict)</p>
 </dd>
 </dl>
@@ -711,18 +711,18 @@ default shape for the observation.</p></li>
 <dd><p>Processes input batch from a data loader to filter out
 relevant information and prepare the batch for training.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>input_batch (dict)</p>
 </dd>
 </dl>
@@ -757,7 +757,7 @@ from a data loader</p>
 <span class="sig-name descname"><span class="pre">train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.algo.Algo.train_on_batch" title="Permalink to this definition">#</a></dt>
 <dd><p>Training on a single batch of data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader and filtered by &#64;process_batch_for_training</p></li>
@@ -766,14 +766,14 @@ to perform staged training and early stopping</p></li>
 <li><p><strong>validate</strong> (<em>bool</em>) – if True, don’t perform any learning updates.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of relevant inputs, outputs, and losses</dt><dd><p>that might be relevant for logging</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>info (dict)</p>
 </dd>
 </dl>
@@ -792,10 +792,10 @@ and (2) subgoal-conditioned policy learning.</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">current_subgoal</span></span><a class="headerlink" href="#robomimic.algo.algo.HierarchicalAlgo.current_subgoal" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the current subgoal for conditioning the low-level policy</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>predicted subgoal</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>current subgoal (dict)</p>
 </dd>
 </dl>
@@ -806,16 +806,16 @@ and (2) subgoal-conditioned policy learning.</p>
 <span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.algo.HierarchicalAlgo.get_action" title="Permalink to this definition">#</a></dt>
 <dd><p>Get policy action outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>action tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -826,16 +826,16 @@ and (2) subgoal-conditioned policy learning.</p>
 <span class="sig-name descname"><span class="pre">get_subgoal_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.algo.HierarchicalAlgo.get_subgoal_predictions" title="Permalink to this definition">#</a></dt>
 <dd><p>Get subgoal predictions from high-level subgoal planner.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>predicted subgoal</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>subgoal (dict)</p>
 </dd>
 </dl>
@@ -854,16 +854,16 @@ conditioned on current observations and potential goal observations.</p>
 <span class="sig-name descname"><span class="pre">get_subgoal_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.algo.PlannerAlgo.get_subgoal_predictions" title="Permalink to this definition">#</a></dt>
 <dd><p>Get predicted subgoal outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; Tensor [batch_size, …]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>subgoal prediction (dict)</p>
 </dd>
 </dl>
@@ -874,16 +874,16 @@ conditioned on current observations and potential goal observations.</p>
 <span class="sig-name descname"><span class="pre">sample_subgoals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.algo.PlannerAlgo.sample_subgoals" title="Permalink to this definition">#</a></dt>
 <dd><p>For planners that rely on sampling subgoals.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; Tensor [batch_size, num_samples, …]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>subgoals (dict)</p>
 </dd>
 </dl>
@@ -901,16 +901,16 @@ conditioned on current observations and potential goal observations.</p>
 <span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.algo.PolicyAlgo.get_action" title="Permalink to this definition">#</a></dt>
 <dd><p>Get policy action outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>action tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -941,17 +941,17 @@ conditioned on current observations and potential goal observations.</p>
 <span class="sig-name descname"><span class="pre">get_state_action_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.algo.ValueAlgo.get_state_action_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Get state-action value outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>actions</strong> (<em>torch.Tensor</em>) – action</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>value tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>value (torch.Tensor)</p>
 </dd>
 </dl>
@@ -962,16 +962,16 @@ conditioned on current observations and potential goal observations.</p>
 <span class="sig-name descname"><span class="pre">get_state_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.algo.ValueAlgo.get_state_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Get state value outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>value tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>value (torch.Tensor)</p>
 </dd>
 </dl>
@@ -984,7 +984,7 @@ conditioned on current observations and potential goal observations.</p>
 <span class="sig-prename descclassname"><span class="pre">robomimic.algo.algo.</span></span><span class="sig-name descname"><span class="pre">algo_factory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algo_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_key_shapes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ac_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.algo.algo_factory" title="Permalink to this definition">#</a></dt>
 <dd><p>Factory function for creating algorithms based on the algorithm name and config.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>algo_name</strong> (<em>str</em>) – the algorithm name</p></li>
 <li><p><strong>config</strong> (<em>BaseConfig instance</em>) – config object</p></li>
@@ -1001,7 +1001,7 @@ conditioned on current observations and potential goal observations.</p>
 <span class="sig-prename descclassname"><span class="pre">robomimic.algo.algo.</span></span><span class="sig-name descname"><span class="pre">algo_name_to_factory_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algo_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.algo.algo_name_to_factory_func" title="Permalink to this definition">#</a></dt>
 <dd><p>Uses registry to retrieve algo factory function from algo name.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>algo_name</strong> (<em>str</em>) – the algorithm name</p>
 </dd>
 </dl>
@@ -1013,7 +1013,7 @@ conditioned on current observations and potential goal observations.</p>
 <dd><p>Function decorator to register algo factory functions that map algo configs to algo class names.
 Each algorithm implements such a function, and decorates it with this decorator.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>algo_name</strong> (<em>str</em>) – the algorithm name to register the algorithm under</p>
 </dd>
 </dl>
@@ -1033,16 +1033,16 @@ Each algorithm implements such a function, and decorates it with this decorator.
 <span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.bc.BC.get_action" title="Permalink to this definition">#</a></dt>
 <dd><p>Get policy action outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>action tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -1054,13 +1054,13 @@ Each algorithm implements such a function, and decorates it with this decorator.
 <dd><p>Process info dictionary from &#64;train_on_batch to summarize
 information to pass to tensorboard for logging.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>loss_log (dict)</p>
 </dd>
 </dl>
@@ -1072,18 +1072,18 @@ information to pass to tensorboard for logging.</p>
 <dd><p>Processes input batch from a data loader to filter out
 relevant information and prepare the batch for training.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>input_batch (dict)</p>
 </dd>
 </dl>
@@ -1094,7 +1094,7 @@ from a data loader</p>
 <span class="sig-name descname"><span class="pre">train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.bc.BC.train_on_batch" title="Permalink to this definition">#</a></dt>
 <dd><p>Training on a single batch of data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader and filtered by &#64;process_batch_for_training</p></li>
@@ -1103,14 +1103,14 @@ to perform staged training and early stopping</p></li>
 <li><p><strong>validate</strong> (<em>bool</em>) – if True, don’t perform any learning updates.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of relevant inputs, outputs, and losses</dt><dd><p>that might be relevant for logging</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>info (dict)</p>
 </dd>
 </dl>
@@ -1136,13 +1136,13 @@ to perform staged training and early stopping</p></li>
 <dd><p>Process info dictionary from &#64;train_on_batch to summarize
 information to pass to tensorboard for logging.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>loss_log (dict)</p>
 </dd>
 </dl>
@@ -1160,16 +1160,16 @@ information to pass to tensorboard for logging.</p>
 <span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.bc.BC_RNN.get_action" title="Permalink to this definition">#</a></dt>
 <dd><p>Get policy action outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>action tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -1181,18 +1181,18 @@ information to pass to tensorboard for logging.</p>
 <dd><p>Processes input batch from a data loader to filter out
 relevant information and prepare the batch for training.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>input_batch (dict)</p>
 </dd>
 </dl>
@@ -1217,13 +1217,13 @@ from a data loader</p>
 <dd><p>Process info dictionary from &#64;train_on_batch to summarize
 information to pass to tensorboard for logging.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>loss_log (dict)</p>
 </dd>
 </dl>
@@ -1245,10 +1245,10 @@ information to pass to tensorboard for logging.</p>
 :param goal_dict: (optional) goal
 :type goal_dict: dict</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action tensor</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -1264,14 +1264,14 @@ relevant information and prepare the batch for training.
 <div><p>from a data loader</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><dl class="simple">
 <dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>input_batch (dict)</p>
 </dd>
 </dl>
@@ -1292,10 +1292,10 @@ information to pass to tensorboard for logging.
 :param info: dictionary of info
 :type info: dict</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>loss_log (dict)</p>
 </dd>
 </dl>
@@ -1314,13 +1314,13 @@ information to pass to tensorboard for logging.
 <dd><p>Process info dictionary from &#64;train_on_batch to summarize
 information to pass to tensorboard for logging.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>loss_log (dict)</p>
 </dd>
 </dl>
@@ -1351,16 +1351,16 @@ generative action models (the original paper uses a cVAE).
 <span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.bcq.BCQ.get_action" title="Permalink to this definition">#</a></dt>
 <dd><p>Get policy action outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>action tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -1371,17 +1371,17 @@ generative action models (the original paper uses a cVAE).
 <span class="sig-name descname"><span class="pre">get_state_action_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.bcq.BCQ.get_state_action_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Get state-action value outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>actions</strong> (<em>torch.Tensor</em>) – action</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>value tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>value (torch.Tensor)</p>
 </dd>
 </dl>
@@ -1392,16 +1392,16 @@ generative action models (the original paper uses a cVAE).
 <span class="sig-name descname"><span class="pre">get_state_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.bcq.BCQ.get_state_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Get state value outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>value tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>value (torch.Tensor)</p>
 </dd>
 </dl>
@@ -1413,13 +1413,13 @@ generative action models (the original paper uses a cVAE).
 <dd><p>Process info dictionary from &#64;train_on_batch to summarize
 information to pass to tensorboard for logging.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>loss_log (dict)</p>
 </dd>
 </dl>
@@ -1437,18 +1437,18 @@ information to pass to tensorboard for logging.</p>
 <dd><p>Processes input batch from a data loader to filter out
 relevant information and prepare the batch for training.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>input_batch (dict)</p>
 </dd>
 </dl>
@@ -1472,7 +1472,7 @@ target networks stay in evaluation mode all the time.</p>
 <span class="sig-name descname"><span class="pre">train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.bcq.BCQ.train_on_batch" title="Permalink to this definition">#</a></dt>
 <dd><p>Training on a single batch of data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader and filtered by &#64;process_batch_for_training</p></li>
@@ -1481,14 +1481,14 @@ to perform staged training and early stopping</p></li>
 <li><p><strong>validate</strong> (<em>bool</em>) – if True, don’t perform any learning updates.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of relevant inputs, outputs, and losses</dt><dd><p>that might be relevant for logging</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>info (dict)</p>
 </dd>
 </dl>
@@ -1529,16 +1529,16 @@ Based off of <a class="reference external" href="https://github.com/aviralkumar2
 <span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.cql.CQL.get_action" title="Permalink to this definition">#</a></dt>
 <dd><p>Get policy action outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>action tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -1549,17 +1549,17 @@ Based off of <a class="reference external" href="https://github.com/aviralkumar2
 <span class="sig-name descname"><span class="pre">get_state_action_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.cql.CQL.get_state_action_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Get state-action value outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>actions</strong> (<em>torch.Tensor</em>) – action</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>value tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>value (torch.Tensor)</p>
 </dd>
 </dl>
@@ -1581,13 +1581,13 @@ Based off of <a class="reference external" href="https://github.com/aviralkumar2
 <dd><p>Process info dictionary from &#64;train_on_batch to summarize
 information to pass to tensorboard for logging.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>loss_log (dict)</p>
 </dd>
 </dl>
@@ -1604,18 +1604,18 @@ information to pass to tensorboard for logging.</p>
 <span class="sig-name descname"><span class="pre">process_batch_for_training</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.cql.CQL.process_batch_for_training" title="Permalink to this definition">#</a></dt>
 <dd><p>Processes input batch from a data loader to filter out relevant info and prepare the batch for training.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>input_batch (dict)</p>
 </dd>
 </dl>
@@ -1633,7 +1633,7 @@ target networks stay in evaluation mode all the time.</p>
 <span class="sig-name descname"><span class="pre">train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.cql.CQL.train_on_batch" title="Permalink to this definition">#</a></dt>
 <dd><p>Training on a single batch of data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader and filtered by &#64;process_batch_for_training</p></li>
@@ -1642,14 +1642,14 @@ to perform staged training and early stopping</p></li>
 <li><p><strong>validate</strong> (<em>bool</em>) – if True, don’t perform any learning updates.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of relevant inputs, outputs, and losses</dt><dd><p>that might be relevant for logging</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>info (dict)</p>
 </dd>
 </dl>
@@ -1671,16 +1671,16 @@ to perform staged training and early stopping</p></li>
 <span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.gl.GL.get_action" title="Permalink to this definition">#</a></dt>
 <dd><p>Get policy action outputs. Assumes one input observation (first dimension should be 1).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>action tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -1692,13 +1692,13 @@ to perform staged training and early stopping</p></li>
 <dd><p>Retrieve subgoals from processed batch to use for training the actor. Subclasses
 can modify this function to change the subgoals.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>processed_batch</strong> (<em>dict</em>) – processed batch from &#64;process_batch_for_training</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>subgoal observations to condition actor on</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>actor_subgoals (dict)</p>
 </dd>
 </dl>
@@ -1709,16 +1709,16 @@ can modify this function to change the subgoals.</p>
 <span class="sig-name descname"><span class="pre">get_subgoal_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.gl.GL.get_subgoal_predictions" title="Permalink to this definition">#</a></dt>
 <dd><p>Takes a batch of observations and predicts a batch of subgoals.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; Tensor [batch_size, …]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>subgoal prediction (dict)</p>
 </dd>
 </dl>
@@ -1730,13 +1730,13 @@ can modify this function to change the subgoals.</p>
 <dd><p>Process info dictionary from &#64;train_on_batch to summarize
 information to pass to tensorboard for logging.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>loss_log (dict)</p>
 </dd>
 </dl>
@@ -1748,18 +1748,18 @@ information to pass to tensorboard for logging.</p>
 <dd><p>Processes input batch from a data loader to filter out
 relevant information and prepare the batch for training.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>input_batch (dict)</p>
 </dd>
 </dl>
@@ -1772,16 +1772,16 @@ from a data loader</p>
 Since this class implements a deterministic subgoal prediction,
 this function returns identical subgoals for each input observation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; Tensor [batch_size, num_samples, …]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>subgoals (dict)</p>
 </dd>
 </dl>
@@ -1792,7 +1792,7 @@ this function returns identical subgoals for each input observation.</p>
 <span class="sig-name descname"><span class="pre">train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.gl.GL.train_on_batch" title="Permalink to this definition">#</a></dt>
 <dd><p>Training on a single batch of data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader and filtered by &#64;process_batch_for_training</p></li>
@@ -1801,14 +1801,14 @@ to perform staged training and early stopping</p></li>
 <li><p><strong>validate</strong> (<em>bool</em>) – if True, don’t perform any learning updates.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of relevant inputs, outputs, and losses</dt><dd><p>that might be relevant for logging</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>info (dict)</p>
 </dd>
 </dl>
@@ -1828,7 +1828,7 @@ to perform staged training and early stopping</p></li>
 The VAE can optionally return latent subgoals by passing the subgoal
 observations in the batch through the encoder.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>processed_batch</strong> (<em>dict</em>) – processed batch from &#64;process_batch_for_training</p></li>
 <li><p><strong>use_latent_subgoals</strong> (<em>bool</em>) – if True, condition the actor on latent subgoals
@@ -1843,10 +1843,10 @@ the prior latent distribution.</p></li>
 if &#64;use_prior_correction is true</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>subgoal observations to condition actor on</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>actor_subgoals (dict)</p>
 </dd>
 </dl>
@@ -1857,16 +1857,16 @@ if &#64;use_prior_correction is true</p></li>
 <span class="sig-name descname"><span class="pre">get_subgoal_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.gl.GL_VAE.get_subgoal_predictions" title="Permalink to this definition">#</a></dt>
 <dd><p>Takes a batch of observations and predicts a batch of subgoals.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; Tensor [batch_size, …]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>subgoal prediction (dict)</p>
 </dd>
 </dl>
@@ -1878,13 +1878,13 @@ if &#64;use_prior_correction is true</p></li>
 <dd><p>Process info dictionary from &#64;train_on_batch to summarize
 information to pass to tensorboard for logging.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>loss_log (dict)</p>
 </dd>
 </dl>
@@ -1895,16 +1895,16 @@ information to pass to tensorboard for logging.</p>
 <span class="sig-name descname"><span class="pre">sample_subgoals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.gl.GL_VAE.sample_subgoals" title="Permalink to this definition">#</a></dt>
 <dd><p>Sample &#64;num_samples subgoals from the VAE per observation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; Tensor [batch_size, num_samples, …]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>subgoals (dict)</p>
 </dd>
 </dl>
@@ -1915,7 +1915,7 @@ information to pass to tensorboard for logging.</p>
 <span class="sig-name descname"><span class="pre">train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.gl.GL_VAE.train_on_batch" title="Permalink to this definition">#</a></dt>
 <dd><p>Training on a single batch of data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader and filtered by &#64;process_batch_for_training</p></li>
@@ -1924,14 +1924,14 @@ to perform staged training and early stopping</p></li>
 <li><p><strong>validate</strong> (<em>bool</em>) – if True, don’t perform any learning updates.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of relevant inputs, outputs, and losses</dt><dd><p>that might be relevant for logging</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>info (dict)</p>
 </dd>
 </dl>
@@ -1951,7 +1951,7 @@ and (2) a &#64;ValueAlgo that is used to select one of the subgoals.</p>
 <span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.gl.ValuePlanner.deserialize" title="Permalink to this definition">#</a></dt>
 <dd><p>Load model from a checkpoint.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>model_dict</strong> (<em>dict</em>) – a dictionary saved by self.serialize() that contains
 the same keys as &#64;self.network_classes</p>
 </dd>
@@ -1963,17 +1963,17 @@ the same keys as &#64;self.network_classes</p>
 <span class="sig-name descname"><span class="pre">get_state_action_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.gl.ValuePlanner.get_state_action_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Get state-action value outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>actions</strong> (<em>torch.Tensor</em>) – action</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>value tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>value (torch.Tensor)</p>
 </dd>
 </dl>
@@ -1984,16 +1984,16 @@ the same keys as &#64;self.network_classes</p>
 <span class="sig-name descname"><span class="pre">get_state_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.gl.ValuePlanner.get_state_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Get state value outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>value tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>value (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2004,16 +2004,16 @@ the same keys as &#64;self.network_classes</p>
 <span class="sig-name descname"><span class="pre">get_subgoal_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.gl.ValuePlanner.get_subgoal_predictions" title="Permalink to this definition">#</a></dt>
 <dd><p>Takes a batch of observations and predicts a batch of subgoals.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; Tensor [batch_size, …]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>subgoal prediction (dict)</p>
 </dd>
 </dl>
@@ -2025,13 +2025,13 @@ the same keys as &#64;self.network_classes</p>
 <dd><p>Process info dictionary from &#64;train_on_batch to summarize
 information to pass to tensorboard for logging.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>loss_log (dict)</p>
 </dd>
 </dl>
@@ -2049,18 +2049,18 @@ information to pass to tensorboard for logging.</p>
 <dd><p>Processes input batch from a data loader to filter out
 relevant information and prepare the batch for training.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>input_batch (dict)</p>
 </dd>
 </dl>
@@ -2077,16 +2077,16 @@ from a data loader</p>
 <span class="sig-name descname"><span class="pre">sample_subgoals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.gl.ValuePlanner.sample_subgoals" title="Permalink to this definition">#</a></dt>
 <dd><p>Sample &#64;num_samples subgoals from the planner algo per observation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; Tensor [batch_size, num_samples, …]</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>subgoals (dict)</p>
 </dd>
 </dl>
@@ -2115,7 +2115,7 @@ from a data loader</p>
 <span class="sig-name descname"><span class="pre">train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.gl.ValuePlanner.train_on_batch" title="Permalink to this definition">#</a></dt>
 <dd><p>Training on a single batch of data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader and filtered by &#64;process_batch_for_training</p></li>
@@ -2124,14 +2124,14 @@ to perform staged training and early stopping</p></li>
 <li><p><strong>validate</strong> (<em>bool</em>) – if True, don’t perform any learning updates.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of relevant inputs, outputs, and losses</dt><dd><p>that might be relevant for logging</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>info (dict)</p>
 </dd>
 </dl>
@@ -2163,7 +2163,7 @@ paper (see <a class="reference external" href="https://arxiv.org/abs/2003.06085"
 <span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.hbc.HBC.deserialize" title="Permalink to this definition">#</a></dt>
 <dd><p>Load model from a checkpoint.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>model_dict</strong> (<em>dict</em>) – a dictionary saved by self.serialize() that contains
 the same keys as &#64;self.network_classes</p>
 </dd>
@@ -2175,16 +2175,16 @@ the same keys as &#64;self.network_classes</p>
 <span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.hbc.HBC.get_action" title="Permalink to this definition">#</a></dt>
 <dd><p>Get policy action outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>action tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2196,13 +2196,13 @@ the same keys as &#64;self.network_classes</p>
 <dd><p>Process info dictionary from &#64;train_on_batch to summarize
 information to pass to tensorboard for logging.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>loss_log (dict)</p>
 </dd>
 </dl>
@@ -2220,18 +2220,18 @@ information to pass to tensorboard for logging.</p>
 <dd><p>Processes input batch from a data loader to filter out
 relevant information and prepare the batch for training.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>input_batch (dict)</p>
 </dd>
 </dl>
@@ -2266,7 +2266,7 @@ from a data loader</p>
 <span class="sig-name descname"><span class="pre">train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.hbc.HBC.train_on_batch" title="Permalink to this definition">#</a></dt>
 <dd><p>Training on a single batch of data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader and filtered by &#64;process_batch_for_training</p></li>
@@ -2275,14 +2275,14 @@ to perform staged training and early stopping</p></li>
 <li><p><strong>validate</strong> (<em>bool</em>) – if True, don’t perform any learning updates.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of relevant inputs, outputs, and losses</dt><dd><p>that might be relevant for logging</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>info (dict)</p>
 </dd>
 </dl>
@@ -2305,16 +2305,16 @@ Based off of <a class="reference external" href="https://github.com/rail-berkele
 <span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.iql.IQL.get_action" title="Permalink to this definition">#</a></dt>
 <dd><p>Get policy action outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>action tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2326,13 +2326,13 @@ Based off of <a class="reference external" href="https://github.com/rail-berkele
 <dd><p>Process info dictionary from &#64;train_on_batch to summarize
 information to pass to tensorboard for logging.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>loss_log (dict)</p>
 </dd>
 </dl>
@@ -2349,18 +2349,18 @@ information to pass to tensorboard for logging.</p>
 <span class="sig-name descname"><span class="pre">process_batch_for_training</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.iql.IQL.process_batch_for_training" title="Permalink to this definition">#</a></dt>
 <dd><p>Processes input batch from a data loader to filter out relevant info and prepare the batch for training.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>input_batch (dict)</p>
 </dd>
 </dl>
@@ -2371,7 +2371,7 @@ from a data loader</p>
 <span class="sig-name descname"><span class="pre">train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.iql.IQL.train_on_batch" title="Permalink to this definition">#</a></dt>
 <dd><p>Training on a single batch of data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader and filtered by &#64;process_batch_for_training</p></li>
@@ -2380,14 +2380,14 @@ to perform staged training and early stopping</p></li>
 <li><p><strong>validate</strong> (<em>bool</em>) – if True, don’t perform any learning updates.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of relevant inputs, outputs, and losses</dt><dd><p>that might be relevant for logging</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>info (dict)</p>
 </dd>
 </dl>
@@ -2409,17 +2409,17 @@ to perform staged training and early stopping</p></li>
 <span class="sig-name descname"><span class="pre">get_state_action_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.iris.IRIS.get_state_action_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Get state-action value outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>actions</strong> (<em>torch.Tensor</em>) – action</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>value tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>value (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2430,16 +2430,16 @@ to perform staged training and early stopping</p></li>
 <span class="sig-name descname"><span class="pre">get_state_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.iris.IRIS.get_state_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Get state value outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>value tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>value (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2451,18 +2451,18 @@ to perform staged training and early stopping</p></li>
 <dd><p>Processes input batch from a data loader to filter out
 relevant information and prepare the batch for training.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>input_batch (dict)</p>
 </dd>
 </dl>
@@ -2492,16 +2492,16 @@ self-contained in this file.</p>
 <span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.td3_bc.TD3_BC.get_action" title="Permalink to this definition">#</a></dt>
 <dd><p>Get policy action outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>action tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>action (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2512,17 +2512,17 @@ self-contained in this file.</p>
 <span class="sig-name descname"><span class="pre">get_state_action_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.td3_bc.TD3_BC.get_state_action_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Get state-action value outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>actions</strong> (<em>torch.Tensor</em>) – action</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>value tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>value (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2533,16 +2533,16 @@ self-contained in this file.</p>
 <span class="sig-name descname"><span class="pre">get_state_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.td3_bc.TD3_BC.get_state_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Get state value outputs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – current observation</p></li>
 <li><p><strong>goal_dict</strong> (<em>dict</em>) – (optional) goal</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>value tensor</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>value (torch.Tensor)</p>
 </dd>
 </dl>
@@ -2554,13 +2554,13 @@ self-contained in this file.</p>
 <dd><p>Process info dictionary from &#64;train_on_batch to summarize
 information to pass to tensorboard for logging.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>info</strong> (<em>dict</em>) – dictionary of info</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>name -&gt; summary statistic</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>loss_log (dict)</p>
 </dd>
 </dl>
@@ -2579,18 +2579,18 @@ information to pass to tensorboard for logging.</p>
 relevant information and prepare the batch for training.</p>
 <p>Exactly the same as BCQ.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>processed and filtered batch that</dt><dd><p>will be used for training</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>input_batch (dict)</p>
 </dd>
 </dl>
@@ -2614,7 +2614,7 @@ target networks stay in evaluation mode all the time.</p>
 <span class="sig-name descname"><span class="pre">train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.algo.td3_bc.TD3_BC.train_on_batch" title="Permalink to this definition">#</a></dt>
 <dd><p>Training on a single batch of data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch</strong> (<em>dict</em>) – dictionary with torch.Tensors sampled
 from a data loader and filtered by &#64;process_batch_for_training</p></li>
@@ -2623,14 +2623,14 @@ to perform staged training and early stopping</p></li>
 <li><p><strong>validate</strong> (<em>bool</em>) – if True, don’t perform any learning updates.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>dictionary of relevant inputs, outputs, and losses</dt><dd><p>that might be relevant for logging</p>
 </dd>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>info (dict)</p>
 </dd>
 </dl>

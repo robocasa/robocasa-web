@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Overview &#8212; robomimic 0.3 documentation</title>
     
@@ -615,7 +615,7 @@ margin: auto;
 </tr>
 </tbody>
 </table><p>After downloading and postprocessing, <strong>(3) Training</strong> with the dataset is straightforward and unified across all datasets:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python train.py --dataset &lt;PATH_TO_POSTPROCESSED_DATASET&gt; --config &lt;PATH_TO_CONFIG&gt;
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>train.py<span class="w"> </span>--dataset<span class="w"> </span>&lt;PATH_TO_POSTPROCESSED_DATASET&gt;<span class="w"> </span>--config<span class="w"> </span>&lt;PATH_TO_CONFIG&gt;
 </pre></div>
 </div>
 </section>
@@ -712,7 +712,7 @@ margin: auto;
 <h3>Filter Keys<a class="headerlink" href="#filter-keys" title="Permalink to this headline">#</a></h3>
 <p>Filter keys enable arbitrary splitting of a dataset into sub-groups, and allow training on a specific subset of the data.</p>
 <p>A common use-case is to split data into train-validation splits. We provide a convenience script for doing this in the <code class="docutils literal notranslate"><span class="pre">robomimic/scripts</span></code> directory:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python split_train_val.py --dataset /path/to/dataset.hdf5 --ratio <span class="m">0</span>.1 --filter_key &lt;FILTER_KEY_NAME&gt;
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>split_train_val.py<span class="w"> </span>--dataset<span class="w"> </span>/path/to/dataset.hdf5<span class="w"> </span>--ratio<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--filter_key<span class="w"> </span>&lt;FILTER_KEY_NAME&gt;
 </pre></div>
 </div>
 <ul class="simple">
