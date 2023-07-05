@@ -914,10 +914,10 @@ $<span class="w"> </span>python<span class="w"> </span>download_datasets.py<span
 </section>
 </section>
 <section id="reproduce-study-results">
-<h2>Reproduce <a class="reference external" href="https://arise-initiative.github.io/robomimic-web/study/">Study</a> Results<a class="headerlink" href="#reproduce-study-results" title="Permalink to this headline">#</a></h2>
+<h2>Reproduce <a class="reference external" href="https://robomimic.github.io/study/">Study</a> Results<a class="headerlink" href="#reproduce-study-results" title="Permalink to this headline">#</a></h2>
 <section id="running-experiments">
 <h3>Running Experiments<a class="headerlink" href="#running-experiments" title="Permalink to this headline">#</a></h3>
-<p>After downloading the appropriate datasets you’re interested in using by running the <code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> script, the <code class="docutils literal notranslate"><span class="pre">generate_paper_configs.py</span></code> script can be used to generate all training config json files necessary to reproduce the experiments in the <a class="reference external" href="https://arise-initiative.github.io/robomimic-web/study/">study</a>. A few examples are below.</p>
+<p>After downloading the appropriate datasets you’re interested in using by running the <code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> script, the <code class="docutils literal notranslate"><span class="pre">generate_paper_configs.py</span></code> script can be used to generate all training config json files necessary to reproduce the experiments in the <a class="reference external" href="https://robomimic.github.io/study/">study</a>. A few examples are below.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assume datasets already exist in robomimic/../datasets folder. Configs will be generated under robomimic/exps/paper, and training results will be at /tmp/experiment_results when launching training runs.</span>
 $<span class="w"> </span>python<span class="w"> </span>generate_paper_configs.py<span class="w"> </span>--output_dir<span class="w"> </span>/tmp/experiment_results
 
