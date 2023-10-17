@@ -562,6 +562,9 @@ $<span class="w"> </span>python<span class="w"> </span>playback_dataset.py<span 
 <span class="c1"># Directly visualize the image observations in the dataset. This is especially useful for real robot datasets where there is no simulator to use for rendering.</span>
 $<span class="w"> </span>python<span class="w"> </span>playback_dataset.py<span class="w"> </span>--dataset<span class="w"> </span>../../tests/assets/test_v141.hdf5<span class="w"> </span>--use-obs<span class="w"> </span>--render_image_names<span class="w"> </span>agentview_image<span class="w"> </span>--video_path<span class="w"> </span>/tmp/obs_trajectory.mp4
 
+<span class="c1"># Visualize depth observations as well.</span>
+$<span class="w"> </span>python<span class="w"> </span>playback_dataset.py<span class="w"> </span>--dataset<span class="w"> </span>/path/to/dataset.hdf5<span class="w"> </span>--use-obs<span class="w"> </span>--render_image_names<span class="w"> </span>agentview_image<span class="w"> </span>--render_depth_names<span class="w"> </span>agentview_depth<span class="w"> </span>--video_path<span class="w"> </span>/tmp/obs_trajectory.mp4
+
 <span class="c1"># Play the dataset actions in the environment to verify that the recorded actions are reasonable.</span>
 $<span class="w"> </span>python<span class="w"> </span>playback_dataset.py<span class="w"> </span>--dataset<span class="w"> </span>../../tests/assets/test_v141.hdf5<span class="w"> </span>--use-actions<span class="w"> </span>--render_image_names<span class="w"> </span>agentview<span class="w"> </span>--video_path<span class="w"> </span>/tmp/playback_dataset_with_actions.mp4
 

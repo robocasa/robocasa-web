@@ -592,7 +592,7 @@ to provide a standardized environment API for training policies and interacting
 with metadata present in datasets.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="robomimic.envs.env_base.EnvBase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.envs.env_base.</span></span><span class="sig-name descname"><span class="pre">EnvBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_offscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_image_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">postprocess_visual_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_base.EnvBase" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.envs.env_base.</span></span><span class="sig-name descname"><span class="pre">EnvBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_offscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_image_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_depth_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">postprocess_visual_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_base.EnvBase" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
 <p>A base class method for environments used by this repo.</p>
 <dl class="py property">
@@ -601,9 +601,15 @@ with metadata present in datasets.</p>
 <dd><p>Returns dimension of actions (int).</p>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="robomimic.envs.env_base.EnvBase.base_env">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base_env</span></span><a class="headerlink" href="#robomimic.envs.env_base.EnvBase.base_env" title="Permalink to this definition">#</a></dt>
+<dd><p>Grabs base simulation environment.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="robomimic.envs.env_base.EnvBase.create_for_data_processing">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_for_data_processing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">camera_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward_shaping</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_base.EnvBase.create_for_data_processing" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_for_data_processing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">camera_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward_shaping</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_offscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_image_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_depth_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_base.EnvBase.create_for_data_processing" title="Permalink to this definition">#</a></dt>
 <dd><p>Create environment for processing datasets, which includes extracting
 observations, labeling dense / sparse rewards, and annotating dones in
 transitions.</p>
@@ -614,6 +620,12 @@ transitions.</p>
 <li><p><strong>camera_height</strong> (<em>int</em>) – camera height for all cameras</p></li>
 <li><p><strong>camera_width</strong> (<em>int</em>) – camera width for all cameras</p></li>
 <li><p><strong>reward_shaping</strong> (<em>bool</em>) – if True, use shaped environment rewards, else use sparse task completion rewards</p></li>
+<li><p><strong>render</strong> (<em>bool</em><em> or </em><em>None</em>) – optionally override rendering behavior. Defaults to False.</p></li>
+<li><p><strong>render_offscreen</strong> (<em>bool</em><em> or </em><em>None</em>) – optionally override rendering behavior. The default value is True if
+&#64;camera_names is non-empty, False otherwise.</p></li>
+<li><p><strong>use_image_obs</strong> (<em>bool</em><em> or </em><em>None</em>) – optionally override rendering behavior. The default value is True if
+&#64;camera_names is non-empty, False otherwise.</p></li>
+<li><p><strong>use_depth_obs</strong> (<em>bool</em>) – if True, use depth observations</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -798,7 +810,7 @@ to provide a standardized environment API for training policies and interacting
 with metadata present in datasets.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="robomimic.envs.env_robosuite.EnvRobosuite">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.envs.env_robosuite.</span></span><span class="sig-name descname"><span class="pre">EnvRobosuite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_offscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_image_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">postprocess_visual_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robomimic.envs.env_robosuite.</span></span><span class="sig-name descname"><span class="pre">EnvRobosuite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_offscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_image_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_depth_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">postprocess_visual_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robomimic.envs.env_base.EnvBase" title="robomimic.envs.env_base.EnvBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.envs.env_base.EnvBase</span></code></a></p>
 <p>Wrapper class for robosuite environments (<a class="reference external" href="https://github.com/ARISE-Initiative/robosuite">https://github.com/ARISE-Initiative/robosuite</a>)</p>
 <dl class="py property">
@@ -807,9 +819,15 @@ with metadata present in datasets.</p>
 <dd><p>Returns dimension of actions (int).</p>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="robomimic.envs.env_robosuite.EnvRobosuite.base_env">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base_env</span></span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.base_env" title="Permalink to this definition">#</a></dt>
+<dd><p>Grabs base simulation environment.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="robomimic.envs.env_robosuite.EnvRobosuite.create_for_data_processing">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_for_data_processing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward_shaping</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.create_for_data_processing" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_for_data_processing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward_shaping</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_offscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_image_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_depth_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.create_for_data_processing" title="Permalink to this definition">#</a></dt>
 <dd><p>Create environment for processing datasets, which includes extracting
 observations, labeling dense / sparse rewards, and annotating dones in
 transitions.</p>
@@ -821,7 +839,74 @@ transitions.</p>
 <li><p><strong>camera_height</strong> (<em>int</em>) – camera height for all cameras</p></li>
 <li><p><strong>camera_width</strong> (<em>int</em>) – camera width for all cameras</p></li>
 <li><p><strong>reward_shaping</strong> (<em>bool</em>) – if True, use shaped environment rewards, else use sparse task completion rewards</p></li>
+<li><p><strong>render</strong> (<em>bool</em><em> or </em><em>None</em>) – optionally override rendering behavior. Defaults to False.</p></li>
+<li><p><strong>render_offscreen</strong> (<em>bool</em><em> or </em><em>None</em>) – optionally override rendering behavior. The default value is True if
+&#64;camera_names is non-empty, False otherwise.</p></li>
+<li><p><strong>use_image_obs</strong> (<em>bool</em><em> or </em><em>None</em>) – optionally override rendering behavior. The default value is True if
+&#64;camera_names is non-empty, False otherwise.</p></li>
+<li><p><strong>use_depth_obs</strong> (<em>bool</em>) – if True, use depth observations</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.envs.env_robosuite.EnvRobosuite.get_camera_extrinsic_matrix">
+<span class="sig-name descname"><span class="pre">get_camera_extrinsic_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">camera_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.get_camera_extrinsic_matrix" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a 4x4 homogenous matrix corresponding to the camera pose in the
+world frame. MuJoCo has a weird convention for how it sets up the
+camera body axis, so we also apply a correction so that the x and y
+axis are along the camera view and the z axis points along the
+viewpoint.
+Normal camera convention: <a class="reference external" href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html">https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html</a>
+:param camera_name: name of camera
+:type camera_name: str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>4x4 camera extrinsic matrix</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>R (np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.envs.env_robosuite.EnvRobosuite.get_camera_intrinsic_matrix">
+<span class="sig-name descname"><span class="pre">get_camera_intrinsic_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">camera_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.get_camera_intrinsic_matrix" title="Permalink to this definition">#</a></dt>
+<dd><p>Obtains camera intrinsic matrix.
+:param camera_name: name of camera
+:type camera_name: str
+:param camera_height: height of camera images in pixels
+:type camera_height: int
+:param camera_width: width of camera images in pixels
+:type camera_width: int</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>3x3 camera matrix</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>K (np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.envs.env_robosuite.EnvRobosuite.get_camera_transform_matrix">
+<span class="sig-name descname"><span class="pre">get_camera_transform_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">camera_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.get_camera_transform_matrix" title="Permalink to this definition">#</a></dt>
+<dd><p>Camera transform matrix to project from world coordinates to pixel coordinates.
+:param camera_name: name of camera
+:type camera_name: str
+:param camera_height: height of camera images in pixels
+:type camera_height: int
+:param camera_width: width of camera images in pixels
+:type camera_width: int</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>4x4 camera matrix to project from world coordinates to pixel coordinates</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>K (np.array)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -842,6 +927,14 @@ transitions.</p>
 as a dictionary. If not provided, will be queried from robosuite.</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robomimic.envs.env_robosuite.EnvRobosuite.get_real_depth_map">
+<span class="sig-name descname"><span class="pre">get_real_depth_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">depth_map</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.envs.env_robosuite.EnvRobosuite.get_real_depth_map" title="Permalink to this definition">#</a></dt>
+<dd><p>Reproduced from <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/blob/c57e282553a4f42378f2635b9a3cbc4afba270fd/robosuite/utils/camera_utils.py#L106">https://github.com/ARISE-Initiative/robosuite/blob/c57e282553a4f42378f2635b9a3cbc4afba270fd/robosuite/utils/camera_utils.py#L106</a>
+since older versions of robosuite do not have this conversion from normalized depth values returned by MuJoCo
+to real depth values.</p>
 </dd></dl>
 
 <dl class="py method">

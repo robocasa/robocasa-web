@@ -921,7 +921,7 @@ hdf5 with &#64;FileUtils.get_env_metadata_from_dataset or from checkpoint (see
 
 <dl class="py function">
 <dt class="sig sig-object py" id="robomimic.utils.env_utils.create_env">
-<span class="sig-prename descclassname"><span class="pre">robomimic.utils.env_utils.</span></span><span class="sig-name descname"><span class="pre">create_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_offscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_image_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.env_utils.create_env" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robomimic.utils.env_utils.</span></span><span class="sig-name descname"><span class="pre">create_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_offscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_image_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_depth_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.env_utils.create_env" title="Permalink to this definition">#</a></dt>
 <dd><p>Create environment.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -935,6 +935,9 @@ is forced to be True if &#64;use_image_obs is True.</p></li>
 <li><p><strong>use_image_obs</strong> (<em>bool</em>) – if True, environment is expected to render rgb image observations
 on every env.step call. Set this to False for efficiency reasons, if image
 observations are not required.</p></li>
+<li><p><strong>use_depth_obs</strong> (<em>bool</em>) – if True, environment is expected to render depth image observations
+on every env.step call. Set this to False for efficiency reasons, if depth
+observations are not required.</p></li>
 </ul>
 </dd>
 </dl>
@@ -942,7 +945,7 @@ observations are not required.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="robomimic.utils.env_utils.create_env_for_data_processing">
-<span class="sig-prename descclassname"><span class="pre">robomimic.utils.env_utils.</span></span><span class="sig-name descname"><span class="pre">create_env_for_data_processing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward_shaping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.env_utils.create_env_for_data_processing" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robomimic.utils.env_utils.</span></span><span class="sig-name descname"><span class="pre">create_env_for_data_processing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward_shaping</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_offscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_image_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_depth_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.env_utils.create_env_for_data_processing" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates environment for processing dataset observations and rewards.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -968,6 +971,10 @@ hdf5 with &#64;FileUtils.get_env_metadata_from_dataset or from checkpoint (see
 <li><p><strong>camera_height</strong> (<em>int</em>) – camera height for all cameras</p></li>
 <li><p><strong>camera_width</strong> (<em>int</em>) – camera width for all cameras</p></li>
 <li><p><strong>reward_shaping</strong> (<em>bool</em>) – if True, use shaped environment rewards, else use sparse task completion rewards</p></li>
+<li><p><strong>render</strong> (<em>bool</em><em> or </em><em>None</em>) – optionally override rendering behavior</p></li>
+<li><p><strong>render_offscreen</strong> (<em>bool</em><em> or </em><em>None</em>) – optionally override rendering behavior</p></li>
+<li><p><strong>use_image_obs</strong> (<em>bool</em><em> or </em><em>None</em>) – optionally override rendering behavior</p></li>
+<li><p><strong>use_depth_obs</strong> (<em>bool</em><em> or </em><em>None</em>) – optionally override rendering behavior</p></li>
 </ul>
 </dd>
 </dl>
@@ -975,7 +982,7 @@ hdf5 with &#64;FileUtils.get_env_metadata_from_dataset or from checkpoint (see
 
 <dl class="py function">
 <dt class="sig sig-object py" id="robomimic.utils.env_utils.create_env_from_metadata">
-<span class="sig-prename descclassname"><span class="pre">robomimic.utils.env_utils.</span></span><span class="sig-name descname"><span class="pre">create_env_from_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_offscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_image_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.env_utils.create_env_from_metadata" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robomimic.utils.env_utils.</span></span><span class="sig-name descname"><span class="pre">create_env_from_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_offscreen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_image_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_depth_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.env_utils.create_env_from_metadata" title="Permalink to this definition">#</a></dt>
 <dd><p>Create environment.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1004,6 +1011,9 @@ environment from the one in &#64;env_meta.</p></li>
 is forced to be True if &#64;use_image_obs is True.</p></li>
 <li><p><strong>use_image_obs</strong> (<em>bool</em>) – if True, environment is expected to render rgb image observations
 on every env.step call. Set this to False for efficiency reasons, if image
+observations are not required.</p></li>
+<li><p><strong>use_depth_obs</strong> (<em>bool</em>) – if True, environment is expected to render depth image observations
+on every env.step call. Set this to False for efficiency reasons, if depth
 observations are not required.</p></li>
 </ul>
 </dd>
@@ -1084,6 +1094,14 @@ be instantiated. Should be a value in EB.EnvType.</p></li>
 <span class="sig-prename descclassname"><span class="pre">robomimic.utils.env_utils.</span></span><span class="sig-name descname"><span class="pre">is_robosuite_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.env_utils.is_robosuite_env" title="Permalink to this definition">#</a></dt>
 <dd><p>Determines whether the environment is a robosuite environment. Accepts
 either env_meta, env_type, or env.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robomimic.utils.env_utils.set_env_specific_obs_processing">
+<span class="sig-prename descclassname"><span class="pre">robomimic.utils.env_utils.</span></span><span class="sig-name descname"><span class="pre">set_env_specific_obs_processing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.env_utils.set_env_specific_obs_processing" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets env-specific observation processing. As an example, robosuite depth observations
+correspond to raw depth and should not be normalized by default, while default depth
+processing normalizes and clips all values to [0, 1].</p>
 </dd></dl>
 
 <dl class="py function">
@@ -1271,11 +1289,17 @@ is forced to be True if saved model uses image observations.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="robomimic.utils.file_utils.get_env_metadata_from_dataset">
-<span class="sig-prename descclassname"><span class="pre">robomimic.utils.file_utils.</span></span><span class="sig-name descname"><span class="pre">get_env_metadata_from_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.file_utils.get_env_metadata_from_dataset" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robomimic.utils.file_utils.</span></span><span class="sig-name descname"><span class="pre">get_env_metadata_from_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_env_specific_obs_processors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.file_utils.get_env_metadata_from_dataset" title="Permalink to this definition">#</a></dt>
 <dd><p>Retrieves env metadata from dataset.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dataset_path</strong> (<em>str</em>) – path to dataset</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_path</strong> (<em>str</em>) – path to dataset</p></li>
+<li><p><strong>set_env_specific_obs_processors</strong> (<em>bool</em>) – environment might have custom rules for how to process
+observations - if this flag is true, make sure ObsUtils will use these custom settings. This
+is a good place to do this operation to make sure it happens before loading data, running a
+trained model, etc.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p>environment metadata. Contains 3 keys:</p>
@@ -1328,6 +1352,9 @@ present in the file are used.</p></li>
 </dd>
 <dt class="field-even"><cite>’use_images’</cite><span class="colon">:</span></dt>
 <dd class="field-even"><p>bool, whether or not image modalities are present</p>
+</dd>
+<dt class="field-odd"><cite>’use_depths’</cite><span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool, whether or not depth modalities are present</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -2293,7 +2320,7 @@ modified in-place.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obs_dict</strong> (<em>dict</em>) – dictionary mapping observation key to np.array or
-torch.Tensor. Leading batch dimensions are optional.</p></li>
+torch.Tensor. Can have any number of leading batch dimensions.</p></li>
 <li><p><strong>obs_normalization_stats</strong> (<em>dict</em>) – this should map observation keys to dicts
 with a “mean” and “std” of shape (1, …) where … is the default
 shape for the observation.</p></li>
@@ -2338,7 +2365,7 @@ from (H, W, C) to (C, H, W).</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>frame</strong> (<em>np.array</em><em> or </em><em>torch.Tensor</em>) – frame array</p></li>
 <li><p><strong>channel_dim</strong> (<em>int</em>) – Number of channels to sanity check for</p></li>
-<li><p><strong>scale</strong> (<em>float</em>) – Value to normalize inputs by</p></li>
+<li><p><strong>scale</strong> (<em>float</em><em> or </em><em>None</em>) – Value to normalize inputs by</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -2476,7 +2503,7 @@ Inverse of &#64;process_frame.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>frame</strong> (<em>np.array</em><em> or </em><em>torch.Tensor</em>) – frame array</p></li>
 <li><p><strong>channel_dim</strong> (<em>int</em>) – What channel dimension should be (used for sanity check)</p></li>
-<li><p><strong>scale</strong> (<em>float</em>) – Scaling factor to apply during denormalization</p></li>
+<li><p><strong>scale</strong> (<em>float</em><em> or </em><em>None</em>) – Scaling factor to apply during denormalization</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -4098,6 +4125,12 @@ new best rollout success rate</p></li>
 <span id="robomimic-utils-vis-utils-module"></span><h2>robomimic.utils.vis_utils module<a class="headerlink" href="#module-robomimic.utils.vis_utils" title="Permalink to this headline">#</a></h2>
 <p>This file contains utility functions for visualizing image observations in the training pipeline.
 These functions can be a useful debugging tool.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="robomimic.utils.vis_utils.depth_to_rgb">
+<span class="sig-prename descclassname"><span class="pre">robomimic.utils.vis_utils.</span></span><span class="sig-name descname"><span class="pre">depth_to_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">depth_map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.vis_utils.depth_to_rgb" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert depth map to rgb array by computing normalized depth values in [0, 1].</p>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="robomimic.utils.vis_utils.image_tensor_to_disk">
 <span class="sig-prename descclassname"><span class="pre">robomimic.utils.vis_utils.</span></span><span class="sig-name descname"><span class="pre">image_tensor_to_disk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robomimic.utils.vis_utils.image_tensor_to_disk" title="Permalink to this definition">#</a></dt>
