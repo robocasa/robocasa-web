@@ -6,7 +6,7 @@ project_tagline: "Large-Scale Simulation of Household Tasks for Generalist Robot
 videoId: 
 ---
 
-**RoboCasa** is a large-scale simulation framework for training generalist agents in household environments. It features realistic and diverse scenes with a focus on kitchen environments which we enhance we the help of AI generation tools. In addition we provide over 1000 3D assets across 83 object categories and dozens of intractable appliances. These assets support diverse behaviors and we propose a set of 75 tasks, including tasks representing complex activities that we generated with the guidance of large language models. We include a set of high-quality demonstrations for each task and explore the use of robot data generation tools to significantly expand the scope of our dataset at little additional cost.
+**RoboCasa** is a large-scale simulation framework for training generalist agents in household environments. It features realistic and diverse scenes with a focus on kitchen environments which we enhance we the help of AI generation tools. In addition we provide over 2500 3D assets across 150+ object categories and dozens of intractable appliances. These assets support diverse behaviors and we propose a set of 100 tasks, including tasks representing complex activities that we generated with the guidance of large language models. We include a set of high-quality demonstrations for each task and explore the use of robot data generation tools to significantly expand the scope of our dataset at little additional cost.
 
 ## Diverse Scenes
 
@@ -48,7 +48,19 @@ In this initial release, we focus our efforts on kitchen scenes. To capture real
 
 Each scene can be configured from a selection of dozens of appliances. Several types of appliances are articulated. For example, a robot can open and close doors on microwaves and twist knobs on stoves. These appliances additionally can undergo state changes, e.g., when a knob on the stove is turned, the corresponding burner turns on.
 
-## Diverse Objects
+## Augmenting Scene Diversity with AI Generated Textures
+
+<figure class="figure">
+  <div class="figure__main">
+    <video autoplay loop muted playsinline class="postimagefullwidth">
+      <source src="{{ site.baseurl }}/assets/videos/ai_textures.mp4" type="video/mp4">
+    </video>
+  </div>
+</figure>
+
+Each scene can be customized by replacing textures from a large selection of high-quality AI-generated textures, created using the popular text-to-image AI-generation tool MidJourney. There are 100 textures for walls, 100 for the floor, 100 for counters, and 100 for cabinet panels. These textures can be used as a form of domain randomization to significantly increase the visual diversity of our training datasets.
+
+## Diverse Objects featuring AI Generated 3D Models
 
 <figure class="figure">
   <div class="figure__main">
