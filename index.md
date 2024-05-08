@@ -177,3 +177,34 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
   year={2024}
 }
 ```
+
+<script>
+  var items = document.getElementsByClassName("video-slide");
+
+  let timer;
+  const delay = 20;
+
+  console.log(items);
+
+  for (let item of items) {
+    console.log(item);
+    item.addEventListener("wheel", function (e) {
+      clearTimeout(timer);
+
+      if (Math.abs(e.deltaY) > 0) {
+        item.style.scrollSnapType = "none";
+        item.scrollLeft += e.deltaY / 2;
+        e.preventDefault();
+      }
+
+      timer = setTimeout(function() {
+        var width = item.children[0].offsetWidth;
+        var delta = ((Math.floor(item.scrollLeft / width) * width) + width / 2) - item.scrollLeft;
+        item.scrollBy({
+          left: delta,
+          behavior: 'smooth'
+        });
+      }, delay);
+    }, { passive: false });
+  }
+</script>
