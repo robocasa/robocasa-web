@@ -150,13 +150,7 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
 
 # Team
 
-## Core Developers
-
 {% include members.html %}
-
-## Project Advisors
-
-{% include advisors.html %}
 
 # Citation
 
