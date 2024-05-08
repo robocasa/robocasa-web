@@ -60,7 +60,7 @@ figure figcaption {
     border-top: solid 2px $hr-border-color;
 }
 
-.authornames  {
+.authornames {
   text-align: center;
   float: left;
   font-size: 1.0rem;
@@ -78,22 +78,16 @@ figure figcaption {
 }
 
 .col-xs-2 {
-  width: 16%;
+  width: 130px;
   padding-right: 20px;
 }
 
 .col-lg-12 {
     width: 100%;
-}
-
-.clearfix {
-  overflow: auto;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 /* CSS style classes for displaying images next to each other. */

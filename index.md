@@ -88,45 +88,49 @@ We curated a repository of over 2500 objects across over 150 categories, spannin
 **RoboCasa** supports mobile manipulators of diverse form factors, such as single-arm mobile manipulators, humanoids, and quadruped robots.
 
 ## Foundational Robot Skills
-<div class="video-slide">
-  <div>
-    <video autoplay loop muted playsinline>
-      <source src="{{ site.baseurl }}/assets/videos/basic_skills/pnp.mp4" type="video/mp4">
-    </video>
-    <div class="video-caption">
-      <h3>Pick and Place</h3>
+<div class="video-slide-wrapper">
+  <div class="slide-button-left"></div>
+  <div class="slide-button-right"></div>
+  <div class="video-slide">
+    <div>
+      <video autoplay loop muted playsinline>
+        <source src="{{ site.baseurl }}/assets/videos/basic_skills/pnp.mp4" type="video/mp4">
+      </video>
+      <div class="video-caption">
+        <h3>Pick and Place</h3>
+      </div>
     </div>
-  </div>
-  <div>
-    <video autoplay loop muted playsinline>
-      <source src="{{ site.baseurl }}/assets/videos/basic_skills/door.mp4" type="video/mp4">
-    </video>
-    <div class="video-caption">
-      <h3>Opening and Closing Doors</h3>
+    <div>
+      <video autoplay loop muted playsinline>
+        <source src="{{ site.baseurl }}/assets/videos/basic_skills/door.mp4" type="video/mp4">
+      </video>
+      <div class="video-caption">
+        <h3>Opening and Closing Doors</h3>
+      </div>
     </div>
-  </div>
-  <div>
-    <video autoplay loop muted playsinline>
-      <source src="{{ site.baseurl }}/assets/videos/basic_skills/lever.mp4" type="video/mp4">
-    </video>
-    <div class="video-caption">
-      <h3>Turning Levers</h3>
+    <div>
+      <video autoplay loop muted playsinline>
+        <source src="{{ site.baseurl }}/assets/videos/basic_skills/lever.mp4" type="video/mp4">
+      </video>
+      <div class="video-caption">
+        <h3>Turning Levers</h3>
+      </div>
     </div>
-  </div>
-  <div>
-    <video autoplay loop muted playsinline>
-      <source src="{{ site.baseurl }}/assets/videos/basic_skills/knob.mp4" type="video/mp4">
-    </video>
-    <div class="video-caption">
-      <h3>Twisting Knobs</h3>
+    <div>
+      <video autoplay loop muted playsinline>
+        <source src="{{ site.baseurl }}/assets/videos/basic_skills/knob.mp4" type="video/mp4">
+      </video>
+      <div class="video-caption">
+        <h3>Twisting Knobs</h3>
+      </div>
     </div>
-  </div>
-  <div>
-    <video autoplay loop muted playsinline>
-      <source src="{{ site.baseurl }}/assets/videos/basic_skills/button.mp4" type="video/mp4">
-    </video>
-    <div class="video-caption">
-      <h3>Pressing Buttons</h3>
+    <div>
+      <video autoplay loop muted playsinline>
+        <source src="{{ site.baseurl }}/assets/videos/basic_skills/button.mp4" type="video/mp4">
+      </video>
+      <div class="video-caption">
+        <h3>Pressing Buttons</h3>
+      </div>
     </div>
   </div>
 </div>
@@ -134,29 +138,33 @@ We curated a repository of over 2500 objects across over 150 categories, spannin
 **RoboCasa** focuses on a set of eight foundational skills that form the basis for the majority of household activities: (1) Pick and place, (2) Opening and closing doors, (3) Opening and closing drawers, (4) Twisting knobs, (5) Turning levers, (6) Pressing buttons, (7) Insertion, and (8) Navigation. We include 25 atomic tasks that feature these skills.
 
 ## Composite Tasks
-<div class="video-slide">
-  <div>
-    <video autoplay loop muted playsinline>
-      <source src="{{ site.baseurl }}/assets/videos/composite_tasks/steaming_veg.mp4" type="video/mp4">
-    </video>
-    <div class="video-caption">
-      <h3>Steaming Vegetables</h3>
+<div class="video-slide-wrapper">
+  <div class="slide-button-left"></div>
+  <div class="slide-button-right"></div>
+  <div class="video-slide">
+    <div>
+      <video autoplay loop muted playsinline>
+        <source src="{{ site.baseurl }}/assets/videos/composite_tasks/steaming_veg.mp4" type="video/mp4">
+      </video>
+      <div class="video-caption">
+        <h3>Steaming Vegetables</h3>
+      </div>
     </div>
-  </div>
-  <div>
-    <video autoplay loop muted playsinline>
-      <source src="{{ site.baseurl }}/assets/videos/composite_tasks/restock.mp4" type="video/mp4">
-    </video>
-    <div class="video-caption">
-      <h3>Restocking Kitchen Supplies</h3>
+    <div>
+      <video autoplay loop muted playsinline>
+        <source src="{{ site.baseurl }}/assets/videos/composite_tasks/restock.mp4" type="video/mp4">
+      </video>
+      <div class="video-caption">
+        <h3>Restocking Kitchen Supplies</h3>
+      </div>
     </div>
-  </div>
-  <div>
-    <video autoplay loop muted playsinline>
-      <source src="{{ site.baseurl }}/assets/videos/composite_tasks/brewing_coffee.mp4" type="video/mp4">
-    </video>
-    <div class="video-caption">
-      <h3>Brewing Coffee</h3>
+    <div>
+      <video autoplay loop muted playsinline>
+        <source src="{{ site.baseurl }}/assets/videos/composite_tasks/brewing_coffee.mp4" type="video/mp4">
+      </video>
+      <div class="video-caption">
+        <h3>Brewing Coffee</h3>
+      </div>
     </div>
   </div>
 </div>
@@ -179,32 +187,20 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
 ```
 
 <script>
-  var items = document.getElementsByClassName("video-slide");
-
-  let timer;
-  const delay = 20;
-
-  console.log(items);
-
-  for (let item of items) {
-    console.log(item);
-    item.addEventListener("wheel", function (e) {
-      clearTimeout(timer);
-
-      if (Math.abs(e.deltaY) > 0) {
-        item.style.scrollSnapType = "none";
-        item.scrollLeft += e.deltaY / 2;
-        e.preventDefault();
-      }
-
-      timer = setTimeout(function() {
-        var width = item.children[0].offsetWidth;
-        var delta = ((Math.floor(item.scrollLeft / width) * width) + width / 2) - item.scrollLeft;
-        item.scrollBy({
-          left: delta,
+  var video_slides = document.getElementsByClassName("video-slide-wrapper");
+  var buttons = [null, null];
+  for (let slide_wrapper of video_slides) {
+    let slide = slide_wrapper.getElementsByClassName("video-slide").item(0);
+    buttons[0] = slide_wrapper.getElementsByClassName("slide-button-left").item(0);
+    buttons[1] = slide_wrapper.getElementsByClassName("slide-button-right").item(0);
+    for (let i = 0; i < 2; i++) {
+      buttons[i].addEventListener("click", function (e) {
+        var width = slide.children[0].offsetWidth;
+        slide.scrollBy({
+          left: width * i === 0 ? -1 : 1,
           behavior: 'smooth'
         });
-      }, delay);
-    }, { passive: false });
+      });
+    }
   }
 </script>
