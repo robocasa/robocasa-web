@@ -68,7 +68,9 @@ figure figcaption {
 
 .img-circle {
   border-radius: 50%;
-  padding-bottom: 10px;
+  width: 100%;
+  aspect-ratio : 1 / 1;
+  margin-bottom: 5px;
 }
 
 .img-responsive {
@@ -78,8 +80,7 @@ figure figcaption {
 }
 
 .col-xs-2 {
-  width: 130px;
-  padding-right: 20px;
+  width: 120px;
 }
 
 .col-lg-12 {
@@ -88,6 +89,7 @@ figure figcaption {
     flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    gap: 20px;
 }
 
 /* CSS style classes for displaying images next to each other. */
