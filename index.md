@@ -189,6 +189,7 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
 <script>
   var video_slides = document.getElementsByClassName("video-slide-wrapper");
   var buttons = [null, null];
+  var first = true;
   for (let slide_wrapper of video_slides) {
     let slide = slide_wrapper.getElementsByClassName("video-slide").item(0);
     buttons[0] = slide_wrapper.getElementsByClassName("slide-button-left").item(0);
@@ -197,7 +198,7 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
       buttons[i].addEventListener("click", function (e) {
         var width = slide.children[0].offsetWidth;
         slide.scrollBy({
-          left: width * i === 0 ? -1 : 1,
+          left: width * (i === 0 ? -1 : 1),
           behavior: 'smooth'
         });
       });
