@@ -15,8 +15,8 @@ videoId:
   {% for video in site.static_files %}
     {% if video.path contains '/assets/videos/env_grid/' %}
       <div class="video-item">
-        <video autoplay loop muted playsinline>
-          <source src="{{ site.baseurl }}{{ video.path }}" type="video/mp4">
+        <video class="lazy" autoplay loop muted playsinline>
+          <source data-src="{{ site.baseurl }}{{ video.path }}" type="video/mp4">
         </video>
       </div>
     {% endif %}
@@ -38,8 +38,8 @@ In this initial release, we focus our efforts on kitchen scenes. To capture real
   {% for video in site.static_files %}
     {% if video.path contains '/assets/videos/appliance_grid/' %}
       <div class="video-item">
-        <video autoplay loop muted playsinline>
-          <source src="{{ site.baseurl }}{{ video.path }}" type="video/mp4">
+        <video class="lazy" autoplay loop muted playsinline>
+          <source data-src="{{ site.baseurl }}{{ video.path }}" type="video/mp4">
         </video>
       </div>
     {% endif %}
@@ -52,8 +52,8 @@ Each scene can be configured from a selection of dozens of appliances. Several t
 
 <figure class="figure">
   <div class="figure__main">
-    <video autoplay loop muted playsinline class="postimagefullwidth">
-      <source src="{{ site.baseurl }}/assets/videos/ai_textures.mp4" type="video/mp4">
+    <video class="lazy" autoplay loop muted playsinline class="postimagefullwidth">
+      <source data-src="{{ site.baseurl }}/assets/videos/ai_textures.mp4" type="video/mp4">
     </video>
   </div>
 </figure>
@@ -64,8 +64,8 @@ Each scene can be customized by replacing textures from a large selection of hig
 
 <figure class="figure">
   <div class="figure__main">
-    <video autoplay loop muted playsinline class="postimagefullwidth">
-      <source src="{{ site.baseurl }}/assets/videos/objects.mp4" type="video/mp4">
+    <video class="lazy" autoplay loop muted playsinline class="postimagefullwidth">
+      <source data-src="{{ site.baseurl }}/assets/videos/objects.mp4" type="video/mp4">
     </video>
   </div>
 </figure>
@@ -77,8 +77,8 @@ We curated a repository of over 2500 objects across over 150 categories, spannin
   {% for video in site.static_files %}
     {% if video.path contains '/assets/videos/robot_grid/' %}
       <div class="video-item">
-        <video autoplay loop muted playsinline>
-          <source src="{{ site.baseurl }}{{ video.path }}" type="video/mp4">
+        <video class="lazy" autoplay loop muted playsinline>
+          <source data-src="{{ site.baseurl }}{{ video.path }}" type="video/mp4">
         </video>
       </div>
     {% endif %}
@@ -93,40 +93,40 @@ We curated a repository of over 2500 objects across over 150 categories, spannin
   <div class="slide-button-right"></div>
   <div class="video-slide">
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/basic_skills/pnp.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/basic_skills/pnp.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Pick and Place</h3>
       </div>
     </div>
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/basic_skills/door.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/basic_skills/door.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Opening and Closing Doors</h3>
       </div>
     </div>
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/basic_skills/lever.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/basic_skills/lever.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Turning Levers</h3>
       </div>
     </div>
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/basic_skills/knob.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/basic_skills/knob.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Twisting Knobs</h3>
       </div>
     </div>
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/basic_skills/button.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/basic_skills/button.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Pressing Buttons</h3>
@@ -143,24 +143,24 @@ We curated a repository of over 2500 objects across over 150 categories, spannin
   <div class="slide-button-right"></div>
   <div class="video-slide">
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/composite_tasks/steaming_veg.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/composite_tasks/steaming_veg.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Steaming Vegetables</h3>
       </div>
     </div>
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/composite_tasks/restock.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/composite_tasks/restock.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Restocking Kitchen Supplies</h3>
       </div>
     </div>
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/composite_tasks/brewing_coffee.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/composite_tasks/brewing_coffee.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Brewing Coffee</h3>
@@ -204,4 +204,31 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
       });
     }
   }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+
+    if ("IntersectionObserver" in window) {
+      var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(video) {
+          if (video.isIntersecting) {
+            for (var source in video.target.children) {
+              var videoSource = video.target.children[source];
+              if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                videoSource.src = videoSource.dataset.src;
+              }
+            }
+
+            video.target.load();
+            video.target.classList.remove("lazy");
+            lazyVideoObserver.unobserve(video.target);
+          }
+        });
+      });
+
+      lazyVideos.forEach(function(lazyVideo) {
+        lazyVideoObserver.observe(lazyVideo);
+      });
+    }
+  });
 </script>
