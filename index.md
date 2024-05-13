@@ -64,8 +64,8 @@ Each scene can be customized by replacing textures from a large selection of hig
 
 <figure class="figure">
   <div class="figure__main">
-    <video class="lazy" autoplay loop muted playsinline class="postimagefullwidth">
-      <source data-src="{{ site.baseurl }}/assets/videos/objects.mp4" type="video/mp4">
+    <video autoplay loop muted playsinline class="postimagefullwidth">
+      <source src="{{ site.baseurl }}/assets/videos/objects.mp4" type="video/mp4">
     </video>
   </div>
 </figure>
