@@ -178,7 +178,7 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
 @inproceedings{robocasa2024,
   title={RoboCasa: Large-Scale Simulation of Household Tasks for Generalist Robots},
   author={Soroush Nasiriany and Abhiram Maddukuri and Lance Zhang and Adeet Parikh and Aaron Lo and Abhishek Joshi and Ajay Mandlekar and Yuke Zhu},
-  booktitle={arXiv preprint arXiv:...},
+  booktitle={Robotics: Science and Systems},
   year={2024}
 }
 ```
