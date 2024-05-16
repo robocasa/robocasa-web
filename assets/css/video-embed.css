@@ -46,8 +46,9 @@
 
 .video-slide-wrapper {
   position: relative;
-  width: 100%;
+  width: 85%;
   height: auto;
+  left: 7.5%;
 }
 
 .video-slide {
@@ -115,9 +116,7 @@
   position: absolute;
   left: -55px;
   top: 44%;
-  margin-top: auto;
-  margin-bottom: auto;;
-  background-image: url("../images/arrow.png");
+  background-image: url("../images/arrow.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
@@ -132,7 +131,7 @@
   position: absolute;
   right: -55px;
   top: 44%;
-  background-image: url("../images/arrow.png");
+  background-image: url("../images/arrow.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
