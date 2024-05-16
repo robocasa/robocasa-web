@@ -113,8 +113,8 @@
 
 .slide-button-left {
   position: absolute;
-  left: 0;
-  top: 25%;
+  left: -55px;
+  top: 44%;
   margin-top: auto;
   margin-bottom: auto;;
   background-image: url("../images/arrow.png");
@@ -122,21 +122,21 @@
   background-size: 100% 100%;
   cursor: pointer;
   z-index: 1;
-  width: 5%;
-  height: 60%;
+  height: 12%;
+  aspect-ratio: 1 / 1;
   transform: scaleX(-1);
 }
 
 
 .slide-button-right {
   position: absolute;
-  right: 0;
-  top: 25%;
+  right: -55px;
+  top: 44%;
   background-image: url("../images/arrow.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
   z-index: 1;
-  width: 5%;
-  height: 60%;
+  height: 12%;
+  aspect-ratio: 1 / 1;
 }
