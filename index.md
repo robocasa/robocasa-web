@@ -194,6 +194,9 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
     for (let i = 0; i < 2; i++) {
       buttons[i].addEventListener("click", function (e) {
         var width = slide.children[0].offsetWidth;
+        // Fix for mobile - not sure why but it allows an extra scroll to the right without this
+        if (i == 1 && slide.scrollLeft > width * (slide.children.length - 1)) return;
+        
         slide.scrollBy({
           left: width * (i === 0 ? -1 : 1),
           behavior: 'smooth'
