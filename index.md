@@ -6,7 +6,7 @@ project_tagline: "Large-Scale Simulation of Household Tasks for Generalist Robot
 videoId: 
 ---
 
-**RoboCasa** is a large-scale simulation framework for training generalist agents in household environments. It features realistic and diverse scenes with a focus on kitchen environments which we enhance we the help of AI generation tools. In addition we provide over 2500 3D assets across 150+ object categories and dozens of intractable appliances. These assets support diverse behaviors and we propose a set of 100 tasks, including tasks representing complex activities that we generated with the guidance of large language models. We include a set of high-quality demonstrations for each task and explore the use of robot data generation tools to significantly expand the scope of our dataset at little additional cost.
+**RoboCasa** is a large-scale simulation framework for training generally capable robots to perform everyday tasks. It features realistic and diverse human-centered environments with a focus on kitchen scenes. We create these environments with the aim of generative AI tools, such as large language models (LLMs) and text-to-3D models. We provide over 2,500 3D assets across 150+ object categories and dozens of intractable furniture and appliances. As part of the initial release, we include a suite of 100 tasks, representing a wide spectrum of everyday activities. Together with the tasks, we offer a dataset of high-quality human demonstrations and leverage automated trajectory generation techniques to significantly expand the amount of training data with little additional cost.
 
 ## Diverse Scenes
 
@@ -31,9 +31,9 @@ videoId:
   </div>
 </figure> -->
 
-In this initial release, we focus our efforts on kitchen scenes. To capture realistic and diverse scenes, we consulted numerous architecture and home design magazines and compiled a number of kitchen layouts and styles reflecting the diversity of kitchens in homes around the world. We modeled these kitchens according to standard size and spatial specifications and fitted them with a large repository of interactable appliances spanning stoves, sinks, microwaves, and more. 
+In this initial release, we focus our efforts on kitchen scenes. To capture realistic and diverse scenes, we consult numerous architecture and home design magazines and compile a collection of kitchen layouts and styles reflecting the vast diversity of kitchens in homes around the world. We model these kitchens according to standard size and spatial specifications and fit them with a large repository of interactable furniture and appliances spanning cabinets, stoves, sinks, microwaves, and more.
 
-## Interactable Appliances
+## Interactable Furniture and Appliances
 <div class="video-grid-2x2">
   {% for video in site.static_files %}
     {% if video.path contains '/assets/videos/appliance_grid/' %}
@@ -46,7 +46,7 @@ In this initial release, we focus our efforts on kitchen scenes. To capture real
   {% endfor %}
 </div>
 
-Each scene can be configured from a selection of dozens of appliances. Several types of appliances are articulated. For example, a robot can open and close doors on microwaves and twist knobs on stoves. These appliances additionally can undergo state changes, e.g., when a knob on the stove is turned, the corresponding burner turns on.
+Each scene is equipped with a selection of interactable furniture and appliances. Several types of interactable objects are articulated; for example, a robot can open and close doors on microwaves and twist knobs on stoves. Other types of interactable objects can undergo state changes; for example, when a knob on the stove is turned, the corresponding burner turns on.
 
 ## Augmenting Scene Diversity with AI Generated Textures
 
