@@ -46,8 +46,9 @@
 
 .video-slide-wrapper {
   position: relative;
-  width: 100%;
+  width: 86%;
   height: auto;
+  left: 7%;
 }
 
 .video-slide {
@@ -101,6 +102,7 @@
   line-height: 100%;
   padding-left: 10px;
   padding-right: 10px;
+  font-size: 100%;
 }
 
 .video-slide > div > video {
@@ -113,30 +115,28 @@
 
 .slide-button-left {
   position: absolute;
-  left: 0;
-  top: 25%;
-  margin-top: auto;
-  margin-bottom: auto;;
-  background-image: url("../images/arrow.png");
+  left: -8%;
+  top: 44%;
+  background-image: url("../images/arrow.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
   z-index: 1;
-  width: 5%;
-  height: 60%;
+  height: 12%;
+  aspect-ratio: 1 / 1;
   transform: scaleX(-1);
 }
 
 
 .slide-button-right {
   position: absolute;
-  right: 0;
-  top: 25%;
-  background-image: url("../images/arrow.png");
+  right: -8%;
+  top: 44%;
+  background-image: url("../images/arrow.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
   z-index: 1;
-  width: 5%;
-  height: 60%;
+  height: 12%;
+  aspect-ratio: 1 / 1;
 }

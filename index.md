@@ -2,21 +2,21 @@
 layout: main
 title: RoboCasa
 subtitle: 
-project_tagline: "Large-Scale Simulation of Household Tasks for Generalist Robots"
+project_tagline: "Large-Scale Simulation of Everyday Tasks for Generalist Robots"
 videoId: 
 ---
 
-**RoboCasa** is a large-scale simulation framework for training generally capable robots to perform everyday tasks. It features realistic and diverse human-centered environments with a focus on kitchen scenes. We create these environments with the aim of generative AI tools, such as large language models (LLMs) and text-to-3D models. We provide over 2,500 3D assets across 150+ object categories and dozens of intractable furniture and appliances. As part of the initial release, we include a suite of 100 tasks, representing a wide spectrum of everyday activities. Together with the tasks, we offer a dataset of high-quality human demonstrations and leverage automated trajectory generation techniques to significantly expand the amount of training data with little additional cost.
+**RoboCasa** is a large-scale simulation framework for training generally capable robots to perform everyday tasks. It features realistic and diverse human-centered environments with a focus on kitchen scenes. We create these environments with the aim of generative AI tools, such as large language models (LLMs) and text-to-image/3D generative models. We provide over 2,500 3D assets across 150+ object categories and dozens of intractable furniture and appliances. As part of the first release, we include a suite of 100 tasks, representing a wide spectrum of everyday activities. Together with the simulated tasks, we offer a dataset of high-quality human demonstrations and leverage automated trajectory generation techniques to significantly expand the amount of training data with little additional cost.
 
-## Diverse Scenes
+## Realistic and Diverse Scenes
 
 <!-- Grid of Videos -->
 <div class="video-grid-3x3">
   {% for video in site.static_files %}
     {% if video.path contains '/assets/videos/env_grid/' %}
       <div class="video-item">
-        <video autoplay loop muted playsinline>
-          <source src="{{ site.baseurl }}{{ video.path }}" type="video/mp4">
+        <video class="lazy" autoplay loop muted playsinline>
+          <source data-src="{{ site.baseurl }}{{ video.path }}" type="video/mp4">
         </video>
       </div>
     {% endif %}
@@ -31,24 +31,45 @@ videoId:
   </div>
 </figure> -->
 
-In this initial release, we focus our efforts on kitchen scenes. To capture realistic and diverse scenes, we consult numerous architecture and home design magazines and compile a collection of kitchen layouts and styles reflecting the vast diversity of kitchens in homes around the world. We model these kitchens according to standard size and spatial specifications and fit them with a large repository of interactable furniture and appliances spanning cabinets, stoves, sinks, microwaves, and more.
+In this initial release, we focus on kitchen scenes. To capture complexity and diversity of real-world environments, we consult numerous architecture and home design magazines and compile a collection of kitchen layouts and styles reflecting the vast diversity of kitchens in homes around the world. We model these kitchens according to standard size and spatial specifications and fit them with a large repository of interactable furniture and appliances spanning cabinets, stoves, sinks, microwaves, and more.
 
-## Interactable Furniture and Appliances
+## Cross-Embodiment Support
+
+**RoboCasa** supports mobile manipulators of diverse form factors, such as single-arm mobile manipulators, humanoids, and quadruped robots.
+
 <div class="video-grid-2x2">
   {% for video in site.static_files %}
-    {% if video.path contains '/assets/videos/appliance_grid/' %}
+    {% if video.path contains '/assets/videos/robot_grid/' %}
       <div class="video-item">
-        <video autoplay loop muted playsinline>
-          <source src="{{ site.baseurl }}{{ video.path }}" type="video/mp4">
+        <video class="lazy" autoplay loop muted playsinline>
+          <source data-src="{{ site.baseurl }}{{ video.path }}" type="video/mp4">
         </video>
       </div>
     {% endif %}
   {% endfor %}
 </div>
 
-Each scene is equipped with a selection of interactable furniture and appliances. Several types of interactable objects are articulated; for example, a robot can open and close doors on microwaves and twist knobs on stoves. Other types of interactable objects can undergo state changes; for example, when a knob on the stove is turned, the corresponding burner turns on.
+## Interactable Furniture and Appliances
 
-## Augmenting Scene Diversity with AI Generated Textures
+<div class="video-grid-2x2">
+  {% for video in site.static_files %}
+    {% if video.path contains '/assets/videos/appliance_grid/' %}
+      <div class="video-item">
+        <video class="lazy" autoplay loop muted playsinline>
+          <source data-src="{{ site.baseurl }}{{ video.path }}" type="video/mp4">
+        </video>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+Each kitchen scene is equipped with a selection of interactable furniture and appliances. Several types of interactable objects are articulated; for example, a robot can open and close doors on microwaves and twist knobs on stoves. Other types of interactable objects can undergo state changes; for example, when a knob on the stove is turned, the corresponding burner turns on.
+
+<br>
+
+<hr>
+
+## Augmenting Scene Diversity with Text-to-Image Models
 
 <figure class="figure">
   <div class="figure__main">
@@ -58,9 +79,12 @@ Each scene is equipped with a selection of interactable furniture and appliances
   </div>
 </figure>
 
-Each scene can be customized by replacing textures from a large selection of high-quality AI-generated textures, created using the popular text-to-image AI-generation tool MidJourney. There are 100 textures for walls, 100 for the floor, 100 for counters, and 100 for cabinet panels. These textures can be used as a form of domain randomization to significantly increase the visual diversity of our training datasets.
+Each scene can be customized by replacing textures from a large selection of high-quality AI-generated textures created using the popular text-to-image models from <a href="https://docs.midjourney.com/docs/model-versions">MidJourney</a>. We provide 100 textures for walls, 100 for the floor, 100 for counters, and 100 for cabinet panels, respectively. These textures can be used as a form of realistic domain randomization to increase the visual diversity of our training datasets substantially.
 
-## Diverse Objects featuring AI Generated 3D Models
+## Creating Diverse Object Assets with Text-to-3D Models
+
+We curate a repository of over 2,500 objects across more than 150 categories, spanning a variety of fruits, vegetables, packaged foods, and receptacles. The majority of these objects are generated by text-to-3D object generation models, such as <a href="https://lumalabs.ai/">Luma AI</a>.
+
 
 <figure class="figure">
   <div class="figure__main">
@@ -70,63 +94,51 @@ Each scene can be customized by replacing textures from a large selection of hig
   </div>
 </figure>
 
-We curated a repository of over 2500 objects across over 150 categories, spanning a variety of fruits, venegtables, packaged foods, and receptacles. The majority of these objects are generated by AI 3D object generation tools.
 
-## Diverse Robots
-<div class="video-grid-2x2">
-  {% for video in site.static_files %}
-    {% if video.path contains '/assets/videos/robot_grid/' %}
-      <div class="video-item">
-        <video autoplay loop muted playsinline>
-          <source src="{{ site.baseurl }}{{ video.path }}" type="video/mp4">
-        </video>
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
+## Training Foundational Robot Skills
 
-**RoboCasa** supports mobile manipulators of diverse form factors, such as single-arm mobile manipulators, humanoids, and quadruped robots.
+We focus on eight foundational skills as the basic building blocks to scaffold long-horizon manipulation behaviors for the majority of household activities: (1) Pick and place, (2) Opening and closing doors, (3) Opening and closing drawers, (4) Twisting knobs, (5) Turning levers, (6) Pressing buttons, (7) Insertion, and (8) Navigation. The current release includes 25 atomic tasks for systematically training and evaluating these skills.
 
-## Foundational Robot Skills
+
 <div class="video-slide-wrapper">
   <div class="slide-button-left"></div>
   <div class="slide-button-right"></div>
   <div class="video-slide">
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/basic_skills/pnp.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/basic_skills/pnp.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Pick and Place</h3>
       </div>
     </div>
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/basic_skills/door.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/basic_skills/door.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Opening and Closing Doors</h3>
       </div>
     </div>
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/basic_skills/lever.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/basic_skills/lever.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Turning Levers</h3>
       </div>
     </div>
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/basic_skills/knob.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/basic_skills/knob.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Twisting Knobs</h3>
       </div>
     </div>
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/basic_skills/button.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/basic_skills/button.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Pressing Buttons</h3>
@@ -135,41 +147,45 @@ We curated a repository of over 2500 objects across over 150 categories, spannin
   </div>
 </div>
 
-**RoboCasa** focuses on a set of eight foundational skills that form the basis for the majority of household activities: (1) Pick and place, (2) Opening and closing doors, (3) Opening and closing drawers, (4) Twisting knobs, (5) Turning levers, (6) Pressing buttons, (7) Insertion, and (8) Navigation. We include 25 atomic tasks that feature these skills.
 
-## Composite Tasks
+## Generating Composite Tasks with LLM Guidance
+
+Composite tasks involve sequencing skills to solve semantically meaningful activities, from restocking kitchen supplies to brewing coffee. Our goal in creating these tasks is to capture realistic and diverse tasks that reflect the ecological statistics of real-world household activities in the human-centered world. We use the guidance of large language models (LLMs) to define our tasks, as they encapsulate a vast amount of common sense and world knowledge of the human world and can thus effectively provide task candidates based on the environments and the robot's skills.
+
 <div class="video-slide-wrapper">
   <div class="slide-button-left"></div>
   <div class="slide-button-right"></div>
   <div class="video-slide">
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/composite_tasks/steaming_veg.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/composite_tasks/steaming_veg.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Steaming Vegetables</h3>
       </div>
     </div>
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/composite_tasks/restock.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/composite_tasks/restock.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Restocking Kitchen Supplies</h3>
       </div>
     </div>
     <div>
-      <video autoplay loop muted playsinline>
-        <source src="{{ site.baseurl }}/assets/videos/composite_tasks/brewing_coffee.mp4" type="video/mp4">
+      <video class="lazy" autoplay loop muted playsinline>
+        <source data-src="{{ site.baseurl }}/assets/videos/composite_tasks/brewing_coffee.mp4" type="video/mp4">
       </video>
       <div class="video-caption">
         <h3>Brewing Coffee</h3>
       </div>
     </div>
   </div>
+  <br>
 </div>
 
-Composite tasks involve sequencing skills to solve semantically meaningful activities such as cooking and cleaning. The goal of creating these tasks is to capture diverse tasks that reflect the ecological statistics of real-world household activities, using the guidance of large language models (LLMs) to define our tasks. LLMs encapsulate diverse sources of human knowledge and can thus effectively communicate diverse ideas grounded in the real world.
+<br>
+<hr>
 
 # Team
 
@@ -179,9 +195,9 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
 
 ```bibtex
 @inproceedings{robocasa2024,
-  title={RoboCasa: Large-Scale Simulation of Household Tasks for Generalist Robots},
+  title={RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots},
   author={Soroush Nasiriany and Abhiram Maddukuri and Lance Zhang and Adeet Parikh and Aaron Lo and Abhishek Joshi and Ajay Mandlekar and Yuke Zhu},
-  booktitle={arXiv preprint arXiv:...},
+  booktitle={Robotics: Science and Systems (RSS)},
   year={2024}
 }
 ```
@@ -197,6 +213,10 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
     for (let i = 0; i < 2; i++) {
       buttons[i].addEventListener("click", function (e) {
         var width = slide.children[0].offsetWidth;
+        // Fix for mobile - not sure why but it allows an extra scroll to the right without this
+        if (i == 1 && slide.scrollLeft > width * (slide.children.length - 1)) return;
+        if (i == 0 && slide.scrollLeft < width / 2 + 10) return;
+
         slide.scrollBy({
           left: width * (i === 0 ? -1 : 1),
           behavior: 'smooth'
@@ -204,4 +224,31 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
       });
     }
   }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+
+    if ("IntersectionObserver" in window) {
+      var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(video) {
+          if (video.isIntersecting) {
+            for (var source in video.target.children) {
+              var videoSource = video.target.children[source];
+              if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                videoSource.src = videoSource.dataset.src;
+              }
+            }
+
+            video.target.load();
+            video.target.classList.remove("lazy");
+            lazyVideoObserver.unobserve(video.target);
+          }
+        });
+      });
+
+      lazyVideos.forEach(function(lazyVideo) {
+        lazyVideoObserver.observe(lazyVideo);
+      });
+    }
+  });
 </script>
