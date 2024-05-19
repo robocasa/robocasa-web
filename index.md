@@ -230,7 +230,6 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
         const checkIfScrollIsStatic = setInterval(() => {
           if (position === slide.scrollLeft) {
             clearInterval(checkIfScrollIsStatic)
-            console.log("Cleared Disable");
             disabled[i] = false;
           }
           position = slide.scrollLeft
