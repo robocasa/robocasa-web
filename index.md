@@ -205,6 +205,7 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
 <script>
   var video_slides = document.getElementsByClassName("video-slide-wrapper");
   var buttons = [null, null];
+  var disabled = [false, false];
   var first = true;
   for (let slide_wrapper of video_slides) {
     let slide = slide_wrapper.getElementsByClassName("video-slide").item(0);
@@ -212,15 +213,28 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
     buttons[1] = slide_wrapper.getElementsByClassName("slide-button-right").item(0);
     for (let i = 0; i < 2; i++) {
       buttons[i].addEventListener("click", function (e) {
+        if (disabled[i] === true) return;
         var width = slide.children[0].offsetWidth;
+
         // Fix for mobile - not sure why but it allows an extra scroll to the right without this
         if (i == 1 && slide.scrollLeft > width * (slide.children.length - 1)) return;
-        if (i == 0 && slide.scrollLeft < width / 2 + 10) return;
+
+        disabled[i] = true;
 
         slide.scrollBy({
           left: width * (i === 0 ? -1 : 1),
           behavior: 'smooth'
         });
+
+        let position = null
+        const checkIfScrollIsStatic = setInterval(() => {
+          if (position === slide.scrollLeft) {
+            clearInterval(checkIfScrollIsStatic)
+            console.log("Cleared Disable");
+            disabled[i] = false;
+          }
+          position = slide.scrollLeft
+        }, 20);
       });
     }
   }
