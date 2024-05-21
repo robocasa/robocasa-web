@@ -6,7 +6,7 @@ project_tagline: "Large-Scale Simulation of Everyday Tasks for Generalist Robots
 videoId: 
 ---
 
-**RoboCasa** is a large-scale simulation framework for training generally capable robots to perform everyday tasks. It features realistic and diverse human-centered environments with a focus on kitchen scenes. We create these environments with the aim of generative AI tools, such as large language models (LLMs) and text-to-image/3D generative models. We provide over 2,500 3D assets across 150+ object categories and dozens of intractable furniture and appliances. As part of the first release, we include a suite of 100 tasks, representing a wide spectrum of everyday activities. Together with the simulated tasks, we offer a dataset of high-quality human demonstrations and leverage automated trajectory generation techniques to significantly expand the amount of training data with little additional cost.
+**RoboCasa** is a large-scale simulation framework for training generally capable robots to perform everyday tasks. It features realistic and diverse human-centered environments with a focus on kitchen scenes. We create these environments with the aim of generative AI tools, such as large language models (LLMs) and text-to-image/3D generative models. We provide over 2,500 3D assets across 150+ object categories and dozens of interactable furniture and appliances. As part of the first release, we include a suite of 100 tasks, representing a wide spectrum of everyday activities. Together with the simulated tasks, we offer a dataset of high-quality human demonstrations and leverage automated trajectory generation techniques to significantly expand the amount of training data with little additional cost.
 
 ## Realistic and Diverse Scenes
 
