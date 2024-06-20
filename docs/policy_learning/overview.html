@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoboCasa Policy Learning Repo &#8212; robocasa 1.4 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-pythia-theme.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'policy_learning/overview';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Datasets" href="../dataset/overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div class="pst-scroll-pixel-helper"></div>
+    <header class="bd-header navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar shadow" id="navbar-main">
+<div class="bd-header__inner bd-page-width">
+  <button class="sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><ul id="navbar-main-elements" class="navbar-nav">
+  
+  
+</ul></div>
+      
+    </div>
+    
+    
+  </div>
+  
+  
+
+  
+    <button class="sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+        
+        
+        
+        <div class="bd-sidebar-primary bd-sidebar">
+          
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item"><ul id="navbar-main-elements" class="navbar-nav">
+  
+  
+</ul></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/getting_started.html">Quick start</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datasets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../dataset/overview.html">Datasets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Policy Learning</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">RoboCasa Policy Learning Repo</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+        </div>
+
+        
+        <main id="main-content" class="bd-main" role="main">
+          
+
+            <div class="bd-content">
+
+              <div class="bd-article-container">
+
+                
+                  
+                  
+<div id="searchbox"></div>
+                  <article class="bd-article">
+                    
+  <div class="section" id="robocasa-policy-learning-repo">
+<h1>RoboCasa Policy Learning Repo<a class="headerlink" href="#robocasa-policy-learning-repo" title="Permalink to this heading">#</a></h1>
+<p>This is the official policy learning repo accompanying the <a class="reference external" href="https://robocasa.ai/">RoboCasa</a> release. This repo is based on top of robomimic, with modifications to train on RoboCasa datasets.</p>
+<hr class="docutils" />
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
+<p>After installing the <a class="reference external" href="https://github.com/robocasa/robocasa">RoboCasa codebase</a>, follow the instructions below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ARISE</span><span class="o">-</span><span class="n">Initiative</span><span class="o">/</span><span class="n">robomimic</span> <span class="o">-</span><span class="n">b</span> <span class="n">robocasa</span>
+<span class="n">cd</span> <span class="n">robomimic</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="training">
+<h2>Training<a class="headerlink" href="#training" title="Permalink to this heading">#</a></h2>
+<p>There are a number of algorithms to choose from. We offer official support for BC-Transformer. Users can also adapt the code to run Diffusion Policy, ACT, etc.</p>
+<p>Before training, download datasets, see instructions <a class="reference external" href="https://github.com/robocasa/robocasa?tab=readme-ov-file#datasets">here</a>.</p>
+<p>Each algorithm has its own config generator script. For example for BC-Transformer policy run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">robomimic</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">config_gen</span><span class="o">/</span><span class="n">bc_xfmr</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">experiment</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Modify this file accordingly, depending on which datasets you are training on and whether you are running evaluations.</p>
+<p>Note: You can add <code class="docutils literal notranslate"><span class="pre">--debug</span></code> to generate small runs for testing.</p>
+<p>Running this script will generate training run commands. You can use this script for generating a single run or multiple (for comparing settings and hyperparameter tuning).
+After running this script you just need to run the command(s) outputted.</p>
+<p>Want to learn how to set your own config values and sweep them? Read this short <a class="reference external" href="https://robomimic.github.io/docs/tutorials/hyperparam_scan.html#step-3-set-hyperparameter-values">tutorial section</a>.</p>
+<div class="section" id="loading-model-checkpoint-weights">
+<h3>Loading model checkpoint weights<a class="headerlink" href="#loading-model-checkpoint-weights" title="Permalink to this heading">#</a></h3>
+<p>Want to intialize your model with weights from a previous model checkpoint? Set the checkpoint path under <code class="docutils literal notranslate"><span class="pre">experiment.ckpt_path</span></code> in the config.</p>
+</div>
+<div class="section" id="logging-and-viewing-results">
+<h3>Logging and viewing results<a class="headerlink" href="#logging-and-viewing-results" title="Permalink to this heading">#</a></h3>
+<p>Read this short <a class="reference external" href="https://robomimic.github.io/docs/tutorials/viewing_results.html">tutorial page</a>.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="training-on-new-datasets">
+<h2>Training on new datasets<a class="headerlink" href="#training-on-new-datasets" title="Permalink to this heading">#</a></h2>
+<p>Before training, you need to pre-process your datasets to ensure they’re the correct format.</p>
+<ol class="simple">
+<li><p>Convert the raw robosuite dataset to robomimic format</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">robomimic</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">conversion</span><span class="o">/</span><span class="n">convert_robosuite</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dataset</span> <span class="o">&lt;</span><span class="n">ds</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>This script will extract actions and add filter keys.</p>
+<ol class="simple">
+<li><p>Extract image observations from robomimic dataset</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OMP_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">MPI_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">MKL_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">OPENBLAS_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">python</span> <span class="n">robomimic</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">dataset_states_to_obs</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dataset</span> <span class="o">&lt;</span><span class="n">ds</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>This script will generate a new dataset with the suffix <code class="docutils literal notranslate"><span class="pre">_im128.hdf5</span></code> in the same directory as <code class="docutils literal notranslate"><span class="pre">--dataset</span></code></p>
+<p>Note: you can add the flag <code class="docutils literal notranslate"><span class="pre">--generative_textures</span></code> to render images with AI-generated environment textures, and <code class="docutils literal notranslate"><span class="pre">--randomize_cameras</span></code> to randomize camera viewpoints for rendering.</p>
+</div>
+</div>
+
+
+                  </article>
+
+                
+                
+
+                
+                
+                  <footer class="prev-next-footer">
+                    
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../dataset/overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Datasets</p>
+      </div>
+    </a>
+</div>
+                  </footer>
+                
+              </div>
+
+              
+              
+                
+                  <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training">Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-model-checkpoint-weights">Loading model checkpoint weights</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-and-viewing-results">Logging and viewing results</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-on-new-datasets">Training on new datasets</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+                
+              
+
+
+                
+                <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/policy_learning/overview.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+            </div>
+
+            <footer class="bd-footer-content">
+              
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the robocasa core team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright the robocasa core team, 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+            </footer>
+
+        </main>
+    </div>
+  </div>
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+     
+  </footer>
+  </body>
+</html>

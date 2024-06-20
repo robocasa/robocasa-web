@@ -1,511 +1,344 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search &#8212; robomimic 0.3 documentation</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - robocasa 1.4 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="static/pygments.css" />
-    <link rel="stylesheet" href="static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-pythia-theme.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    
-    <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
-    <script src="static/jquery.js"></script>
-    <script src="static/underscore.js"></script>
-    <script src="static/doctools.js"></script>
-    <script src="static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="static/searchtools.js"></script>
-    <script src="static/language_data.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
+  <script src="_static/searchtools.js"></script>
+  <script src="_static/language_data.js"></script>
+  <script src="searchindex.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="#" />
-  <script src="searchindex.js" defer></script>
-  
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div class="pst-scroll-pixel-helper"></div>
+    <header class="bd-header navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar shadow" id="navbar-main">
+<div class="bd-header__inner bd-page-width">
+  <button class="sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items">
     
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <div class="me-auto navbar-header-items__center">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        <div class="navbar-item"><ul id="navbar-main-elements" class="navbar-nav">
+  
+  
+</ul></div>
+      
+    </div>
+    
+    
+  </div>
+  
+  
+
+  
+</div>
+
+    </header>
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
         
-      
-      
-      <img src="static/robomimic_logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">robomimic 0.3 documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="#" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
+        
+        
+          
+        
+        <div class="bd-sidebar-primary bd-sidebar">
+          
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item"><ul id="navbar-main-elements" class="navbar-nav">
+  
+  
+</ul></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="#"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction:</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="introduction/overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="introduction/installation.html">
-   Installation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="introduction/implemented_algorithms.html">
-   Implemented Algorithms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="introduction/getting_started.html">
-   Getting Started
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="introduction/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction/getting_started.html">Quick start</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Datasets
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datasets</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets/overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets/robomimic_v0.1.html">
-   robomimic v0.1 (CoRL 2021)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets/mimicgen.html">
-   MimicGen (CoRL 2023)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets/robosuite.html">
-   robosuite Datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets/d4rl.html">
-   D4RL
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets/momart.html">
-   MOMART Datasets and Experiments
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets/roboturk_pilot.html">
-   RoboTurk Pilot
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="dataset/overview.html">Datasets</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Pretrained Models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Policy Learning</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="model_zoo/robomimic_v0.1.html">
-   robomimic-v0.1
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Tutorials
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorials/configs.html">
-   Configuring and Launching Training Runs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorials/viewing_results.html">
-   Logging and Viewing Training Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorials/hyperparam_scan.html">
-   Running Hyperparameter Scans
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorials/reproducing_experiments.html">
-   Reproducing Published Experiments and Results
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorials/dataset_contents.html">
-   Dataset Contents and Visualization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorials/training_transformers.html">
-   Training Transformers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorials/using_pretrained_models.html">
-   Using Pretrained Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorials/observations.html">
-   Multimodal Observations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorials/pretrained_representations.html">
-   Pre-trained Visual Representations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorials/custom_algorithms.html">
-   Implementing Custom Algorithms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorials/tensor_collections.html">
-   Operations over Tensor Collections
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Modules
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="modules/overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="modules/dataset.html">
-   SequenceDataset
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="modules/algorithms.html">
-   Algorithms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="modules/models.html">
-   Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="modules/configs.html">
-   Configs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="modules/environments.html">
-   Environments
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Source API
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="api/robomimic.html">
-   robomimic package
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="api/robomimic.algo.html">
-     robomimic.algo package
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="api/robomimic.config.html">
-     robomimic.config package
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="api/robomimic.envs.html">
-     robomimic.envs package
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="api/robomimic.models.html">
-     robomimic.models package
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="api/robomimic.utils.html">
-     robomimic.utils package
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Miscellaneous
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="miscellaneous/troubleshooting.html">
-   Troubleshooting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="miscellaneous/contributing.html">
-   Contributing Guidelines
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="miscellaneous/team.html">
-   Team
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="miscellaneous/acknowledgments.html">
-   Acknowledgments
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="miscellaneous/references.html">
-   Projects using robomimic
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Previous Versions
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="versions/v0.2.html">
-   v0.2
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="policy_learning/overview.html">RoboCasa Policy Learning Repo</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-            </div>
-            
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
         </div>
-    </div>
-    <div id="rtd-footer-container"></div>
-</div>
 
-
+        
+        <main id="main-content" class="bd-main" role="main">
           
 
+            <div class="bd-content">
 
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+              <div class="bd-article-container">
+
+                
+  <div class="bd-search-container">
+    <h1>Search</h1>
+    <noscript>
+      <div class="admonition error">
+        <p class="admonition-title">Error</p>
+        <p>Please activate JavaScript to enable the search functionality.</p>
+      </div>
+    </noscript>
     
-    <div class="header-article row sticky-top noprint">
-        
+<form class="bd-search d-flex align-items-center"
+      action="#"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    <div id="search-results"></div>
+  </div>
+  <script>
+    // Activate the search field on page load
+    let searchInput = document.querySelector("form.bd-search input");
+    if (searchInput) {
+        searchInput.focus();
+        searchInput.select();
+        console.log("[PST]: Set focus on search field.");
+    }
+  </script>
 
 
+                
+                
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+                
+                
+                  <footer class="prev-next-footer">
+                    
+<div class="prev-next-area">
+</div>
+                  </footer>
+                
+              </div>
+
+              
+              
+                
+              
+
+
+                
+                <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
-    <div class="header-article__right">
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-    </div>
-</div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-</div>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1></h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                    </div>
-                </div>
+  
+</div>
+</div>
             </div>
-            <main id="main-content" role="main">
-                
-              <div>
-                
-  <h1 id="search-documentation">Search</h1>
-  
-  <noscript>
-  <div class="admonition warning">
-  <p>
-    Please activate JavaScript to enable the search
-    functionality.
-  </p>
-  </div>
-  </noscript>
-  
-  
-  <p>
-    Searching for multiple words only shows matches that contain
-    all words.
-  </p>
-  
-  
-  <form action="" method="get">
-    <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-    <input type="submit" value="search" />
-    <span id="search-progress" style="padding-left: 10px"></span>
-  </form>
-  
-  
-  
-  <div id="search-results">
-  
-  </div>
-  
 
-              </div>
+            <footer class="bd-footer-content">
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the robocasa core team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright the robocasa core team, 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
             </footer>
-        </div>
+
+        </main>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By the robomimic core team<br/>
-  
-      &copy; Copyright the robomimic core team, 2023.<br/>
-</p>
-        </footer>
-    </div>
+  </div>
     
-</div>
-
-
-      </div>
-    </div>
-  
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
-
+  <footer class="bd-footer">
+     
+  </footer>
   </body>
 </html>
