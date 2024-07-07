@@ -1,0 +1,61 @@
+robocasa.environments.kitchen.multi\_stage.serving\_food package
+================================================================
+
+Submodules
+----------
+
+robocasa.environments.kitchen.multi\_stage.serving\_food.dessert\_upgrade module
+--------------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.serving_food.dessert_upgrade
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.environments.kitchen.multi\_stage.serving\_food.pan\_transfer module
+-----------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.serving_food.pan_transfer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.environments.kitchen.multi\_stage.serving\_food.place\_food\_in\_bowls module
+--------------------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.serving_food.place_food_in_bowls
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.environments.kitchen.multi\_stage.serving\_food.prepare\_soup\_serving module
+--------------------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.serving_food.prepare_soup_serving
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.environments.kitchen.multi\_stage.serving\_food.serve\_steak module
+----------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.serving_food.serve_steak
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.environments.kitchen.multi\_stage.serving\_food.wine\_serving\_prep module
+-----------------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.serving_food.wine_serving_prep
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.serving_food
+   :members:
+   :undoc-members:
+   :show-inheritance:

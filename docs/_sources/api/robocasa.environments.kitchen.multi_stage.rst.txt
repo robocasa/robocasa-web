@@ -1,0 +1,37 @@
+robocasa.environments.kitchen.multi\_stage package
+==================================================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   robocasa.environments.kitchen.multi_stage.baking
+   robocasa.environments.kitchen.multi_stage.boiling
+   robocasa.environments.kitchen.multi_stage.brewing
+   robocasa.environments.kitchen.multi_stage.chopping_food
+   robocasa.environments.kitchen.multi_stage.clearing_table
+   robocasa.environments.kitchen.multi_stage.defrosting_food
+   robocasa.environments.kitchen.multi_stage.frying
+   robocasa.environments.kitchen.multi_stage.making_toast
+   robocasa.environments.kitchen.multi_stage.meat_preparation
+   robocasa.environments.kitchen.multi_stage.mixing_and_blending
+   robocasa.environments.kitchen.multi_stage.reheating_food
+   robocasa.environments.kitchen.multi_stage.restocking_supplies
+   robocasa.environments.kitchen.multi_stage.sanitize_surface
+   robocasa.environments.kitchen.multi_stage.serving_food
+   robocasa.environments.kitchen.multi_stage.setting_the_table
+   robocasa.environments.kitchen.multi_stage.snack_preparation
+   robocasa.environments.kitchen.multi_stage.steaming_food
+   robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers
+   robocasa.environments.kitchen.multi_stage.washing_dishes
+   robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables
+
+Module contents
+---------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage
+   :members:
+   :undoc-members:
+   :show-inheritance:

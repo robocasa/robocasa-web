@@ -1,0 +1,836 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Composite Task Overview &#8212; robocasa 1.4 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4fea3ae4a0a4ba949df0a89bbae557cc2ce861ae" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="RoboCasa Policy Learning Repo" href="../policy_learning/overview.html" />
+    <link rel="prev" title="Atomic Task Overview" href="atomic_tasks.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">robocasa 1.4 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/getting_started.html">
+   Quick start
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datasets and Tasks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="atomic_tasks.html">
+   Atomic Task Overview
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Composite Task Overview
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Policy Learning
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../policy_learning/overview.html">
+   RoboCasa Policy Learning Repo
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/robocasa.html">
+   robocasa package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/robocasa.environments.html">
+     robocasa.environments package
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../api/robocasa.models.html">
+     robocasa.models package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/robocasa.models.arenas.html">
+       robocasa.models.arenas package
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../api/robocasa.models.objects.html">
+       robocasa.models.objects package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../api/robocasa.models.objects.fixtures.html">
+         robocasa.models.objects.fixtures package
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../api/robocasa.utils.html">
+     robocasa.utils package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/robocasa.utils.usd.html">
+       robocasa.utils.usd package
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/dataset_tasks/composite_tasks.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Composite Task Overview</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="composite-task-overview">
+<h1>Composite Task Overview<a class="headerlink" href="#composite-task-overview" title="Permalink to this headline">#</a></h1>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: left;">Task</th>
+<th style="text-align: left;">Activity</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ThawInSink</td>
+<td style="text-align: left;">Defrosting food</td>
+<td style="text-align: left;">Pick the object from the counter and place it in the sink. Then turn on the sink faucet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">CerealAndBowl</td>
+<td style="text-align: left;">Snack preparation</td>
+<td style="text-align: left;">Open the cabinet, pick the cereal and bowl from the cabinet and place it on the counter. Then close the cabinet</td>
+</tr>
+<tr>
+<td style="text-align: left;">BreadAndCheese</td>
+<td style="text-align: left;">Snack preparation</td>
+<td style="text-align: left;">Pick the bread and cheese, place them on the cutting board,</td>
+</tr>
+<tr>
+<td style="text-align: left;">YogurtDelightPrep</td>
+<td style="text-align: left;">Snack preparation</td>
+<td style="text-align: left;">Place the yogurt and fruit onto the counter.</td>
+</tr>
+<tr>
+<td style="text-align: left;">StackBowlsInSink</td>
+<td style="text-align: left;">Washing dishes</td>
+<td style="text-align: left;">Stack the bowls in the sink</td>
+</tr>
+<tr>
+<td style="text-align: left;">PreSoakPan</td>
+<td style="text-align: left;">Washing dishes</td>
+<td style="text-align: left;">Pick the pan and sponge and place them into the sink. Then turn on the sink.</td>
+</tr>
+<tr>
+<td style="text-align: left;">SortingCleanup</td>
+<td style="text-align: left;">Washing dishes</td>
+<td style="text-align: left;">Pick the mug and place it in the sink. Pick the bowl and place it in the cabinet and then close the cabinet</td>
+</tr>
+<tr>
+<td style="text-align: left;">DryDrinkware</td>
+<td style="text-align: left;">Washing dishes</td>
+<td style="text-align: left;">A wet mug is on the counter and need to be dried. Pick it up and place it upside down in the open cabinet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">KettleBoiling</td>
+<td style="text-align: left;">Brewing</td>
+<td style="text-align: left;">Pick the kettle from the counter and place it on a stove burner. Then, turn the burner on</td>
+</tr>
+<tr>
+<td style="text-align: left;">CondimentCollection</td>
+<td style="text-align: left;">Clearing table</td>
+<td style="text-align: left;">Pick the condiments from the counter and place it in the cabinet</td>
+</tr>
+<tr>
+<td style="text-align: left;">DessertAssembly</td>
+<td style="text-align: left;">Clearing table</td>
+<td style="text-align: left;">Pick up the dessert inside a container and place it on the tray. Pick up the cupcake and place it on the tray.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ClearingCleaningReceptacles</td>
+<td style="text-align: left;">Clearing table</td>
+<td style="text-align: left;">Pick the receptacles and place them in the sink. Then, turn on the water</td>
+</tr>
+<tr>
+<td style="text-align: left;">CandleCleanup</td>
+<td style="text-align: left;">Clearing table</td>
+<td style="text-align: left;">Pick the decorations from the dining table and place it in the open cabinet</td>
+</tr>
+<tr>
+<td style="text-align: left;">FoodCleanup</td>
+<td style="text-align: left;">Clearing table</td>
+<td style="text-align: left;">Pick the food from the counter and place it in the cabinet. Then close the cabinet</td>
+</tr>
+<tr>
+<td style="text-align: left;">DrinkwareConsolidation</td>
+<td style="text-align: left;">Clearing table</td>
+<td style="text-align: left;">Pick the drinks from the island and place it in the open cabinet</td>
+</tr>
+<tr>
+<td style="text-align: left;">ArrangeTea</td>
+<td style="text-align: left;">Brewing</td>
+<td style="text-align: left;">Pick the kettle from the counter and place it on the tray. Then pick the mug from the cabinet and place it on the tray. Then close the cabinet doors.</td>
+</tr>
+<tr>
+<td style="text-align: left;">RestockPantry</td>
+<td style="text-align: left;">Restocking supplies</td>
+<td style="text-align: left;">Pick the cans from the counter and place them in their designated side in the cabinet</td>
+</tr>
+<tr>
+<td style="text-align: left;">StockingBreakfastFoods</td>
+<td style="text-align: left;">Restocking supplies</td>
+<td style="text-align: left;">Pick the packaged food from the counter and place it in the closest cabinet to them.</td>
+</tr>
+<tr>
+<td style="text-align: left;">RestockBowls</td>
+<td style="text-align: left;">Restocking supplies</td>
+<td style="text-align: left;">Open the cabinet. Pick the bowls from the counter and place it in the cabinet directly in front. Then close the cabinet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ArrangeVegetables</td>
+<td style="text-align: left;">Chopping food</td>
+<td style="text-align: left;">Pick the vegetables from the sink and place them on the cutting board</td>
+</tr>
+<tr>
+<td style="text-align: left;">OrganizeVegetables</td>
+<td style="text-align: left;">Chopping food</td>
+<td style="text-align: left;">Place the vegetables on separate cutting boards</td>
+</tr>
+<tr>
+<td style="text-align: left;">BreadSetupSlicing</td>
+<td style="text-align: left;">Chopping food</td>
+<td style="text-align: left;">Place all breads on the cutting board</td>
+</tr>
+<tr>
+<td style="text-align: left;">PushUtensilsToSink</td>
+<td style="text-align: left;">Sanitize surface</td>
+<td style="text-align: left;">Push the utensils into the sink</td>
+</tr>
+<tr>
+<td style="text-align: left;">PrepForSanitizing</td>
+<td style="text-align: left;">Sanitize surface</td>
+<td style="text-align: left;">Pick the cleaning supplies from the cabinet and place it on the counter</td>
+</tr>
+<tr>
+<td style="text-align: left;">CleanMicrowave</td>
+<td style="text-align: left;">Sanitize surface</td>
+<td style="text-align: left;">Open the microwave. Then, pick the sponge from the counter and place it in the microwave</td>
+</tr>
+<tr>
+<td style="text-align: left;">DryDishes</td>
+<td style="text-align: left;">Washing dishes</td>
+<td style="text-align: left;">Pick the cup and bowl from the sink and place them on the counter for drying</td>
+</tr>
+<tr>
+<td style="text-align: left;">MakeFruitBowl</td>
+<td style="text-align: left;">Snack preparation</td>
+<td style="text-align: left;">Open the cabinet. Pick the fruits from the cabinet and place them into the bowl. Then close the cabinet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">OrganizeCleaningSupplies</td>
+<td style="text-align: left;">Tidying cabinets and drawers</td>
+<td style="text-align: left;">Open the cabinet. Pick the cleaner and place it next to the sink. Then close the cabinet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">DrawerUtensilSort</td>
+<td style="text-align: left;">Tidying cabinets and drawers</td>
+<td style="text-align: left;">Open the left drawer and push the utensils inside it</td>
+</tr>
+<tr>
+<td style="text-align: left;">PantryMishap</td>
+<td style="text-align: left;">Tidying cabinets and drawers</td>
+<td style="text-align: left;">Open the cabinet. Pick place the vegetable on the counter and the canned food in the drawer. Close the cabinet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ShakerShuffle</td>
+<td style="text-align: left;">Tidying cabinets and drawers</td>
+<td style="text-align: left;">Pick place the shaker into the drawer. Then, Close the cabinet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">SnackSorting</td>
+<td style="text-align: left;">Tidying cabinets and drawers</td>
+<td style="text-align: left;">Place the bar in the bowl and close the drawer</td>
+</tr>
+<tr>
+<td style="text-align: left;">FillKettle</td>
+<td style="text-align: left;">Boiling</td>
+<td style="text-align: left;">Open the cabinet, pick the kettle from the cabinet, and place it in the sink</td>
+</tr>
+<tr>
+<td style="text-align: left;">PrepareToast</td>
+<td style="text-align: left;">Making toast</td>
+<td style="text-align: left;">Open the cabinet, pick the bread, place it on the cutting board, pick the jam, place it on the counter, and close the cabinet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">SweetSavoryToastSetup</td>
+<td style="text-align: left;">Making toast</td>
+<td style="text-align: left;">Pick the avocado and bread from the counter and place it on the plate. Then pick the jam from the cabinet and place it next to the plate. Lastly, close the cabinet door</td>
+</tr>
+<tr>
+<td style="text-align: left;">CheesyBread</td>
+<td style="text-align: left;">Making toast</td>
+<td style="text-align: left;">Start with a slice of bread already on a plate and a wedge of cheese on the counter. Pick up the wedge of cheese and place it on the slice of bread to prepare a simple cheese on bread dish.</td>
+</tr>
+<tr>
+<td style="text-align: left;">BreadSelection</td>
+<td style="text-align: left;">Making toast</td>
+<td style="text-align: left;">Prepare to make a delicious snack by gathering the right type of bread. From the different types of pastries on the counter, select a croissant and place it on the cutting board. Additionally, retrieve a jar of jam from the cabinet and place it alongside the croissant on the cutting board to complete the setup.</td>
+</tr>
+<tr>
+<td style="text-align: left;">HeatMultipleWater</td>
+<td style="text-align: left;">Boiling</td>
+<td style="text-align: left;">Pick the kettle from the cab and place it on a stove burner. Then, pick the pot from the counter and place on another stove burner. Finally, turn both burners on</td>
+</tr>
+<tr>
+<td style="text-align: left;">VeggieBoil</td>
+<td style="text-align: left;">Boiling</td>
+<td style="text-align: left;">Pick up the pot and place it in the sink. Then turn on the sink and let the pot fill up with water. Then turn the sink off and move the pot to the stove. Lastly, turn on the stove and place the food in the pot for boiling.</td>
+</tr>
+<tr>
+<td style="text-align: left;">PrewashFoodAssembly</td>
+<td style="text-align: left;">Washing fruits and vegetables</td>
+<td style="text-align: left;">Pick the fruit/vegetable from the cabinet and place it in the bowl. Then pick the bowl and place it in the sink. Then turn on the sink facuet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ClearClutter</td>
+<td style="text-align: left;">Washing fruits and vegetables</td>
+<td style="text-align: left;">Pick up the fruits and vegetables and place them in the sink. Then, turn on the sink to wash them. Then, turn the sink off, put them in the tray.</td>
+</tr>
+<tr>
+<td style="text-align: left;">DrainVeggies</td>
+<td style="text-align: left;">Washing fruits and vegetables</td>
+<td style="text-align: left;">Dump the vegetable from the pot into the sink. Then turn on the sink and wash the vegetable. Then turn off the sink and put the vegetable back in the pot</td>
+</tr>
+<tr>
+<td style="text-align: left;">MicrowaveThawing</td>
+<td style="text-align: left;">Defrosting food</td>
+<td style="text-align: left;">Pick the food from the counter and place it in the microwave. Then turn on the microwave.</td>
+</tr>
+<tr>
+<td style="text-align: left;">QuickThaw</td>
+<td style="text-align: left;">Defrosting food</td>
+<td style="text-align: left;">Frozen meat rests on a plate on the counter. Retrieve the meat and place it in a pot on a burner. Then, turn the burner on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">PrepMarinatingMeat</td>
+<td style="text-align: left;">Meat preparation</td>
+<td style="text-align: left;">Pick the meat from its container and place it on the cutting board. Then pick the condiment from the cabinet and place it next to the cutting board</td>
+</tr>
+<tr>
+<td style="text-align: left;">SetupFrying</td>
+<td style="text-align: left;">Frying</td>
+<td style="text-align: left;">Pick the pan from the cabinet and place it on the stove. Then turn on the stove burner for the pan.</td>
+</tr>
+<tr>
+<td style="text-align: left;">FryingPanAdjustment</td>
+<td style="text-align: left;">Frying</td>
+<td style="text-align: left;">Pick and place the pan from the current burner to another burner and turn the burner on</td>
+</tr>
+<tr>
+<td style="text-align: left;">MealPrepStaging</td>
+<td style="text-align: left;">Frying</td>
+<td style="text-align: left;">Pick place both pans onto different burners. Then, place the vegetable and the meat on different pans</td>
+</tr>
+<tr>
+<td style="text-align: left;">AssembleCookingArray</td>
+<td style="text-align: left;">Frying</td>
+<td style="text-align: left;">Move the meat onto the pan on the stove. Then, move the condiment and vegetable from the cabinet to the counter where the plate is.</td>
+</tr>
+<tr>
+<td style="text-align: left;">SearingMeat</td>
+<td style="text-align: left;">Frying</td>
+<td style="text-align: left;">Grab the pan from the cabinet and place on the front left burner on the stove. Then place the meat on the stove and turn the burner on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">DateNight</td>
+<td style="text-align: left;">Setting the table</td>
+<td style="text-align: left;">Pick up the decoration and the alcohol in the cabinet and move them to the dining counter.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ArrangeBreadBasket</td>
+<td style="text-align: left;">Setting the table</td>
+<td style="text-align: left;">Open the cabinet, pick up the bread from the cabinet and place in the bowl. Then move the bowl to the dining counter.</td>
+</tr>
+<tr>
+<td style="text-align: left;">SeasoningSpiceSetup</td>
+<td style="text-align: left;">Setting the table</td>
+<td style="text-align: left;">Move the condiments from the cabinet directly in front to the dining counter</td>
+</tr>
+<tr>
+<td style="text-align: left;">SetBowlsForSoup</td>
+<td style="text-align: left;">Setting the table</td>
+<td style="text-align: left;">Move the bowls from the cabinet to the plates on the dining table</td>
+</tr>
+<tr>
+<td style="text-align: left;">BeverageOrganization</td>
+<td style="text-align: left;">Setting the table</td>
+<td style="text-align: left;">Move the drinks to the dining counter</td>
+</tr>
+<tr>
+<td style="text-align: left;">SizeSorting</td>
+<td style="text-align: left;">Setting the table</td>
+<td style="text-align: left;">Stack the cup/bowl from largest to smallest</td>
+</tr>
+<tr>
+<td style="text-align: left;">HeatMug</td>
+<td style="text-align: left;">Reheating food</td>
+<td style="text-align: left;">Pick the mug from the cabinet and place it inside the microwave. Then close the microwave</td>
+</tr>
+<tr>
+<td style="text-align: left;">PrepareCoffee</td>
+<td style="text-align: left;">Brewing</td>
+<td style="text-align: left;">Pick the mug from the cabinet, place it under the coffee machine dispenser, and press the start button</td>
+</tr>
+<tr>
+<td style="text-align: left;">WineServingPrep</td>
+<td style="text-align: left;">Serving food</td>
+<td style="text-align: left;">Open the cabinet directly in front. Then, move the alcohol and the cup to the counter with the decoration on it.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ServeSteak</td>
+<td style="text-align: left;">Serving food</td>
+<td style="text-align: left;">Pick up the pan with the steak in it and place it on the dining table. Then, place the steak on the plate</td>
+</tr>
+<tr>
+<td style="text-align: left;">PlaceFoodInBowls</td>
+<td style="text-align: left;">Serving food</td>
+<td style="text-align: left;">Pick both bowls and place them on the counter. Then pick the food and place it in one bowl and pick the other food and place it in the other bowl.</td>
+</tr>
+<tr>
+<td style="text-align: left;">DessertUpgrade</td>
+<td style="text-align: left;">Serving food</td>
+<td style="text-align: left;">Move the dessert items from the plate to the tray</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastryDisplay</td>
+<td style="text-align: left;">Baking</td>
+<td style="text-align: left;">Place the pastrys on the plates</td>
+</tr>
+<tr>
+<td style="text-align: left;">OrganizeBakingIngredients</td>
+<td style="text-align: left;">Baking</td>
+<td style="text-align: left;">Pick place the eggs and milk to near the bowl</td>
+</tr>
+<tr>
+<td style="text-align: left;">SimmeringSauce</td>
+<td style="text-align: left;">Reheating food</td>
+<td style="text-align: left;">Place the pan on the rear right burner on the stove. Then place the tomato and the onion in the pan and turn on the rear right burner.</td>
+</tr>
+<tr>
+<td style="text-align: left;">CountertopCleanup</td>
+<td style="text-align: left;">Sanitize surface</td>
+<td style="text-align: left;">Pick  the fruit and vegetable from the counter and place it in the cabinet. Then, open the drawer and pick the cleaner and sponge from the drawer and place it on the counter.</td>
+</tr>
+<tr>
+<td style="text-align: left;">SetupJuicing</td>
+<td style="text-align: left;">Mixing and blending</td>
+<td style="text-align: left;">Open the cabinet, pick all 4 fruits from the cabinet and place them on the counter</td>
+</tr>
+<tr>
+<td style="text-align: left;">ColorfulSalsa</td>
+<td style="text-align: left;">Mixing and blending</td>
+<td style="text-align: left;">Place the avocado, onion, tomato and bell pepper on the cutting board</td>
+</tr>
+<tr>
+<td style="text-align: left;">SpicyMarinade</td>
+<td style="text-align: left;">Mixing and blending</td>
+<td style="text-align: left;">Open the cabinet. Place the bowl and condiment on the counter. Then place the lime and garlic on the cutting board.</td>
+</tr>
+<tr>
+<td style="text-align: left;">SteamInMicrowave</td>
+<td style="text-align: left;">Steaming food</td>
+<td style="text-align: left;">Pick the vegetable from the sink and place it in the bowl. Then pick the bowl and place it in the microwave. Then close the microwave door and press the start button.</td>
+</tr>
+<tr>
+<td style="text-align: left;">MultistepSteaming</td>
+<td style="text-align: left;">Steaming food</td>
+<td style="text-align: left;">Turn on the sink. Then move the vegetable from the counter to the sink. Turn of the sink. Move the vegetable from the sink to the pot next to the stove. Finally, move the pot to the front left burner.</td>
+</tr>
+<tr>
+<td style="text-align: left;">PrepareSoupServing</td>
+<td style="text-align: left;">Serving food</td>
+<td style="text-align: left;">Open the cabinet and move the ladle to the pot. Then close the cabinet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">VeggieDipPrep</td>
+<td style="text-align: left;">Snack preparation</td>
+<td style="text-align: left;">Place the two vegetables and a bowl onto the tray for setting up a vegetable dip station.</td>
+</tr>
+<tr>
+<td style="text-align: left;">WaffleReheat</td>
+<td style="text-align: left;">Reheating food</td>
+<td style="text-align: left;">Open the microwave, place the bowl with waffle inside the microwave, then close the microwave door and turn it on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">WarmCroissant</td>
+<td style="text-align: left;">Reheating food</td>
+<td style="text-align: left;">Pick the croissant and place it on the pan. Then turn on the stove to warm the croissant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">MakeLoadedPotato</td>
+<td style="text-align: left;">Reheating food</td>
+<td style="text-align: left;">Retrieve the reheated potato from the microwave, then place it on the cutting board along with cheese and a bottle of condiment.</td>
+</tr>
+<tr>
+<td style="text-align: left;">PanTransfer</td>
+<td style="text-align: left;">Serving food</td>
+<td style="text-align: left;">Pick up the pan and dump the vegetables in it onto the plate. Then, return the pan to the stove.</td>
+</tr>
+<tr>
+<td style="text-align: left;">SteamVegetables</td>
+<td style="text-align: left;">Steaming food</td>
+<td style="text-align: left;">Place vegetables into the pot based on the amount of time it would take to steam each. e.g. potatoes and carrots would take the longest. Then, turn off the burner beneath the pot.</td>
+</tr>
+<tr>
+<td style="text-align: left;">CupcakeCleanup</td>
+<td style="text-align: left;">Baking</td>
+<td style="text-align: left;">Move the fresh-baked cupcake off the tray onto the counter, and place the bowl used for mixing into the sink.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ClearingTheCuttingBoard</td>
+<td style="text-align: left;">Chopping food</td>
+<td style="text-align: left;">Clear the non-vegetable object off the cutting board and place the vegetables onto it.</td>
+</tr>
+<tr>
+<td style="text-align: left;">MeatTransfer</td>
+<td style="text-align: left;">Chopping food</td>
+<td style="text-align: left;">Retrieve a container (either a pan or a bowl) from the cabinet, then place the raw meat into the container to avoid contamination.</td>
+</tr>
+<tr>
+<td style="text-align: left;">PrepForTenderizing</td>
+<td style="text-align: left;">Meat preparation</td>
+<td style="text-align: left;">Retrieve a rolling pin from the cabinet and place it next to the meat on the cutting board to prepare for tenderizing.</td>
+</tr>
+<tr>
+<td style="text-align: left;">BeverageSorting</td>
+<td style="text-align: left;">Restocking supplies</td>
+<td style="text-align: left;">Sort all alcoholic drinks to one cabinet, and non-alcoholic drinks to the other.</td>
+</tr>
+<tr>
+<td style="text-align: left;">BowlAndCup</td>
+<td style="text-align: left;">Clearing table</td>
+<td style="text-align: left;">Place the cup inside the bowl on the island and move it to any counter</td>
+</tr>
+<tr>
+<td style="text-align: left;">DefrostByCategory</td>
+<td style="text-align: left;">Defrosting food</td>
+<td style="text-align: left;">There is a mixed pile of frozen fruits and vegetables on the counter. Locate all the frozen vegetables and place the items in a bowl on the counter. Take all the frozen fruits and defrost them in a running sink.</td>
+</tr>
+<tr>
+<td style="text-align: left;">AfterwashSorting</td>
+<td style="text-align: left;">Washing fruits and vegetables</td>
+<td style="text-align: left;">Pick the foods of the same kind from the sink and place them in one bowl. Place the other food in the other bowl. Then, turn off the sink</td>
+</tr>
+</tbody>
+</table></section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="atomic_tasks.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Atomic Task Overview</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../policy_learning/overview.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">RoboCasa Policy Learning Repo</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By the robocasa core team<br/>
+  
+      &copy; Copyright the robocasa core team, 2024.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

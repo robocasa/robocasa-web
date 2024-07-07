@@ -1,0 +1,53 @@
+robocasa.environments.kitchen.multi\_stage.washing\_dishes package
+==================================================================
+
+Submodules
+----------
+
+robocasa.environments.kitchen.multi\_stage.washing\_dishes.dry\_dishes module
+-----------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.washing_dishes.dry_dishes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.environments.kitchen.multi\_stage.washing\_dishes.dry\_drinkware module
+--------------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.washing_dishes.dry_drinkware
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.environments.kitchen.multi\_stage.washing\_dishes.pre\_soak\_pan module
+--------------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.washing_dishes.pre_soak_pan
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.environments.kitchen.multi\_stage.washing\_dishes.sorting\_cleanup module
+----------------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.washing_dishes.sorting_cleanup
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.environments.kitchen.multi\_stage.washing\_dishes.stack\_bowls module
+------------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.washing_dishes.stack_bowls
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.washing_dishes
+   :members:
+   :undoc-members:
+   :show-inheritance:

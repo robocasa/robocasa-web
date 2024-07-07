@@ -1,0 +1,1079 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>robocasa.utils package &#8212; robocasa 1.4 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4fea3ae4a0a4ba949df0a89bbae557cc2ce861ae" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="robocasa.utils.usd package" href="robocasa.utils.usd.html" />
+    <link rel="prev" title="robocasa.models.objects.fixtures package" href="robocasa.models.objects.fixtures.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">robocasa 1.4 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/getting_started.html">
+   Quick start
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datasets and Tasks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dataset_tasks/overview.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dataset_tasks/atomic_tasks.html">
+   Atomic Task Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dataset_tasks/composite_tasks.html">
+   Composite Task Overview
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Policy Learning
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../policy_learning/overview.html">
+   RoboCasa Policy Learning Repo
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="robocasa.html">
+   robocasa package
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="robocasa.environments.html">
+     robocasa.environments package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="robocasa.environments.kitchen.html">
+       robocasa.environments.kitchen package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="robocasa.environments.kitchen.multi_stage.html">
+         robocasa.environments.kitchen.multi_stage package
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="robocasa.environments.kitchen.single_stage.html">
+         robocasa.environments.kitchen.single_stage package
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="robocasa.models.html">
+     robocasa.models package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.models.arenas.html">
+       robocasa.models.arenas package
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="robocasa.models.objects.html">
+       robocasa.models.objects package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="robocasa.models.objects.fixtures.html">
+         robocasa.models.objects.fixtures package
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     robocasa.utils package
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.utils.usd.html">
+       robocasa.utils.usd package
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/api/robocasa.utils.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subpackages">
+   Subpackages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.dataset_registry">
+   robocasa.utils.dataset_registry module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.get_all_items_by_type">
+   robocasa.utils.get_all_items_by_type module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.kitchen_utils">
+   robocasa.utils.kitchen_utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.object_utils">
+   robocasa.utils.object_utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.placement_samplers">
+   robocasa.utils.placement_samplers module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.texture_swap">
+   robocasa.utils.texture_swap module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>robocasa.utils package</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subpackages">
+   Subpackages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.dataset_registry">
+   robocasa.utils.dataset_registry module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.get_all_items_by_type">
+   robocasa.utils.get_all_items_by_type module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.kitchen_utils">
+   robocasa.utils.kitchen_utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.object_utils">
+   robocasa.utils.object_utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.placement_samplers">
+   robocasa.utils.placement_samplers module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.texture_swap">
+   robocasa.utils.texture_swap module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="robocasa-utils-package">
+<h1>robocasa.utils package<a class="headerlink" href="#robocasa-utils-package" title="Permalink to this headline">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="robocasa.utils.usd.html">robocasa.utils.usd package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.usd.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.usd.html#robocasa-utils-usd-component-module">robocasa.utils.usd.component module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.usd.html#robocasa-utils-usd-demo-module">robocasa.utils.usd.demo module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.usd.html#robocasa-utils-usd-exporter-module">robocasa.utils.usd.exporter module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.usd.html#robocasa-utils-usd-exporter-test-module">robocasa.utils.usd.exporter_test module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.usd.html#module-robocasa.utils.usd.shapes">robocasa.utils.usd.shapes module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.usd.html#module-robocasa.utils.usd.utils">robocasa.utils.usd.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.usd.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="module-robocasa.utils.dataset_registry">
+<span id="robocasa-utils-dataset-registry-module"></span><h2>robocasa.utils.dataset_registry module<a class="headerlink" href="#module-robocasa.utils.dataset_registry" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.dataset_registry.get_ds_path">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.dataset_registry.</span></span><span class="sig-name descname"><span class="pre">get_ds_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.dataset_registry.get_ds_path" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-robocasa.utils.get_all_items_by_type">
+<span id="robocasa-utils-get-all-items-by-type-module"></span><h2>robocasa.utils.get_all_items_by_type module<a class="headerlink" href="#module-robocasa.utils.get_all_items_by_type" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.get_all_items_by_type.get_items_by_type">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.get_all_items_by_type.</span></span><span class="sig-name descname"><span class="pre">get_items_by_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['vegetable',</span> <span class="pre">'fruit']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.get_all_items_by_type.get_items_by_type" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.get_all_items_by_type.list_of_strings">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.get_all_items_by_type.</span></span><span class="sig-name descname"><span class="pre">list_of_strings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.get_all_items_by_type.list_of_strings" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-robocasa.utils.kitchen_utils">
+<span id="robocasa-utils-kitchen-utils-module"></span><h2>robocasa.utils.kitchen_utils module<a class="headerlink" href="#module-robocasa.utils.kitchen_utils" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="module-robocasa.utils.object_utils">
+<span id="robocasa-utils-object-utils-module"></span><h2>robocasa.utils.object_utils module<a class="headerlink" href="#module-robocasa.utils.object_utils" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.check_obj_fixture_contact">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">check_obj_fixture_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixture_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.check_obj_fixture_contact" title="Permalink to this definition">#</a></dt>
+<dd><p>check if object is in contact with fixture</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.check_obj_in_receptacle">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">check_obj_in_receptacle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receptacle_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.check_obj_in_receptacle" title="Permalink to this definition">#</a></dt>
+<dd><p>check if object is in receptacle object based on threshold</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.compute_rel_transform">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">compute_rel_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A_mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B_mat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.compute_rel_transform" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets B’s position and rotation relative to A’s frame</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.fixture_pairwise_dist">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">fixture_pairwise_dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.fixture_pairwise_dist" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the distance between two fixtures by finding the minimum distance between their exterior bounding box points</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.get_fixture_to_point_rel_offset">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">get_fixture_to_point_rel_offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixture</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.get_fixture_to_point_rel_offset" title="Permalink to this definition">#</a></dt>
+<dd><p>get offset relative to fixture’s frame, given a global point</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.get_pos_after_rel_offset">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">get_pos_after_rel_offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixture</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.get_pos_after_rel_offset" title="Permalink to this definition">#</a></dt>
+<dd><p>get global position of a fixture, after applying offset relative to center of fixture</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.get_rel_transform">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">get_rel_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixture_A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixture_B</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.get_rel_transform" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets fixture_B’s position and rotation relative to fixture_A’s frame</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.gripper_obj_far">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">gripper_obj_far</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'obj'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.gripper_obj_far" title="Permalink to this definition">#</a></dt>
+<dd><p>check if gripper is far from object based on distance defined by threshold</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.normalize_joint_value">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">normalize_joint_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_max</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.normalize_joint_value" title="Permalink to this definition">#</a></dt>
+<dd><p>normalize raw value to be between 0 and 1</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.obj_cos">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">obj_cos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'obj'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">1)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.obj_cos" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.obj_in_region">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">obj_in_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_quat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">px</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">py</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.obj_in_region" title="Permalink to this definition">#</a></dt>
+<dd><p>check if object is in the region defined by the points.
+Uses either the objects bounding box or the object’s horizontal radius</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.obj_inside_of">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">obj_inside_of</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixture_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial_check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.obj_inside_of" title="Permalink to this definition">#</a></dt>
+<dd><p>whether an object (another mujoco object) is inside of fixture. applies for most fixtures</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.objs_intersect">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">objs_intersect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_quat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_obj_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_obj_quat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.objs_intersect" title="Permalink to this definition">#</a></dt>
+<dd><p>check if two objects intersect</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.point_in_fixture">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">point_in_fixture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixture</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_2d</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.point_in_fixture" title="Permalink to this definition">#</a></dt>
+<dd><p>check if point is inside of the exterior bounding boxes of the fixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point</strong> (<em>np.array</em>) – point to check</p></li>
+<li><p><strong>fixture</strong> (<a class="reference internal" href="robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture" title="robocasa.models.objects.fixtures.fixture.Fixture"><em>Fixture</em></a>) – fixture object</p></li>
+<li><p><strong>only_2d</strong> (<em>bool</em>) – whether to check only in 2D</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.project_point_to_line">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">project_point_to_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.project_point_to_line" title="Permalink to this definition">#</a></dt>
+<dd><p>logic copied from here: <a class="reference external" href="https://stackoverflow.com/a/61342198">https://stackoverflow.com/a/61342198</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.object_utils.set_geom_dimensions">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.object_utils.</span></span><span class="sig-name descname"><span class="pre">set_geom_dimensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.object_utils.set_geom_dimensions" title="Permalink to this definition">#</a></dt>
+<dd><p>set the dimensions of geoms in a fixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sizes</strong> (<em>dict</em>) – dictionary of sizes for each side</p></li>
+<li><p><strong>positions</strong> (<em>dict</em>) – dictionary of positions for each side</p></li>
+<li><p><strong>geoms</strong> (<em>dict</em>) – dictionary of geoms for each side</p></li>
+<li><p><strong>rotated</strong> (<em>bool</em>) – whether the fixture is rotated. Fixture may be rotated to make texture appear uniform
+due to mujoco texture conventions</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-robocasa.utils.placement_samplers">
+<span id="robocasa-utils-placement-samplers-module"></span><h2>robocasa.utils.placement_samplers module<a class="headerlink" href="#module-robocasa.utils.placement_samplers" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.MultiRegionSampler">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.utils.placement_samplers.</span></span><span class="sig-name descname"><span class="pre">MultiRegionSampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mujoco_objects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'z'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_object_boundary_in_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_valid_placement</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.MultiRegionSampler" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.utils.placement_samplers.ObjectPositionSampler" title="robocasa.utils.placement_samplers.ObjectPositionSampler"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.utils.placement_samplers.ObjectPositionSampler</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.MultiRegionSampler.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixtures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_top</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.MultiRegionSampler.sample" title="Permalink to this definition">#</a></dt>
+<dd><p>Uniformly sample on a surface (not necessarily table surface).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fixtures</strong> (<em>dict</em>) – dictionary of current object placements in the scene as well as any other relevant
+obstacles that should not be in contact with newly sampled objects. Used to make sure newly
+generated placements are valid. Should be object names mapped to (pos, quat, MujocoObject)</p></li>
+<li><p><strong>reference</strong> (<em>str</em><em> or </em><em>3-tuple</em><em> or </em><em>None</em>) – if provided, sample relative placement. Can either be a string, which
+corresponds to an existing object found in &#64;fixtures, or a direct (x,y,z) value. If None, will sample
+relative to this sampler’s <cite>‘reference_pos’</cite> value.</p></li>
+<li><p><strong>on_top</strong> (<em>bool</em>) – if True, sample placement on top of the reference object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>dictionary of all object placements, mapping object_names to (pos, quat, obj), including the</dt><dd><p>placements specified in &#64;fixtures. Note quat is in (w,x,y,z) form</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.ObjectPositionSampler">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.utils.placement_samplers.</span></span><span class="sig-name descname"><span class="pre">ObjectPositionSampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mujoco_objects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_object_boundary_in_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_valid_placement</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_rot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.ObjectPositionSampler" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class of object placement sampler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of this sampler.</p></li>
+<li><p><strong>mujoco_objects</strong> (<em>None</em><em> or </em><em>MujocoObject</em><em> or </em><em>list of MujocoObject</em>) – single model or list of MJCF object models</p></li>
+<li><p><strong>ensure_object_boundary_in_range</strong> (<em>bool</em>) – If True, will ensure that the object is enclosed within a given boundary
+(should be implemented by subclass)</p></li>
+<li><p><strong>ensure_valid_placement</strong> (<em>bool</em>) – If True, will check for correct (valid) object placements</p></li>
+<li><p><strong>reference_pos</strong> (<em>3-array</em>) – global (x,y,z) position relative to which sampling will occur</p></li>
+<li><p><strong>z_offset</strong> (<em>float</em>) – Add a small z-offset to placements. This is useful for fixed objects
+that do not move (i.e. no free joint) to place them above the table.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.ObjectPositionSampler.add_objects">
+<span class="sig-name descname"><span class="pre">add_objects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mujoco_objects</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.ObjectPositionSampler.add_objects" title="Permalink to this definition">#</a></dt>
+<dd><p>Add additional objects to this sampler. Checks to make sure there’s no identical objects already stored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mujoco_objects</strong> (<em>MujocoObject</em><em> or </em><em>list of MujocoObject</em>) – single model or list of MJCF object models</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.ObjectPositionSampler.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.ObjectPositionSampler.reset" title="Permalink to this definition">#</a></dt>
+<dd><p>Resets this sampler. Removes all mujoco objects from this sampler.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.ObjectPositionSampler.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixtures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_top</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.ObjectPositionSampler.sample" title="Permalink to this definition">#</a></dt>
+<dd><p>Uniformly sample on a surface (not necessarily table surface).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fixtures</strong> (<em>dict</em>) – dictionary of current object placements in the scene as well as any other relevant
+obstacles that should not be in contact with newly sampled objects. Used to make sure newly
+generated placements are valid. Should be object names mapped to (pos, quat, MujocoObject)</p></li>
+<li><p><strong>reference</strong> (<em>str</em><em> or </em><em>3-tuple</em><em> or </em><em>None</em>) – if provided, sample relative placement. Can either be a string, which
+corresponds to an existing object found in &#64;fixtures, or a direct (x,y,z) value. If None, will sample
+relative to this sampler’s <cite>‘reference_pos’</cite> value.</p></li>
+<li><p><strong>on_top</strong> (<em>bool</em>) – if True, sample placement on top of the reference object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>dictionary of all object placements, mapping object_names to (pos, quat, obj), including the</dt><dd><p>placements specified in &#64;fixtures. Note quat is in (w,x,y,z) form</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.ObjectPositionSampler.sides_combinations">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">sides_combinations</span></span><a class="headerlink" href="#robocasa.utils.placement_samplers.ObjectPositionSampler.sides_combinations" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.ObjectPositionSampler.valid_sides">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">valid_sides</span></span><a class="headerlink" href="#robocasa.utils.placement_samplers.ObjectPositionSampler.valid_sides" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.SequentialCompositeSampler">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.utils.placement_samplers.</span></span><span class="sig-name descname"><span class="pre">SequentialCompositeSampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.SequentialCompositeSampler" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.utils.placement_samplers.ObjectPositionSampler" title="robocasa.utils.placement_samplers.ObjectPositionSampler"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.utils.placement_samplers.ObjectPositionSampler</span></code></a></p>
+<p>Samples position for each object sequentially. Allows chaining
+multiple placement initializers together - so that object locations can
+be sampled on top of other objects or relative to other object placements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of this sampler.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.SequentialCompositeSampler.add_objects">
+<span class="sig-name descname"><span class="pre">add_objects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mujoco_objects</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.SequentialCompositeSampler.add_objects" title="Permalink to this definition">#</a></dt>
+<dd><p>Override super method to make sure user doesn’t call this (all objects should implicitly belong to sub-samplers)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.SequentialCompositeSampler.add_objects_to_sampler">
+<span class="sig-name descname"><span class="pre">add_objects_to_sampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sampler_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mujoco_objects</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.SequentialCompositeSampler.add_objects_to_sampler" title="Permalink to this definition">#</a></dt>
+<dd><p>Adds specified &#64;mujoco_objects to sub-sampler with specified &#64;sampler_name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sampler_name</strong> (<em>str</em>) – Existing sub-sampler name</p></li>
+<li><p><strong>mujoco_objects</strong> (<em>MujocoObject</em><em> or </em><em>list of MujocoObject</em>) – Object(s) to add</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.SequentialCompositeSampler.append_sampler">
+<span class="sig-name descname"><span class="pre">append_sampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sampler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.SequentialCompositeSampler.append_sampler" title="Permalink to this definition">#</a></dt>
+<dd><p>Adds a new placement initializer with corresponding &#64;sampler and arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sampler</strong> (<a class="reference internal" href="#robocasa.utils.placement_samplers.ObjectPositionSampler" title="robocasa.utils.placement_samplers.ObjectPositionSampler"><em>ObjectPositionSampler</em></a>) – sampler to add</p></li>
+<li><p><strong>sample_args</strong> (<em>None</em><em> or </em><em>dict</em>) – If specified, should be additional arguments to pass to &#64;sampler’s sample()
+call. Should map corresponding sampler’s arguments to values (excluding &#64;fixtures argument)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – [Object name in samplers]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.SequentialCompositeSampler.hide">
+<span class="sig-name descname"><span class="pre">hide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mujoco_objects</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.SequentialCompositeSampler.hide" title="Permalink to this definition">#</a></dt>
+<dd><p>Helper method to remove an object from the workspace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mujoco_objects</strong> (<em>MujocoObject</em><em> or </em><em>list of MujocoObject</em>) – Object(s) to hide</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.SequentialCompositeSampler.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.SequentialCompositeSampler.reset" title="Permalink to this definition">#</a></dt>
+<dd><p>Resets this sampler. In addition to base method, iterates over all sub-samplers and resets them</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.SequentialCompositeSampler.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">placed_objects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_top</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.SequentialCompositeSampler.sample" title="Permalink to this definition">#</a></dt>
+<dd><p>Sample from each placement initializer sequentially, in the order
+that they were appended.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>placed_objects</strong> (<em>dict</em>) – dictionary of current object placements in the scene as well as any other relevant
+obstacles that should not be in contact with newly sampled objects. Used to make sure newly
+generated placements are valid. Should be object names mapped to (pos, quat, MujocoObject)</p></li>
+<li><p><strong>reference</strong> (<em>str</em><em> or </em><em>3-tuple</em><em> or </em><em>None</em>) – if provided, sample relative placement. This will override each
+sampler’s &#64;reference argument if not already specified. Can either be a string, which
+corresponds to an existing object found in &#64;fixtures, or a direct (x,y,z) value. If None, will sample
+relative to this sampler’s <cite>‘reference_pos’</cite> value.</p></li>
+<li><p><strong>on_top</strong> (<em>bool</em>) – if True, sample placement on top of the reference object. This will override each
+sampler’s &#64;on_top argument if not already specified. This corresponds to a sampled
+z-offset of the current sampled object’s bottom_offset + the reference object’s top_offset
+(if specified)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>dictionary of all object placements, mapping object_names to (pos, quat, obj), including the</dt><dd><p>placements specified in &#64;fixtures. Note quat is in (w,x,y,z) form</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>RandomizationError</strong> – [Cannot place all objects]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.UniformRandomSampler">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.utils.placement_samplers.</span></span><span class="sig-name descname"><span class="pre">UniformRandomSampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mujoco_objects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'z'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_object_boundary_in_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_valid_placement</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_rot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.UniformRandomSampler" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.utils.placement_samplers.ObjectPositionSampler" title="robocasa.utils.placement_samplers.ObjectPositionSampler"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.utils.placement_samplers.ObjectPositionSampler</span></code></a></p>
+<p>Places all objects within the table uniformly random.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of this sampler.</p></li>
+<li><p><strong>mujoco_objects</strong> (<em>None</em><em> or </em><em>MujocoObject</em><em> or </em><em>list of MujocoObject</em>) – single model or list of MJCF object models</p></li>
+<li><p><strong>x_range</strong> (<em>2-array of float</em>) – Specify the (min, max) relative x_range used to uniformly place objects</p></li>
+<li><p><strong>y_range</strong> (<em>2-array of float</em>) – Specify the (min, max) relative y_range used to uniformly place objects</p></li>
+<li><p><strong>rotation</strong> (<em>None</em><em> or </em><em>float</em><em> or </em><em>Iterable</em>) – <dl class="field-list simple">
+<dt class="field-odd"><cite>None</cite></dt>
+<dd class="field-odd"><p>Add uniform random random rotation</p>
+</dd>
+<dt class="field-even"><cite>Iterable (a,b)</cite></dt>
+<dd class="field-even"><p>Uniformly randomize rotation angle between a and b (in radians)</p>
+</dd>
+<dt class="field-odd"><cite>value</cite></dt>
+<dd class="field-odd"><p>Add fixed angle rotation</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>rotation_axis</strong> (<em>str</em>) – Can be ‘x’, ‘y’, or ‘z’. Axis about which to apply the requested rotation</p></li>
+<li><p><strong>ensure_object_boundary_in_range</strong> (<em>bool</em>) – <dl class="field-list simple">
+<dt class="field-odd"><cite>True</cite></dt>
+<dd class="field-odd"><p>The center of object is at position:
+[uniform(min x_range + radius, max x_range - radius)], [uniform(min x_range + radius, max x_range - radius)]</p>
+</dd>
+<dt class="field-even"><cite>False</cite></dt>
+<dd class="field-even"><p>[uniform(min x_range, max x_range)], [uniform(min x_range, max x_range)]</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>ensure_valid_placement</strong> (<em>bool</em>) – If True, will check for correct (valid) object placements</p></li>
+<li><p><strong>reference_pos</strong> (<em>3-array</em>) – global (x,y,z) position relative to which sampling will occur</p></li>
+<li><p><strong>z_offset</strong> (<em>float</em>) – Add a small z-offset to placements. This is useful for fixed objects
+that do not move (i.e. no free joint) to place them above the table.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.utils.placement_samplers.UniformRandomSampler.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">placed_objects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_top</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.placement_samplers.UniformRandomSampler.sample" title="Permalink to this definition">#</a></dt>
+<dd><p>Uniformly sample relative to this sampler’s reference_pos or &#64;reference (if specified).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>placed_objects</strong> (<em>dict</em>) – dictionary of current object placements in the scene as well as any other relevant
+obstacles that should not be in contact with newly sampled objects. Used to make sure newly
+generated placements are valid. Should be object names mapped to (pos, quat, MujocoObject)</p></li>
+<li><p><strong>reference</strong> (<em>str</em><em> or </em><em>3-tuple</em><em> or </em><em>None</em>) – if provided, sample relative placement. Can either be a string, which
+corresponds to an existing object found in &#64;fixtures, or a direct (x,y,z) value. If None, will sample
+relative to this sampler’s <cite>‘reference_pos’</cite> value.</p></li>
+<li><p><strong>on_top</strong> (<em>bool</em>) – if True, sample placement on top of the reference object. This corresponds to a sampled
+z-offset of the current sampled object’s bottom_offset + the reference object’s top_offset
+(if specified)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>dictionary of all object placements, mapping object_names to (pos, quat, obj), including the</dt><dd><p>placements specified in &#64;fixtures. Note quat is in (w,x,y,z) form</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RandomizationError</strong> – [Cannot place all objects]</p></li>
+<li><p><strong>AssertionError</strong> – [Reference object name does not exist, invalid inputs]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robocasa.utils.texture_swap">
+<span id="robocasa-utils-texture-swap-module"></span><h2>robocasa.utils.texture_swap module<a class="headerlink" href="#module-robocasa.utils.texture_swap" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.texture_swap.get_random_textures">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">get_random_textures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.get_random_textures" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.texture_swap.replace_cab_textures">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">replace_cab_textures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_cab_texture_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.replace_cab_textures" title="Permalink to this definition">#</a></dt>
+<dd><p>This function replaces the cabinet and counter base textures during playback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>initial_state</strong> (<em>str</em>) – Initial env XML string</p></li>
+<li><p><strong>new_cab_texture_file</strong> (<em>str</em>) – New texture file for counter base and cabinets: i.e “cabinet/…”
+If None (default), will replace with a random texture from flat or wood directories</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.texture_swap.replace_counter_top_texture">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">replace_counter_top_texture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_counter_top_texture_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.replace_counter_top_texture" title="Permalink to this definition">#</a></dt>
+<dd><p>This function replaces the counter top textures during playback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>initial_state</strong> (<em>str</em>) – Initial env XML string</p></li>
+<li><p><strong>new_counter_top_texture_file</strong> (<em>str</em>) – New texture file for counter top: i.e “marble/dark_marble.png”
+If None (default), will replace with a random texture from marble directory</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.texture_swap.replace_floor_texture">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">replace_floor_texture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_floor_texture_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.replace_floor_texture" title="Permalink to this definition">#</a></dt>
+<dd><p>This function replaces the counter top textures during playback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>initial_state</strong> (<em>str</em>) – Initial env XML string</p></li>
+<li><p><strong>new_floor_texture_file</strong> (<em>str</em>) – New texture file for counter top: i.e “wood/dark_wood_planks_2.png”
+If None (default), will replace with a random texture from wood directory</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.texture_swap.replace_wall_texture">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">replace_wall_texture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_wall_texture_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.replace_wall_texture" title="Permalink to this definition">#</a></dt>
+<dd><p>This function replaces the counter top textures during playback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>initial_state</strong> (<em>str</em>) – Initial env XML string</p></li>
+<li><p><strong>new_wall_texture_file</strong> (<em>str</em>) – New texture file for counter top: i.e “wood/dark_wood_planks_2.png”
+If None (default), will replace with a random texture from wood directory</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-robocasa.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robocasa.utils" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="robocasa.models.objects.fixtures.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">robocasa.models.objects.fixtures package</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="robocasa.utils.usd.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">robocasa.utils.usd package</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By the robocasa core team<br/>
+  
+      &copy; Copyright the robocasa core team, 2024.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
