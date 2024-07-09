@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Atomic Task Overview &#8212; robocasa 1.4 documentation</title>
+    <title>Atomic Tasks &#8212; RoboCasa 0.1 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -35,7 +35,7 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Composite Task Overview" href="composite_tasks.html" />
+    <link rel="next" title="Composite Tasks" href="composite_tasks.html" />
     <link rel="prev" title="Datasets" href="overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -73,9 +73,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robocasa 1.4 documentation</h1>
+      <img src="../_static/robocasa_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">RoboCasa 0.1 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -85,7 +90,7 @@
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Introduction:
+  Introduction
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -113,12 +118,12 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Atomic Task Overview
+   Atomic Tasks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="composite_tasks.html">
-   Composite Task Overview
+   Composite Tasks
   </a>
  </li>
 </ul>
@@ -150,17 +155,46 @@
    </i>
   </label>
   <ul>
-   <li class="toctree-l2">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../api/robocasa.environments.html">
      robocasa.environments package
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../api/robocasa.environments.kitchen.html">
+       robocasa.environments.kitchen package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../api/robocasa.environments.kitchen.multi_stage.html">
+         robocasa.environments.kitchen.multi_stage package
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../api/robocasa.environments.kitchen.single_stage.html">
+         robocasa.environments.kitchen.single_stage package
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../api/robocasa.models.html">
      robocasa.models package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -174,8 +208,8 @@
       <a class="reference internal" href="../api/robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-      <label for="toctree-checkbox-3">
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -193,8 +227,8 @@
     <a class="reference internal" href="../api/robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -330,7 +364,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Atomic Task Overview</h1>
+                <h1>Atomic Tasks</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -342,141 +376,167 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="atomic-task-overview">
-<h1>Atomic Task Overview<a class="headerlink" href="#atomic-task-overview" title="Permalink to this headline">#</a></h1>
+  <section id="atomic-tasks">
+<h1>Atomic Tasks<a class="headerlink" href="#atomic-tasks" title="Permalink to this headline">#</a></h1>
 <table border="1" class="docutils">
 <thead>
 <tr>
-<th>Task</th>
-<th>Skill Family</th>
-<th>Description</th>
+<th style="text-align: left;">Task</th>
+<th style="text-align: left;">Skill Family</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Class</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>PickPlaceCounterToCabinet</td>
-<td>Pick and place</td>
-<td>Pick an object from the counter and place it inside the cabinet. The cabinet is already open.</td>
+<td style="text-align: left;"><code>PickPlaceCounterToCabinet</code></td>
+<td style="text-align: left;">Pick and place</td>
+<td style="text-align: left;">Pick an object from the counter and place it inside the cabinet. The cabinet is already open.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_pnp.py">Source</a></td>
 </tr>
 <tr>
-<td>PickPlaceCabinetToCounter</td>
-<td>Pick and place</td>
-<td>Pick an object from the cabinet and place it on the counter. The cabinet is already open.</td>
+<td style="text-align: left;"><code>PickPlaceCabinetToCounter</code></td>
+<td style="text-align: left;">Pick and place</td>
+<td style="text-align: left;">Pick an object from the cabinet and place it on the counter. The cabinet is already open.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_pnp.py">Source</a></td>
 </tr>
 <tr>
-<td>PickPlaceCounterToSink</td>
-<td>Pick and place</td>
-<td>Pick an object from the counter and place it in the sink.</td>
+<td style="text-align: left;"><code>PickPlaceCounterToSink</code></td>
+<td style="text-align: left;">Pick and place</td>
+<td style="text-align: left;">Pick an object from the counter and place it in the sink.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_pnp.py">Source</a></td>
 </tr>
 <tr>
-<td>PickPlaceSinkToCounter</td>
-<td>Pick and place</td>
-<td>Pick an object from the sink and place it on the counter area next to the sink.</td>
+<td style="text-align: left;"><code>PickPlaceSinkToCounter</code></td>
+<td style="text-align: left;">Pick and place</td>
+<td style="text-align: left;">Pick an object from the sink and place it on the counter area next to the sink.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_pnp.py">Source</a></td>
 </tr>
 <tr>
-<td>PickPlaceCounterToMicrowave</td>
-<td>Pick and place</td>
-<td>Pick an object from the counter and place it inside the microwave. The microwave door is already open.</td>
+<td style="text-align: left;"><code>PickPlaceCounterToMicrowave</code></td>
+<td style="text-align: left;">Pick and place</td>
+<td style="text-align: left;">Pick an object from the counter and place it inside the microwave. The microwave door is already open.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_pnp.py">Source</a></td>
 </tr>
 <tr>
-<td>PickPlaceMicrowaveToCounter</td>
-<td>Pick and place</td>
-<td>Pick an object from inside the microwave and place it on the counter. The microwave door is already open.</td>
+<td style="text-align: left;"><code>PickPlaceMicrowaveToCounter</code></td>
+<td style="text-align: left;">Pick and place</td>
+<td style="text-align: left;">Pick an object from inside the microwave and place it on the counter. The microwave door is already open.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_pnp.py">Source</a></td>
 </tr>
 <tr>
-<td>PickPlaceCounterToStove</td>
-<td>Pick and place</td>
-<td>Pick an object from the counter and place it in a pan or pot on the stove.</td>
+<td style="text-align: left;"><code>PickPlaceCounterToStove</code></td>
+<td style="text-align: left;">Pick and place</td>
+<td style="text-align: left;">Pick an object from the counter and place it in a pan or pot on the stove.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_pnp.py">Source</a></td>
 </tr>
 <tr>
-<td>PickPlaceStoveToCounter</td>
-<td>Pick and place</td>
-<td>Pick an object from the stove (via a pot or pan) and place it on (the plate on) the counter.</td>
+<td style="text-align: left;"><code>PickPlaceStoveToCounter</code></td>
+<td style="text-align: left;">Pick and place</td>
+<td style="text-align: left;">Pick an object from the stove (via a pot or pan) and place it on (the plate on) the counter.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_pnp.py">Source</a></td>
 </tr>
 <tr>
-<td>OpenSingleDoor</td>
-<td>Opening and closing doors</td>
-<td>Open a microwave door or a cabinet with a single door.</td>
+<td style="text-align: left;"><code>OpenSingleDoor</code></td>
+<td style="text-align: left;">Opening and closing doors</td>
+<td style="text-align: left;">Open a microwave door or a cabinet with a single door.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_doors.py">Source</a></td>
 </tr>
 <tr>
-<td>CloseSingleDoor</td>
-<td>Opening and closing doors</td>
-<td>Close a microwave door or a cabinet with a single door.</td>
+<td style="text-align: left;"><code>CloseSingleDoor</code></td>
+<td style="text-align: left;">Opening and closing doors</td>
+<td style="text-align: left;">Close a microwave door or a cabinet with a single door.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_doors.py">Source</a></td>
 </tr>
 <tr>
-<td>OpenDoubleDoor</td>
-<td>Opening and closing doors</td>
-<td>Open a cabinet with two opposite-facing doors.</td>
+<td style="text-align: left;"><code>OpenDoubleDoor</code></td>
+<td style="text-align: left;">Opening and closing doors</td>
+<td style="text-align: left;">Open a cabinet with two opposite-facing doors.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_doors.py">Source</a></td>
 </tr>
 <tr>
-<td>CloseDoubleDoor</td>
-<td>Opening and closing doors</td>
-<td>Close a cabinet with two opposite-facing doors.</td>
+<td style="text-align: left;"><code>CloseDoubleDoor</code></td>
+<td style="text-align: left;">Opening and closing doors</td>
+<td style="text-align: left;">Close a cabinet with two opposite-facing doors.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_doors.py">Source</a></td>
 </tr>
 <tr>
-<td>OpenDrawer</td>
-<td>Opening and closing drawers</td>
-<td>Open a drawer.</td>
+<td style="text-align: left;"><code>OpenDrawer</code></td>
+<td style="text-align: left;">Opening and closing drawers</td>
+<td style="text-align: left;">Open a drawer.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_drawer.py">Source</a></td>
 </tr>
 <tr>
-<td>CloseDrawer</td>
-<td>Opening and closing drawers</td>
-<td>Close a drawer.</td>
+<td style="text-align: left;"><code>CloseDrawer</code></td>
+<td style="text-align: left;">Opening and closing drawers</td>
+<td style="text-align: left;">Close a drawer.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_drawer.py">Source</a></td>
 </tr>
 <tr>
-<td>TurnOnStove</td>
-<td>Twisting knobs</td>
-<td>Turn on a specified stove burner by twisting the respective stove knob.</td>
+<td style="text-align: left;"><code>TurnOnStove</code></td>
+<td style="text-align: left;">Twisting knobs</td>
+<td style="text-align: left;">Turn on a specified stove burner by twisting the respective stove knob.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_stove.py">Source</a></td>
 </tr>
 <tr>
-<td>TurnOffStove</td>
-<td>Twisting knobs</td>
-<td>Turn off a specified stove burner by twisting the respective stove knob.</td>
+<td style="text-align: left;"><code>TurnOffStove</code></td>
+<td style="text-align: left;">Twisting knobs</td>
+<td style="text-align: left;">Turn off a specified stove burner by twisting the respective stove knob.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_stove.py">Source</a></td>
 </tr>
 <tr>
-<td>TurnOnSinkFaucet</td>
-<td>Turning levers</td>
-<td>Turn on the sink faucet to begin the flow of water.</td>
+<td style="text-align: left;"><code>TurnOnSinkFaucet</code></td>
+<td style="text-align: left;">Turning levers</td>
+<td style="text-align: left;">Turn on the sink faucet to begin the flow of water.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_sink.py">Source</a></td>
 </tr>
 <tr>
-<td>TurnOffSinkFaucet</td>
-<td>Turning levers</td>
-<td>Turn off the sink faucet to begin the flow of water.</td>
+<td style="text-align: left;"><code>TurnOffSinkFaucet</code></td>
+<td style="text-align: left;">Turning levers</td>
+<td style="text-align: left;">Turn off the sink faucet to begin the flow of water.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_sink.py">Source</a></td>
 </tr>
 <tr>
-<td>TurnSinkSpout</td>
-<td>Turning levers</td>
-<td>Turn the sink spout.</td>
+<td style="text-align: left;"><code>TurnSinkSpout</code></td>
+<td style="text-align: left;">Turning levers</td>
+<td style="text-align: left;">Turn the sink spout.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_sink.py">Source</a></td>
 </tr>
 <tr>
-<td>CoffeePressButton</td>
-<td>Pressing buttons</td>
-<td>Press the button on the coffee machine to pour coffee into the mug.</td>
+<td style="text-align: left;"><code>CoffeePressButton</code></td>
+<td style="text-align: left;">Pressing buttons</td>
+<td style="text-align: left;">Press the button on the coffee machine to pour coffee into the mug.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_coffee.py">Source</a></td>
 </tr>
 <tr>
-<td>TurnOnMicrowave</td>
-<td>Pressing buttons</td>
-<td>Turn on the microwave by pressing the start button.</td>
+<td style="text-align: left;"><code>TurnOnMicrowave</code></td>
+<td style="text-align: left;">Pressing buttons</td>
+<td style="text-align: left;">Turn on the microwave by pressing the start button.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_microwave.py">Source</a></td>
 </tr>
 <tr>
-<td>TurnOffMicrowave</td>
-<td>Pressing buttons</td>
-<td>Turn off the microwave by pressing the stop button.</td>
+<td style="text-align: left;"><code>TurnOffMicrowave</code></td>
+<td style="text-align: left;">Pressing buttons</td>
+<td style="text-align: left;">Turn off the microwave by pressing the stop button.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_microwave.py">Source</a></td>
 </tr>
 <tr>
-<td>CoffeeSetupMug</td>
-<td>Insertion</td>
-<td>Pick the mug from the counter and insert it onto the coffee machine mug holder area.</td>
+<td style="text-align: left;"><code>CoffeeSetupMug</code></td>
+<td style="text-align: left;">Insertion</td>
+<td style="text-align: left;">Pick the mug from the counter and insert it onto the coffee machine mug holder area.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_coffee.py">Source</a></td>
 </tr>
 <tr>
-<td>CoffeeServeMug</td>
-<td>Insertion</td>
-<td>Remove the mug from the coffee machine mug holder and place it on the counter.</td>
+<td style="text-align: left;"><code>CoffeeServeMug</code></td>
+<td style="text-align: left;">Insertion</td>
+<td style="text-align: left;">Remove the mug from the coffee machine mug holder and place it on the counter.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_coffee.py">Source</a></td>
 </tr>
 <tr>
-<td>NavigateKitchen</td>
-<td>Navigation</td>
-<td>Navigate to a specified appliance in the kitchen.</td>
+<td style="text-align: left;"><code>NavigateKitchen</code></td>
+<td style="text-align: left;">Navigation</td>
+<td style="text-align: left;">Navigate to a specified appliance in the kitchen.</td>
+<td style="text-align: left;"><a href="https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_navigate.py">Source</a></td>
 </tr>
 </tbody>
 </table></section>
@@ -499,7 +559,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="composite_tasks.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Composite Task Overview</p>
+        <p class="prev-next-title">Composite Tasks</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -510,9 +570,9 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By the robocasa core team<br/>
+    By the RoboCasa core team<br/>
   
-      &copy; Copyright the robocasa core team, 2024.<br/>
+      &copy; Copyright the RoboCasa core team, 2024.<br/>
 </p>
         </footer>
     </div>

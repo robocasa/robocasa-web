@@ -8,7 +8,7 @@ Welcome to RoboCasa's documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: Introduction:
+   :caption: Introduction
 
    introduction/installation
    introduction/getting_started
