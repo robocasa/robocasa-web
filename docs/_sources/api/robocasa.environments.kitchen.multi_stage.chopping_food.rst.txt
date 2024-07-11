@@ -1,0 +1,53 @@
+robocasa.environments.kitchen.multi\_stage.chopping\_food package
+=================================================================
+
+Submodules
+----------
+
+robocasa.environments.kitchen.multi\_stage.chopping\_food.arrange\_vegetables module
+------------------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.chopping_food.arrange_vegetables
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.environments.kitchen.multi\_stage.chopping\_food.bread\_setup\_slicing module
+--------------------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.chopping_food.bread_setup_slicing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.environments.kitchen.multi\_stage.chopping\_food.clearing\_the\_cutting\_board module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.chopping_food.clearing_the_cutting_board
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.environments.kitchen.multi\_stage.chopping\_food.meat\_transfer module
+-------------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.chopping_food.meat_transfer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.environments.kitchen.multi\_stage.chopping\_food.organize\_vegetables module
+-------------------------------------------------------------------------------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.chopping_food.organize_vegetables
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: robocasa.environments.kitchen.multi_stage.chopping_food
+   :members:
+   :undoc-members:
+   :show-inheritance:

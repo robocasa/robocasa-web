@@ -1,0 +1,1111 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>robocasa.environments.kitchen.single_stage package &#8212; RoboCasa 0.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4fea3ae4a0a4ba949df0a89bbae557cc2ce861ae" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="robocasa.models package" href="robocasa.models.html" />
+    <link rel="prev" title="robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables package" href="robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/robocasa_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">RoboCasa 0.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/getting_started.html">
+   Quick Start
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tasks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tasks_assets/atomic_tasks.html">
+   Atomic Tasks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tasks_assets/composite_tasks.html">
+   Composite Tasks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Use Cases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../use_cases/datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../use_cases/policy_learning.html">
+   Policy Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="robocasa.html">
+   robocasa package
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="robocasa.environments.html">
+     robocasa.environments package
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active has-children">
+      <a class="reference internal" href="robocasa.environments.kitchen.html">
+       robocasa.environments.kitchen package
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l4">
+        <a class="reference internal" href="robocasa.environments.kitchen.multi_stage.html">
+         robocasa.environments.kitchen.multi_stage package
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         robocasa.environments.kitchen.single_stage package
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="robocasa.models.html">
+     robocasa.models package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.models.arenas.html">
+       robocasa.models.arenas package
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="robocasa.models.objects.html">
+       robocasa.models.objects package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="robocasa.models.objects.fixtures.html">
+         robocasa.models.objects.fixtures package
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="robocasa.utils.html">
+     robocasa.utils package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.utils.usd.html">
+       robocasa.utils.usd package
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/api/robocasa.environments.kitchen.single_stage.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_coffee">
+   robocasa.environments.kitchen.single_stage.kitchen_coffee module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_doors">
+   robocasa.environments.kitchen.single_stage.kitchen_doors module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_drawer">
+   robocasa.environments.kitchen.single_stage.kitchen_drawer module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_microwave">
+   robocasa.environments.kitchen.single_stage.kitchen_microwave module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_navigate">
+   robocasa.environments.kitchen.single_stage.kitchen_navigate module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_pnp">
+   robocasa.environments.kitchen.single_stage.kitchen_pnp module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_sink">
+   robocasa.environments.kitchen.single_stage.kitchen_sink module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_stove">
+   robocasa.environments.kitchen.single_stage.kitchen_stove module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>robocasa.environments.kitchen.single_stage package</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_coffee">
+   robocasa.environments.kitchen.single_stage.kitchen_coffee module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_doors">
+   robocasa.environments.kitchen.single_stage.kitchen_doors module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_drawer">
+   robocasa.environments.kitchen.single_stage.kitchen_drawer module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_microwave">
+   robocasa.environments.kitchen.single_stage.kitchen_microwave module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_navigate">
+   robocasa.environments.kitchen.single_stage.kitchen_navigate module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_pnp">
+   robocasa.environments.kitchen.single_stage.kitchen_pnp module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_sink">
+   robocasa.environments.kitchen.single_stage.kitchen_sink module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage.kitchen_stove">
+   robocasa.environments.kitchen.single_stage.kitchen_stove module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.environments.kitchen.single_stage">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="robocasa-environments-kitchen-single-stage-package">
+<h1>robocasa.environments.kitchen.single_stage package<a class="headerlink" href="#robocasa-environments-kitchen-single-stage-package" title="Permalink to this headline">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="module-robocasa.environments.kitchen.single_stage.kitchen_coffee">
+<span id="robocasa-environments-kitchen-single-stage-kitchen-coffee-module"></span><h2>robocasa.environments.kitchen.single_stage.kitchen_coffee module<a class="headerlink" href="#module-robocasa.environments.kitchen.single_stage.kitchen_coffee" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_coffee.CoffeePressButton">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_coffee.</span></span><span class="sig-name descname"><span class="pre">CoffeePressButton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_coffee.CoffeePressButton" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
+<p>Class encapsulating the coffee press button task. Press the button on the coffee machine to serve coffee.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_coffee.CoffeePressButton.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_coffee.CoffeePressButton.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the coffee press button task.
+This includes the language description of the task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Episode metadata.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_coffee.CoffeeServeMug">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_coffee.</span></span><span class="sig-name descname"><span class="pre">CoffeeServeMug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_coffee.CoffeeServeMug" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_coffee.PnPCoffee" title="robocasa.environments.kitchen.single_stage.kitchen_coffee.PnPCoffee"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_coffee.PnPCoffee</span></code></a></p>
+<p>Class encapsulating the coffee serve task. Pick the mug from under the coffee machine dispenser and place it on the counter.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_coffee.CoffeeSetupMug">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_coffee.</span></span><span class="sig-name descname"><span class="pre">CoffeeSetupMug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_coffee.CoffeeSetupMug" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_coffee.PnPCoffee" title="robocasa.environments.kitchen.single_stage.kitchen_coffee.PnPCoffee"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_coffee.PnPCoffee</span></code></a></p>
+<p>Class encapsulating the coffee setup task. Pick the mug from the counter and place it under the coffee machine dispenser.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_coffee.PnPCoffee">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_coffee.</span></span><span class="sig-name descname"><span class="pre">PnPCoffee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">behavior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'machine_to_counter'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_coffee.PnPCoffee" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
+<p>Class encapsulating the atomic pick and place coffee tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>behavior</strong> (<em>str</em>) – “counter_to_machine” or “machine_to_counter”. Used to define the desired
+pick and place behavior for the task.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_coffee.PnPCoffee.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_coffee.PnPCoffee.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the coffee tasks.
+This includes the language description of the task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Episode metadata.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robocasa.environments.kitchen.single_stage.kitchen_doors">
+<span id="robocasa-environments-kitchen-single-stage-kitchen-doors-module"></span><h2>robocasa.environments.kitchen.single_stage.kitchen_doors module<a class="headerlink" href="#module-robocasa.environments.kitchen.single_stage.kitchen_doors" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_doors.CloseDoor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_doors.</span></span><span class="sig-name descname"><span class="pre">CloseDoor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">behavior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.CloseDoor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.ManipulateDoor" title="robocasa.environments.kitchen.single_stage.kitchen_doors.ManipulateDoor"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_doors.ManipulateDoor</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_doors.CloseDoubleDoor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_doors.</span></span><span class="sig-name descname"><span class="pre">CloseDoubleDoor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">door_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.DOOR_TOP_HINGE_DOUBLE</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.CloseDoubleDoor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.CloseDoor" title="robocasa.environments.kitchen.single_stage.kitchen_doors.CloseDoor"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_doors.CloseDoor</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_doors.CloseSingleDoor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_doors.</span></span><span class="sig-name descname"><span class="pre">CloseSingleDoor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">door_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.DOOR_TOP_HINGE_SINGLE</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.CloseSingleDoor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.CloseDoor" title="robocasa.environments.kitchen.single_stage.kitchen_doors.CloseDoor"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_doors.CloseDoor</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_doors.ManipulateDoor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_doors.</span></span><span class="sig-name descname"><span class="pre">ManipulateDoor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">behavior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'open'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">door_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.DOOR_TOP_HINGE</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.ManipulateDoor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
+<p>Class encapsulating the atomic manipulate door tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>behavior</strong> (<em>str</em>) – “open” or “close”. Used to define the desired
+door manipulation behavior for the task.</p></li>
+<li><p><strong>door_id</strong> (<em>str</em>) – The door fixture id to manipulate.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_doors.ManipulateDoor.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.ManipulateDoor.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the door tasks.
+This includes the language description of the task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Episode metadata.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_doors.OpenDoor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_doors.</span></span><span class="sig-name descname"><span class="pre">OpenDoor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.OpenDoor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.ManipulateDoor" title="robocasa.environments.kitchen.single_stage.kitchen_doors.ManipulateDoor"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_doors.ManipulateDoor</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_doors.OpenDoubleDoor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_doors.</span></span><span class="sig-name descname"><span class="pre">OpenDoubleDoor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">door_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.DOOR_TOP_HINGE_DOUBLE</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.OpenDoubleDoor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.OpenDoor" title="robocasa.environments.kitchen.single_stage.kitchen_doors.OpenDoor"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_doors.OpenDoor</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_doors.OpenSingleDoor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_doors.</span></span><span class="sig-name descname"><span class="pre">OpenSingleDoor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">door_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.DOOR_TOP_HINGE_SINGLE</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.OpenSingleDoor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_doors.OpenDoor" title="robocasa.environments.kitchen.single_stage.kitchen_doors.OpenDoor"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_doors.OpenDoor</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-robocasa.environments.kitchen.single_stage.kitchen_drawer">
+<span id="robocasa-environments-kitchen-single-stage-kitchen-drawer-module"></span><h2>robocasa.environments.kitchen.single_stage.kitchen_drawer module<a class="headerlink" href="#module-robocasa.environments.kitchen.single_stage.kitchen_drawer" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_drawer.CloseDrawer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_drawer.</span></span><span class="sig-name descname"><span class="pre">CloseDrawer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_drawer.CloseDrawer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer" title="robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer</span></code></a></p>
+<p>Class encapsulating the atomic close drawer task.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_drawer.</span></span><span class="sig-name descname"><span class="pre">ManipulateDrawer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">behavior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'open'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drawer_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.TOP_DRAWER</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
+<p>Class encapsulating the atomic manipulate drawer tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>behavior</strong> (<em>str</em>) – “open” or “close”. Used to define the desired
+drawer manipulation behavior for the task.</p></li>
+<li><p><strong>drawer_id</strong> (<em>str</em>) – The drawer fixture id to manipulate</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer.check_fxtr_contact">
+<span class="sig-name descname"><span class="pre">check_fxtr_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer.check_fxtr_contact" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the point is in contact with any fixture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pos</strong> (<em>tuple</em>) – The position of the point to check</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the point is in contact with any fixture, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer.check_sidewall_contact">
+<span class="sig-name descname"><span class="pre">check_sidewall_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer.check_sidewall_contact" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the point is in contact with any wall.
+This is separate from check_fxtr_contact because the point could be outside of the wall’s
+bounds but still in contact with the wall since the wall is thin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pos</strong> (<em>tuple</em>) – The position of the point to check</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the point is in contact with any wall, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the drawer tasks.
+This includes the language description of the task.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_drawer.OpenDrawer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_drawer.</span></span><span class="sig-name descname"><span class="pre">OpenDrawer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_drawer.OpenDrawer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer" title="robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer</span></code></a></p>
+<p>Class encapsulating the atomic open drawer task.</p>
+</dd></dl>
+
+</section>
+<section id="module-robocasa.environments.kitchen.single_stage.kitchen_microwave">
+<span id="robocasa-environments-kitchen-single-stage-kitchen-microwave-module"></span><h2>robocasa.environments.kitchen.single_stage.kitchen_microwave module<a class="headerlink" href="#module-robocasa.environments.kitchen.single_stage.kitchen_microwave" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_microwave.MicrowavePressButton">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_microwave.</span></span><span class="sig-name descname"><span class="pre">MicrowavePressButton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">behavior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'turn_on'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_microwave.MicrowavePressButton" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
+<p>Class encapsulating the atomic microwave press button tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>behavior</strong> (<em>str</em>) – “turn_on” or “turn_off”. Used to define the desired
+microwave manipulation behavior for the task</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_microwave.MicrowavePressButton.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_microwave.MicrowavePressButton.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the microwave tasks.
+This includes the language description of the task.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_microwave.TurnOffMicrowave">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_microwave.</span></span><span class="sig-name descname"><span class="pre">TurnOffMicrowave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">behavior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_microwave.TurnOffMicrowave" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_microwave.MicrowavePressButton" title="robocasa.environments.kitchen.single_stage.kitchen_microwave.MicrowavePressButton"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_microwave.MicrowavePressButton</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_microwave.TurnOnMicrowave">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_microwave.</span></span><span class="sig-name descname"><span class="pre">TurnOnMicrowave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">behavior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_microwave.TurnOnMicrowave" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_microwave.MicrowavePressButton" title="robocasa.environments.kitchen.single_stage.kitchen_microwave.MicrowavePressButton"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_microwave.MicrowavePressButton</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-robocasa.environments.kitchen.single_stage.kitchen_navigate">
+<span id="robocasa-environments-kitchen-single-stage-kitchen-navigate-module"></span><h2>robocasa.environments.kitchen.single_stage.kitchen_navigate module<a class="headerlink" href="#module-robocasa.environments.kitchen.single_stage.kitchen_navigate" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_navigate.NavigateKitchen">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_navigate.</span></span><span class="sig-name descname"><span class="pre">NavigateKitchen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_navigate.NavigateKitchen" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
+<p>Class encapsulating the atomic navigate kitchen tasks.
+Essentially involves navigating the robot to a target fixture.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_navigate.NavigateKitchen.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_navigate.NavigateKitchen.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the navigate kitchen tasks.
+This includes the language description of the task.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robocasa.environments.kitchen.single_stage.kitchen_pnp">
+<span id="robocasa-environments-kitchen-single-stage-kitchen-pnp-module"></span><h2>robocasa.environments.kitchen.single_stage.kitchen_pnp module<a class="headerlink" href="#module-robocasa.environments.kitchen.single_stage.kitchen_pnp" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.</span></span><span class="sig-name descname"><span class="pre">PnP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_obj_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
+<p>Class encapsulating the atomic pick and place tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_groups</strong> (<em>str</em>) – Object groups to sample the target object from.</p></li>
+<li><p><strong>exclude_obj_groups</strong> (<em>str</em>) – Object groups to exclude from sampling the target object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCabToCounter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.</span></span><span class="sig-name descname"><span class="pre">PnPCabToCounter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cab_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.CABINET_TOP</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCabToCounter" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP" title="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP</span></code></a></p>
+<p>Class encapsulating the atomic cabinet to counter pick and place task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cab_id</strong> (<em>str</em>) – The cabinet fixture id to pick the object from.</p></li>
+<li><p><strong>obj_groups</strong> (<em>str</em>) – Object groups to sample the target object from.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCabToCounter.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCabToCounter.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the cabinet to counter pick and place task.
+This includes the language description of the task.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToCab">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.</span></span><span class="sig-name descname"><span class="pre">PnPCounterToCab</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cab_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.CABINET_TOP</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToCab" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP" title="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP</span></code></a></p>
+<p>Class encapsulating the atomic counter to cabinet pick and place task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cab_id</strong> (<em>str</em>) – The cabinet fixture id to place the object.</p></li>
+<li><p><strong>obj_groups</strong> (<em>str</em>) – Object groups to sample the target object from.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToCab.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToCab.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the counter to cabinet pick and place task.
+This includes the language description of the task.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToMicrowave">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.</span></span><span class="sig-name descname"><span class="pre">PnPCounterToMicrowave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'food'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToMicrowave" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP" title="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToMicrowave.EXCLUDE_LAYOUTS">
+<span class="sig-name descname"><span class="pre">EXCLUDE_LAYOUTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[8]</span></em><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToMicrowave.EXCLUDE_LAYOUTS" title="Permalink to this definition">#</a></dt>
+<dd><p>Class encapsulating the atomic counter to microwave pick and place task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj_groups</strong> (<em>str</em>) – Object groups to sample the target object from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToMicrowave.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToMicrowave.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the counter to microwave pick and place task.
+This includes the language description of the task.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToSink">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.</span></span><span class="sig-name descname"><span class="pre">PnPCounterToSink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToSink" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP" title="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP</span></code></a></p>
+<p>Class encapsulating the atomic counter to sink pick and place task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj_groups</strong> (<em>str</em>) – Object groups to sample the target object from.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToSink.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToSink.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the counter to sink pick and place task.
+This includes the language description of the task.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToStove">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.</span></span><span class="sig-name descname"><span class="pre">PnPCounterToStove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'food'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToStove" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP" title="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP</span></code></a></p>
+<p>Class encapsulating the atomic counter to stove pick and place task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj_groups</strong> (<em>str</em>) – Object groups to sample the target object from.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToStove.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToStove.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the counter to stove pick and place task.
+This includes the language description of the task.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPMicrowaveToCounter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.</span></span><span class="sig-name descname"><span class="pre">PnPMicrowaveToCounter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'food'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPMicrowaveToCounter" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP" title="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPMicrowaveToCounter.EXCLUDE_LAYOUTS">
+<span class="sig-name descname"><span class="pre">EXCLUDE_LAYOUTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[8]</span></em><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPMicrowaveToCounter.EXCLUDE_LAYOUTS" title="Permalink to this definition">#</a></dt>
+<dd><p>Class encapsulating the atomic microwave to counter pick and place task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj_groups</strong> (<em>str</em>) – Object groups to sample the target object from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPMicrowaveToCounter.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPMicrowaveToCounter.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the microwave to counter pick and place task.
+This includes the language description of the task.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPSinkToCounter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.</span></span><span class="sig-name descname"><span class="pre">PnPSinkToCounter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'food'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPSinkToCounter" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP" title="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP</span></code></a></p>
+<p>Class encapsulating the atomic sink to counter pick and place task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj_groups</strong> (<em>str</em>) – Object groups to sample the target object from.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPSinkToCounter.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPSinkToCounter.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the sink to counter pick and place task.
+This includes the language description of the task.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPStoveToCounter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.</span></span><span class="sig-name descname"><span class="pre">PnPStoveToCounter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'food'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPStoveToCounter" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP" title="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_pnp.PnP</span></code></a></p>
+<p>Class encapsulating the atomic stove to counter pick and place task</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPStoveToCounter.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPStoveToCounter.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the stove to counter pick and place task.
+This includes the language description of the task.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robocasa.environments.kitchen.single_stage.kitchen_sink">
+<span id="robocasa-environments-kitchen-single-stage-kitchen-sink-module"></span><h2>robocasa.environments.kitchen.single_stage.kitchen_sink module<a class="headerlink" href="#module-robocasa.environments.kitchen.single_stage.kitchen_sink" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_sink.ManipulateSinkFaucet">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_sink.</span></span><span class="sig-name descname"><span class="pre">ManipulateSinkFaucet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">behavior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'turn_on'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_sink.ManipulateSinkFaucet" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
+<p>Class encapsulating the atomic manipulate sink faucet tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>behavior</strong> (<em>str</em>) – <p>“turn_on” or “turn_off”. Used to define the desired</p>
+<p>sink faucet manipulation behavior for the task.</p>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_sink.ManipulateSinkFaucet.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_sink.ManipulateSinkFaucet.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the sink faucet tasks.
+This includes the language description of the task.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_sink.TurnOffSinkFaucet">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_sink.</span></span><span class="sig-name descname"><span class="pre">TurnOffSinkFaucet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_sink.TurnOffSinkFaucet" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_sink.ManipulateSinkFaucet" title="robocasa.environments.kitchen.single_stage.kitchen_sink.ManipulateSinkFaucet"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_sink.ManipulateSinkFaucet</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_sink.TurnOnSinkFaucet">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_sink.</span></span><span class="sig-name descname"><span class="pre">TurnOnSinkFaucet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_sink.TurnOnSinkFaucet" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_sink.ManipulateSinkFaucet" title="robocasa.environments.kitchen.single_stage.kitchen_sink.ManipulateSinkFaucet"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_sink.ManipulateSinkFaucet</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_sink.TurnSinkSpout">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_sink.</span></span><span class="sig-name descname"><span class="pre">TurnSinkSpout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_sink.TurnSinkSpout" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
+<p>Class encapsulating the atomic turn sink spout tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>behavior</strong> (<em>str</em>) – <p>“left” or “right”. Used to define the desired</p>
+<p>sink spout manipulation behavior for the task.</p>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_sink.TurnSinkSpout.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_sink.TurnSinkSpout.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the sink spout tasks.
+This includes the language description of the task.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robocasa.environments.kitchen.single_stage.kitchen_stove">
+<span id="robocasa-environments-kitchen-single-stage-kitchen-stove-module"></span><h2>robocasa.environments.kitchen.single_stage.kitchen_stove module<a class="headerlink" href="#module-robocasa.environments.kitchen.single_stage.kitchen_stove" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_stove.ManipulateStoveKnob">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_stove.</span></span><span class="sig-name descname"><span class="pre">ManipulateStoveKnob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">knob_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">behavior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'turn_on'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_stove.ManipulateStoveKnob" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
+<p>Class encapsulating the atomic manipulate stove knob tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>knob_id</strong> (<em>str</em>) – The stove knob id to manipulate. If set to “random”, a random knob will be selected.</p></li>
+<li><p><strong>behavior</strong> (<em>str</em>) – <p>“turn_on” or “turn_off”. Used to define the desired</p>
+<p>stove knob manipulation behavior for the task.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_stove.ManipulateStoveKnob.get_ep_meta">
+<span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_stove.ManipulateStoveKnob.get_ep_meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the episode metadata for the stove knob tasks.
+This includes the language description of the task and the task references.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_stove.TurnOffStove">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_stove.</span></span><span class="sig-name descname"><span class="pre">TurnOffStove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_stove.TurnOffStove" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_stove.ManipulateStoveKnob" title="robocasa.environments.kitchen.single_stage.kitchen_stove.ManipulateStoveKnob"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_stove.ManipulateStoveKnob</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_stove.TurnOnStove">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_stove.</span></span><span class="sig-name descname"><span class="pre">TurnOnStove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_stove.TurnOnStove" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robocasa.environments.kitchen.single_stage.kitchen_stove.ManipulateStoveKnob" title="robocasa.environments.kitchen.single_stage.kitchen_stove.ManipulateStoveKnob"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_stove.ManipulateStoveKnob</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-robocasa.environments.kitchen.single_stage">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robocasa.environments.kitchen.single_stage" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables package</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="robocasa.models.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">robocasa.models package</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By the RoboCasa core team<br/>
+  
+      &copy; Copyright the RoboCasa core team, 2024.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

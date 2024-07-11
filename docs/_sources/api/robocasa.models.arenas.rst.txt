@@ -1,0 +1,37 @@
+robocasa.models.arenas package
+==============================
+
+Submodules
+----------
+
+robocasa.models.arenas.kitchen\_arena module
+--------------------------------------------
+
+.. automodule:: robocasa.models.arenas.kitchen_arena
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.models.arenas.layout\_builder module
+---------------------------------------------
+
+.. automodule:: robocasa.models.arenas.layout_builder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.models.arenas.layout\_utils module
+-------------------------------------------
+
+.. automodule:: robocasa.models.arenas.layout_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: robocasa.models.arenas
+   :members:
+   :undoc-members:
+   :show-inheritance:
