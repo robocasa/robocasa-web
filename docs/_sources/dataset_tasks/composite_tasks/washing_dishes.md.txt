@@ -1,9 +1,0 @@
-## Washing dishes
-
-| Task               | Description                                                                                                 | Class File                                                                                                                           |
-|:-------------------|:------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------|
-| `StackBowlsInSink` | Stack the bowls in the sink                                                                                 | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/multi_stage/washing_dishes/stack_bowls.py)     |
-| `PreSoakPan`       | Pick the pan and sponge and place them into the sink. Then turn on the sink.                                | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/multi_stage/washing_dishes/pre_soak_pan.py)    |
-| `SortingCleanup`   | Pick the mug and place it in the sink. Pick the bowl and place it in the cabinet and then close the cabinet | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/multi_stage/washing_dishes/sorting_cleanup.py) |
-| `DryDrinkware`     | A wet mug is on the counter and need to be dried. Pick it up and place it upside down in the open cabinet.  | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/multi_stage/washing_dishes/dry_drinkware.py)   |
-| `DryDishes`        | Pick the cup and bowl from the sink and place them on the counter for drying                                | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/multi_stage/washing_dishes/dry_dishes.py)      |

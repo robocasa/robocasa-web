@@ -1,7 +1,0 @@
-## Brewing
-
-| Task            | Description                                                                                                                                           | Class File                                                                                                                   |
-|:----------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------|
-| `KettleBoiling` | Pick the kettle from the counter and place it on a stove burner. Then, turn the burner on                                                             | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/multi_stage/brewing/kettle_boiling.py) |
-| `ArrangeTea`    | Pick the kettle from the counter and place it on the tray. Then pick the mug from the cabinet and place it on the tray. Then close the cabinet doors. | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/multi_stage/brewing/arrange_tea.py)    |
-| `PrepareCoffee` | Pick the mug from the cabinet, place it under the coffee machine dispenser, and press the start button                                                | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/multi_stage/brewing/prepare_coffee.py) |

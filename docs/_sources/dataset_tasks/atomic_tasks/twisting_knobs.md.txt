@@ -1,6 +1,0 @@
-## Twisting knobs
-
-| Task           | Description                                                                                          | Class File                                                                                                           |
-|:---------------|:-----------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------|
-| `TurnOnStove`  | Turn on a specified stove burner by twisting the respective stove knob.                              | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_stove.py) |
-| `TurnOffStove` | Turn off a specified stove burner by twisting the respective stove knob.                             | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_stove.py) |

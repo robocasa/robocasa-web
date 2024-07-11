@@ -1,8 +1,0 @@
-## Opening and closing doors
-
-| Task              | Description                                                                                          | Class File                                                                                                           |
-|:------------------|:-----------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------|
-| `OpenSingleDoor`  | Open a microwave door or a cabinet with a single door.                                               | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_doors.py) |
-| `CloseSingleDoor` | Close a microwave door or a cabinet with a single door.                                              | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_doors.py) |
-| `OpenDoubleDoor`  | Open a cabinet with two opposite-facing doors.                                                       | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_doors.py) |
-| `CloseDoubleDoor` | Close a cabinet with two opposite-facing doors.                                                      | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_doors.py) |

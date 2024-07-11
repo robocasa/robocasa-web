@@ -1,5 +1,0 @@
-## Navigation
-
-| Task              | Description                                                                                          | Class File                                                                                                              |
-|:------------------|:-----------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|
-| `NavigateKitchen` | Navigate to a specified appliance in the kitchen.                                                    | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_navigate.py) |

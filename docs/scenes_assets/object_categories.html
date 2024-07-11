@@ -1,0 +1,1386 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Object Categories &#8212; RoboCasa 0.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4fea3ae4a0a4ba949df0a89bbae557cc2ce861ae" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Kitchen Layouts" href="kitchen_layouts.html" />
+    <link rel="prev" title="Composite Tasks" href="../tasks_assets/composite_tasks.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/robocasa_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">RoboCasa 0.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/getting_started.html">
+   Quick Start
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tasks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tasks_assets/atomic_tasks.html">
+   Atomic Tasks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tasks_assets/composite_tasks.html">
+   Composite Tasks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Scenes and Assets
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Object Categories
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="kitchen_layouts.html">
+   Kitchen Layouts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Use Cases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../use_cases/datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../use_cases/policy_learning.html">
+   Policy Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../use_cases/codebase_overview.html">
+   Key files
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/robocasa.html">
+   robocasa package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../api/robocasa.environments.html">
+     robocasa.environments package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../api/robocasa.environments.kitchen.html">
+       robocasa.environments.kitchen package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../api/robocasa.environments.kitchen.multi_stage.html">
+         robocasa.environments.kitchen.multi_stage package
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../api/robocasa.environments.kitchen.single_stage.html">
+         robocasa.environments.kitchen.single_stage package
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../api/robocasa.models.html">
+     robocasa.models package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/robocasa.models.arenas.html">
+       robocasa.models.arenas package
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../api/robocasa.models.objects.html">
+       robocasa.models.objects package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../api/robocasa.models.objects.fixtures.html">
+         robocasa.models.objects.fixtures package
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../api/robocasa.utils.html">
+     robocasa.utils package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/robocasa.utils.usd.html">
+       robocasa.utils.usd package
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/scenes_assets/object_categories.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Object Categories</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="object-categories">
+<h1>Object Categories<a class="headerlink" href="#object-categories" title="Permalink to this headline">#</a></h1>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Groups</th>
+<th style="text-align: right;">Objaverse Instances</th>
+<th style="text-align: right;">AI Generated Instances</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">liquor</td>
+<td style="text-align: left;">drink, alcohol</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">apple</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">avocado</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">bagel</td>
+<td style="text-align: left;">bread_food</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">bagged_food</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">baguette</td>
+<td style="text-align: left;">bread_food</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr>
+<td style="text-align: left;">banana</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">bar</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">bar_soap</td>
+<td style="text-align: left;">cleaner</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">beer</td>
+<td style="text-align: left;">drink, alcohol</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">bell_pepper</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">bottled_drink</td>
+<td style="text-align: left;">drink</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr>
+<td style="text-align: left;">bottled_water</td>
+<td style="text-align: left;">drink</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td style="text-align: left;">bowl</td>
+<td style="text-align: left;">receptacle, stackable</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;">boxed_drink</td>
+<td style="text-align: left;">drink</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td style="text-align: left;">boxed_food</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">bread</td>
+<td style="text-align: left;">bread_food</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td style="text-align: left;">broccoli</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td style="text-align: left;">cake</td>
+<td style="text-align: left;">sweets</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">can</td>
+<td style="text-align: left;">drink</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">candle</td>
+<td style="text-align: left;">decoration</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">canned_food</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">carrot</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">cereal</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">cheese</td>
+<td style="text-align: left;">dairy</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">chips</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">chocolate</td>
+<td style="text-align: left;">sweets</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">coffee_cup</td>
+<td style="text-align: left;">drink</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">condiment_bottle</td>
+<td style="text-align: left;">condiment</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">corn</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">croissant</td>
+<td style="text-align: left;">pastry</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">cucumber</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td style="text-align: left;">cup</td>
+<td style="text-align: left;">receptacle, stackable</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr>
+<td style="text-align: left;">cupcake</td>
+<td style="text-align: left;">sweets</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td style="text-align: left;">cutting_board</td>
+<td style="text-align: left;">receptacle</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">donut</td>
+<td style="text-align: left;">sweets, pastry</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">egg</td>
+<td style="text-align: left;">dairy</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td style="text-align: left;">eggplant</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">fish</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">fork</td>
+<td style="text-align: left;">utensil</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">garlic</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">hot_dog</td>
+<td style="text-align: left;">cooked_food</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">jam</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr>
+<td style="text-align: left;">jug</td>
+<td style="text-align: left;">receptacle</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">ketchup</td>
+<td style="text-align: left;">condiment</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">kettle_electric</td>
+<td style="text-align: left;">receptacle</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">kettle_non_electric</td>
+<td style="text-align: left;">receptacle</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">kiwi</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">knife</td>
+<td style="text-align: left;">utensil</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">ladle</td>
+<td style="text-align: left;">utensil</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">lemon</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td style="text-align: left;">lime</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">mango</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">milk</td>
+<td style="text-align: left;">dairy, drink</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">mug</td>
+<td style="text-align: left;">receptacle, stackable</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">mushroom</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">onion</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">orange</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">pan</td>
+<td style="text-align: left;">receptacle</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;">pot</td>
+<td style="text-align: left;">receptacle</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">peach</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">pear</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr>
+<td style="text-align: left;">plate</td>
+<td style="text-align: left;">receptacle</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">potato</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr>
+<td style="text-align: left;">rolling_pin</td>
+<td style="text-align: left;">tool</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">scissors</td>
+<td style="text-align: left;">tool</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">shaker</td>
+<td style="text-align: left;">condiment</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">soap_dispenser</td>
+<td style="text-align: left;">cleaner</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">spatula</td>
+<td style="text-align: left;">utensil</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">sponge</td>
+<td style="text-align: left;">cleaner</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">spoon</td>
+<td style="text-align: left;">utensil</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">spray</td>
+<td style="text-align: left;">cleaner</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">squash</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">steak</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">sweet_potato</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td style="text-align: left;">tangerine</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">teapot</td>
+<td style="text-align: left;">receptacle</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">tomato</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">tray</td>
+<td style="text-align: left;">receptacle</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">waffle</td>
+<td style="text-align: left;">sweets</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">water_bottle</td>
+<td style="text-align: left;">drink</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">wine</td>
+<td style="text-align: left;">drink, alcohol</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">yogurt</td>
+<td style="text-align: left;">dairy, packaged_food</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">dates</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">lemonade</td>
+<td style="text-align: left;">drink</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">walnut</td>
+<td style="text-align: left;">none</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">cheese_grater</td>
+<td style="text-align: left;">tool</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">syrup_bottle</td>
+<td style="text-align: left;">condiment</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">scallops</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr>
+<td style="text-align: left;">candy</td>
+<td style="text-align: left;">sweets</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">whisk</td>
+<td style="text-align: left;">utensil</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">pitcher</td>
+<td style="text-align: left;">receptacle</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">ice_cream</td>
+<td style="text-align: left;">sweets</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">cherry</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td style="text-align: left;">peanut_butter</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">thermos</td>
+<td style="text-align: left;">drink</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">ham</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">dumpling</td>
+<td style="text-align: left;">meat, cooked_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr>
+<td style="text-align: left;">cabbage</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr>
+<td style="text-align: left;">lettuce</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">tongs</td>
+<td style="text-align: left;">tool</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">ginger</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">ice_cube_tray</td>
+<td style="text-align: left;">receptacle</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">shrimp</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">cantaloupe</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr>
+<td style="text-align: left;">honey_bottle</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr>
+<td style="text-align: left;">grapes</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr>
+<td style="text-align: left;">spaghetti_box</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">chili_pepper</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">celery</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">burrito</td>
+<td style="text-align: left;">cooked_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td style="text-align: left;">olive_oil_bottle</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td style="text-align: left;">kebabs</td>
+<td style="text-align: left;">cooked_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td style="text-align: left;">bottle_opener</td>
+<td style="text-align: left;">tool</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr>
+<td style="text-align: left;">chicken_breast</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td style="text-align: left;">jello_cup</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">lobster</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">brussel_sprout</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr>
+<td style="text-align: left;">sushi</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">baking_sheet</td>
+<td style="text-align: left;">receptacle</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">wine_glass</td>
+<td style="text-align: left;">receptacle</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">asparagus</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">lamb_chop</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">pickle</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">bacon</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">canola_oil</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr>
+<td style="text-align: left;">strawberry</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">watermelon</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td style="text-align: left;">pizza_cutter</td>
+<td style="text-align: left;">tool</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">pomegranate</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">apricot</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">beet</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">radish</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">salsa</td>
+<td style="text-align: left;">packaged_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">artichoke</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">scone</td>
+<td style="text-align: left;">pastry, bread_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td style="text-align: left;">hamburger</td>
+<td style="text-align: left;">cooked_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr>
+<td style="text-align: left;">raspberry</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">tacos</td>
+<td style="text-align: left;">cooked_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">vinegar</td>
+<td style="text-align: left;">packaged_food, condiment</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">zucchini</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td style="text-align: left;">pork_loin</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td style="text-align: left;">pork_chop</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr>
+<td style="text-align: left;">sausage</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr>
+<td style="text-align: left;">coconut</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td style="text-align: left;">cauliflower</td>
+<td style="text-align: left;">vegetable</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">lollipop</td>
+<td style="text-align: left;">sweets</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;">salami</td>
+<td style="text-align: left;">meat</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">butter_stick</td>
+<td style="text-align: left;">dairy</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">can_opener</td>
+<td style="text-align: left;">tool</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">tofu</td>
+<td style="text-align: left;">none</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr>
+<td style="text-align: left;">pineapple</td>
+<td style="text-align: left;">fruit</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">skewers</td>
+<td style="text-align: left;">meat, cooked_food</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table></section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../tasks_assets/composite_tasks.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Composite Tasks</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="kitchen_layouts.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Kitchen Layouts</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By the RoboCasa core team<br/>
+  
+      &copy; Copyright the RoboCasa core team, 2024.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,6 +1,0 @@
-## Opening and closing drawers
-
-| Task          | Description                                                                                          | Class File                                                                                                            |
-|:--------------|:-----------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------|
-| `OpenDrawer`  | Open a drawer.                                                                                       | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_drawer.py) |
-| `CloseDrawer` | Close a drawer.                                                                                      | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_drawer.py) |
