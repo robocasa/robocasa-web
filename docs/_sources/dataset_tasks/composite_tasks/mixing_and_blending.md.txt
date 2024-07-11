@@ -1,0 +1,7 @@
+## Mixing and blending
+
+| Task            | Description                                                                                                         | Class File                                                                                                                               |
+|:----------------|:--------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|
+| `SetupJuicing`  | Open the cabinet, pick all 4 fruits from the cabinet and place them on the counter                                  | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/multi_stage/mixing_and_blending/setup_juicing.py)  |
+| `ColorfulSalsa` | Place the avocado, onion, tomato and bell pepper on the cutting board                                               | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/multi_stage/mixing_and_blending/colorful_salsa.py) |
+| `SpicyMarinade` | Open the cabinet. Place the bowl and condiment on the counter. Then place the lime and garlic on the cutting board. | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/multi_stage/mixing_and_blending/spicy_marinade.py) |

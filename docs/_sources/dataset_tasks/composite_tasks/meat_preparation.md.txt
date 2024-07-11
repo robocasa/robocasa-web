@@ -1,0 +1,6 @@
+## Meat preparation
+
+| Task                 | Description                                                                                                                                         | Class File                                                                                                                                  |
+|:---------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| `PrepMarinatingMeat` | Pick the meat from its container and place it on the cutting board. Then pick the condiment from the cabinet and place it next to the cutting board | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/multi_stage/meat_preparation/prep_marinating_meat.py) |
+| `PrepForTenderizing` | Retrieve a rolling pin from the cabinet and place it next to the meat on the cutting board to prepare for tenderizing.                              | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/multi_stage/meat_preparation/prep_for_tenderizing.py) |

@@ -1,0 +1,7 @@
+## Turning levers
+
+| Task                | Description                                                                                          | Class File                                                                                                          |
+|:--------------------|:-----------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| `TurnOnSinkFaucet`  | Turn on the sink faucet to begin the flow of water.                                                  | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_sink.py) |
+| `TurnOffSinkFaucet` | Turn off the sink faucet to begin the flow of water.                                                 | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_sink.py) |
+| `TurnSinkSpout`     | Turn the sink spout.                                                                                 | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_sink.py) |

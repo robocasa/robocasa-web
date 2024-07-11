@@ -1,0 +1,6 @@
+## Insertion
+
+| Task             | Description                                                                                          | Class File                                                                                                            |
+|:-----------------|:-----------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------|
+| `CoffeeSetupMug` | Pick the mug from the counter and insert it onto the coffee machine mug holder area.                 | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_coffee.py) |
+| `CoffeeServeMug` | Remove the mug from the coffee machine mug holder and place it on the counter.                       | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_coffee.py) |

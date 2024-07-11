@@ -1,0 +1,7 @@
+## Pressing buttons
+
+| Task                | Description                                                                                          | Class File                                                                                                               |
+|:--------------------|:-----------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------|
+| `CoffeePressButton` | Press the button on the coffee machine to pour coffee into the mug.                                  | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_coffee.py)    |
+| `TurnOnMicrowave`   | Turn on the microwave by pressing the start button.                                                  | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_microwave.py) |
+| `TurnOffMicrowave`  | Turn off the microwave by pressing the stop button.                                                  | [Source](https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/single_stage/kitchen_microwave.py) |

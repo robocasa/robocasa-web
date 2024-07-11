@@ -1,0 +1,14 @@
+Atomic Tasks
+=============================
+
+.. toctree::
+   :maxdepth: 1
+   
+   atomic_tasks/pick_and_place
+   atomic_tasks/opening_and_closing_doors
+   atomic_tasks/opening_and_closing_drawers
+   atomic_tasks/twisting_knobs
+   atomic_tasks/turning_levers
+   atomic_tasks/pressing_buttons
+   atomic_tasks/insertion
+   atomic_tasks/navigation

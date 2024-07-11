@@ -1,0 +1,28 @@
+Composite Tasks
+=============================
+
+.. toctree::
+   :maxdepth: 1
+   
+
+
+   composite_tasks/defrosting_food
+   composite_tasks/snack_preparation
+   composite_tasks/washing_dishes
+   composite_tasks/brewing
+   composite_tasks/clearing_table
+   composite_tasks/restocking_supplies
+   composite_tasks/chopping_food
+   composite_tasks/sanitize_surface
+   composite_tasks/tidying_cabinets_and_drawers
+   composite_tasks/boiling
+   composite_tasks/making_toast
+   composite_tasks/washing_fruits_and_vegetables
+   composite_tasks/meat_preparation
+   composite_tasks/frying
+   composite_tasks/setting_the_table
+   composite_tasks/reheating_food
+   composite_tasks/serving_food
+   composite_tasks/baking
+   composite_tasks/mixing_and_blending
+   composite_tasks/steaming_food
