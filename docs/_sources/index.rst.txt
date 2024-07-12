@@ -27,6 +27,7 @@ Welcome to RoboCasa's documentation!
 
    scenes_assets/object_categories
    scenes_assets/kitchen_layouts
+   scenes_assets/kitchen_styles
 
 
 .. toctree::
