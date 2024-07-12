@@ -1,3 +1,0 @@
-## Kitchen Styles
-
-![Kitchen Styles](../images/styles.png)

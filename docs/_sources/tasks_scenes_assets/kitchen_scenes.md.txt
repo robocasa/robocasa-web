@@ -1,0 +1,9 @@
+# Kitchen Scenes
+
+## Layouts
+
+![Kitchen Layouts](../images/layouts.png)
+
+## Styles
+
+![Kitchen Styles](../images/styles.png)

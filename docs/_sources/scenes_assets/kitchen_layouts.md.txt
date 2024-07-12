@@ -1,3 +1,0 @@
-## Kitchen Layouts
-
-![Kitchen Layouts](../images/layouts.png)
