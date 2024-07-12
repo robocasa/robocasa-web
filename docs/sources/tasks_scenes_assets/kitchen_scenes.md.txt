@@ -1,0 +1,12 @@
+# Kitchen Scenes
+
+RoboCasa offers a large array of kitchen scenes with fully interactive cabinets, drawers, and appliances.
+We model 10 floor plans ranging from basic designs found in apartments to more elaborate designs found in high-end homes. Each floor plan can be configured to take on one of 12 unique styles, resulting in 120 kitchen scenes. See the breakdown of floor plans and styles as follows.
+
+## Floor Plans
+
+![Kitchen Layouts](../images/layouts.png)
+
+## Styles
+
+![Kitchen Styles](../images/styles.png)
