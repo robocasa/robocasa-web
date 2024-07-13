@@ -2,6 +2,7 @@
 layout: main
 title: RoboCasa
 subtitle: 
+image: assets/images/preview_logo.png
 project_tagline: "Large-Scale Simulation of Everyday Tasks for Generalist Robots"
 videoId: 
 ---
