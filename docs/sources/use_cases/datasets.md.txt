@@ -1,6 +1,6 @@
 # Datasets
 
-RoboCasa comes with a large selection of demonstrations to faciliate training agents. This includes human trajectories and machine-generated trajectories from [MimicGen](https://mimicgen.github.io/). At this time we are releasing human datasets and plan to release MimicGen datasets in the near future.
+RoboCasa comes with a large selection of demonstrations to faciliate training agents. This includes human trajectories and machine-generated trajectories from [MimicGen](https://mimicgen.github.io/). 
 
 Here are a few ways to download the datasets:
 ```
@@ -13,8 +13,11 @@ python -m robocasa.scripts.download_datasets --tasks PnPCounterToCab ArrangeVege
 # overwrites existing datasets
 python -m robocasa.scripts.download_datasets --overwrite
 
-# lite download: download human datasets without images
+# lite download: download only human datasets without images
 python -m robocasa.scripts.download_datasets --ds_types human_raw
+
+# download only mimicgen datasets
+python -m robocasa.scripts.download_datasets --ds_types mg_im
 ```
 
 By default, all datasets are stored under `datasets/` in the root robocasa directory.
