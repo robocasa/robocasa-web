@@ -372,12 +372,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-types">
+   Dataset Types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloading-datasets">
+   Downloading Datasets
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -389,6 +418,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-types">
+   Dataset Types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloading-datasets">
+   Downloading Datasets
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -398,7 +445,20 @@ title="Print to PDF"
                 
   <section id="datasets">
 <h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">#</a></h1>
-<p>RoboCasa comes with a large selection of demonstrations to faciliate training agents. This includes human trajectories and machine-generated trajectories from <a class="reference external" href="https://mimicgen.github.io/">MimicGen</a>. At this time we are releasing human datasets and plan to release MimicGen datasets in the near future.</p>
+<p>RoboCasa comes with a large selection of demonstrations to faciliate training agents. This includes human trajectories and machine-generated trajectories from <a class="reference external" href="https://mimicgen.github.io/">MimicGen</a>.</p>
+<section id="dataset-types">
+<h2>Dataset Types<a class="headerlink" href="#dataset-types" title="Permalink to this headline">#</a></h2>
+<p>Generally we have 3 different dataset types for a specific task:</p>
+<ul class="simple">
+<li><p><strong>human_raw</strong>: human collected dataset of 50 demos/task that contains raw mujoco states as opposed to image observations.</p></li>
+<li><p><strong>human_im</strong>: contains same data as human_raw but has camera observations stored; these correspond to the <strong>Human-50</strong> dataset used in the atomic tasks experiments and the downstream training dataset for the composite tasks experiments.</p></li>
+<li><p><strong>mg_im</strong>: contains 3000/task of mimicgen-generated trajectories corresponding to the <strong>Generated-3000</strong> dataset in the atomic tasks experiments.</p></li>
+</ul>
+<p>At the moment all atomic tasks and the ArrangeVegetables, MicrowaveThawing, RestockPantry, PreSoakPan, and PrepareCoffee composite tasks have both human_raw and human_im datasets</p>
+<p>All atomic tasks except KitchenNavigate also have mg_im datasets.</p>
+</section>
+<section id="downloading-datasets">
+<h2>Downloading Datasets<a class="headerlink" href="#downloading-datasets" title="Permalink to this headline">#</a></h2>
 <p>Here are a few ways to download the datasets:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># downloads all datasets</span>
 <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robocasa</span><span class="o">.</span><span class="n">scripts</span><span class="o">.</span><span class="n">download_datasets</span>
@@ -409,11 +469,15 @@ title="Print to PDF"
 <span class="c1"># overwrites existing datasets</span>
 <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robocasa</span><span class="o">.</span><span class="n">scripts</span><span class="o">.</span><span class="n">download_datasets</span> <span class="o">--</span><span class="n">overwrite</span>
 
-<span class="c1"># lite download: download human datasets without images</span>
+<span class="c1"># lite download: download only human datasets without images</span>
 <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robocasa</span><span class="o">.</span><span class="n">scripts</span><span class="o">.</span><span class="n">download_datasets</span> <span class="o">--</span><span class="n">ds_types</span> <span class="n">human_raw</span>
+
+<span class="c1"># download only mimicgen datasets</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robocasa</span><span class="o">.</span><span class="n">scripts</span><span class="o">.</span><span class="n">download_datasets</span> <span class="o">--</span><span class="n">ds_types</span> <span class="n">mg_im</span>
 </pre></div>
 </div>
 <p>By default, all datasets are stored under <code class="docutils literal notranslate"><span class="pre">datasets/</span></code> in the root robocasa directory.</p>
+</section>
 </section>
 
 

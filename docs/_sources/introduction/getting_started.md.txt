@@ -15,14 +15,14 @@ python -m robocasa.demos.demo_kitchen_scenes
 
 -------
 ### Play back sample demonstrations of tasks
-Select a task and play back a sample demonstration for the selected task:
+Select a task and the script will render a human collected demonstration from our [datasets](../use_cases/datasets.html). Rendering can either be on-screen or offline as a video:
 ```
 python -m robocasa.demos.demo_tasks
 ```
 
 -------
 ### Explore library of 2500+ objects
-View and interact with both human-designed and AI-generated objects:
+View and interact with both human-designed and AI-generated objects. Can also specify the path to a custom mjcf file. If no mjcf path specified, the script will show a random object:
 ```
 python -m robocasa.demos.demo_objects
 ```
@@ -30,8 +30,14 @@ Note: by default this demo shows objaverse objects. To view AI-generated objects
 
 -------
 ### Teleoperate the robot
-Control the robot directly, either through a keyboard controller or spacemouse. This script renders the robot semi-translucent in order to minimize occlusions and enable better visibility.
+Control the robot directly, either through a keyboard controller or spacemouse. This script renders the robot semi-translucent in order to minimize occlusions and enable better visibility. Can specify environment, layout, and style via arguments to the script. Collected demonstrations will not be saved 
 ```
 python -m robocasa.demos.demo_teleop
 ```
 Note: If using spacemouse: you may need to modify the product ID to your appropriate model, setting `SPACEMOUSE_PRODUCT_ID` in `robocasa/macros_private.py`.
+
+## Other useful sections
+ - [Overview of Datasets](../use_cases/datasets.html)
+ - [Overview of Atomic Tasks](../tasks_scenes_assets/atomic_tasks.html)
+ - [Overview of Composite Tasks](../tasks_scenes_assets/composite_tasks.html)
+ - [Training Policies on Datasets](../use_cases/policy_learning.html)

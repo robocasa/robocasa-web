@@ -1,6 +1,21 @@
 # Datasets
 
-RoboCasa comes with a large selection of demonstrations to faciliate training agents. This includes human trajectories and machine-generated trajectories from [MimicGen](https://mimicgen.github.io/). At this time we are releasing human datasets and plan to release MimicGen datasets in the near future.
+RoboCasa comes with a large selection of demonstrations to faciliate training agents. This includes human trajectories and machine-generated trajectories from [MimicGen](https://mimicgen.github.io/). 
+
+
+## Dataset Types
+
+Generally we have 3 different dataset types for a specific task:
+
+- **human_raw**: human collected dataset of 50 demos/task that contains raw mujoco states as opposed to image observations.
+- **human_im**: contains same data as human_raw but has camera observations stored; these correspond to the **Human-50** dataset used in the atomic tasks experiments and the downstream training dataset for the composite tasks experiments.
+- **mg_im**: contains 3000/task of mimicgen-generated trajectories corresponding to the **Generated-3000** dataset in the atomic tasks experiments. 
+
+At the moment all atomic tasks and the ArrangeVegetables, MicrowaveThawing, RestockPantry, PreSoakPan, and PrepareCoffee composite tasks have both human_raw and human_im datasets
+
+All atomic tasks except KitchenNavigate also have mg_im datasets.
+
+## Downloading Datasets
 
 Here are a few ways to download the datasets:
 ```
@@ -13,8 +28,11 @@ python -m robocasa.scripts.download_datasets --tasks PnPCounterToCab ArrangeVege
 # overwrites existing datasets
 python -m robocasa.scripts.download_datasets --overwrite
 
-# lite download: download human datasets without images
+# lite download: download only human datasets without images
 python -m robocasa.scripts.download_datasets --ds_types human_raw
+
+# download only mimicgen datasets
+python -m robocasa.scripts.download_datasets --ds_types mg_im
 ```
 
 By default, all datasets are stored under `datasets/` in the root robocasa directory.
