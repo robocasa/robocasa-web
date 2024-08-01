@@ -9,9 +9,9 @@ Generally we have 3 different dataset types for a specific task:
 
 - **human_raw**: human collected dataset of 50 demos/task that contains raw mujoco states as opposed to image observations.
 - **human_im**: contains same data as human_raw but has camera observations stored; these correspond to the **Human-50** dataset used in the atomic tasks experiments and the downstream training dataset for the composite tasks experiments.
-- **mg_im**: contains 3000/task of mimicgen-generated trajectories corresponding to the **Generated-3000** dataset in the atomic tasks experiments. 
+- **mg_im**: contains 3000 demos/task of mimicgen-generated trajectories corresponding to the **Generated-3000** dataset in the atomic tasks experiments. 
 
-At the moment all atomic tasks and the ArrangeVegetables, MicrowaveThawing, RestockPantry, PreSoakPan, and PrepareCoffee composite tasks have both human_raw and human_im datasets
+At the moment all atomic tasks and the ArrangeVegetables, MicrowaveThawing, RestockPantry, PreSoakPan, and PrepareCoffee composite tasks have both human_raw and human_im datasets.
 
 All atomic tasks except KitchenNavigate also have mg_im datasets.
 
