@@ -1,23 +1,66 @@
 # Datasets
 
-RoboCasa comes with a large selection of demonstrations to faciliate training agents. This includes human trajectories and machine-generated trajectories from [MimicGen](https://mimicgen.github.io/). 
+RoboCasa comes with a large selection of demonstrations to faciliate training agents. We provide:
+- **human demonstrations**: across all 25 atomic tasks and a subset of composite tasks, with 50 demonstrations per task.
+- **machine-generated demonstrations** from [MimicGen](https://mimicgen.github.io/): across 24 atomic tasks, with 3000 demonstrations per task.
+
+## Downloading datasets
+
+<div class="admonition note">
+<p class="admonition-title">Dataset storage location</p>
+
+By default, all datasets are stored under `datasets/` in the root robocasa directory. You can change the location for datasets by setting `DATASET_BASE_PATH` in `robocasa/macros_private.py`.
+
+</div>
 
 Here are a few ways to download the datasets:
 ```
-# downloads all datasets
-python -m robocasa.scripts.download_datasets
+# downloads all human datasets with images
+python -m robocasa.scripts.download_datasets --ds_types human_im
 
-# downloads datasets for specific tasks
-python -m robocasa.scripts.download_datasets --tasks PnPCounterToCab ArrangeVegetables
-
-# overwrites existing datasets
-python -m robocasa.scripts.download_datasets --overwrite
-
-# lite download: download only human datasets without images
+# lite download: download human datasets without images
 python -m robocasa.scripts.download_datasets --ds_types human_raw
 
-# download only mimicgen datasets
+# downloads all MimicGen datasets with images
 python -m robocasa.scripts.download_datasets --ds_types mg_im
 ```
 
-By default, all datasets are stored under `datasets/` in the root robocasa directory.
+Additionally you can specify the following optional arguments:
+```
+--tasks <tasks>: downloads datasets for specific tasks, eg, --tasks PnPCounterToCab ArrangeVegetables
+--overwrite: overwrites existing datasets
+```
+
+## Dataset structure
+RoboCasa datasets follow the convention of robomimic `.hdf5` files. Here is an overview of important elements of each dataset:
+
+`|__data`: env meta data and all demos <br>
+`   |__env_args` (attribute): meta data infromation about the dataset task<br>
+`   |__demo_<n>`: data for demo n <br>
+`      |__model_file` (attribute): the xml string corresponding to the MJCF MuJoCo model<br>
+`      |__ep_meta` (attribute): episode meta data (task langage, scene info, object info, etc)<br>
+`      |__actions`: environment actions, ordered by time. Shape (N, A) where N is the<br>
+`      `length of the trajectory, and A is the action space dimension<br>
+`      |__action_dict`: dictionary that splits actions by fine-grained components,<br>
+`      `eg. position, rotation, gripper, etc<br>
+`      |__obs`: dictionary of observation keys, including images, proprioception, etc.<br>
+`      |__states`: flattened raw low-level MuJoCo states, ordered by time. Used to replay demos <br>
+`      `Not to be used for policy learning! <br>
+`|__mask`: contains filter key meta data to split the dataset in different ways
+
+
+Here is an example script to access dataset elements:
+```
+import h5py
+import json
+
+f = h5py.File(INSERT_DATASET_PATH)
+demo = f["data"]["demo_5"]                        # access demo 5
+obs = demo["obs"]                                 # obervations across all timesteps
+left_img = obs["robot0_agentview_left_image"][:]  # get left camera images in numpy format
+ep_meta = json.loads(demo.attrs["ep_meta"])       # get meta data for episode
+lang = ep_meta["lang"]                            # get language instruction for episode
+f.close()
+```
+
+
