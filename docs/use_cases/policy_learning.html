@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Policy Learning &#8212; RoboCasa 0.1 documentation</title>
+    <title>Training Policies &#8212; RoboCasa 0.1 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="robocasa package" href="../api/robocasa.html" />
-    <link rel="prev" title="Datasets" href="datasets.html" />
+    <link rel="prev" title="Evaluation" href="evaluation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -144,18 +144,40 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/downloading.html">
+   Downloading Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/inspecting.html">
+   Inspecting and Visualizing Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/creating.html">
+   Creating New Datasets
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Use Cases
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="datasets.html">
-   Datasets
+  <a class="reference internal" href="evaluation.html">
+   Evaluation
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Policy Learning
+   Training Policies
   </a>
  </li>
 </ul>
@@ -416,11 +438,6 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#training-on-new-datasets">
-   Training on new datasets
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -430,7 +447,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Policy Learning</h1>
+                <h1>Training Policies</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -462,11 +479,6 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#training-on-new-datasets">
-   Training on new datasets
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -477,8 +489,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="policy-learning">
-<h1>Policy Learning<a class="headerlink" href="#policy-learning" title="Permalink to this headline">#</a></h1>
+  <section id="training-policies">
+<h1>Training Policies<a class="headerlink" href="#training-policies" title="Permalink to this headline">#</a></h1>
 <p>Our <a class="reference external" href="https://github.com/ARISE-Initiative/robomimic/tree/robocasa">policy learning code</a> provides official support for training and evaluating polices. This repo is a branch of robomimic, with modifications to train on RoboCasa datasets.</p>
 <hr class="docutils" />
 <section id="installation">
@@ -496,7 +508,7 @@ title="Print to PDF"
 <p>There are a number of algorithms to choose from. We offer official support for BC-Transformer. Users can also adapt the code to run Diffusion Policy, ACT, etc.</p>
 <p>Before training, download datasets, see instructions <a class="reference external" href="https://github.com/robocasa/robocasa?tab=readme-ov-file#datasets">here</a>.</p>
 <p>Each algorithm has its own config generator script. For example for BC-Transformer policy run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">robomimic</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">config_gen</span><span class="o">/</span><span class="n">bc_xfmr</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">experiment</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">robomimic</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">config_gen</span><span class="o">/</span><span class="n">bc_xfmr_gen</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">experiment</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Modify this file accordingly, depending on which datasets you are training on and whether you are running evaluations.</p>
@@ -513,26 +525,6 @@ After running this script you just need to run the command(s) outputted.</p>
 <p>Read this short <a class="reference external" href="https://robomimic.github.io/docs/tutorials/viewing_results.html">tutorial page</a>.</p>
 </section>
 </section>
-<hr class="docutils" />
-<section id="training-on-new-datasets">
-<h2>Training on new datasets<a class="headerlink" href="#training-on-new-datasets" title="Permalink to this headline">#</a></h2>
-<p>Before training, you need to pre-process your datasets to ensure they’re the correct format.</p>
-<ol class="simple">
-<li><p>Convert the raw robosuite dataset to robomimic format</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">robomimic</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">conversion</span><span class="o">/</span><span class="n">convert_robosuite</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dataset</span> <span class="o">&lt;</span><span class="n">ds</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p>This script will extract actions and add filter keys.</p>
-<ol class="simple">
-<li><p>Extract image observations from robomimic dataset</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OMP_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">MPI_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">MKL_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">OPENBLAS_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">python</span> <span class="n">robomimic</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">dataset_states_to_obs</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dataset</span> <span class="o">&lt;</span><span class="n">ds</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p>This script will generate a new dataset with the suffix <code class="docutils literal notranslate"><span class="pre">_im128.hdf5</span></code> in the same directory as <code class="docutils literal notranslate"><span class="pre">--dataset</span></code></p>
-<p>Note: you can add the flag <code class="docutils literal notranslate"><span class="pre">--generative_textures</span></code> to render images with AI-generated environment textures, and <code class="docutils literal notranslate"><span class="pre">--randomize_cameras</span></code> to randomize camera viewpoints for rendering.</p>
-</section>
 </section>
 
 
@@ -543,11 +535,11 @@ After running this script you just need to run the command(s) outputted.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="datasets.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="evaluation.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Datasets</p>
+            <p class="prev-next-title">Evaluation</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../api/robocasa.html" title="next page">

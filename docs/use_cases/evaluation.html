@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Kitchen Scenes &#8212; RoboCasa 0.1 documentation</title>
+    <title>Evaluation &#8212; RoboCasa 0.1 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -35,8 +35,8 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Object Categories" href="object_categories.html" />
-    <link rel="prev" title="Composite Tasks" href="composite_tasks.html" />
+    <link rel="next" title="Training Policies" href="policy_learning.html" />
+    <link rel="prev" title="Creating New Datasets" href="../datasets/creating.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -120,24 +120,24 @@
   Tasks, Scenes, and Assets
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="atomic_tasks.html">
+  <a class="reference internal" href="../tasks_scenes_assets/atomic_tasks.html">
    Atomic Tasks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="composite_tasks.html">
+  <a class="reference internal" href="../tasks_scenes_assets/composite_tasks.html">
    Composite Tasks
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tasks_scenes_assets/kitchen_scenes.html">
    Kitchen Scenes
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="object_categories.html">
+  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
    Object Categories
   </a>
  </li>
@@ -169,14 +169,14 @@
   Use Cases
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/evaluation.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Evaluation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/policy_learning.html">
+  <a class="reference internal" href="policy_learning.html">
    Training Policies
   </a>
  </li>
@@ -357,7 +357,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../sources/tasks_scenes_assets/kitchen_scenes.md.txt"
+        <a href="../sources/use_cases/evaluation.md.txt"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -417,13 +417,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#floor-plans">
-   Floor Plans
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#styles">
-   Styles
+  <a class="reference internal nav-link" href="#running-rollouts">
+   Running Rollouts
   </a>
  </li>
 </ul>
@@ -435,7 +430,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Kitchen Scenes</h1>
+                <h1>Evaluation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -446,13 +441,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#floor-plans">
-   Floor Plans
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#styles">
-   Styles
+  <a class="reference internal nav-link" href="#running-rollouts">
+   Running Rollouts
   </a>
  </li>
 </ul>
@@ -465,19 +455,36 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="kitchen-scenes">
-<h1>Kitchen Scenes<a class="headerlink" href="#kitchen-scenes" title="Permalink to this headline">#</a></h1>
-<p>RoboCasa offers a large array of kitchen scenes with fully interactive cabinets, drawers, and appliances.
-We model 10 floor plans ranging from basic designs found in apartments to more elaborate designs found in high-end homes. Each floor plan can be configured to take on one of 12 unique styles, resulting in 120 kitchen scenes. See the breakdown of floor plans and styles as follows.</p>
-<section id="floor-plans">
-<h2>Floor Plans<a class="headerlink" href="#floor-plans" title="Permalink to this headline">#</a></h2>
-<p>Floor plans are configured by setting the arrangment of fixtures (cabinets, microwaves, counters, etc.) in a yaml file. <a class="reference external" href="https://github.com/robocasa/robocasa/tree/main/robocasa/models/assets/kitchen_layouts"><strong>[Source]</strong></a></p>
-<p><img alt="Kitchen Layouts" src="../images/layouts.png" /></p>
-</section>
-<section id="styles">
-<h2>Styles<a class="headerlink" href="#styles" title="Permalink to this headline">#</a></h2>
-<p>Styles are configured by setting relevant textures and fixture attributes (cabinet handle types, door types, coffee machine types, etc) in a yaml file. <a class="reference external" href="https://github.com/robocasa/robocasa/tree/main/robocasa/models/assets/kitchen_layouts/styles"><strong>[Source]</strong></a></p>
-<p><img alt="Kitchen Styles" src="../images/styles.png" /></p>
+  <section id="evaluation">
+<h1>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">#</a></h1>
+<section id="running-rollouts">
+<h2>Running Rollouts<a class="headerlink" href="#running-rollouts" title="Permalink to this headline">#</a></h2>
+<p>The following script shows how to create evaluation environments and to run random rollouts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robocasa.environments</span> <span class="kn">import</span> <span class="n">ALL_KITCHEN_ENVIRONMENTS</span>
+<span class="kn">from</span> <span class="nn">robocasa.utils.dataset_registry</span> <span class="kn">import</span> <span class="n">SINGLE_STAGE_TASK_DATASETS</span><span class="p">,</span> <span class="n">MULTI_STAGE_TASK_DATASETS</span>
+<span class="kn">from</span> <span class="nn">robocasa.utils.dataset_registry</span> <span class="kn">import</span> <span class="n">get_ds_path</span>
+<span class="kn">from</span> <span class="nn">robocasa.utils.eval_utils</span> <span class="kn">import</span> <span class="n">create_eval_env</span><span class="p">,</span> <span class="n">run_random_rollouts</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Select a random task (that comes with an accompanying dataset) to run rollouts for.</span>
+<span class="sd">Alternatively, sample *any* kitchen task in RoboCasa by replacing the following line with</span>
+<span class="sd">env_name = np.random.choice(list(ALL_KITCHEN_ENVIRONMENTS))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">env_name</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span>
+    <span class="nb">list</span><span class="p">(</span><span class="n">SINGLE_STAGE_TASK_DATASETS</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">MULTI_STAGE_TASK_DATASETS</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># seed environment as needed. set seed=None to run unseeded</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">create_eval_env</span><span class="p">(</span><span class="n">env_name</span><span class="o">=</span><span class="n">env_name</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">run_random_rollouts</span><span class="p">(</span>
+    <span class="n">env</span><span class="p">,</span> <span class="n">num_rollouts</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">video_path</span><span class="o">=</span><span class="s2">&quot;/tmp/test.mp4&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Separately we provide tools to run policy rollouts within robomimic. See the <a class="reference external" href="../use_cases/policy_learning.html">policy learning page</a> for additional details.</p>
 </section>
 </section>
 
@@ -489,17 +496,17 @@ We model 10 floor plans ranging from basic designs found in apartments to more e
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="composite_tasks.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../datasets/creating.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Composite Tasks</p>
+            <p class="prev-next-title">Creating New Datasets</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="object_categories.html" title="next page">
+    <a class='right-next' id="next-link" href="policy_learning.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Object Categories</p>
+        <p class="prev-next-title">Training Policies</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

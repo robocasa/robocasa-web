@@ -26,9 +26,17 @@ Welcome to RoboCasa's documentation!
 
 .. toctree::
    :maxdepth: 1
+   :caption: Datasets
+
+   datasets/downloading
+   datasets/inspecting
+   datasets/creating
+
+.. toctree::
+   :maxdepth: 1
    :caption: Use Cases
 
-   use_cases/datasets
+   use_cases/evaluation
    use_cases/policy_learning
 
 .. toctree::

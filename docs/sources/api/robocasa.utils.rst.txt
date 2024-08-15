@@ -20,6 +20,14 @@ robocasa.utils.dataset\_registry module
    :undoc-members:
    :show-inheritance:
 
+robocasa.utils.eval\_utils module
+---------------------------------
+
+.. automodule:: robocasa.utils.eval_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 robocasa.utils.get\_all\_items\_by\_type module
 -----------------------------------------------
 

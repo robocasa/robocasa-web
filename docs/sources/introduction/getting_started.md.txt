@@ -15,10 +15,17 @@ python -m robocasa.demos.demo_kitchen_scenes
 
 -------
 ### Play back sample demonstrations of tasks
-Select a task and the script will render a human collected demonstration from our [datasets](../use_cases/datasets.html). Rendering can either be on-screen or offline as a video:
+Select a task and the script will render a human collected demonstration from our [datasets](../use_cases/datasets.html). Rendering can either be on-screen or off-screen as a video:
 ```
 python -m robocasa.demos.demo_tasks
 ```
+
+<div class="admonition note">
+<p class="admonition-title">Off-screen rendering</p>
+
+You can render videos of the demos off-screen by adding the `--render_offscreen` flag. Mac users will need to run the command as `python` instead of `mjpython`.
+
+</div>
 
 -------
 ### Explore library of 2500+ objects

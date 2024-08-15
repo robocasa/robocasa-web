@@ -141,18 +141,40 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets/downloading.html">
+   Downloading Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets/inspecting.html">
+   Inspecting and Visualizing Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets/creating.html">
+   Creating New Datasets
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Use Cases
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="use_cases/datasets.html">
-   Datasets
+  <a class="reference internal" href="use_cases/evaluation.html">
+   Evaluation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="use_cases/policy_learning.html">
-   Policy Learning
+   Training Policies
   </a>
  </li>
 </ul>
@@ -516,6 +538,8 @@ title="Fullscreen mode"
       <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.COUNTER_NON_CORNER">COUNTER_NON_CORNER (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.sanitize_surface.html#robocasa.environments.kitchen.multi_stage.sanitize_surface.countertop_cleanup.CountertopCleanup">CountertopCleanup (class in robocasa.environments.kitchen.multi_stage.sanitize_surface.countertop_cleanup)</a>
+</li>
+      <li><a href="api/robocasa.utils.html#robocasa.utils.eval_utils.create_eval_env">create_eval_env() (in module robocasa.utils.eval_utils)</a>
 </li>
       <li><a href="api/robocasa.models.arenas.html#robocasa.models.arenas.layout_builder.create_fixtures">create_fixtures() (in module robocasa.models.arenas.layout_builder)</a>
 </li>
@@ -1047,6 +1071,8 @@ title="Fullscreen mode"
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.KitchenDemo">KitchenDemo (class in robocasa.environments.kitchen.kitchen)</a>
 </li>
+      <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.KitchenEnvMeta">KitchenEnvMeta (class in robocasa.environments.kitchen.kitchen)</a>
+</li>
       <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.stove.Stove.knob_joints">knob_joints (robocasa.models.objects.fixtures.stove.Stove property)</a>
 </li>
       <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.handles.KnobHandle">KnobHandle (class in robocasa.models.objects.fixtures.handles)</a>
@@ -1405,6 +1431,8 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robocasa.utils.html#module-robocasa.utils.dataset_registry">robocasa.utils.dataset_registry</a>
 </li>
+        <li><a href="api/robocasa.utils.html#module-robocasa.utils.eval_utils">robocasa.utils.eval_utils</a>
+</li>
         <li><a href="api/robocasa.utils.html#module-robocasa.utils.get_all_items_by_type">robocasa.utils.get_all_items_by_type</a>
 </li>
         <li><a href="api/robocasa.utils.html#module-robocasa.utils.kitchen_utils">robocasa.utils.kitchen_utils</a>
@@ -1609,6 +1637,8 @@ title="Fullscreen mode"
       <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinet_panels.RaisedCabinetPanel">RaisedCabinetPanel (class in robocasa.models.objects.fixtures.cabinet_panels)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen.register_fixture_ref">register_fixture_ref() (robocasa.environments.kitchen.kitchen.Kitchen method)</a>
+</li>
+      <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.register_kitchen_env">register_kitchen_env() (in module robocasa.environments.kitchen.kitchen)</a>
 </li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.texture_swap.replace_cab_textures">replace_cab_textures() (in module robocasa.utils.texture_swap)</a>
 </li>
@@ -2180,8 +2210,6 @@ title="Fullscreen mode"
         <li><a href="api/robocasa.environments.kitchen.multi_stage.setting_the_table.html#module-robocasa.environments.kitchen.multi_stage.setting_the_table">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     robocasa.environments.kitchen.multi_stage.setting_the_table.arrange_bread_basket
 
@@ -2189,6 +2217,8 @@ title="Fullscreen mode"
         <li><a href="api/robocasa.environments.kitchen.multi_stage.setting_the_table.html#module-robocasa.environments.kitchen.multi_stage.setting_the_table.arrange_bread_basket">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     robocasa.environments.kitchen.multi_stage.setting_the_table.beverage_organization
 
@@ -2687,6 +2717,13 @@ title="Fullscreen mode"
 </li>
       </ul></li>
       <li>
+    robocasa.utils.eval_utils
+
+      <ul>
+        <li><a href="api/robocasa.utils.html#module-robocasa.utils.eval_utils">module</a>
+</li>
+      </ul></li>
+      <li>
     robocasa.utils.get_all_items_by_type
 
       <ul>
@@ -2776,6 +2813,8 @@ title="Fullscreen mode"
         <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.windows.Window.rot">(robocasa.models.objects.fixtures.windows.Window property)</a>
 </li>
       </ul></li>
+      <li><a href="api/robocasa.utils.html#robocasa.utils.eval_utils.run_random_rollouts">run_random_rollouts() (in module robocasa.utils.eval_utils)</a>
+</li>
   </ul></td>
 </tr></table>
 

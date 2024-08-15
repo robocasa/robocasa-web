@@ -1,35 +1,15 @@
-# Datasets
+# Inspecting and Visualizing Datasets
 
-RoboCasa comes with a large selection of demonstrations to faciliate training agents. We provide:
-- **human demonstrations**: across all 25 atomic tasks and a subset of composite tasks, with 50 demonstrations per task.
-- **machine-generated demonstrations** from [MimicGen](https://mimicgen.github.io/): across 24 atomic tasks, with 3000 demonstrations per task.
-
-## Downloading datasets
-
-<div class="admonition note">
-<p class="admonition-title">Dataset storage location</p>
-
-By default, all datasets are stored under `datasets/` in the root robocasa directory. You can change the location for datasets by setting `DATASET_BASE_PATH` in `robocasa/macros_private.py`.
-
-</div>
-
-Here are a few ways to download the datasets:
+To get dataset meta data (filter keys, env args) and statistics (object, task language, scenes):
 ```
-# downloads all human datasets with images
-python -m robocasa.scripts.download_datasets --ds_types human_im
-
-# lite download: download human datasets without images
-python -m robocasa.scripts.download_datasets --ds_types human_raw
-
-# downloads all MimicGen datasets with images
-python -m robocasa.scripts.download_datasets --ds_types mg_im
+python robocasa/scripts/get_dataset_info.py --dataset <ds-path>
 ```
 
-Additionally you can specify the following optional arguments:
+To visualize a dataset and save a video:
 ```
---tasks <tasks>: downloads datasets for specific tasks, eg, --tasks PnPCounterToCab ArrangeVegetables
---overwrite: overwrites existing datasets
+python robocasa/scripts/playback_dataset.py --n 10 --dataset <ds-path>
 ```
+This will save a video of 10 random demonstrations in the same path as the dataset. You can play the full dataset by removing the `--n` flag.
 
 ## Dataset structure
 RoboCasa datasets follow the convention of robomimic `.hdf5` files. Here is an overview of important elements of each dataset:
@@ -50,7 +30,7 @@ RoboCasa datasets follow the convention of robomimic `.hdf5` files. Here is an o
 
 
 Here is an example script to access dataset elements:
-```
+```py
 import h5py
 import json
 
@@ -62,5 +42,3 @@ ep_meta = json.loads(demo.attrs["ep_meta"])       # get meta data for episode
 lang = ep_meta["lang"]                            # get language instruction for episode
 f.close()
 ```
-
-

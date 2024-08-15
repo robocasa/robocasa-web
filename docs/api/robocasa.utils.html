@@ -9,29 +9,29 @@
     <title>robocasa.utils package &#8212; RoboCasa 0.1 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=4fea3ae4a0a4ba949df0a89bbae557cc2ce861ae" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4fea3ae4a0a4ba949df0a89bbae557cc2ce861ae" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
-    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
-    <script src="../static/jquery.js"></script>
-    <script src="../static/underscore.js"></script>
-    <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -77,7 +77,7 @@
         
       
       
-      <img src="../static/robocasa_logo.svg" class="logo" alt="logo">
+      <img src="../_static/robocasa_logo.svg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">RoboCasa 0.1 documentation</h1>
@@ -144,18 +144,40 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/downloading.html">
+   Downloading Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/inspecting.html">
+   Inspecting and Visualizing Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/creating.html">
+   Creating New Datasets
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Use Cases
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/datasets.html">
-   Datasets
+  <a class="reference internal" href="../use_cases/evaluation.html">
+   Evaluation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Policy Learning
+   Training Policies
   </a>
  </li>
 </ul>
@@ -335,7 +357,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../sources/api/robocasa.utils.rst.txt"
+        <a href="../_sources/api/robocasa.utils.rst.txt"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -410,6 +432,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.eval_utils">
+   robocasa.utils.eval_utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robocasa.utils.get_all_items_by_type">
    robocasa.utils.get_all_items_by_type module
   </a>
@@ -471,6 +498,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robocasa.utils.dataset_registry">
    robocasa.utils.dataset_registry module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.eval_utils">
+   robocasa.utils.eval_utils module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -541,6 +573,19 @@ title="Print to PDF"
 <dl class="py function">
 <dt class="sig sig-object py" id="robocasa.utils.dataset_registry.get_ds_path">
 <span class="sig-prename descclassname"><span class="pre">robocasa.utils.dataset_registry.</span></span><span class="sig-name descname"><span class="pre">get_ds_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.dataset_registry.get_ds_path" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-robocasa.utils.eval_utils">
+<span id="robocasa-utils-eval-utils-module"></span><h2>robocasa.utils.eval_utils module<a class="headerlink" href="#module-robocasa.utils.eval_utils" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.eval_utils.create_eval_env">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.eval_utils.</span></span><span class="sig-name descname"><span class="pre">create_eval_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'PandaMobile'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controllers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'OSC_POSE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['robot0_agentview_left',</span> <span class="pre">'robot0_agentview_right',</span> <span class="pre">'robot0_eye_in_hand']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_widths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_heights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_instance_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'B'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generative_textures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_cameras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout_and_style_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">((1,</span> <span class="pre">1),</span> <span class="pre">(2,</span> <span class="pre">2),</span> <span class="pre">(4,</span> <span class="pre">4),</span> <span class="pre">(6,</span> <span class="pre">9),</span> <span class="pre">(7,</span> <span class="pre">10))</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.eval_utils.create_eval_env" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.utils.eval_utils.run_random_rollouts">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.eval_utils.</span></span><span class="sig-name descname"><span class="pre">run_random_rollouts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rollouts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.eval_utils.run_random_rollouts" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </section>
@@ -985,12 +1030,12 @@ z-offset of the current sampled objectâ€™s bottom_offset + the reference objectâ
 <span id="robocasa-utils-texture-swap-module"></span><h2>robocasa.utils.texture_swap module<a class="headerlink" href="#module-robocasa.utils.texture_swap" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="robocasa.utils.texture_swap.get_random_textures">
-<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">get_random_textures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.get_random_textures" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">get_random_textures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.get_random_textures" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="robocasa.utils.texture_swap.replace_cab_textures">
-<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">replace_cab_textures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_cab_texture_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.replace_cab_textures" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">replace_cab_textures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_cab_texture_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.replace_cab_textures" title="Permalink to this definition">#</a></dt>
 <dd><p>This function replaces the cabinet and counter base textures during playback.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1005,7 +1050,7 @@ If None (default), will replace with a random texture from flat or wood director
 
 <dl class="py function">
 <dt class="sig sig-object py" id="robocasa.utils.texture_swap.replace_counter_top_texture">
-<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">replace_counter_top_texture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_counter_top_texture_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.replace_counter_top_texture" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">replace_counter_top_texture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_counter_top_texture_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.replace_counter_top_texture" title="Permalink to this definition">#</a></dt>
 <dd><p>This function replaces the counter top textures during playback.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1020,7 +1065,7 @@ If None (default), will replace with a random texture from marble directory</p><
 
 <dl class="py function">
 <dt class="sig sig-object py" id="robocasa.utils.texture_swap.replace_floor_texture">
-<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">replace_floor_texture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_floor_texture_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.replace_floor_texture" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">replace_floor_texture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_floor_texture_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.replace_floor_texture" title="Permalink to this definition">#</a></dt>
 <dd><p>This function replaces the counter top textures during playback.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1035,7 +1080,7 @@ If None (default), will replace with a random texture from wood directory</p></l
 
 <dl class="py function">
 <dt class="sig sig-object py" id="robocasa.utils.texture_swap.replace_wall_texture">
-<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">replace_wall_texture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_wall_texture_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.replace_wall_texture" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">replace_wall_texture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_wall_texture_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.replace_wall_texture" title="Permalink to this definition">#</a></dt>
 <dd><p>This function replaces the counter top textures during playback.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1097,7 +1142,7 @@ If None (default), will replace with a random texture from wood directory</p></l
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>

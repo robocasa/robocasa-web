@@ -144,18 +144,40 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/downloading.html">
+   Downloading Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/inspecting.html">
+   Inspecting and Visualizing Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/creating.html">
+   Creating New Datasets
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Use Cases
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/datasets.html">
-   Datasets
+  <a class="reference internal" href="../use_cases/evaluation.html">
+   Evaluation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Policy Learning
+   Training Policies
   </a>
  </li>
 </ul>
@@ -488,11 +510,13 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="play-back-sample-demonstrations-of-tasks">
 <h2>Play back sample demonstrations of tasks<a class="headerlink" href="#play-back-sample-demonstrations-of-tasks" title="Permalink to this headline">#</a></h2>
-<p>Select a task and the script will render a human collected demonstration from our <a class="reference external" href="../use_cases/datasets.html">datasets</a>. Rendering can either be on-screen or offline as a video:</p>
+<p>Select a task and the script will render a human collected demonstration from our <a class="reference external" href="../use_cases/datasets.html">datasets</a>. Rendering can either be on-screen or off-screen as a video:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robocasa</span><span class="o">.</span><span class="n">demos</span><span class="o">.</span><span class="n">demo_tasks</span>
 </pre></div>
 </div>
-</section>
+<div class="admonition note">
+<p class="admonition-title">Off-screen rendering</p><p>You can render videos of the demos off-screen by adding the <code class="docutils literal notranslate"><span class="pre">--render_offscreen</span></code> flag. Mac users will need to run the command as <code class="docutils literal notranslate"><span class="pre">python</span></code> instead of <code class="docutils literal notranslate"><span class="pre">mjpython</span></code>.</p>
+</div></section>
 <hr class="docutils" />
 <section id="explore-library-of-2500-objects">
 <h2>Explore library of 2500+ objects<a class="headerlink" href="#explore-library-of-2500-objects" title="Permalink to this headline">#</a></h2>
