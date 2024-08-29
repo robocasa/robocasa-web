@@ -102,8 +102,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="introduction/getting_started.html">
+  <a class="reference internal" href="introduction/quick_start.html">
    Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction/basic_usage.html">
+   Basic Usage
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,8 +139,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -146,17 +151,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="datasets/downloading.html">
+  <a class="reference internal" href="datasets/downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="datasets/inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="datasets/using_datasets.html">
+   Using Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="datasets/creating.html">
+  <a class="reference internal" href="datasets/creating_datasets.html">
    Creating New Datasets
   </a>
  </li>
@@ -168,13 +173,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="use_cases/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="use_cases/policy_learning.html">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -239,26 +239,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="api/robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="api/robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="api/robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="api/robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="api/robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -266,8 +259,8 @@
     <a class="reference internal" href="api/robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -401,7 +394,7 @@ title="Fullscreen mode"
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.accessories.Accessory">Accessory (class in robocasa.models.objects.fixtures.accessories)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.accessories.Accessory">Accessory (class in robocasa.models.fixtures.accessories)</a>
 </li>
       <li><a href="api/robocasa.utils.usd.html#robocasa.utils.usd.exporter.USDExporter.add_camera">add_camera() (robocasa.utils.usd.exporter.USDExporter method)</a>
 </li>
@@ -415,10 +408,16 @@ title="Fullscreen mode"
       </ul></li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.placement_samplers.SequentialCompositeSampler.add_objects_to_sampler">add_objects_to_sampler() (robocasa.utils.placement_samplers.SequentialCompositeSampler method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.html#robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.afterwash_sorting.AfterwashSorting">AfterwashSorting (class in robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.afterwash_sorting)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.ALL">ALL (robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
+
+      <ul>
+        <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType.ALL">(robocasa.models.scenes.scene_registry.StyleType attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.placement_samplers.SequentialCompositeSampler.append_sampler">append_sampler() (robocasa.utils.placement_samplers.SequentialCompositeSampler method)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.setting_the_table.html#robocasa.environments.kitchen.multi_stage.setting_the_table.arrange_bread_basket.ArrangeBreadBasket">ArrangeBreadBasket (class in robocasa.environments.kitchen.multi_stage.setting_the_table.arrange_bread_basket)</a>
@@ -435,21 +434,21 @@ title="Fullscreen mode"
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.handles.BarHandle">BarHandle (class in robocasa.models.objects.fixtures.handles)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.handles.BarHandle">BarHandle (class in robocasa.models.fixtures.handles)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.setting_the_table.html#robocasa.environments.kitchen.multi_stage.setting_the_table.beverage_organization.BeverageOrganization">BeverageOrganization (class in robocasa.environments.kitchen.multi_stage.setting_the_table.beverage_organization)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.restocking_supplies.html#robocasa.environments.kitchen.multi_stage.restocking_supplies.beverage_sorting.BeverageSorting">BeverageSorting (class in robocasa.environments.kitchen.multi_stage.restocking_supplies.beverage_sorting)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.bottom_offset">bottom_offset (robocasa.models.objects.fixtures.fixture.Fixture property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.bottom_offset">bottom_offset (robocasa.models.fixtures.fixture.Fixture property)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.clearing_table.html#robocasa.environments.kitchen.multi_stage.clearing_table.bowl_and_cup.BowlAndCup">BowlAndCup (class in robocasa.environments.kitchen.multi_stage.clearing_table.bowl_and_cup)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.others.Box">Box (class in robocasa.models.objects.fixtures.others)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.others.Box">Box (class in robocasa.models.fixtures.others)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.handles.BoxedHandle">BoxedHandle (class in robocasa.models.objects.fixtures.handles)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.handles.BoxedHandle">BoxedHandle (class in robocasa.models.fixtures.handles)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.snack_preparation.html#robocasa.environments.kitchen.multi_stage.snack_preparation.bread_and_cheese.BreadAndCheese">BreadAndCheese (class in robocasa.environments.kitchen.multi_stage.snack_preparation.bread_and_cheese)</a>
 </li>
@@ -457,7 +456,7 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.chopping_food.html#robocasa.environments.kitchen.multi_stage.chopping_food.bread_setup_slicing.BreadSetupSlicing">BreadSetupSlicing (class in robocasa.environments.kitchen.multi_stage.chopping_food.bread_setup_slicing)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.stove.Stove.burner_sites">burner_sites (robocasa.models.objects.fixtures.stove.Stove property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.stove.Stove.burner_sites">burner_sites (robocasa.models.fixtures.stove.Stove property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -465,15 +464,15 @@ title="Fullscreen mode"
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.Cabinet">Cabinet (class in robocasa.models.objects.fixtures.cabinets)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.Cabinet">Cabinet (class in robocasa.models.fixtures.cabinets)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.CABINET">CABINET (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.CABINET">CABINET (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.CABINET_TOP">CABINET_TOP (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.CABINET_TOP">CABINET_TOP (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinet_panels.CabinetPanel">CabinetPanel (class in robocasa.models.objects.fixtures.cabinet_panels)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinet_panels.CabinetPanel">CabinetPanel (class in robocasa.models.fixtures.cabinet_panels)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinet_panels.CabinetShelf">CabinetShelf (class in robocasa.models.objects.fixtures.cabinet_panels)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinet_panels.CabinetShelf">CabinetShelf (class in robocasa.models.fixtures.cabinet_panels)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.clearing_table.html#robocasa.environments.kitchen.multi_stage.clearing_table.candle_cleanup.CandleCleanup">CandleCleanup (class in robocasa.environments.kitchen.multi_stage.clearing_table.candle_cleanup)</a>
 </li>
@@ -485,11 +484,11 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.object_utils.check_obj_in_receptacle">check_obj_in_receptacle() (in module robocasa.utils.object_utils)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.accessories.CoffeeMachine.check_receptacle_placement_for_pouring">check_receptacle_placement_for_pouring() (robocasa.models.objects.fixtures.accessories.CoffeeMachine method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.accessories.CoffeeMachine.check_receptacle_placement_for_pouring">check_receptacle_placement_for_pouring() (robocasa.models.fixtures.accessories.CoffeeMachine method)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer.check_sidewall_contact">check_sidewall_contact() (robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer method)</a>
 </li>
-      <li><a href="api/robocasa.models.arenas.html#robocasa.models.arenas.layout_builder.check_syntax">check_syntax() (in module robocasa.models.arenas.layout_builder)</a>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_builder.check_syntax">check_syntax() (in module robocasa.models.scenes.scene_builder)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.making_toast.html#robocasa.environments.kitchen.multi_stage.making_toast.cheesy_bread.CheesyBread">CheesyBread (class in robocasa.environments.kitchen.multi_stage.making_toast.cheesy_bread)</a>
 </li>
@@ -507,13 +506,15 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_drawer.CloseDrawer">CloseDrawer (class in robocasa.environments.kitchen.single_stage.kitchen_drawer)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_doors.CloseSingleDoor">CloseSingleDoor (class in robocasa.environments.kitchen.single_stage.kitchen_doors)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.COFFEE_MACHINE">COFFEE_MACHINE (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType.COASTAL">COASTAL (robocasa.models.scenes.scene_registry.StyleType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.accessories.CoffeeMachine">CoffeeMachine (class in robocasa.models.objects.fixtures.accessories)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.COFFEE_MACHINE">COFFEE_MACHINE (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
+</li>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.accessories.CoffeeMachine">CoffeeMachine (class in robocasa.models.fixtures.accessories)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_coffee.CoffeePressButton">CoffeePressButton (class in robocasa.environments.kitchen.single_stage.kitchen_coffee)</a>
 </li>
@@ -531,26 +532,26 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen.convert_rel_to_abs_action">convert_rel_to_abs_action() (robocasa.environments.kitchen.kitchen.Kitchen method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.counter.Counter">Counter (class in robocasa.models.objects.fixtures.counter)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.counter.Counter">Counter (class in robocasa.models.fixtures.counter)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.COUNTER">COUNTER (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.COUNTER">COUNTER (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.COUNTER_NON_CORNER">COUNTER_NON_CORNER (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.COUNTER_NON_CORNER">COUNTER_NON_CORNER (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.sanitize_surface.html#robocasa.environments.kitchen.multi_stage.sanitize_surface.countertop_cleanup.CountertopCleanup">CountertopCleanup (class in robocasa.environments.kitchen.multi_stage.sanitize_surface.countertop_cleanup)</a>
 </li>
-      <li><a href="api/robocasa.utils.html#robocasa.utils.eval_utils.create_eval_env">create_eval_env() (in module robocasa.utils.eval_utils)</a>
+      <li><a href="api/robocasa.utils.html#robocasa.utils.env_utils.create_env">create_env() (in module robocasa.utils.env_utils)</a>
 </li>
-      <li><a href="api/robocasa.models.arenas.html#robocasa.models.arenas.layout_builder.create_fixtures">create_fixtures() (in module robocasa.models.arenas.layout_builder)</a>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_builder.create_fixtures">create_fixtures() (in module robocasa.models.scenes.scene_builder)</a>
 </li>
       <li><a href="api/robocasa.utils.usd.html#robocasa.utils.usd.shapes.create_hemisphere">create_hemisphere() (in module robocasa.utils.usd.shapes)</a>
 </li>
       <li><a href="api/robocasa.utils.usd.html#robocasa.utils.usd.utils.create_transform_matrix">create_transform_matrix() (in module robocasa.utils.usd.utils)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.windows.FramedWindow.create_window">create_window() (robocasa.models.objects.fixtures.windows.FramedWindow method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.windows.FramedWindow.create_window">create_window() (robocasa.models.fixtures.windows.FramedWindow method)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.windows.Window.create_window">(robocasa.models.objects.fixtures.windows.Window method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.windows.Window.create_window">(robocasa.models.fixtures.windows.Window method)</a>
 </li>
       </ul></li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.baking.html#robocasa.environments.kitchen.multi_stage.baking.cupcake_cleanup.CupcakeCleanup">CupcakeCleanup (class in robocasa.environments.kitchen.multi_stage.baking.cupcake_cleanup)</a>
@@ -565,49 +566,51 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.defrosting_food.html#robocasa.environments.kitchen.multi_stage.defrosting_food.defrost_by_category.DefrostByCategory">DefrostByCategory (class in robocasa.environments.kitchen.multi_stage.defrosting_food.defrost_by_category)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.counter.Counter.depth">depth (robocasa.models.objects.fixtures.counter.Counter property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.counter.Counter.depth">depth (robocasa.models.fixtures.counter.Counter property)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.depth">(robocasa.models.objects.fixtures.fixture.Fixture property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.depth">(robocasa.models.fixtures.fixture.Fixture property)</a>
 </li>
       </ul></li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.clearing_table.html#robocasa.environments.kitchen.multi_stage.clearing_table.dessert_assembly.DessertAssembly">DessertAssembly (class in robocasa.environments.kitchen.multi_stage.clearing_table.dessert_assembly)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.serving_food.html#robocasa.environments.kitchen.multi_stage.serving_food.dessert_upgrade.DessertUpgrade">DessertUpgrade (class in robocasa.environments.kitchen.multi_stage.serving_food.dessert_upgrade)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.DINING_COUNTER">DINING_COUNTER (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.DINING">DINING (robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.dishwasher.Dishwasher">Dishwasher (class in robocasa.models.objects.fixtures.dishwasher)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.DINING_COUNTER">DINING_COUNTER (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinet_panels.DividedWindowCabinetPanel">DividedWindowCabinetPanel (class in robocasa.models.objects.fixtures.cabinet_panels)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.dishwasher.Dishwasher">Dishwasher (class in robocasa.models.fixtures.dishwasher)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.DOOR">DOOR (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinet_panels.DividedWindowCabinetPanel">DividedWindowCabinetPanel (class in robocasa.models.fixtures.cabinet_panels)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.DOOR_HINGE">DOOR_HINGE (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.DOOR">DOOR (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.DOOR_HINGE_DOUBLE">DOOR_HINGE_DOUBLE (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.DOOR_HINGE">DOOR_HINGE (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
+</li>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.DOOR_HINGE_DOUBLE">DOOR_HINGE_DOUBLE (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.DOOR_HINGE_SINGLE">DOOR_HINGE_SINGLE (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.DOOR_HINGE_SINGLE">DOOR_HINGE_SINGLE (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.SingleCabinet.door_name">door_name (robocasa.models.objects.fixtures.cabinets.SingleCabinet property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.SingleCabinet.door_name">door_name (robocasa.models.fixtures.cabinets.SingleCabinet property)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.microwave.Microwave.door_name">(robocasa.models.objects.fixtures.microwave.Microwave property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.microwave.Microwave.door_name">(robocasa.models.fixtures.microwave.Microwave property)</a>
 </li>
       </ul></li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.DOOR_TOP_HINGE">DOOR_TOP_HINGE (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.DOOR_TOP_HINGE">DOOR_TOP_HINGE (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.DOOR_TOP_HINGE_DOUBLE">DOOR_TOP_HINGE_DOUBLE (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.DOOR_TOP_HINGE_DOUBLE">DOOR_TOP_HINGE_DOUBLE (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.DOOR_TOP_HINGE_SINGLE">DOOR_TOP_HINGE_SINGLE (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.DOOR_TOP_HINGE_SINGLE">DOOR_TOP_HINGE_SINGLE (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.html#robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.drain_veggies.DrainVeggies">DrainVeggies (class in robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.drain_veggies)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.Drawer">Drawer (class in robocasa.models.objects.fixtures.cabinets)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.Drawer">Drawer (class in robocasa.models.fixtures.cabinets)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.DRAWER">DRAWER (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.DRAWER">DRAWER (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.html#robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.drawer_utensil_sort.DrawerUtensilSort">DrawerUtensilSort (class in robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.drawer_utensil_sort)</a>
 </li>
@@ -625,34 +628,58 @@ title="Fullscreen mode"
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen.edit_model_xml">edit_model_xml() (robocasa.environments.kitchen.kitchen.Kitchen method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.euler">euler (robocasa.models.objects.fixtures.fixture.Fixture property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.euler">euler (robocasa.models.fixtures.fixture.Fixture property)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.washing_dishes.html#robocasa.environments.kitchen.multi_stage.washing_dishes.dry_drinkware.DryDrinkware.euler_from_quaternion">euler_from_quaternion() (robocasa.environments.kitchen.multi_stage.washing_dishes.dry_drinkware.DryDrinkware method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinet_panels.CabinetPanel.exclude_from_prefixing">exclude_from_prefixing() (robocasa.models.objects.fixtures.cabinet_panels.CabinetPanel method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinet_panels.CabinetPanel.exclude_from_prefixing">exclude_from_prefixing() (robocasa.models.fixtures.cabinet_panels.CabinetPanel method)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinet_panels.CabinetShelf.exclude_from_prefixing">(robocasa.models.objects.fixtures.cabinet_panels.CabinetShelf method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinet_panels.CabinetShelf.exclude_from_prefixing">(robocasa.models.fixtures.cabinet_panels.CabinetShelf method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.ProcGenFixture.exclude_from_prefixing">(robocasa.models.objects.fixtures.fixture.ProcGenFixture method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.ProcGenFixture.exclude_from_prefixing">(robocasa.models.fixtures.fixture.ProcGenFixture method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.handles.Handle.exclude_from_prefixing">(robocasa.models.objects.fixtures.handles.Handle method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.handles.Handle.exclude_from_prefixing">(robocasa.models.fixtures.handles.Handle method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen.EXCLUDE_LAYOUTS">EXCLUDE_LAYOUTS (robocasa.environments.kitchen.kitchen.Kitchen attribute)</a>
 
       <ul>
+        <li><a href="api/robocasa.environments.kitchen.multi_stage.clearing_table.html#robocasa.environments.kitchen.multi_stage.clearing_table.bowl_and_cup.BowlAndCup.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.clearing_table.bowl_and_cup.BowlAndCup attribute)</a>
+</li>
+        <li><a href="api/robocasa.environments.kitchen.multi_stage.clearing_table.html#robocasa.environments.kitchen.multi_stage.clearing_table.candle_cleanup.CandleCleanup.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.clearing_table.candle_cleanup.CandleCleanup attribute)</a>
+</li>
+        <li><a href="api/robocasa.environments.kitchen.multi_stage.clearing_table.html#robocasa.environments.kitchen.multi_stage.clearing_table.clearing_cleaning_receptacles.ClearingCleaningReceptacles.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.clearing_table.clearing_cleaning_receptacles.ClearingCleaningReceptacles attribute)</a>
+</li>
+        <li><a href="api/robocasa.environments.kitchen.multi_stage.clearing_table.html#robocasa.environments.kitchen.multi_stage.clearing_table.drinkware_consolidation.DrinkwareConsolidation.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.clearing_table.drinkware_consolidation.DrinkwareConsolidation attribute)</a>
+</li>
         <li><a href="api/robocasa.environments.kitchen.multi_stage.defrosting_food.html#robocasa.environments.kitchen.multi_stage.defrosting_food.microwave_thawing.MicrowaveThawing.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.defrosting_food.microwave_thawing.MicrowaveThawing attribute)</a>
 </li>
         <li><a href="api/robocasa.environments.kitchen.multi_stage.sanitize_surface.html#robocasa.environments.kitchen.multi_stage.sanitize_surface.clean_microwave.CleanMicrowave.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.sanitize_surface.clean_microwave.CleanMicrowave attribute)</a>
+</li>
+        <li><a href="api/robocasa.environments.kitchen.multi_stage.serving_food.html#robocasa.environments.kitchen.multi_stage.serving_food.pan_transfer.PanTransfer.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.serving_food.pan_transfer.PanTransfer attribute)</a>
+</li>
+        <li><a href="api/robocasa.environments.kitchen.multi_stage.serving_food.html#robocasa.environments.kitchen.multi_stage.serving_food.serve_steak.ServeSteak.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.serving_food.serve_steak.ServeSteak attribute)</a>
+</li>
+        <li><a href="api/robocasa.environments.kitchen.multi_stage.serving_food.html#robocasa.environments.kitchen.multi_stage.serving_food.wine_serving_prep.WineServingPrep.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.serving_food.wine_serving_prep.WineServingPrep attribute)</a>
+</li>
+        <li><a href="api/robocasa.environments.kitchen.multi_stage.setting_the_table.html#robocasa.environments.kitchen.multi_stage.setting_the_table.arrange_bread_basket.ArrangeBreadBasket.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.setting_the_table.arrange_bread_basket.ArrangeBreadBasket attribute)</a>
+</li>
+        <li><a href="api/robocasa.environments.kitchen.multi_stage.setting_the_table.html#robocasa.environments.kitchen.multi_stage.setting_the_table.beverage_organization.BeverageOrganization.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.setting_the_table.beverage_organization.BeverageOrganization attribute)</a>
+</li>
+        <li><a href="api/robocasa.environments.kitchen.multi_stage.setting_the_table.html#robocasa.environments.kitchen.multi_stage.setting_the_table.date_night.DateNight.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.setting_the_table.date_night.DateNight attribute)</a>
+</li>
+        <li><a href="api/robocasa.environments.kitchen.multi_stage.setting_the_table.html#robocasa.environments.kitchen.multi_stage.setting_the_table.seasoning_spice_setup.SeasoningSpiceSetup.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.setting_the_table.seasoning_spice_setup.SeasoningSpiceSetup attribute)</a>
+</li>
+        <li><a href="api/robocasa.environments.kitchen.multi_stage.setting_the_table.html#robocasa.environments.kitchen.multi_stage.setting_the_table.set_bowls_for_soup.SetBowlsForSoup.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.multi_stage.setting_the_table.set_bowls_for_soup.SetBowlsForSoup attribute)</a>
 </li>
         <li><a href="api/robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToMicrowave.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPCounterToMicrowave attribute)</a>
 </li>
         <li><a href="api/robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPMicrowaveToCounter.EXCLUDE_LAYOUTS">(robocasa.environments.kitchen.single_stage.kitchen_pnp.PnPMicrowaveToCounter attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robocasa.utils.usd.html#robocasa.utils.usd.exporter_test.ExporterTest">ExporterTest (class in robocasa.utils.usd.exporter_test)</a>
 </li>
   </ul></td>
@@ -661,33 +688,35 @@ title="Fullscreen mode"
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType.FARMHOUSE">FARMHOUSE (robocasa.models.scenes.scene_registry.StyleType attribute)</a>
+</li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.boiling.html#robocasa.environments.kitchen.multi_stage.boiling.fill_kettle.FillKettle">FillKettle (class in robocasa.environments.kitchen.multi_stage.boiling.fill_kettle)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen.find_object_cfg_by_name">find_object_cfg_by_name() (robocasa.environments.kitchen.kitchen.Kitchen method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture">Fixture (class in robocasa.models.objects.fixtures.fixture)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture">Fixture (class in robocasa.models.fixtures.fixture)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture_utils.fixture_is_type">fixture_is_type() (in module robocasa.models.objects.fixtures.fixture_utils)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture_utils.fixture_is_type">fixture_is_type() (in module robocasa.models.fixtures.fixture_utils)</a>
 </li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.object_utils.fixture_pairwise_dist">fixture_pairwise_dist() (in module robocasa.utils.object_utils)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture_stack.FixtureStack">FixtureStack (class in robocasa.models.objects.fixtures.fixture_stack)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture_stack.FixtureStack">FixtureStack (class in robocasa.models.fixtures.fixture_stack)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType">FixtureType (class in robocasa.models.objects.fixtures.fixture)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType">FixtureType (class in robocasa.models.fixtures.fixture)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.others.Floor">Floor (class in robocasa.models.objects.fixtures.others)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.others.Floor">Floor (class in robocasa.models.fixtures.others)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.clearing_table.html#robocasa.environments.kitchen.multi_stage.clearing_table.food_cleanup.FoodCleanup">FoodCleanup (class in robocasa.environments.kitchen.multi_stage.clearing_table.food_cleanup)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.windows.FramedWindow">FramedWindow (class in robocasa.models.objects.fixtures.windows)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.windows.FramedWindow">FramedWindow (class in robocasa.models.fixtures.windows)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fridge.Fridge">Fridge (class in robocasa.models.objects.fixtures.fridge)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fridge.Fridge">Fridge (class in robocasa.models.fixtures.fridge)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.frying.html#robocasa.environments.kitchen.multi_stage.frying.frying_pan_adjustment.FryingPanAdjustment">FryingPanAdjustment (class in robocasa.environments.kitchen.multi_stage.frying.frying_pan_adjustment)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinet_panels.FullWindowedCabinetPanel">FullWindowedCabinetPanel (class in robocasa.models.objects.fixtures.cabinet_panels)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinet_panels.FullWindowedCabinetPanel">FullWindowedCabinetPanel (class in robocasa.models.fixtures.cabinet_panels)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -695,24 +724,30 @@ title="Fullscreen mode"
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.G_SHAPED_LARGE">G_SHAPED_LARGE (robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.G_SHAPED_SMALL">G_SHAPED_SMALL (robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.GALLEY">GALLEY (robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
+</li>
       <li><a href="api/robocasa.utils.usd.html#robocasa.utils.usd.demo.generate_usd_trajectory">generate_usd_trajectory() (in module robocasa.utils.usd.demo)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.get_bbox_points">get_bbox_points() (robocasa.models.objects.fixtures.fixture.Fixture method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.get_bbox_points">get_bbox_points() (robocasa.models.fixtures.fixture.Fixture method)</a>
 
       <ul>
         <li><a href="api/robocasa.models.objects.html#robocasa.models.objects.objects.MJCFObject.get_bbox_points">(robocasa.models.objects.objects.MJCFObject method)</a>
 </li>
       </ul></li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.Cabinet.get_door_state">get_door_state() (robocasa.models.objects.fixtures.cabinets.Cabinet method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.Cabinet.get_door_state">get_door_state() (robocasa.models.fixtures.cabinets.Cabinet method)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.Drawer.get_door_state">(robocasa.models.objects.fixtures.cabinets.Drawer method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.Drawer.get_door_state">(robocasa.models.fixtures.cabinets.Drawer method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.HingeCabinet.get_door_state">(robocasa.models.objects.fixtures.cabinets.HingeCabinet method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.HingeCabinet.get_door_state">(robocasa.models.fixtures.cabinets.HingeCabinet method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.SingleCabinet.get_door_state">(robocasa.models.objects.fixtures.cabinets.SingleCabinet method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.SingleCabinet.get_door_state">(robocasa.models.fixtures.cabinets.SingleCabinet method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.microwave.Microwave.get_door_state">(robocasa.models.objects.fixtures.microwave.Microwave method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.microwave.Microwave.get_door_state">(robocasa.models.fixtures.microwave.Microwave method)</a>
 </li>
       </ul></li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.dataset_registry.get_ds_path">get_ds_path() (in module robocasa.utils.dataset_registry)</a>
@@ -929,23 +964,25 @@ title="Fullscreen mode"
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.get_ext_sites">get_ext_sites() (robocasa.models.objects.fixtures.fixture.Fixture method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.get_ext_sites">get_ext_sites() (robocasa.models.fixtures.fixture.Fixture method)</a>
 </li>
       <li><a href="api/robocasa.utils.usd.html#robocasa.utils.usd.component.USDMesh.get_facetexcoord_ranges">get_facetexcoord_ranges() (robocasa.utils.usd.component.USDMesh method)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen.get_fixture">get_fixture() (robocasa.environments.kitchen.kitchen.Kitchen method)</a>
 </li>
-      <li><a href="api/robocasa.models.arenas.html#robocasa.models.arenas.kitchen_arena.KitchenArena.get_fixture_cfgs">get_fixture_cfgs() (robocasa.models.arenas.kitchen_arena.KitchenArena method)</a>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.kitchen_arena.KitchenArena.get_fixture_cfgs">get_fixture_cfgs() (robocasa.models.scenes.kitchen_arena.KitchenArena method)</a>
 </li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.object_utils.get_fixture_to_point_rel_offset">get_fixture_to_point_rel_offset() (in module robocasa.utils.object_utils)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.sink.Sink.get_handle_state">get_handle_state() (robocasa.models.objects.fixtures.sink.Sink method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.sink.Sink.get_handle_state">get_handle_state() (robocasa.models.fixtures.sink.Sink method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.get_int_sites">get_int_sites() (robocasa.models.objects.fixtures.fixture.Fixture method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.get_int_sites">get_int_sites() (robocasa.models.fixtures.fixture.Fixture method)</a>
 </li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.get_all_items_by_type.get_items_by_type">get_items_by_type() (in module robocasa.utils.get_all_items_by_type)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.stove.Stove.get_knobs_state">get_knobs_state() (robocasa.models.objects.fixtures.stove.Stove method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.stove.Stove.get_knobs_state">get_knobs_state() (robocasa.models.fixtures.stove.Stove method)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.get_layout_path">get_layout_path() (in module robocasa.models.scenes.scene_registry)</a>
 </li>
       <li><a href="api/robocasa.models.objects.html#robocasa.models.objects.kitchen_objects.ObjCat.get_mjcf_kwargs">get_mjcf_kwargs() (robocasa.models.objects.kitchen_objects.ObjCat method)</a>
 </li>
@@ -953,48 +990,48 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.object_utils.get_pos_after_rel_offset">get_pos_after_rel_offset() (in module robocasa.utils.object_utils)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.others.Wall.get_quat">get_quat() (robocasa.models.objects.fixtures.others.Wall method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.others.Wall.get_quat">get_quat() (robocasa.models.fixtures.others.Wall method)</a>
 </li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.texture_swap.get_random_textures">get_random_textures() (in module robocasa.utils.texture_swap)</a>
 </li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.object_utils.get_rel_transform">get_rel_transform() (in module robocasa.utils.object_utils)</a>
 </li>
-      <li><a href="api/robocasa.models.arenas.html#robocasa.models.arenas.layout_utils.get_relative_position">get_relative_position() (in module robocasa.models.arenas.layout_utils)</a>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_utils.get_relative_position">get_relative_position() (in module robocasa.models.scenes.scene_utils)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.accessories.CoffeeMachine.get_reset_regions">get_reset_regions() (robocasa.models.objects.fixtures.accessories.CoffeeMachine method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.accessories.CoffeeMachine.get_reset_regions">get_reset_regions() (robocasa.models.fixtures.accessories.CoffeeMachine method)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.Cabinet.get_reset_regions">(robocasa.models.objects.fixtures.cabinets.Cabinet method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.Cabinet.get_reset_regions">(robocasa.models.fixtures.cabinets.Cabinet method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.counter.Counter.get_reset_regions">(robocasa.models.objects.fixtures.counter.Counter method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.counter.Counter.get_reset_regions">(robocasa.models.fixtures.counter.Counter method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.get_reset_regions">(robocasa.models.objects.fixtures.fixture.Fixture method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.get_reset_regions">(robocasa.models.fixtures.fixture.Fixture method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.stove.Stove.get_reset_regions">(robocasa.models.objects.fixtures.stove.Stove method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.stove.Stove.get_reset_regions">(robocasa.models.fixtures.stove.Stove method)</a>
 </li>
       </ul></li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.get_site_info">get_site_info() (robocasa.models.objects.fixtures.fixture.Fixture method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.get_site_info">get_site_info() (robocasa.models.fixtures.fixture.Fixture method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.accessories.CoffeeMachine.get_state">get_state() (robocasa.models.objects.fixtures.accessories.CoffeeMachine method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.accessories.CoffeeMachine.get_state">get_state() (robocasa.models.fixtures.accessories.CoffeeMachine method)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.HingeCabinet.get_state">(robocasa.models.objects.fixtures.cabinets.HingeCabinet method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.HingeCabinet.get_state">(robocasa.models.fixtures.cabinets.HingeCabinet method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.PanelCabinet.get_state">(robocasa.models.objects.fixtures.cabinets.PanelCabinet method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.PanelCabinet.get_state">(robocasa.models.fixtures.cabinets.PanelCabinet method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.get_state">(robocasa.models.objects.fixtures.fixture.Fixture method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.get_state">(robocasa.models.fixtures.fixture.Fixture method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.microwave.Microwave.get_state">(robocasa.models.objects.fixtures.microwave.Microwave method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.microwave.Microwave.get_state">(robocasa.models.fixtures.microwave.Microwave method)</a>
 </li>
       </ul></li>
-      <li><a href="api/robocasa.models.objects.html#robocasa.models.objects.object_groups.ObjectGroup.get_states">get_states() (robocasa.models.objects.object_groups.ObjectGroup method)</a>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.get_style_path">get_style_path() (in module robocasa.models.scenes.scene_registry)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.get_texture_name_from_file">get_texture_name_from_file() (in module robocasa.models.objects.fixtures.fixture)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.get_texture_name_from_file">get_texture_name_from_file() (in module robocasa.models.fixtures.fixture)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.accessories.CoffeeMachine.gripper_button_far">gripper_button_far() (robocasa.models.objects.fixtures.accessories.CoffeeMachine method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.accessories.CoffeeMachine.gripper_button_far">gripper_button_far() (robocasa.models.fixtures.accessories.CoffeeMachine method)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.microwave.Microwave.gripper_button_far">(robocasa.models.objects.fixtures.microwave.Microwave method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.microwave.Microwave.gripper_button_far">(robocasa.models.fixtures.microwave.Microwave method)</a>
 </li>
       </ul></li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.object_utils.gripper_obj_far">gripper_obj_far() (in module robocasa.utils.object_utils)</a>
@@ -1005,16 +1042,16 @@ title="Fullscreen mode"
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.handles.Handle">Handle (class in robocasa.models.objects.fixtures.handles)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.handles.Handle">Handle (class in robocasa.models.fixtures.handles)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.sink.Sink.handle_joint">handle_joint (robocasa.models.objects.fixtures.sink.Sink property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.sink.Sink.handle_joint">handle_joint (robocasa.models.fixtures.sink.Sink property)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.Drawer.handle_name">handle_name (robocasa.models.objects.fixtures.cabinets.Drawer property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.Drawer.handle_name">handle_name (robocasa.models.fixtures.cabinets.Drawer property)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.SingleCabinet.handle_name">(robocasa.models.objects.fixtures.cabinets.SingleCabinet property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.SingleCabinet.handle_name">(robocasa.models.fixtures.cabinets.SingleCabinet property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.microwave.Microwave.handle_name">(robocasa.models.objects.fixtures.microwave.Microwave property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.microwave.Microwave.handle_name">(robocasa.models.fixtures.microwave.Microwave property)</a>
 </li>
       </ul></li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.reheating_food.html#robocasa.environments.kitchen.multi_stage.reheating_food.heat_mug.HeatMug">HeatMug (class in robocasa.environments.kitchen.multi_stage.reheating_food.heat_mug)</a>
@@ -1023,25 +1060,25 @@ title="Fullscreen mode"
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.counter.Counter.height">height (robocasa.models.objects.fixtures.counter.Counter property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.counter.Counter.height">height (robocasa.models.fixtures.counter.Counter property)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.height">(robocasa.models.objects.fixtures.fixture.Fixture property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.height">(robocasa.models.fixtures.fixture.Fixture property)</a>
 </li>
       </ul></li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.placement_samplers.SequentialCompositeSampler.hide">hide() (robocasa.utils.placement_samplers.SequentialCompositeSampler method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.HingeCabinet">HingeCabinet (class in robocasa.models.objects.fixtures.cabinets)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.HingeCabinet">HingeCabinet (class in robocasa.models.fixtures.cabinets)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.hood.Hood">Hood (class in robocasa.models.objects.fixtures.hood)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.hood.Hood">Hood (class in robocasa.models.fixtures.hood)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.horizontal_radius">horizontal_radius (robocasa.models.objects.fixtures.fixture.Fixture property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.horizontal_radius">horizontal_radius (robocasa.models.fixtures.fixture.Fixture property)</a>
 
       <ul>
         <li><a href="api/robocasa.models.objects.html#robocasa.models.objects.objects.MJCFObject.horizontal_radius">(robocasa.models.objects.objects.MJCFObject property)</a>
 </li>
       </ul></li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.HousingCabinet">HousingCabinet (class in robocasa.models.objects.fixtures.cabinets)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.HousingCabinet">HousingCabinet (class in robocasa.models.fixtures.cabinets)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1049,12 +1086,18 @@ title="Fullscreen mode"
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.arenas.html#robocasa.models.arenas.layout_utils.initialize_fixture">initialize_fixture() (in module robocasa.models.arenas.layout_utils)</a>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType.INDUSTRIAL">INDUSTRIAL (robocasa.models.scenes.scene_registry.StyleType attribute)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_utils.initialize_fixture">initialize_fixture() (in module robocasa.models.scenes.scene_utils)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.ISLAND">ISLAND (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.ISLAND">ISLAND (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
+
+      <ul>
+        <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.ISLAND">(robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -1065,7 +1108,7 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen">Kitchen (class in robocasa.environments.kitchen.kitchen)</a>
 </li>
-      <li><a href="api/robocasa.models.arenas.html#robocasa.models.arenas.kitchen_arena.KitchenArena">KitchenArena (class in robocasa.models.arenas.kitchen_arena)</a>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.kitchen_arena.KitchenArena">KitchenArena (class in robocasa.models.scenes.kitchen_arena)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -1073,9 +1116,9 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.KitchenEnvMeta">KitchenEnvMeta (class in robocasa.environments.kitchen.kitchen)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.stove.Stove.knob_joints">knob_joints (robocasa.models.objects.fixtures.stove.Stove property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.stove.Stove.knob_joints">knob_joints (robocasa.models.fixtures.stove.Stove property)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.handles.KnobHandle">KnobHandle (class in robocasa.models.objects.fixtures.handles)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.handles.KnobHandle">KnobHandle (class in robocasa.models.fixtures.handles)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1083,13 +1126,19 @@ title="Fullscreen mode"
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.HingeCabinet.left_handle_name">left_handle_name (robocasa.models.objects.fixtures.cabinets.HingeCabinet property)</a>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.L_SHAPED_LARGE">L_SHAPED_LARGE (robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.L_SHAPED_SMALL">L_SHAPED_SMALL (robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType">LayoutType (class in robocasa.models.scenes.scene_registry)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.HingeCabinet.left_handle_name">left_handle_name (robocasa.models.fixtures.cabinets.HingeCabinet property)</a>
+</li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.get_all_items_by_type.list_of_strings">list_of_strings() (in module robocasa.utils.get_all_items_by_type)</a>
 </li>
-      <li><a href="api/robocasa.models.arenas.html#robocasa.models.arenas.layout_utils.load_style_config">load_style_config() (in module robocasa.models.arenas.layout_utils)</a>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_utils.load_style_config">load_style_config() (in module robocasa.models.scenes.scene_utils)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1113,19 +1162,25 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.chopping_food.html#robocasa.environments.kitchen.multi_stage.chopping_food.meat_transfer.MeatTransfer">MeatTransfer (class in robocasa.environments.kitchen.multi_stage.chopping_food.meat_transfer)</a>
 </li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType.MEDITERRANEAN">MEDITERRANEAN (robocasa.models.scenes.scene_registry.StyleType attribute)</a>
+</li>
       <li><a href="api/robocasa.utils.usd.html#robocasa.utils.usd.shapes.mesh_config_generator">mesh_config_generator() (in module robocasa.utils.usd.shapes)</a>
 </li>
       <li><a href="api/robocasa.utils.usd.html#robocasa.utils.usd.shapes.mesh_generator">mesh_generator() (in module robocasa.utils.usd.shapes)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.microwave.Microwave">Microwave (class in robocasa.models.objects.fixtures.microwave)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.microwave.Microwave">Microwave (class in robocasa.models.fixtures.microwave)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.MICROWAVE">MICROWAVE (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.MICROWAVE">MICROWAVE (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_microwave.MicrowavePressButton">MicrowavePressButton (class in robocasa.environments.kitchen.single_stage.kitchen_microwave)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.defrosting_food.html#robocasa.environments.kitchen.multi_stage.defrosting_food.microwave_thawing.MicrowaveThawing">MicrowaveThawing (class in robocasa.environments.kitchen.multi_stage.defrosting_food.microwave_thawing)</a>
 </li>
       <li><a href="api/robocasa.models.objects.html#robocasa.models.objects.objects.MJCFObject">MJCFObject (class in robocasa.models.objects.objects)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType.MODERN_1">MODERN_1 (robocasa.models.scenes.scene_registry.StyleType attribute)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType.MODERN_2">MODERN_2 (robocasa.models.scenes.scene_registry.StyleType attribute)</a>
 </li>
       <li>
     module
@@ -1377,65 +1432,65 @@ title="Fullscreen mode"
 </li>
         <li><a href="api/robocasa.models.html#module-robocasa.models">robocasa.models</a>
 </li>
-        <li><a href="api/robocasa.models.arenas.html#module-robocasa.models.arenas">robocasa.models.arenas</a>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures">robocasa.models.fixtures</a>
 </li>
-        <li><a href="api/robocasa.models.arenas.html#module-robocasa.models.arenas.kitchen_arena">robocasa.models.arenas.kitchen_arena</a>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.accessories">robocasa.models.fixtures.accessories</a>
 </li>
-        <li><a href="api/robocasa.models.arenas.html#module-robocasa.models.arenas.layout_builder">robocasa.models.arenas.layout_builder</a>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.cabinet_panels">robocasa.models.fixtures.cabinet_panels</a>
 </li>
-        <li><a href="api/robocasa.models.arenas.html#module-robocasa.models.arenas.layout_utils">robocasa.models.arenas.layout_utils</a>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.cabinets">robocasa.models.fixtures.cabinets</a>
+</li>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.counter">robocasa.models.fixtures.counter</a>
+</li>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.dishwasher">robocasa.models.fixtures.dishwasher</a>
+</li>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.fixture">robocasa.models.fixtures.fixture</a>
+</li>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.fixture_stack">robocasa.models.fixtures.fixture_stack</a>
+</li>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.fixture_utils">robocasa.models.fixtures.fixture_utils</a>
+</li>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.fridge">robocasa.models.fixtures.fridge</a>
+</li>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.handles">robocasa.models.fixtures.handles</a>
+</li>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.hood">robocasa.models.fixtures.hood</a>
+</li>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.microwave">robocasa.models.fixtures.microwave</a>
+</li>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.others">robocasa.models.fixtures.others</a>
+</li>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.sink">robocasa.models.fixtures.sink</a>
+</li>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.stove">robocasa.models.fixtures.stove</a>
+</li>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.windows">robocasa.models.fixtures.windows</a>
 </li>
         <li><a href="api/robocasa.models.objects.html#module-robocasa.models.objects">robocasa.models.objects</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures">robocasa.models.objects.fixtures</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.accessories">robocasa.models.objects.fixtures.accessories</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.cabinet_panels">robocasa.models.objects.fixtures.cabinet_panels</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.cabinets">robocasa.models.objects.fixtures.cabinets</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.counter">robocasa.models.objects.fixtures.counter</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.dishwasher">robocasa.models.objects.fixtures.dishwasher</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.fixture">robocasa.models.objects.fixtures.fixture</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.fixture_stack">robocasa.models.objects.fixtures.fixture_stack</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.fixture_utils">robocasa.models.objects.fixtures.fixture_utils</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.fridge">robocasa.models.objects.fixtures.fridge</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.handles">robocasa.models.objects.fixtures.handles</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.hood">robocasa.models.objects.fixtures.hood</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.microwave">robocasa.models.objects.fixtures.microwave</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.others">robocasa.models.objects.fixtures.others</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.sink">robocasa.models.objects.fixtures.sink</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.stove">robocasa.models.objects.fixtures.stove</a>
-</li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.windows">robocasa.models.objects.fixtures.windows</a>
-</li>
         <li><a href="api/robocasa.models.objects.html#module-robocasa.models.objects.kitchen_objects">robocasa.models.objects.kitchen_objects</a>
-</li>
-        <li><a href="api/robocasa.models.objects.html#module-robocasa.models.objects.object_groups">robocasa.models.objects.object_groups</a>
 </li>
         <li><a href="api/robocasa.models.objects.html#module-robocasa.models.objects.objects">robocasa.models.objects.objects</a>
 </li>
+        <li><a href="api/robocasa.models.scenes.html#module-robocasa.models.scenes">robocasa.models.scenes</a>
+</li>
+        <li><a href="api/robocasa.models.scenes.html#module-robocasa.models.scenes.kitchen_arena">robocasa.models.scenes.kitchen_arena</a>
+</li>
+        <li><a href="api/robocasa.models.scenes.html#module-robocasa.models.scenes.scene_builder">robocasa.models.scenes.scene_builder</a>
+</li>
+        <li><a href="api/robocasa.models.scenes.html#module-robocasa.models.scenes.scene_registry">robocasa.models.scenes.scene_registry</a>
+</li>
+        <li><a href="api/robocasa.models.scenes.html#module-robocasa.models.scenes.scene_utils">robocasa.models.scenes.scene_utils</a>
+</li>
         <li><a href="api/robocasa.utils.html#module-robocasa.utils">robocasa.utils</a>
+</li>
+        <li><a href="api/robocasa.utils.html#module-robocasa.utils.camera_utils">robocasa.utils.camera_utils</a>
 </li>
         <li><a href="api/robocasa.utils.html#module-robocasa.utils.dataset_registry">robocasa.utils.dataset_registry</a>
 </li>
-        <li><a href="api/robocasa.utils.html#module-robocasa.utils.eval_utils">robocasa.utils.eval_utils</a>
+        <li><a href="api/robocasa.utils.html#module-robocasa.utils.env_utils">robocasa.utils.env_utils</a>
 </li>
         <li><a href="api/robocasa.utils.html#module-robocasa.utils.get_all_items_by_type">robocasa.utils.get_all_items_by_type</a>
-</li>
-        <li><a href="api/robocasa.utils.html#module-robocasa.utils.kitchen_utils">robocasa.utils.kitchen_utils</a>
 </li>
         <li><a href="api/robocasa.utils.html#module-robocasa.utils.object_utils">robocasa.utils.object_utils</a>
 </li>
@@ -1470,41 +1525,43 @@ title="Fullscreen mode"
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.accessories.CoffeeMachine.nat_lang">nat_lang (robocasa.models.objects.fixtures.accessories.CoffeeMachine property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.accessories.CoffeeMachine.nat_lang">nat_lang (robocasa.models.fixtures.accessories.CoffeeMachine property)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.accessories.Stool.nat_lang">(robocasa.models.objects.fixtures.accessories.Stool property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.accessories.Stool.nat_lang">(robocasa.models.fixtures.accessories.Stool property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.accessories.Toaster.nat_lang">(robocasa.models.objects.fixtures.accessories.Toaster property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.accessories.Toaster.nat_lang">(robocasa.models.fixtures.accessories.Toaster property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.Cabinet.nat_lang">(robocasa.models.objects.fixtures.cabinets.Cabinet property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.Cabinet.nat_lang">(robocasa.models.fixtures.cabinets.Cabinet property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.Drawer.nat_lang">(robocasa.models.objects.fixtures.cabinets.Drawer property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.Drawer.nat_lang">(robocasa.models.fixtures.cabinets.Drawer property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.OpenCabinet.nat_lang">(robocasa.models.objects.fixtures.cabinets.OpenCabinet property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.OpenCabinet.nat_lang">(robocasa.models.fixtures.cabinets.OpenCabinet property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.dishwasher.Dishwasher.nat_lang">(robocasa.models.objects.fixtures.dishwasher.Dishwasher property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.dishwasher.Dishwasher.nat_lang">(robocasa.models.fixtures.dishwasher.Dishwasher property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.nat_lang">(robocasa.models.objects.fixtures.fixture.Fixture property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.nat_lang">(robocasa.models.fixtures.fixture.Fixture property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fridge.Fridge.nat_lang">(robocasa.models.objects.fixtures.fridge.Fridge property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fridge.Fridge.nat_lang">(robocasa.models.fixtures.fridge.Fridge property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.hood.Hood.nat_lang">(robocasa.models.objects.fixtures.hood.Hood property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.hood.Hood.nat_lang">(robocasa.models.fixtures.hood.Hood property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.microwave.Microwave.nat_lang">(robocasa.models.objects.fixtures.microwave.Microwave property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.microwave.Microwave.nat_lang">(robocasa.models.fixtures.microwave.Microwave property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.sink.Sink.nat_lang">(robocasa.models.objects.fixtures.sink.Sink property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.sink.Sink.nat_lang">(robocasa.models.fixtures.sink.Sink property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.stove.Oven.nat_lang">(robocasa.models.objects.fixtures.stove.Oven property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.stove.Oven.nat_lang">(robocasa.models.fixtures.stove.Oven property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.stove.Stove.nat_lang">(robocasa.models.objects.fixtures.stove.Stove property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.stove.Stove.nat_lang">(robocasa.models.fixtures.stove.Stove property)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.windows.Window.nat_lang">(robocasa.models.objects.fixtures.windows.Window property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.windows.Window.nat_lang">(robocasa.models.fixtures.windows.Window property)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_navigate.NavigateKitchen">NavigateKitchen (class in robocasa.environments.kitchen.single_stage.kitchen_navigate)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.NO_ISLAND">NO_ISLAND (robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
 </li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.object_utils.normalize_joint_value">normalize_joint_value() (in module robocasa.utils.object_utils)</a>
 </li>
@@ -1522,17 +1579,17 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.models.objects.html#robocasa.models.objects.kitchen_objects.ObjCat">ObjCat (class in robocasa.models.objects.kitchen_objects)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.html#robocasa.models.objects.object_groups.ObjectGroup">ObjectGroup (class in robocasa.models.objects.object_groups)</a>
-</li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.placement_samplers.ObjectPositionSampler">ObjectPositionSampler (class in robocasa.utils.placement_samplers)</a>
-</li>
-      <li><a href="api/robocasa.models.objects.html#robocasa.models.objects.object_groups.ObjectGroup.objects">objects (robocasa.models.objects.object_groups.ObjectGroup property)</a>
 </li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.object_utils.objs_intersect">objs_intersect() (in module robocasa.utils.object_utils)</a>
 </li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.ONE_WALL_LARGE">ONE_WALL_LARGE (robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.ONE_WALL_SMALL">ONE_WALL_SMALL (robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.OpenCabinet">OpenCabinet (class in robocasa.models.objects.fixtures.cabinets)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.OpenCabinet">OpenCabinet (class in robocasa.models.fixtures.cabinets)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_doors.OpenDoor">OpenDoor (class in robocasa.environments.kitchen.single_stage.kitchen_doors)</a>
 </li>
@@ -1548,7 +1605,7 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.chopping_food.html#robocasa.environments.kitchen.multi_stage.chopping_food.organize_vegetables.OrganizeVegetables">OrganizeVegetables (class in robocasa.environments.kitchen.multi_stage.chopping_food.organize_vegetables)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.stove.Oven">Oven (class in robocasa.models.objects.fixtures.stove)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.stove.Oven">Oven (class in robocasa.models.fixtures.stove)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1556,7 +1613,7 @@ title="Fullscreen mode"
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.PanelCabinet">PanelCabinet (class in robocasa.models.objects.fixtures.cabinets)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.PanelCabinet">PanelCabinet (class in robocasa.models.fixtures.cabinets)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.serving_food.html#robocasa.environments.kitchen.multi_stage.serving_food.pan_transfer.PanTransfer">PanTransfer (class in robocasa.environments.kitchen.multi_stage.serving_food.pan_transfer)</a>
 </li>
@@ -1590,7 +1647,7 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.object_utils.point_in_fixture">point_in_fixture() (in module robocasa.utils.object_utils)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.pos">pos (robocasa.models.objects.fixtures.fixture.Fixture property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.pos">pos (robocasa.models.fixtures.fixture.Fixture property)</a>
 </li>
       <li><a href="api/robocasa.models.objects.html#robocasa.models.objects.objects.MJCFObject.postprocess_model_xml">postprocess_model_xml() (robocasa.models.objects.objects.MJCFObject method)</a>
 </li>
@@ -1610,7 +1667,7 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.html#robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.prewash_food_assembly.PrewashFoodAssembly">PrewashFoodAssembly (class in robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.prewash_food_assembly)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.ProcGenFixture">ProcGenFixture (class in robocasa.models.objects.fixtures.fixture)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.ProcGenFixture">ProcGenFixture (class in robocasa.models.fixtures.fixture)</a>
 </li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.object_utils.project_point_to_line">project_point_to_line() (in module robocasa.utils.object_utils)</a>
 </li>
@@ -1622,7 +1679,7 @@ title="Fullscreen mode"
 <h2 id="Q">Q</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.quat">quat (robocasa.models.objects.fixtures.fixture.Fixture property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.quat">quat (robocasa.models.fixtures.fixture.Fixture property)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -1634,7 +1691,7 @@ title="Fullscreen mode"
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinet_panels.RaisedCabinetPanel">RaisedCabinetPanel (class in robocasa.models.objects.fixtures.cabinet_panels)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinet_panels.RaisedCabinetPanel">RaisedCabinetPanel (class in robocasa.models.fixtures.cabinet_panels)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen.register_fixture_ref">register_fixture_ref() (robocasa.environments.kitchen.kitchen.Kitchen method)</a>
 </li>
@@ -1662,7 +1719,7 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen.reward">reward() (robocasa.environments.kitchen.kitchen.Kitchen method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.HingeCabinet.right_handle_name">right_handle_name (robocasa.models.objects.fixtures.cabinets.HingeCabinet property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.HingeCabinet.right_handle_name">right_handle_name (robocasa.models.fixtures.cabinets.HingeCabinet property)</a>
 </li>
       <li>
     robocasa
@@ -2528,31 +2585,122 @@ title="Fullscreen mode"
 </li>
       </ul></li>
       <li>
-    robocasa.models.arenas
+    robocasa.models.fixtures
 
       <ul>
-        <li><a href="api/robocasa.models.arenas.html#module-robocasa.models.arenas">module</a>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures">module</a>
 </li>
       </ul></li>
       <li>
-    robocasa.models.arenas.kitchen_arena
+    robocasa.models.fixtures.accessories
 
       <ul>
-        <li><a href="api/robocasa.models.arenas.html#module-robocasa.models.arenas.kitchen_arena">module</a>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.accessories">module</a>
 </li>
       </ul></li>
       <li>
-    robocasa.models.arenas.layout_builder
+    robocasa.models.fixtures.cabinet_panels
 
       <ul>
-        <li><a href="api/robocasa.models.arenas.html#module-robocasa.models.arenas.layout_builder">module</a>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.cabinet_panels">module</a>
 </li>
       </ul></li>
       <li>
-    robocasa.models.arenas.layout_utils
+    robocasa.models.fixtures.cabinets
 
       <ul>
-        <li><a href="api/robocasa.models.arenas.html#module-robocasa.models.arenas.layout_utils">module</a>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.cabinets">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.fixtures.counter
+
+      <ul>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.counter">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.fixtures.dishwasher
+
+      <ul>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.dishwasher">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.fixtures.fixture
+
+      <ul>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.fixture">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.fixtures.fixture_stack
+
+      <ul>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.fixture_stack">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.fixtures.fixture_utils
+
+      <ul>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.fixture_utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.fixtures.fridge
+
+      <ul>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.fridge">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.fixtures.handles
+
+      <ul>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.handles">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.fixtures.hood
+
+      <ul>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.hood">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.fixtures.microwave
+
+      <ul>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.microwave">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.fixtures.others
+
+      <ul>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.others">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.fixtures.sink
+
+      <ul>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.sink">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.fixtures.stove
+
+      <ul>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.stove">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.fixtures.windows
+
+      <ul>
+        <li><a href="api/robocasa.models.fixtures.html#module-robocasa.models.fixtures.windows">module</a>
 </li>
       </ul></li>
       <li>
@@ -2563,136 +2711,10 @@ title="Fullscreen mode"
 </li>
       </ul></li>
       <li>
-    robocasa.models.objects.fixtures
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.accessories
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.accessories">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.cabinet_panels
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.cabinet_panels">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.cabinets
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.cabinets">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.counter
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.counter">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.dishwasher
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.dishwasher">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.fixture
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.fixture">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.fixture_stack
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.fixture_stack">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.fixture_utils
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.fixture_utils">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.fridge
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.fridge">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.handles
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.handles">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.hood
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.hood">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.microwave
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.microwave">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.others
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.others">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.sink
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.sink">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.stove
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.stove">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.fixtures.windows
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.windows">module</a>
-</li>
-      </ul></li>
-      <li>
     robocasa.models.objects.kitchen_objects
 
       <ul>
         <li><a href="api/robocasa.models.objects.html#module-robocasa.models.objects.kitchen_objects">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.models.objects.object_groups
-
-      <ul>
-        <li><a href="api/robocasa.models.objects.html#module-robocasa.models.objects.object_groups">module</a>
 </li>
       </ul></li>
       <li>
@@ -2703,10 +2725,52 @@ title="Fullscreen mode"
 </li>
       </ul></li>
       <li>
+    robocasa.models.scenes
+
+      <ul>
+        <li><a href="api/robocasa.models.scenes.html#module-robocasa.models.scenes">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.scenes.kitchen_arena
+
+      <ul>
+        <li><a href="api/robocasa.models.scenes.html#module-robocasa.models.scenes.kitchen_arena">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.scenes.scene_builder
+
+      <ul>
+        <li><a href="api/robocasa.models.scenes.html#module-robocasa.models.scenes.scene_builder">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.scenes.scene_registry
+
+      <ul>
+        <li><a href="api/robocasa.models.scenes.html#module-robocasa.models.scenes.scene_registry">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.models.scenes.scene_utils
+
+      <ul>
+        <li><a href="api/robocasa.models.scenes.html#module-robocasa.models.scenes.scene_utils">module</a>
+</li>
+      </ul></li>
+      <li>
     robocasa.utils
 
       <ul>
         <li><a href="api/robocasa.utils.html#module-robocasa.utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    robocasa.utils.camera_utils
+
+      <ul>
+        <li><a href="api/robocasa.utils.html#module-robocasa.utils.camera_utils">module</a>
 </li>
       </ul></li>
       <li>
@@ -2717,10 +2781,10 @@ title="Fullscreen mode"
 </li>
       </ul></li>
       <li>
-    robocasa.utils.eval_utils
+    robocasa.utils.env_utils
 
       <ul>
-        <li><a href="api/robocasa.utils.html#module-robocasa.utils.eval_utils">module</a>
+        <li><a href="api/robocasa.utils.html#module-robocasa.utils.env_utils">module</a>
 </li>
       </ul></li>
       <li>
@@ -2728,13 +2792,6 @@ title="Fullscreen mode"
 
       <ul>
         <li><a href="api/robocasa.utils.html#module-robocasa.utils.get_all_items_by_type">module</a>
-</li>
-      </ul></li>
-      <li>
-    robocasa.utils.kitchen_utils
-
-      <ul>
-        <li><a href="api/robocasa.utils.html#module-robocasa.utils.kitchen_utils">module</a>
 </li>
       </ul></li>
       <li>
@@ -2807,13 +2864,15 @@ title="Fullscreen mode"
         <li><a href="api/robocasa.utils.usd.html#module-robocasa.utils.usd.utils">module</a>
 </li>
       </ul></li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.others.Box.rot">rot (robocasa.models.objects.fixtures.others.Box property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.others.Box.rot">rot (robocasa.models.fixtures.others.Box property)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.windows.Window.rot">(robocasa.models.objects.fixtures.windows.Window property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.windows.Window.rot">(robocasa.models.fixtures.windows.Window property)</a>
 </li>
       </ul></li>
-      <li><a href="api/robocasa.utils.html#robocasa.utils.eval_utils.run_random_rollouts">run_random_rollouts() (in module robocasa.utils.eval_utils)</a>
+      <li><a href="api/robocasa.utils.html#robocasa.utils.env_utils.run_random_rollouts">run_random_rollouts() (in module robocasa.utils.env_utils)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType.RUSTIC">RUSTIC (robocasa.models.scenes.scene_registry.StyleType attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -2837,9 +2896,11 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen.sample_object">sample_object() (robocasa.environments.kitchen.kitchen.Kitchen method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.sample_reset_region">sample_reset_region() (robocasa.models.objects.fixtures.fixture.Fixture method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.sample_reset_region">sample_reset_region() (robocasa.models.fixtures.fixture.Fixture method)</a>
 </li>
       <li><a href="api/robocasa.utils.usd.html#robocasa.utils.usd.exporter.USDExporter.save_scene">save_scene() (robocasa.utils.usd.exporter.USDExporter method)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType.SCANDANAVIAN">SCANDANAVIAN (robocasa.models.scenes.scene_registry.StyleType attribute)</a>
 </li>
       <li><a href="api/robocasa.utils.usd.html#robocasa.utils.usd.exporter.USDExporter.scene">scene (robocasa.utils.usd.exporter.USDExporter property)</a>
 </li>
@@ -2851,47 +2912,47 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.serving_food.html#robocasa.environments.kitchen.multi_stage.serving_food.serve_steak.ServeSteak">ServeSteak (class in robocasa.environments.kitchen.multi_stage.serving_food.serve_steak)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.set_bounds_sites">set_bounds_sites() (robocasa.models.objects.fixtures.fixture.Fixture method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.set_bounds_sites">set_bounds_sites() (robocasa.models.fixtures.fixture.Fixture method)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen.set_cameras">set_cameras() (robocasa.environments.kitchen.kitchen.Kitchen method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.Cabinet.set_door_state">set_door_state() (robocasa.models.objects.fixtures.cabinets.Cabinet method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.Cabinet.set_door_state">set_door_state() (robocasa.models.fixtures.cabinets.Cabinet method)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.Drawer.set_door_state">(robocasa.models.objects.fixtures.cabinets.Drawer method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.Drawer.set_door_state">(robocasa.models.fixtures.cabinets.Drawer method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.HingeCabinet.set_door_state">(robocasa.models.objects.fixtures.cabinets.HingeCabinet method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.HingeCabinet.set_door_state">(robocasa.models.fixtures.cabinets.HingeCabinet method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.SingleCabinet.set_door_state">(robocasa.models.objects.fixtures.cabinets.SingleCabinet method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.SingleCabinet.set_door_state">(robocasa.models.fixtures.cabinets.SingleCabinet method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.microwave.Microwave.set_door_state">(robocasa.models.objects.fixtures.microwave.Microwave method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.microwave.Microwave.set_door_state">(robocasa.models.fixtures.microwave.Microwave method)</a>
 </li>
       </ul></li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.object_utils.set_geom_dimensions">set_geom_dimensions() (in module robocasa.utils.object_utils)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.sink.Sink.set_handle_state">set_handle_state() (robocasa.models.objects.fixtures.sink.Sink method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.sink.Sink.set_handle_state">set_handle_state() (robocasa.models.fixtures.sink.Sink method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.stove.Stove.set_knob_state">set_knob_state() (robocasa.models.objects.fixtures.stove.Stove method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.stove.Stove.set_knob_state">set_knob_state() (robocasa.models.fixtures.stove.Stove method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.set_origin">set_origin() (robocasa.models.objects.fixtures.fixture.Fixture method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.set_origin">set_origin() (robocasa.models.fixtures.fixture.Fixture method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.HousingCabinet.set_pos">set_pos() (robocasa.models.objects.fixtures.cabinets.HousingCabinet method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.HousingCabinet.set_pos">set_pos() (robocasa.models.fixtures.cabinets.HousingCabinet method)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.counter.Counter.set_pos">(robocasa.models.objects.fixtures.counter.Counter method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.counter.Counter.set_pos">(robocasa.models.fixtures.counter.Counter method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.others.Box.set_pos">(robocasa.models.objects.fixtures.others.Box method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.others.Box.set_pos">(robocasa.models.fixtures.others.Box method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.others.Wall.set_pos">(robocasa.models.objects.fixtures.others.Wall method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.others.Wall.set_pos">(robocasa.models.fixtures.others.Wall method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.windows.FramedWindow.set_pos">(robocasa.models.objects.fixtures.windows.FramedWindow method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.windows.FramedWindow.set_pos">(robocasa.models.fixtures.windows.FramedWindow method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.windows.Window.set_pos">(robocasa.models.objects.fixtures.windows.Window method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.windows.Window.set_pos">(robocasa.models.fixtures.windows.Window method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.set_scale_from_size">set_scale_from_size() (robocasa.models.objects.fixtures.fixture.Fixture method)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.set_scale_from_size">set_scale_from_size() (robocasa.models.fixtures.fixture.Fixture method)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.setting_the_table.html#robocasa.environments.kitchen.multi_stage.setting_the_table.set_bowls_for_soup.SetBowlsForSoup">SetBowlsForSoup (class in robocasa.environments.kitchen.multi_stage.setting_the_table.set_bowls_for_soup)</a>
 </li>
@@ -2899,27 +2960,27 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.mixing_and_blending.html#robocasa.environments.kitchen.multi_stage.mixing_and_blending.setup_juicing.SetupJuicing">SetupJuicing (class in robocasa.environments.kitchen.multi_stage.mixing_and_blending.setup_juicing)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinet_panels.ShakerCabinetPanel">ShakerCabinetPanel (class in robocasa.models.objects.fixtures.cabinet_panels)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinet_panels.ShakerCabinetPanel">ShakerCabinetPanel (class in robocasa.models.fixtures.cabinet_panels)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.html#robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.shaker_shuffle.ShakerShuffle">ShakerShuffle (class in robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.shaker_shuffle)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.SHELF">SHELF (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.SHELF">SHELF (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.placement_samplers.ObjectPositionSampler.sides_combinations">sides_combinations (robocasa.utils.placement_samplers.ObjectPositionSampler property)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.reheating_food.html#robocasa.environments.kitchen.multi_stage.reheating_food.simmering_sauce.SimmeringSauce">SimmeringSauce (class in robocasa.environments.kitchen.multi_stage.reheating_food.simmering_sauce)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.SingleCabinet">SingleCabinet (class in robocasa.models.objects.fixtures.cabinets)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.SingleCabinet">SingleCabinet (class in robocasa.models.fixtures.cabinets)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.sink.Sink">Sink (class in robocasa.models.objects.fixtures.sink)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.sink.Sink">Sink (class in robocasa.models.fixtures.sink)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.SINK">SINK (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.SINK">SINK (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.site_pos">site_pos() (in module robocasa.models.objects.fixtures.fixture)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.site_pos">site_pos() (in module robocasa.models.fixtures.fixture)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.setting_the_table.html#robocasa.environments.kitchen.multi_stage.setting_the_table.size_sorting.SizeSorting">SizeSorting (class in robocasa.environments.kitchen.multi_stage.setting_the_table.size_sorting)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinet_panels.SlabCabinetPanel">SlabCabinetPanel (class in robocasa.models.objects.fixtures.cabinet_panels)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinet_panels.SlabCabinetPanel">SlabCabinetPanel (class in robocasa.models.fixtures.cabinet_panels)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.html#robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.snack_sorting.SnackSorting">SnackSorting (class in robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.snack_sorting)</a>
 </li>
@@ -2935,15 +2996,17 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.restocking_supplies.html#robocasa.environments.kitchen.multi_stage.restocking_supplies.stocking_breakfast_foods.StockingBreakfastFoods">StockingBreakfastFoods (class in robocasa.environments.kitchen.multi_stage.restocking_supplies.stocking_breakfast_foods)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.accessories.Stool">Stool (class in robocasa.models.objects.fixtures.accessories)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.accessories.Stool">Stool (class in robocasa.models.fixtures.accessories)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.STOOL">STOOL (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.STOOL">STOOL (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.stove.Stove">Stove (class in robocasa.models.objects.fixtures.stove)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.stove.Stove">Stove (class in robocasa.models.fixtures.stove)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.STOVE">STOVE (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.STOVE">STOVE (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.stove.Stovetop">Stovetop (class in robocasa.models.objects.fixtures.stove)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.stove.Stovetop">Stovetop (class in robocasa.models.fixtures.stove)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType">StyleType (class in robocasa.models.scenes.scene_registry)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.making_toast.html#robocasa.environments.kitchen.multi_stage.making_toast.sweet_savory_toast_setup.SweetSavoryToastSetup">SweetSavoryToastSetup (class in robocasa.environments.kitchen.multi_stage.making_toast.sweet_savory_toast_setup)</a>
 </li>
@@ -2957,16 +3020,24 @@ title="Fullscreen mode"
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.defrosting_food.html#robocasa.environments.kitchen.multi_stage.defrosting_food.thaw_in_sink.ThawInSink">ThawInSink (class in robocasa.environments.kitchen.multi_stage.defrosting_food.thaw_in_sink)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.accessories.Toaster">Toaster (class in robocasa.models.objects.fixtures.accessories)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.accessories.Toaster">Toaster (class in robocasa.models.fixtures.accessories)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.TOASTER">TOASTER (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.TOASTER">TOASTER (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.FixtureType.TOP_DRAWER">TOP_DRAWER (robocasa.models.objects.fixtures.fixture.FixtureType attribute)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.FixtureType.TOP_DRAWER">TOP_DRAWER (robocasa.models.fixtures.fixture.FixtureType attribute)</a>
 </li>
-      <li><a href="api/robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_microwave.TurnOffMicrowave">TurnOffMicrowave (class in robocasa.environments.kitchen.single_stage.kitchen_microwave)</a>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType.TRADITIONAL_1">TRADITIONAL_1 (robocasa.models.scenes.scene_registry.StyleType attribute)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType.TRADITIONAL_2">TRADITIONAL_2 (robocasa.models.scenes.scene_registry.StyleType attribute)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType.TRANSITIONAL_1">TRANSITIONAL_1 (robocasa.models.scenes.scene_registry.StyleType attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.StyleType.TRANSITIONAL_2">TRANSITIONAL_2 (robocasa.models.scenes.scene_registry.StyleType attribute)</a>
+</li>
+      <li><a href="api/robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_microwave.TurnOffMicrowave">TurnOffMicrowave (class in robocasa.environments.kitchen.single_stage.kitchen_microwave)</a>
+</li>
       <li><a href="api/robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_sink.TurnOffSinkFaucet">TurnOffSinkFaucet (class in robocasa.environments.kitchen.single_stage.kitchen_sink)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_stove.TurnOffStove">TurnOffStove (class in robocasa.environments.kitchen.single_stage.kitchen_stove)</a>
@@ -2985,7 +3056,15 @@ title="Fullscreen mode"
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.U_SHAPED_LARGE">U_SHAPED_LARGE (robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.U_SHAPED_SMALL">U_SHAPED_SMALL (robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
+</li>
       <li><a href="api/robocasa.utils.html#robocasa.utils.placement_samplers.UniformRandomSampler">UniformRandomSampler (class in robocasa.utils.placement_samplers)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.unpack_layout_ids">unpack_layout_ids() (in module robocasa.models.scenes.scene_registry)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.unpack_style_ids">unpack_style_ids() (in module robocasa.models.scenes.scene_registry)</a>
 </li>
       <li><a href="api/robocasa.utils.usd.html#robocasa.utils.usd.component.USDCamera.update">update() (robocasa.utils.usd.component.USDCamera method)</a>
 
@@ -3001,28 +3080,26 @@ title="Fullscreen mode"
       </ul></li>
       <li><a href="api/robocasa.utils.usd.html#robocasa.utils.usd.exporter.USDExporter.update_scene">update_scene() (robocasa.utils.usd.exporter.USDExporter method)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.html#robocasa.models.objects.object_groups.ObjectGroup.update_sim">update_sim() (robocasa.models.objects.object_groups.ObjectGroup method)</a>
-</li>
       <li><a href="api/robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen.update_state">update_state() (robocasa.environments.kitchen.kitchen.Kitchen method)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.accessories.CoffeeMachine.update_state">(robocasa.models.objects.fixtures.accessories.CoffeeMachine method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.accessories.CoffeeMachine.update_state">(robocasa.models.fixtures.accessories.CoffeeMachine method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.cabinets.Drawer.update_state">(robocasa.models.objects.fixtures.cabinets.Drawer method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.cabinets.Drawer.update_state">(robocasa.models.fixtures.cabinets.Drawer method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.update_state">(robocasa.models.objects.fixtures.fixture.Fixture method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.update_state">(robocasa.models.fixtures.fixture.Fixture method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.microwave.Microwave.update_state">(robocasa.models.objects.fixtures.microwave.Microwave method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.microwave.Microwave.update_state">(robocasa.models.fixtures.microwave.Microwave method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.others.Box.update_state">(robocasa.models.objects.fixtures.others.Box method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.others.Box.update_state">(robocasa.models.fixtures.others.Box method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.others.Wall.update_state">(robocasa.models.objects.fixtures.others.Wall method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.others.Wall.update_state">(robocasa.models.fixtures.others.Wall method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.sink.Sink.update_state">(robocasa.models.objects.fixtures.sink.Sink method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.sink.Sink.update_state">(robocasa.models.fixtures.sink.Sink method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.stove.Stove.update_state">(robocasa.models.objects.fixtures.stove.Stove method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.stove.Stove.update_state">(robocasa.models.fixtures.stove.Stove method)</a>
 </li>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.windows.Window.update_state">(robocasa.models.objects.fixtures.windows.Window method)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.windows.Window.update_state">(robocasa.models.fixtures.windows.Window method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -3071,25 +3148,27 @@ title="Fullscreen mode"
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.reheating_food.html#robocasa.environments.kitchen.multi_stage.reheating_food.waffle_reheat.WaffleReheat">WaffleReheat (class in robocasa.environments.kitchen.multi_stage.reheating_food.waffle_reheat)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.others.Wall">Wall (class in robocasa.models.objects.fixtures.others)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.others.Wall">Wall (class in robocasa.models.fixtures.others)</a>
 </li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.accessories.WallAccessory">WallAccessory (class in robocasa.models.objects.fixtures.accessories)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.accessories.WallAccessory">WallAccessory (class in robocasa.models.fixtures.accessories)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.reheating_food.html#robocasa.environments.kitchen.multi_stage.reheating_food.warm_croissant.WarmCroissant">WarmCroissant (class in robocasa.environments.kitchen.multi_stage.reheating_food.warm_croissant)</a>
 </li>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.sink.Sink.water_site">water_site (robocasa.models.fixtures.sink.Sink property)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.sink.Sink.water_site">water_site (robocasa.models.objects.fixtures.sink.Sink property)</a>
-</li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.counter.Counter.width">width (robocasa.models.objects.fixtures.counter.Counter property)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.counter.Counter.width">width (robocasa.models.fixtures.counter.Counter property)</a>
 
       <ul>
-        <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture.width">(robocasa.models.objects.fixtures.fixture.Fixture property)</a>
+        <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture.width">(robocasa.models.fixtures.fixture.Fixture property)</a>
 </li>
       </ul></li>
-      <li><a href="api/robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.windows.Window">Window (class in robocasa.models.objects.fixtures.windows)</a>
+      <li><a href="api/robocasa.models.fixtures.html#robocasa.models.fixtures.windows.Window">Window (class in robocasa.models.fixtures.windows)</a>
 </li>
       <li><a href="api/robocasa.environments.kitchen.multi_stage.serving_food.html#robocasa.environments.kitchen.multi_stage.serving_food.wine_serving_prep.WineServingPrep">WineServingPrep (class in robocasa.environments.kitchen.multi_stage.serving_food.wine_serving_prep)</a>
+</li>
+      <li><a href="api/robocasa.models.scenes.html#robocasa.models.scenes.scene_registry.LayoutType.WRAPAROUND">WRAPAROUND (robocasa.models.scenes.scene_registry.LayoutType attribute)</a>
 </li>
   </ul></td>
 </tr></table>

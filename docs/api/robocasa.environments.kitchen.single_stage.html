@@ -105,8 +105,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/getting_started.html">
+  <a class="reference internal" href="../introduction/quick_start.html">
    Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/basic_usage.html">
+   Basic Usage
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,8 +142,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -149,17 +154,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/downloading.html">
+  <a class="reference internal" href="../datasets/downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="../datasets/using_datasets.html">
+   Using Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/creating.html">
+  <a class="reference internal" href="../datasets/creating_datasets.html">
    Creating New Datasets
   </a>
  </li>
@@ -171,13 +176,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -242,26 +242,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -269,8 +262,8 @@
     <a class="reference internal" href="robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -805,7 +798,7 @@ This includes the language description of the task.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_navigate.</span></span><span class="sig-name descname"><span class="pre">NavigateKitchen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_navigate.NavigateKitchen" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
 <p>Class encapsulating the atomic navigate kitchen tasks.
-Essentially involves navigating the robot to a target fixture.</p>
+Involves navigating the robot to a target fixture.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.single_stage.kitchen_navigate.NavigateKitchen.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.single_stage.kitchen_navigate.NavigateKitchen.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -1038,9 +1031,10 @@ This includes the language description of the task.</p>
 <p>Class encapsulating the atomic turn sink spout tasks.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>behavior</strong> (<em>str</em>) – <p>“left” or “right”. Used to define the desired</p>
-<p>sink spout manipulation behavior for the task.</p>
-</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>behavior</strong> (<em>str</em>) – “left” or “right”. Used to define the desired sink spout</p></li>
+<li><p><strong>task.</strong> (<em>manipulation behavior for the</em>) – </p></li>
+</ul>
 </dd>
 </dl>
 <dl class="py method">

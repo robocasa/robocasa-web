@@ -105,8 +105,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/getting_started.html">
+  <a class="reference internal" href="../introduction/quick_start.html">
    Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/basic_usage.html">
+   Basic Usage
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,8 +142,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -149,17 +154,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/downloading.html">
+  <a class="reference internal" href="../datasets/downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="../datasets/using_datasets.html">
+   Using Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/creating.html">
+  <a class="reference internal" href="../datasets/creating_datasets.html">
    Creating New Datasets
   </a>
  </li>
@@ -171,13 +176,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -242,26 +242,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -269,8 +262,8 @@
     <a class="reference internal" href="robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -516,11 +509,14 @@ title="Print to PDF"
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.afterwash_sorting.AfterwashSorting">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.afterwash_sorting.</span></span><span class="sig-name descname"><span class="pre">AfterwashSorting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.afterwash_sorting.AfterwashSorting" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Washing Fruits and Vegetables Multistage task:
-Simulates the task of sorting washed fruits and vegetables.</p>
-<p>Pick the foods of the same kind from the sink and place them in one bowl.
+<p>Afterwash Sorting: composite task for Washing Fruits And Vegetables activity.</p>
+<p>Simulates the task of sorting washed fruits and vegetables.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Pick the foods of the same kind from the sink and place them in one bowl.
 Place the food of a different kind in the other bowl. Then, turn off the
 sink.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.afterwash_sorting.AfterwashSorting.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.afterwash_sorting.AfterwashSorting.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -536,10 +532,13 @@ sink.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.clear_clutter.ClearClutter">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.clear_clutter.</span></span><span class="sig-name descname"><span class="pre">ClearClutter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.clear_clutter.ClearClutter" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Washing Fruits and Vegetables Multistage task:
-Simulates the task of washing fruits and vegetables.</p>
-<p>Pick up the fruits and vegetables and place them in the sink turn on the
+<p>Clear Clutter: composite task for Washing Fruits And Vegetables activity.</p>
+<p>Simulates the task of washing fruits and vegetables.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Pick up the fruits and vegetables and place them in the sink turn on the
 sink to wash them. Then, turn the sink off, put them in the tray.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.clear_clutter.ClearClutter.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.clear_clutter.ClearClutter.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -555,11 +554,14 @@ sink to wash them. Then, turn the sink off, put them in the tray.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.drain_veggies.DrainVeggies">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.drain_veggies.</span></span><span class="sig-name descname"><span class="pre">DrainVeggies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.drain_veggies.DrainVeggies" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Washing Fruits and Vegetables Multistage task:
-Simulates the task of draining washed vegetables.</p>
-<p>Dump the vegetables from the pot into the sink. Then turn on the sink and
+<p>Drain Veggies: composite task for Washing Fruits And Vegetables activity.</p>
+<p>Simulates the task of draining washed vegetables.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Dump the vegetables from the pot into the sink. Then turn on the sink and
 wash the vegetables. Then turn off the sink and put the vegetables back in
 the pot.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.drain_veggies.DrainVeggies.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.drain_veggies.DrainVeggies.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -575,10 +577,14 @@ the pot.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.prewash_food_assembly.PrewashFoodAssembly">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.prewash_food_assembly.</span></span><span class="sig-name descname"><span class="pre">PrewashFoodAssembly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cab_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.CABINET_TOP</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.washing_fruits_and_vegetables.prewash_food_assembly.PrewashFoodAssembly" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Washing Dishes Multistage task:
-Simulates the task of washing vegetables/fruits.</p>
-<p>Pick the fruit/vegetable from the cabinet and place it in the bowl. Then
+<p>Prewash Food Assembly: composite task for Washing Fruits And Vegetables activity.</p>
+<p>Simulates the process of assembling fruits and vegetables in a bowl and
+prewashing them.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Pick the fruit/vegetable from the cabinet and place it in the bowl. Then
 pick the bowl and place it in the sink. Then turn on the sink facuet.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>cab_id</strong> (<em>int</em>) – Enum which serves as a unique identifier for different

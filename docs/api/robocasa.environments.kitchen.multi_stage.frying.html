@@ -105,8 +105,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/getting_started.html">
+  <a class="reference internal" href="../introduction/quick_start.html">
    Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/basic_usage.html">
+   Basic Usage
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,8 +142,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -149,17 +154,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/downloading.html">
+  <a class="reference internal" href="../datasets/downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="../datasets/using_datasets.html">
+   Using Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/creating.html">
+  <a class="reference internal" href="../datasets/creating_datasets.html">
    Creating New Datasets
   </a>
  </li>
@@ -171,13 +176,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -242,26 +242,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -269,8 +262,8 @@
     <a class="reference internal" href="robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -526,10 +519,13 @@ title="Print to PDF"
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.frying.assemble_cooking_array.AssembleCookingArray">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.frying.assemble_cooking_array.</span></span><span class="sig-name descname"><span class="pre">AssembleCookingArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.frying.assemble_cooking_array.AssembleCookingArray" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Frying Multistage task:
-Simulates the task of assembling ingredients for cooking.</p>
-<p>Move the meat onto the pan on the stove. Then, move the condiment and
+<p>Assemble Cooking Array: composite task for Frying activity.</p>
+<p>Simulates the task of assembling ingredients for cooking.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Move the meat onto the pan on the stove. Then, move the condiment and
 vegetable from the cabinet to the counter where the plate is.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.frying.assemble_cooking_array.AssembleCookingArray.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.frying.assemble_cooking_array.AssembleCookingArray.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -545,10 +541,13 @@ vegetable from the cabinet to the counter where the plate is.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.frying.frying_pan_adjustment.FryingPanAdjustment">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.frying.frying_pan_adjustment.</span></span><span class="sig-name descname"><span class="pre">FryingPanAdjustment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.frying.frying_pan_adjustment.FryingPanAdjustment" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Frying Multistage task:
-Simulates the task of adjusting the frying pan on the stove.</p>
-<p>Move the pan from the current burner to another burner and turn on
+<p>Frying Pan Adjustment: composite task for Frying activity.</p>
+<p>Simulates the task of adjusting the frying pan on the stove.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Move the pan from the current burner to another burner and turn on
 the burner.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.frying.frying_pan_adjustment.FryingPanAdjustment.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.frying.frying_pan_adjustment.FryingPanAdjustment.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -564,10 +563,13 @@ the burner.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.frying.meal_prep_staging.MealPrepStaging">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.frying.meal_prep_staging.</span></span><span class="sig-name descname"><span class="pre">MealPrepStaging</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.frying.meal_prep_staging.MealPrepStaging" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Frying Multistage task:
-Simulates the task of cooking various ingredients.</p>
-<p>Place the pans on different burners, then place the vegetable
+<p>Meal Prep Staging: composite task for Frying activity.</p>
+<p>Simulates the task of cooking various ingredients.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Place the pans on different burners, then place the vegetable
 and meat on different pans.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.frying.meal_prep_staging.MealPrepStaging.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.frying.meal_prep_staging.MealPrepStaging.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -583,10 +585,13 @@ and meat on different pans.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.frying.searing_meat.SearingMeat">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.frying.searing_meat.</span></span><span class="sig-name descname"><span class="pre">SearingMeat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">knob_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.frying.searing_meat.SearingMeat" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Frying Multistage task:
-Simulates the task of searing meat.</p>
-<p>Place the pan on the specified burner on the stove,
+<p>Searing Meat: composite task for Frying activity.</p>
+<p>Simulates the task of searing meat.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Place the pan on the specified burner on the stove,
 then place the meat on the pan and turn the burner on.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>knob_id</strong> (<em>str</em>) – The id of the knob who’s burner the pan will be placed on.
@@ -608,9 +613,12 @@ If “random”, a random knob is chosen.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.frying.setup_frying.SetupFrying">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.frying.setup_frying.</span></span><span class="sig-name descname"><span class="pre">SetupFrying</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cab_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.DOOR_TOP_HINGE_DOUBLE</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.frying.setup_frying.SetupFrying" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Frying Multistage task:
-Simulates the task of setting up the frying pan on the stove.</p>
-<p>Place the pan on the stove burner and turn the burner on.</p>
+<p>Setup Frying: composite task for Frying activity.</p>
+<p>Simulates the task of setting up the frying pan on the stove.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Place the pan on the stove burner and turn the burner on.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>cab_id</strong> (<em>str</em>) – The id of the cabinet where the pan is placed.</p>

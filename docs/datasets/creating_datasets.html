@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Downloading Datasets &#8212; RoboCasa 0.1 documentation</title>
+    <title>Creating New Datasets &#8212; RoboCasa 0.1 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -35,8 +35,8 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Inspecting and Visualizing Datasets" href="inspecting.html" />
-    <link rel="prev" title="Object Categories" href="../tasks_scenes_assets/object_categories.html" />
+    <link rel="next" title="Policy Learning" href="../use_cases/policy_learning.html" />
+    <link rel="prev" title="Using Datasets" href="using_datasets.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -105,8 +105,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/getting_started.html">
+  <a class="reference internal" href="../introduction/quick_start.html">
    Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/basic_usage.html">
+   Basic Usage
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,8 +142,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -148,18 +153,18 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="using_datasets.html">
+   Using Datasets
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="creating.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Creating New Datasets
   </a>
  </li>
@@ -171,13 +176,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -242,26 +242,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../api/robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="../api/robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="../api/robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../api/robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -269,8 +262,8 @@
     <a class="reference internal" href="../api/robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -357,7 +350,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../sources/datasets/downloading.md.txt"
+        <a href="../sources/datasets/creating_datasets.md.txt"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -417,8 +410,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataset-registry">
-   Dataset registry
+  <a class="reference internal nav-link" href="#collecting-new-demonstrations">
+   Collecting new demonstrations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extract-image-observations">
+   Extract image observations
   </a>
  </li>
 </ul>
@@ -430,7 +428,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Downloading Datasets</h1>
+                <h1>Creating New Datasets</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -441,8 +439,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataset-registry">
-   Dataset registry
+  <a class="reference internal nav-link" href="#collecting-new-demonstrations">
+   Collecting new demonstrations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extract-image-observations">
+   Extract image observations
   </a>
  </li>
 </ul>
@@ -455,48 +458,34 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="downloading-datasets">
-<h1>Downloading Datasets<a class="headerlink" href="#downloading-datasets" title="Permalink to this headline">#</a></h1>
-<p>RoboCasa comes with a large selection of demonstrations to faciliate training agents. We provide:</p>
-<ul class="simple">
-<li><p><strong>human demonstrations</strong>: across all 25 atomic tasks and a subset of composite tasks, with 50 demonstrations per task.</p></li>
-<li><p><strong>machine-generated demonstrations</strong> from <a class="reference external" href="https://mimicgen.github.io/">MimicGen</a>: across 24 atomic tasks, with 3000 demonstrations per task.</p></li>
-</ul>
+  <section id="creating-new-datasets">
+<h1>Creating New Datasets<a class="headerlink" href="#creating-new-datasets" title="Permalink to this headline">#</a></h1>
+<section id="collecting-new-demonstrations">
+<h2>Collecting new demonstrations<a class="headerlink" href="#collecting-new-demonstrations" title="Permalink to this headline">#</a></h2>
+<p>You can use the collect_demos.py script to collect demonstrations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">robocasa</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">collect_demos</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">env</span> <span class="o">&lt;</span><span class="n">env</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <div class="admonition note">
-<p class="admonition-title">Dataset storage location</p><p>By default, all datasets are stored under <code class="docutils literal notranslate"><span class="pre">datasets/</span></code> in the root robocasa directory. You can change the location for datasets by setting <code class="docutils literal notranslate"><span class="pre">DATASET_BASE_PATH</span></code> in <code class="docutils literal notranslate"><span class="pre">robocasa/macros_private.py</span></code>.</p>
-</div><p>Here are a few ways to download the datasets:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># downloads all human datasets with images</span>
-<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robocasa</span><span class="o">.</span><span class="n">scripts</span><span class="o">.</span><span class="n">download_datasets</span> <span class="o">--</span><span class="n">ds_types</span> <span class="n">human_im</span>
-
-<span class="c1"># lite download: download human datasets without images</span>
-<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robocasa</span><span class="o">.</span><span class="n">scripts</span><span class="o">.</span><span class="n">download_datasets</span> <span class="o">--</span><span class="n">ds_types</span> <span class="n">human_raw</span>
-
-<span class="c1"># downloads all MimicGen datasets with images</span>
-<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robocasa</span><span class="o">.</span><span class="n">scripts</span><span class="o">.</span><span class="n">download_datasets</span> <span class="o">--</span><span class="n">ds_types</span> <span class="n">mg_im</span>
+<p class="admonition-title">Attention Mac users</p><p>Mac users must prepend this script with <code class="docutils literal notranslate"><span class="pre">mj</span></code>, ie. <code class="docutils literal notranslate"><span class="pre">mjpython</span></code></p>
+</div><p>Next, you need to pre-process your dataset to ensure it is in the correct format. Convert the raw robosuite dataset to robomimic format</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">robomimic</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">conversion</span><span class="o">/</span><span class="n">convert_robosuite</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dataset</span> <span class="o">&lt;</span><span class="n">ds</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Additionally you can specify the following optional arguments:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">tasks</span> <span class="o">&lt;</span><span class="n">tasks</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">downloads</span> <span class="n">datasets</span> <span class="k">for</span> <span class="n">specific</span> <span class="n">tasks</span><span class="p">,</span> <span class="n">eg</span><span class="p">,</span> <span class="o">--</span><span class="n">tasks</span> <span class="n">PnPCounterToCab</span> <span class="n">ArrangeVegetables</span>
-<span class="o">--</span><span class="n">overwrite</span><span class="p">:</span> <span class="n">overwrites</span> <span class="n">existing</span> <span class="n">datasets</span>
-</pre></div>
-</div>
-<section id="dataset-registry">
-<h2>Dataset registry<a class="headerlink" href="#dataset-registry" title="Permalink to this headline">#</a></h2>
-<p>You can retrieve dataset paths from the <a class="reference external" href="https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py">dataset registry</a> as follows:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robocasa.utils.dataset_registry</span> <span class="kn">import</span> <span class="n">SINGLE_STAGE_TASK_DATASETS</span><span class="p">,</span> <span class="n">MULTI_STAGE_TASK_DATASETS</span>
-<span class="kn">from</span> <span class="nn">robocasa.utils.dataset_registry</span> <span class="kn">import</span> <span class="n">get_ds_path</span>
-
-<span class="c1"># iterate through all atomic and composite tasks</span>
-<span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">SINGLE_STAGE_TASK_DATASETS</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">MULTI_STAGE_TASK_DATASETS</span><span class="p">):</span>
-    <span class="n">human_path</span> <span class="o">=</span> <span class="n">get_ds_path</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="n">task</span><span class="p">,</span> <span class="n">ds_type</span><span class="o">=</span><span class="s2">&quot;human_im&quot;</span><span class="p">)</span>  <span class="c1"># human dataset path</span>
-    <span class="n">mg_path</span> <span class="o">=</span> <span class="n">get_ds_path</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="n">task</span><span class="p">,</span> <span class="n">ds_type</span><span class="o">=</span><span class="s2">&quot;mg_im&quot;</span><span class="p">)</span>        <span class="c1"># MimicGen dataset path</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Datasets for </span><span class="si">{</span><span class="n">task</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Human: </span><span class="si">{</span><span class="n">human_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MimicGen: </span><span class="si">{</span><span class="n">mg_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-</pre></div>
-</div>
+<p>This script will extract actions and add filter keys.</p>
 </section>
+<section id="extract-image-observations">
+<h2>Extract image observations<a class="headerlink" href="#extract-image-observations" title="Permalink to this headline">#</a></h2>
+<p>To extract observations from an existing dataset, you can run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OMP_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">MPI_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">MKL_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">OPENBLAS_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">python</span> <span class="n">robomimic</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">dataset_states_to_obs</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dataset</span> <span class="o">&lt;</span><span class="n">ds</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>This script will generate a new dataset with the suffix <code class="docutils literal notranslate"><span class="pre">_im128.hdf5</span></code> in the same directory as <code class="docutils literal notranslate"><span class="pre">--dataset</span></code>.</p>
+<p>Note: you can add the flag <code class="docutils literal notranslate"><span class="pre">--generative_textures</span></code> to render images with AI-generated environment textures, and <code class="docutils literal notranslate"><span class="pre">--randomize_cameras</span></code> to randomize camera viewpoints for rendering.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning!</p>
+This observation extraction script may drop a few demonstrations due to subprocesses failing. To minimize this issue you can run the script with the flag --num_procs 1
+</div></section>
 </section>
 
 
@@ -507,17 +496,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../tasks_scenes_assets/object_categories.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="using_datasets.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Object Categories</p>
+            <p class="prev-next-title">Using Datasets</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="inspecting.html" title="next page">
+    <a class='right-next' id="next-link" href="../use_cases/policy_learning.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Inspecting and Visualizing Datasets</p>
+        <p class="prev-next-title">Policy Learning</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

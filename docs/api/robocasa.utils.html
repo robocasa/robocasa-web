@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="robocasa.utils.usd package" href="robocasa.utils.usd.html" />
-    <link rel="prev" title="robocasa.models.objects.fixtures package" href="robocasa.models.objects.fixtures.html" />
+    <link rel="prev" title="robocasa.models.scenes package" href="robocasa.models.scenes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -105,8 +105,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/getting_started.html">
+  <a class="reference internal" href="../introduction/quick_start.html">
    Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/basic_usage.html">
+   Basic Usage
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,8 +142,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -149,17 +154,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/downloading.html">
+  <a class="reference internal" href="../datasets/downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="../datasets/using_datasets.html">
+   Using Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/creating.html">
+  <a class="reference internal" href="../datasets/creating_datasets.html">
    Creating New Datasets
   </a>
  </li>
@@ -171,13 +176,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -242,26 +242,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -269,8 +262,8 @@
     <a class="current reference internal" href="#">
      robocasa.utils package
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -427,23 +420,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.camera_utils">
+   robocasa.utils.camera_utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robocasa.utils.dataset_registry">
    robocasa.utils.dataset_registry module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robocasa.utils.eval_utils">
-   robocasa.utils.eval_utils module
+  <a class="reference internal nav-link" href="#module-robocasa.utils.env_utils">
+   robocasa.utils.env_utils module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robocasa.utils.get_all_items_by_type">
    robocasa.utils.get_all_items_by_type module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robocasa.utils.kitchen_utils">
-   robocasa.utils.kitchen_utils module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -496,23 +489,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.utils.camera_utils">
+   robocasa.utils.camera_utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robocasa.utils.dataset_registry">
    robocasa.utils.dataset_registry module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robocasa.utils.eval_utils">
-   robocasa.utils.eval_utils module
+  <a class="reference internal nav-link" href="#module-robocasa.utils.env_utils">
+   robocasa.utils.env_utils module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robocasa.utils.get_all_items_by_type">
    robocasa.utils.get_all_items_by_type module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robocasa.utils.kitchen_utils">
-   robocasa.utils.kitchen_utils module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -568,6 +561,11 @@ title="Print to PDF"
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
 </section>
+<section id="module-robocasa.utils.camera_utils">
+<span id="robocasa-utils-camera-utils-module"></span><h2>robocasa.utils.camera_utils module<a class="headerlink" href="#module-robocasa.utils.camera_utils" title="Permalink to this headline">#</a></h2>
+<p>Collection of constants for cameras / robots / etc
+in kitchen environments</p>
+</section>
 <section id="module-robocasa.utils.dataset_registry">
 <span id="robocasa-utils-dataset-registry-module"></span><h2>robocasa.utils.dataset_registry module<a class="headerlink" href="#module-robocasa.utils.dataset_registry" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
@@ -576,16 +574,16 @@ title="Print to PDF"
 <dd></dd></dl>
 
 </section>
-<section id="module-robocasa.utils.eval_utils">
-<span id="robocasa-utils-eval-utils-module"></span><h2>robocasa.utils.eval_utils module<a class="headerlink" href="#module-robocasa.utils.eval_utils" title="Permalink to this headline">#</a></h2>
+<section id="module-robocasa.utils.env_utils">
+<span id="robocasa-utils-env-utils-module"></span><h2>robocasa.utils.env_utils module<a class="headerlink" href="#module-robocasa.utils.env_utils" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="robocasa.utils.eval_utils.create_eval_env">
-<span class="sig-prename descclassname"><span class="pre">robocasa.utils.eval_utils.</span></span><span class="sig-name descname"><span class="pre">create_eval_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'PandaMobile'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controllers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'OSC_POSE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['robot0_agentview_left',</span> <span class="pre">'robot0_agentview_right',</span> <span class="pre">'robot0_eye_in_hand']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_widths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_heights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_instance_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'B'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generative_textures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_cameras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout_and_style_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">((1,</span> <span class="pre">1),</span> <span class="pre">(2,</span> <span class="pre">2),</span> <span class="pre">(4,</span> <span class="pre">4),</span> <span class="pre">(6,</span> <span class="pre">9),</span> <span class="pre">(7,</span> <span class="pre">10))</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.eval_utils.create_eval_env" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="robocasa.utils.env_utils.create_env">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.env_utils.</span></span><span class="sig-name descname"><span class="pre">create_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'PandaMobile'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controllers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'OSC_POSE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['robot0_agentview_left',</span> <span class="pre">'robot0_agentview_right',</span> <span class="pre">'robot0_eye_in_hand']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_widths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_heights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_instance_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generative_textures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_cameras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout_and_style_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.env_utils.create_env" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="robocasa.utils.eval_utils.run_random_rollouts">
-<span class="sig-prename descclassname"><span class="pre">robocasa.utils.eval_utils.</span></span><span class="sig-name descname"><span class="pre">run_random_rollouts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rollouts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.eval_utils.run_random_rollouts" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="robocasa.utils.env_utils.run_random_rollouts">
+<span class="sig-prename descclassname"><span class="pre">robocasa.utils.env_utils.</span></span><span class="sig-name descname"><span class="pre">run_random_rollouts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rollouts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.env_utils.run_random_rollouts" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </section>
@@ -601,9 +599,6 @@ title="Print to PDF"
 <span class="sig-prename descclassname"><span class="pre">robocasa.utils.get_all_items_by_type.</span></span><span class="sig-name descname"><span class="pre">list_of_strings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.get_all_items_by_type.list_of_strings" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
-</section>
-<section id="module-robocasa.utils.kitchen_utils">
-<span id="robocasa-utils-kitchen-utils-module"></span><h2>robocasa.utils.kitchen_utils module<a class="headerlink" href="#module-robocasa.utils.kitchen_utils" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="module-robocasa.utils.object_utils">
 <span id="robocasa-utils-object-utils-module"></span><h2>robocasa.utils.object_utils module<a class="headerlink" href="#module-robocasa.utils.object_utils" title="Permalink to this headline">#</a></h2>
@@ -693,7 +688,7 @@ Uses either the objects bounding box or the object’s horizontal radius</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>point</strong> (<em>np.array</em>) – point to check</p></li>
-<li><p><strong>fixture</strong> (<a class="reference internal" href="robocasa.models.objects.fixtures.html#robocasa.models.objects.fixtures.fixture.Fixture" title="robocasa.models.objects.fixtures.fixture.Fixture"><em>Fixture</em></a>) – fixture object</p></li>
+<li><p><strong>fixture</strong> (<a class="reference internal" href="robocasa.models.fixtures.html#robocasa.models.fixtures.fixture.Fixture" title="robocasa.models.fixtures.fixture.Fixture"><em>Fixture</em></a>) – fixture object</p></li>
 <li><p><strong>only_2d</strong> (<em>bool</em>) – whether to check only in 2D</p></li>
 </ul>
 </dd>
@@ -1031,7 +1026,23 @@ z-offset of the current sampled object’s bottom_offset + the reference object�
 <dl class="py function">
 <dt class="sig sig-object py" id="robocasa.utils.texture_swap.get_random_textures">
 <span class="sig-prename descclassname"><span class="pre">robocasa.utils.texture_swap.</span></span><span class="sig-name descname"><span class="pre">get_random_textures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.utils.texture_swap.get_random_textures" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>This function returns a dictionary of random textures for cabinet, counter top, floor, and wall.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rng</strong> (<em>np.random.Generator</em>) – Random number generator used for texture selection</p></li>
+<li><p><strong>frac</strong> (<em>float</em>) – Fraction of textures to select from the list of available textures
+Default: 1.0 (select from all textures)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary of texture paths</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>textures (dict)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="robocasa.utils.texture_swap.replace_cab_textures">
@@ -1040,6 +1051,7 @@ z-offset of the current sampled object’s bottom_offset + the reference object�
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>rng</strong> (<em>np.random.Generator</em>) – Random number generator used for texture selection</p></li>
 <li><p><strong>initial_state</strong> (<em>str</em>) – Initial env XML string</p></li>
 <li><p><strong>new_cab_texture_file</strong> (<em>str</em>) – New texture file for counter base and cabinets: i.e “cabinet/…”
 If None (default), will replace with a random texture from flat or wood directories</p></li>
@@ -1055,6 +1067,7 @@ If None (default), will replace with a random texture from flat or wood director
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>rng</strong> (<em>np.random.Generator</em>) – Random number generator used for texture selection</p></li>
 <li><p><strong>initial_state</strong> (<em>str</em>) – Initial env XML string</p></li>
 <li><p><strong>new_counter_top_texture_file</strong> (<em>str</em>) – New texture file for counter top: i.e “marble/dark_marble.png”
 If None (default), will replace with a random texture from marble directory</p></li>
@@ -1070,6 +1083,7 @@ If None (default), will replace with a random texture from marble directory</p><
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>rng</strong> (<em>np.random.Generator</em>) – Random number generator used for texture selection</p></li>
 <li><p><strong>initial_state</strong> (<em>str</em>) – Initial env XML string</p></li>
 <li><p><strong>new_floor_texture_file</strong> (<em>str</em>) – New texture file for counter top: i.e “wood/dark_wood_planks_2.png”
 If None (default), will replace with a random texture from wood directory</p></li>
@@ -1085,6 +1099,7 @@ If None (default), will replace with a random texture from wood directory</p></l
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>rng</strong> (<em>np.random.Generator</em>) – Random number generator used for texture selection</p></li>
 <li><p><strong>initial_state</strong> (<em>str</em>) – Initial env XML string</p></li>
 <li><p><strong>new_wall_texture_file</strong> (<em>str</em>) – New texture file for counter top: i.e “wood/dark_wood_planks_2.png”
 If None (default), will replace with a random texture from wood directory</p></li>
@@ -1107,11 +1122,11 @@ If None (default), will replace with a random texture from wood directory</p></l
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="robocasa.models.objects.fixtures.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="robocasa.models.scenes.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">robocasa.models.objects.fixtures package</p>
+            <p class="prev-next-title">robocasa.models.scenes package</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="robocasa.utils.usd.html" title="next page">

@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Atomic Tasks" href="../tasks_scenes_assets/atomic_tasks.html" />
-    <link rel="prev" title="Quick Start" href="getting_started.html" />
+    <link rel="prev" title="Basic Usage" href="basic_usage.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -105,8 +105,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="getting_started.html">
+  <a class="reference internal" href="quick_start.html">
    Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic_usage.html">
+   Basic Usage
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -137,8 +142,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -149,17 +154,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/downloading.html">
+  <a class="reference internal" href="../datasets/downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="../datasets/using_datasets.html">
+   Using Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/creating.html">
+  <a class="reference internal" href="../datasets/creating_datasets.html">
    Creating New Datasets
   </a>
  </li>
@@ -171,13 +176,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -242,26 +242,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../api/robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="../api/robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="../api/robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../api/robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -269,8 +262,8 @@
     <a class="reference internal" href="../api/robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -420,29 +413,44 @@ title="Print to PDF"
                 
   <section id="codebase-overview">
 <h1>Codebase Overview<a class="headerlink" href="#codebase-overview" title="Permalink to this headline">#</a></h1>
+<p>Here is an outline of prominent components of the codebase:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">robocasa/demos/</span></code>: interactive scripts to explore tasks and environments (see quick start section for details)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">robocasa/demos/</span></code>: interactive scripts to explore tasks and environments (see <a class="reference external" href="../introduction/quick_start.html">quick start</a> section for details)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">robocasa/environments/kitchen/</span></code>: all implementations for kitchen tasks</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">kitchen.py</span></code>: base class from which all kitchen tasks extend from</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">single_stage/</span></code>: implementations of all single-stage tasks</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">single_stage/</span></code>: implementations of all single-stage (aka “atomic”) tasks</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">multi_stage/</span></code>: implementations of all multi-stage (aka “composite”) tasks</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">robocasa/scripts/</span></code>: utility scripts</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">collect_demos.py</span></code>: collect demonstration trajectories for any task and environment</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">download_kitchen_assets.py</span></code>: downloads all assets. called automatically during setup in <code class="docutils literal notranslate"><span class="pre">setup.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">download_kitchen_assets.py</span></code>: downloads all assets. called automatically during setup in setup.sh</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code>: downloads datasets (see datasets section for details)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">collect_demos.py</span></code>: collect demonstration trajectories for any task and environment</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robocasa/models/assets/</span></code>: assets and implementations for objects and environment fixtures</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">robocasa/utils/</span></code>: utilities</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">assets/objects/</span></code>: raw assets for all objects</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">assets/fixtures/</span></code>: raw assets for all environment fixtures</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">assets/kitchen_layouts/</span></code>: blueprints for kitchen layouts and designs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataset_registry.py</span></code>: registry of all datasets (see <a class="reference external" href="../datasets/using_datasets.html">using datasets</a> for more details)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">robocasa/models/</span></code>: assets and implementations for objects, fixtures, and scenes</p>
+<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">objects/kitchen_objects.py</span></code>: registry for all object categories and groups</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">objects/fixtures/</span></code>: implementations of all fixture classes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">assets/objects/</span></code>: raw assets for all objects</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fixtures/</span></code>: implementations of all fixture classes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">assets/fixtures/</span></code>: raw assets for all environment fixtures</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">assets/fixtures/fixture_registry/</span></code>: registry for all fixture assets</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scenes/</span></code>: implementations for constructing kitchen scenes</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">scene_registry.py</span></code>: registry of all kitchen scenes, including layouts and styles</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">assets/scenes/</span></code>: blueprints for kitchen scenes, including layouts and styles</p></li>
 </ul>
 </li>
 </ul>
@@ -456,11 +464,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="getting_started.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="basic_usage.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Quick Start</p>
+            <p class="prev-next-title">Basic Usage</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../tasks_scenes_assets/atomic_tasks.html" title="next page">

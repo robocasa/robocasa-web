@@ -105,8 +105,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/getting_started.html">
+  <a class="reference internal" href="../introduction/quick_start.html">
    Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/basic_usage.html">
+   Basic Usage
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,8 +142,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -149,17 +154,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/downloading.html">
+  <a class="reference internal" href="../datasets/downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="../datasets/using_datasets.html">
+   Using Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/creating.html">
+  <a class="reference internal" href="../datasets/creating_datasets.html">
    Creating New Datasets
   </a>
  </li>
@@ -171,13 +176,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -242,26 +242,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -269,8 +262,8 @@
     <a class="reference internal" href="robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -526,10 +519,13 @@ title="Print to PDF"
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.reheating_food.heat_mug.HeatMug">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.reheating_food.heat_mug.</span></span><span class="sig-name descname"><span class="pre">HeatMug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.reheating_food.heat_mug.HeatMug" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Reheating Food Multistage task:
-Simulates the task of reheating a mug.</p>
-<p>Open the cabinet, pick the mug, place it inside the microwave, and close
+<p>Heat Mug: composite task for Reheating Food activity.</p>
+<p>Simulates the task of reheating a mug.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Open the cabinet, pick the mug, place it inside the microwave, and close
 the microwave.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.reheating_food.heat_mug.HeatMug.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.reheating_food.heat_mug.HeatMug.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -545,10 +541,13 @@ the microwave.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.reheating_food.make_loaded_potato.MakeLoadedPotato">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.reheating_food.make_loaded_potato.</span></span><span class="sig-name descname"><span class="pre">MakeLoadedPotato</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.reheating_food.make_loaded_potato.MakeLoadedPotato" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Reheating Food Multistage task:
-Simulates the task of making a loaded potato.</p>
-<p>Retrieve the reheated potato from the microwave, then place it on the
+<p>Make Loaded Potato: composite task for Reheating Food activity.</p>
+<p>Simulates the task of making a loaded potato.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Retrieve the reheated potato from the microwave, then place it on the
 cutting board along with cheese and a bottle of condiment.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.reheating_food.make_loaded_potato.MakeLoadedPotato.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.reheating_food.make_loaded_potato.MakeLoadedPotato.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -564,10 +563,13 @@ cutting board along with cheese and a bottle of condiment.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.reheating_food.simmering_sauce.SimmeringSauce">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.reheating_food.simmering_sauce.</span></span><span class="sig-name descname"><span class="pre">SimmeringSauce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">knob_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.reheating_food.simmering_sauce.SimmeringSauce" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Reheating Food Multistage task:
-Simulates the task of simmering a sauce.</p>
-<p>Place the pan on a specific burner on the stove, then place the tomato and
+<p>Simmering Sauce: composite task for Reheating Food activity.</p>
+<p>Simulates the task of simmering a sauce.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Place the pan on a specific burner on the stove, then place the tomato and
 the onion in the pan and turn on the burner.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>knob_id</strong> (<em>str</em>) – The id of the knob who’s burner the pan will be placed on.
@@ -589,10 +591,13 @@ If “random”, a random knob is chosen.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.reheating_food.waffle_reheat.WaffleReheat">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.reheating_food.waffle_reheat.</span></span><span class="sig-name descname"><span class="pre">WaffleReheat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.reheating_food.waffle_reheat.WaffleReheat" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Reheating Food Multistage task:
-Simulates the task of reheating a waffle.</p>
-<p>Open the microwave. Place the bowl with waffle inside the microwave, then
+<p>Waffle Reheat: composite task for Reheating Food activity.</p>
+<p>Simulates the task of reheating a waffle.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Open the microwave. Place the bowl with waffle inside the microwave, then
 close the microwave door and turn it on.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.reheating_food.waffle_reheat.WaffleReheat.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.reheating_food.waffle_reheat.WaffleReheat.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -608,9 +613,12 @@ close the microwave door and turn it on.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.reheating_food.warm_croissant.WarmCroissant">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.reheating_food.warm_croissant.</span></span><span class="sig-name descname"><span class="pre">WarmCroissant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">knob_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.reheating_food.warm_croissant.WarmCroissant" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Reheating Food Multistage task:
-Simulates the task of warming a croissant.</p>
-<p>Place the croissant on the pan and turn on the stove to warm the croissant.</p>
+<p>Warm Croissant: composite task for Reheating Food activity.</p>
+<p>Simulates the task of warming a croissant.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Place the croissant on the pan and turn on the stove to warm the croissant.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>knob_id</strong> (<em>str</em>) – The id of the knob who’s burner the pan will be placed on.

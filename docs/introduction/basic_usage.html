@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Creating New Datasets &#8212; RoboCasa 0.1 documentation</title>
+    <title>Basic Usage &#8212; RoboCasa 0.1 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -35,8 +35,8 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Evaluation" href="../use_cases/evaluation.html" />
-    <link rel="prev" title="Inspecting and Visualizing Datasets" href="inspecting.html" />
+    <link rel="next" title="Codebase Overview" href="codebase_overview.html" />
+    <link rel="prev" title="Quick Start" href="quick_start.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -93,24 +93,29 @@
   Introduction
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/overview.html">
+  <a class="reference internal" href="overview.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/installation.html">
+  <a class="reference internal" href="installation.html">
    Installation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/getting_started.html">
+  <a class="reference internal" href="quick_start.html">
    Quick Start
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Basic Usage
+  </a>
+ </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/codebase_overview.html">
+  <a class="reference internal" href="codebase_overview.html">
    Codebase Overview
   </a>
  </li>
@@ -137,8 +142,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -147,19 +152,19 @@
   Datasets
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="downloading.html">
+  <a class="reference internal" href="../datasets/downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="../datasets/using_datasets.html">
+   Using Datasets
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/creating_datasets.html">
    Creating New Datasets
   </a>
  </li>
@@ -171,13 +176,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -242,26 +242,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../api/robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="../api/robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="../api/robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../api/robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -269,8 +262,8 @@
     <a class="reference internal" href="../api/robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -357,7 +350,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../sources/datasets/creating.md.txt"
+        <a href="../sources/introduction/basic_usage.md.txt"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -394,70 +387,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#collecting-new-demonstrations">
-   Collecting new demonstrations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extract-image-observations">
-   Extract image observations
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Creating New Datasets</h1>
+                <h1>Basic Usage</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#collecting-new-demonstrations">
-   Collecting new demonstrations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extract-image-observations">
-   Extract image observations
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -465,34 +411,36 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="creating-new-datasets">
-<h1>Creating New Datasets<a class="headerlink" href="#creating-new-datasets" title="Permalink to this headline">#</a></h1>
-<section id="collecting-new-demonstrations">
-<h2>Collecting new demonstrations<a class="headerlink" href="#collecting-new-demonstrations" title="Permalink to this headline">#</a></h2>
-<p>You can use the collect_demos.py script to collect demonstrations:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">robocasa</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">collect_demos</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">env</span> <span class="o">&lt;</span><span class="n">env</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+  <section id="basic-usage">
+<h1>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">#</a></h1>
+<p>The following script shows how to create evaluation environments and to run random rollouts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robocasa.environments</span> <span class="kn">import</span> <span class="n">ALL_KITCHEN_ENVIRONMENTS</span>
+<span class="kn">from</span> <span class="nn">robocasa.utils.dataset_registry</span> <span class="kn">import</span> <span class="n">SINGLE_STAGE_TASK_DATASETS</span><span class="p">,</span> <span class="n">MULTI_STAGE_TASK_DATASETS</span>
+<span class="kn">from</span> <span class="nn">robocasa.utils.dataset_registry</span> <span class="kn">import</span> <span class="n">get_ds_path</span>
+<span class="kn">from</span> <span class="nn">robocasa.utils.env_utils</span> <span class="kn">import</span> <span class="n">create_env</span><span class="p">,</span> <span class="n">run_random_rollouts</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Select a random task (that comes with an accompanying dataset) to run rollouts for.</span>
+<span class="sd">Alternatively, sample *any* kitchen task in RoboCasa by replacing the following line with</span>
+<span class="sd">env_name = np.random.choice(list(ALL_KITCHEN_ENVIRONMENTS))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">env_name</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span>
+    <span class="nb">list</span><span class="p">(</span><span class="n">SINGLE_STAGE_TASK_DATASETS</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">MULTI_STAGE_TASK_DATASETS</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># seed environment as needed. set seed=None to run unseeded</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">create_env</span><span class="p">(</span><span class="n">env_name</span><span class="o">=</span><span class="n">env_name</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># run rollouts with random actions and save video</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">run_random_rollouts</span><span class="p">(</span>
+    <span class="n">env</span><span class="p">,</span> <span class="n">num_rollouts</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">video_path</span><span class="o">=</span><span class="s2">&quot;/tmp/test.mp4&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Attention Mac users</p><p>Mac users must prepend this script with <code class="docutils literal notranslate"><span class="pre">mj</span></code>, ie. <code class="docutils literal notranslate"><span class="pre">mjpython</span></code></p>
-</div><p>Next, you need to pre-process your dataset to ensure it is in the correct format. Convert the raw robosuite dataset to robomimic format</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">robomimic</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">conversion</span><span class="o">/</span><span class="n">convert_robosuite</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dataset</span> <span class="o">&lt;</span><span class="n">ds</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p>This script will extract actions and add filter keys.</p>
-</section>
-<section id="extract-image-observations">
-<h2>Extract image observations<a class="headerlink" href="#extract-image-observations" title="Permalink to this headline">#</a></h2>
-<p>To extract observations from an existing dataset, you can run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OMP_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">MPI_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">MKL_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">OPENBLAS_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span> <span class="n">python</span> <span class="n">robomimic</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">dataset_states_to_obs</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dataset</span> <span class="o">&lt;</span><span class="n">ds</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p>This script will generate a new dataset with the suffix <code class="docutils literal notranslate"><span class="pre">_im128.hdf5</span></code> in the same directory as <code class="docutils literal notranslate"><span class="pre">--dataset</span></code>.</p>
-<p>Note: you can add the flag <code class="docutils literal notranslate"><span class="pre">--generative_textures</span></code> to render images with AI-generated environment textures, and <code class="docutils literal notranslate"><span class="pre">--randomize_cameras</span></code> to randomize camera viewpoints for rendering.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning!</p>
-This observation extraction script may drop a few demonstrations due to subprocesses failing. To minimize this issue you can run the script with the flag --num_procs 1
-</div></section>
+<p>Separately we provide tools to run policy rollouts within robomimic. See the <a class="reference external" href="../use_cases/policy_learning.html">policy learning page</a> for additional details.</p>
 </section>
 
 
@@ -503,17 +451,17 @@ This observation extraction script may drop a few demonstrations due to subproce
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="inspecting.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="quick_start.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Inspecting and Visualizing Datasets</p>
+            <p class="prev-next-title">Quick Start</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../use_cases/evaluation.html" title="next page">
+    <a class='right-next' id="next-link" href="codebase_overview.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Evaluation</p>
+        <p class="prev-next-title">Codebase Overview</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

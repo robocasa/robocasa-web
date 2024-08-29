@@ -1,14 +1,6 @@
 robocasa.models.objects package
 ===============================
 
-Subpackages
------------
-
-.. toctree::
-   :maxdepth: 4
-
-   robocasa.models.objects.fixtures
-
 Submodules
 ----------
 
@@ -16,14 +8,6 @@ robocasa.models.objects.kitchen\_objects module
 -----------------------------------------------
 
 .. automodule:: robocasa.models.objects.kitchen_objects
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-robocasa.models.objects.object\_groups module
----------------------------------------------
-
-.. automodule:: robocasa.models.objects.object_groups
    :members:
    :undoc-members:
    :show-inheritance:

@@ -105,8 +105,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/getting_started.html">
+  <a class="reference internal" href="../introduction/quick_start.html">
    Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/basic_usage.html">
+   Basic Usage
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,8 +142,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -149,17 +154,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/downloading.html">
+  <a class="reference internal" href="../datasets/downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="../datasets/using_datasets.html">
+   Using Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/creating.html">
+  <a class="reference internal" href="../datasets/creating_datasets.html">
    Creating New Datasets
   </a>
  </li>
@@ -171,13 +176,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -242,26 +242,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -269,8 +262,8 @@
     <a class="reference internal" href="robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -506,9 +499,12 @@ title="Print to PDF"
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.mixing_and_blending.colorful_salsa.ColorfulSalsa">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.mixing_and_blending.colorful_salsa.</span></span><span class="sig-name descname"><span class="pre">ColorfulSalsa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.mixing_and_blending.colorful_salsa.ColorfulSalsa" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Mixing and Blending Multistage task:
-Simulates the task of preparing a colorful salsa.</p>
-<p>Place the avocado, onion, tomato and bell pepper on the cutting board.</p>
+<p>Colorful Salsa: composite task for Mixing And Blending activity.</p>
+<p>Simulates the task of preparing a colorful salsa.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Place the avocado, onion, tomato and bell pepper on the cutting board.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.mixing_and_blending.colorful_salsa.ColorfulSalsa.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.mixing_and_blending.colorful_salsa.ColorfulSalsa.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -524,10 +520,13 @@ Simulates the task of preparing a colorful salsa.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.mixing_and_blending.setup_juicing.SetupJuicing">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.mixing_and_blending.setup_juicing.</span></span><span class="sig-name descname"><span class="pre">SetupJuicing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cab_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.DOOR_TOP_HINGE_DOUBLE</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.mixing_and_blending.setup_juicing.SetupJuicing" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Mixing and Blending Multistage task:
-Simulates the task of setting up juicing.</p>
-<p>Open the cabinet, pick all fruits from the cabinet and place them on the
+<p>Setup Juicing: composite task for Mixing And Blending activity.</p>
+<p>Simulates the task of setting up juicing.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Open the cabinet, pick all fruits from the cabinet and place them on the
 counter.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>cab_id</strong> (<em>str</em>) – Enum which serves as a unique identifier for different
@@ -549,10 +548,13 @@ cabinet types. Used to specify the cabinet to pick the fruits from.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.mixing_and_blending.spicy_marinade.SpicyMarinade">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.mixing_and_blending.spicy_marinade.</span></span><span class="sig-name descname"><span class="pre">SpicyMarinade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.mixing_and_blending.spicy_marinade.SpicyMarinade" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Mixing and Blending Multistage task:
-Simulates the task of preparing a spicy marinade.</p>
-<p>Open the cabinet. Place the bowl and condiment on the counter. Then place
+<p>Spicy Marinade: composite task for Mixing And Blending activity.</p>
+<p>Simulates the task of preparing a spicy marinade.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Open the cabinet. Place the bowl and condiment on the counter. Then place
 the lime and garlic on the cutting board.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.mixing_and_blending.spicy_marinade.SpicyMarinade.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.mixing_and_blending.spicy_marinade.SpicyMarinade.get_ep_meta" title="Permalink to this definition">#</a></dt>

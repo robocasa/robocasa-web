@@ -105,8 +105,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/getting_started.html">
+  <a class="reference internal" href="../introduction/quick_start.html">
    Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/basic_usage.html">
+   Basic Usage
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,8 +142,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -149,17 +154,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/downloading.html">
+  <a class="reference internal" href="../datasets/downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="../datasets/using_datasets.html">
+   Using Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/creating.html">
+  <a class="reference internal" href="../datasets/creating_datasets.html">
    Creating New Datasets
   </a>
  </li>
@@ -171,13 +176,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -242,26 +242,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -269,8 +262,8 @@
     <a class="reference internal" href="robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -536,10 +529,13 @@ title="Print to PDF"
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.arrange_bread_basket.ArrangeBreadBasket">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.setting_the_table.arrange_bread_basket.</span></span><span class="sig-name descname"><span class="pre">ArrangeBreadBasket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cab_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.CABINET_TOP</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.arrange_bread_basket.ArrangeBreadBasket" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Setting the Table Multistage task:
-Simulates the task of arranging the bread basket.</p>
-<p>Pick the bread from the cabinet and place it in the bowl. Then move the bowl
+<p>Arrange Bread Basket: composite task for Setting The Table activity.</p>
+<p>Simulates the task of arranging the bread basket.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Pick the bread from the cabinet and place it in the bowl. Then move the bowl
 to the dining counter.</p>
+</dd>
+</dl>
 <p>Restricted to layouts which have a dining table (long counter area with
 stools).</p>
 <dl class="field-list simple">
@@ -549,6 +545,11 @@ cabinet types. Used to choose the cabinet from which the bread is
 picked.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.arrange_bread_basket.ArrangeBreadBasket.EXCLUDE_LAYOUTS">
+<span class="sig-name descname"><span class="pre">EXCLUDE_LAYOUTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">5]</span></em><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.arrange_bread_basket.ArrangeBreadBasket.EXCLUDE_LAYOUTS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.arrange_bread_basket.ArrangeBreadBasket.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.arrange_bread_basket.ArrangeBreadBasket.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -564,11 +565,19 @@ picked.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.beverage_organization.BeverageOrganization">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.setting_the_table.beverage_organization.</span></span><span class="sig-name descname"><span class="pre">BeverageOrganization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.beverage_organization.BeverageOrganization" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Setting the Table Multistage task:
-Simulates the task of organizing beverages.</p>
-<p>Move the drinks to the dining counter.</p>
+<p>Beverage Organization: composite task for Setting The Table activity.</p>
+<p>Simulates the task of organizing beverages.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Move the drinks to the dining counter.</p>
+</dd>
+</dl>
 <p>Restricted to layouts which have a dining table (long counter area with
 stools).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.beverage_organization.BeverageOrganization.EXCLUDE_LAYOUTS">
+<span class="sig-name descname"><span class="pre">EXCLUDE_LAYOUTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">5]</span></em><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.beverage_organization.BeverageOrganization.EXCLUDE_LAYOUTS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.beverage_organization.BeverageOrganization.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.beverage_organization.BeverageOrganization.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -584,10 +593,13 @@ stools).</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.date_night.DateNight">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.setting_the_table.date_night.</span></span><span class="sig-name descname"><span class="pre">DateNight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cab_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.CABINET_TOP</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.date_night.DateNight" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Setting the Table Multistage task:
-Simulates the task of setting the table for a date night.</p>
-<p>Pick up the decoration and the alcohol from the cabinet and move them to the
+<p>Date Night: composite task for Setting The Table activity.</p>
+<p>Simulates the task of setting the table for a date night.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Pick up the decoration and the alcohol from the cabinet and move them to the
 dining counter.</p>
+</dd>
+</dl>
 <p>Restricted to layouts which have a dining table (long counter area with
 stools).</p>
 <dl class="field-list simple">
@@ -597,6 +609,11 @@ cabinet types. Used to choose the cabinet from which the decoration
 and alcohol are picked.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.date_night.DateNight.EXCLUDE_LAYOUTS">
+<span class="sig-name descname"><span class="pre">EXCLUDE_LAYOUTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">5]</span></em><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.date_night.DateNight.EXCLUDE_LAYOUTS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.date_night.DateNight.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.date_night.DateNight.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -612,10 +629,13 @@ and alcohol are picked.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.seasoning_spice_setup.SeasoningSpiceSetup">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.setting_the_table.seasoning_spice_setup.</span></span><span class="sig-name descname"><span class="pre">SeasoningSpiceSetup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cab_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.CABINET_TOP</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.seasoning_spice_setup.SeasoningSpiceSetup" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Setting the Table Multistage task:
-Simulates the task of setting the table with seasoning and spices.</p>
-<p>Move the seasoning and spices from the cabinet directly in front to the
+<p>Seasoning Spice Setup: composite task for Setting The Table activity.</p>
+<p>Simulates the task of setting the table with seasoning and spices.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Move the seasoning and spices from the cabinet directly in front to the
 dining counter.</p>
+</dd>
+</dl>
 <p>Restricted to layouts which have a dining table (long counter area with
 stools).</p>
 <dl class="field-list simple">
@@ -625,6 +645,11 @@ cabinet types. Used to choose the cabinet from which the seasoning
 and spices are picked.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.seasoning_spice_setup.SeasoningSpiceSetup.EXCLUDE_LAYOUTS">
+<span class="sig-name descname"><span class="pre">EXCLUDE_LAYOUTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">5]</span></em><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.seasoning_spice_setup.SeasoningSpiceSetup.EXCLUDE_LAYOUTS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.seasoning_spice_setup.SeasoningSpiceSetup.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.seasoning_spice_setup.SeasoningSpiceSetup.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -640,9 +665,12 @@ and spices are picked.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.set_bowls_for_soup.SetBowlsForSoup">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.setting_the_table.set_bowls_for_soup.</span></span><span class="sig-name descname"><span class="pre">SetBowlsForSoup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cab_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.DOOR_TOP_HINGE_DOUBLE</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.set_bowls_for_soup.SetBowlsForSoup" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Setting the Table Multistage task:
-Simulates the task of setting the table with bowls for soup.</p>
-<p>Move the bowls from the cabinet to the plates on the dining table.</p>
+<p>Set Bowls For Soup: composite task for Setting The Table activity.</p>
+<p>Simulates the task of setting the table with bowls for soup.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Move the bowls from the cabinet to the plates on the dining table.</p>
+</dd>
+</dl>
 <p>Restricted to layouts which have a dining table (long counter area with
 stools).</p>
 <dl class="field-list simple">
@@ -652,6 +680,11 @@ cabinet types. Used to choose the cabinet from which the bowls are
 picked.</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.set_bowls_for_soup.SetBowlsForSoup.EXCLUDE_LAYOUTS">
+<span class="sig-name descname"><span class="pre">EXCLUDE_LAYOUTS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">5]</span></em><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.set_bowls_for_soup.SetBowlsForSoup.EXCLUDE_LAYOUTS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.set_bowls_for_soup.SetBowlsForSoup.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.set_bowls_for_soup.SetBowlsForSoup.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -667,9 +700,12 @@ picked.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.size_sorting.SizeSorting">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.setting_the_table.size_sorting.</span></span><span class="sig-name descname"><span class="pre">SizeSorting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.size_sorting.SizeSorting" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Setting the Table Multistage task:
-Simulates the task of stacking objects by size.</p>
-<p>Stack the objects from largest to smallest.</p>
+<p>Size Sorting: composite task for Setting The Table activity.</p>
+<p>Simulates the task of stacking objects by size.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Stack the objects from largest to smallest.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.setting_the_table.size_sorting.SizeSorting.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.setting_the_table.size_sorting.SizeSorting.get_ep_meta" title="Permalink to this definition">#</a></dt>

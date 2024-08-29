@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Training Policies &#8212; RoboCasa 0.1 documentation</title>
+    <title>Policy Learning &#8212; RoboCasa 0.1 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="robocasa package" href="../api/robocasa.html" />
-    <link rel="prev" title="Evaluation" href="evaluation.html" />
+    <link rel="prev" title="Creating New Datasets" href="../datasets/creating_datasets.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -105,8 +105,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/getting_started.html">
+  <a class="reference internal" href="../introduction/quick_start.html">
    Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/basic_usage.html">
+   Basic Usage
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,8 +142,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -149,17 +154,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/downloading.html">
+  <a class="reference internal" href="../datasets/downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="../datasets/using_datasets.html">
+   Using Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/creating.html">
+  <a class="reference internal" href="../datasets/creating_datasets.html">
    Creating New Datasets
   </a>
  </li>
@@ -170,14 +175,9 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="evaluation.html">
-   Evaluation
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -242,26 +242,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../api/robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="../api/robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="../api/robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../api/robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -269,8 +262,8 @@
     <a class="reference internal" href="../api/robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -438,6 +431,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluation">
+   Evaluation
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -447,7 +445,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Training Policies</h1>
+                <h1>Policy Learning</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -479,6 +477,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluation">
+   Evaluation
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -489,8 +492,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="training-policies">
-<h1>Training Policies<a class="headerlink" href="#training-policies" title="Permalink to this headline">#</a></h1>
+  <section id="policy-learning">
+<h1>Policy Learning<a class="headerlink" href="#policy-learning" title="Permalink to this headline">#</a></h1>
 <p>Our <a class="reference external" href="https://github.com/ARISE-Initiative/robomimic/tree/robocasa">policy learning code</a> provides official support for training and evaluating polices. This repo is a branch of robomimic, with modifications to train on RoboCasa datasets.</p>
 <hr class="docutils" />
 <section id="installation">
@@ -511,9 +514,10 @@ title="Print to PDF"
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">robomimic</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">config_gen</span><span class="o">/</span><span class="n">bc_xfmr_gen</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">experiment</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Modify this file accordingly, depending on which datasets you are training on and whether you are running evaluations.</p>
-<p>Note: You can add <code class="docutils literal notranslate"><span class="pre">--debug</span></code> to generate small runs for testing.</p>
-<p>Running this script will generate training run commands. You can use this script for generating a single run or multiple (for comparing settings and hyperparameter tuning).
+<p>You can modify this file accordingly to train on datasets of your choice.</p>
+<div class="admonition note">
+<p class="admonition-title">Debugging</p><p>You can add –debug to generate small runs for debugging.</p>
+</div><p>Running this script will generate training run commands. You can use this script for generating a single run or multiple (for comparing settings and hyperparameter tuning).
 After running this script you just need to run the command(s) outputted.</p>
 <p>Want to learn how to set your own config values and sweep them? Read this short <a class="reference external" href="https://robomimic.github.io/docs/tutorials/hyperparam_scan.html#step-3-set-hyperparameter-values">tutorial section</a>.</p>
 <section id="loading-model-checkpoint-weights">
@@ -525,6 +529,17 @@ After running this script you just need to run the command(s) outputted.</p>
 <p>Read this short <a class="reference external" href="https://robomimic.github.io/docs/tutorials/viewing_results.html">tutorial page</a>.</p>
 </section>
 </section>
+<hr class="docutils" />
+<section id="evaluation">
+<h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">#</a></h2>
+<p>We provide a script for running evaluations on existing model checkpoints:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">robomimic</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">config_gen</span><span class="o">/</span><span class="n">eval_ckpt</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">ckpt</span> <span class="o">&lt;</span><span class="n">ckpt</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">experiment</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>This will generate a command which you can subsequrently run.</p>
+<div class="admonition note">
+<p class="admonition-title">Debugging</p><p>You can add –debug to generate small runs for debugging.</p>
+</div></section>
 </section>
 
 
@@ -535,11 +550,11 @@ After running this script you just need to run the command(s) outputted.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="evaluation.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../datasets/creating_datasets.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Evaluation</p>
+            <p class="prev-next-title">Creating New Datasets</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../api/robocasa.html" title="next page">

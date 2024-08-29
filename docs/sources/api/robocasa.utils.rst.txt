@@ -12,6 +12,14 @@ Subpackages
 Submodules
 ----------
 
+robocasa.utils.camera\_utils module
+-----------------------------------
+
+.. automodule:: robocasa.utils.camera_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 robocasa.utils.dataset\_registry module
 ---------------------------------------
 
@@ -20,10 +28,10 @@ robocasa.utils.dataset\_registry module
    :undoc-members:
    :show-inheritance:
 
-robocasa.utils.eval\_utils module
----------------------------------
+robocasa.utils.env\_utils module
+--------------------------------
 
-.. automodule:: robocasa.utils.eval_utils
+.. automodule:: robocasa.utils.env_utils
    :members:
    :undoc-members:
    :show-inheritance:
@@ -32,14 +40,6 @@ robocasa.utils.get\_all\_items\_by\_type module
 -----------------------------------------------
 
 .. automodule:: robocasa.utils.get_all_items_by_type
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-robocasa.utils.kitchen\_utils module
-------------------------------------
-
-.. automodule:: robocasa.utils.kitchen_utils
    :members:
    :undoc-members:
    :show-inheritance:

@@ -105,8 +105,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/getting_started.html">
+  <a class="reference internal" href="../introduction/quick_start.html">
    Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/basic_usage.html">
+   Basic Usage
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,8 +142,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -149,17 +154,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/downloading.html">
+  <a class="reference internal" href="../datasets/downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="../datasets/using_datasets.html">
+   Using Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/creating.html">
+  <a class="reference internal" href="../datasets/creating_datasets.html">
    Creating New Datasets
   </a>
  </li>
@@ -171,13 +176,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -242,26 +242,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -269,8 +262,8 @@
     <a class="reference internal" href="robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -526,9 +519,12 @@ title="Print to PDF"
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.drawer_utensil_sort.DrawerUtensilSort">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.drawer_utensil_sort.</span></span><span class="sig-name descname"><span class="pre">DrawerUtensilSort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drawer_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.TOP_DRAWER</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.drawer_utensil_sort.DrawerUtensilSort" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer" title="robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer</span></code></a></p>
-<p>Tidying Cabinets and Drawers Multistage task:
-Simulates the task of placing utensils in the drawer.</p>
-<p>Open the drawer and push the utensils inside it.</p>
+<p>Drawer Utensil Sort: composite task for Tidying Cabinets And Drawers activity.</p>
+<p>Simulates the task of placing utensils in the drawer.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Open the drawer and push the utensils inside it.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>drawer_id</strong> (<em>int</em>) – Enum which serves as a unique identifier for different
@@ -552,10 +548,13 @@ This includes the language description of the task.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.organize_cleaning_supplies.OrganizeCleaningSupplies">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.organize_cleaning_supplies.</span></span><span class="sig-name descname"><span class="pre">OrganizeCleaningSupplies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cab_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FixtureType.CABINET_TOP</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.organize_cleaning_supplies.OrganizeCleaningSupplies" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.html#robocasa.environments.kitchen.kitchen.Kitchen" title="robocasa.environments.kitchen.kitchen.Kitchen"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.kitchen.Kitchen</span></code></a></p>
-<p>Tidying Cabinets and Drawers Multistage task:
-Simulates the task of preparing to clean the sink.</p>
-<p>Open the cabinet. Pick the cleaner and place it next to the sink.
+<p>Organize Cleaning Supplies: composite task for Tidying Cabinets And Drawers activity.</p>
+<p>Simulates the task of preparing to clean the sink.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Open the cabinet. Pick the cleaner and place it next to the sink.
 Then close the cabinet.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>cab_id</strong> (<em>str</em>) – Enum which serves as a unique identifier for different
@@ -578,10 +577,14 @@ picked.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.pantry_mishap.PantryMishap">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.pantry_mishap.</span></span><span class="sig-name descname"><span class="pre">PantryMishap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.pantry_mishap.PantryMishap" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer" title="robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer</span></code></a></p>
-<p>Tidying Cabinets and Drawers Multistage task:
-Simulates the task of organizing the pantry.</p>
-<p>Open the cabinet. Pick the vegetable and place it on the counter. Pick the
+<p>Pantry Mishap: composite task for Tidying Cabinets And Drawers activity.</p>
+<p>Simulates the task of organizing the pantry after a mishap from the incorrect
+placement of items in the cabinet.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Open the cabinet. Pick the vegetable and place it on the counter. Pick the
 canned food and place it in the drawer. Close the cabinet.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.pantry_mishap.PantryMishap.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.pantry_mishap.PantryMishap.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -598,9 +601,13 @@ This includes the language description of the task.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.shaker_shuffle.ShakerShuffle">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.shaker_shuffle.</span></span><span class="sig-name descname"><span class="pre">ShakerShuffle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.shaker_shuffle.ShakerShuffle" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer" title="robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer</span></code></a></p>
-<p>Tidying Cabinets and Drawers Multistage task:
-Simulates the task of organizing the pantry.</p>
-<p>Open the cabinet. Place the shakers in the drawer. Close the cabinet.</p>
+<p>Shaker Shuffle: composite task for Tidying Cabinets And Drawers activity.</p>
+<p>Simulates the task of reorganizing the pantry by only placing the shakers in
+the drawer.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Open the cabinet. Place the shakers in the drawer. Close the cabinet.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.shaker_shuffle.ShakerShuffle.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.shaker_shuffle.ShakerShuffle.get_ep_meta" title="Permalink to this definition">#</a></dt>
@@ -617,9 +624,12 @@ This includes the language description of the task.</p>
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.snack_sorting.SnackSorting">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.snack_sorting.</span></span><span class="sig-name descname"><span class="pre">SnackSorting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.snack_sorting.SnackSorting" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robocasa.environments.kitchen.single_stage.html#robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer" title="robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robocasa.environments.kitchen.single_stage.kitchen_drawer.ManipulateDrawer</span></code></a></p>
-<p>Tidying Cabinets and Drawers Multistage task:
-Simulates the task of placing snacks in the bowl.</p>
-<p>Place the bar in the bowl and close the drawer.</p>
+<p>Snack Sorting: composite task for Tidying Cabinets And Drawers activity.</p>
+<p>Simulates the task of placing snacks in the bowl.</p>
+<dl class="simple">
+<dt>Steps:</dt><dd><p>Place the bar in the bowl and close the drawer.</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.snack_sorting.SnackSorting.get_ep_meta">
 <span class="sig-name descname"><span class="pre">get_ep_meta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.environments.kitchen.multi_stage.tidying_cabinets_and_drawers.snack_sorting.SnackSorting.get_ep_meta" title="Permalink to this definition">#</a></dt>

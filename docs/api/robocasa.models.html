@@ -35,7 +35,7 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="robocasa.models.arenas package" href="robocasa.models.arenas.html" />
+    <link rel="next" title="robocasa.models.fixtures package" href="robocasa.models.fixtures.html" />
     <link rel="prev" title="robocasa.environments.kitchen.single_stage package" href="robocasa.environments.kitchen.single_stage.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -105,8 +105,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/getting_started.html">
+  <a class="reference internal" href="../introduction/quick_start.html">
    Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/basic_usage.html">
+   Basic Usage
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,8 +142,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/object_categories.html">
-   Object Categories
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -149,17 +154,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/downloading.html">
+  <a class="reference internal" href="../datasets/downloading_datasets.html">
    Downloading Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/inspecting.html">
-   Inspecting and Visualizing Datasets
+  <a class="reference internal" href="../datasets/using_datasets.html">
+   Using Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../datasets/creating.html">
+  <a class="reference internal" href="../datasets/creating_datasets.html">
    Creating New Datasets
   </a>
  </li>
@@ -171,13 +176,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../use_cases/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
-   Training Policies
+   Policy Learning
   </a>
  </li>
 </ul>
@@ -242,26 +242,19 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="robocasa.models.arenas.html">
-       robocasa.models.arenas package
+      <a class="reference internal" href="robocasa.models.fixtures.html">
+       robocasa.models.fixtures package
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3">
       <a class="reference internal" href="robocasa.models.objects.html">
        robocasa.models.objects package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="robocasa.models.objects.fixtures.html">
-         robocasa.models.objects.fixtures package
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.models.scenes.html">
+       robocasa.models.scenes package
+      </a>
      </li>
     </ul>
    </li>
@@ -269,8 +262,8 @@
     <a class="reference internal" href="robocasa.utils.html">
      robocasa.utils package
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -471,44 +464,41 @@ title="Print to PDF"
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="robocasa.models.arenas.html">robocasa.models.arenas package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="robocasa.models.arenas.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robocasa.models.arenas.html#module-robocasa.models.arenas.kitchen_arena">robocasa.models.arenas.kitchen_arena module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robocasa.models.arenas.html#module-robocasa.models.arenas.layout_builder">robocasa.models.arenas.layout_builder module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robocasa.models.arenas.html#module-robocasa.models.arenas.layout_utils">robocasa.models.arenas.layout_utils module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robocasa.models.arenas.html#module-robocasa.models.arenas">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robocasa.models.fixtures.html">robocasa.models.fixtures package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.accessories">robocasa.models.fixtures.accessories module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.cabinet_panels">robocasa.models.fixtures.cabinet_panels module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.cabinets">robocasa.models.fixtures.cabinets module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.counter">robocasa.models.fixtures.counter module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.dishwasher">robocasa.models.fixtures.dishwasher module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.fixture">robocasa.models.fixtures.fixture module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.fixture_stack">robocasa.models.fixtures.fixture_stack module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.fixture_utils">robocasa.models.fixtures.fixture_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.fridge">robocasa.models.fixtures.fridge module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.handles">robocasa.models.fixtures.handles module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.hood">robocasa.models.fixtures.hood module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.microwave">robocasa.models.fixtures.microwave module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.others">robocasa.models.fixtures.others module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.sink">robocasa.models.fixtures.sink module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.stove">robocasa.models.fixtures.stove module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures.windows">robocasa.models.fixtures.windows module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.fixtures.html#module-robocasa.models.fixtures">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="robocasa.models.objects.html">robocasa.models.objects package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="robocasa.models.objects.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="robocasa.models.objects.fixtures.html">robocasa.models.objects.fixtures package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.accessories">robocasa.models.objects.fixtures.accessories module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.cabinet_panels">robocasa.models.objects.fixtures.cabinet_panels module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.cabinets">robocasa.models.objects.fixtures.cabinets module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.counter">robocasa.models.objects.fixtures.counter module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.dishwasher">robocasa.models.objects.fixtures.dishwasher module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.fixture">robocasa.models.objects.fixtures.fixture module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.fixture_stack">robocasa.models.objects.fixtures.fixture_stack module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.fixture_utils">robocasa.models.objects.fixtures.fixture_utils module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.fridge">robocasa.models.objects.fixtures.fridge module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.handles">robocasa.models.objects.fixtures.handles module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.hood">robocasa.models.objects.fixtures.hood module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.microwave">robocasa.models.objects.fixtures.microwave module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.others">robocasa.models.objects.fixtures.others module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.sink">robocasa.models.objects.fixtures.sink module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.stove">robocasa.models.objects.fixtures.stove module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures.windows">robocasa.models.objects.fixtures.windows module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.fixtures.html#module-robocasa.models.objects.fixtures">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="robocasa.models.objects.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robocasa.models.objects.html#module-robocasa.models.objects.kitchen_objects">robocasa.models.objects.kitchen_objects module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robocasa.models.objects.html#module-robocasa.models.objects.object_groups">robocasa.models.objects.object_groups module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robocasa.models.objects.html#module-robocasa.models.objects.objects">robocasa.models.objects.objects module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robocasa.models.objects.html#module-robocasa.models.objects">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="robocasa.models.scenes.html">robocasa.models.scenes package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.scenes.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.scenes.html#module-robocasa.models.scenes.kitchen_arena">robocasa.models.scenes.kitchen_arena module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.scenes.html#module-robocasa.models.scenes.scene_builder">robocasa.models.scenes.scene_builder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.scenes.html#module-robocasa.models.scenes.scene_registry">robocasa.models.scenes.scene_registry module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.scenes.html#module-robocasa.models.scenes.scene_utils">robocasa.models.scenes.scene_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.models.scenes.html#module-robocasa.models.scenes">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -534,10 +524,10 @@ title="Print to PDF"
             <p class="prev-next-title">robocasa.environments.kitchen.single_stage package</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="robocasa.models.arenas.html" title="next page">
+    <a class='right-next' id="next-link" href="robocasa.models.fixtures.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">robocasa.models.arenas package</p>
+        <p class="prev-next-title">robocasa.models.fixtures package</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

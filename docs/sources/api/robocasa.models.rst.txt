@@ -7,8 +7,9 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   robocasa.models.arenas
+   robocasa.models.fixtures
    robocasa.models.objects
+   robocasa.models.scenes
 
 Module contents
 ---------------
