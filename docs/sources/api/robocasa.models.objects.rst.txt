@@ -4,6 +4,14 @@ robocasa.models.objects package
 Submodules
 ----------
 
+robocasa.models.objects.kitchen\_object\_utils module
+-----------------------------------------------------
+
+.. automodule:: robocasa.models.objects.kitchen_object_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 robocasa.models.objects.kitchen\_objects module
 -----------------------------------------------
 

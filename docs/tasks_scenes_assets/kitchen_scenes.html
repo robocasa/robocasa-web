@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Kitchen Scenes &#8212; RoboCasa 0.1 documentation</title>
+    <title>Kitchen Scenes &#8212; RoboCasa 0.2 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,18 +19,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=4fea3ae4a0a4ba949df0a89bbae557cc2ce861ae" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
-    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
-    <script src="../static/jquery.js"></script>
-    <script src="../static/underscore.js"></script>
-    <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js"></script>
+    <script src="../static/documentation_options.js?v=3b889da3"></script>
+    <script src="../static/doctools.js?v=9a2dae69"></script>
+    <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -73,14 +70,11 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
+      
+      <img src="../static/../static/robocasa_logo.svg" class="logo" alt="logo">
       
       
-      <img src="../static/robocasa_logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">RoboCasa 0.1 documentation</h1>
+      <h1 class="site-logo" id="site-title">RoboCasa 0.2 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -110,40 +104,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/basic_usage.html">
-   Basic Usage
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../introduction/codebase_overview.html">
    Codebase Overview
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Tasks, Scenes, and Assets
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="atomic_tasks.html">
-   Atomic Tasks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="composite_tasks.html">
-   Composite Tasks
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Kitchen Scenes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="objects.html">
-   Objects
   </a>
  </li>
 </ul>
@@ -176,8 +138,40 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../use_cases/basic_usage.html">
+   Basic Usage
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
    Policy Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tasks, Scenes, and Assets
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="atomic_tasks.html">
+   Atomic Tasks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="composite_tasks.html">
+   Composite Tasks
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Kitchen Scenes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -459,7 +453,7 @@ title="Print to PDF"
               <div>
                 
   <section id="kitchen-scenes">
-<h1>Kitchen Scenes<a class="headerlink" href="#kitchen-scenes" title="Permalink to this headline">#</a></h1>
+<h1>Kitchen Scenes<a class="headerlink" href="#kitchen-scenes" title="Link to this heading">¶</a></h1>
 <p>RoboCasa offers a large array of kitchen scenes with fully interactive cabinets, drawers, and appliances.
 We model 10 layouts ranging from basic designs found in apartments to more elaborate designs found in high-end homes. Each layout can be configured to take on one of 12 unique styles, resulting in 120 kitchen scenes. See the breakdown of layouts and styles as follows.</p>
 <p>Environments can be initialized with specific layouts and styles via integer enums defined <a class="reference external" href="https://github.com/robocasa/robocasa/blob/main/robocasa/models/scenes/scene_registry.py">here</a>. For example:</p>
@@ -474,12 +468,12 @@ We model 10 layouts ranging from basic designs found in apartments to more elabo
 </pre></div>
 </div>
 <section id="layouts">
-<h2>Layouts<a class="headerlink" href="#layouts" title="Permalink to this headline">#</a></h2>
+<h2>Layouts<a class="headerlink" href="#layouts" title="Link to this heading">¶</a></h2>
 <p>Layouts are configured by setting the arrangment of fixtures (cabinets, microwaves, counters, etc.) in a yaml file <a class="reference external" href="https://github.com/robocasa/robocasa/tree/main/robocasa/models/assets/scenes/kitchen_layouts"><strong>[Source]</strong></a>.</p>
 <p><img alt="Kitchen Layouts" src="../images/layouts.png" /></p>
 </section>
 <section id="styles">
-<h2>Styles<a class="headerlink" href="#styles" title="Permalink to this headline">#</a></h2>
+<h2>Styles<a class="headerlink" href="#styles" title="Link to this heading">¶</a></h2>
 <p>Styles are configured by setting relevant textures and fixture attributes (cabinet handle types, door types, coffee machine types, etc) in a yaml file <a class="reference external" href="https://github.com/robocasa/robocasa/models/assets/scenes/kitchen_styles"><strong>[Source]</strong></a>.</p>
 <p><img alt="Kitchen Styles" src="../images/styles.png" /></p>
 </section>

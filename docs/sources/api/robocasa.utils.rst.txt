@@ -20,6 +20,14 @@ robocasa.utils.camera\_utils module
    :undoc-members:
    :show-inheritance:
 
+robocasa.utils.config\_utils module
+-----------------------------------
+
+.. automodule:: robocasa.utils.config_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 robocasa.utils.dataset\_registry module
 ---------------------------------------
 
@@ -36,14 +44,6 @@ robocasa.utils.env\_utils module
    :undoc-members:
    :show-inheritance:
 
-robocasa.utils.get\_all\_items\_by\_type module
------------------------------------------------
-
-.. automodule:: robocasa.utils.get_all_items_by_type
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 robocasa.utils.object\_utils module
 -----------------------------------
 
@@ -56,6 +56,14 @@ robocasa.utils.placement\_samplers module
 -----------------------------------------
 
 .. automodule:: robocasa.utils.placement_samplers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robocasa.utils.postprocess\_xml\_utils module
+---------------------------------------------
+
+.. automodule:: robocasa.utils.postprocess_xml_utils
    :members:
    :undoc-members:
    :show-inheritance:

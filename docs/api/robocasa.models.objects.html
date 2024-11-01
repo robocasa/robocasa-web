@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>robocasa.models.objects package &#8212; RoboCasa 0.1 documentation</title>
+    <title>robocasa.models.objects package &#8212; RoboCasa 0.2 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,18 +19,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4fea3ae4a0a4ba949df0a89bbae557cc2ce861ae" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/documentation_options.js?v=3b889da3"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -73,14 +70,11 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
+      
+      <img src="../_static/../_static/robocasa_logo.svg" class="logo" alt="logo">
       
       
-      <img src="../_static/robocasa_logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">RoboCasa 0.1 documentation</h1>
+      <h1 class="site-logo" id="site-title">RoboCasa 0.2 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -110,40 +104,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/basic_usage.html">
-   Basic Usage
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../introduction/codebase_overview.html">
    Codebase Overview
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Tasks, Scenes, and Assets
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/atomic_tasks.html">
-   Atomic Tasks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/composite_tasks.html">
-   Composite Tasks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/kitchen_scenes.html">
-   Kitchen Scenes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
-   Objects
   </a>
  </li>
 </ul>
@@ -176,8 +138,40 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../use_cases/basic_usage.html">
+   Basic Usage
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
    Policy Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tasks, Scenes, and Assets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tasks_scenes_assets/atomic_tasks.html">
+   Atomic Tasks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tasks_scenes_assets/composite_tasks.html">
+   Composite Tasks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tasks_scenes_assets/kitchen_scenes.html">
+   Kitchen Scenes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -415,14 +409,110 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.models.objects.kitchen_object_utils">
+   robocasa.models.objects.kitchen_object_utils module
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#robocasa.models.objects.kitchen_object_utils.ObjCat">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ObjCat
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#robocasa.models.objects.kitchen_object_utils.ObjCat.get_mjcf_kwargs">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ObjCat.get_mjcf_kwargs()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#robocasa.models.objects.kitchen_object_utils.sample_kitchen_object">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sample_kitchen_object()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#robocasa.models.objects.kitchen_object_utils.sample_kitchen_object_helper">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sample_kitchen_object_helper()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robocasa.models.objects.kitchen_objects">
    robocasa.models.objects.kitchen_objects module
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#robocasa.models.objects.kitchen_objects.get_cats_by_type">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       get_cats_by_type()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robocasa.models.objects.objects">
    robocasa.models.objects.objects module
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#robocasa.models.objects.objects.MJCFObject">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MJCFObject
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#robocasa.models.objects.objects.MJCFObject.get_bbox_points">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         MJCFObject.get_bbox_points()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#robocasa.models.objects.objects.MJCFObject.horizontal_radius">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         MJCFObject.horizontal_radius
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#robocasa.models.objects.objects.MJCFObject.postprocess_model_xml">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         MJCFObject.postprocess_model_xml()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robocasa.models.objects">
@@ -454,14 +544,110 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robocasa.models.objects.kitchen_object_utils">
+   robocasa.models.objects.kitchen_object_utils module
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#robocasa.models.objects.kitchen_object_utils.ObjCat">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ObjCat
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#robocasa.models.objects.kitchen_object_utils.ObjCat.get_mjcf_kwargs">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ObjCat.get_mjcf_kwargs()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#robocasa.models.objects.kitchen_object_utils.sample_kitchen_object">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sample_kitchen_object()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#robocasa.models.objects.kitchen_object_utils.sample_kitchen_object_helper">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sample_kitchen_object_helper()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robocasa.models.objects.kitchen_objects">
    robocasa.models.objects.kitchen_objects module
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#robocasa.models.objects.kitchen_objects.get_cats_by_type">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       get_cats_by_type()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robocasa.models.objects.objects">
    robocasa.models.objects.objects module
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#robocasa.models.objects.objects.MJCFObject">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MJCFObject
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#robocasa.models.objects.objects.MJCFObject.get_bbox_points">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         MJCFObject.get_bbox_points()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#robocasa.models.objects.objects.MJCFObject.horizontal_radius">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         MJCFObject.horizontal_radius
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#robocasa.models.objects.objects.MJCFObject.postprocess_model_xml">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         MJCFObject.postprocess_model_xml()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-robocasa.models.objects">
@@ -479,19 +665,19 @@ title="Print to PDF"
               <div>
                 
   <section id="robocasa-models-objects-package">
-<h1>robocasa.models.objects package<a class="headerlink" href="#robocasa-models-objects-package" title="Permalink to this headline">#</a></h1>
+<h1>robocasa.models.objects package<a class="headerlink" href="#robocasa-models-objects-package" title="Link to this heading">¶</a></h1>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
 </section>
-<section id="module-robocasa.models.objects.kitchen_objects">
-<span id="robocasa-models-objects-kitchen-objects-module"></span><h2>robocasa.models.objects.kitchen_objects module<a class="headerlink" href="#module-robocasa.models.objects.kitchen_objects" title="Permalink to this headline">#</a></h2>
+<section id="module-robocasa.models.objects.kitchen_object_utils">
+<span id="robocasa-models-objects-kitchen-object-utils-module"></span><h2>robocasa.models.objects.kitchen_object_utils module<a class="headerlink" href="#module-robocasa.models.objects.kitchen_object_utils" title="Link to this heading">¶</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="robocasa.models.objects.kitchen_objects.ObjCat">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.models.objects.kitchen_objects.</span></span><span class="sig-name descname"><span class="pre">ObjCat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_folders</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graspable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">washable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microwavable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cookable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freezable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solimp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.998,</span> <span class="pre">0.998,</span> <span class="pre">0.001)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.001,</span> <span class="pre">2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.95,</span> <span class="pre">0.3,</span> <span class="pre">0.1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aigen_cat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.kitchen_objects.ObjCat" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="robocasa.models.objects.kitchen_object_utils.ObjCat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robocasa.models.objects.kitchen_object_utils.</span></span><span class="sig-name descname"><span class="pre">ObjCat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_folders</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graspable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">washable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microwavable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cookable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freezable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solimp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.998,</span> <span class="pre">0.998,</span> <span class="pre">0.001)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.001,</span> <span class="pre">2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.95,</span> <span class="pre">0.3,</span> <span class="pre">0.1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aigen_cat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.kitchen_object_utils.ObjCat" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class that encapsulates data for an object category.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – name of the object category</p></li>
 <li><p><strong>types</strong> (<em>tuple</em><em>) or </em><em>(</em><em>str</em>) – type(s)/categories the object belongs to. Examples include meat, sweets, fruit, etc.</p></li>
@@ -513,19 +699,19 @@ title="Print to PDF"
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="robocasa.models.objects.kitchen_objects.ObjCat.get_mjcf_kwargs">
-<span class="sig-name descname"><span class="pre">get_mjcf_kwargs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.kitchen_objects.ObjCat.get_mjcf_kwargs" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="robocasa.models.objects.kitchen_object_utils.ObjCat.get_mjcf_kwargs">
+<span class="sig-name descname"><span class="pre">get_mjcf_kwargs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.kitchen_object_utils.ObjCat.get_mjcf_kwargs" title="Link to this definition">¶</a></dt>
 <dd><p>returns relevant data to apply to the MJCF model for the object category</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="robocasa.models.objects.kitchen_objects.sample_kitchen_object">
-<span class="sig-prename descclassname"><span class="pre">robocasa.models.objects.kitchen_objects.</span></span><span class="sig-name descname"><span class="pre">sample_kitchen_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groups</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graspable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">washable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microwavable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cookable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freezable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_registries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('objaverse',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,</span> <span class="pre">None,</span> <span class="pre">None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.kitchen_objects.sample_kitchen_object" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="robocasa.models.objects.kitchen_object_utils.sample_kitchen_object">
+<span class="sig-prename descclassname"><span class="pre">robocasa.models.objects.kitchen_object_utils.</span></span><span class="sig-name descname"><span class="pre">sample_kitchen_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groups</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graspable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">washable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microwavable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cookable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freezable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_registries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('objaverse',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,</span> <span class="pre">None,</span> <span class="pre">None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.kitchen_object_utils.sample_kitchen_object" title="Link to this definition">¶</a></dt>
 <dd><p>Sample a kitchen object from the specified groups and within max_size bounds.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>groups</strong> (<em>list</em><em> or </em><em>str</em>) – groups to sample from or the exact xml path of the object to spawn</p></li>
 <li><p><strong>exclude_groups</strong> (<em>str</em><em> or </em><em>list</em>) – groups to exclude</p></li>
@@ -542,7 +728,7 @@ title="Print to PDF"
 <li><p><strong>object_scale</strong> (<em>float</em>) – scale of the object. If set will multiply the scale of the sampled object by this value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p>kwargs to apply to the MJCF model for the sampled object</p>
 <dl class="simple">
 <dt>dict: info about the sampled object - the path of the mjcf, groups which the object’s category belongs to, the category of the object</dt><dd><p>the sampling split the object came from, and the groups the object was sampled from</p>
@@ -550,18 +736,18 @@ title="Print to PDF"
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="robocasa.models.objects.kitchen_objects.sample_kitchen_object_helper">
-<span class="sig-prename descclassname"><span class="pre">robocasa.models.objects.kitchen_objects.</span></span><span class="sig-name descname"><span class="pre">sample_kitchen_object_helper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groups</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graspable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">washable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microwavable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cookable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freezable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_registries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('objaverse',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.kitchen_objects.sample_kitchen_object_helper" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="robocasa.models.objects.kitchen_object_utils.sample_kitchen_object_helper">
+<span class="sig-prename descclassname"><span class="pre">robocasa.models.objects.kitchen_object_utils.</span></span><span class="sig-name descname"><span class="pre">sample_kitchen_object_helper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groups</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graspable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">washable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microwavable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cookable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freezable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_registries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('objaverse',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.kitchen_object_utils.sample_kitchen_object_helper" title="Link to this definition">¶</a></dt>
 <dd><p>Helper function to sample a kitchen object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>groups</strong> (<em>list</em><em> or </em><em>str</em>) – groups to sample from or the exact xml path of the object to spawn</p></li>
 <li><p><strong>exclude_groups</strong> (<em>str</em><em> or </em><em>list</em>) – groups to exclude</p></li>
@@ -577,7 +763,7 @@ title="Print to PDF"
 <li><p><strong>object_scale</strong> (<em>float</em>) – scale of the object. If set will multiply the scale of the sampled object by this value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p>kwargs to apply to the MJCF model for the sampled object</p>
 <dl class="simple">
 <dt>dict: info about the sampled object - the path of the mjcf, groups which the object’s category belongs to, the category of the object</dt><dd><p>the sampling split the object came from, and the groups the object was sampled from</p>
@@ -585,38 +771,58 @@ title="Print to PDF"
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
 
 </section>
+<section id="module-robocasa.models.objects.kitchen_objects">
+<span id="robocasa-models-objects-kitchen-objects-module"></span><h2>robocasa.models.objects.kitchen_objects module<a class="headerlink" href="#module-robocasa.models.objects.kitchen_objects" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="robocasa.models.objects.kitchen_objects.get_cats_by_type">
+<span class="sig-prename descclassname"><span class="pre">robocasa.models.objects.kitchen_objects.</span></span><span class="sig-name descname"><span class="pre">get_cats_by_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.kitchen_objects.get_cats_by_type" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves a list of item keys from the global <cite>OBJ_CATEGORIES</cite> dictionary based on the specified types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>types</strong> (<em>list</em>) – A list of valid types to filter items by. Only items with a matching type will be included.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of keys from <cite>OBJ_CATEGORIES</cite> where the item’s types intersect with the provided <cite>types</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 <section id="module-robocasa.models.objects.objects">
-<span id="robocasa-models-objects-objects-module"></span><h2>robocasa.models.objects.objects module<a class="headerlink" href="#module-robocasa.models.objects.objects" title="Permalink to this headline">#</a></h2>
+<span id="robocasa-models-objects-objects-module"></span><h2>robocasa.models.objects.objects module<a class="headerlink" href="#module-robocasa.models.objects.objects" title="Link to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robocasa.models.objects.objects.MJCFObject">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robocasa.models.objects.objects.</span></span><span class="sig-name descname"><span class="pre">MJCFObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mjcf_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solimp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.998,</span> <span class="pre">0.998,</span> <span class="pre">0.001)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.001,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.95,</span> <span class="pre">0.3,</span> <span class="pre">0.1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgba</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.objects.MJCFObject" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robocasa.models.objects.objects.</span></span><span class="sig-name descname"><span class="pre">MJCFObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mjcf_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solimp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.998,</span> <span class="pre">0.998,</span> <span class="pre">0.001)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.001,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.95,</span> <span class="pre">0.3,</span> <span class="pre">0.1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgba</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.objects.MJCFObject" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MujocoXMLObject</span></code></p>
 <p>Blender object with support for changing the scaling</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.models.objects.objects.MJCFObject.get_bbox_points">
-<span class="sig-name descname"><span class="pre">get_bbox_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.objects.MJCFObject.get_bbox_points" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_bbox_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.objects.MJCFObject.get_bbox_points" title="Link to this definition">¶</a></dt>
 <dd><p>Get the full 8 bounding box points of the object
 rot: a rotation matrix</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robocasa.models.objects.objects.MJCFObject.horizontal_radius">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">horizontal_radius</span></span><a class="headerlink" href="#robocasa.models.objects.objects.MJCFObject.horizontal_radius" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">horizontal_radius</span></span><a class="headerlink" href="#robocasa.models.objects.objects.MJCFObject.horizontal_radius" title="Link to this definition">¶</a></dt>
 <dd><p>Returns maximum distance from model root body to any radial point of the model.</p>
 <p>Helps us put models programmatically without them flying away due to a huge initial contact force.
 Must be defined by subclass.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>radius</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
@@ -624,7 +830,7 @@ Must be defined by subclass.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robocasa.models.objects.objects.MJCFObject.postprocess_model_xml">
-<span class="sig-name descname"><span class="pre">postprocess_model_xml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.objects.MJCFObject.postprocess_model_xml" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">postprocess_model_xml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.objects.MJCFObject.postprocess_model_xml" title="Link to this definition">¶</a></dt>
 <dd><p>New version of postprocess model xml that only replaces robosuite file paths if necessary (otherwise
 there is an error with the “max” operation)</p>
 </dd></dl>
@@ -633,7 +839,7 @@ there is an error with the “max” operation)</p>
 
 </section>
 <section id="module-robocasa.models.objects">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robocasa.models.objects" title="Permalink to this headline">#</a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robocasa.models.objects" title="Link to this heading">¶</a></h2>
 </section>
 </section>
 

@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>robocasa package &#8212; RoboCasa 0.1 documentation</title>
+    <title>robocasa package &#8212; RoboCasa 0.2 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -20,23 +19,21 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4fea3ae4a0a4ba949df0a89bbae557cc2ce861ae" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/documentation_options.js?v=3b889da3"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="robocasa.environments package" href="robocasa.environments.html" />
-    <link rel="prev" title="Policy Learning" href="../use_cases/policy_learning.html" />
+    <link rel="prev" title="Objects" href="../tasks_scenes_assets/objects.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -73,14 +70,11 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
+      
+      <img src="../_static/../_static/robocasa_logo.svg" class="logo" alt="logo">
       
       
-      <img src="../_static/robocasa_logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">RoboCasa 0.1 documentation</h1>
+      <h1 class="site-logo" id="site-title">RoboCasa 0.2 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -110,40 +104,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/basic_usage.html">
-   Basic Usage
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../introduction/codebase_overview.html">
    Codebase Overview
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Tasks, Scenes, and Assets
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/atomic_tasks.html">
-   Atomic Tasks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/composite_tasks.html">
-   Composite Tasks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/kitchen_scenes.html">
-   Kitchen Scenes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
-   Objects
   </a>
  </li>
 </ul>
@@ -176,8 +138,40 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../use_cases/basic_usage.html">
+   Basic Usage
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../use_cases/policy_learning.html">
    Policy Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tasks, Scenes, and Assets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tasks_scenes_assets/atomic_tasks.html">
+   Atomic Tasks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tasks_scenes_assets/composite_tasks.html">
+   Composite Tasks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tasks_scenes_assets/kitchen_scenes.html">
+   Kitchen Scenes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tasks_scenes_assets/objects.html">
+   Objects
   </a>
  </li>
 </ul>
@@ -489,9 +483,9 @@ title="Print to PDF"
               <div>
                 
   <section id="robocasa-package">
-<h1>robocasa package<a class="headerlink" href="#robocasa-package" title="Permalink to this headline">#</a></h1>
+<h1>robocasa package<a class="headerlink" href="#robocasa-package" title="Link to this heading">¶</a></h1>
 <section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">#</a></h2>
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="robocasa.environments.html">robocasa.environments package</a><ul>
@@ -533,6 +527,7 @@ title="Print to PDF"
 </li>
 <li class="toctree-l3"><a class="reference internal" href="robocasa.models.objects.html">robocasa.models.objects package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.html#module-robocasa.models.objects.kitchen_object_utils">robocasa.models.objects.kitchen_object_utils module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.html#module-robocasa.models.objects.kitchen_objects">robocasa.models.objects.kitchen_objects module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.html#module-robocasa.models.objects.objects">robocasa.models.objects.objects module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="robocasa.models.objects.html#module-robocasa.models.objects">Module contents</a></li>
@@ -556,25 +551,90 @@ title="Print to PDF"
 <li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#subpackages">Subpackages</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="robocasa.utils.usd.html">robocasa.utils.usd package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#module-robocasa.utils.usd.component">robocasa.utils.usd.component module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#module-robocasa.utils.usd.demo">robocasa.utils.usd.demo module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#module-robocasa.utils.usd.exporter">robocasa.utils.usd.exporter module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#module-robocasa.utils.usd.exporter_test">robocasa.utils.usd.exporter_test module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#module-robocasa.utils.usd.shapes">robocasa.utils.usd.shapes module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#module-robocasa.utils.usd.utils">robocasa.utils.usd.utils module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#module-robocasa.utils.usd">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#robocasa-utils-usd-component-module">robocasa.utils.usd.component module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#robocasa-utils-usd-demo-module">robocasa.utils.usd.demo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#robocasa-utils-usd-exporter-module">robocasa.utils.usd.exporter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#robocasa-utils-usd-exporter-test-module">robocasa.utils.usd.exporter_test module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#robocasa-utils-usd-shapes-module">robocasa.utils.usd.shapes module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#robocasa-utils-usd-utils-module">robocasa.utils.usd.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.usd.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils.camera_utils">robocasa.utils.camera_utils module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils.dataset_registry">robocasa.utils.dataset_registry module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils.env_utils">robocasa.utils.env_utils module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils.get_all_items_by_type">robocasa.utils.get_all_items_by_type module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils.object_utils">robocasa.utils.object_utils module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils.placement_samplers">robocasa.utils.placement_samplers module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils.texture_swap">robocasa.utils.texture_swap module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils.config_utils">robocasa.utils.config_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.config_utils.is_stale_controller_config"><code class="docutils literal notranslate"><span class="pre">is_stale_controller_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.config_utils.refactor_composite_controller_config"><code class="docutils literal notranslate"><span class="pre">refactor_composite_controller_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils.dataset_registry">robocasa.utils.dataset_registry module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.dataset_registry.get_ds_path"><code class="docutils literal notranslate"><span class="pre">get_ds_path()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#robocasa-utils-env-utils-module">robocasa.utils.env_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils.object_utils">robocasa.utils.object_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.check_obj_fixture_contact"><code class="docutils literal notranslate"><span class="pre">check_obj_fixture_contact()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.check_obj_in_receptacle"><code class="docutils literal notranslate"><span class="pre">check_obj_in_receptacle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.compute_rel_transform"><code class="docutils literal notranslate"><span class="pre">compute_rel_transform()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.fixture_pairwise_dist"><code class="docutils literal notranslate"><span class="pre">fixture_pairwise_dist()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.get_fixture_to_point_rel_offset"><code class="docutils literal notranslate"><span class="pre">get_fixture_to_point_rel_offset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.get_pos_after_rel_offset"><code class="docutils literal notranslate"><span class="pre">get_pos_after_rel_offset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.get_rel_transform"><code class="docutils literal notranslate"><span class="pre">get_rel_transform()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.gripper_obj_far"><code class="docutils literal notranslate"><span class="pre">gripper_obj_far()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.normalize_joint_value"><code class="docutils literal notranslate"><span class="pre">normalize_joint_value()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.obj_cos"><code class="docutils literal notranslate"><span class="pre">obj_cos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.obj_in_region"><code class="docutils literal notranslate"><span class="pre">obj_in_region()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.obj_inside_of"><code class="docutils literal notranslate"><span class="pre">obj_inside_of()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.objs_intersect"><code class="docutils literal notranslate"><span class="pre">objs_intersect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.point_in_fixture"><code class="docutils literal notranslate"><span class="pre">point_in_fixture()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.project_point_to_line"><code class="docutils literal notranslate"><span class="pre">project_point_to_line()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.object_utils.set_geom_dimensions"><code class="docutils literal notranslate"><span class="pre">set_geom_dimensions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils.placement_samplers">robocasa.utils.placement_samplers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.MultiRegionSampler"><code class="docutils literal notranslate"><span class="pre">MultiRegionSampler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.MultiRegionSampler.sample"><code class="docutils literal notranslate"><span class="pre">MultiRegionSampler.sample()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.ObjectPositionSampler"><code class="docutils literal notranslate"><span class="pre">ObjectPositionSampler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.ObjectPositionSampler.add_objects"><code class="docutils literal notranslate"><span class="pre">ObjectPositionSampler.add_objects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.ObjectPositionSampler.reset"><code class="docutils literal notranslate"><span class="pre">ObjectPositionSampler.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.ObjectPositionSampler.sample"><code class="docutils literal notranslate"><span class="pre">ObjectPositionSampler.sample()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.ObjectPositionSampler.sides_combinations"><code class="docutils literal notranslate"><span class="pre">ObjectPositionSampler.sides_combinations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.ObjectPositionSampler.valid_sides"><code class="docutils literal notranslate"><span class="pre">ObjectPositionSampler.valid_sides</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.SequentialCompositeSampler"><code class="docutils literal notranslate"><span class="pre">SequentialCompositeSampler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.SequentialCompositeSampler.add_objects"><code class="docutils literal notranslate"><span class="pre">SequentialCompositeSampler.add_objects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.SequentialCompositeSampler.add_objects_to_sampler"><code class="docutils literal notranslate"><span class="pre">SequentialCompositeSampler.add_objects_to_sampler()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.SequentialCompositeSampler.append_sampler"><code class="docutils literal notranslate"><span class="pre">SequentialCompositeSampler.append_sampler()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.SequentialCompositeSampler.hide"><code class="docutils literal notranslate"><span class="pre">SequentialCompositeSampler.hide()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.SequentialCompositeSampler.reset"><code class="docutils literal notranslate"><span class="pre">SequentialCompositeSampler.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.SequentialCompositeSampler.sample"><code class="docutils literal notranslate"><span class="pre">SequentialCompositeSampler.sample()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.UniformRandomSampler"><code class="docutils literal notranslate"><span class="pre">UniformRandomSampler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.placement_samplers.UniformRandomSampler.sample"><code class="docutils literal notranslate"><span class="pre">UniformRandomSampler.sample()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils.postprocess_xml_utils">robocasa.utils.postprocess_xml_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.postprocess_xml_utils.convert_xml"><code class="docutils literal notranslate"><span class="pre">convert_xml()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.postprocess_xml_utils.get_eef_panda_site"><code class="docutils literal notranslate"><span class="pre">get_eef_panda_site()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.postprocess_xml_utils.update_gripper_name"><code class="docutils literal notranslate"><span class="pre">update_gripper_name()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils.texture_swap">robocasa.utils.texture_swap module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.texture_swap.get_random_textures"><code class="docutils literal notranslate"><span class="pre">get_random_textures()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.texture_swap.replace_cab_textures"><code class="docutils literal notranslate"><span class="pre">replace_cab_textures()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.texture_swap.replace_counter_top_texture"><code class="docutils literal notranslate"><span class="pre">replace_counter_top_texture()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.texture_swap.replace_floor_texture"><code class="docutils literal notranslate"><span class="pre">replace_floor_texture()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robocasa.utils.html#robocasa.utils.texture_swap.replace_wall_texture"><code class="docutils literal notranslate"><span class="pre">replace_wall_texture()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="robocasa.utils.html#module-robocasa.utils">Module contents</a></li>
 </ul>
 </li>
@@ -582,24 +642,24 @@ title="Print to PDF"
 </div>
 </section>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
 </section>
 <section id="module-robocasa.macros">
-<span id="robocasa-macros-module"></span><h2>robocasa.macros module<a class="headerlink" href="#module-robocasa.macros" title="Permalink to this headline">#</a></h2>
+<span id="robocasa-macros-module"></span><h2>robocasa.macros module<a class="headerlink" href="#module-robocasa.macros" title="Link to this heading">¶</a></h2>
 <p>Macro settings that can be imported and toggled. Internally, specific parts of the codebase rely on these settings
 for determining core functionality.</p>
 <p>To make sure global reference is maintained, should import these settings as:</p>
 <p><cite>import robocasa.macros as macros</cite></p>
 </section>
 <section id="module-robocasa.macros_private">
-<span id="robocasa-macros-private-module"></span><h2>robocasa.macros_private module<a class="headerlink" href="#module-robocasa.macros_private" title="Permalink to this headline">#</a></h2>
+<span id="robocasa-macros-private-module"></span><h2>robocasa.macros_private module<a class="headerlink" href="#module-robocasa.macros_private" title="Link to this heading">¶</a></h2>
 <p>Macro settings that can be imported and toggled. Internally, specific parts of the codebase rely on these settings
 for determining core functionality.</p>
 <p>To make sure global reference is maintained, should import these settings as:</p>
 <p><cite>import robocasa.macros as macros</cite></p>
 </section>
 <section id="module-robocasa">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robocasa" title="Permalink to this headline">#</a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robocasa" title="Link to this heading">¶</a></h2>
 </section>
 </section>
 
@@ -611,11 +671,11 @@ for determining core functionality.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../use_cases/policy_learning.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../tasks_scenes_assets/objects.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Policy Learning</p>
+            <p class="prev-next-title">Objects</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="robocasa.environments.html" title="next page">
