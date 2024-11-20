@@ -14,17 +14,10 @@ Mac users must prepend this script with `mj`, ie. `mjpython`
 
 </div>
 
-Next, you need to pre-process your dataset to ensure it is in the correct format. Convert the raw robosuite dataset to robomimic format
-```
-python robomimic/scripts/conversion/convert_robosuite.py --dataset <ds-path>
-```
-
-This script will extract actions and add filter keys.
-
 ## Extract image observations
 To extract observations from an existing dataset, you can run:
 ```
-OMP_NUM_THREADS=1 MPI_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python robomimic/scripts/dataset_states_to_obs.py --dataset <ds-path>
+OMP_NUM_THREADS=1 MPI_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python robocasa/scripts/dataset_states_to_obs.py --dataset <ds-path>
 ```
 This script will generate a new dataset with the suffix `_im128.hdf5` in the same directory as `--dataset`.
 

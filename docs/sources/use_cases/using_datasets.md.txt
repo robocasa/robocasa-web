@@ -1,4 +1,4 @@
-## Using Datasets
+## Using and Inspecting Datasets
 
 ### Dataset registry
 You can retrieve dataset paths from the [dataset registry](https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py) as follows:
