@@ -256,6 +256,11 @@
     </label>
     <ul>
      <li class="toctree-l3">
+      <a class="reference internal" href="robocasa.utils.model_zoo.html">
+       robocasa.utils.model_zoo package
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="robocasa.utils.usd.html">
        robocasa.utils.usd package
       </a>
@@ -775,11 +780,14 @@ title="Print to PDF"
 <span id="robocasa-models-objects-kitchen-objects-module"></span><h2>robocasa.models.objects.kitchen_objects module<a class="headerlink" href="#module-robocasa.models.objects.kitchen_objects" title="Link to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="robocasa.models.objects.kitchen_objects.get_cats_by_type">
-<span class="sig-prename descclassname"><span class="pre">robocasa.models.objects.kitchen_objects.</span></span><span class="sig-name descname"><span class="pre">get_cats_by_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.kitchen_objects.get_cats_by_type" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robocasa.models.objects.kitchen_objects.</span></span><span class="sig-name descname"><span class="pre">get_cats_by_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_registries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robocasa.models.objects.kitchen_objects.get_cats_by_type" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves a list of item keys from the global <cite>OBJ_CATEGORIES</cite> dictionary based on the specified types.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>types</strong> (<em>list</em>) – A list of valid types to filter items by. Only items with a matching type will be included.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>types</strong> (<em>list</em>) – A list of valid types to filter items by. Only items with a matching type will be included.</p></li>
+<li><p><strong>obj_registries</strong> (<em>list</em>) – only consider categories belonging to these object registries</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A list of keys from <cite>OBJ_CATEGORIES</cite> where the item’s types intersect with the provided <cite>types</cite>.</p>
