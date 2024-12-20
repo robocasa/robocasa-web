@@ -132,7 +132,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="creating_datasets.html">
-   Creating New Datasets
+   Creating Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mimicgen.html">
+   Generating Data with MimicGen
   </a>
  </li>
  <li class="toctree-l1">
@@ -379,12 +384,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gym-interface">
+   Gym interface
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#offscreen-rollouts">
+   Offscreen rollouts
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -396,6 +430,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gym-interface">
+   Gym interface
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#offscreen-rollouts">
+   Offscreen rollouts
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -405,25 +457,54 @@ title="Print to PDF"
                 
   <section id="basic-usage">
 <h1>Basic Usage<a class="headerlink" href="#basic-usage" title="Link to this heading">¶</a></h1>
-<p>The following script shows how to create evaluation environments and to run random rollouts:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robocasa.environments</span> <span class="kn">import</span> <span class="n">ALL_KITCHEN_ENVIRONMENTS</span>
-<span class="kn">from</span> <span class="nn">robocasa.utils.dataset_registry</span> <span class="kn">import</span> <span class="n">SINGLE_STAGE_TASK_DATASETS</span><span class="p">,</span> <span class="n">MULTI_STAGE_TASK_DATASETS</span>
-<span class="kn">from</span> <span class="nn">robocasa.utils.dataset_registry</span> <span class="kn">import</span> <span class="n">get_ds_path</span>
+<section id="gym-interface">
+<h2>Gym interface<a class="headerlink" href="#gym-interface" title="Link to this heading">¶</a></h2>
+<p>We provide a gym-like interface to run rollouts:</p>
+<div class="admonition warning">
+<p class="admonition-title">Attention Mac users!</p>
+Mac users who wish to run this example need to prepend the “python” command with “mj”: mjpython
+</div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robocasa.environments</span> <span class="kn">import</span> <span class="n">ALL_KITCHEN_ENVIRONMENTS</span>
 <span class="kn">from</span> <span class="nn">robocasa.utils.env_utils</span> <span class="kn">import</span> <span class="n">create_env</span><span class="p">,</span> <span class="n">run_random_rollouts</span>
-
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Select a random task (that comes with an accompanying dataset) to run rollouts for.</span>
-<span class="sd">Alternatively, sample *any* kitchen task in RoboCasa by replacing the following line with</span>
-<span class="sd">env_name = np.random.choice(list(ALL_KITCHEN_ENVIRONMENTS))</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">env_name</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span>
-    <span class="nb">list</span><span class="p">(</span><span class="n">SINGLE_STAGE_TASK_DATASETS</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">MULTI_STAGE_TASK_DATASETS</span><span class="p">)</span>
+<span class="c1"># choose random task</span>
+<span class="n">env_name</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ALL_KITCHEN_ENVIRONMENTS</span><span class="p">))</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">create_env</span><span class="p">(</span>
+    <span class="n">env_name</span><span class="o">=</span><span class="n">env_name</span><span class="p">,</span>
+    <span class="n">render_onscreen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># set seed=None to run unseeded</span>
 <span class="p">)</span>
 
-<span class="c1"># seed environment as needed. set seed=None to run unseeded</span>
-<span class="n">env</span> <span class="o">=</span> <span class="n">create_env</span><span class="p">(</span><span class="n">env_name</span><span class="o">=</span><span class="n">env_name</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># reset the environment</span>
+<span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+<span class="c1"># get task language</span>
+<span class="n">lang</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_ep_meta</span><span class="p">()[</span><span class="s2">&quot;lang&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Instruction:&quot;</span><span class="p">,</span> <span class="n">lang</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">):</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">env</span><span class="o">.</span><span class="n">action_spec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span>
+    <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>  <span class="c1"># take action in the environment</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>  <span class="c1"># render on display</span>
+</pre></div>
+</div>
+</section>
+<section id="offscreen-rollouts">
+<h2>Offscreen rollouts<a class="headerlink" href="#offscreen-rollouts" title="Link to this heading">¶</a></h2>
+<p>You can also run rollouts and save videos:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robocasa.environments</span> <span class="kn">import</span> <span class="n">ALL_KITCHEN_ENVIRONMENTS</span>
+<span class="kn">from</span> <span class="nn">robocasa.utils.env_utils</span> <span class="kn">import</span> <span class="n">create_env</span><span class="p">,</span> <span class="n">run_random_rollouts</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># choose random task</span>
+<span class="n">env_name</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ALL_KITCHEN_ENVIRONMENTS</span><span class="p">))</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">create_env</span><span class="p">(</span>
+    <span class="n">env_name</span><span class="o">=</span><span class="n">env_name</span><span class="p">,</span>
+    <span class="n">render_onscreen</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># set seed=None to run unseeded</span>
+<span class="p">)</span>
 
 <span class="c1"># run rollouts with random actions and save video</span>
 <span class="n">info</span> <span class="o">=</span> <span class="n">run_random_rollouts</span><span class="p">(</span>
@@ -433,6 +514,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>Separately we provide tools to run policy rollouts within robomimic. See the <a class="reference external" href="../use_cases/policy_learning.html">policy learning page</a> for additional details.</p>
+</section>
 </section>
 
 
