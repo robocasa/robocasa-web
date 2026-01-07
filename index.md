@@ -7,6 +7,10 @@ image: assets/images/preview_logo.png
 videoId: 
 ---
 
+<div style="background-color: #f0f8ff; border: 2px solid #4a90e2; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <h3 style="margin: 0; color: #2c5aa0;"><strong>Coming Soon!</strong> RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots</h3>
+</div>
+
 **RoboCasa** is a large-scale simulation framework for training generally capable robots to perform everyday tasks. It features realistic and diverse human-centered environments with a focus on kitchen scenes. We create these environments with the aid of generative AI tools, such as large language models (LLMs) and text-to-image/3D generative models. We provide over 2,500 3D assets across 150+ object categories and dozens of interactable furniture and appliances. As part of the first release, we include a suite of 100 tasks, representing a wide spectrum of everyday activities. Together with the simulated tasks, we offer a dataset of high-quality human demonstrations and leverage automated trajectory generation techniques to significantly expand the amount of training data with little additional cost.
 
 ## Realistic and Diverse Scenes
@@ -193,6 +197,19 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
 {% include members.html %}
 
 # Citation
+
+**RoboCasa365 (Coming Soon):**
+
+```bibtex
+@inproceedings{robocasa365,
+  title={RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots},
+  author={Soroush Nasiriany and Sepehr Nasiriany and Abhiram Maddukuri and Yuke Zhu},
+  booktitle={In Submission},
+  year={2025}
+}
+```
+
+**RoboCasa (Original Release):**
 
 ```bibtex
 @inproceedings{robocasa2024,
