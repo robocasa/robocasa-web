@@ -198,7 +198,7 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
 
 # Citation
 
-**RoboCasa365 (Coming Soon):**
+**RoboCasa365:**
 
 ```bibtex
 @inproceedings{robocasa365,

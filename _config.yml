@@ -7,3 +7,11 @@ include:
   - "docs/build/html/static"
   - "docs/build/html/images"
   - "docs/build/html/sources"
+
+# Any legacy Jekyll markdown pages under `docs/` should redirect to the
+# Sphinx-built HTML under `docs/build/html/`.
+defaults:
+  - scope:
+      path: "docs"
+    values:
+      layout: "docs_redirect"

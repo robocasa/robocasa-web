@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    {% assign target = page.url | replace: "/docs/_versions/v0.2/", "/docs/build/html/v0.2/" %}
+    {% if target == page.url %}
+      {% assign target = page.url | replace: "/docs/", "/docs/build/html/" %}
+    {% endif %}
+    <meta http-equiv="refresh" content="0; url={{ target | relative_url }}" />
+    <link rel="canonical" href="{{ target | absolute_url }}" />
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    <p>
+      Redirecting to
+      <a href="{{ target | relative_url }}">{{ target | relative_url }}</a>
+    </p>
+    <script>
+      window.location.replace("{{ target | relative_url }}");
+    </script>
+  </body>
+</html>
+
