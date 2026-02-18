@@ -75,6 +75,11 @@ instance/
 # Sphinx documentation
 docs/_build/
 
+# Publish built Sphinx HTML docs (GitHub Pages won't run Sphinx for us).
+!docs/build/
+!docs/build/html/
+!docs/build/html/**
+
 # PyBuilder
 target/
 

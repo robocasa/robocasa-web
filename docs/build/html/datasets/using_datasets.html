@@ -1,0 +1,740 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Using Datasets &#8212; RoboCasa 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../static/theme_overrides.css?v=175757bf" />
+    <link rel="stylesheet" type="text/css" href="../static/composite_tasks_dropdown.css?v=d05820ef" />
+    <link rel="stylesheet" type="text/css" href="../static/atomic_tasks.css?v=1e6792ba" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../static/documentation_options.js?v=a681ed88"></script>
+    <script src="../static/doctools.js?v=9bcbadda"></script>
+    <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'datasets/using_datasets';</script>
+    <script src="../static/composite_task_attributes.js?v=7a345916"></script>
+    <script src="../static/composite_episode_lengths.js?v=c082499d"></script>
+    <script src="../static/composite_tasks_dropdown.js?v=b6df5c78"></script>
+    <script src="../static/atomic_task_attributes.js?v=89e5ef6b"></script>
+    <script src="../static/atomic_episode_lengths.js?v=5f9a20d6"></script>
+    <script src="../static/atomic_task_index.js?v=cda800ea"></script>
+    <script src="../static/atomic_tasks.js?v=f91f7ae2"></script>
+    <link rel="icon" href="../static/Robocasa_web_logo.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Overview of Benchmarking" href="../benchmarking/benchmarking_overview.html" />
+    <link rel="prev" title="Overview of Datasets" href="datasets_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../static/robocasa_logo.svg" class="logo__image only-light" alt="RoboCasa 1.0 documentation - Home"/>
+    <script>document.write(`<img src="../static/robocasa_logo.svg" class="logo__image only-dark" alt="RoboCasa 1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/basic_usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/codebase_overview.html">Codebase Overview</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tasks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tasks/atomic_tasks.html">Atomic Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/composite_tasks.html">Composite Tasks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datasets</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="datasets_overview.html">Overview of Datasets</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Using Datasets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Benchmarking</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../benchmarking/benchmarking_overview.html">Overview of Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarking/policy_learning_algorithms.html">Policy Learning Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarking/multitask_learning.html">Multi-Task Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarking/foundation_model_learning.html">Foundation Model Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarking/lifelong_learning.html">Lifelong Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../assets/scenes.html">Scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assets/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assets/fixtures.html">Fixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../use_cases/creating_datasets.html">Creating Datasets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Source API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/robocasa.html">robocasa package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/robocasa.environments.html">robocasa.environments package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/robocasa.environments.kitchen.html">robocasa.environments.kitchen package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/robocasa.environments.kitchen.multi_stage.html">robocasa.environments.kitchen.multi_stage package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/robocasa.environments.kitchen.single_stage.html">robocasa.environments.kitchen.single_stage package</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/robocasa.models.html">robocasa.models package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/robocasa.models.fixtures.html">robocasa.models.fixtures package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/robocasa.models.objects.html">robocasa.models.objects package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/robocasa.models.scenes.html">robocasa.models.scenes package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/robocasa.utils.html">robocasa.utils package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/robocasa.utils.model_zoo.html">robocasa.utils.model_zoo package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/robocasa.utils.usd.html">robocasa.utils.usd package</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Previous Versions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../v0_2.html">v0.2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../sources/datasets/using_datasets.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Using Datasets</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-datasets">Downloading datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-structure">Dataset structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-dataset-metadata">Retrieving dataset metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-environments-from-dataset-metadata">Creating environments from dataset metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-datasets-for-training">Creating datasets for training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-beyond-a-single-dataset">Training beyond a single dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-and-visualizing-datasets">Inspecting and visualizing datasets</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="using-datasets">
+<h1>Using Datasets<a class="headerlink" href="#using-datasets" title="Link to this heading">#</a></h1>
+<p>We provide datasets in the lerobot format. There are broadly three types of datasets: <strong>pretraining (human)</strong> datasets, <strong>pretraining (MimicGen)</strong> datasets, and <strong>target (human)</strong> datasets (see <a class="reference external" href="../datasets/datasets_overview.html">datasets overview</a> for details).</p>
+<section id="downloading-datasets">
+<h2>Downloading datasets<a class="headerlink" href="#downloading-datasets" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Dataset storage location</p><p>By default, all datasets are stored under <code class="docutils literal notranslate"><span class="pre">datasets/</span></code> in the root RoboCasa directory. You can change the location for datasets by setting <code class="docutils literal notranslate"><span class="pre">DATASET_BASE_PATH</span></code> in <code class="docutils literal notranslate"><span class="pre">robocasa/macros_private.py</span></code>.</p>
+</div><p>Here are a few examples to download datasets:</p>
+<details>
+<summary><b>Click to expand download examples</b></summary><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># downloads all datasets</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robocasa</span><span class="o">.</span><span class="n">scripts</span><span class="o">.</span><span class="n">download_datasets</span> <span class="o">--</span><span class="nb">all</span>
+
+<span class="c1"># only download pretraining human data</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robocasa</span><span class="o">.</span><span class="n">scripts</span><span class="o">.</span><span class="n">download_datasets</span> <span class="o">--</span><span class="n">split</span> <span class="n">pretrain</span> <span class="o">--</span><span class="n">source</span> <span class="n">human</span>
+
+<span class="c1"># only download pretraining MimicGen data</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robocasa</span><span class="o">.</span><span class="n">scripts</span><span class="o">.</span><span class="n">download_datasets</span> <span class="o">--</span><span class="n">split</span> <span class="n">pretrain</span> <span class="o">--</span><span class="n">source</span> <span class="n">mimicgen</span>
+
+<span class="c1"># only download target human data</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robocasa</span><span class="o">.</span><span class="n">scripts</span><span class="o">.</span><span class="n">download_datasets</span> <span class="o">--</span><span class="n">split</span> <span class="n">target</span> <span class="o">--</span><span class="n">source</span> <span class="n">human</span>
+
+<span class="c1"># download all datasets for specific task(s)</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robocasa</span><span class="o">.</span><span class="n">scripts</span><span class="o">.</span><span class="n">download_datasets</span> <span class="o">--</span><span class="n">tasks</span> <span class="n">PickPlaceCounterToCabinet</span> <span class="n">ArrangeBreadBasket</span>
+</pre></div>
+</div>
+<p>You can specify <code class="docutils literal notranslate"><span class="pre">--overwrite</span></code> to overwrite existing datasets.</p>
+</details></section>
+<section id="dataset-structure">
+<h2>Dataset structure<a class="headerlink" href="#dataset-structure" title="Link to this heading">#</a></h2>
+<p>RoboCasa datasets follow the LeRobot format. Here is an overview of important elements of each dataset:</p>
+<details>
+<summary><b>Click to expand dataset structure</b></summary><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>lerobot/
+├── meta/                               # Metadata files describing the dataset
+│   ├── info.json                       # Dataset info (robot type, episodes, frames, fps, features)
+│   ├── tasks.jsonl                     # Language instructions with task indices
+│   ├── episodes.jsonl                  # Per-episode metadata (index, instruction, length)
+│   ├── episodes_stats.jsonl            # Per-episode statistics for actions/proprioception
+│   ├── stats.json                      # Aggregated statistics across all episodes
+│   ├── modality.json                   # Info contained in observations and action vectors
+│   └── embodiment.json                 # Embodiment information
+│
+├── data/                               # Low-dimensional trajectory data (parquet files)
+│   └── chunk-&lt;chunk_id&gt;/
+│       └── episode_&lt;episode_id&gt;.parquet   # Proprioception, actions, dones, timestamps
+│
+├── videos/                             # MP4 video files for each camera view
+│   └── chunk-&lt;chunk_id&gt;/
+│       ├── observation.images.robot0_agentview_left/
+│       │   └── episode_&lt;episode_id&gt;.mp4   # Left third-person camera
+│       ├── observation.images.robot0_agentview_right/
+│       │   └── episode_&lt;episode_id&gt;.mp4   # Right third-person camera
+│       └── observation.images.robot0_eye_in_hand/
+│           └── episode_&lt;episode_id&gt;.mp4   # Eye-in-hand camera
+│
+└── extras/                             # MuJoCo/RoboCasa-specific metadata (non-standard)
+    ├── dataset_meta.json               # Environment args and controller configs
+    └── episode_&lt;episode_id&gt;/           # Per-episode extras
+        ├── ep_meta.json                # Episode metadata (layout, style, fixtures, objects)
+        ├── model.xml.gz                # Compressed MJCF MuJoCo model XML
+        └── states.npz                  # Raw MuJoCo states for replay (not for training)
+</pre></div>
+</div>
+</details></section>
+<section id="retrieving-dataset-metadata">
+<h2>Retrieving dataset metadata<a class="headerlink" href="#retrieving-dataset-metadata" title="Link to this heading">#</a></h2>
+<p>We track each dataset with metadata (paths, task horizon length, etc.) in the <a class="reference external" href="https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py">dataset registry</a>. You can use the <code class="docutils literal notranslate"><span class="pre">get_ds_meta()</span></code> function to retrieve metadata for a specific task:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">robocasa.utils.dataset_registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_ds_meta</span>
+
+<span class="n">ds_meta</span> <span class="o">=</span> <span class="n">get_ds_meta</span><span class="p">(</span>
+    <span class="n">task</span><span class="o">=</span><span class="s2">&quot;PickPlaceCounterToCabinet&quot;</span><span class="p">,</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="c1"># or try &quot;pretrain&quot;</span>
+    <span class="n">source</span><span class="o">=</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="c1"># defaults to &quot;human&quot;, try &quot;mimicgen&quot; for synthetic data</span>
+    <span class="n">demo_fraction</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="c1"># the fraction of available demos to use (default is 1.0)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-environments-from-dataset-metadata">
+<h2>Creating environments from dataset metadata<a class="headerlink" href="#creating-environments-from-dataset-metadata" title="Link to this heading">#</a></h2>
+<p>You can initialize a gym environment given the dataset metadata and run random rollouts:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gymnasium</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gym</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">robocasa</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">robocasa.utils.env_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_random_rollouts</span>
+
+<span class="c1"># gather relevant information from ds_meta from previous section</span>
+<span class="n">task_name</span> <span class="o">=</span> <span class="n">ds_meta</span><span class="p">[</span><span class="s2">&quot;task&quot;</span><span class="p">]</span>
+<span class="n">split</span> <span class="o">=</span> <span class="n">ds_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span>
+<span class="n">horizon</span> <span class="o">=</span> <span class="n">ds_meta</span><span class="p">[</span><span class="s2">&quot;horizon&quot;</span><span class="p">]</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;robocasa/</span><span class="si">{</span><span class="n">task_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">split</span><span class="o">=</span><span class="n">split</span><span class="p">,</span>
+    <span class="n">seed</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># seed environment as needed. set seed=None to run unseeded</span>
+<span class="p">)</span>
+
+<span class="c1"># run rollouts with random actions and save video</span>
+<span class="n">run_random_rollouts</span><span class="p">(</span>
+    <span class="n">env</span><span class="p">,</span> <span class="n">num_rollouts</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_steps</span><span class="o">=</span><span class="n">horizon</span><span class="p">,</span> <span class="n">video_path</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;/tmp/</span><span class="si">{</span><span class="n">task_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">split</span><span class="si">}</span><span class="s2">_rollouts.mp4&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-datasets-for-training">
+<h2>Creating datasets for training<a class="headerlink" href="#creating-datasets-for-training" title="Link to this heading">#</a></h2>
+<p>Here is an example script to access dataset elements:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">lerobot.datasets.lerobot_dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">LeRobotDataset</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="c1"># get dataset path from ds_meta from previous section</span>
+<span class="n">dataset_path</span> <span class="o">=</span> <span class="n">ds_meta</span><span class="p">[</span><span class="s2">&quot;path&quot;</span><span class="p">]</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">LeRobotDataset</span><span class="p">(</span><span class="n">repo_id</span><span class="o">=</span><span class="s2">&quot;robocasa365&quot;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">dataset_path</span><span class="p">)</span>
+<span class="n">ep_idx</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">start</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">episode_data_index</span><span class="p">[</span><span class="s2">&quot;from&quot;</span><span class="p">][</span><span class="n">ep_idx</span><span class="p">])</span> 
+<span class="n">end</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">episode_data_index</span><span class="p">[</span><span class="s2">&quot;to&quot;</span><span class="p">][</span><span class="n">ep_idx</span><span class="p">])</span>
+<span class="n">timestep_idx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+
+<span class="n">sample</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">start</span> <span class="o">+</span> <span class="n">timestep_idx</span><span class="p">]</span>                                   <span class="c1"># Accessing a random sample from the 5th demo in the dataset</span>
+<span class="n">right_img</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s2">&quot;observation.images.robot0_agentview_right&quot;</span><span class="p">]</span>     <span class="c1"># Accessing the right camera image</span>
+<span class="n">action</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s2">&quot;action&quot;</span><span class="p">]</span>                                           <span class="c1"># Accessing the action taken    </span>
+<span class="n">instruction</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s2">&quot;task&quot;</span><span class="p">]</span>                                        <span class="c1"># Accessing the instruction for the episode</span>
+</pre></div>
+</div>
+</section>
+<section id="training-beyond-a-single-dataset">
+<h2>Training beyond a single dataset<a class="headerlink" href="#training-beyond-a-single-dataset" title="Link to this heading">#</a></h2>
+<p>The code above returns meta data for a single dataset. You can retrieve information for a collection of datasets using the <code class="docutils literal notranslate"><span class="pre">get_ds_soup()</span></code> function, which returns a list of dataset metadata:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">robocasa.utils.dataset_registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_ds_soup</span>
+
+<span class="n">ds_soup</span> <span class="o">=</span> <span class="n">get_ds_soup</span><span class="p">(</span>
+    <span class="n">task_soup</span><span class="o">=</span><span class="s2">&quot;atomic_seen&quot;</span><span class="p">,</span> <span class="c1"># the list of tasks</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="c1"># or try &quot;pretrain&quot;</span>
+    <span class="n">source</span><span class="o">=</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="c1"># defaults to &quot;human&quot;, try &quot;mimicgen&quot; for synthetic data</span>
+    <span class="n">demo_fraction</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="c1"># the fraction of available demos to use (default is 1.0)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Prominent dataset soups are registerd in <a class="reference external" href="https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py">the dataset soup registry</a>.</p>
+<p>To construct a combined dataset from multiple datasets with custom weights, you can re-use the dataloader from GR00T-N1.5 codebase:</p>
+<details>
+<summary><b>Click to expand weighted dataset creation</b></summary><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">robocasa.utils.dataset_registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">DATASET_SOUP_REGISTRY</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">robocasa.utils.groot_utils.groot_dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">LeRobotMixtureDataset</span><span class="p">,</span> <span class="n">LeRobotSingleDataset</span><span class="p">,</span> <span class="n">ModalityConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">robocasa.utils.groot_utils.schema</span><span class="w"> </span><span class="kn">import</span> <span class="n">EmbodimentTag</span>
+
+
+<span class="n">embodiment_tag</span> <span class="o">=</span> <span class="n">EmbodimentTag</span><span class="p">(</span><span class="s2">&quot;new_embodiment&quot;</span><span class="p">)</span>
+
+<span class="c1"># Define configs needed for dataloader to fetch correct data</span>
+<span class="n">modality_configs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;video&quot;</span><span class="p">:</span> <span class="n">ModalityConfig</span><span class="p">(</span>
+        <span class="n">delta_indices</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">modality_keys</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;video.robot0_agentview_left&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;video.robot0_agentview_right&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;video.robot0_eye_in_hand&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="n">ModalityConfig</span><span class="p">(</span>
+        <span class="n">delta_indices</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">modality_keys</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;state.end_effector_position_relative&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;state.end_effector_rotation_relative&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;state.gripper_qpos&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;state.base_position&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;state.base_rotation&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="n">ModalityConfig</span><span class="p">(</span>
+        <span class="n">delta_indices</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)),</span>
+        <span class="n">modality_keys</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;action.end_effector_position&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;action.end_effector_rotation&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;action.gripper_close&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;action.base_motion&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;action.control_mode&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;language&quot;</span><span class="p">:</span> <span class="n">ModalityConfig</span><span class="p">(</span>
+        <span class="n">delta_indices</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">modality_keys</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;annotation.human.task_description&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">),</span>
+<span class="p">}</span>
+
+
+<span class="n">dataset_soup</span> <span class="o">=</span> <span class="s2">&quot;target_atomic_seen&quot;</span> <span class="c1"># specify which dataset soup to use</span>
+<span class="n">ds_soup_list</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">DATASET_SOUP_REGISTRY</span><span class="p">[</span><span class="n">dataset_soup</span><span class="p">])</span>
+<span class="n">single_datasets</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">ds_meta</span> <span class="ow">in</span> <span class="n">ds_soup_list</span><span class="p">:</span>
+    <span class="n">ds_path</span> <span class="o">=</span> <span class="n">ds_meta</span><span class="p">[</span><span class="s2">&quot;path&quot;</span><span class="p">]</span>
+    <span class="n">ds_filter_key</span> <span class="o">=</span> <span class="n">ds_meta</span><span class="p">[</span><span class="s2">&quot;filter_key&quot;</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">ds_path</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Dataset path </span><span class="si">{</span><span class="n">ds_path</span><span class="si">}</span><span class="s2"> does not exist&quot;</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">LeRobotSingleDataset</span><span class="p">(</span>
+        <span class="n">dataset_path</span><span class="o">=</span><span class="n">ds_path</span><span class="p">,</span>
+        <span class="n">modality_configs</span><span class="o">=</span><span class="n">modality_configs</span><span class="p">,</span>
+        <span class="n">embodiment_tag</span><span class="o">=</span><span class="n">embodiment_tag</span><span class="p">,</span>
+        <span class="n">filter_key</span><span class="o">=</span><span class="n">ds_filter_key</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">single_datasets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+
+<span class="n">ds_weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">single_datasets</span><span class="p">))</span> <span class="c1"># custom weights for datasets</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dataset weights:&quot;</span><span class="p">,</span> <span class="n">ds_weights</span><span class="p">)</span>
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">LeRobotMixtureDataset</span><span class="p">(</span>
+    <span class="n">data_mixture</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">ds_w</span><span class="p">)</span>  
+        <span class="k">for</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">ds_w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">single_datasets</span><span class="p">,</span> <span class="n">ds_weights</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;train&quot;</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">train_dataset</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">break</span>
+</pre></div>
+</div>
+</details></section>
+<section id="inspecting-and-visualizing-datasets">
+<h2>Inspecting and visualizing datasets<a class="headerlink" href="#inspecting-and-visualizing-datasets" title="Link to this heading">#</a></h2>
+<p>To get dataset statistics (filter keys, objects, task language, scenes):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">robocasa</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">get_dataset_info</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">dataset</span> <span class="o">&lt;</span><span class="n">ds</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>You can visualize dataset videos by looking at the <code class="docutils literal notranslate"><span class="pre">videos</span></code> folder under each lerobot dataset directory. To visualize a dataset and save a video:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">robocasa</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">playback_dataset</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">n</span> <span class="mi">10</span> <span class="o">--</span><span class="n">dataset</span> <span class="o">&lt;</span><span class="n">ds</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>This will save a video of 10 random demonstrations in the same path as the dataset. You can play the full dataset by removing the <code class="docutils literal notranslate"><span class="pre">--n</span></code> flag.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="datasets_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Overview of Datasets</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../benchmarking/benchmarking_overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Overview of Benchmarking</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-datasets">Downloading datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-structure">Dataset structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-dataset-metadata">Retrieving dataset metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-environments-from-dataset-metadata">Creating environments from dataset metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-datasets-for-training">Creating datasets for training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-beyond-a-single-dataset">Training beyond a single dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-and-visualizing-datasets">Inspecting and visualizing datasets</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the RoboCasa core team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright the RoboCasa core team, 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

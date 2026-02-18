@@ -1,0 +1,658 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lifelong Learning &#8212; RoboCasa 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../static/theme_overrides.css?v=175757bf" />
+    <link rel="stylesheet" type="text/css" href="../static/composite_tasks_dropdown.css?v=d05820ef" />
+    <link rel="stylesheet" type="text/css" href="../static/atomic_tasks.css?v=1e6792ba" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../static/documentation_options.js?v=a681ed88"></script>
+    <script src="../static/doctools.js?v=9bcbadda"></script>
+    <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'benchmarking/lifelong_learning';</script>
+    <script src="../static/composite_task_attributes.js?v=7a345916"></script>
+    <script src="../static/composite_episode_lengths.js?v=c082499d"></script>
+    <script src="../static/composite_tasks_dropdown.js?v=b6df5c78"></script>
+    <script src="../static/atomic_task_attributes.js?v=89e5ef6b"></script>
+    <script src="../static/atomic_episode_lengths.js?v=5f9a20d6"></script>
+    <script src="../static/atomic_task_index.js?v=cda800ea"></script>
+    <script src="../static/atomic_tasks.js?v=f91f7ae2"></script>
+    <link rel="icon" href="../static/Robocasa_web_logo.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scenes" href="../assets/scenes.html" />
+    <link rel="prev" title="Foundation Model Learning" href="foundation_model_learning.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../static/robocasa_logo.svg" class="logo__image only-light" alt="RoboCasa 1.0 documentation - Home"/>
+    <script>document.write(`<img src="../static/robocasa_logo.svg" class="logo__image only-dark" alt="RoboCasa 1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/basic_usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/codebase_overview.html">Codebase Overview</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tasks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tasks/atomic_tasks.html">Atomic Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/composite_tasks.html">Composite Tasks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datasets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../datasets/datasets_overview.html">Overview of Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasets/using_datasets.html">Using Datasets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Benchmarking</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="benchmarking_overview.html">Overview of Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="policy_learning_algorithms.html">Policy Learning Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multitask_learning.html">Multi-Task Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_model_learning.html">Foundation Model Learning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lifelong Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../assets/scenes.html">Scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assets/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assets/fixtures.html">Fixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../use_cases/creating_datasets.html">Creating Datasets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Source API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/robocasa.html">robocasa package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/robocasa.environments.html">robocasa.environments package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/robocasa.environments.kitchen.html">robocasa.environments.kitchen package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/robocasa.environments.kitchen.multi_stage.html">robocasa.environments.kitchen.multi_stage package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/robocasa.environments.kitchen.single_stage.html">robocasa.environments.kitchen.single_stage package</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/robocasa.models.html">robocasa.models package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/robocasa.models.fixtures.html">robocasa.models.fixtures package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/robocasa.models.objects.html">robocasa.models.objects package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/robocasa.models.scenes.html">robocasa.models.scenes package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/robocasa.utils.html">robocasa.utils package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/robocasa.utils.model_zoo.html">robocasa.utils.model_zoo package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/robocasa.utils.usd.html">robocasa.utils.usd package</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Previous Versions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../v0_2.html">v0.2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../sources/benchmarking/lifelong_learning.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lifelong Learning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-instructions">Benchmark instructions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gr00t">GR00T</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#train-model">Train model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-model">Evaluate model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#report-evaluation-results">Report evaluation results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="lifelong-learning">
+<h1>Lifelong Learning<a class="headerlink" href="#lifelong-learning" title="Link to this heading">#</a></h1>
+<p>In the lifelong learning benchmark, we study learning tasks over a sequence of phases.
+We do policy learning on a subset of the <a class="reference external" href="../datasets/datasets_overview.html#human-datasets">Human Pretraining Datasets</a>, over 125 task total.
+We begin with learning on simple atomic tasks invovling the invokation of a single skill, and progressively learn longer horizon tasks which involve invoking a longer sequence of skills.
+Specifically we learn over four phases:</p>
+<ul class="simple">
+<li><p><strong>Phase 1</strong>: tasks with 1 stage, i.e., atomic tasks (we use all 65 atomic tasks; see <a class="reference external" href="https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py">here</a> for the list of tasks)</p></li>
+<li><p><strong>Phase 2</strong>: tasks with 2-3 stages (we use 20 tasks total; see <a class="reference external" href="https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py">here</a> for the list of tasks)</p></li>
+<li><p><strong>Phase 3</strong>: tasks with 4-5 stages (we use 20 tasks total; see <a class="reference external" href="https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py">here</a> for the list of tasks)</p></li>
+<li><p><strong>Phase 4</strong>: tasks with 6+ stages (we use 20 tasks total; see <a class="reference external" href="https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py">here</a> for the list of tasks)</p></li>
+</ul>
+<p>After each phase, we evaluate the policy on all of the tasks learned from the first phase through the latest phase.
+The goal is to learn tasks in new phases effectively while retaining knowledge about all previous phases.</p>
+<hr class="docutils" />
+<!-- ## Benchmark results and checkpoints
+We have performed the lifelong learning benchmark using GR00T N1.5. Here is a summary of our benchmarking results **(average task success rate, in %)**. We share the model checkpoints for reference.
+
+<table class="docutils rc-benchmark-table">
+  <thead>
+    <tr>
+      <th><strong>Phase</strong></th>
+      <th><strong>Atomic Tasks</strong></th>
+      <th><strong>2-3 Stage Tasks</strong></th>
+      <th><strong>4-5 Stage Tasks</strong></th>
+      <th><strong>6+ Stage Tasks</strong></th>
+      <th><strong>Checkpoint</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Phase1</td>
+      <td>41.5</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td><a href="https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/lifelong_learning/phase1/checkpoint-100000">Link</a></td>
+    </tr>
+    <tr>
+      <td>Phase2</td>
+      <td>13.9</td>
+      <td>24.5</td>
+      <td>-</td>
+      <td>-</td>
+      <td><a href="https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/lifelong_learning/phase2/checkpoint-60000">Link</a></td>
+    </tr>
+    <tr>
+      <td>Phase3</td>
+      <td>13.9</td>
+      <td>4.8</td>
+      <td>11.3</td>
+      <td>-</td>
+      <td><a href="https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/lifelong_learning/phase3/checkpoint-60000">Link</a></td>
+    </tr>
+    <tr>
+      <td>Phase4</td>
+      <td>10.6</td>
+      <td>1.7</td>
+      <td>2.7</td>
+      <td>4.3</td>
+      <td><a href="https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/lifelong_learning/phase4/checkpoint-60000">Link</a></td>
+    </tr>
+  </tbody>
+</table>
+
+------- --><section id="benchmark-instructions">
+<h2>Benchmark instructions<a class="headerlink" href="#benchmark-instructions" title="Link to this heading">#</a></h2>
+<section id="gr00t">
+<h3>GR00T<a class="headerlink" href="#gr00t" title="Link to this heading">#</a></h3>
+<section id="guidelines">
+<h4>Guidelines<a class="headerlink" href="#guidelines" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>We use a batch size of 128</p></li>
+<li><p>For the initial phase of training (phase 1), we train for 100k steps</p></li>
+<li><p>For all subsequent phases of training (phase 2, 3, 4) we train for 60k steps</p></li>
+<li><p>We always evaluate the models in <strong>pretrain</strong> scenes</p></li>
+</ul>
+</section>
+<section id="train-model">
+<h4>Train model<a class="headerlink" href="#train-model" title="Link to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># phase 1 initial training</span>
+<span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">gr00t_finetune</span><span class="o">.</span><span class="n">py</span> \
+<span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="n">expdata</span><span class="o">/</span><span class="n">lifelong_learning</span><span class="o">/</span><span class="n">phase1</span> \
+<span class="o">--</span><span class="n">dataset_soup</span> <span class="n">lifelong_learning_phase1</span> \
+<span class="o">--</span><span class="n">max_steps</span> <span class="mi">100000</span>
+
+<span class="c1"># phase 2 fine-tuning</span>
+<span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">gr00t_finetune</span><span class="o">.</span><span class="n">py</span> \
+<span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="n">expdata</span><span class="o">/</span><span class="n">lifelong_learning</span><span class="o">/</span><span class="n">phase2</span> \
+<span class="o">--</span><span class="n">base_model_path</span> <span class="n">expdata</span><span class="o">/</span><span class="n">lifelong_learning</span><span class="o">/</span><span class="n">phase1</span><span class="o">/</span><span class="n">checkpoint</span><span class="o">-</span><span class="mi">100000</span> \
+<span class="o">--</span><span class="n">dataset_soup</span> <span class="n">lifelong_learning_phase2</span> \
+<span class="o">--</span><span class="n">max_steps</span> <span class="mi">60000</span>
+
+<span class="c1"># phase 3 fine-tuning</span>
+<span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">gr00t_finetune</span><span class="o">.</span><span class="n">py</span> \
+<span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="n">expdata</span><span class="o">/</span><span class="n">lifelong_learning</span><span class="o">/</span><span class="n">phase3</span> \
+<span class="o">--</span><span class="n">base_model_path</span> <span class="n">expdata</span><span class="o">/</span><span class="n">lifelong_learning</span><span class="o">/</span><span class="n">phase2</span><span class="o">/</span><span class="n">checkpoint</span><span class="o">-</span><span class="mi">60000</span> \
+<span class="o">--</span><span class="n">dataset_soup</span> <span class="n">lifelong_learning_phase3</span> \
+<span class="o">--</span><span class="n">max_steps</span> <span class="mi">60000</span>
+
+<span class="c1"># phase 4 fine-tuning</span>
+<span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">gr00t_finetune</span><span class="o">.</span><span class="n">py</span> \
+<span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="n">expdata</span><span class="o">/</span><span class="n">lifelong_learning</span><span class="o">/</span><span class="n">phase4</span> \
+<span class="o">--</span><span class="n">base_model_path</span> <span class="n">expdata</span><span class="o">/</span><span class="n">lifelong_learning</span><span class="o">/</span><span class="n">phase3</span><span class="o">/</span><span class="n">checkpoint</span><span class="o">-</span><span class="mi">60000</span> \
+<span class="o">--</span><span class="n">dataset_soup</span> <span class="n">lifelong_learning_phase4</span> \
+<span class="o">--</span><span class="n">max_steps</span> <span class="mi">60000</span>
+</pre></div>
+</div>
+</section>
+<section id="evaluate-model">
+<h4>Evaluate model<a class="headerlink" href="#evaluate-model" title="Link to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># evaluate model after phase1</span>
+<span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">run_eval</span><span class="o">.</span><span class="n">py</span> \
+<span class="o">--</span><span class="n">model_path</span> <span class="n">expdata</span><span class="o">/</span><span class="n">lifelong_learning</span><span class="o">/</span><span class="n">phase1</span><span class="o">/</span><span class="n">checkpoint</span><span class="o">-</span><span class="mi">100000</span> \
+<span class="o">--</span><span class="n">task_set</span> <span class="n">lifelong_learning_phase1</span> \
+<span class="o">--</span><span class="n">split</span> <span class="n">pretrain</span>
+
+<span class="c1"># evaluate model after phase2</span>
+<span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">run_eval</span><span class="o">.</span><span class="n">py</span> \
+<span class="o">--</span><span class="n">model_path</span> <span class="n">expdata</span><span class="o">/</span><span class="n">lifelong_learning</span><span class="o">/</span><span class="n">phase2</span><span class="o">/</span><span class="n">checkpoint</span><span class="o">-</span><span class="mi">60000</span> \
+<span class="o">--</span><span class="n">task_set</span> <span class="n">lifelong_learning_phase1</span> <span class="n">lifelong_learning_phase2</span> \
+<span class="o">--</span><span class="n">split</span> <span class="n">pretrain</span>
+
+<span class="c1"># evaluate model after phase3</span>
+<span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">run_eval</span><span class="o">.</span><span class="n">py</span> \
+<span class="o">--</span><span class="n">model_path</span> <span class="n">expdata</span><span class="o">/</span><span class="n">lifelong_learning</span><span class="o">/</span><span class="n">phase3</span><span class="o">/</span><span class="n">checkpoint</span><span class="o">-</span><span class="mi">60000</span> \
+<span class="o">--</span><span class="n">task_set</span> <span class="n">lifelong_learning_phase1</span> <span class="n">lifelong_learning_phase2</span> <span class="n">lifelong_learning_phase3</span> \
+<span class="o">--</span><span class="n">split</span> <span class="n">pretrain</span>
+
+<span class="c1"># evaluate model after phase4</span>
+<span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">run_eval</span><span class="o">.</span><span class="n">py</span> \
+<span class="o">--</span><span class="n">model_path</span> <span class="n">expdata</span><span class="o">/</span><span class="n">lifelong_learning</span><span class="o">/</span><span class="n">phase4</span><span class="o">/</span><span class="n">checkpoint</span><span class="o">-</span><span class="mi">60000</span> \
+<span class="o">--</span><span class="n">task_set</span> <span class="n">lifelong_learning_phase1</span> <span class="n">lifelong_learning_phase2</span> <span class="n">lifelong_learning_phase3</span> <span class="n">lifelong_learning_phase4</span> \
+<span class="o">--</span><span class="n">split</span> <span class="n">pretrain</span>
+</pre></div>
+</div>
+</section>
+<section id="report-evaluation-results">
+<h4>Report evaluation results<a class="headerlink" href="#report-evaluation-results" title="Link to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">gr00t</span><span class="o">/</span><span class="nb">eval</span><span class="o">/</span><span class="n">get_eval_stats</span><span class="o">.</span><span class="n">py</span> \
+<span class="o">--</span><span class="nb">dir</span> <span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">ckpt</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="foundation_model_learning.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Foundation Model Learning</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../assets/scenes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Scenes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-instructions">Benchmark instructions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gr00t">GR00T</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#train-model">Train model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-model">Evaluate model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#report-evaluation-results">Report evaluation results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the RoboCasa core team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright the RoboCasa core team, 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
