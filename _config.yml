@@ -1,3 +1,9 @@
 theme: jekyll-theme-cayman
 baseurl: ""
 url: "https://robocasa.ai"
+
+include:
+  - "docs/build/html"
+  - "docs/build/html/static"
+  - "docs/build/html/images"
+  - "docs/build/html/sources"
