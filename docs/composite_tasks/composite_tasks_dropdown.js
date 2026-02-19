@@ -801,7 +801,6 @@
 
   const TASK_FILE_BASE_OVERRIDES = new Map([
     // Fix local filename typos / variants in robocasa/environments/kitchen/composite/
-    ["AddSweetener", "add_sweetner"],
     ["AirDryFruit", "airdry_fruit"],
     ["OrganizeMetallicUtensils", "organize_metalic_utensils"],
     ["SetUpSpiceStation", "setup_spice_station"],
