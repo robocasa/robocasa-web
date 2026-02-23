@@ -971,6 +971,8 @@
     ["ResetCabinetDoors", ["door_open", "PickPlace"]],
     ["CandleCleanup", ["door_open"]],
     ["DrinkwareConsolidation", ["door_open"]],
+    ["PrepSinkForCleaning", ["door_open"]],
+    ["DryDrinkware", ["door_open"]],
     // "Press" here is not a button press; avoid incorrect Press Button tag.
     ["PressChicken", ["button_press"]],
     // Prefer lever turning over knob twisting for this task.
