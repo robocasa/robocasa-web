@@ -228,15 +228,25 @@
   let CACHED_TASK_ATTRIBUTES_JSON = null;
   async function loadTaskAttributesJson() {
     if (CACHED_TASK_ATTRIBUTES_JSON) return CACHED_TASK_ATTRIBUTES_JSON;
-    // In this docs build, static assets are served from `_static/`.
-    // (`html_static_path` merges several directories into `_static/` root.)
-    // Append version to avoid stale cache when task list / activities change
-    const url = `${getContentRoot()}_static/task_attributes.json?v=2`;
-    const res = await fetch(url, { cache: "no-cache" });
-    if (!res.ok) {
-      throw new Error(`Failed to load ${url}: ${res.status} ${res.statusText}`);
+    // Append version to avoid stale cache when task list / activities change.
+    //
+    // Prefer `static/` (works on robocasa.ai deployment), but fall back to `_static/`
+    // for older builds / alternative hosting setups.
+    const urls = [
+      `${getContentRoot()}static/task_attributes.json?v=2`,
+      `${getContentRoot()}_static/task_attributes.json?v=2`,
+    ];
+    let lastErr = null;
+    let data = null;
+    for (const url of urls) {
+      const res = await fetch(url, { cache: "no-cache" });
+      if (res.ok) {
+        data = await res.json();
+        break;
+      }
+      lastErr = new Error(`Failed to load ${url}: ${res.status} ${res.statusText}`);
     }
-    const data = await res.json();
+    if (!data) throw lastErr || new Error("Failed to load task attributes json");
     CACHED_TASK_ATTRIBUTES_JSON = data;
     return data;
   }
