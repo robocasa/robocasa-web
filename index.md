@@ -1,6 +1,5 @@
 ---
 layout: main
-title: RoboCasa
 subtitle: 
 project_tagline: "Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots"
 image: assets/images/Robocasa_web_logo.svg
