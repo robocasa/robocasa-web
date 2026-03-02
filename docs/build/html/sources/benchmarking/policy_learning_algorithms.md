@@ -4,7 +4,7 @@ We provide official support for benchmarking the following policy learning algor
 
 -------
 ## Diffusion Policy
-We fork the official Diffusion Policy code base, hosted at [https://github.com/robocasa/diffusion_policy_dev](https://github.com/robocasa/diffusion_policy_dev).
+We fork the official Diffusion Policy code base, hosted at [https://github.com/robocasa-benchmark/diffusion_policy](https://github.com/robocasa-benchmark/diffusion_policy).
 ### Recommended system specs
 For training we recommend a GPU with at least 24 GB of memory, but 48 GB+ is prefered.
 For inference we recommend a GPU with at least 8 GB of memory.
@@ -100,7 +100,8 @@ For inference we recommend a GPU with at least 8 GB of memory.
 ```
 git clone https://github.com/robocasa-benchmark/Isaac-GR00T
 cd groot
-pip install -e .
+pip install -e .[base]
+pip install --no-build-isolation flash-attn==2.7.1.post4
 ```
 
 ### Key files

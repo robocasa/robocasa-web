@@ -13,6 +13,62 @@ $body-link-color: #005f86;
 .page-header {
     background-image: linear-gradient(120deg, $header-bg-color, $header-bg-color-second);
     // background-image: linear-gradient(120deg, $header-bg-color, $header-bg-color-second, $header-bg-color-third);
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+
+    @include large {
+        padding-top: 2.5rem;
+        padding-bottom: 2.75rem;
+    }
+
+    @include medium {
+        padding-top: 2rem;
+        padding-bottom: 2.25rem;
+    }
+
+    @include small {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+// Reduce vertical space above the first paragraph (slight gap below header).
+.main-content {
+    padding-top: 1.2rem;
+}
+.main-content > *:first-child {
+    margin-top: 0;
+}
+.main-content p:first-of-type {
+    margin-top: 0;
+}
+
+// "Fork me on GitHub"-style ribbon used for RoboCasa365 release callout.
+// (We include gh-fork-ribbon-css in the layout; this just customizes colors.)
+.github-fork-ribbon.rc-release-ribbon {
+  z-index: 9999;
+}
+.github-fork-ribbon.rc-release-ribbon:before {
+  background-color: #eaf2ff !important;
+}
+.github-fork-ribbon.rc-release-ribbon:after {
+  color: #2c5aa0 !important;
+  border: 1px solid rgba(74, 144, 226, 0.9) !important;
+}
+
+// Release video on homepage: align with text column (no extra padding).
+.rc-release-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+// Extra spacing above and below the release video.
+.rc-release-figure {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
 }
 
 figure {
@@ -30,8 +86,26 @@ figure figcaption {
     margin-bottom: 10px;
 }
 
+// Scene collage video: full content width, left-aligned with text (no horizontal padding).
+.rc-scene-collage {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+    .figure__main,
+    .figure__main video {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+        display: block;
+    }
+}
+
 .project-tagline {
     opacity: 1.0;
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 // our addition
@@ -58,6 +132,38 @@ figure figcaption {
 
 .site-footer {
     border-top: solid 2px $hr-border-color;
+}
+
+// Citation copy button (homepage bibtex blocks) – same behavior as docs
+.rc-citation-copy-btn {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #555;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+.rc-citation-copy-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: #333;
+}
+.rc-citation-copy-btn.rc-copied {
+  background: rgba(46, 125, 50, 0.12);
+  color: #2e7d32;
+}
+.rc-citation-copy-btn .rc-citation-copy-icon {
+  width: 1rem;
+  height: 1rem;
+  display: block;
 }
 
 .authornames {

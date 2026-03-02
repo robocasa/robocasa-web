@@ -14,6 +14,8 @@
     {% endif %}
     <meta charset="UTF-8">
 
+    <link rel="icon" href="{{ site.baseurl }}/assets/images/Robocasa_web_logo.svg" type="image/svg+xml">
+
     {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
@@ -23,11 +25,22 @@
   </head>
   
   <body>
+    {% if page.url == "/" %}
+      <a
+        class="github-fork-ribbon right-top rc-release-ribbon"
+        href="#robocasa365-release"
+        data-ribbon="New Release!"
+        title="New Release!"
+      >
+        New Release!
+      </a>
+    {% endif %}
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h1 class="project-subtitle">{{ page.subtitle }}</h1>
       <h2 class="project-tagline">{{ page.project_tagline }}</h2>
-      <a href="{{ site.baseurl }}/assets/robocasa_rss24.pdf" class="btn">Paper</a>
+      <a href="{{ site.baseurl }}/assets/robocasa_rss24.pdf" class="btn">Paper (RoboCasa)</a>
+      <a href="https://openreview.net/pdf?id=tQJYKwc3n4" class="btn">Paper (RoboCasa365)</a>
       <a href="https://github.com/robocasa/robocasa" class="btn">Code</a>
       <a href="{{ '/docs/build/html/introduction/overview.html' | relative_url }}" class="btn">Documentation</a>
     </header>
@@ -41,5 +54,39 @@
         </span>
       </footer>
     </main>
+    {% if page.url == "/" %}
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var main = document.querySelector("main#content");
+        if (!main) return;
+        main.querySelectorAll("pre").forEach(function(pre) {
+          if (!pre.textContent || pre.textContent.indexOf("@inproceedings") === -1) return;
+          var wrapper = pre.closest(".highlight") || pre.closest("figure") || pre.parentElement;
+          if (!wrapper || wrapper.querySelector(".rc-citation-copy-btn")) return;
+          wrapper.style.position = "relative";
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "rc-citation-copy-btn";
+          btn.setAttribute("aria-label", "Copy citation");
+          btn.title = "Copy to clipboard";
+          btn.innerHTML = "<svg class=\"rc-citation-copy-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"9\" y=\"9\" width=\"13\" height=\"13\" rx=\"2\" ry=\"2\"/><path d=\"M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1\"/></svg>";
+          btn.addEventListener("click", function() {
+            var text = pre.textContent || "";
+            navigator.clipboard.writeText(text).then(function() {
+              btn.setAttribute("aria-label", "Copied!");
+              btn.classList.add("rc-copied");
+              btn.innerHTML = "<svg class=\"rc-citation-copy-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"/></svg>";
+              setTimeout(function() {
+                btn.setAttribute("aria-label", "Copy citation");
+                btn.classList.remove("rc-copied");
+                btn.innerHTML = "<svg class=\"rc-citation-copy-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"9\" y=\"9\" width=\"13\" height=\"13\" rx=\"2\" ry=\"2\"/><path d=\"M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1\"/></svg>";
+              }, 1500);
+            });
+          });
+          wrapper.appendChild(btn);
+        });
+      });
+    </script>
+    {% endif %}
   </body>
 </html>

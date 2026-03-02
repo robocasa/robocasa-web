@@ -2,41 +2,40 @@
 layout: main
 title: RoboCasa
 subtitle: 
-project_tagline: "Large-Scale Simulation of Everyday Tasks for Generalist Robots"
-image: assets/images/preview_logo.png
+project_tagline: "Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots"
+image: assets/images/Robocasa_web_logo.svg
 videoId: 
 ---
 
-<div style="background-color: #f0f8ff; border: 2px solid #4a90e2; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
-  <h3 style="margin: 0; color: #2c5aa0;"><strong>Coming Soon!</strong> RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots</h3>
-</div>
+<div id="robocasa365-release"></div>
 
-**RoboCasa** is a large-scale simulation framework for training generally capable robots to perform everyday tasks. It features realistic and diverse human-centered environments with a focus on kitchen scenes. We create these environments with the aid of generative AI tools, such as large language models (LLMs) and text-to-image/3D generative models. We provide over 2,500 3D assets across 150+ object categories and dozens of interactable furniture and appliances. As part of the first release, we include a suite of 100 tasks, representing a wide spectrum of everyday activities. Together with the simulated tasks, we offer a dataset of high-quality human demonstrations and leverage automated trajectory generation techniques to significantly expand the amount of training data with little additional cost.
+<figure class="figure rc-release-figure">
+  <div class="figure__main">
+    <video controls autoplay loop muted playsinline preload="metadata" class="rc-release-video">
+      <source src="{{ site.baseurl }}/assets/videos/release.mp4" type="video/mp4">
+    </video>
+  </div>
+</figure>
+
+**RoboCasa** is a large-scale simulation framework for training generally capable robots to perform everyday tasks. It features realistic and diverse human-centered environments with a focus on kitchen scenes. We create these environments with the aid of generative AI tools, such as large language models (LLMs) and text-to-image/3D generative models. Together with the simulated tasks, we offer a dataset of high-quality human demonstrations and leverage automated trajectory generation techniques to significantly expand the amount of training data with little additional cost.
+
+We're excited to announce **RoboCasa365**, the latest release built on the RoboCasa platform: 365 everyday tasks across 2,500 diverse kitchen environments, with 600+ hours of human demonstration data and 1,600+ hours of synthetically generated demonstrations. RoboCasa365 is designed for systematic benchmarking across key settings, including multi-task learning, foundation model training, and lifelong learning. It supports popular policy learning models, such as Diffusion Policy, π₀, and GR00T.
+
+<hr>
 
 ## Realistic and Diverse Scenes
 
-<!-- Grid of Videos -->
-<div class="video-grid-3x3">
-  {% for video in site.static_files %}
-    {% if video.path contains '/assets/videos/env_grid/' %}
-      <div class="video-item">
-        <video class="lazy" autoplay loop muted playsinline>
-          <source data-src="{{ site.baseurl }}{{ video.path }}" type="video/mp4">
-        </video>
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
-
-<!-- <figure class="figure">
+<figure class="figure rc-scene-collage">
   <div class="figure__main">
     <video autoplay loop muted playsinline class="postimagefullwidth">
-      <source src="{{ site.baseurl }}/assets/videos/env_grid.mp4" type="video/mp4">
+      <source src="{{ site.baseurl }}/assets/videos/scene_collage.mp4" type="video/mp4">
     </video>
   </div>
-</figure> -->
+</figure>
 
-In this initial release, we focus on kitchen scenes. To capture the complexity and diversity of real-world environments, we consult numerous architecture and home design magazines and compile a collection of kitchen layouts and styles reflecting the vast diversity of kitchens in homes around the world. We model these kitchens according to standard size and spatial specifications and fit them with a large repository of interactable furniture and appliances spanning cabinets, stoves, sinks, microwaves, and more.
+To capture the complexity and diversity of real-world environments, we consult numerous architecture and home design magazines and compile a collection of kitchen layouts and styles reflecting the vast diversity of kitchens in homes around the world. We model these kitchens according to standard size and spatial specifications and fit them with a large repository of interactable furniture and appliances spanning cabinets, stoves, sinks, microwaves, and more.
+
+**RoboCasa365** significantly expands this foundation: from the original 100 scenes we scale to **2,500** unique kitchen environments for large-scale training. We introduce 50 new layouts based on real-world homes, paired with 50 additional styles that vary fixtures, appliances, and textures.
 
 ## Cross-Embodiment Support
 
@@ -88,7 +87,7 @@ Each scene can be customized by replacing textures from a large selection of hig
 
 ## Creating Diverse Object Assets with Text-to-3D Models
 
-We curate a repository of over 2,500 objects across more than 150 categories, spanning a variety of fruits, vegetables, packaged foods, and receptacles. Some of the object assets are from the <a href="https://objaverse.allenai.org/">Objaverse</a> dataset, and the other majority of the objects are generated by text-to-3D object generation models provided by <a href="https://lumalabs.ai/">Luma AI</a>.
+We curate a repository of 3,200+ objects across more than 150 categories, spanning a variety of fruits, vegetables, packaged foods, and receptacles. They are sourced from <a href="https://objaverse.allenai.org/">Objaverse</a> 1.0, <a href="https://www.lightwheel.ai/">LightWheel AI</a>, and the remaining are AI-generated from <a href="https://lumalabs.ai/">Luma AI</a>.
 
 
 <figure class="figure">
@@ -102,7 +101,7 @@ We curate a repository of over 2,500 objects across more than 150 categories, sp
 
 ## Training Foundational Robot Skills
 
-We focus on eight foundational skills as the basic building blocks to scaffold long-horizon manipulation behaviors for the majority of household activities: (1) Pick and place, (2) Opening and closing doors, (3) Opening and closing drawers, (4) Twisting knobs, (5) Turning levers, (6) Pressing buttons, (7) Insertion, and (8) Navigation. The current release includes 25 atomic tasks for systematically training and evaluating these skills.
+We focus on ten foundational skills as the basic building blocks to scaffold long-horizon manipulation behaviors for the majority of household activities: (1) Pick and place, (2) Opening and closing doors, (3) Opening and closing drawers, (4) Twisting knobs, (5) Turning levers, (6) Pressing buttons, (7) Insertion, (8) Navigation, (9) Sliding Racks, and (10) Closing/Opening Lids. RoboCasa365 includes 65 atomic tasks for systematically training and benchmarking these skills.
 
 
 <div class="video-slide-wrapper">
