@@ -53,9 +53,9 @@ We provide support for benchmarking across Diffusion Policy, Openpi, and GR00T N
     </tr>
     <tr>
       <td><strong>Model Checkpoint</strong></td>
-      <td><a href="">TBD</a></td>
-      <td><a href="">TBD</a></td>
-      <td><a href="">TBD</a></td>
+      <td><a href="https://huggingface.co/robocasa/robocasa365_checkpoints/blob/main/diffusion_policy/17.40.09_train_diffusion_transformer_hybrid_pretrain_human300/checkpoints/epoch%3D0500-test_mean_score%3D-1.000.ckpt">Link</a></td>
+      <td><a href="https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi0/pi0_robocasa_pretrain_human300/multitask_learning/75000">Link</a></td>
+      <td><a href="https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi05_pretrain_human300/multitask_learning/75000">Link</a></td>
       <td><a href="https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/multitask_learning/checkpoint-120000">Link</a></td>
     </tr>
   </tbody>
