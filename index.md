@@ -18,7 +18,7 @@ videoId:
 
 **RoboCasa** is a large-scale simulation framework for training generally capable robots to perform everyday tasks. It features realistic and diverse human-centered environments with a focus on kitchen scenes. We create these environments with the aid of generative AI tools, such as large language models (LLMs) and text-to-image/3D generative models. Together with the simulated tasks, we offer a dataset of high-quality human demonstrations and leverage automated trajectory generation techniques to significantly expand the amount of training data with little additional cost.
 
-We're excited to announce **RoboCasa365**, the latest release built on the RoboCasa platform: 365 everyday tasks across 2,500 diverse kitchen environments, with 600+ hours of human demonstration data and 1,600+ hours of synthetically generated demonstrations. RoboCasa365 is designed for systematic benchmarking across key settings, including multi-task learning, foundation model training, and lifelong learning. It supports popular policy learning models, such as Diffusion Policy, π₀, and GR00T.
+We're excited to announce [**RoboCasa365**]({{ site.baseurl }}/assets/robocasa365_iclr26.pdf), the latest release built on the RoboCasa platform: 365 everyday tasks across 2,500 diverse kitchen environments, with 600+ hours of human demonstration data and 1,600+ hours of synthetically generated demonstrations. RoboCasa365 is designed for systematic benchmarking across key settings, including multi-task learning, foundation model training, and lifelong learning. It supports popular policy learning models, such as Diffusion Policy, π₀, and GR00T.
 
 <hr>
 
@@ -196,7 +196,7 @@ Composite tasks involve sequencing skills to solve semantically meaningful activ
 
 # Citation
 
-**RoboCasa365:**
+[**RoboCasa365**]({{ site.baseurl }}/assets/robocasa365_iclr26.pdf) (paper):
 
 ```bibtex
 @inproceedings{robocasa365,
