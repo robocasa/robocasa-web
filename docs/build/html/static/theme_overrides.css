@@ -82,17 +82,23 @@
      max-width: none;
    }
    
-   /* Multi-Task Learning benchmark table: equal width for DP, π₀, GR00T N1.5 columns */
+   /* Multi-Task Learning benchmark table: Task Split same width as before; DP, π₀, π₀.5, GR00T share the rest */
    body.rc-multitask-learning table.rc-benchmark-table {
      table-layout: fixed;
+   }
+   body.rc-multitask-learning table.rc-benchmark-table th:nth-child(1),
+   body.rc-multitask-learning table.rc-benchmark-table td:nth-child(1) {
+     width: 25%;
    }
    body.rc-multitask-learning table.rc-benchmark-table th:nth-child(2),
    body.rc-multitask-learning table.rc-benchmark-table th:nth-child(3),
    body.rc-multitask-learning table.rc-benchmark-table th:nth-child(4),
+   body.rc-multitask-learning table.rc-benchmark-table th:nth-child(5),
    body.rc-multitask-learning table.rc-benchmark-table td:nth-child(2),
    body.rc-multitask-learning table.rc-benchmark-table td:nth-child(3),
-   body.rc-multitask-learning table.rc-benchmark-table td:nth-child(4) {
-     width: 25%;
+   body.rc-multitask-learning table.rc-benchmark-table td:nth-child(4),
+   body.rc-multitask-learning table.rc-benchmark-table td:nth-child(5) {
+     width: 18.75%;
    }
    
    /* Citation copy button (overview page) – line-art icon, transparent background */

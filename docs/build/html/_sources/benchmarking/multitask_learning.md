@@ -18,6 +18,7 @@ We provide support for benchmarking across Diffusion Policy, Openpi, and GR00T N
       <th><strong>Task Split</strong></th>
       <th><strong>Diffusion Policy</strong></th>
       <th><strong>π<span class="rc-pi-subnum">0</span></strong></th>
+      <th><strong>π<span class="rc-pi-subnum">0.5</span></strong></th>
       <th><strong>GR00T N1.5</strong></th>
     </tr>
   </thead>
@@ -26,28 +27,33 @@ We provide support for benchmarking across Diffusion Policy, Openpi, and GR00T N
       <td><code class="rc-benchmark-split rc-benchmark-atomic">Atomic-Seen</code></td>
       <td>15.7%</td>
       <td>34.6%</td>
+      <td>39.6%</td>
       <td>43.0%</td>
     </tr>
     <tr>
       <td><code class="rc-benchmark-split rc-benchmark-comp-seen">Composite-Seen</code></td>
       <td>0.2%</td>
       <td>6.1%</td>
+      <td>7.1%</td>
       <td>9.6%</td>
     </tr>
     <tr>
       <td><code class="rc-benchmark-split rc-benchmark-comp-unseen">Composite-Unseen</code></td>
       <td>1.25%</td>
       <td>1.1%</td>
+      <td>1.2%</td>
       <td>4.4%</td>
     </tr>
     <tr>
       <td><strong>Average</strong></td>
       <td>6.1%</td>
       <td>14.8%</td>
+      <td>16.9%</td>
       <td>20.0%</td>
     </tr>
     <tr>
       <td><strong>Model Checkpoint</strong></td>
+      <td><a href="">TBD</a></td>
       <td><a href="">TBD</a></td>
       <td><a href="">TBD</a></td>
       <td><a href="https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/multitask_learning/checkpoint-120000">Link</a></td>
