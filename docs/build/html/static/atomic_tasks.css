@@ -345,6 +345,14 @@ body.rc-atomic-tasks .rc-reset-filters-btn:hover {
   background: #2980b9;
 }
 
+html[data-theme="dark"] body.rc-atomic-tasks #rc-atomic-task-input {
+  background: var(--rc-atomic-surface);
+}
+
+html[data-theme="dark"] body.rc-atomic-tasks .rc-atomic-task-suggest {
+  background: #2a2a2a;
+}
+
 /* Suggestions dropdown */
 .rc-atomic-task-suggest {
   position: absolute;

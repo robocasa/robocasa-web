@@ -371,6 +371,10 @@ html[data-theme="dark"] body.rc-composite-tasks {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
+html[data-theme="dark"] .rc-task-suggest {
+  background: #2a2a2a;
+}
+
 
 .rc-task-suggest-item {
   width: 100%;
