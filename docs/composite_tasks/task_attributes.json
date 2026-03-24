@@ -1139,7 +1139,7 @@
       "activity": "Loading Fridge",
       "num_subtasks": 3,
       "moma_required": "Yes",
-      "description": "Move the [*items*] from the [*initial shelf*] to the [*target shelf*] to make space. Then, place the pitcher from the counter on the cleared [*inital shelf*]."
+      "description": "Move the [*items*] from the [*initial shelf*] to the [*target shelf*] to make space. Then, place the pitcher from the counter on the cleared [*initial shelf*]."
     },
     {
       "name": "LoadDishwasher",

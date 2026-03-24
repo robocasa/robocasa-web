@@ -678,7 +678,7 @@
         </tr>
         <tr>
           <td><code>RearrangeFridgeItems</code></td>
-          <td>Move the [*items*] from the [*initial shelf*] to the [*target shelf*] to make space. Then, place the pitcher from the counter on the cleared [*inital shelf*].</td>
+          <td>Move the [*items*] from the [*initial shelf*] to the [*target shelf*] to make space. Then, place the pitcher from the counter on the cleared [*initial shelf*].</td>
         </tr>
       </tbody>
     </table>
