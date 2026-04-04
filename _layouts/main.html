@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | absolute_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}{% if site.github.build_revision %}?v={{ site.github.build_revision }}{% endif %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
   </head>
   
@@ -35,7 +35,14 @@
         New Release!
       </a>
     {% endif %}
-    <header class="page-header" role="banner">
+    <header class="page-header{% if page.url contains 'leaderboard' %} page-header--home{% endif %}" role="banner">
+      {% if page.url contains 'leaderboard' %}
+      <a class="rc-header-home" href="{{ '/' | relative_url }}" aria-label="RoboCasa home" title="Home">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z" />
+        </svg>
+      </a>
+      {% endif %}
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h1 class="project-subtitle">{{ page.subtitle }}</h1>
       <h2 class="project-tagline">{{ page.project_tagline }}</h2>
@@ -43,6 +50,7 @@
       <a href="https://arxiv.org/pdf/2603.04356" class="btn">Paper (RoboCasa365)</a>
       <a href="https://github.com/robocasa/robocasa" class="btn">Code</a>
       <a href="{{ '/docs/build/html/introduction/overview.html' | relative_url }}" class="btn">Documentation</a>
+      <a href="{{ '/leaderboard.html' | relative_url }}" class="btn">Leaderboard</a>
     </header>
 
     <main id="content" class="main-content" role="main">

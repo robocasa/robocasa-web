@@ -19,10 +19,10 @@ env = create_env(
 
 Layouts are configured by setting the arrangment of fixtures (cabinets, microwaves, counters, etc.) in a yaml file [**[Source]**](https://github.com/robocasa/robocasa/tree/main/robocasa/models/assets/scenes/kitchen_layouts).
 
-![Kitchen Layouts](../images/layouts.png)
+<img src="../images/layouts.png" alt="Kitchen Layouts" />
 
 ## Styles
 
 Styles are configured by setting relevant textures and fixture attributes (cabinet handle types, door types, coffee machine types, etc) in a yaml file [**[Source]**](https://github.com/robocasa/robocasa/tree/main/robocasa/models/assets/scenes/kitchen_styles).
 
-![Kitchen Styles](../images/styles.png)
+<img src="../images/styles.png" alt="Kitchen Styles" />

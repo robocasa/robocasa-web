@@ -1,0 +1,223 @@
+---
+layout: main
+title: RoboCasa Leaderboard
+subtitle:
+project_tagline: "Comparing generalist robot policies on the RoboCasa365 multi-task benchmark"
+---
+{% assign leaderboard = site.data.robocasa365_leaderboard %}
+<script>document.body.classList.add("rc-leaderboard-page-body");</script>
+
+<div class="rc-leaderboard-page">
+  <section class="rc-lb-hero rc-lb-surface">
+    <div class="rc-lb-hero-title">
+      <div>
+        <h1>RoboCasa Leaderboard</h1>
+        <p class="rc-lb-hero-subtitle">
+          Benchmarking generalist robot policies on the {{ leaderboard.benchmark_name | downcase }} benchmark
+        </p>
+      </div>
+    </div>
+
+    <div class="rc-lb-stat-grid">
+      <article class="rc-lb-stat-card">
+        <strong class="rc-lb-stat-value">{{ leaderboard.benchmark_tasks }}</strong>
+        <span class="rc-lb-stat-label">Tasks</span>
+      </article>
+      <article class="rc-lb-stat-card">
+        <strong class="rc-lb-stat-value">{{ leaderboard.policies | size }}</strong>
+        <span class="rc-lb-stat-label">Models Evaluated</span>
+      </article>
+      <article class="rc-lb-stat-card">
+        <strong class="rc-lb-stat-value">3</strong>
+        <span class="rc-lb-stat-label">Evaluation Splits</span>
+      </article>
+    </div>
+
+    <div class="rc-lb-updated">Updated {{ leaderboard.updated_at }}</div>
+  </section>
+
+  <section id="rc365-leaderboard" class="rc-lb-section">
+    <div class="rc-lb-section-header">
+      <div>
+        <h2>Leaderboard</h2>
+      </div>
+    </div>
+    <div class="rc-lb-table-wrap">
+      <table class="rc-lb-table">
+        <colgroup>
+          <col style="width: 10%;">
+          <col style="width: 25%;">
+          <col style="width: 15%;">
+          <col style="width: 16%;">
+          <col style="width: 17%;">
+          <col style="width: 17%;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="rc-lb-sortable" data-sort-key="rank" data-sort-type="number">
+              <span>Rank</span><span class="rc-lb-sort-indicator" aria-hidden="true"></span>
+            </th>
+            <th class="rc-lb-sortable" data-sort-key="policy" data-sort-type="string">
+              <span>Policy</span><span class="rc-lb-sort-indicator" aria-hidden="true"></span>
+            </th>
+            <th class="rc-lb-sortable" data-sort-key="overall" data-sort-type="number">
+              <span>Overall</span><span class="rc-lb-sort-indicator" aria-hidden="true"></span>
+            </th>
+            <th class="rc-lb-sortable" data-sort-key="atomic" data-sort-type="number">
+              <span>Atomic-Seen</span><span class="rc-lb-sort-indicator" aria-hidden="true"></span>
+            </th>
+            <th class="rc-lb-sortable" data-sort-key="comp-seen" data-sort-type="number">
+              <span>Composite-Seen</span><span class="rc-lb-sort-indicator" aria-hidden="true"></span>
+            </th>
+            <th class="rc-lb-sortable" data-sort-key="comp-unseen" data-sort-type="number">
+              <span>Composite-Unseen</span><span class="rc-lb-sort-indicator" aria-hidden="true"></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for policy in leaderboard.policies %}
+          <tr
+            data-rank="{{ policy.rank }}"
+            data-policy="{{ policy.short_name | default: policy.name | downcase }}"
+            data-overall="{{ policy.score }}"
+            data-atomic="{{ policy.atomic_seen }}"
+            data-comp-seen="{{ policy.composite_seen }}"
+            data-comp-unseen="{{ policy.composite_unseen }}"
+          >
+            <td>
+              <span class="rc-lb-rank-badge rc-lb-rank-{{ policy.rank }}">
+                {% if policy.rank == 1 %}🥇{% elsif policy.rank == 2 %}🥈{% elsif policy.rank == 3 %}🥉{% else %}#{{ policy.rank }}{% endif %}
+              </span>
+            </td>
+            <td>
+              <a class="rc-lb-policy-name rc-lb-policy-name-link" href="{{ policy.checkpoint_url }}" title="Checkpoint link">
+                {% if policy.short_name == "pi0" %}
+                  π<sub class="rc-lb-subscript">0</sub>
+                {% elsif policy.short_name == "pi0.5" %}
+                  π<sub class="rc-lb-subscript">0.5</sub>
+                {% else %}
+                  {{ policy.name }}
+                {% endif %}
+              </a>
+            </td>
+            <td><span class="rc-lb-score-pill">{{ policy.score }}</span></td>
+            <td class="rc-lb-metric">{{ policy.atomic_seen }}%</td>
+            <td class="rc-lb-metric">{{ policy.composite_seen }}%</td>
+            <td class="rc-lb-metric">{{ policy.composite_unseen }}%</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="rc-lb-info-cluster" id="rc365-info" aria-label="About this leaderboard">
+    <div class="rc-lb-info-top">
+      <article id="rc365-about" class="rc-lb-info-block">
+        <h2 class="rc-lb-info-heading">
+          <span class="rc-lb-info-step">01</span>
+          <span class="rc-lb-info-title">Benchmark scope</span>
+        </h2>
+        <div class="rc-lb-info-body">
+          <p>
+            RoboCasa365 is a large-scale benchmark for generalist robot policies spanning 365 everyday tasks
+            across 2,500 diverse kitchen environments. This initial leaderboard focuses on the multi-task
+            learning setting and compares the four baseline policy families: Diffusion Policy,
+            π0, π0.5, and GR00T N1.5.
+          </p>
+          <p>
+            The current leaderboard highlights the first public comparison and will continue to grow as
+            users submit additional models. New entries are added after submission review and verification
+            so results remain consistent and trustworthy.
+          </p>
+        </div>
+      </article>
+
+      <article id="rc365-evaluation" class="rc-lb-info-block">
+        <h2 class="rc-lb-info-heading">
+          <span class="rc-lb-info-step">02</span>
+          <span class="rc-lb-info-title">How we evaluate</span>
+        </h2>
+        <div class="rc-lb-info-body">
+          <p>
+            For this first release, the <strong>Overall</strong> score is the published average task success rate
+            on the 50-task multi-task benchmark. It aggregates three evaluation splits:
+            <strong>Atomic-Seen</strong> ({{ leaderboard.split_counts.atomic_seen }} tasks),
+            <strong>Composite-Seen</strong> ({{ leaderboard.split_counts.composite_seen }} tasks), and
+            <strong>Composite-Unseen</strong> ({{ leaderboard.split_counts.composite_unseen }} tasks).
+          </p>
+          <p>
+            We also display each split separately so differences between short-horizon atomic tasks and
+            longer-horizon composite tasks remain visible instead of being hidden by a single number.
+            More metrics and tracks can be added here as the benchmark expands.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <aside id="rc365-submit" class="rc-lb-info-submit">
+      <h2 class="rc-lb-info-heading">
+        <span class="rc-lb-info-step">03</span>
+        <span class="rc-lb-info-title">Submissions</span>
+      </h2>
+      <p>
+        We’re working on a simple way for the community to share results and show up here alongside
+        the baselines. Check back soon for details.
+      </p>
+    </aside>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var root = document.querySelector(".rc-leaderboard-page");
+    if (!root) return;
+
+    var table = root.querySelector(".rc-lb-table");
+    if (!table) return;
+
+    var tbody = table.querySelector("tbody");
+    var sortableHeaders = Array.from(table.querySelectorAll("th.rc-lb-sortable"));
+    if (!tbody || !sortableHeaders.length) return;
+
+    function compareRows(a, b, key, type, direction) {
+      var aVal = a.getAttribute("data-" + key);
+      var bVal = b.getAttribute("data-" + key);
+      var result = 0;
+
+      if (type === "number") {
+        result = parseFloat(aVal) - parseFloat(bVal);
+      } else {
+        result = String(aVal).localeCompare(String(bVal), undefined, { sensitivity: "base" });
+      }
+
+      return direction === "asc" ? result : -result;
+    }
+
+    function setSortState(header, direction) {
+      sortableHeaders.forEach(function(h) {
+        h.classList.remove("is-sorted-asc", "is-sorted-desc");
+      });
+      header.classList.add(direction === "asc" ? "is-sorted-asc" : "is-sorted-desc");
+    }
+
+    sortableHeaders.forEach(function(header) {
+      header.addEventListener("click", function() {
+        var key = header.getAttribute("data-sort-key");
+        var type = header.getAttribute("data-sort-type");
+        var direction = header.classList.contains("is-sorted-asc") ? "desc" : "asc";
+        var rows = Array.from(tbody.querySelectorAll("tr"));
+
+        rows.sort(function(a, b) {
+          return compareRows(a, b, key, type, direction);
+        });
+
+        rows.forEach(function(row) {
+          tbody.appendChild(row);
+        });
+
+        setSortState(header, direction);
+      });
+    });
+  });
+</script>

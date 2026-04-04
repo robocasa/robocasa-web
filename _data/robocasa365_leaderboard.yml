@@ -1,0 +1,54 @@
+updated_at: "04/04/2026"
+benchmark_name: Multi-Task Learning
+metric_label: Average task success rate
+evaluation_split: Pretrain scenes
+benchmark_tasks: 50
+split_counts:
+  atomic_seen: 18
+  composite_seen: 16
+  composite_unseen: 16
+policies:
+- rank: 1
+  name: GR00T N1.5
+  short_name: GR00T
+  family: VLA
+  color: '#8b5cf6'
+  score: 20.0
+  atomic_seen: 43.0
+  composite_seen: 9.6
+  composite_unseen: 4.4
+  code_url: https://github.com/robocasa-benchmark/Isaac-GR00T
+  checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/multitask_learning/checkpoint-120000
+- rank: 2
+  name: π0.5
+  short_name: pi0.5
+  family: OpenPI
+  color: '#f59e0b'
+  score: 16.9
+  atomic_seen: 39.6
+  composite_seen: 7.1
+  composite_unseen: 1.2
+  code_url: N/A
+  checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi05_pretrain_human300/multitask_learning/75000
+- rank: 3
+  name: π0
+  short_name: pi0
+  family: OpenPI
+  color: '#10b981'
+  score: 14.8
+  atomic_seen: 34.6
+  composite_seen: 6.1
+  composite_unseen: 1.1
+  code_url: https://github.com/robocasa-benchmark/openpi
+  checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi0/pi0_robocasa_pretrain_human300/multitask_learning/75000
+- rank: 4
+  name: Diffusion Policy
+  short_name: DP
+  family: Diffusion
+  color: '#3b82f6'
+  score: 6.1
+  atomic_seen: 15.7
+  composite_seen: 0.2
+  composite_unseen: 1.25
+  code_url: https://github.com/robocasa-benchmark/diffusion_policy
+  checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/blob/main/diffusion_policy/17.40.09_train_diffusion_transformer_hybrid_pretrain_human300/checkpoints/epoch%3D0500-test_mean_score%3D-1.000.ckpt

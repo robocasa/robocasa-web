@@ -1,5 +1,7 @@
 .sass-cache
 _site
+vendor/bundle
+.bundle
 .DS_Store
 
 # Byte-compiled / optimized / DLL files
