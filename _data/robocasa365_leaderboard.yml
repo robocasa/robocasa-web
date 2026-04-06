@@ -1,4 +1,4 @@
-updated_at: "04/02/2026"
+updated_at: "04/06/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
