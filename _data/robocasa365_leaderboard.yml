@@ -52,3 +52,14 @@ policies:
   composite_unseen: 1.25
   code_url: https://github.com/robocasa-benchmark/diffusion_policy
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/blob/main/diffusion_policy/17.40.09_train_diffusion_transformer_hybrid_pretrain_human300/checkpoints/epoch%3D0500-test_mean_score%3D-1.000.ckpt
+- rank: 5
+  name: Test
+  short_name: Test
+  family: Test
+  color: '#64748b'
+  score: 3.1
+  atomic_seen: 11.7
+  composite_seen: 0.5
+  composite_unseen: 1.65
+  code_url: https://github.com/robocasa-benchmark/diffusion_policy
+  checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/blob/main/diffusion_policy/17.40.09_train_diffusion_transformer_hybrid_pretrain_human300/checkpoints/epoch%3D0500-test_mean_score%3D-1.000.ckpt
