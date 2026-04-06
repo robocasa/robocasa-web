@@ -91,17 +91,30 @@ a.rc-header-home svg {
     margin-top: 0;
 }
 
-// "Fork me on GitHub"-style ribbon used for RoboCasa365 release callout.
-// (We include gh-fork-ribbon-css in the layout; this just customizes colors.)
-.github-fork-ribbon.rc-release-ribbon {
-  z-index: 9999;
+// Header navigation: "New" indicator on leaderboard button.
+a.btn.rc-btn-new-tagged {
+  position: relative;
+  overflow: visible;
 }
-.github-fork-ribbon.rc-release-ribbon:before {
-  background-color: #eaf2ff !important;
-}
-.github-fork-ribbon.rc-release-ribbon:after {
-  color: #2c5aa0 !important;
-  border: 1px solid rgba(74, 144, 226, 0.9) !important;
+
+.rc-btn-new-tag {
+  position: absolute;
+  top: -0.42rem;
+  right: -0.45rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem 0.38rem;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #4c1d95;
+  background: #fef3c7;
+  border: 1px solid rgba(245, 158, 11, 0.55);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.18);
 }
 
 // Release video on homepage: align with text column (no extra padding).

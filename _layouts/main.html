@@ -21,20 +21,9 @@
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}{% if site.github.build_revision %}?v={{ site.github.build_revision }}{% endif %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
   </head>
   
   <body>
-    {% if page.url == "/" %}
-      <a
-        class="github-fork-ribbon right-top rc-release-ribbon"
-        href="#robocasa365-release"
-        data-ribbon="New Release!"
-        title="New Release!"
-      >
-        New Release!
-      </a>
-    {% endif %}
     <header class="page-header{% if page.url contains 'leaderboard' %} page-header--home{% endif %}" role="banner">
       {% if page.url contains 'leaderboard' %}
       <a class="rc-header-home" href="{{ '/' | relative_url }}" aria-label="RoboCasa home" title="Home">
@@ -50,7 +39,7 @@
       <a href="https://arxiv.org/pdf/2603.04356" class="btn">Paper (RoboCasa365)</a>
       <a href="https://github.com/robocasa/robocasa" class="btn">Code</a>
       <a href="{{ '/docs/build/html/introduction/overview.html' | relative_url }}" class="btn">Documentation</a>
-      <a href="{{ '/leaderboard.html' | relative_url }}" class="btn">Leaderboard</a>
+      <a href="{{ '/leaderboard.html' | relative_url }}" class="btn rc-btn-new-tagged">Leaderboard <span class="rc-btn-new-tag">New</span></a>
     </header>
 
     <main id="content" class="main-content" role="main">
