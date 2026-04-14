@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../static/theme_overrides.css?v=79441cbe" />
   
@@ -355,9 +355,9 @@ document.write(`
 <div class="admonition warning">
 <p class="admonition-title">Attention Mac users!</p>
 Mac users who wish to run this example need to prepend the “python” command with “mj”: mjpython
-</div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">robocasa.environments</span><span class="w"> </span><span class="kn">import</span> <span class="n">ALL_KITCHEN_ENVIRONMENTS</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">robocasa.utils.env_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_env</span><span class="p">,</span> <span class="n">run_random_rollouts</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robocasa.environments</span> <span class="kn">import</span> <span class="n">ALL_KITCHEN_ENVIRONMENTS</span>
+<span class="kn">from</span> <span class="nn">robocasa.utils.env_utils</span> <span class="kn">import</span> <span class="n">create_env</span><span class="p">,</span> <span class="n">run_random_rollouts</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># choose random task</span>
 <span class="n">env_name</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ALL_KITCHEN_ENVIRONMENTS</span><span class="p">))</span>
@@ -385,9 +385,9 @@ Mac users who wish to run this example need to prepend the “python” command 
 <section id="offscreen-rollouts">
 <h2>Offscreen rollouts<a class="headerlink" href="#offscreen-rollouts" title="Link to this heading">#</a></h2>
 <p>You can also run rollouts and save videos:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">robocasa.environments</span><span class="w"> </span><span class="kn">import</span> <span class="n">ALL_KITCHEN_ENVIRONMENTS</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">robocasa.utils.env_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_env</span><span class="p">,</span> <span class="n">run_random_rollouts</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robocasa.environments</span> <span class="kn">import</span> <span class="n">ALL_KITCHEN_ENVIRONMENTS</span>
+<span class="kn">from</span> <span class="nn">robocasa.utils.env_utils</span> <span class="kn">import</span> <span class="n">create_env</span><span class="p">,</span> <span class="n">run_random_rollouts</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># choose random task</span>
 <span class="n">env_name</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ALL_KITCHEN_ENVIRONMENTS</span><span class="p">))</span>

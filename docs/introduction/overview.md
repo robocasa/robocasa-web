@@ -44,7 +44,7 @@
 - **Diverse tasks**: 365 tasks created with the guidance of large language models
 - **Diverse assets**: including 2,500+ kitchen scenes and 3,200+ 3D objects
 - **High-quality demonstrations**: including 600+ hours of human demonstrations in addition to 1,600+ hours of robot datasets created with automated trajectory tools
-- **Benchmarking support**: popular policy learning methods including Diffusion Policy, Pi, and GR00T
+- **Benchmarking support**: popular policy learning methods including Diffusion Policy, pi, and GR00T, plus user-submitted models on the [leaderboard](https://robocasa.ai/leaderboard.html)
 
 <p align="center">
   <img class="overview-banner-image" style="width: 95%" src="../_static/robocasa-banner.webp" alt="RoboCasa 365 overview">

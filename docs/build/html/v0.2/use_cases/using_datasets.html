@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../static/theme_overrides.css?v=79441cbe" />
   
@@ -354,8 +354,8 @@ document.write(`
 <section id="dataset-registry">
 <h2>Dataset registry<a class="headerlink" href="#dataset-registry" title="Link to this heading">#</a></h2>
 <p>You can retrieve dataset paths from the <a class="reference external" href="https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py">dataset registry</a> as follows:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">robocasa.utils.dataset_registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">SINGLE_STAGE_TASK_DATASETS</span><span class="p">,</span> <span class="n">MULTI_STAGE_TASK_DATASETS</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">robocasa.utils.dataset_registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_ds_path</span>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robocasa.utils.dataset_registry</span> <span class="kn">import</span> <span class="n">SINGLE_STAGE_TASK_DATASETS</span><span class="p">,</span> <span class="n">MULTI_STAGE_TASK_DATASETS</span>
+<span class="kn">from</span> <span class="nn">robocasa.utils.dataset_registry</span> <span class="kn">import</span> <span class="n">get_ds_path</span>
 
 <span class="c1"># iterate through all atomic and composite tasks</span>
 <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">SINGLE_STAGE_TASK_DATASETS</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">MULTI_STAGE_TASK_DATASETS</span><span class="p">):</span>
@@ -373,8 +373,8 @@ document.write(`
 <section id="basic-usage">
 <h2>Basic usage<a class="headerlink" href="#basic-usage" title="Link to this heading">#</a></h2>
 <p>Here is an example script to access dataset elements:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">json</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">INSERT_DATASET_PATH</span><span class="p">)</span>
 <span class="n">demo</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;demo_5&quot;</span><span class="p">]</span>                        <span class="c1"># access demo 5</span>

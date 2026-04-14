@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../static/theme_overrides.css?v=9731b810" />
-    <link rel="stylesheet" type="text/css" href="../static/composite_tasks_dropdown.css?v=d05820ef" />
-    <link rel="stylesheet" type="text/css" href="../static/atomic_tasks.css?v=b2481b94" />
+    <link rel="stylesheet" type="text/css" href="../static/composite_tasks_dropdown.css?v=c8d935d1" />
+    <link rel="stylesheet" type="text/css" href="../static/atomic_tasks.css?v=a65f1c66" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -402,9 +402,9 @@ document.write(`
 <section id="gym-interface">
 <h2>Gym Interface<a class="headerlink" href="#gym-interface" title="Link to this heading">#</a></h2>
 <p>The following script shows how to create a gym environment and to run random rollouts:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gymnasium</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gym</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">robocasa</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">robocasa.utils.env_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_random_rollouts</span>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gymnasium</span> <span class="k">as</span> <span class="nn">gym</span>
+<span class="kn">import</span> <span class="nn">robocasa</span>
+<span class="kn">from</span> <span class="nn">robocasa.utils.env_utils</span> <span class="kn">import</span> <span class="n">run_random_rollouts</span>
 
 <span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span>
     <span class="s2">&quot;robocasa/PickPlaceCounterToCabinet&quot;</span><span class="p">,</span>
