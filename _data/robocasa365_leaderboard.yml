@@ -1,4 +1,4 @@
-updated_at: "04/06/2026"
+updated_at: "05/04/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -28,7 +28,7 @@ policies:
   atomic_seen: 39.6
   composite_seen: 7.1
   composite_unseen: 1.2
-  code_url: N/A
+  code_url: https://github.com/robocasa-benchmark/openpi
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi05_pretrain_human300/multitask_learning/75000
 - rank: 3
   name: π0
