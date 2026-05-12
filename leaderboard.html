@@ -37,6 +37,23 @@ image: /assets/images/og-image.png
     <div class="rc-lb-updated">Updated {{ leaderboard.updated_at }}</div>
   </section>
 
+  {% if leaderboard.updates and leaderboard.updates.size > 0 %}
+  <section id="rc365-updates" class="rc-lb-section rc-lb-updates">
+    <div class="rc-lb-section-header">
+      <div>
+        <h2>Updates</h2>
+      </div>
+    </div>
+    <ul class="rc-lb-updates-list">
+      {% for update in leaderboard.updates %}
+      <li>
+        <strong>[{{ update.date }}] {{ update.version }}:</strong> {{ update.description }}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
   <section id="rc365-leaderboard" class="rc-lb-section">
     <div class="rc-lb-section-header">
       <div>
@@ -99,7 +116,7 @@ image: /assets/images/og-image.png
                 {% else %}
                   {{ policy.name }}
                 {% endif %}
-              </a>
+              </a>{% if policy.note %}<span class="rc-lb-asterisk" title="{{ policy.note }}">*</span>{% endif %}
             </td>
             <td><span class="rc-lb-score-pill">{{ policy.score }}</span></td>
             <td class="rc-lb-metric">{{ policy.atomic_seen }}%</td>
@@ -109,6 +126,17 @@ image: /assets/images/og-image.png
           {% endfor %}
         </tbody>
       </table>
+      {% assign noted_policies = "" %}
+      {% for policy in leaderboard.policies %}
+        {% if policy.note %}
+          {% if noted_policies == "" %}
+            {% assign noted_policies = policy.note %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      {% if noted_policies != "" %}
+      <p class="rc-lb-footnote">* {{ noted_policies }}</p>
+      {% endif %}
     </div>
   </section>
 
@@ -170,6 +198,9 @@ image: /assets/images/og-image.png
         <code>submissions/</code> folder. After we verify and merge, the results will appear on this page.
       </p>
     </aside>
+
+  </div>
+
   </div>
 </div>
 
