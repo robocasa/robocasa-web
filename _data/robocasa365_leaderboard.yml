@@ -1,5 +1,9 @@
-updated_at: "05/04/2026"
+updated_at: "05/12/2026"
 benchmark_name: Multi-Task Learning
+updates:
+- date: "05/12/2026"
+  version: "v1.0.1"
+  description: "Task horizon lengths increased by 1.5x across all tasks for consistency. Please update to the latest version of RoboCasa for running evals."
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
 benchmark_tasks: 50
@@ -17,6 +21,7 @@ policies:
   atomic_seen: 43.0
   composite_seen: 9.6
   composite_unseen: 4.4
+  note: "Evaluated with shorter horizon lengths."
   code_url: https://github.com/robocasa-benchmark/Isaac-GR00T
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/multitask_learning/checkpoint-120000
 - rank: 2

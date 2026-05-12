@@ -77,6 +77,14 @@ lerobot/
 </details>
 
 ### Retrieving dataset metadata
+
+<div class="admonition note">
+<p class="admonition-title">Horizon update (v1.0.1)</p>
+
+As of v1.0.1, all task horizon lengths have been increased by 1.5x for consistency. Please update to the latest version of RoboCasa for running evals.
+
+</div>
+
 We track each dataset with metadata (paths, task horizon length, etc.) in the [dataset registry](https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py). You can use the `get_ds_meta()` function to retrieve metadata for a specific task:
 
 ```py
