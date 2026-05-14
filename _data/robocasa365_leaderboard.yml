@@ -9,6 +9,18 @@ split_counts:
   composite_unseen: 16
 policies:
 - rank: 1
+  name: GigaWorld-Policy 0.1
+  short_name: GigaWorld-Policy 0.1
+  family: GigaWorld-Policy
+  color: '#64748b'
+  score: 20.7
+  atomic_seen: 44.4
+  composite_seen: 11.8
+  composite_unseen: 2.9
+  note: null
+  code_url: https://github.com/buyaojinchang/gigaworld_policy_01_robocasa_multi-task.git
+  checkpoint_url: https://huggingface.co/HengtaoLi/gwp01-robocasa-multi-task/blob/main/model.pt
+- rank: 2
   name: GR00T N1.5
   short_name: GR00T N1.5
   family: GR00T
@@ -20,7 +32,7 @@ policies:
   note: Evaluated with 2/3 shorter horizon
   code_url: https://github.com/robocasa-benchmark/Isaac-GR00T
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/multitask_learning/checkpoint-120000
-- rank: 2
+- rank: 3
   name: π0.5
   short_name: π0.5
   family: openpi
@@ -32,7 +44,7 @@ policies:
   note: null
   code_url: https://github.com/robocasa-benchmark/openpi
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi05_pretrain_human300/multitask_learning/75000
-- rank: 3
+- rank: 4
   name: π0
   short_name: π0
   family: openpi
@@ -44,7 +56,7 @@ policies:
   note: null
   code_url: https://github.com/robocasa-benchmark/openpi
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi0/pi0_robocasa_pretrain_human300/multitask_learning/75000
-- rank: 4
+- rank: 5
   name: Diffusion Policy
   short_name: Diffusion Policy
   family: Diffusion Policy
