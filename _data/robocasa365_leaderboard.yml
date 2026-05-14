@@ -21,7 +21,7 @@ policies:
   atomic_seen: 43.0
   composite_seen: 9.6
   composite_unseen: 4.4
-  note: "Evaluated with shorter horizon lengths."
+  note: "Evaluated with 2/3 shorter horizon"
   code_url: https://github.com/robocasa-benchmark/Isaac-GR00T
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/multitask_learning/checkpoint-120000
 - rank: 2
