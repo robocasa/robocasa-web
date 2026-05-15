@@ -17,6 +17,14 @@ policies:
   atomic_seen: 44.4
   composite_seen: 11.8
   composite_unseen: 2.9
+<<<<<<< HEAD
+=======
+  training_config:
+    batch_size: 64
+    num_training_steps: 600000
+    num_training_steps_display: 600,000
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/gwp01_2026_05_11.json
+>>>>>>> b509b68 (updating leaderboard)
   code_url: https://github.com/buyaojinchang/gigaworld_policy_01_robocasa_multi-task.git
   checkpoint_url: https://huggingface.co/HengtaoLi/gwp01-robocasa-multi-task/blob/main/model.pt
   note: null
@@ -29,6 +37,14 @@ policies:
   atomic_seen: 43.0
   composite_seen: 9.6
   composite_unseen: 4.4
+<<<<<<< HEAD
+=======
+  training_config:
+    batch_size: 128
+    num_training_steps: 120000
+    num_training_steps_display: 120,000
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/gr00t_n1.5_2026_04_02.json
+>>>>>>> b509b68 (updating leaderboard)
   code_url: https://github.com/robocasa-benchmark/Isaac-GR00T
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/multitask_learning/checkpoint-120000
   note: Evaluated with 2/3 shorter horizon
@@ -41,6 +57,14 @@ policies:
   atomic_seen: 39.6
   composite_seen: 7.1
   composite_unseen: 1.2
+<<<<<<< HEAD
+=======
+  training_config:
+    batch_size: 64
+    num_training_steps: 75000
+    num_training_steps_display: 75,000
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/pi05_2026-04-02.json
+>>>>>>> b509b68 (updating leaderboard)
   code_url: https://github.com/robocasa-benchmark/openpi
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi05_pretrain_human300/multitask_learning/75000
   note: null
@@ -53,6 +77,14 @@ policies:
   atomic_seen: 34.6
   composite_seen: 6.1
   composite_unseen: 1.1
+<<<<<<< HEAD
+=======
+  training_config:
+    batch_size: 64
+    num_training_steps: 75000
+    num_training_steps_display: 75,000
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/pi0_2026-04-02.json
+>>>>>>> b509b68 (updating leaderboard)
   code_url: https://github.com/robocasa-benchmark/openpi
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi0/pi0_robocasa_pretrain_human300/multitask_learning/75000
   note: null
@@ -65,6 +97,14 @@ policies:
   atomic_seen: 15.7
   composite_seen: 0.2
   composite_unseen: 1.25
+<<<<<<< HEAD
+=======
+  training_config:
+    batch_size: 192
+    num_training_steps: 250000
+    num_training_steps_display: 250,000
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/dp_2026_04_02.json
+>>>>>>> b509b68 (updating leaderboard)
   code_url: https://github.com/robocasa-benchmark/diffusion_policy
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/blob/main/diffusion_policy/17.40.09_train_diffusion_transformer_hybrid_pretrain_human300/checkpoints/epoch%3D0500-test_mean_score%3D-1.000.ckpt
   note: null

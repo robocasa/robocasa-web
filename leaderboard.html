@@ -21,16 +21,31 @@ image: /assets/images/og-image.png
 
     <div class="rc-lb-stat-grid">
       <article class="rc-lb-stat-card">
-        <strong class="rc-lb-stat-value">{{ leaderboard.benchmark_tasks }}</strong>
-        <span class="rc-lb-stat-label">Tasks</span>
+        <span class="rc-lb-stat-icon-pill" aria-hidden="true">
+          <span class="rc-lb-stat-label-icon">📋</span>
+        </span>
+        <span class="rc-lb-stat-copy">
+          <strong class="rc-lb-stat-value">{{ leaderboard.benchmark_tasks }}</strong>
+          <span class="rc-lb-stat-label">Tasks</span>
+        </span>
       </article>
       <article class="rc-lb-stat-card">
-        <strong class="rc-lb-stat-value">{{ leaderboard.policies | size }}</strong>
-        <span class="rc-lb-stat-label">Models Evaluated</span>
+        <span class="rc-lb-stat-icon-pill" aria-hidden="true">
+          <span class="rc-lb-stat-label-icon">🤖</span>
+        </span>
+        <span class="rc-lb-stat-copy">
+          <strong class="rc-lb-stat-value">{{ leaderboard.policies | size }}</strong>
+          <span class="rc-lb-stat-label">Models Evaluated</span>
+        </span>
       </article>
       <article class="rc-lb-stat-card">
-        <strong class="rc-lb-stat-value">3</strong>
-        <span class="rc-lb-stat-label">Evaluation Splits</span>
+        <span class="rc-lb-stat-icon-pill" aria-hidden="true">
+          <span class="rc-lb-stat-label-icon">🧩</span>
+        </span>
+        <span class="rc-lb-stat-copy">
+          <strong class="rc-lb-stat-value">3</strong>
+          <span class="rc-lb-stat-label">Evaluation Splits</span>
+        </span>
       </article>
     </div>
 
@@ -63,12 +78,13 @@ image: /assets/images/og-image.png
     <div class="rc-lb-table-wrap">
       <table class="rc-lb-table">
         <colgroup>
-          <col style="width: 10%;">
-          <col style="width: 25%;">
+          <col style="width: 9%;">
+          <col style="width: 23%;">
+          <col style="width: 12%;">
+          <col style="width: 13%;">
+          <col style="width: 14%;">
+          <col style="width: 14%;">
           <col style="width: 15%;">
-          <col style="width: 16%;">
-          <col style="width: 17%;">
-          <col style="width: 17%;">
         </colgroup>
         <thead>
           <tr>
@@ -90,6 +106,9 @@ image: /assets/images/og-image.png
             <th class="rc-lb-sortable" data-sort-key="comp-unseen" data-sort-type="number">
               <span>Composite-Unseen</span><span class="rc-lb-sort-indicator" aria-hidden="true"></span>
             </th>
+            <th>
+              <span>Training Config</span>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -108,7 +127,7 @@ image: /assets/images/og-image.png
               </span>
             </td>
             <td>
-              <a class="rc-lb-policy-name rc-lb-policy-name-link" href="{{ policy.checkpoint_url }}" title="Checkpoint link">
+              <a class="rc-lb-policy-name rc-lb-policy-name-link" href="{{ policy.submission_url | default: policy.checkpoint_url }}" title="Submission JSON link" target="_blank" rel="noopener noreferrer">
                 {% if policy.short_name == "pi0" %}
                   π<sub class="rc-lb-subscript">0</sub>
                 {% elsif policy.short_name == "pi0.5" %}
@@ -122,6 +141,27 @@ image: /assets/images/og-image.png
             <td class="rc-lb-metric">{{ policy.atomic_seen }}%</td>
             <td class="rc-lb-metric">{{ policy.composite_seen }}%</td>
             <td class="rc-lb-metric">{{ policy.composite_unseen }}%</td>
+            <td class="rc-lb-training-cell">
+              {% assign training_batch_size = policy.training_config.batch_size %}
+              {% assign training_steps = policy.training_config.num_training_steps %}
+              <div class="rc-lb-training-config">
+                {% if training_batch_size %}
+                  <details class="rc-lb-training-item">
+                    <summary>Batch Size</summary>
+                    <div class="rc-lb-training-value">{{ training_batch_size }}</div>
+                  </details>
+                {% endif %}
+                {% if training_steps %}
+                  <details class="rc-lb-training-item">
+                    <summary>Training Steps</summary>
+                    <div class="rc-lb-training-value rc-lb-training-steps-value" data-steps="{{ training_steps }}">{{ training_steps }}</div>
+                  </details>
+                {% endif %}
+                {% unless training_batch_size or training_steps %}
+                  <span class="rc-lb-training-missing">N/A</span>
+                {% endunless %}
+              </div>
+            </td>
           </tr>
           {% endfor %}
         </tbody>
@@ -136,6 +176,7 @@ image: /assets/images/og-image.png
       {% endfor %}
       {% if noted_policies != "" %}
       <p class="rc-lb-footnote">* {{ noted_policies }}</p>
+      <p class="rc-lb-footnote-meta">For more details, click a policy name to open its JSON submission (codebase, checkpoint, and additional information).</p>
       {% endif %}
     </div>
   </section>
@@ -216,6 +257,17 @@ image: /assets/images/og-image.png
     var sortableHeaders = Array.from(table.querySelectorAll("th.rc-lb-sortable"));
     if (!tbody || !sortableHeaders.length) return;
 
+    function formatTrainingSteps() {
+      var stepValues = root.querySelectorAll(".rc-lb-training-steps-value");
+      stepValues.forEach(function(node) {
+        var raw = node.getAttribute("data-steps") || node.textContent || "";
+        var numeric = parseInt(String(raw).replace(/,/g, ""), 10);
+        if (!isNaN(numeric)) {
+          node.textContent = numeric.toLocaleString("en-US");
+        }
+      });
+    }
+
     function compareRows(a, b, key, type, direction) {
       var aVal = a.getAttribute("data-" + key);
       var bVal = b.getAttribute("data-" + key);
@@ -255,5 +307,7 @@ image: /assets/images/og-image.png
         setSortState(header, direction);
       });
     });
+
+    formatTrainingSteps();
   });
 </script>
