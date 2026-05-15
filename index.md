@@ -34,7 +34,7 @@ We're excited to announce **RoboCasa365**, the latest release built on the RoboC
 
 To capture the complexity and diversity of real-world environments, we consult numerous architecture and home design magazines and compile a collection of kitchen layouts and styles reflecting the vast diversity of kitchens in homes around the world. We model these kitchens according to standard size and spatial specifications and fit them with a large repository of interactable furniture and appliances spanning cabinets, stoves, sinks, microwaves, and more.
 
-**RoboCasa365** significantly expands this foundation: from the original 100 scenes we scale to **2,500** unique kitchen environments for large-scale training. We introduce 50 new layouts based on real-world homes, paired with 50 additional styles that vary fixtures, appliances, and textures.
+**RoboCasa365** significantly expands this foundation: from the original 120 scenes we scale to **2,500** unique kitchen environments for large-scale training. We introduce 50 new layouts based on real-world homes, paired with 50 additional styles that vary fixtures, appliances, and textures.
 
 ## Cross-Embodiment Support
 
