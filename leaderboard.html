@@ -289,6 +289,31 @@ image: /assets/images/og-image.png
       header.classList.add(direction === "asc" ? "is-sorted-asc" : "is-sorted-desc");
     }
 
+    function updateDisplayedRanks(rows) {
+      rows.forEach(function(row, index) {
+        var displayRank = index + 1;
+        var badge = row.querySelector(".rc-lb-rank-badge");
+        if (!badge) return;
+
+        Array.from(badge.classList).forEach(function(cls) {
+          if (/^rc-lb-rank-\\d+$/.test(cls)) {
+            badge.classList.remove(cls);
+          }
+        });
+        badge.classList.add("rc-lb-rank-" + displayRank);
+
+        if (displayRank === 1) {
+          badge.textContent = "🥇";
+        } else if (displayRank === 2) {
+          badge.textContent = "🥈";
+        } else if (displayRank === 3) {
+          badge.textContent = "🥉";
+        } else {
+          badge.textContent = "#" + displayRank;
+        }
+      });
+    }
+
     sortableHeaders.forEach(function(header) {
       header.addEventListener("click", function() {
         var key = header.getAttribute("data-sort-key");
@@ -304,6 +329,7 @@ image: /assets/images/og-image.png
           tbody.appendChild(row);
         });
 
+        updateDisplayedRanks(rows);
         setSortState(header, direction);
       });
     });
