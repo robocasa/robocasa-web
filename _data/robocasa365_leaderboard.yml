@@ -22,7 +22,7 @@ policies:
     num_training_steps: 120000
     num_training_steps_display: 120,000
   note: null
-  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/gr00t_n1.6_2026_05_17.md
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/gr00t_n1.6_2026_05_14.md
   code_url: https://github.com/Abhiram824/grootn16
   checkpoint_url: https://huggingface.co/Abhi03/grootn16_robocasa365_multitask_learning/tree/main/checkpoint-120000
 - rank: 2
