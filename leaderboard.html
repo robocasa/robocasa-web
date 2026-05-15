@@ -296,7 +296,7 @@ image: /assets/images/og-image.png
         if (!badge) return;
 
         Array.from(badge.classList).forEach(function(cls) {
-          if (/^rc-lb-rank-\\d+$/.test(cls)) {
+          if (/^rc-lb-rank-\d+$/.test(cls)) {
             badge.classList.remove(cls);
           }
         });
@@ -318,7 +318,7 @@ image: /assets/images/og-image.png
       header.addEventListener("click", function() {
         var key = header.getAttribute("data-sort-key");
         var type = header.getAttribute("data-sort-type");
-        var direction = header.classList.contains("is-sorted-asc") ? "desc" : "asc";
+        var direction = "desc";
         var rows = Array.from(tbody.querySelectorAll("tr"));
 
         rows.sort(function(a, b) {
