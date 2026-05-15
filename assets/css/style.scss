@@ -714,13 +714,12 @@ body.rc-leaderboard-page-body .main-content {
 .rc-lb-sort-indicator {
   position: absolute;
   right: 0.55rem;
-  top: 50%;
-  width: 0.65rem;
-  height: 0.95rem;
+  top: 64%;
+  width: 0.55rem;
+  height: 0.55rem;
   transform: translateY(-50%);
 }
 
-.rc-lb-sort-indicator::before,
 .rc-lb-sort-indicator::after {
   content: "";
   display: block;
@@ -731,17 +730,8 @@ body.rc-leaderboard-page-body .main-content {
   border-right: 0.22rem solid transparent;
 }
 
-.rc-lb-sort-indicator::before {
-  border-bottom: 0.32rem solid rgba(255, 255, 255, 0.35);
-  margin-bottom: 0.11rem;
-}
-
 .rc-lb-sort-indicator::after {
   border-top: 0.32rem solid rgba(255, 255, 255, 0.35);
-}
-
-.rc-lb-table thead th.is-sorted-asc .rc-lb-sort-indicator::before {
-  border-bottom-color: #60a5fa;
 }
 
 .rc-lb-table thead th.is-sorted-desc .rc-lb-sort-indicator::after {
