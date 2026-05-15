@@ -576,7 +576,13 @@ body.rc-leaderboard-page-body .main-content {
   top: 0;
   bottom: 0;
   width: 5px;
-  background: linear-gradient(180deg, $header-bg-color 0%, $header-bg-color-second 55%, #94a3b8 100%);
+  background: linear-gradient(
+    180deg,
+    #8b5cf6 0%,
+    #7c3aed 35%,
+    #6d28d9 65%,
+    #8b5cf6 100%
+  );
   border-radius: 18px 0 0 18px;
 }
 
@@ -778,44 +784,24 @@ body.rc-leaderboard-page-body .main-content {
   gap: 0.22rem;
 }
 
-.rc-lb-training-item {
-  margin: 0;
-}
-
-.rc-lb-training-item > summary {
+.rc-lb-training-line {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  list-style: none;
-  cursor: pointer;
   color: #1f2937;
   font-weight: 600;
   font-size: 0.82rem;
   line-height: 1.2;
+  margin: 0;
 }
 
-.rc-lb-training-item > summary::-webkit-details-marker {
-  display: none;
-}
-
-.rc-lb-training-item > summary::marker {
-  content: "";
-}
-
-.rc-lb-training-item > summary::before {
-  content: "▸";
-  color: #4b5563;
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.rc-lb-training-item[open] > summary::before {
-  content: "▾";
+.rc-lb-training-label {
+  color: #1f2937;
+  font-weight: 600;
 }
 
 .rc-lb-training-value {
-  margin: 0.18rem 0 0.22rem 1.05rem;
+  margin: 0;
   color: #5b21b6;
   font-size: 0.8rem;
   font-weight: 700;

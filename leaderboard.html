@@ -146,16 +146,16 @@ image: /assets/images/og-image.png
               {% assign training_steps = policy.training_config.num_training_steps %}
               <div class="rc-lb-training-config">
                 {% if training_batch_size %}
-                  <details class="rc-lb-training-item">
-                    <summary>Batch Size</summary>
-                    <div class="rc-lb-training-value">{{ training_batch_size }}</div>
-                  </details>
+                  <div class="rc-lb-training-line">
+                    <span class="rc-lb-training-label">Batch Size:</span>
+                    <span class="rc-lb-training-value">{{ training_batch_size }}</span>
+                  </div>
                 {% endif %}
                 {% if training_steps %}
-                  <details class="rc-lb-training-item">
-                    <summary>Training Steps</summary>
-                    <div class="rc-lb-training-value rc-lb-training-steps-value" data-steps="{{ training_steps }}">{{ training_steps }}</div>
-                  </details>
+                  <div class="rc-lb-training-line">
+                    <span class="rc-lb-training-label">Training Steps:</span>
+                    <span class="rc-lb-training-value rc-lb-training-steps-value" data-steps="{{ training_steps }}">{{ training_steps }}</span>
+                  </div>
                 {% endif %}
                 {% unless training_batch_size or training_steps %}
                   <span class="rc-lb-training-missing">N/A</span>
@@ -177,7 +177,7 @@ image: /assets/images/og-image.png
       {% if noted_policies != "" %}
       <p class="rc-lb-footnote">* {{ noted_policies }}</p>
       {% endif %}
-      <p class="rc-lb-footnote-meta">For more details, click a policy name to open its submission details (codebase, checkpoint, and additional information).</p>
+      <p class="rc-lb-footnote-meta">Click a policy name to open its submission details (codebase, checkpoint, and additional information)</p>
     </div>
   </section>
 
