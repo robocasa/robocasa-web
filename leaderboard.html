@@ -127,7 +127,7 @@ image: /assets/images/og-image.png
               </span>
             </td>
             <td>
-              <a class="rc-lb-policy-name rc-lb-policy-name-link" href="{{ policy.submission_url | default: policy.checkpoint_url }}" title="Submission JSON link" target="_blank" rel="noopener noreferrer">
+              <a class="rc-lb-policy-name rc-lb-policy-name-link" href="{{ policy.submission_url | default: policy.checkpoint_url }}" title="Submission details markdown" target="_blank" rel="noopener noreferrer">
                 {% if policy.short_name == "pi0" %}
                   π<sub class="rc-lb-subscript">0</sub>
                 {% elsif policy.short_name == "pi0.5" %}
@@ -177,7 +177,7 @@ image: /assets/images/og-image.png
       {% if noted_policies != "" %}
       <p class="rc-lb-footnote">* {{ noted_policies }}</p>
       {% endif %}
-      <p class="rc-lb-footnote-meta">For more details, click a policy name to open its JSON submission (codebase, checkpoint, and additional information).</p>
+      <p class="rc-lb-footnote-meta">For more details, click a policy name to open its submission details (codebase, checkpoint, and additional information).</p>
     </div>
   </section>
 
