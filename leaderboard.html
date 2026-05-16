@@ -198,7 +198,8 @@ image: /assets/images/og-image.png
           <p>
             The current leaderboard highlights the first public comparison and will continue to grow as
             users submit additional models. New entries are added after submission review and verification
-            so results remain consistent and trustworthy.
+            so results remain consistent and trustworthy. Results are reported on a 50-task multi-task
+            benchmark spanning atomic manipulation and longer-horizon composite kitchen skills.
           </p>
         </div>
       </article>
@@ -216,12 +217,14 @@ image: /assets/images/og-image.png
             <strong>Composite-Seen</strong> ({{ leaderboard.split_counts.composite_seen }} tasks), and
             <strong>Composite-Unseen</strong> ({{ leaderboard.split_counts.composite_unseen }} tasks).
             For more details, see our
-            <a href="https://robocasa.ai/docs/build/html/benchmarking/multitask_learning.html" target="_blank" rel="noopener noreferrer">benchmarking documentation</a>.
+            <a href="https://robocasa.ai/docs/build/html/datasets/datasets_overview.html" target="_blank" rel="noopener noreferrer">benchmarking documentation</a>.
           </p>
           <p>
-            We also display each split separately so differences between short-horizon atomic tasks and
-            longer-horizon composite tasks remain visible instead of being hidden by a single number.
-            Based on feedback, more metrics can be added here as the benchmark expands.
+            Policies are trained on the Human300 pretraining dataset (300 tasks across 2,500 pretraining
+            kitchens) and evaluated on the 50 target tasks in pretraining kitchens.
+            <strong>Atomic-Seen</strong> and <strong>Composite-Seen</strong> tasks appear in
+            pretraining, while <strong>Composite-Unseen</strong> tasks are held out from pretraining
+            and evaluated <strong>zero-shot</strong> for generalization to novel composite tasks.
           </p>
         </div>
       </article>

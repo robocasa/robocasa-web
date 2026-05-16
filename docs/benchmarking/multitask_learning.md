@@ -12,6 +12,8 @@ For each task, we provide 100 task demonstrations per task, resulting in **482 h
 
 We provide support for benchmarking across Diffusion Policy, Openpi, and GR00T N1.5. Here is a summary of our benchmarking results **(average task success rate, in %)**. We share the model checkpoints for reference.
 
+We rank additional policies on our <a href="https://robocasa.ai/leaderboard.html" target="_blank" rel="noopener noreferrer">leaderboard</a> page and give users the option to <a href="https://github.com/robocasa-benchmark/leaderboard#robocasa-benchmark-leaderboard-" target="_blank" rel="noopener noreferrer">submit</a> their policies and results to our leaderboard.
+
 <table class="docutils rc-benchmark-table">
   <thead>
     <tr>
