@@ -135,7 +135,7 @@ image: /assets/images/og-image.png
                 {% else %}
                   {{ policy.name }}
                 {% endif %}
-              </a>{% if policy.note %}<span class="rc-lb-asterisk" title="{{ policy.note }}">*</span>{% endif %}
+              </a>
             </td>
             <td><span class="rc-lb-score-pill">{{ policy.score }}</span></td>
             <td class="rc-lb-metric">{{ policy.atomic_seen }}%</td>
@@ -166,17 +166,10 @@ image: /assets/images/og-image.png
           {% endfor %}
         </tbody>
       </table>
-      {% assign noted_policies = "" %}
-      {% for policy in leaderboard.policies %}
-        {% if policy.note %}
-          {% if noted_policies == "" %}
-            {% assign noted_policies = policy.note %}
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-      {% if noted_policies != "" %}
-      <p class="rc-lb-footnote">* {{ noted_policies }}</p>
-      {% endif %}
+      <p class="rc-lb-footnote">
+        <span class="rc-lb-footnote-label">Note:</span>
+        For fairness and consistency, GR00T N1.5 was re-evaluated with a 1.5x longer horizon relative to the paper&rsquo;s reported results and reflects the RoboCasa 1.0.1 update.
+      </p>
       <p class="rc-lb-footnote-meta">Click a policy name to open its submission details (codebase, checkpoint, and additional information)</p>
     </div>
   </section>
