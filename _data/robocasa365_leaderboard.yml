@@ -21,6 +21,7 @@ policies:
     batch_size: 128
     num_training_steps: 120000
     num_training_steps_display: 120,000
+  note: null
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/gr00t_n1.5_2026_05_19.md
   code_url: https://github.com/robocasa-benchmark/Isaac-GR00T
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/multitask_learning/checkpoint-120000
