@@ -944,7 +944,18 @@ body.rc-leaderboard-page-body .main-content {
 
 .rc-lb-footnote-label {
   font-weight: 700;
-  color: #8b5cf6;
+  color: #6d28d9;
+}
+
+.rc-lb-footnote-link {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.rc-lb-footnote-link:hover {
+  color: #374151;
+  text-decoration: underline;
 }
 
 .rc-lb-footnote-meta {

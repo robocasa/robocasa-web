@@ -12,7 +12,7 @@ image: /assets/images/og-image.png
   <section class="rc-lb-hero rc-lb-surface">
     <div class="rc-lb-hero-title">
       <div>
-        <h1>RoboCasa Leaderboard</h1>
+        <h1>RoboCasa365 Leaderboard</h1>
         <p class="rc-lb-hero-subtitle">
           Benchmarking generalist robot policies on the {{ leaderboard.benchmark_name | downcase }} benchmark
         </p>
@@ -166,9 +166,12 @@ image: /assets/images/og-image.png
           {% endfor %}
         </tbody>
       </table>
+      {% assign gr00t_n15 = leaderboard.policies | where: "name", "GR00T N1.5" | first %}
       <p class="rc-lb-footnote">
         <span class="rc-lb-footnote-label">Note:</span>
-        For fairness and consistency, GR00T N1.5 was re-evaluated with a 1.5x longer horizon relative to the paper&rsquo;s reported results and reflects the RoboCasa 1.0.1 update.
+        For fairness and consistency,
+        <a class="rc-lb-footnote-link" href="{{ gr00t_n15.submission_url | default: gr00t_n15.checkpoint_url }}" title="Submission details markdown" target="_blank" rel="noopener noreferrer">GR00T N1.5</a>
+        was re-evaluated with a 1.5x longer horizon relative to the paper&rsquo;s reported results and reflects the RoboCasa 1.0.1 update.
       </p>
       <p class="rc-lb-footnote-meta">Click a policy name to open its submission details (codebase, checkpoint, and additional information)</p>
     </div>
@@ -308,6 +311,11 @@ image: /assets/images/og-image.png
           badge.textContent = "#" + displayRank;
         }
       });
+    }
+
+    var defaultSortHeader = table.querySelector('th[data-sort-key="overall"]');
+    if (defaultSortHeader) {
+      setSortState(defaultSortHeader, "desc");
     }
 
     sortableHeaders.forEach(function(header) {
