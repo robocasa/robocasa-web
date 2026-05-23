@@ -1,4 +1,4 @@
-updated_at: "05/21/2026"
+updated_at: "05/23/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -25,6 +25,7 @@ policies:
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/rldx-1_2026_05_20.md
   code_url: https://github.com/RLWRLD/RLDX-1
   checkpoint_url: https://huggingface.co/RLWRLD/RLDX-1-FT-RC365
+  wandb: https://wandb.ai/happyhappy/rldx-robocasa365/runs/di3k54nm
 - rank: 2
   name: GR00T N1.5
   short_name: GR00T N1.5
@@ -42,6 +43,7 @@ policies:
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/gr00t_n1.5_2026_05_19.md
   code_url: https://github.com/robocasa-benchmark/Isaac-GR00T
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/multitask_learning/checkpoint-120000
+  wandb: https://wandb.ai/snasiriany/huggingface/runs/ie66zrqa
 - rank: 3
   name: GR00T N1.6
   short_name: GR00T N1.6
@@ -93,6 +95,7 @@ policies:
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/pi05_2026-04-02.md
   code_url: https://github.com/robocasa-benchmark/openpi
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi05_pretrain_human300/multitask_learning/75000
+  wandb: https://wandb.ai/snasiriany/openpi/runs/9geuchwa?nw=nwusersnasiriany
 - rank: 6
   name: π0
   short_name: π0
@@ -110,6 +113,7 @@ policies:
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/pi0_2026-04-02.md
   code_url: https://github.com/robocasa-benchmark/openpi
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi0/pi0_robocasa_pretrain_human300/multitask_learning/75000
+  wandb: https://wandb.ai/snasiriany/openpi/runs/lkype54o?nw=nwusersnasiriany
 - rank: 7
   name: Diffusion Policy
   short_name: Diffusion Policy
