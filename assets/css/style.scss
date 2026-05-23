@@ -528,6 +528,11 @@ body.rc-leaderboard-page-body .main-content {
   margin-right: auto;
 }
 
+#rc365-leaderboard.rc-lb-section {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
+}
+
 #rc365-updates {
   max-width: 78rem;
   margin-left: auto;
@@ -803,7 +808,7 @@ body.rc-leaderboard-page-body .main-content {
   margin: 0;
   color: #5b21b6;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.01em;
 }
 
@@ -811,6 +816,34 @@ body.rc-leaderboard-page-body .main-content {
   color: #6b7280;
   font-size: 0.8rem;
   font-weight: 600;
+}
+
+.rc-lb-training-wandb {
+  margin-top: 0.05rem;
+}
+
+.rc-lb-wandb-logo {
+  display: block;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  filter: saturate(2.4) brightness(0.92) contrast(1.15) hue-rotate(-6deg);
+}
+
+.rc-lb-wandb-link {
+  color: #5b21b6;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: color 130ms ease, opacity 130ms ease;
+
+  &:hover,
+  &:focus-visible {
+    color: #4c1d95;
+    text-decoration: underline;
+  }
 }
 
 .rc-lb-table tbody tr {
@@ -942,6 +975,39 @@ body.rc-leaderboard-page-body .main-content {
   line-height: 1.35;
 }
 
+.rc-lb-footnote + .rc-lb-footnote {
+  padding-top: 0.35rem;
+}
+
+.rc-lb-footnote-divider {
+  margin: 0.55rem 0 0.35rem;
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  background: none;
+  height: 0;
+}
+
+.rc-lb-footnote-meta + .rc-lb-footnote {
+  padding-top: 0.35rem;
+}
+
+.rc-lb-footnote-meta + .rc-lb-footnote.rc-lb-footnote--compact {
+  padding-top: 0;
+  margin-top: -0.12rem;
+  margin-bottom: 0;
+}
+
+.rc-lb-footnote--compact {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0;
+}
+
+.rc-lb-footnote--compact .rc-lb-footnote-label {
+  font-weight: 900;
+}
+
 .rc-lb-footnote-label {
   font-weight: 700;
   color: #6d28d9;
@@ -964,6 +1030,10 @@ body.rc-leaderboard-page-body .main-content {
   color: #374151;
   font-weight: 500;
   line-height: 1.35;
+}
+
+.rc-lb-footnote-divider + .rc-lb-footnote-meta {
+  margin-top: 0;
 }
 
 @include medium {
