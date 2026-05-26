@@ -157,25 +157,7 @@ image: /assets/images/og-image.png
                     <span class="rc-lb-training-value rc-lb-training-steps-value" data-steps="{{ training_steps }}">{{ training_steps }}</span>
                   </div>
                 {% endif %}
-                {% if policy.wandb %}
-                  <div class="rc-lb-training-line rc-lb-training-wandb">
-                    <img
-                      class="rc-lb-wandb-logo"
-                      src="{{ '/assets/images/wandb-logo.png' | relative_url }}"
-                      alt=""
-                      width="16"
-                      height="16"
-                      aria-hidden="true"
-                    >
-                    <a
-                      class="rc-lb-wandb-link"
-                      href="{{ policy.wandb }}"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >W&amp;B</a>
-                  </div>
-                {% endif %}
-                {% unless training_batch_size or training_steps or policy.wandb %}
+                {% unless training_batch_size or training_steps %}
                   <span class="rc-lb-training-missing">N/A</span>
                 {% endunless %}
               </div>
@@ -192,7 +174,7 @@ image: /assets/images/og-image.png
         was re-evaluated with a 1.5x longer horizon relative to the paper&rsquo;s reported results and reflects the RoboCasa 1.0.1 update
       </p>
       <hr class="rc-lb-footnote-divider" aria-hidden="true">
-      <p class="rc-lb-footnote-meta">Click a policy name to open its submission details (codebase, checkpoint, and additional information)</p>
+      <p class="rc-lb-footnote-meta">Click a policy name to open its submission details (codebase, checkpoint, training configuration, and additional information)</p>
       <p class="rc-lb-footnote rc-lb-footnote--compact">
         <span class="rc-lb-footnote-label">Disclaimer:</span>
         Training configurations are shown for transparency and should not be directly compared across models due to differing architectures and training setups
