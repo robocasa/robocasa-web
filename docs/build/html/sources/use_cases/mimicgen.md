@@ -3,10 +3,10 @@
 Given a modest number of source demonstrations, we offer the ability to syntehsize new trajectories with [MimicGen](https://mimicgen.github.io/).
 
 ### Installation
-1. Clone and setup MimicGen under the `experimental/robocasa` branch:
+1. Clone and setup the RoboCasa MimicGen fork:
 
     ```sh
-    git clone https://github.com/NVlabs/mimicgen -b experimental/robocasa
+    git clone https://github.com/robocasa-benchmark/mimicgen
     cd mimicgen
     pip install -e .
     ```
