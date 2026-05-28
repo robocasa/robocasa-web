@@ -29,7 +29,7 @@ We have set up MimicGen for 64/65 existing atomic tasks. Generating demonstratio
     ```
 2. Generate demonstartions:
     ```sh
-    python mimicgen/scripts/generate_dataset_multicore.py --source <hdf5-ds-path> --config mimicgen/exps/templates/robocasa/single_stage/kitchen_pick_place/PickPlaceCounterToSink.json
+    python mimicgen/scripts/generate_dataset_multicore.py --source <hdf5-ds-path> --config mimicgen/exps/templates/robocasa/single_stage/kitchen_pnp/PnPCounterToSink.json
     ```
 3. Extract image observations.
     You can then extract image datasets following the dataset extraction tutorial on [this guide](../use_cases/creating_datasets.html).
