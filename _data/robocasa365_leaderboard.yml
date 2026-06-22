@@ -1,4 +1,4 @@
-updated_at: "05/23/2026"
+updated_at: "06/22/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -9,6 +9,23 @@ split_counts:
   composite_unseen: 16
 policies:
 - rank: 1
+  name: Worlddreamer
+  short_name: Worlddreamer
+  family: Worlddreamer
+  color: '#64748b'
+  score: 34.1
+  atomic_seen: 63.5
+  composite_seen: 23.3
+  composite_unseen: 11.9
+  training_config:
+    batch_size: 20
+    num_training_steps: 375000
+    num_training_steps_display: 375,000
+  note: null
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/worlddreamer_2026_06_20.md
+  code_url: https://github.com/worldAgents-c/world_dreamer_server-robocasa365-multi_task/tree/main
+  checkpoint_url: https://huggingface.co/WorldAgents-c/world_dreamer-robocasa365-multi_task
+- rank: 2
   name: RLDX-1
   short_name: RLDX-1
   family: RLDX
@@ -26,7 +43,7 @@ policies:
   code_url: https://github.com/RLWRLD/RLDX-1
   checkpoint_url: https://huggingface.co/RLWRLD/RLDX-1-FT-RC365
   wandb: https://wandb.ai/happyhappy/rldx-robocasa365/runs/di3k54nm
-- rank: 2
+- rank: 3
   name: GR00T N1.5
   short_name: GR00T N1.5
   family: GR00T
@@ -44,7 +61,7 @@ policies:
   code_url: https://github.com/robocasa-benchmark/Isaac-GR00T
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/multitask_learning/checkpoint-120000
   wandb: https://wandb.ai/snasiriany/huggingface/runs/ie66zrqa
-- rank: 3
+- rank: 4
   name: GR00T N1.6
   short_name: GR00T N1.6
   family: GR00T
@@ -61,7 +78,7 @@ policies:
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/gr00t_n1.6_2026_05_14.md
   code_url: https://github.com/Abhiram824/grootn16
   checkpoint_url: https://huggingface.co/Abhi03/grootn16_robocasa365_multitask_learning/tree/main/checkpoint-120000
-- rank: 4
+- rank: 5
   name: GigaWorld-Policy 0.1
   short_name: GigaWorld-Policy 0.1
   family: GigaWorld-Policy
@@ -78,7 +95,7 @@ policies:
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/gwp01_2026_05_11.md
   code_url: https://github.com/buyaojinchang/gigaworld_policy_01_robocasa_multi-task.git
   checkpoint_url: https://huggingface.co/HengtaoLi/gwp01-robocasa-multi-task/blob/main/model.pt
-- rank: 5
+- rank: 6
   name: π0.5
   short_name: π0.5
   family: openpi
@@ -96,7 +113,7 @@ policies:
   code_url: https://github.com/robocasa-benchmark/openpi
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi05_pretrain_human300/multitask_learning/75000
   wandb: https://wandb.ai/snasiriany/openpi/runs/9geuchwa?nw=nwusersnasiriany
-- rank: 6
+- rank: 7
   name: π0
   short_name: π0
   family: openpi
@@ -114,7 +131,7 @@ policies:
   code_url: https://github.com/robocasa-benchmark/openpi
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi0/pi0_robocasa_pretrain_human300/multitask_learning/75000
   wandb: https://wandb.ai/snasiriany/openpi/runs/lkype54o?nw=nwusersnasiriany
-- rank: 7
+- rank: 8
   name: Diffusion Policy
   short_name: Diffusion Policy
   family: Diffusion Policy
