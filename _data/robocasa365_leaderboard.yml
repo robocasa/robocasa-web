@@ -1,4 +1,4 @@
-updated_at: "06/22/2026"
+updated_at: "06/23/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -13,10 +13,10 @@ policies:
   short_name: Worlddreamer
   family: Worlddreamer
   color: '#64748b'
-  score: 34.1
-  atomic_seen: 63.5
-  composite_seen: 23.3
-  composite_unseen: 11.9
+  score: 35.3
+  atomic_seen: 66.3
+  composite_seen: 26.7
+  composite_unseen: 9.0
   training_config:
     batch_size: 20
     num_training_steps: 375000
