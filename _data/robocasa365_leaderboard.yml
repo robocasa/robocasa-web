@@ -1,4 +1,4 @@
-updated_at: "06/23/2026"
+updated_at: "06/24/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -9,6 +9,24 @@ split_counts:
   composite_unseen: 16
 policies:
 - rank: 1
+  name: RLDX-1
+  short_name: RLDX-1
+  family: RLDX
+  color: '#64748b'
+  score: 36.0
+  atomic_seen: 67.6
+  composite_seen: 27.9
+  composite_unseen: 8.5
+  training_config:
+    batch_size: 192
+    num_training_steps: 250000
+    num_training_steps_display: 250,000
+  note: null
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/rldx-1_2026_05_20.md
+  code_url: https://github.com/RLWRLD/RLDX-1
+  checkpoint_url: https://huggingface.co/RLWRLD/RLDX-1-FT-RC365
+  wandb: https://wandb.ai/happyhappy/rldx-robocasa365/runs/di3k54nm
+- rank: 2
   name: Worlddreamer
   short_name: Worlddreamer
   family: Worlddreamer
@@ -25,24 +43,6 @@ policies:
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/worlddreamer_2026_06_20.md
   code_url: https://github.com/worldAgents-c/world_dreamer_server-robocasa365-multi_task/tree/main
   checkpoint_url: https://huggingface.co/WorldAgents-c/world_dreamer-robocasa365-multi_task
-- rank: 2
-  name: RLDX-1
-  short_name: RLDX-1
-  family: RLDX
-  color: '#64748b'
-  score: 33.2
-  atomic_seen: 63.0
-  composite_seen: 27.5
-  composite_unseen: 5.4
-  training_config:
-    batch_size: 192
-    num_training_steps: 250000
-    num_training_steps_display: 250,000
-  note: null
-  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/rldx-1_2026_05_20.md
-  code_url: https://github.com/RLWRLD/RLDX-1
-  checkpoint_url: https://huggingface.co/RLWRLD/RLDX-1-FT-RC365
-  wandb: https://wandb.ai/happyhappy/rldx-robocasa365/runs/di3k54nm
 - rank: 3
   name: GR00T N1.5
   short_name: GR00T N1.5
