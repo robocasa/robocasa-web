@@ -78,13 +78,14 @@ image: /assets/images/og-image.png
     <div class="rc-lb-table-wrap">
       <table class="rc-lb-table">
         <colgroup>
-          <col style="width: 9%;">
-          <col style="width: 23%;">
-          <col style="width: 12%;">
-          <col style="width: 13%;">
+          <col style="width: 5.75%;">
+          <col style="width: 17%;">
+          <col style="width: 10.75%;">
+          <col style="width: 10.75%;">
           <col style="width: 14%;">
-          <col style="width: 14%;">
-          <col style="width: 15%;">
+          <col style="width: 14.5%;">
+          <col style="width: 15.75%;">
+          <col style="width: 11.25%;">
         </colgroup>
         <thead>
           <tr>
@@ -108,6 +109,9 @@ image: /assets/images/og-image.png
             </th>
             <th>
               <span>Training Config</span>
+            </th>
+            <th>
+              <span>Open Source</span>
             </th>
           </tr>
         </thead>
@@ -161,6 +165,13 @@ image: /assets/images/og-image.png
                   <span class="rc-lb-training-missing">N/A</span>
                 {% endunless %}
               </div>
+            </td>
+            <td class="rc-lb-open-source-cell">
+              {% if policy.open_source == "no" %}
+                <span class="rc-lb-open-source-cross" aria-label="Not open source">✗</span>
+              {% else %}
+                <span class="rc-lb-open-source-check" aria-label="Open source">✓</span>
+              {% endif %}
             </td>
           </tr>
           {% endfor %}

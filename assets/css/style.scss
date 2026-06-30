@@ -671,6 +671,7 @@ body.rc-leaderboard-page-body .main-content {
 
 .rc-lb-table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: separate;
   border-spacing: 0;
   background: transparent;
@@ -689,12 +690,12 @@ body.rc-leaderboard-page-body .main-content {
 .rc-lb-table thead th {
   background: linear-gradient(180deg, #6d28d9 0%, #5b21b6 100%);
   color: #f3f4f6;
-  font-size: 0.93rem;
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: none;
   letter-spacing: 0;
   line-height: 1.2;
-  white-space: nowrap;
+  white-space: normal;
   border-bottom: 1px solid #454850;
   box-shadow: none;
   padding-top: 0.8rem;
@@ -709,7 +710,7 @@ body.rc-leaderboard-page-body .main-content {
   position: relative;
   cursor: pointer;
   user-select: none;
-  padding-right: 1.8rem;
+  padding-right: 1.15rem;
 }
 
 .rc-lb-table thead th.rc-lb-sortable:hover {
@@ -718,7 +719,7 @@ body.rc-leaderboard-page-body .main-content {
 
 .rc-lb-sort-indicator {
   position: absolute;
-  right: 0.55rem;
+  right: 0.35rem;
   top: 64%;
   width: 0.55rem;
   height: 0.55rem;
@@ -765,6 +766,31 @@ body.rc-leaderboard-page-body .main-content {
   text-align: center;
 }
 
+.rc-lb-table thead th:nth-child(8),
+.rc-lb-table tbody td:nth-child(8) {
+  text-align: center;
+}
+
+.rc-lb-open-source-cell {
+  white-space: nowrap;
+}
+
+.rc-lb-open-source-check {
+  display: inline-block;
+  color: #16a34a;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.rc-lb-open-source-cross {
+  display: inline-block;
+  color: #dc2626;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .rc-lb-table tbody td:nth-child(3) .rc-lb-score-pill {
   transform: translateX(-0.35rem);
 }
@@ -777,7 +803,6 @@ body.rc-leaderboard-page-body .main-content {
 }
 
 .rc-lb-training-cell {
-  min-width: 12.5rem;
   text-align: left;
 }
 
