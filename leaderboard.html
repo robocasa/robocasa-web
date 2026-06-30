@@ -167,11 +167,9 @@ image: /assets/images/og-image.png
               </div>
             </td>
             <td class="rc-lb-open-source-cell">
-              {% if policy.open_source == "no" %}
-                <span class="rc-lb-open-source-cross" aria-label="Not open source">✗</span>
-              {% else %}
+              {% unless policy.open_source == "no" %}
                 <span class="rc-lb-open-source-check" aria-label="Open source">✓</span>
-              {% endif %}
+              {% endunless %}
             </td>
           </tr>
           {% endfor %}
