@@ -47,9 +47,9 @@ policies:
   open_source: 'yes'
   wandb: https://wandb.ai/happyhappy/rldx-robocasa365/runs/di3k54nm
 - rank: 3
-  name: Worlddreamer
-  short_name: Worlddreamer
-  family: Worlddreamer
+  name: WorldDreamer
+  short_name: WorldDreamer
+  family: WorldDreamer
   color: '#64748b'
   score: 35.3
   atomic_seen: 66.3
