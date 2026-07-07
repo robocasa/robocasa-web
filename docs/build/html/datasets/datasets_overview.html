@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Overview of Datasets &#8212; RoboCasa 1.0 documentation</title>
+    <title>Overview of Datasets &#8212; RoboCasa 1.0.1 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../static/documentation_options.js?v=a681ed88"></script>
+    <script src="../static/documentation_options.js?v=423d4ce3"></script>
     <script src="../static/doctools.js?v=9bcbadda"></script>
     <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
@@ -148,8 +148,8 @@
       
     
     
-    <img src="../static/robocasa_logo.svg" class="logo__image only-light" alt="RoboCasa 1.0 documentation - Home"/>
-    <script>document.write(`<img src="../static/robocasa_logo.svg" class="logo__image only-dark" alt="RoboCasa 1.0 documentation - Home"/>`);</script>
+    <img src="../static/robocasa_logo.svg" class="logo__image only-light" alt="RoboCasa 1.0.1 documentation - Home"/>
+    <script>document.write(`<img src="../static/robocasa_logo.svg" class="logo__image only-dark" alt="RoboCasa 1.0.1 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -468,6 +468,7 @@ For each task, we provide <strong>500 human demonstrations</strong> collected vi
 <li><p><strong>Composite-Seen</strong> (16 tasks): 16 composite tasks, with all tasks also represented in pretraining datasets.</p></li>
 <li><p><strong>Composite-Unseen</strong> (16 tasks): 16 composite tasks, only seen in target datasets and not in pretraining datasets.</p></li>
 </ul>
+<p>Target composite task datasets include per-frame <strong>subtask annotations</strong>: every timestep is labeled with a subtask index, atomic-skill name, stage (i.e. pick / place / navigate), and a natural-language instruction, to support hierarchical policy learning.</p>
 <section id="atomic-seen-tasks">
 <h3>Atomic-Seen Tasks<a class="headerlink" href="#atomic-seen-tasks" title="Link to this heading">#</a></h3>
 <!-- FILTER CONTROLS --><!-- <div style="font-family: sans-serif; margin-bottom:15px; display:flex; gap:20px; align-items:center;">

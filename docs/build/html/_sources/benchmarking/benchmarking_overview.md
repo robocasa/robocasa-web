@@ -14,6 +14,14 @@ Most experiments involve training on a collection of individual datasets, which 
 A dataset soup simply specifies a list of dataset metadata, and embedded in this metadata is the path specifying the location to the dataset on disk. See the [dataset page](../datasets/using_datasets.html#training-beyond-a-single-dataset) for additional details. For each benchmarking experiment we specify the specific dataset soup to train on.
 
 ### Evaluation
+
+<div class="admonition note">
+<p class="admonition-title">Horizon update (v1.0.1)</p>
+
+As of v1.0.1, all task horizon lengths have been increased by 1.5x for consistency. Please update to the latest version of RoboCasa for running evals.
+
+</div>
+
 We evaluate trained models on one or several tasks.
 To specify which tasks, you need to specify two variables:
 - **task set**: Which set of tasks to evaluate on. Typically, this corresponds to the same tasks represented in the dataset soup used to trained the model, but can be any arbitrary set of tasks. The list of registered task sets is specified in [dataset_registry.py](https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py).

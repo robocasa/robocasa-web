@@ -68,6 +68,7 @@ We split these datasets into three groups:
 * **Composite-Seen** (16 tasks): 16 composite tasks, with all tasks also represented in pretraining datasets.
 * **Composite-Unseen** (16 tasks): 16 composite tasks, only seen in target datasets and not in pretraining datasets.
 
+Target composite task datasets include per-frame **subtask annotations**: every timestep is labeled with a subtask index, atomic-skill name, stage (i.e. pick / place / navigate), and a natural-language instruction, to support hierarchical policy learning.
 
 ### Atomic-Seen Tasks
 

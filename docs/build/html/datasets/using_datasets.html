@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Using Datasets &#8212; RoboCasa 1.0 documentation</title>
+    <title>Using Datasets &#8212; RoboCasa 1.0.1 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../static/documentation_options.js?v=a681ed88"></script>
+    <script src="../static/documentation_options.js?v=423d4ce3"></script>
     <script src="../static/doctools.js?v=9bcbadda"></script>
     <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
@@ -148,8 +148,8 @@
       
     
     
-    <img src="../static/robocasa_logo.svg" class="logo__image only-light" alt="RoboCasa 1.0 documentation - Home"/>
-    <script>document.write(`<img src="../static/robocasa_logo.svg" class="logo__image only-dark" alt="RoboCasa 1.0 documentation - Home"/>`);</script>
+    <img src="../static/robocasa_logo.svg" class="logo__image only-light" alt="RoboCasa 1.0.1 documentation - Home"/>
+    <script>document.write(`<img src="../static/robocasa_logo.svg" class="logo__image only-dark" alt="RoboCasa 1.0.1 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -460,7 +460,9 @@ document.write(`
 </details></section>
 <section id="retrieving-dataset-metadata">
 <h2>Retrieving dataset metadata<a class="headerlink" href="#retrieving-dataset-metadata" title="Link to this heading">#</a></h2>
-<p>We track each dataset with metadata (paths, task horizon length, etc.) in the <a class="reference external" href="https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py">dataset registry</a>. You can use the <code class="docutils literal notranslate"><span class="pre">get_ds_meta()</span></code> function to retrieve metadata for a specific task:</p>
+<div class="admonition note">
+<p class="admonition-title">Horizon update (v1.0.1)</p><p>As of v1.0.1, all task horizon lengths have been increased by 1.5x for consistency. Please update to the latest version of RoboCasa for running evals.</p>
+</div><p>We track each dataset with metadata (paths, task horizon length, etc.) in the <a class="reference external" href="https://github.com/robocasa/robocasa/blob/main/robocasa/utils/dataset_registry.py">dataset registry</a>. You can use the <code class="docutils literal notranslate"><span class="pre">get_ds_meta()</span></code> function to retrieve metadata for a specific task:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robocasa.utils.dataset_registry</span> <span class="kn">import</span> <span class="n">get_ds_meta</span>
 
 <span class="n">ds_meta</span> <span class="o">=</span> <span class="n">get_ds_meta</span><span class="p">(</span>
