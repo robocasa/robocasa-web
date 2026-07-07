@@ -12,6 +12,8 @@ videoId:
   <h2 class="rc-home-updates__title">Updates</h2>
   <ul class="rc-home-updates__list">
     <li><span class="rc-home-updates__date">[7/7/2026]</span> Our target composite task datasets have been updated to include per-frame <strong>subtask annotations</strong>. Every timestep is labeled with a subtask index, atomic-skill name, stage (i.e. pick / place / navigate), and a natural-language instruction, to support hierarchical policy learning.</li>
+    <li><span class="rc-home-updates__date">[5/12/2026]</span> <strong>v1.0.1:</strong> Updated horizon lengths (1.5x increase) across all tasks for consistency. Please update to the latest version for running evals.</li>
+    <li><span class="rc-home-updates__date">[2/18/2026]</span> <strong>v1.0:</strong> RoboCasa365 release, with 365 tasks, 2500+ kitchen scenes, 2200+ hours of robot demonstration data, and benchmarking support.</li>
   </ul>
 </aside>
 

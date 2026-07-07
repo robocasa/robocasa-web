@@ -120,14 +120,14 @@ a.btn.rc-btn-new-tagged {
 // Homepage updates callout (above release video).
 .rc-home-updates {
   margin: 0 0 1rem;
-  padding: 0.9rem 1rem 1rem;
+  padding: 0.95rem 1.05rem 1.05rem;
   border: 1px solid #e5e7eb;
   border-radius: 0.375rem;
   background: #fff;
 }
 
 .rc-home-updates__title {
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.65rem;
   font-size: 1.35rem;
   font-weight: 800;
   color: #111827;
@@ -135,14 +135,19 @@ a.btn.rc-btn-new-tagged {
 
 .rc-home-updates__list {
   margin: 0;
-  padding-left: 1.25rem;
+  padding-left: 1.35rem;
   font-size: 0.95rem;
-  line-height: 1.55;
+  line-height: 1.6;
   color: #374151;
 }
 
 .rc-home-updates__list li {
-  margin: 0;
+  margin: 0 0 0.6rem;
+  padding-left: 0.15rem;
+}
+
+.rc-home-updates__list li:last-child {
+  margin-bottom: 0;
 }
 
 .rc-home-updates__date {
