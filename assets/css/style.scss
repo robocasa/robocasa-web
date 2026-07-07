@@ -117,6 +117,38 @@ a.btn.rc-btn-new-tagged {
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.18);
 }
 
+// Homepage updates callout (above release video).
+.rc-home-updates {
+  margin: 0 0 1rem;
+  padding: 0.9rem 1rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  background: #fff;
+}
+
+.rc-home-updates__title {
+  margin: 0 0 0.55rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.rc-home-updates__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #374151;
+}
+
+.rc-home-updates__list li {
+  margin: 0;
+}
+
+.rc-home-updates__date {
+  font-weight: 400;
+}
+
 // Release video on homepage: align with text column (no extra padding).
 .rc-release-video {
   width: 100%;
@@ -128,7 +160,7 @@ a.btn.rc-btn-new-tagged {
 
 // Extra spacing above and below the release video.
 .rc-release-figure {
-  margin-top: 1.75rem;
+  margin-top: 0;
   margin-bottom: 1.75rem;
 }
 

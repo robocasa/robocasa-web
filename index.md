@@ -8,6 +8,13 @@ videoId:
 
 <div id="robocasa365-release"></div>
 
+<aside class="rc-home-updates" aria-label="Updates">
+  <h2 class="rc-home-updates__title">Updates</h2>
+  <ul class="rc-home-updates__list">
+    <li><span class="rc-home-updates__date">[7/7/2026]</span> Our target composite task datasets have been updated to include per-frame <strong>subtask annotations</strong>. Every timestep is labeled with a subtask index, atomic-skill name, stage (i.e. pick / place / navigate), and a natural-language instruction, to support hierarchical policy learning.</li>
+  </ul>
+</aside>
+
 <figure class="figure rc-release-figure">
   <div class="figure__main">
     <video controls autoplay loop muted playsinline preload="metadata" class="rc-release-video">
