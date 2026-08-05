@@ -1,4 +1,4 @@
-updated_at: "07/21/2026"
+updated_at: "08/05/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -23,9 +23,9 @@ policies:
     num_training_steps_display: 120,000
   note: null
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/Xiaomi-Robotics_2026_07_08.md
-  code_url: N/A
-  checkpoint_url: N/A
-  open_source: 'no'
+  code_url: https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/tree/main/eval_robocasa365
+  checkpoint_url: https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-1-RoboCasa365/tree/main
+  open_source: 'yes'
   wandb: N/A
 - rank: 2
   name: ABot-M0.6
