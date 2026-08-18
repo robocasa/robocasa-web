@@ -1,4 +1,4 @@
-updated_at: "08/05/2026"
+updated_at: "08/18/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -196,6 +196,25 @@ policies:
   open_source: 'yes'
   wandb: https://wandb.ai/snasiriany/openpi/runs/lkype54o?nw=nwusersnasiriany
 - rank: 11
+  name: Azero-Robotics-1
+  short_name: Azero-Robotics-1
+  family: GR00T
+  color: '#64748b'
+  score: 12.6
+  atomic_seen: 30.3
+  composite_seen: 3.8
+  composite_unseen: 1.6
+  training_config:
+    batch_size: 128
+    num_training_steps: 120000
+    num_training_steps_display: 120,000
+  note: null
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/Azero-Robotics-1_2026-08-17.md
+  code_url: https://github.com/soundai2016/Azero-Robotics-1-Robocasa365
+  checkpoint_url: https://huggingface.co/soundai2016/Azero-Robotics-1-RoboCasa365/tree/main
+  open_source: 'no'
+  wandb: https://wandb.ai/yuxin-soundai-soundai/robocasa365/runs/7711y2ka
+- rank: 12
   name: Diffusion Policy
   short_name: Diffusion Policy
   family: Diffusion Policy
