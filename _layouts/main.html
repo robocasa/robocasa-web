@@ -24,14 +24,8 @@
   </head>
   
   <body>
-    <header class="page-header{% if page.url contains 'leaderboard' %} page-header--home{% endif %}" role="banner">
-      {% if page.url contains 'leaderboard' %}
-      <a class="rc-header-home" href="{{ '/' | relative_url }}" aria-label="RoboCasa home" title="Home">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z" />
-        </svg>
-      </a>
-      {% endif %}
+    {% unless page.url contains 'leaderboard' %}
+    <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h1 class="project-subtitle">{{ page.subtitle }}</h1>
       <h2 class="project-tagline">{{ page.project_tagline }}</h2>
@@ -41,6 +35,7 @@
       <a href="{{ '/docs/build/html/introduction/overview.html' | relative_url }}" class="btn">Documentation</a>
       <a href="{{ '/leaderboard.html' | relative_url }}" class="btn rc-btn-new-tagged">Leaderboard <span class="rc-btn-new-tag">New</span></a>
     </header>
+    {% endunless %}
 
     <main id="content" class="main-content" role="main">
       {{ content }}

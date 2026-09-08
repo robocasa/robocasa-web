@@ -1,4 +1,4 @@
-updated_at: "09/01/2026"
+updated_at: "09/08/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -25,6 +25,7 @@ policies:
   code_url: https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/tree/main/eval_robocasa365
   checkpoint_url: https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-1-RoboCasa365/tree/main
   open_source: 'yes'
+  submitter: Xiaomi Robotics
   wandb: N/A
   note: null
 - rank: 2
@@ -44,6 +45,7 @@ policies:
   code_url: https://github.com/amap-cvlab/ABot-M0.6-for-Robocasa365
   checkpoint_url: https://huggingface.co/acvlab/ABot-M0.6-RoboCasa365/tree/main
   open_source: 'no'
+  submitter: AMAP CV Lab
   wandb: https://wandb.ai/abot_m/ABot-M0.6/runs/xkphuvi2?nw=nwuserabot_m666
   note: null
 - rank: 3
@@ -63,6 +65,7 @@ policies:
   code_url: https://github.com/amap-cvlab/ABot-M0.5-for-Robocasa365
   checkpoint_url: https://huggingface.co/acvlab/ABot-M0.5-RoboCasa365/tree/main
   open_source: 'no'
+  submitter: AMAP CV Lab
   note: null
   wandb: N/A
 - rank: 4
@@ -82,6 +85,7 @@ policies:
   code_url: https://github.com/TeleHuman/PRTS
   checkpoint_url: https://huggingface.co/TeleEmbodied/PRTS-RoboCasa365
   open_source: 'yes'
+  submitter: TeleAI
   wandb: https://wandb.ai/breezeyoung9470/PRTS_base_4B_robocasa365/runs/6ggl040i?nw=nwuserbreezeyoung9470
   note: null
 - rank: 5
@@ -101,6 +105,7 @@ policies:
   code_url: https://github.com/RLWRLD/RLDX-1
   checkpoint_url: https://huggingface.co/RLWRLD/RLDX-1-FT-RC365
   open_source: 'yes'
+  submitter: RLWRLD
   wandb: https://wandb.ai/happyhappy/rldx-robocasa365/runs/di3k54nm
   note: null
 - rank: 6
@@ -120,6 +125,7 @@ policies:
   code_url: https://github.com/worldAgents-c/world_dreamer_server-robocasa365-multi_task/tree/main
   checkpoint_url: https://huggingface.co/WorldAgents-c/world_dreamer-robocasa365-multi_task
   open_source: 'yes'
+  submitter: GigaAI
   note: null
 - rank: 7
   name: GR00T N1.5
@@ -138,6 +144,7 @@ policies:
   code_url: https://github.com/robocasa-benchmark/Isaac-GR00T
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/multitask_learning/checkpoint-120000
   open_source: 'yes'
+  submitter: RoboCasa Team
   wandb: https://wandb.ai/snasiriany/huggingface/runs/ie66zrqa
   note: null
 - rank: 8
@@ -157,6 +164,7 @@ policies:
   code_url: https://github.com/Abhiram824/grootn16
   checkpoint_url: https://huggingface.co/Abhi03/grootn16_robocasa365_multitask_learning/tree/main/checkpoint-120000
   open_source: 'yes'
+  submitter: RoboCasa Team
   note: null
 - rank: 9
   name: GigaWorld-Policy 0.1
@@ -175,6 +183,7 @@ policies:
   code_url: https://github.com/buyaojinchang/gigaworld_policy_01_robocasa_multi-task.git
   checkpoint_url: https://huggingface.co/HengtaoLi/gwp01-robocasa-multi-task/blob/main/model.pt
   open_source: 'yes'
+  submitter: GigaAI
   note: null
 - rank: 10
   name: π0.5
@@ -193,6 +202,7 @@ policies:
   code_url: https://github.com/robocasa-benchmark/openpi
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi05_pretrain_human300/multitask_learning/75000
   open_source: 'yes'
+  submitter: RoboCasa Team
   wandb: https://wandb.ai/snasiriany/openpi/runs/9geuchwa?nw=nwusersnasiriany
   note: null
 - rank: 11
@@ -212,6 +222,7 @@ policies:
   code_url: https://github.com/robocasa-benchmark/openpi
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi0/pi0_robocasa_pretrain_human300/multitask_learning/75000
   open_source: 'yes'
+  submitter: RoboCasa Team
   wandb: https://wandb.ai/snasiriany/openpi/runs/lkype54o?nw=nwusersnasiriany
   note: null
 - rank: 12
@@ -231,6 +242,8 @@ policies:
   code_url: https://github.com/soundai2016/Azero-Robotics-1-Robocasa365
   checkpoint_url: https://huggingface.co/soundai2016/Azero-Robotics-1-RoboCasa365/tree/main
   open_source: 'no'
+  submitter: 'GitHub: yuxin101'
+  submitter_url: https://github.com/robocasa-benchmark/leaderboard/pull/11
   wandb: https://wandb.ai/yuxin-soundai-soundai/robocasa365/runs/7711y2ka
   note: null
 - rank: 13
@@ -250,4 +263,5 @@ policies:
   code_url: https://github.com/robocasa-benchmark/diffusion_policy
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/blob/main/diffusion_policy/17.40.09_train_diffusion_transformer_hybrid_pretrain_human300/checkpoints/epoch%3D0500-test_mean_score%3D-1.000.ckpt
   open_source: 'yes'
+  submitter: RoboCasa Team
   note: null
