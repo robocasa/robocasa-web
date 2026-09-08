@@ -124,7 +124,7 @@ image: /assets/images/og-image.png
               <div class="rc-lb-policy-cell">
                 {% assign policy_icon = "" %}
                 {% assign policy_accent = "#5b21b6" %}
-                {% if policy.name contains "GR00T" or policy.name == "Azero-Robotics-1" %}
+                {% if policy.name contains "GR00T" %}
                   {% assign policy_icon = "nvidia.svg" %}
                   {% assign policy_accent = "#76b900" %}
                 {% elsif policy.name == "PRTS" %}
@@ -150,6 +150,8 @@ image: /assets/images/og-image.png
                   <span class="rc-lb-policy-icon" aria-hidden="true"><img src="/assets/images/policy_icons/{{ policy_icon }}" alt=""></span>
                 {% elsif policy.name == "Diffusion Policy" %}
                   <span class="rc-lb-policy-icon rc-lb-policy-icon--letter" aria-hidden="true">DP</span>
+                {% elsif policy.name == "Azero-Robotics-1" %}
+                  <span class="rc-lb-policy-icon rc-lb-policy-icon--letter" aria-hidden="true">AR</span>
                 {% else %}
                   <span class="rc-lb-policy-icon rc-lb-policy-icon--letter" aria-hidden="true">{{ policy.name | slice: 0 }}</span>
                 {% endif %}
