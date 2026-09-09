@@ -993,6 +993,7 @@ body.rc-leaderboard-page-body .main-content {
   text-decoration-color: var(--rc-lb-accent, #5b21b6);
   text-decoration-thickness: 0.16em;
   text-underline-offset: 0.24em;
+  text-decoration-skip-ink: none;
 }
 
 .rc-lb-subscript {
