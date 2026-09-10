@@ -1,4 +1,4 @@
-updated_at: "09/09/2026"
+updated_at: "09/10/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -25,6 +25,8 @@ policies:
   checkpoint_url: https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-1-RoboCasa365/tree/main
   open_source: 'yes'
   submitter: Xiaomi Robotics
+  accent: '#ff6900'
+  icon: Xiaomi-Robotics_2026_07_08.png
   wandb: N/A
   note: null
 - rank: 2
@@ -44,6 +46,8 @@ policies:
   checkpoint_url: https://huggingface.co/acvlab/ABot-M0.6-RoboCasa365/tree/main
   open_source: 'no'
   submitter: AMAP CV Lab
+  accent: '#2f7bf5'
+  icon: abot-m0.6_2026_06_26.png
   wandb: https://wandb.ai/abot_m/ABot-M0.6/runs/xkphuvi2?nw=nwuserabot_m666
   note: null
 - rank: 3
@@ -63,6 +67,8 @@ policies:
   checkpoint_url: https://huggingface.co/acvlab/ABot-M0.5-RoboCasa365/tree/main
   open_source: 'no'
   submitter: AMAP CV Lab
+  accent: '#2f7bf5'
+  icon: abot-m0.5_2026_06_29.png
   note: null
   wandb: N/A
 - rank: 4
@@ -82,6 +88,8 @@ policies:
   checkpoint_url: https://huggingface.co/TeleEmbodied/PRTS-RoboCasa365
   open_source: 'yes'
   submitter: TeleAI
+  accent: '#1d4e9e'
+  icon: PRTS-2026_08_18.png
   wandb: https://wandb.ai/breezeyoung9470/PRTS_base_4B_robocasa365/runs/6ggl040i?nw=nwuserbreezeyoung9470
   note: null
 - rank: 5
@@ -101,6 +109,8 @@ policies:
   checkpoint_url: https://huggingface.co/RLWRLD/RLDX-1-FT-RC365
   open_source: 'yes'
   submitter: RLWRLD
+  accent: '#2fceaa'
+  icon: rldx-1_2026_05_20.png
   wandb: https://wandb.ai/happyhappy/rldx-robocasa365/runs/di3k54nm
   note: null
 - rank: 6
@@ -120,6 +130,8 @@ policies:
   checkpoint_url: https://huggingface.co/WorldAgents-c/world_dreamer-robocasa365-multi_task
   open_source: 'yes'
   submitter: GigaAI
+  accent: '#1f1a17'
+  icon: worlddreamer_2026_06_20.png
   note: null
 - rank: 7
   name: GR00T N1.5
@@ -138,6 +150,8 @@ policies:
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/gr00t_n1-5/multitask_learning/checkpoint-120000
   open_source: 'yes'
   submitter: RoboCasa Team
+  accent: '#76b900'
+  icon: gr00t_n1.5_2026_05_19.svg
   wandb: https://wandb.ai/snasiriany/huggingface/runs/ie66zrqa
   note: null
 - rank: 8
@@ -157,6 +171,8 @@ policies:
   checkpoint_url: https://huggingface.co/Abhi03/grootn16_robocasa365_multitask_learning/tree/main/checkpoint-120000
   open_source: 'yes'
   submitter: RoboCasa Team
+  accent: '#76b900'
+  icon: gr00t_n1.6_2026_05_14.svg
   note: null
 - rank: 9
   name: GigaWorld-Policy 0.1
@@ -175,6 +191,8 @@ policies:
   checkpoint_url: https://huggingface.co/HengtaoLi/gwp01-robocasa-multi-task/blob/main/model.pt
   open_source: 'yes'
   submitter: GigaAI
+  accent: '#1f1a17'
+  icon: gwp01_2026_05_11.png
   note: null
 - rank: 10
   name: π0.5
@@ -193,6 +211,8 @@ policies:
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi05_pretrain_human300/multitask_learning/75000
   open_source: 'yes'
   submitter: RoboCasa Team
+  accent: '#111111'
+  icon: pi05_2026-04-02.png
   wandb: https://wandb.ai/snasiriany/openpi/runs/9geuchwa?nw=nwusersnasiriany
   note: null
 - rank: 11
@@ -212,6 +232,8 @@ policies:
   checkpoint_url: https://huggingface.co/robocasa/robocasa365_checkpoints/tree/main/pi0/pi0_robocasa_pretrain_human300/multitask_learning/75000
   open_source: 'yes'
   submitter: RoboCasa Team
+  accent: '#111111'
+  icon: pi0_2026-04-02.png
   wandb: https://wandb.ai/snasiriany/openpi/runs/lkype54o?nw=nwusersnasiriany
   note: null
 - rank: 12

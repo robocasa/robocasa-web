@@ -122,32 +122,9 @@ image: /assets/images/og-image.png
             </td>
             <td>
               <div class="rc-lb-policy-cell">
-                {% assign policy_icon = "" %}
-                {% assign policy_accent = "#5b21b6" %}
-                {% if policy.name contains "GR00T" %}
-                  {% assign policy_icon = "nvidia.svg" %}
-                  {% assign policy_accent = "#76b900" %}
-                {% elsif policy.name == "PRTS" %}
-                  {% assign policy_icon = "teleai.png" %}
-                  {% assign policy_accent = "#1d4e9e" %}
-                {% elsif policy.name == "Xiaomi-Robotics-1" %}
-                  {% assign policy_icon = "xiaomi.png" %}
-                  {% assign policy_accent = "#ff6900" %}
-                {% elsif policy.name contains "ABot" %}
-                  {% assign policy_icon = "abot.png" %}
-                  {% assign policy_accent = "#2f7bf5" %}
-                {% elsif policy.name == "RLDX-1" %}
-                  {% assign policy_icon = "rldx.png" %}
-                  {% assign policy_accent = "#2fceaa" %}
-                {% elsif policy.name == "WorldDreamer" or policy.name == "GigaWorld-Policy 0.1" %}
-                  {% assign policy_icon = "gigaai.png" %}
-                  {% assign policy_accent = "#1f1a17" %}
-                {% elsif policy.name == "π0" or policy.name == "π0.5" %}
-                  {% assign policy_icon = "pi.png" %}
-                  {% assign policy_accent = "#111111" %}
-                {% endif %}
-                {% if policy_icon != "" %}
-                  <span class="rc-lb-policy-icon" aria-hidden="true"><img src="/assets/images/policy_icons/{{ policy_icon }}" alt=""></span>
+                {% assign policy_accent = policy.accent | default: "#5b21b6" %}
+                {% if policy.icon %}
+                  <span class="rc-lb-policy-icon" aria-hidden="true"><img src="/assets/images/policy_icons/{{ policy.icon }}" alt=""></span>
                 {% elsif policy.name == "Diffusion Policy" %}
                   <span class="rc-lb-policy-icon rc-lb-policy-icon--letter" aria-hidden="true">DP</span>
                 {% elsif policy.name == "Azero-Robotics-1" %}
