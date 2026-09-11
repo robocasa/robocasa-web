@@ -1,4 +1,4 @@
-updated_at: "09/10/2026"
+updated_at: "09/11/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -129,9 +129,9 @@ policies:
   code_url: https://github.com/worldAgents-c/world_dreamer_server-robocasa365-multi_task/tree/main
   checkpoint_url: https://huggingface.co/WorldAgents-c/world_dreamer-robocasa365-multi_task
   open_source: 'yes'
-  submitter: GigaAI
-  accent: '#1f1a17'
-  icon: worlddreamer_2026_06_20.png
+  submitter: World Agents
+  accent: '#8b5cf6'
+  icon: worlddreamer_2026_06_20.jpg
   note: null
 - rank: 7
   name: GR00T N1.5
