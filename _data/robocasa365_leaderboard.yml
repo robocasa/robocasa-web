@@ -41,7 +41,7 @@ policies:
     batch_size: 48
     num_training_steps: 220
     num_training_steps_display: '220'
-  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/Phasor_minimalist.md
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/Phasor_m7_2026_09_15.md
   code_url: https://github.com/Phasor-inc/minimalist_m7
   checkpoint_url: https://huggingface.co/Project-Phasor/phasor-m7-robocasa365
   open_source: 'no'
