@@ -712,6 +712,26 @@ body.rc-leaderboard-page-body .main-content {
   background: rgba(255, 255, 255, 0.65);
 }
 
+.rc-lb-info-requirements {
+  border-top: 1px solid rgba(127, 0, 255, 0.1);
+}
+
+.rc-lb-submit-reqs {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #374151;
+  font-size: 0.92rem;
+}
+
+.rc-lb-submit-reqs li {
+  margin-bottom: 0.45rem;
+  line-height: 1.5;
+}
+
+.rc-lb-submit-reqs li:last-child {
+  margin-bottom: 0;
+}
+
 .main-content .rc-lb-info-cluster h2.rc-lb-info-heading {
   display: flex;
   align-items: baseline;

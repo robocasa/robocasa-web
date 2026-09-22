@@ -235,7 +235,7 @@ image: /assets/images/og-image.png
     <aside id="rc365-submit" class="rc-lb-info-submit">
       <h2 class="rc-lb-info-heading">
         <span class="rc-lb-info-step">3</span>
-        <span class="rc-lb-info-title">Submissions</span>
+        <span class="rc-lb-info-title">How to Submit</span>
       </h2>
       <p>
         To submit your model, go to the
@@ -243,6 +243,20 @@ image: /assets/images/og-image.png
         add a JSON file following the template in the README, and open a pull request that places it in the
         <code>submissions/</code> folder. After we verify and merge, the results will appear on this page.
       </p>
+    </aside>
+
+    <aside id="rc365-requirements" class="rc-lb-info-submit rc-lb-info-requirements">
+      <h2 class="rc-lb-info-heading">
+        <span class="rc-lb-info-step">4</span>
+        <span class="rc-lb-info-title">Submission requirements</span>
+      </h2>
+      <ol class="rc-lb-submit-reqs">
+        <li><strong>Novel model.</strong> A submission must be a distinct model: a new architecture, training recipe, or data approach. A short fine-tune, LoRA adapter, or minor post-training run on an existing entry is not a new submission.</li>
+        <li><strong>Novelty must show up at inference.</strong> Contributions that only run during training (regularizers, auxiliary losses) or that compute side outputs the policy never uses do not count. The mechanism you claim credit for must be part of what the model does at test time.</li>
+        <li><strong>Show a real improvement.</strong> If you build on someone else's base model, demonstrate a measurable success-rate gain from your contribution. A delta within noise of the base is the same model.</li>
+        <li><strong>Attribute your base.</strong> If your submission wraps or extends another team's checkpoint, say so clearly: which parts are frozen, which you trained, and how much data you used.</li>
+        <li><strong>Paper or writeup.</strong> Publish a paper, tech report, or blog post, or commit to a release timeline. Unexplained leaderboard numbers aren't reproducible science.</li>
+      </ol>
     </aside>
 
   </div>
