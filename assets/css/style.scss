@@ -93,32 +93,6 @@ a.rc-header-home svg {
     margin-top: 0;
 }
 
-// Header navigation: "New" indicator on leaderboard button.
-a.btn.rc-btn-new-tagged {
-  position: relative;
-  overflow: visible;
-}
-
-.rc-btn-new-tag {
-  position: absolute;
-  top: -0.42rem;
-  right: -0.45rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.1rem 0.38rem;
-  border-radius: 999px;
-  font-size: 0.62rem;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #4c1d95;
-  background: #fef3c7;
-  border: 1px solid rgba(245, 158, 11, 0.55);
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.18);
-}
-
 // Homepage updates callout (above release video).
 .rc-home-updates {
   margin: 0 0 1rem;
