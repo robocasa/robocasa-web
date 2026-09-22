@@ -46,6 +46,7 @@ policies:
   checkpoint_url: https://huggingface.co/Project-Phasor/phasor-m7-robocasa365
   open_source: 'no'
   submitter: Phasor
+  icon: Phasor_m7_2026_09_15.png
   wandb: N/A
 - rank: 3
   name: ABot-M0.6
