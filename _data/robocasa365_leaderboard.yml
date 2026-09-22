@@ -1,4 +1,4 @@
-updated_at: "09/21/2026"
+updated_at: "09/22/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -60,14 +60,13 @@ policies:
     num_training_steps: 120000
     num_training_steps_display: 120,000
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/abot-m0.6_2026_06_26.md
-  code_url: https://github.com/amap-cvlab/ABot-M0.6-for-Robocasa365
-  checkpoint_url: https://huggingface.co/acvlab/ABot-M0.6-RoboCasa365/tree/main
+  code_url: null
+  checkpoint_url: null
   open_source: 'no'
   submitter: AMAP CV Lab
   accent: '#2f7bf5'
   icon: abot-m0.6_2026_06_26.png
   wandb: https://wandb.ai/abot_m/ABot-M0.6/runs/xkphuvi2?nw=nwuserabot_m666
-  note: null
 - rank: 4
   name: ABot-M0.5
   short_name: ABot-M0.5
@@ -81,14 +80,12 @@ policies:
     num_training_steps: 100000
     num_training_steps_display: 100,000
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/abot-m0.5_2026_06_29.md
-  code_url: https://github.com/amap-cvlab/ABot-M0.5-for-Robocasa365
-  checkpoint_url: https://huggingface.co/acvlab/ABot-M0.5-RoboCasa365/tree/main
+  code_url: null
+  checkpoint_url: null
   open_source: 'no'
   submitter: AMAP CV Lab
   accent: '#2f7bf5'
   icon: abot-m0.5_2026_06_29.png
-  note: null
-  wandb: N/A
 - rank: 5
   name: PRTS
   short_name: PRTS
