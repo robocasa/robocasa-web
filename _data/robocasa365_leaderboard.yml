@@ -9,6 +9,24 @@ split_counts:
   composite_unseen: 16
 policies:
 - rank: 1
+  name: Primotion
+  short_name: Primotion
+  color: '#64748b'
+  score: 58.1
+  atomic_seen: 79.3
+  composite_seen: 55.8
+  composite_unseen: 36.7
+  training_config:
+    batch_size: 560
+    num_training_steps: 150000
+    num_training_steps_display: 150,000
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/Primotion_2026_09_11.md
+  code_url: N/A
+  checkpoint_url: N/A
+  open_source: 'no'
+  submitter: PrimotionBot
+  wandb: N/A
+- rank: 2
   name: Xiaomi-Robotics-1
   short_name: Xiaomi-Robotics-1
   color: '#64748b'
@@ -29,7 +47,7 @@ policies:
   icon: Xiaomi-Robotics_2026_07_08.png
   wandb: N/A
   note: null
-- rank: 2
+- rank: 3
   name: Phasor-m7
   short_name: Phasor-m7
   color: '#64748b'
@@ -48,7 +66,7 @@ policies:
   submitter: Phasor
   icon: Phasor_m7_2026_09_15.png
   wandb: N/A
-- rank: 3
+- rank: 4
   name: ABot-M0.6
   short_name: ABot-M0.6
   color: '#64748b'
@@ -68,7 +86,7 @@ policies:
   accent: '#2f7bf5'
   icon: abot-m0.6_2026_06_26.png
   wandb: https://wandb.ai/abot_m/ABot-M0.6/runs/xkphuvi2?nw=nwuserabot_m666
-- rank: 4
+- rank: 5
   name: ABot-M0.5
   short_name: ABot-M0.5
   color: '#64748b'
@@ -87,7 +105,7 @@ policies:
   submitter: AMAP CV Lab
   accent: '#2f7bf5'
   icon: abot-m0.5_2026_06_29.png
-- rank: 5
+- rank: 6
   name: PRTS
   short_name: PRTS
   color: '#64748b'
@@ -108,7 +126,7 @@ policies:
   icon: PRTS-2026_08_18.png
   wandb: https://wandb.ai/breezeyoung9470/PRTS_base_4B_robocasa365/runs/6ggl040i?nw=nwuserbreezeyoung9470
   note: null
-- rank: 6
+- rank: 7
   name: RLDX-1
   short_name: RLDX-1
   color: '#64748b'
@@ -129,7 +147,7 @@ policies:
   icon: rldx-1_2026_05_20.png
   wandb: https://wandb.ai/happyhappy/rldx-robocasa365/runs/di3k54nm
   note: null
-- rank: 7
+- rank: 8
   name: WorldDreamer
   short_name: WorldDreamer
   color: '#64748b'
@@ -149,7 +167,7 @@ policies:
   accent: '#8b5cf6'
   icon: worlddreamer_2026_06_20.jpg
   note: null
-- rank: 8
+- rank: 9
   name: GR00T N1.5
   short_name: GR00T N1.5
   color: '#64748b'
@@ -170,7 +188,7 @@ policies:
   icon: gr00t_n1.5_2026_05_19.svg
   wandb: https://wandb.ai/snasiriany/huggingface/runs/ie66zrqa
   note: null
-- rank: 9
+- rank: 10
   name: GR00T N1.6
   short_name: GR00T N1.6
   color: '#64748b'
@@ -190,7 +208,7 @@ policies:
   accent: '#76b900'
   icon: gr00t_n1.6_2026_05_14.svg
   note: null
-- rank: 10
+- rank: 11
   name: GigaWorld-Policy 0.1
   short_name: GigaWorld-Policy 0.1
   color: '#64748b'
@@ -210,7 +228,7 @@ policies:
   accent: '#1f1a17'
   icon: gwp01_2026_05_11.png
   note: null
-- rank: 11
+- rank: 12
   name: π0.5
   short_name: π0.5
   color: '#64748b'
@@ -231,7 +249,7 @@ policies:
   icon: pi05_2026-04-02.png
   wandb: https://wandb.ai/snasiriany/openpi/runs/9geuchwa?nw=nwusersnasiriany
   note: null
-- rank: 12
+- rank: 13
   name: π0
   short_name: π0
   color: '#64748b'
@@ -252,7 +270,7 @@ policies:
   icon: pi0_2026-04-02.png
   wandb: https://wandb.ai/snasiriany/openpi/runs/lkype54o?nw=nwusersnasiriany
   note: null
-- rank: 13
+- rank: 14
   name: Azero-Robotics-1
   short_name: Azero-Robotics-1
   color: '#64748b'
@@ -272,7 +290,7 @@ policies:
   submitter_url: https://github.com/robocasa-benchmark/leaderboard/pull/11
   wandb: https://wandb.ai/yuxin-soundai-soundai/robocasa365/runs/7711y2ka
   note: null
-- rank: 14
+- rank: 15
   name: Diffusion Policy
   short_name: Diffusion Policy
   color: '#64748b'
