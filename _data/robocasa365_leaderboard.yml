@@ -25,6 +25,7 @@ policies:
   checkpoint_url: N/A
   open_source: 'no'
   submitter: Primotion
+  accent: '#e8590c'
   icon: Paimon-0_2026_09_11.png
   wandb: N/A
 - rank: 2
@@ -65,6 +66,7 @@ policies:
   checkpoint_url: https://huggingface.co/Ujere/phasor-m7-robocasa365
   open_source: 'yes'
   submitter: Phasor
+  accent: '#111111'
   icon: Phasor_m7_2026_09_15.png
   wandb: N/A
 - rank: 4
