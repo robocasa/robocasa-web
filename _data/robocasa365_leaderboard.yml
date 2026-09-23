@@ -9,8 +9,8 @@ split_counts:
   composite_unseen: 16
 policies:
 - rank: 1
-  name: Paimon
-  short_name: Paimon
+  name: Paimon-0
+  short_name: Paimon-0
   color: '#64748b'
   score: 58.1
   atomic_seen: 79.3
@@ -20,12 +20,12 @@ policies:
     batch_size: 560
     num_training_steps: 150000
     num_training_steps_display: 150,000
-  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/Paimon_2026_09_11.md
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/Paimon-0_2026_09_11.md
   code_url: N/A
   checkpoint_url: N/A
   open_source: 'no'
   submitter: Primotion
-  icon: Paimon_2026_09_11.png
+  icon: Paimon-0_2026_09_11.png
   wandb: N/A
 - rank: 2
   name: Xiaomi-Robotics-1
