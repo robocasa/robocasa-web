@@ -1,4 +1,4 @@
-updated_at: "09/22/2026"
+updated_at: "09/23/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -9,8 +9,8 @@ split_counts:
   composite_unseen: 16
 policies:
 - rank: 1
-  name: Primotion
-  short_name: Primotion
+  name: Paimon
+  short_name: Paimon
   color: '#64748b'
   score: 58.1
   atomic_seen: 79.3
@@ -24,7 +24,8 @@ policies:
   code_url: N/A
   checkpoint_url: N/A
   open_source: 'no'
-  submitter: PrimotionBot
+  submitter: Primotion
+  icon: Primotion_2026_09_11.png
   wandb: N/A
 - rank: 2
   name: Xiaomi-Robotics-1
