@@ -20,12 +20,12 @@ policies:
     batch_size: 560
     num_training_steps: 150000
     num_training_steps_display: 150,000
-  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/Primotion_2026_09_11.md
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/Paimon_2026_09_11.md
   code_url: N/A
   checkpoint_url: N/A
   open_source: 'no'
   submitter: Primotion
-  icon: Primotion_2026_09_11.png
+  icon: Paimon_2026_09_11.png
   wandb: N/A
 - rank: 2
   name: Xiaomi-Robotics-1
