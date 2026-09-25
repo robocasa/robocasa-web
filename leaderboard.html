@@ -6,6 +6,7 @@ project_tagline: "Comparing generalist robot policies on the RoboCasa365 multi-t
 image: /assets/images/og-image.png
 ---
 {% assign leaderboard = site.data.robocasa365_leaderboard %}
+{% assign visible_policies = leaderboard.policies | where_exp: "p", "p.hidden != true" %}
 <script>document.body.classList.add("rc-leaderboard-page-body");</script>
 
 <div class="rc-leaderboard-page">
@@ -30,7 +31,7 @@ image: /assets/images/og-image.png
         <span class="rc-lb-stat-label">Tasks</span>
       </div>
       <div class="rc-lb-stat">
-        <strong class="rc-lb-stat-value">{{ leaderboard.policies | size }}</strong>
+        <strong class="rc-lb-stat-value">{{ visible_policies | size }}</strong>
         <span class="rc-lb-stat-label">Models Evaluated</span>
       </div>
       <div class="rc-lb-stat">
@@ -112,9 +113,9 @@ image: /assets/images/og-image.png
           </tr>
         </thead>
         <tbody>
-          {% for policy in leaderboard.policies %}
+          {% for policy in visible_policies %}
           <tr
-            data-rank="{{ policy.rank }}"
+            data-rank="{{ forloop.index }}"
             data-policy="{{ policy.short_name | default: policy.name | downcase }}"
             data-overall="{{ policy.score }}"
             data-atomic="{{ policy.atomic_seen }}"
@@ -122,8 +123,8 @@ image: /assets/images/og-image.png
             data-comp-unseen="{{ policy.composite_unseen }}"
           >
             <td>
-              <span class="rc-lb-rank-badge rc-lb-rank-{{ policy.rank }}">
-                {% if policy.rank == 1 %}🥇{% elsif policy.rank == 2 %}🥈{% elsif policy.rank == 3 %}🥉{% else %}#{{ policy.rank }}{% endif %}
+              <span class="rc-lb-rank-badge rc-lb-rank-{{ forloop.index }}">
+                {% if forloop.index == 1 %}🥇{% elsif forloop.index == 2 %}🥈{% elsif forloop.index == 3 %}🥉{% else %}#{{ forloop.index }}{% endif %}
               </span>
             </td>
             <td>

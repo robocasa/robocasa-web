@@ -275,6 +275,7 @@ policies:
   note: null
 - rank: 14
   name: Azero-Robotics-1
+  hidden: true
   short_name: Azero-Robotics-1
   color: '#64748b'
   score: 12.6
