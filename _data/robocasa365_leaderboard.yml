@@ -192,8 +192,8 @@ policies:
   wandb: https://wandb.ai/snasiriany/huggingface/runs/ie66zrqa
   note: null
 - rank: 10
-  name: LY-GWM-RoboCasa-Human300
-  short_name: LY-GWM-RoboCasa-Human300
+  name: LY-GWM-RoboCasa
+  short_name: LY-GWM-RoboCasa
   color: '#64748b'
   score: 23.6
   atomic_seen: 48.3
@@ -208,6 +208,8 @@ policies:
   checkpoint_url: https://huggingface.co/lygwm-review/LY-GWM-RoboCasa-Human300/tree/180883d9af9ee02edc3c53fe20babdc7658d1127
   open_source: 'yes'
   submitter: SEIN-LYGWM
+  icon: ly_gwm_robocasa_human300_2026_09_20.png
+  accent: '#0488e5'
   wandb: N/A
 - rank: 11
   name: GR00T N1.6
