@@ -70,8 +70,8 @@ policies:
   accent: '#111111'
   wandb: N/A
 - rank: 4
-  name: Paimon-0
-  short_name: Paimon-0
+  name: ProWAM
+  short_name: ProWAM
   color: '#64748b'
   score: 48.1
   atomic_seen: 76.0
