@@ -26,7 +26,7 @@ policies:
   open_source: 'no'
   submitter: Primotion
   icon: Paimon-0_2026_09_11.png
-  accent: '#e8590c'
+  accent: '#e14523'
   wandb: N/A
 - rank: 2
   name: Xiaomi-Robotics-1
@@ -46,7 +46,7 @@ policies:
   open_source: 'yes'
   submitter: Xiaomi Robotics
   icon: Xiaomi-Robotics_2026_07_08.png
-  accent: '#ff6900'
+  accent: '#ed722e'
   wandb: N/A
   note: null
 - rank: 3
@@ -87,7 +87,7 @@ policies:
   open_source: 'no'
   submitter: Meta
   icon: ProWAM_2026-09-30.png
-  accent: '#00a2e8'
+  accent: '#111111'
   wandb: N/A
 - rank: 5
   name: ABot-M0.6
@@ -107,7 +107,7 @@ policies:
   open_source: 'no'
   submitter: AMAP CV Lab
   icon: abot-m0.6_2026_06_26.png
-  accent: '#2f7bf5'
+  accent: '#5ec5f8'
   wandb: https://wandb.ai/abot_m/ABot-M0.6/runs/xkphuvi2?nw=nwuserabot_m666
 - rank: 6
   name: ABot-M0.5
@@ -127,7 +127,7 @@ policies:
   open_source: 'no'
   submitter: AMAP CV Lab
   icon: abot-m0.5_2026_06_29.png
-  accent: '#2f7bf5'
+  accent: '#5ec5f8'
 - rank: 7
   name: PRTS
   short_name: PRTS
@@ -146,7 +146,7 @@ policies:
   open_source: 'yes'
   submitter: TeleAI
   icon: PRTS-2026_08_18.png
-  accent: '#1d4e9e'
+  accent: '#02489d'
   wandb: https://wandb.ai/breezeyoung9470/PRTS_base_4B_robocasa365/runs/6ggl040i?nw=nwuserbreezeyoung9470
   note: null
 - rank: 8
@@ -167,7 +167,7 @@ policies:
   open_source: 'yes'
   submitter: RLWRLD
   icon: rldx-1_2026_05_20.png
-  accent: '#2fceaa'
+  accent: '#7fe7cf'
   wandb: https://wandb.ai/happyhappy/rldx-robocasa365/runs/di3k54nm
   note: null
 - rank: 9
@@ -188,7 +188,7 @@ policies:
   open_source: 'yes'
   submitter: World Agents
   icon: worlddreamer_2026_06_20.jpg
-  accent: '#8b5cf6'
+  accent: '#aa4ee2'
   note: null
 - rank: 10
   name: GR00T N1.5
@@ -269,7 +269,7 @@ policies:
   open_source: 'yes'
   submitter: GigaAI
   icon: gwp01_2026_05_11.png
-  accent: '#1f1a17'
+  accent: '#111111'
   note: null
 - rank: 14
   name: π0.5
