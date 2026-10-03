@@ -94,9 +94,9 @@ policies:
   short_name: PatchWAM
   color: '#64748b'
   score: 47.6
-  atomic_seen: 78.6666666667
-  composite_seen: 46.375
-  composite_unseen: 13.75
+  atomic_seen: 78.7
+  composite_seen: 46.4
+  composite_unseen: 13.8
   training_config:
     batch_size: 256
     num_training_steps: 559660
@@ -106,6 +106,8 @@ policies:
   checkpoint_url: https://huggingface.co/QZWang/robocasa-human300-step559660
   open_source: 'yes'
   submitter: PatchWAM Team
+  icon: PatchWAM_2026_09_29.png
+  accent: '#16d7eb'
   wandb: N/A
 - rank: 6
   name: ABot-M0.6
