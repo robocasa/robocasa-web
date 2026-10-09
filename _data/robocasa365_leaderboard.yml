@@ -111,6 +111,7 @@ policies:
   wandb: N/A
 - rank: 6
   name: ABot-M0.6
+  hidden: true
   short_name: ABot-M0.6
   color: '#64748b'
   score: 46.6
@@ -131,6 +132,7 @@ policies:
   wandb: https://wandb.ai/abot_m/ABot-M0.6/runs/xkphuvi2?nw=nwuserabot_m666
 - rank: 7
   name: ABot-M0.5
+  hidden: true
   short_name: ABot-M0.5
   color: '#64748b'
   score: 40.3
