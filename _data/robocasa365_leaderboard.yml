@@ -12,10 +12,10 @@ policies:
   name: Axiom-0
   short_name: Axiom-0
   color: '#64748b'
-  score: 62.3
-  atomic_seen: 86.22
-  composite_seen: 60.12
-  composite_unseen: 37.62
+  score: 61.6
+  atomic_seen: 86.5
+  composite_seen: 59.4
+  composite_unseen: 35.8
   training_config:
     batch_size: 2048
     num_training_steps: 30000
