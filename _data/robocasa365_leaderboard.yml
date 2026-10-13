@@ -27,6 +27,7 @@ policies:
   submitter: Awomo-WAM Team
   submitter_url: https://github.com/Awomo-WestlakeDI
   icon: Awomo-0.5I_2026_10_09.svg
+  accent: '#4cbed3'
   wandb: N/A
 - rank: 2
   name: Awomo-0.5V
@@ -47,6 +48,7 @@ policies:
   submitter: Awomo-WAM Team
   submitter_url: https://github.com/Awomo-WestlakeDI
   icon: Awomo-0.5V_2026_10_09.svg
+  accent: '#4cbed3'
   wandb: N/A
 - rank: 3
   name: Axiom-0
