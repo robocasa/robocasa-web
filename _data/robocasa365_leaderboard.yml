@@ -211,7 +211,6 @@ policies:
   submitter: AMAP CV Lab
   icon: abot-m0.5_2026_06_29.png
   accent: '#5ec5f8'
-  hidden: true
 - rank: 11
   name: PRTS
   short_name: PRTS
