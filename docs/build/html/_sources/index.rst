@@ -76,6 +76,7 @@ Welcome to RoboCasa's documentation!
    :caption: Use Cases
 
    use_cases/creating_datasets
+   use_cases/subtask_annotations
    .. use_cases/creating_tasks
    .. use_cases/mimicgen
 

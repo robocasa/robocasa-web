@@ -11,6 +11,7 @@ videoId:
 <aside class="rc-home-updates" aria-label="Updates">
   <h2 class="rc-home-updates__title">Updates</h2>
   <ul class="rc-home-updates__list">
+    <li><span class="rc-home-updates__date">[10/14/2026]</span> Released the <a href="https://robocasa.ai/docs/build/html/use_cases/subtask_annotations.html" target="_blank" rel="noopener noreferrer"><strong>subtask annotation pipeline</strong></a>, with labelers covering all 300 composite tasks. It generates per-frame subtask labels directly from each demo's simulation state.</li>
     <li><span class="rc-home-updates__date">[7/7/2026]</span> Our target composite task datasets have been updated to include per-frame <strong>subtask annotations</strong>. Every timestep is labeled with a subtask index, atomic-skill name, stage (i.e. pick / place / navigate), and a natural-language instruction, to support hierarchical policy learning.</li>
     <li><span class="rc-home-updates__date">[5/12/2026]</span> <strong>v1.0.1:</strong> Updated horizon lengths (1.5x increase) across all tasks for consistency. Please update to the latest version for running evals.</li>
     <li><span class="rc-home-updates__date">[4/6/2026]</span> <a href="{{ site.baseurl }}/leaderboard.html"><strong>RoboCasa365 Leaderboard</strong></a> published, comparing generalist robot policies on the multi-task learning benchmark and open to community model submissions.</li>
