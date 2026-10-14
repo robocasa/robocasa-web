@@ -1,4 +1,4 @@
-updated_at: "10/13/2026"
+updated_at: "10/14/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -205,9 +205,9 @@ policies:
     num_training_steps: 100000
     num_training_steps_display: 100,000
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/abot-m0.5_2026_06_29.md
-  code_url: null
-  checkpoint_url: null
-  open_source: 'no'
+  code_url: https://github.com/amap-cvlab/ABot-Manipulation
+  checkpoint_url: https://huggingface.co/acvlab/ABot-M0.5-RoboCasa365
+  open_source: 'yes'
   submitter: AMAP CV Lab
   icon: abot-m0.5_2026_06_29.png
   accent: '#5ec5f8'
