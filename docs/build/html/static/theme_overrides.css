@@ -173,3 +173,7 @@
      background-color: rgba(255, 255, 255, 0.06);
    }
    
+   /* Draw link underlines straight through descenders (g, p, y) instead of breaking around them */
+   a {
+     text-decoration-skip-ink: none;
+   }

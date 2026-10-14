@@ -690,6 +690,39 @@ body.rc-leaderboard-page-body .main-content {
   border-top: 1px solid rgba(127, 0, 255, 0.1);
 }
 
+.rc-lb-data-note {
+  margin: 1.1rem 0 0;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  border-left: 0.2rem solid #6d28d9;
+  background: #ffffff;
+  box-shadow: 0 0.2rem 0.5rem rgba(15, 23, 42, 0.08), 0 0 0.0625rem rgba(15, 23, 42, 0.12);
+}
+
+.rc-lb-data-note__title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 1rem;
+  background: #ede9fe;
+  color: #111827;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.rc-lb-data-note__title svg {
+  flex: 0 0 auto;
+  color: #6d28d9;
+}
+
+.rc-lb-info-submit p.rc-lb-data-note__body {
+  margin: 0;
+  padding: 0.7rem 1rem 0.8rem;
+  color: #374151;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 .rc-lb-submit-reqs {
   margin: 0;
   padding-left: 1.2rem;

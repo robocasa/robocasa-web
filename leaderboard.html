@@ -258,6 +258,16 @@ image: /assets/images/og-image.png
         <li><strong>Attribute your base.</strong> If your submission wraps or extends another team's checkpoint, say so clearly: which parts are frozen, which you trained, and how much data you used.</li>
         <li><strong>Paper or writeup.</strong> Publish a paper or commit to a release timeline. Unexplained leaderboard numbers aren't reproducible science. We require an arXiv abstract link for the paper.</li>
       </ol>
+      <div class="rc-lb-data-note" role="note">
+        <div class="rc-lb-data-note__title">
+          <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="currentColor"/><rect x="9" y="8.5" width="2" height="6" rx="1" fill="#fff"/><circle cx="10" cy="5.75" r="1.2" fill="#fff"/></svg>
+          Training data
+        </div>
+        <p class="rc-lb-data-note__body">
+          The only RoboCasa data allowed is the <code>pretrain_human300</code> dataset, used unaltered.
+          Do not add <a href="/docs/build/html/use_cases/subtask_annotations.html" target="_blank" rel="noopener noreferrer">subtask annotations</a> or finetune on any other RoboCasa data beyond it, so every submission is compared on equal data.
+        </p>
+      </div>
     </aside>
 
   </div>
