@@ -11,6 +11,7 @@ policies:
 - rank: 1
   name: Awomo-0.5I
   short_name: Awomo-0.5I
+  model_type: WAM
   color: '#64748b'
   score: 64.4
   atomic_seen: 86.5
@@ -31,6 +32,7 @@ policies:
 - rank: 2
   name: Awomo-0.5V
   short_name: Awomo-0.5V
+  model_type: WAM
   color: '#64748b'
   score: 62.5
   atomic_seen: 85.0
@@ -51,6 +53,7 @@ policies:
 - rank: 3
   name: Axiom-0
   short_name: Axiom-0
+  model_type: VLA
   color: '#64748b'
   score: 61.6
   atomic_seen: 86.5
@@ -71,6 +74,7 @@ policies:
 - rank: 4
   name: Paimon-0
   short_name: Paimon-0
+  model_type: VLA
   color: '#64748b'
   score: 58.1
   atomic_seen: 79.3
@@ -91,6 +95,7 @@ policies:
 - rank: 5
   name: Xiaomi-Robotics-1
   short_name: Xiaomi-Robotics-1
+  model_type: VLA
   color: '#64748b'
   score: 57.4
   atomic_seen: 80.2
@@ -112,6 +117,7 @@ policies:
 - rank: 6
   name: Phasor-m7
   short_name: Phasor-m7
+  model_type: VLA
   color: '#64748b'
   score: 56.8
   atomic_seen: 78.7
@@ -132,6 +138,7 @@ policies:
 - rank: 7
   name: LoopWAM
   short_name: LoopWAM
+  model_type: WAM
   color: '#64748b'
   score: 48.5
   atomic_seen: 78.0
@@ -151,6 +158,7 @@ policies:
 - rank: 8
   name: ProWAM
   short_name: ProWAM
+  model_type: WAM
   color: '#64748b'
   score: 48.1
   atomic_seen: 76.0
@@ -171,6 +179,7 @@ policies:
 - rank: 9
   name: PatchWAM
   short_name: PatchWAM
+  model_type: WAM
   color: '#64748b'
   score: 47.6
   atomic_seen: 78.7
@@ -191,6 +200,7 @@ policies:
 - rank: 10
   name: ABot-M0.6
   short_name: ABot-M0.6
+  model_type: VLA
   color: '#64748b'
   score: 46.6
   atomic_seen: 79.4
@@ -212,6 +222,7 @@ policies:
 - rank: 11
   name: ABot-M0.5
   short_name: ABot-M0.5
+  model_type: WAM
   color: '#64748b'
   score: 40.3
   atomic_seen: 75.6
@@ -231,6 +242,7 @@ policies:
 - rank: 12
   name: PRTS
   short_name: PRTS
+  model_type: VLA
   color: '#64748b'
   score: 39.6
   atomic_seen: 66.3
@@ -252,6 +264,7 @@ policies:
 - rank: 13
   name: RLDX-1
   short_name: RLDX-1
+  model_type: VLA
   color: '#64748b'
   score: 36.0
   atomic_seen: 67.6
@@ -273,6 +286,7 @@ policies:
 - rank: 14
   name: WorldDreamer
   short_name: WorldDreamer
+  model_type: WAM
   color: '#64748b'
   score: 35.3
   atomic_seen: 66.3
@@ -293,6 +307,7 @@ policies:
 - rank: 15
   name: GR00T N1.5
   short_name: GR00T N1.5
+  model_type: VLA
   color: '#64748b'
   score: 23.9
   atomic_seen: 50.7
@@ -314,6 +329,7 @@ policies:
 - rank: 16
   name: LY-GWM-RoboCasa
   short_name: LY-GWM-RoboCasa
+  model_type: VLA + WM
   color: '#64748b'
   score: 23.6
   atomic_seen: 48.3
@@ -334,6 +350,7 @@ policies:
 - rank: 17
   name: GR00T N1.6
   short_name: GR00T N1.6
+  model_type: VLA
   color: '#64748b'
   score: 21.9
   atomic_seen: 51.1
@@ -354,6 +371,7 @@ policies:
 - rank: 18
   name: GigaWorld-Policy 0.1
   short_name: GigaWorld-Policy 0.1
+  model_type: WAM
   color: '#64748b'
   score: 20.7
   atomic_seen: 44.4
@@ -374,6 +392,7 @@ policies:
 - rank: 19
   name: π0.5
   short_name: π0.5
+  model_type: VLA
   color: '#64748b'
   score: 16.9
   atomic_seen: 39.6
@@ -395,6 +414,7 @@ policies:
 - rank: 20
   name: π0
   short_name: π0
+  model_type: VLA
   color: '#64748b'
   score: 14.8
   atomic_seen: 34.6
@@ -416,6 +436,7 @@ policies:
 - rank: 21
   name: Azero-Robotics-1
   short_name: Azero-Robotics-1
+  model_type: VLA
   color: '#64748b'
   score: 12.6
   atomic_seen: 30.3
@@ -437,6 +458,7 @@ policies:
 - rank: 22
   name: Diffusion Policy
   short_name: Diffusion Policy
+  model_type: Visuomotor
   color: '#64748b'
   score: 6.1
   atomic_seen: 15.7
