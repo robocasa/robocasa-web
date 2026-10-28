@@ -581,6 +581,95 @@ body.rc-leaderboard-page-body .main-content {
   margin-right: auto;
 }
 
+.rc-lb-tabs-row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  max-width: 92rem;
+  margin: 0 auto;
+  padding: 0 6rem;
+}
+
+.rc-lb-tabs {
+  display: flex;
+  gap: 0.2rem;
+  max-width: 78rem;
+  margin: 0 auto;
+}
+
+.rc-lb-tabs__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.55rem 0.55rem 0 0;
+  border-bottom: 3px solid transparent;
+  color: #4b5563;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 130ms ease, background-color 130ms ease;
+}
+
+.rc-lb-tabs__tab:hover {
+  color: #4c1d95;
+  background: rgba(109, 40, 217, 0.06);
+  text-decoration: none;
+}
+
+.rc-lb-tabs__tab.is-active {
+  color: #4c1d95;
+  background: #ffffff;
+  border-bottom-color: #6d28d9;
+}
+
+.rc-lb-tabs__new {
+  padding: 0.12rem 0.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 158, 11, 0.55);
+  background: #fef3c7;
+  color: #4c1d95;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.rc-lb-hero--short {
+  padding-bottom: 3.6rem;
+}
+
+.rc-lb-coming-soon {
+  max-width: 78rem;
+  margin: 0 auto 1.4rem;
+}
+
+.rc-lb-coming-soon p {
+  margin: 1rem 0 0;
+  color: #374151;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.rc-lb-coming-soon p.rc-lb-coming-soon__empty {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+@media (max-width: 1100px) {
+  .rc-lb-tabs-row {
+    position: static;
+    padding: 0;
+    margin-top: 1.1rem;
+  }
+
+  .rc-lb-tabs {
+    justify-content: center;
+  }
+}
+
 #rc365-leaderboard.rc-lb-section {
   padding-bottom: 1.25rem;
   margin-bottom: 1.15rem;
@@ -733,6 +822,16 @@ body.rc-leaderboard-page-body .main-content {
 .rc-lb-submit-reqs li {
   margin-bottom: 0.45rem;
   line-height: 1.5;
+}
+
+.rc-lb-submit-reqs ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.rc-lb-submit-reqs ul li {
+  margin-bottom: 0.2rem;
 }
 
 .rc-lb-submit-reqs li:last-child {

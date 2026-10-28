@@ -41,6 +41,8 @@ image: /assets/images/og-image.png
     </div>
 
     <div class="rc-lb-updated">Updated {{ leaderboard.updated_at }}</div>
+
+    {% include leaderboard_nav.html active="multitask" %}
   </section>
 
   {% if leaderboard.updates and leaderboard.updates.size > 0 %}

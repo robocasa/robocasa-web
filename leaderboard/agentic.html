@@ -1,0 +1,79 @@
+---
+layout: main
+title: RoboCasa Agentic Leaderboard
+subtitle:
+project_tagline: "Agentic leaderboard for the RoboCasa365 benchmark"
+image: /assets/images/og-image.png
+---
+<script>document.body.classList.add("rc-leaderboard-page-body");</script>
+
+<div class="rc-leaderboard-page">
+  <section class="rc-lb-hero rc-lb-surface rc-lb-hero--short">
+    <a class="rc-lb-hero-home" href="{{ '/' | relative_url }}" aria-label="RoboCasa home" title="Home">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z" />
+      </svg>
+    </a>
+    <div class="rc-lb-hero-title">
+      <div>
+        <h1>RoboCasa<span class="rc-lb-title-365">365</span><span class="rc-lb-title-gap" aria-hidden="true"></span>Leaderboard</h1>
+        <p class="rc-lb-hero-subtitle">Benchmarking generalist robot policies on the multi-task learning benchmark</p>
+      </div>
+    </div>
+
+    {% include leaderboard_nav.html active="agentic" %}
+  </section>
+
+  <section class="rc-lb-section rc-lb-coming-soon">
+    <div class="rc-lb-section-header">
+      <div>
+        <h2>Leaderboard</h2>
+      </div>
+      <a class="rc-lb-submit-link" href="https://github.com/robocasa-benchmark/leaderboard" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        Submit your model
+      </a>
+    </div>
+    <p class="rc-lb-coming-soon__empty">Entries coming soon!</p>
+  </section>
+
+  <div class="rc-lb-info-cluster" aria-label="About the agentic leaderboard">
+    <aside class="rc-lb-info-submit">
+      <h2 class="rc-lb-info-heading">
+        <span class="rc-lb-info-step">1</span>
+        <span class="rc-lb-info-title">How to submit</span>
+      </h2>
+      <p>
+        Agentic entries wrap an unchanged base policy with added components such as a planner, memory, retries, or tool use.
+        To submit, open a pull request that adds a JSON file to <code>submissions/agentic/</code> in the <a href="https://github.com/robocasa-benchmark/leaderboard" target="_blank" rel="noopener noreferrer">leaderboard repository</a>, following the template in its README.
+        For entries that train or finetune the policy itself, see the <a href="{{ '/leaderboard.html' | relative_url }}">Standard leaderboard</a>.
+      </p>
+      <div class="rc-lb-data-note" role="note">
+        <div class="rc-lb-data-note__title">
+          <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="currentColor"/><rect x="9" y="8.5" width="2" height="6" rx="1" fill="#fff"/><circle cx="10" cy="5.75" r="1.2" fill="#fff"/></svg>
+          Private information
+        </div>
+        <p class="rc-lb-data-note__body">
+          Everything in the pull request is public, so never put API keys or other credentials in it.
+          After opening the PR, email <a href="mailto:robocasa@googlegroups.com">robocasa@googlegroups.com</a> with a link to your PR, your API key for any closed-API planner (with enough quota for one full eval), and confirmation that closed-source access was granted.
+        </p>
+      </div>
+    </aside>
+
+    <aside class="rc-lb-info-submit rc-lb-info-requirements">
+      <h2 class="rc-lb-info-heading">
+        <span class="rc-lb-info-step">2</span>
+        <span class="rc-lb-info-title">Submission requirements</span>
+      </h2>
+      <ol class="rc-lb-submit-reqs">
+        <li><strong>Novelty.</strong> Either a new model or a novel agentic harness framework. Using an existing model with an existing coding agent for basic steering does not qualify.</li>
+        <li><strong>Base policy.</strong> Name, HF repo and commit, and license. No weight edits.</li>
+        <li><strong>Scope.</strong> Policy observations only (no privileged simulator state). No ground-truth success signal during an episode. Cross-episode memory must be disclosed.</li>
+        <li><strong>Reproducibility.</strong> Public repo, pinned dependencies, and one-prompt setup. For closed-API planners: provider, model ID, settings, and a test key with enough quota for one full eval. For closed-source code or checkpoints, grant access on GitHub to <a href="https://github.com/Abhiram824" target="_blank" rel="noopener noreferrer">Abhiram824</a> and on Hugging Face to <a href="https://huggingface.co/Abhi03" target="_blank" rel="noopener noreferrer">Abhi03</a>.</li>
+        <li><strong>Verification.</strong> An arXiv or preprint link. We re-run the full eval, and our numbers are the ones posted.</li>
+      </ol>
+    </aside>
+  </div>
+</div>

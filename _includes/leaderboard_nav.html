@@ -1,0 +1,6 @@
+<div class="rc-lb-tabs-row">
+<nav class="rc-lb-tabs" aria-label="Leaderboards">
+  <a class="rc-lb-tabs__tab{% if include.active == 'multitask' %} is-active{% endif %}" href="{{ '/leaderboard.html' | relative_url }}"{% if include.active == 'multitask' %} aria-current="page"{% endif %}>Standard</a>
+  <a class="rc-lb-tabs__tab{% if include.active == 'agentic' %} is-active{% endif %}" href="{{ '/leaderboard/agentic.html' | relative_url }}"{% if include.active == 'agentic' %} aria-current="page"{% endif %}>Agentic <span class="rc-lb-tabs__new">New</span></a>
+</nav>
+</div>
