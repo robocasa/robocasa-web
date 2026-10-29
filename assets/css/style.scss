@@ -800,9 +800,14 @@ body.rc-leaderboard-page-body .main-content {
   white-space: nowrap;
 }
 
+.rc-lb-table tbody td.rc-lb-type-cell {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .rc-lb-type-badge {
   display: inline-block;
-  padding: 0.18rem 0.55rem;
+  padding: 0.18rem 0.48rem;
   border-radius: 0.4rem;
   background: #f3f4f6;
   color: #4b5563;
