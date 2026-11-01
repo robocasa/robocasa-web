@@ -832,8 +832,11 @@ body.rc-leaderboard-page-body .main-content {
   color: #be185d;
 }
 
+.rc-lb-type-badge--agent,
 .rc-lb-type-badge--agent-wam,
-.rc-lb-type-badge--agent-vla {
+.rc-lb-type-badge--agent-vla,
+.rc-lb-type-badge--agent-vla-wm,
+.rc-lb-type-badge--agent-visuomotor {
   background: #ffedd5;
   color: #c2410c;
 }
