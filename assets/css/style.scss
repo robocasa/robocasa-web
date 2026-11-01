@@ -1200,17 +1200,17 @@ body.rc-leaderboard-page-body .main-content {
   background: #fafbfc;
 }
 
-.rc-lb-table tbody tr:first-child td:first-child {
+.rc-lb-table tbody tr:has(.rc-lb-rank-1) td:first-child {
   border-left-color: #facc15;
   box-shadow: inset 4px 0 0 #facc15;
 }
 
-.rc-lb-table tbody tr:nth-child(2) td:first-child {
+.rc-lb-table tbody tr:has(.rc-lb-rank-2) td:first-child {
   border-left-color: #94a3b8;
   box-shadow: inset 4px 0 0 #94a3b8;
 }
 
-.rc-lb-table tbody tr:nth-child(3) td:first-child {
+.rc-lb-table tbody tr:has(.rc-lb-rank-3) td:first-child {
   border-left-color: #c08457;
   box-shadow: inset 4px 0 0 #c08457;
 }
