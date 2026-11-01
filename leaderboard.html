@@ -365,6 +365,8 @@ image: /assets/images/og-image.png
 
     function updateDisplayedRanks(rows) {
       rows = rows.filter(function(row) { return !row.hidden; });
+      tbody.querySelectorAll("tr.is-last-visible").forEach(function(row) { row.classList.remove("is-last-visible"); });
+      if (rows.length) rows[rows.length - 1].classList.add("is-last-visible");
       rows.forEach(function(row, index) {
         var displayRank = index + 1;
         var badge = row.querySelector(".rc-lb-rank-badge");

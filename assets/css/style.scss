@@ -1175,7 +1175,8 @@ body.rc-leaderboard-page-body .main-content {
   font-size: 0.93rem;
 }
 
-.rc-lb-table tbody tr:last-child td {
+/* Last visible row, so the table closes when the filter hides rows below it. */
+.rc-lb-table tbody tr.is-last-visible td {
   border-bottom: 1px solid #e5e7eb;
 }
 
