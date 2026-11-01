@@ -26,7 +26,6 @@ policies:
   submitter: HexaFuture
   icon: HexaShell-1.5_2026_10_31.png
   accent: '#111111'
-  hidden: true
 - rank: 2
   name: Awomo-0.5I
   short_name: Awomo-0.5I
