@@ -132,8 +132,8 @@ policies:
   accent: '#e14523'
   wandb: N/A
 - rank: 7
-  name: worlddreamer_v5
-  short_name: worlddreamer_v5
+  name: WorldDreamer v5
+  short_name: WorldDreamer v5
   model_type: WAM
   color: '#64748b'
   score: 57.5
