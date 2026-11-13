@@ -134,7 +134,7 @@ policies:
 - rank: 7
   name: worlddreamer_v5
   short_name: worlddreamer_v5
-  model_type: VLA
+  model_type: WAM
   color: '#64748b'
   score: 57.5
   atomic_seen: 82.0
@@ -149,6 +149,8 @@ policies:
   checkpoint_url: https://huggingface.co/WorldAgents-c/worlddreamer-v5-robocasa
   open_source: 'yes'
   submitter: World Agents
+  icon: worlddreamer_v5_2026_10_10.jpg
+  accent: '#aa4ee2'
 - rank: 8
   name: Xiaomi-Robotics-1
   short_name: Xiaomi-Robotics-1
