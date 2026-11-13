@@ -19,7 +19,7 @@ policies:
   composite_unseen: 80.0
   training_config: {}
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/HexaShell-1.5_2026_10_31.md
-  code_url: https://github.com/HexaFuture/HexaShell-1.5
+  code_url: https://github.com/HexaFuture/HexaShell
   checkpoint_url: N/A
   open_source: 'no'
   type: agentic
