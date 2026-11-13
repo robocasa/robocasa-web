@@ -9,8 +9,8 @@ split_counts:
   composite_unseen: 16
 policies:
 - rank: 1
-  name: HexaShell 1.5
-  short_name: HexaShell 1.5
+  name: HexaShell
+  short_name: HexaShell
   model_type: Agent
   color: '#64748b'
   score: 85.6
