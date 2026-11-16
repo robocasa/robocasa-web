@@ -217,7 +217,7 @@ policies:
 - rank: 11
   name: MIRA
   short_name: MIRA
-  model_type: Agent + VLA
+  model_type: VLA
   color: '#64748b'
   score: 54.3
   atomic_seen: 80.1
@@ -231,10 +231,10 @@ policies:
   code_url: https://github.com/yinpei-tri-pi/sys1_sys2
   checkpoint_url: https://huggingface.co/yinpei-tri-pi/robocasa-system1-pi05-progact
   open_source: 'yes'
-  type: agentic
   submitter: Toyota Research Institute
   icon: MIRA_2026_10_28.png
   accent: '#111111'
+  type: agentic
   hidden: true
 - rank: 12
   name: LoopWAM
