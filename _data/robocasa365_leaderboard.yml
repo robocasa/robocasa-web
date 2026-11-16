@@ -235,6 +235,7 @@ policies:
   submitter: Toyota Research Institute
   icon: MIRA_2026_10_28.png
   accent: '#111111'
+  hidden: true
 - rank: 12
   name: LoopWAM
   short_name: LoopWAM
