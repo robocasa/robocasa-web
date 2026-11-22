@@ -1,4 +1,4 @@
-updated_at: "11/16/2026"
+updated_at: "11/22/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -27,6 +27,25 @@ policies:
   icon: HexaShell-1.5_2026_10_31.png
   accent: '#111111'
 - rank: 2
+  name: Cog-WM LHMM
+  short_name: Cog-WM LHMM
+  model_type: Agent + VLA
+  color: '#64748b'
+  score: 65.2
+  atomic_seen: 87.33333333333333
+  composite_seen: 65.375
+  composite_unseen: 40.0
+  training_config:
+    batch_size: 512
+    num_training_steps: 56849
+    num_training_steps_display: 56,849
+  submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/Cog-WM-LHMM_2026_11_04.md
+  code_url: N/A
+  checkpoint_url: https://huggingface.co/dingli123/Cog-WM-LHMM/tree/54c6b3062791b645e98f3c3ab684766f46dcd80e
+  open_source: 'no'
+  type: agentic
+  submitter: lidingebkernel-bit
+- rank: 3
   name: Awomo-0.5I
   short_name: Awomo-0.5I
   model_type: WAM
@@ -47,7 +66,7 @@ policies:
   icon: Awomo-0.5I_2026_10_09.svg
   accent: '#4cbed3'
   wandb: N/A
-- rank: 3
+- rank: 4
   name: minionx
   short_name: minionx
   model_type: VLA
@@ -68,7 +87,7 @@ policies:
   icon: minionx_2026_10_19.png
   accent: '#fcc315'
   wandb: N/A
-- rank: 4
+- rank: 5
   name: Awomo-0.5V
   short_name: Awomo-0.5V
   model_type: WAM
@@ -89,7 +108,7 @@ policies:
   icon: Awomo-0.5V_2026_10_09.svg
   accent: '#4cbed3'
   wandb: N/A
-- rank: 5
+- rank: 6
   name: Axiom-0
   short_name: Axiom-0
   model_type: VLA
@@ -110,7 +129,7 @@ policies:
   icon: Axiom-0_2026_10_01.png
   accent: '#033a8c'
   wandb: N/A
-- rank: 6
+- rank: 7
   name: Paimon-0
   short_name: Paimon-0
   model_type: VLA
@@ -131,7 +150,7 @@ policies:
   icon: Paimon-0_2026_09_11.png
   accent: '#e14523'
   wandb: N/A
-- rank: 7
+- rank: 8
   name: WorldDreamer v5
   short_name: WorldDreamer v5
   model_type: WAM
@@ -151,7 +170,7 @@ policies:
   submitter: World Agents
   icon: worlddreamer_v5_2026_10_10.jpg
   accent: '#aa4ee2'
-- rank: 8
+- rank: 9
   name: Xiaomi-Robotics-1
   short_name: Xiaomi-Robotics-1
   model_type: VLA
@@ -173,7 +192,7 @@ policies:
   accent: '#ed722e'
   wandb: N/A
   note: null
-- rank: 9
+- rank: 10
   name: Phasor-m7
   short_name: Phasor-m7
   model_type: VLA
@@ -194,7 +213,7 @@ policies:
   icon: Phasor_m7_2026_09_15.png
   accent: '#111111'
   wandb: N/A
-- rank: 10
+- rank: 11
   name: Meituan-Robotics-0
   short_name: Meituan-Robotics-0
   model_type: VLA
@@ -214,7 +233,7 @@ policies:
   submitter: Meituan Robotics
   icon: Meituan-Robotics-0_2026_10_24.png
   accent: '#ffe41f'
-- rank: 11
+- rank: 12
   name: MIRA
   short_name: MIRA
   model_type: VLA
@@ -236,7 +255,7 @@ policies:
   accent: '#111111'
   type: agentic
   hidden: true
-- rank: 12
+- rank: 13
   name: LoopWAM
   short_name: LoopWAM
   model_type: WAM
@@ -256,7 +275,7 @@ policies:
   submitter: LoopWAM Team
   icon: LoopWAM_2026_10_20.png
   accent: '#039ea7'
-- rank: 13
+- rank: 14
   name: ProWAM
   short_name: ProWAM
   model_type: WAM
@@ -277,7 +296,7 @@ policies:
   icon: ProWAM_2026-09-30.png
   accent: '#111111'
   wandb: N/A
-- rank: 14
+- rank: 15
   name: PatchWAM
   short_name: PatchWAM
   model_type: WAM
@@ -298,7 +317,7 @@ policies:
   icon: PatchWAM_2026_09_29.png
   accent: '#16d7eb'
   wandb: N/A
-- rank: 15
+- rank: 16
   name: ABot-M0.6
   short_name: ABot-M0.6
   model_type: VLA
@@ -320,7 +339,7 @@ policies:
   accent: '#5ec5f8'
   wandb: https://wandb.ai/abot_m/ABot-M0.6/runs/xkphuvi2?nw=nwuserabot_m666
   hidden: true
-- rank: 16
+- rank: 17
   name: ABot-M0.5
   short_name: ABot-M0.5
   model_type: WAM
@@ -340,7 +359,7 @@ policies:
   submitter: AMAP CV Lab
   icon: abot-m0.5_2026_06_29.png
   accent: '#5ec5f8'
-- rank: 17
+- rank: 18
   name: PRTS
   short_name: PRTS
   model_type: VLA
@@ -362,7 +381,7 @@ policies:
   accent: '#02489d'
   wandb: https://wandb.ai/breezeyoung9470/PRTS_base_4B_robocasa365/runs/6ggl040i?nw=nwuserbreezeyoung9470
   note: null
-- rank: 18
+- rank: 19
   name: RLDX-1
   short_name: RLDX-1
   model_type: VLA
@@ -384,7 +403,7 @@ policies:
   accent: '#7fe7cf'
   wandb: https://wandb.ai/happyhappy/rldx-robocasa365/runs/di3k54nm
   note: null
-- rank: 19
+- rank: 20
   name: WorldDreamer
   short_name: WorldDreamer
   model_type: WAM
@@ -405,7 +424,7 @@ policies:
   icon: worlddreamer_2026_06_20.jpg
   accent: '#aa4ee2'
   note: null
-- rank: 20
+- rank: 21
   name: GR00T N1.5
   short_name: GR00T N1.5
   model_type: VLA
@@ -427,7 +446,7 @@ policies:
   accent: '#76b900'
   wandb: https://wandb.ai/snasiriany/huggingface/runs/ie66zrqa
   note: null
-- rank: 21
+- rank: 22
   name: LY-GWM-RoboCasa
   short_name: LY-GWM-RoboCasa
   model_type: VLA + WM
@@ -448,7 +467,7 @@ policies:
   icon: ly_gwm_robocasa_human300_2026_09_20.png
   accent: '#0488e5'
   wandb: N/A
-- rank: 22
+- rank: 23
   name: GR00T N1.6
   short_name: GR00T N1.6
   model_type: VLA
@@ -469,7 +488,7 @@ policies:
   icon: gr00t_n1.6_2026_05_14.svg
   accent: '#76b900'
   note: null
-- rank: 23
+- rank: 24
   name: GigaWorld-Policy 0.1
   short_name: GigaWorld-Policy 0.1
   model_type: WAM
@@ -490,7 +509,7 @@ policies:
   icon: gwp01_2026_05_11.png
   accent: '#111111'
   note: null
-- rank: 24
+- rank: 25
   name: π0.5
   short_name: π0.5
   model_type: VLA
@@ -512,7 +531,7 @@ policies:
   accent: '#111111'
   wandb: https://wandb.ai/snasiriany/openpi/runs/9geuchwa?nw=nwusersnasiriany
   note: null
-- rank: 25
+- rank: 26
   name: π0
   short_name: π0
   model_type: VLA
@@ -534,7 +553,7 @@ policies:
   accent: '#111111'
   wandb: https://wandb.ai/snasiriany/openpi/runs/lkype54o?nw=nwusersnasiriany
   note: null
-- rank: 26
+- rank: 27
   name: Azero-Robotics-1
   short_name: Azero-Robotics-1
   model_type: VLA
@@ -556,7 +575,7 @@ policies:
   wandb: https://wandb.ai/yuxin-soundai-soundai/robocasa365/runs/7711y2ka
   hidden: true
   note: null
-- rank: 27
+- rank: 28
   name: Diffusion Policy
   short_name: Diffusion Policy
   model_type: Visuomotor
