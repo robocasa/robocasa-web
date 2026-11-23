@@ -1,4 +1,4 @@
-updated_at: "11/22/2026"
+updated_at: "11/23/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -31,9 +31,9 @@ policies:
   short_name: Cog-WM LHMM
   model_type: Agent + VLA
   color: '#64748b'
-  score: 65.2
-  atomic_seen: 87.33333333333333
-  composite_seen: 65.375
+  score: 65.1
+  atomic_seen: 87.3
+  composite_seen: 65.38
   composite_unseen: 40.0
   training_config:
     batch_size: 512
