@@ -47,6 +47,7 @@ policies:
   submitter: EBKernel Cog-WM Team
   icon: Cog-WM-LHMM_2026_11_04.png
   accent: '#a62727'
+  hidden: true
 - rank: 3
   name: Awomo-0.5I
   short_name: Awomo-0.5I
