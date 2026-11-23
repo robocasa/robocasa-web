@@ -44,7 +44,9 @@ policies:
   checkpoint_url: https://huggingface.co/dingli123/Cog-WM-LHMM/tree/54c6b3062791b645e98f3c3ab684766f46dcd80e
   open_source: 'no'
   type: agentic
-  submitter: lidingebkernel-bit
+  submitter: EBKernel Cog-WM Team
+  icon: Cog-WM-LHMM_2026_11_04.png
+  accent: '#a62727'
 - rank: 3
   name: Awomo-0.5I
   short_name: Awomo-0.5I
