@@ -69,6 +69,7 @@ policies:
   icon: Awomo-0.5I_2026_10_09.svg
   accent: '#4cbed3'
   wandb: N/A
+  hidden: true
 - rank: 4
   name: minionx
   short_name: minionx
@@ -111,6 +112,7 @@ policies:
   icon: Awomo-0.5V_2026_10_09.svg
   accent: '#4cbed3'
   wandb: N/A
+  hidden: true
 - rank: 6
   name: Axiom-0
   short_name: Axiom-0
