@@ -153,6 +153,7 @@ policies:
   icon: Paimon-0_2026_09_11.png
   accent: '#e14523'
   wandb: N/A
+  hidden: true
 - rank: 8
   name: WorldDreamer v5
   short_name: WorldDreamer v5
@@ -216,6 +217,7 @@ policies:
   icon: Phasor_m7_2026_09_15.png
   accent: '#111111'
   wandb: N/A
+  hidden: true
 - rank: 11
   name: Meituan-Robotics-0
   short_name: Meituan-Robotics-0
@@ -236,6 +238,7 @@ policies:
   submitter: Meituan Robotics
   icon: Meituan-Robotics-0_2026_10_24.png
   accent: '#ffe41f'
+  hidden: true
 - rank: 12
   name: MIRA
   short_name: MIRA
