@@ -1,4 +1,4 @@
-updated_at: "11/23/2026"
+updated_at: "11/25/2026"
 benchmark_name: Multi-Task Learning
 metric_label: Average task success rate
 evaluation_split: Pretrain scenes
@@ -234,13 +234,12 @@ policies:
     num_training_steps: 200000
     num_training_steps_display: 200,000
   submission_url: https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/Meituan-Robotics-0_2026_10_24.md
-  code_url: null
-  checkpoint_url: null
-  open_source: 'no'
+  code_url: https://github.com/linglingxiansen/robocasa365-eval
+  checkpoint_url: https://huggingface.co/MeituanRobotics/Meituan-Robotics-0-RoboCasa365/tree/8a3f69a65600c4ba0fbe340ba934438140f44d2d
+  open_source: 'yes'
   submitter: Meituan Robotics
   icon: Meituan-Robotics-0_2026_10_24.png
   accent: '#ffe41f'
-  hidden: true
 - rank: 12
   name: MIRA
   short_name: MIRA
